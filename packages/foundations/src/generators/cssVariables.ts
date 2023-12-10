@@ -1,4 +1,3 @@
-import { css } from 'styled-components';
 import {
 	IDesignTokensLibrary,
 	TColorVariant,
@@ -7,7 +6,7 @@ import {
 	IScaleLibraryItem
 } from '../../../types';
 
-export const GenerateCSSVariables = (payload: IDesignTokensLibrary) => {
+export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
 	const DEFAULT_COLOR_TOKENS_VARIANT = 'color';
 	const COLOR_TOKENS_VARIANT: TColorVariant[] = ['alpha', 'tint', 'shade'];
 	const SCALE_TOKENS_VARIANT: TScaleVariant[] = ['fontsize', 'measurement'];
@@ -21,7 +20,7 @@ export const GenerateCSSVariables = (payload: IDesignTokensLibrary) => {
 		color: (library: IColorLibraryItem[], variant?: TColorVariant) => {
 			if (!variant) {
 				return library.map(
-					(token) => css`
+					(token) => `
 						${`--${DEFAULT_COLOR_TOKENS_VARIANT}-${token.name}: #${token.base.hex};`}
 					`
 				);
@@ -29,7 +28,7 @@ export const GenerateCSSVariables = (payload: IDesignTokensLibrary) => {
 
 			return library.map((token) => {
 				return token[variant].map(
-					(item, key) => css`
+					(item, key) => `
 						${`${variableName(variant, token.name, key)}: ${item.rgb};`}
 					`
 				);
@@ -38,10 +37,8 @@ export const GenerateCSSVariables = (payload: IDesignTokensLibrary) => {
 		scale: (library: IScaleLibraryItem[], variant: TScaleVariant) => {
 			return library.map((token) =>
 				token.values.map(
-					(value, key) => css`
-						${`${variableName(variant, token.name, key)}: ${
-							value.rem
-						}rem;`}
+					(value, key) => `
+						${`${variableName(variant, token.name, key)}: ${value.rem}rem;`}
 					`
 				)
 			);
