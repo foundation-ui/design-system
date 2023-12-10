@@ -1,0 +1,7 @@
+{
+  "name": "@birbs-sorftwares/design-system-components",
+  "packageManager": "yarn@4.0.2",
+  "@birbs-sorftwares/design-system-foundations": "workspace:^",
+  "@birbs-sorftwares/design-system-tokens": "workspace:^",
+  "@birbs-sorftwares/design-system-core": "workspace:^"
+}
