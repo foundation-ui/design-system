@@ -1,7 +1,7 @@
 {
-  "name": "@birbs-softwares/design-system-tokens",
-  "packageManager": "yarn@4.0.2",
-  "devDependencies": {
-    "typescript": "^5.3.3"
-  }
+	"name": "@birbs-softwares/design-system-tokens",
+	"packageManager": "yarn@4.0.2",
+	"devDependencies": {
+		"typescript": "^5.3.3"
+	}
 }

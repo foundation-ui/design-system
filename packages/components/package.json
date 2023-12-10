@@ -1,15 +1,15 @@
 {
-  "name": "@birbs-softwares/design-system-components",
-  "packageManager": "yarn@4.0.2",
-  "scripts": {
-    "build": "tsc"
-  },
-  "dependencies": {
-    "@birbs-softwares/design-system-core": "workspace:^",
-    "@birbs-softwares/design-system-foundations": "workspace:^",
-    "@birbs-softwares/design-system-tokens": "workspace:^"
-  },
-  "devDependencies": {
-    "typescript": "^5.3.3"
-  }
+	"name": "@birbs-softwares/design-system-components",
+	"packageManager": "yarn@4.0.2",
+	"scripts": {
+		"build": "tsc"
+	},
+	"dependencies": {
+		"@birbs-softwares/design-system-core": "workspace:^",
+		"@birbs-softwares/design-system-foundations": "workspace:^",
+		"@birbs-softwares/design-system-tokens": "workspace:^"
+	},
+	"devDependencies": {
+		"typescript": "^5.3.3"
+	}
 }
