@@ -5,9 +5,9 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@birbs-softwares/design-system-core": "workspace:^",
     "@birbs-softwares/design-system-foundations": "workspace:^",
-    "@birbs-softwares/design-system-tokens": "workspace:^",
-    "@birbs-softwares/design-system-core": "workspace:^"
+    "@birbs-softwares/design-system-tokens": "workspace:^"
   },
   "devDependencies": {
     "typescript": "^5.3.3"

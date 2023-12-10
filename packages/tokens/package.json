@@ -1,9 +1,6 @@
 {
   "name": "@birbs-softwares/design-system-tokens",
   "packageManager": "yarn@4.0.2",
-  "dependencies": {
-    "@birbs-softwares/design-system-foundations": "workspace:^"
-  },
   "devDependencies": {
     "typescript": "^5.3.3"
   }
