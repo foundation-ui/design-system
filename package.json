@@ -1,7 +1,10 @@
 {
-  "name": "@birbs-sorftwares/design-system",
+  "name": "@birbs-softwares/design-system",
   "packageManager": "yarn@4.0.2",
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
 }

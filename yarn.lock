@@ -5,8 +5,77 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"birbs-design-system@workspace:.":
+"@birbs-softwares/design-system-components@workspace:^, @birbs-softwares/design-system-components@workspace:packages/components":
   version: 0.0.0-use.local
-  resolution: "birbs-design-system@workspace:."
+  resolution: "@birbs-softwares/design-system-components@workspace:packages/components"
+  dependencies:
+    typescript: "npm:^5.3.3"
   languageName: unknown
   linkType: soft
+
+"@birbs-softwares/design-system-core@workspace:^, @birbs-softwares/design-system-core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@birbs-softwares/design-system-core@workspace:packages/core"
+  dependencies:
+    "@birbs-softwares/design-system-foundations": "workspace:^"
+    "@birbs-softwares/design-system-tokens": "workspace:^"
+    typescript: "npm:^5.3.3"
+  languageName: unknown
+  linkType: soft
+
+"@birbs-softwares/design-system-foundations@workspace:^, @birbs-softwares/design-system-foundations@workspace:packages/foundations":
+  version: 0.0.0-use.local
+  resolution: "@birbs-softwares/design-system-foundations@workspace:packages/foundations"
+  dependencies:
+    typescript: "npm:^5.3.3"
+  languageName: unknown
+  linkType: soft
+
+"@birbs-softwares/design-system-storybook@workspace:packages/storybook":
+  version: 0.0.0-use.local
+  resolution: "@birbs-softwares/design-system-storybook@workspace:packages/storybook"
+  dependencies:
+    "@birbs-softwares/design-system-components": "workspace:^"
+    "@birbs-softwares/design-system-core": "workspace:^"
+    "@birbs-softwares/design-system-foundations": "workspace:^"
+    "@birbs-softwares/design-system-tokens": "workspace:^"
+    typescript: "npm:^5.3.3"
+  languageName: unknown
+  linkType: soft
+
+"@birbs-softwares/design-system-tokens@workspace:^, @birbs-softwares/design-system-tokens@workspace:packages/tokens":
+  version: 0.0.0-use.local
+  resolution: "@birbs-softwares/design-system-tokens@workspace:packages/tokens"
+  dependencies:
+    "@birbs-softwares/design-system-foundations": "workspace:^"
+    typescript: "npm:^5.3.3"
+  languageName: unknown
+  linkType: soft
+
+"@birbs-softwares/design-system@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@birbs-softwares/design-system@workspace:."
+  dependencies:
+    typescript: "npm:^5.3.3"
+  languageName: unknown
+  linkType: soft
+
+"typescript@npm:^5.3.3":
+  version: 5.3.3
+  resolution: "typescript@npm:5.3.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: e33cef99d82573624fc0f854a2980322714986bc35b9cb4d1ce736ed182aeab78e2cb32b385efa493b2a976ef52c53e20d6c6918312353a91850e2b76f1ea44f
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^5.3.3#optional!builtin<compat/typescript>":
+  version: 5.3.3
+  resolution: "typescript@patch:typescript@npm%3A5.3.3#optional!builtin<compat/typescript>::version=5.3.3&hash=e012d7"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 1d0a5f4ce496c42caa9a30e659c467c5686eae15d54b027ee7866744952547f1be1262f2d40de911618c242b510029d51d43ff605dba8fb740ec85ca2d3f9500
+  languageName: node
+  linkType: hard

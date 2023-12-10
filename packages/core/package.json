@@ -1,8 +1,11 @@
 {
-  "name": "@birbs-sorftwares/design-system-core",
+  "name": "@birbs-softwares/design-system-core",
   "packageManager": "yarn@4.0.2",
   "dependencies": {
-    "@birbs-sorftwares/design-system-foundations": "workspace:^",
-    "@birbs-sorftwares/design-system-tokens": "workspace:^"
+    "@birbs-softwares/design-system-foundations": "workspace:^",
+    "@birbs-softwares/design-system-tokens": "workspace:^"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
   }
 }

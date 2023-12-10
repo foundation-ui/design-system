@@ -1,4 +1,7 @@
 {
-  "name": "@birbs-sorftwares/design-system-foundations",
-  "packageManager": "yarn@4.0.2"
+  "name": "@birbs-softwares/design-system-foundations",
+  "packageManager": "yarn@4.0.2",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
 }
