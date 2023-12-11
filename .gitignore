@@ -150,7 +150,7 @@ node_modules
 psd
 thumb
 sketch
-
+todo.*
 ### StorybookJs ###
 # gitignore template for the Storybook, UI guide for front apps
 # website: https://storybook.js.org/
