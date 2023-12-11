@@ -7,7 +7,7 @@ import {
   luminanceAmountFormatter,
   calculateContrastScore,
 } from "../utils";
-import { Mode, IColorVariation } from "../../../../types";
+import { TMode, IColorVariation } from "../../../../types";
 
 export const generateAlpha = (Hex: string, amount?: number) => {
   const colorValuesArray: { hex: string; rgb: string; hsl: string }[] = [];
@@ -42,7 +42,11 @@ export const generateAlpha = (Hex: string, amount?: number) => {
 
   return colorValuesArray;
 };
-export const generateVariation = (Hex: string, mode: Mode, amount?: number) => {
+export const generateVariation = (
+  Hex: string,
+  mode: TMode,
+  amount?: number
+) => {
   const variationValuesArray: IColorVariation[] = [];
 
   while (variationValuesArray.length < (amount || 10)) {

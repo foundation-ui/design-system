@@ -5,7 +5,6 @@ export enum ColorModesEnum {
   Light = "light",
   System = "system",
 }
-
 export enum ColorVariantEnum {
   Alpha = "alpha",
   Tint = "tint",
@@ -38,10 +37,10 @@ export type TColorMode =
   | ColorModesEnum.Dark
   | ColorModesEnum.Light
   | ColorModesEnum.System;
-export type Hex = string;
-export type Tone = number;
-export type Mode = ColorModesEnum.Darken | ColorModesEnum.Lighten;
-export type Luminance = LuminanceFactorsEnum | undefined;
+export type THex = string;
+export type TTone = number;
+export type TMode = ColorModesEnum.Darken | ColorModesEnum.Lighten;
+export type TLuminance = LuminanceFactorsEnum | undefined;
 export type TColorVariant =
   | ColorVariantEnum.Alpha
   | ColorVariantEnum.Tint
@@ -64,7 +63,7 @@ export type TSequencesOptions = {
 };
 
 export interface IColorVariation {
-  hex?: Hex;
+  hex?: THex;
   rgb?: string;
   hsl?: string;
 }

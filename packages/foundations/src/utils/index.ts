@@ -1,4 +1,4 @@
-import { Hex, Tone, Mode, Luminance } from "../../../../types";
+import { THex, TTone, TMode, TLuminance } from "../../../../types";
 
 /** Format convertors */
 export const checkDecimals = (value: number): boolean =>
@@ -10,7 +10,7 @@ export const PXToREM = (value: number): number => Number(0.0625 * value);
 export const PXToPT = (value: number): number => Number(0.75 * value);
 
 export const HEXToRGB = (
-  Hex: Hex,
+  Hex: THex,
   raw?: boolean
 ): [number, number, number] | string => {
   const filteredHex = Hex && Hex.includes("#") ? Hex.replace("#", "") : Hex;
@@ -120,7 +120,7 @@ export const HEXToHSL = (hex: string, raw?: boolean): number[] | string => {
 };
 
 /** Color Luminance */
-export function applyColorLuminance(hex: Hex, luminance: Luminance): string {
+export function applyColorLuminance(hex: THex, luminance: TLuminance): string {
   const RGBA_PATTERN = /[^0-9a-f]/gi;
   const HEX_PATTERN = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
   const HEX_LENGTH_CHECK = hex.length < 6;
@@ -143,7 +143,7 @@ export function applyColorLuminance(hex: Hex, luminance: Luminance): string {
 
   return RGBHex;
 }
-export function setLuminanceTone(tone: Tone, mode?: Mode): number {
+export function setLuminanceTone(tone: TTone, mode?: TMode): number {
   if (tone && mode && mode === "darken") {
     return Math.abs(tone) * -1;
   } else return tone;
