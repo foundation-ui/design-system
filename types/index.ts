@@ -1,7 +1,11 @@
 export enum ColorModesEnum {
   Darken = "darken",
   Lighten = "lighten",
+  Dark = "dark",
+  Light = "light",
+  System = "system",
 }
+
 export enum ColorVariantEnum {
   Alpha = "alpha",
   Tint = "tint",
@@ -30,6 +34,10 @@ export enum LuminanceFactorsEnum {
   Lum100 = 1,
 }
 
+export type TColorMode =
+  | ColorModesEnum.Dark
+  | ColorModesEnum.Light
+  | ColorModesEnum.System;
 export type Hex = string;
 export type Tone = number;
 export type Mode = ColorModesEnum.Darken | ColorModesEnum.Lighten;

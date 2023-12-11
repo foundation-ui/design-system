@@ -1,3 +1,4 @@
+import { css } from "styled-components";
 import {
   IDesignTokensLibrary,
   TColorVariant,
@@ -29,26 +30,26 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
     color: (library: IComposedLibraryItem[], variant?: TColorVariant) => {
       if (!variant) {
         return library.map(
-          (token) => `
-						${`--${DEFAULT_COLOR_TOKENS_VARIANT}-${token.name}: #${token.base["hex"]};`}
-					`
+          (token) => css`
+            ${`--${DEFAULT_COLOR_TOKENS_VARIANT}-${token.name}: #${token.base["hex"]};`}
+          `
         );
       }
 
       return library.map((token) => {
         return token[variant].map(
-          (item, key) => `
-						${`${variableName(variant, token.name, key)}: ${item.rgb};`}
-					`
+          (item, key) => css`
+            ${`${variableName(variant, token.name, key)}: ${item.rgb};`}
+          `
         );
       });
     },
     scale: (library: IComposedLibraryItem[], variant: TScaleVariant) => {
       return library.map((token) =>
         token.values.map(
-          (value, key) => `
-						${`${variableName(variant, token.name, key)}: ${value.rem}rem;`}
-					`
+          (value, key) => css`
+            ${`${variableName(variant, token.name, key)}: ${value.rem}rem;`}
+          `
         )
       );
     },
