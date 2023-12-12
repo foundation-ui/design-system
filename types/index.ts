@@ -32,7 +32,20 @@ export enum LuminanceFactorsEnum {
   Lum90 = 0.9,
   Lum100 = 1,
 }
+export enum SizesEnum {
+  XSmall = "xsmall",
+  Small = "small",
+  Medium = "medium",
+  Large = "large",
+  XLarge = "xlarge",
+}
 
+export type TSize =
+  | SizesEnum.XSmall
+  | SizesEnum.Small
+  | SizesEnum.Medium
+  | SizesEnum.Large
+  | SizesEnum.XLarge;
 export type TColorMode =
   | ColorModesEnum.Dark
   | ColorModesEnum.Light
@@ -107,4 +120,8 @@ export interface IQueryProperties {
   source: IDesignTokensLibrary;
   token_category: TDesignTokensVariant;
   query: string;
+}
+
+export interface IReactChildren {
+  children: React.ReactNode;
 }
