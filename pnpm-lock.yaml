@@ -27,6 +27,33 @@ importers:
         specifier: ^5.3.3
         version: 5.3.3
 
+  apps/playground:
+    devDependencies:
+      '@bsw/ds-components':
+        specifier: workspace:^
+        version: link:../../packages/components
+      '@bsw/ds-core':
+        specifier: workspace:^
+        version: link:../../packages/core
+      '@bsw/ds-foundations':
+        specifier: workspace:^
+        version: link:../../packages/foundations
+      '@bsw/ds-tokens':
+        specifier: workspace:^
+        version: link:../../packages/tokens
+      '@types/react':
+        specifier: ^18.2.43
+        version: 18.2.43
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+
   packages/components:
     devDependencies:
       '@types/react':
