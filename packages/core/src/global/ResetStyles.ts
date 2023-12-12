@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "polished";
 
-export const GlobalReset = createGlobalStyle`
+export const ResetStyles = createGlobalStyle`
 
     ${normalize()}
 
