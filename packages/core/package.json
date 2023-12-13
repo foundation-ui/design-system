@@ -15,8 +15,10 @@
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-dom": "*",
+    "@types/styled-components": "*",
     "react": "^16.8 || ^17.0 || ^18.0",
-    "react-dom": "^16.8 || ^17.0 || ^18.0"
+    "react-dom": "^16.8 || ^17.0 || ^18.0",
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

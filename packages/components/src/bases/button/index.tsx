@@ -12,10 +12,8 @@ import { TSize } from "../../../../../types";
  * - Define the hierarchy of buttons with different variants.
  * - Button label must be short and understandable.
  */
-export const Button = (
-  props: { size?: TSize } & React.ComponentPropsWithRef<"button">
-) => {
-  const { size, children, ...restProps } = props;
+export const Button = (props: React.ComponentPropsWithRef<"button">) => {
+  const { children, ...restProps } = props;
 
   return (
     <button
@@ -23,7 +21,6 @@ export const Button = (
       type="button"
       tabIndex={0}
       aria-disabled={props.disabled || "false"}
-      data-size={size}
       {...restProps}
     >
       {children}
@@ -31,9 +28,7 @@ export const Button = (
   );
 };
 Button.displayName = "Button";
-Button.defaultProps = {
-  size: "small",
-};
+Button.defaultProps = {};
 // Button.propTypes = {
 //   size: PropTypes.oneOf(["xsmall", "small", "medium", "large"]),
 //   shape: PropTypes.oneOf(["rounded"]),

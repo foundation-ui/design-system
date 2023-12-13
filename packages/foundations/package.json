@@ -12,6 +12,10 @@
   "keywords": [],
   "author": "Nicolas Nunes",
   "license": "ISC",
+  "peerDependencies": {
+    "@types/styled-components": "*",
+    "styled-components": "^5.0.0"
+  },
   "devDependencies": {
     "@types/styled-components": "^5.1.34",
     "typescript": "^5.3.3",
