@@ -12,14 +12,22 @@
   "keywords": [],
   "author": "Nicolas Nunes",
   "license": "ISC",
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
   "devDependencies": {
-    "@bsw/ds-tokens": "workspace:^",
-    "@bsw/ds-foundations": "workspace:^",
     "@types/react": "^18.2.43",
     "@types/styled-components": "^5.1.34",
     "polished": "^4.2.2",
     "react": "^18.2.0",
     "styled-components": "^6.1.1",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@bsw/ds-tokens": "workspace:^",
+    "@bsw/ds-foundations": "workspace:^"
   }
 }
