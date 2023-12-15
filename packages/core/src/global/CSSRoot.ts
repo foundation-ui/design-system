@@ -11,5 +11,13 @@ export const CSSRoot = createGlobalStyle`
 		${cssVariables.shade}
 		${cssVariables.fontsize}
 		${cssVariables.measurement}
+
+		--breakpoint-mobile: 375px;
+		--breakpoint-mobile-large: 425px;
+		--breakpoint-tablet-lmall: 672px;
+		--breakpoint-tablet: 768px;
+		--breakpoint-tablet-landscape: 1024px;
+		--breakpoint-desktop: 1440px;
+		--breakpoint-deskto-lLarge: 1589px;
 	}
 `;
