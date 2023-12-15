@@ -21,6 +21,8 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
+    "@bsw/ds-tokens": "workspace:^",
+    "@bsw/ds-foundations": "workspace:^",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@types/styled-components": "^5.1.34",

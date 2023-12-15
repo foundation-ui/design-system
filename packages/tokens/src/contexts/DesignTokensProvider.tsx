@@ -1,8 +1,9 @@
-import React, { createContext } from "react";
+import React from "react";
 import { IDesignTokensLibrary } from "../../../../types";
 import { js_design_tokens } from "..";
 
-export const DesignTokensContext = createContext<null | any>(null);
+export const DesignTokensContext = React.createContext<null | any>({});
+export const useDesignTokens = () => React.useContext(DesignTokensContext);
 export const DesignTokensProvider = ({ tokenLibrary, children }: any) => {
   const [designTokensLibrary, setDesignTokensLibrary] =
     React.useState<IDesignTokensLibrary>(tokenLibrary || js_design_tokens);
@@ -10,10 +11,7 @@ export const DesignTokensProvider = ({ tokenLibrary, children }: any) => {
   return (
     <DesignTokensContext.Provider
       value={{
-        library: designTokensLibrary,
-        colors: designTokensLibrary.design_tokens.color,
-        font_sizes: designTokensLibrary.design_tokens.fontsize,
-        measurements: designTokensLibrary.design_tokens.measurement,
+        ...designTokensLibrary.design_tokens,
         setDesignTokensLibrary,
       }}
     >

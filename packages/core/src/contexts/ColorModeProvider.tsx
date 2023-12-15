@@ -1,7 +1,9 @@
-import React, { createContext } from "react";
+import React from "react";
 import { TColorMode, ColorModesEnum } from "../../../../types";
 
-export const ColorModeContext = createContext<null | any>(null);
+export const ColorModeContext = React.createContext<null | any>(null);
+export const useColorMode = () => React.useContext(ColorModeContext);
+
 export const ColorModeProvider = ({ children }: any) => {
   const [colorMode, rawSetColorMode] = React.useState(GetInitialColorMode);
   const setColorMode = (value: TColorMode) => {

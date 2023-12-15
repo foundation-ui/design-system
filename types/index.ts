@@ -5,6 +5,11 @@ export enum ColorModesEnum {
   Light = "light",
   System = "system",
 }
+export enum ColorFormatEnum {
+  Hex = "hex",
+  Rgb = "rgb",
+  Hsl = "hsl",
+}
 export enum ColorVariantEnum {
   Alpha = "alpha",
   Tint = "tint",
@@ -118,8 +123,9 @@ export interface IDesignTokensLibrary {
 }
 export interface IQueryProperties {
   source: IDesignTokensLibrary;
-  token_category: TDesignTokensVariant;
+  token_category: TokenTypesEnum.Color | TokenTypesEnum.Measurement;
   query: string;
+  unit?: ColorFormatEnum.Hex | ColorFormatEnum.Rgb | ColorFormatEnum.Hsl;
 }
 
 export interface IReactChildren {
