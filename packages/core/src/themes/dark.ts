@@ -9,6 +9,11 @@ export const darkTheme = {
         token_category: TokenTypesEnum.Color,
         query: "mono-darkest",
       }),
+      alpha: GetTokenBase({
+        source: js_design_tokens,
+        token_category: TokenTypesEnum.Color,
+        query: "mono-darker",
+      }).alpha,
       contrast: GetTokenBase({
         source: js_design_tokens,
         token_category: TokenTypesEnum.Color,
@@ -21,6 +26,11 @@ export const darkTheme = {
         token_category: TokenTypesEnum.Color,
         query: "mono-light",
       }),
+      alpha: GetTokenBase({
+        source: js_design_tokens,
+        token_category: TokenTypesEnum.Color,
+        query: "mono-light",
+      }).alpha,
       contrast: GetTokenBase({
         source: js_design_tokens,
         token_category: TokenTypesEnum.Color,

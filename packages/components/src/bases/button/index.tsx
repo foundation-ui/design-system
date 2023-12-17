@@ -1,37 +1,48 @@
 import React from "react";
-// import PropTypes from 'prop-types';
-// import { Base } from './styles/Button.styles';
-import { TSize } from "../../../../../types";
 
-/**
- * Buttons are used to initialize an action. Button labels express what action will
- * occur when the user interacts with it.
- *
- * **Best practices:**
- *
- * - Define the hierarchy of buttons with different variants.
- * - Button label must be short and understandable.
- */
-export const Button = (props: React.ComponentPropsWithRef<"button">) => {
-  const { children, ...restProps } = props;
+export enum ButtonVariantEnum {
+  Primary = "primary",
+  Secondary = "secondary",
+  Tertiary = "tertiary",
+  Ghost = "ghost",
+}
+
+export type TButtonVariant =
+  | ButtonVariantEnum.Primary
+  | ButtonVariantEnum.Secondary
+  | ButtonVariantEnum.Tertiary
+  | ButtonVariantEnum.Ghost;
+
+export interface IButton extends React.ComponentPropsWithoutRef<"button"> {
+  name?: string;
+  variant?: TButtonVariant;
+}
+
+export const Button = (props: IButton) => {
+  const { name, variant, children, ...restProps } = props;
+
+  const defaultName = "button";
+  const ariaLabel = `${name || defaultName}-action`;
+  const disabledState = props.disabled || false;
+  const buttonType = props.type || "button";
+
+  const buttonDescription = `A ${buttonType} action named ${ariaLabel}`;
+  const buttonStateDescription = `The action has a disabled state of: ${disabledState}`;
+  const ButtonFullDesc = `${buttonDescription}. ${buttonStateDescription}`;
 
   return (
     <button
       role="button"
-      type="button"
+      type={buttonType}
+      name={name || defaultName}
+      aria-label={ariaLabel}
+      aria-description={ButtonFullDesc}
+      aria-disabled={disabledState}
+      data-variant={variant}
       tabIndex={0}
-      aria-disabled={props.disabled || "false"}
       {...restProps}
     >
       {children}
     </button>
   );
 };
-Button.displayName = "Button";
-Button.defaultProps = {};
-// Button.propTypes = {
-//   size: PropTypes.oneOf(["xsmall", "small", "medium", "large"]),
-//   shape: PropTypes.oneOf(["rounded"]),
-//   disabled: PropTypes.bool,
-//   onClick: PropTypes.func,
-// };
