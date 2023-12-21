@@ -54,6 +54,9 @@ importers:
       '@types/jest':
         specifier: ^29.5.11
         version: 29.5.11
+      '@types/jest-axe':
+        specifier: ^3.5.9
+        version: 3.5.9
       '@types/react':
         specifier: ^18.2.43
         version: 18.2.43
@@ -66,6 +69,9 @@ importers:
       jest:
         specifier: ^29.7.0
         version: 29.7.0
+      jest-axe:
+        specifier: ^8.0.0
+        version: 8.0.0
       jest-environment-jsdom:
         specifier: ^29.7.0
         version: 29.7.0
@@ -4051,6 +4057,13 @@ packages:
       '@types/istanbul-lib-report': 3.0.3
     dev: true
 
+  /@types/jest-axe@3.5.9:
+    resolution: {integrity: sha512-z98CzR0yVDalCEuhGXXO4/zN4HHuSebAukXDjTLJyjEAgoUf1H1i+sr7SUB/mz8CRS/03/XChsx0dcLjHkndoQ==}
+    dependencies:
+      '@types/jest': 29.5.11
+      axe-core: 3.5.6
+    dev: true
+
   /@types/jest@29.5.11:
     resolution: {integrity: sha512-S2mHmYIVe13vrm6q4kN6fLYYAka15ALQki/vgDC3mIukEOx8WJlv0kQPM+d4w8Gp6u0uSdKND04IlTXBv0rwnQ==}
     dependencies:
@@ -4494,6 +4507,16 @@ packages:
   /available-typed-arrays@1.0.5:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /axe-core@3.5.6:
+    resolution: {integrity: sha512-LEUDjgmdJoA3LqklSTwKYqkjcZ4HKc4ddIYGSAiSkr46NTjzg2L9RNB+lekO9P7Dlpa87+hBtzc2Fzn/+GUWMQ==}
+    engines: {node: '>=4'}
+    dev: true
+
+  /axe-core@4.7.2:
+    resolution: {integrity: sha512-zIURGIS1E1Q4pcrMjp+nnEh+16G56eG/MUllJH8yEvw7asDo7Ac9uhC9KIH5jzpITueEZolfYglnCGIuSBz39g==}
+    engines: {node: '>=4'}
     dev: true
 
   /babel-core@7.0.0-bridge.0(@babel/core@7.23.6):
@@ -6552,6 +6575,16 @@ packages:
       minimatch: 3.1.2
     dev: true
 
+  /jest-axe@8.0.0:
+    resolution: {integrity: sha512-4kNcNn7J0jPO4jANEYZOHeQ/tSBvkXS+MxTbX1CKbXGd0+ZbRGDn/v/8IYWI/MmYX15iLVyYRnRev9X3ksePWA==}
+    engines: {node: '>= 14.0.0'}
+    dependencies:
+      axe-core: 4.7.2
+      chalk: 4.1.2
+      jest-matcher-utils: 29.2.2
+      lodash.merge: 4.6.2
+    dev: true
+
   /jest-changed-files@29.7.0:
     resolution: {integrity: sha512-fEArFiwf1BpQ+4bXSprcDc3/x4HSzL4al2tozwVpDFpsxALjLYdyiIK4e5Vz66GQJIbXJ82+35PtysofptNX2w==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -6749,6 +6782,16 @@ packages:
     resolution: {integrity: sha512-kYA8IJcSYtST2BY9I+SMC32nDpBT3J2NvWJx8+JCuCdl/CR1I4EKUJROiP8XtCcxqgTTBGJNdbB1A8XRKbTetw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
+      jest-get-type: 29.6.3
+      pretty-format: 29.7.0
+    dev: true
+
+  /jest-matcher-utils@29.2.2:
+    resolution: {integrity: sha512-4DkJ1sDPT+UX2MR7Y3od6KtvRi9Im1ZGLGgdLFLm4lPexbTaCgJW5NN3IOXlQHF7NSHY/VHhflQ+WoKtD/vyCw==}
+    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    dependencies:
+      chalk: 4.1.2
+      jest-diff: 29.7.0
       jest-get-type: 29.6.3
       pretty-format: 29.7.0
     dev: true
@@ -7175,6 +7218,10 @@ packages:
 
   /lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
+    dev: true
+
+  /lodash.merge@4.6.2:
+    resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
 
   /lodash.sortby@4.7.0:
