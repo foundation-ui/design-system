@@ -14,11 +14,14 @@ export const ResetStyles = createGlobalStyle`
     html {
         box-sizing: border-box;
         font-size: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
     }
 
     body {
         margin: 0;
-        font-family: sans-serif;
+        font-family: 'Helvetica Neue', system-ui, -apple-system, sans-serif;
     }
 
     h1, h2, h3, h4, h5, h6 {
