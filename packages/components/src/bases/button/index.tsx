@@ -13,12 +13,13 @@ export type TButtonVariant =
   | ButtonVariantEnum.Tertiary
   | ButtonVariantEnum.Ghost;
 
-export interface IButton extends React.ComponentPropsWithoutRef<"button"> {
+export interface IButtonProperties
+  extends React.ComponentPropsWithoutRef<"button"> {
   name?: string;
   variant?: TButtonVariant;
 }
 
-export const Button = (props: IButton) => {
+export const Button = (props: IButtonProperties) => {
   const { name, variant, children, ...restProps } = props;
 
   const defaultName = "button";
