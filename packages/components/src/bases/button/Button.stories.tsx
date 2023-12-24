@@ -3,7 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Button, ButtonVariantEnum } from ".";
-import { ButtonDefaultStyles, ButtonVariantsStyles } from "./styles";
+import { DefaultButton, StyledButton } from "./styles";
 
 const meta = {
   title: "Components/Bases/Button",
@@ -15,15 +15,6 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const DefaultButton = styled(Button)`
-  margin: var(--measurement-medium-60);
-`;
-const StyledButton = styled(Button)`
-  margin: var(--measurement-medium-60);
-  ${ButtonDefaultStyles}
-  ${ButtonVariantsStyles}
-`;
 
 export const Default: Story = {
   args: {
@@ -37,7 +28,7 @@ export const DefaultStyled: Story = {
   args: {
     name: "demo",
     disabled: false,
-    children: "",
+    children: "Sample button",
     variant: ButtonVariantEnum.Primary,
   },
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrapper, StatusWrapper } from "./styles";
+import { AvatarWrapper, StatusWrapper } from "./styles";
 
 export enum AvataSizeEnum {
   Small = "small",
@@ -32,20 +32,24 @@ export interface IAvatarProperties
 }
 
 export const Avatar = (props: IAvatarProperties) => {
-  const { size, status, src, alt, ...restProps } = props;
+  const { size, status, src, alt, children, ...restProps } = props;
 
   return (
-    <Wrapper
+    <AvatarWrapper
       data-size={size || AvataSizeEnum.Small}
+      data-status={status || AvataStatusEnum.Offline}
       aria-label={props["aria-label"] || `${size}-user-avatar`}
       {...restProps}
     >
-      {src && <img alt={alt || `${size}-user-avatar-image`} src={src} />}
+      {!children && src && (
+        <img alt={alt || `${size}-user-avatar-image`} src={src} />
+      )}
 
+      {children}
       {status && (
         <StatusWrapper
           role="img"
-          aria-label="user-avatar-status"
+          aria-label={`${size}-user-avatar-status`}
           aria-labelledby="title desc"
           data-status={status || AvataStatusEnum.Offline}
           height="16"
@@ -56,6 +60,6 @@ export const Avatar = (props: IAvatarProperties) => {
           <circle role="presentation" cx="8" cy="8" r="6" />
         </StatusWrapper>
       )}
-    </Wrapper>
+    </AvatarWrapper>
   );
 };

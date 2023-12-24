@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "../";
 import { render, fireEvent, screen, act } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
+import { Button, ButtonVariantEnum } from "../";
+import { StyledButton } from "../styles";
 import "@testing-library/jest-dom";
 
 expect.extend(toHaveNoViolations);
@@ -23,7 +24,6 @@ describe("Button", () => {
       expect(handleClick).toHaveBeenCalledTimes(1);
     });
   });
-
   it("Renders as Default with accessibility definition", async () => {
     render(
       <Button name="test" onClick={handleClick}>
@@ -44,5 +44,36 @@ describe("Button", () => {
       "aria-description",
       "A button action named test-action. The action has a disabled state of: false"
     );
+  });
+  it("Renders variants without accessibility violation", async () => {
+    const ButtonsVariants = [
+      ButtonVariantEnum.Primary,
+      ButtonVariantEnum.Secondary,
+      ButtonVariantEnum.Tertiary,
+      ButtonVariantEnum.Ghost,
+    ];
+
+    const { container } = render(
+      <React.Fragment>
+        {ButtonsVariants.map((variant) => (
+          <StyledButton
+            key={variant}
+            name={`test-styled-${variant}`}
+            variant={variant}
+          >
+            {variant}
+          </StyledButton>
+        ))}
+      </React.Fragment>
+    );
+
+    const ComponentContainer = await axe(container);
+    expect(ComponentContainer).toHaveNoViolations();
+
+    ButtonsVariants.map((variant) => {
+      expect(
+        screen.getByLabelText(`test-styled-${variant}-action`)
+      ).toHaveAttribute("data-variant", variant);
+    });
   });
 });

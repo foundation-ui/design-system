@@ -33,21 +33,22 @@ export const AvatarStatusesStyles = css`
   }
 
   &[data-status="offline"] {
-    fill: var(--color-mono-dark);
+    fill: var(--color-mono-white);
     stroke: var(--color-mono-whitest);
   }
 `;
 
-export const Wrapper = styled.div`
+export const AvatarWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: black;
+  background-color: var(--color-mono-white);
   position: relative;
   border-radius: 100%;
 
   img {
     border-radius: 100%;
+    width: inherit;
   }
 
   ${AvatarSizesStyles}

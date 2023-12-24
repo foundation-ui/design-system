@@ -1,4 +1,5 @@
-import { css } from "styled-components";
+import styled, { css } from "styled-components";
+import { Button } from "..";
 
 export const ButtonDefaultStyles = css`
   cursor: pointer;
@@ -41,7 +42,6 @@ export const ButtonDefaultStyles = css`
     opacity: 0.6;
   }
 `;
-
 export const ButtonVariantsStyles = css`
   &[data-variant="primary"] {
     color: var(--alpha-mono-light-90);
@@ -92,4 +92,13 @@ export const ButtonVariantsStyles = css`
       color: var(--color-mono-dark);
     }
   }
+`;
+
+export const DefaultButton = styled(Button)`
+  margin: var(--measurement-medium-60);
+`;
+export const StyledButton = styled(Button)`
+  margin: var(--measurement-medium-60);
+  ${ButtonDefaultStyles}
+  ${ButtonVariantsStyles}
 `;
