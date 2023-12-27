@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
-import { Button } from "..";
 
-export const ButtonDefaultStyles = css`
+const ButtonDefaultStyles = css`
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -9,6 +8,9 @@ export const ButtonDefaultStyles = css`
 
   font-size: var(--fontsize-medium-20);
   line-height: 1.1;
+  letter-spacing: calc(
+    var(--fontsize-small-10) - ((var(--fontsize-small-10) * 1.066))
+  );
 
   border: var(--measurement-small-10) solid transparent;
   border-radius: var(--measurement-medium-30);
@@ -42,15 +44,16 @@ export const ButtonDefaultStyles = css`
     opacity: 0.6;
   }
 `;
-export const ButtonVariantsStyles = css`
+const ButtonVariantsStyles = css`
   &[data-variant="primary"] {
     color: var(--alpha-mono-light-90);
-    background-color: var(--color-mono-dark);
+    background-color: var(--color-mono-darker);
 
     &:hover,
     &:focus,
     &:active {
-      color: var(--color-mono-light);
+      color: var(--color-mono-whitest);
+      background-color: var(--color-mono-darkest);
     }
   }
 
@@ -94,11 +97,9 @@ export const ButtonVariantsStyles = css`
   }
 `;
 
-export const DefaultButton = styled(Button)`
-  margin: var(--measurement-medium-60);
-`;
-export const StyledButton = styled(Button)`
-  margin: var(--measurement-medium-60);
-  ${ButtonDefaultStyles}
-  ${ButtonVariantsStyles}
+export const ButtonWrapper = styled.button`
+  &[data-raw="false"] {
+    ${ButtonDefaultStyles}
+    ${ButtonVariantsStyles}
+  }
 `;

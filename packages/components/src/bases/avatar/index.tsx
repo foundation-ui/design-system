@@ -1,5 +1,6 @@
 import React from "react";
 import { AvatarWrapper, StatusWrapper } from "./styles";
+import { IComponentStyling } from "../../../../../types";
 
 export enum AvataSizeEnum {
   Small = "small",
@@ -24,7 +25,8 @@ export type TAvatarStatus =
   | AvataStatusEnum.Online;
 
 export interface IAvatarProperties
-  extends React.HTMLAttributes<HTMLDivElement> {
+  extends IComponentStyling,
+    React.HTMLAttributes<HTMLDivElement> {
   src?: string;
   alt?: string;
   size?: TAvatarSize;
@@ -32,10 +34,11 @@ export interface IAvatarProperties
 }
 
 export const Avatar = (props: IAvatarProperties) => {
-  const { size, status, src, alt, children, ...restProps } = props;
+  const { raw, size, status, src, alt, children, ...restProps } = props;
 
   return (
     <AvatarWrapper
+      data-raw={raw}
       data-size={size || AvataSizeEnum.Small}
       data-status={status || AvataStatusEnum.Offline}
       aria-label={props["aria-label"] || `${size}-user-avatar`}
@@ -62,4 +65,7 @@ export const Avatar = (props: IAvatarProperties) => {
       )}
     </AvatarWrapper>
   );
+};
+Avatar.defaultProps = {
+  raw: false,
 };

@@ -1,4 +1,6 @@
 import React from "react";
+import { ButtonWrapper } from "./styles";
+import { IComponentStyling } from "../../../../../types";
 
 export enum ButtonVariantEnum {
   Primary = "primary",
@@ -14,13 +16,14 @@ export type TButtonVariant =
   | ButtonVariantEnum.Ghost;
 
 export interface IButtonProperties
-  extends React.ComponentPropsWithoutRef<"button"> {
+  extends IComponentStyling,
+    React.ComponentPropsWithoutRef<"button"> {
   name?: string;
   variant?: TButtonVariant;
 }
 
 export const Button = (props: IButtonProperties) => {
-  const { name, variant, children, ...restProps } = props;
+  const { name, variant, raw, children, ...restProps } = props;
 
   const defaultName = "button";
   const ariaLabel = `${name || defaultName}-action`;
@@ -32,7 +35,7 @@ export const Button = (props: IButtonProperties) => {
   const ButtonFullDesc = `${buttonDescription}. ${buttonStateDescription}`;
 
   return (
-    <button
+    <ButtonWrapper
       role="button"
       type={buttonType}
       name={name || defaultName}
@@ -40,10 +43,14 @@ export const Button = (props: IButtonProperties) => {
       aria-description={ButtonFullDesc}
       aria-disabled={disabledState}
       data-variant={variant}
+      data-raw={raw}
       tabIndex={0}
       {...restProps}
     >
       {children}
-    </button>
+    </ButtonWrapper>
   );
+};
+Button.defaultProps = {
+  raw: false,
 };

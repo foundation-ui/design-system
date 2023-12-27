@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const AvatarSizesStyles = css`
+const AvatarSizesStyles = css`
   &[data-size="small"] {
     width: var(--measurement-large-10);
     height: var(--measurement-large-10);
@@ -16,7 +16,7 @@ export const AvatarSizesStyles = css`
     height: var(--measurement-large-20);
   }
 `;
-export const AvatarStatusesStyles = css`
+const AvatarStatusesStyles = css`
   &[data-status="online"] {
     fill: var(--shade-green-10);
     stroke: var(--shade-green-20);
@@ -39,19 +39,23 @@ export const AvatarStatusesStyles = css`
 `;
 
 export const AvatarWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-mono-white);
-  position: relative;
-  border-radius: 100%;
-
-  img {
+  &[data-raw="false"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-mono-white);
     border-radius: 100%;
-    width: inherit;
+
+    img {
+      border-radius: 100%;
+    }
   }
 
+  position: relative;
   ${AvatarSizesStyles}
+  img {
+    width: inherit;
+  }
 `;
 export const StatusWrapper = styled.svg`
   --status-position: calc(

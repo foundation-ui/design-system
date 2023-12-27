@@ -1,3 +1,5 @@
+export * from "./primitives";
+
 export enum ColorModesEnum {
   Darken = "darken",
   Lighten = "lighten",
@@ -126,8 +128,4 @@ export interface IQueryProperties {
   token_category: TokenTypesEnum.Color | TokenTypesEnum.Measurement;
   query: string;
   unit?: ColorFormatEnum.Hex | ColorFormatEnum.Rgb | ColorFormatEnum.Hsl;
-}
-
-export interface IReactChildren {
-  children: React.ReactNode;
 }
