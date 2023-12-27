@@ -1,29 +1,36 @@
 import React, { Children, useCallback } from "react";
-import { TabsProvider, useTabs } from "./hooks/useTabs";
+import { TabsProvider, useTabs } from "./hooks";
 import { IReactChildren } from "../../../../../types";
-// import {
-//   ITabsContext,
-//   ITabsComposition,
-//   ITabsTrigger,
-//   ITabsContent,
-// } from "./interfaces/Tabs.interface";
-import { Button } from "../button";
+import { Button, IButtonProperties } from "../button";
+
+export interface ITabsProperties extends React.ComponentPropsWithoutRef<"div"> {
+  value?: string;
+  defaultOpen?: string;
+}
 
 const TabsRoot = ({ children }: IReactChildren) => {
   return <TabsProvider>{children}</TabsProvider>;
 };
-TabsRoot.displayName = "Tabs.Root";
 
-const Tabs: React.FC & any = (props: any) => {
-  const { children, ...restProps } = props;
-  const tabs = useTabs();
+const Tabs = (props: ITabsProperties) => {
+  const { defaultOpen, children, ...restProps } = props;
+
+  const tabsContext = useTabs();
+  const { methods } = tabsContext;
+  const { applyValue } = methods;
+
   const childArray = Children.toArray(children);
   const firstChild = childArray[0];
 
   React.useEffect(() => {
     if (React.isValidElement<{ value: string }>(firstChild)) {
-      childArray.length > 0 && tabs.methods.applyValue(firstChild.props.value);
+      if (childArray.length > 0 && applyValue)
+        applyValue(firstChild.props.value);
     }
+  }, []);
+
+  React.useEffect(() => {
+    if (defaultOpen && applyValue) applyValue(defaultOpen);
   }, []);
 
   return (
@@ -32,37 +39,33 @@ const Tabs: React.FC & any = (props: any) => {
     </div>
   );
 };
-Tabs.displayName = "Tabs";
 
-const TabsTrigger = (props: any) => {
-  const { value, disabled, onClickCallback, children, ...restProps } = props;
-  const tabs = useTabs();
-  const triggerId = tabs.methods.getTabsId(value, "trigger");
-  const contentId = tabs.methods.getTabsId(value, "content");
-  const hasSameValueAsContext = value === tabs.states.value;
+const TabsTrigger = (props: IButtonProperties) => {
+  const { value, onClick, children, ...restProps } = props;
 
-  const handleCallback = useCallback(
-    () => onClickCallback && onClickCallback(),
-    []
-  );
+  const tabsContext = useTabs();
+  const { states, methods } = tabsContext;
+  const { applyValue, getTabsId } = methods;
 
-  const handleClick = () => {
-    if (!disabled) {
-      handleCallback();
-      tabs.methods.applyValue(value);
-    }
+  const triggerId = getTabsId && getTabsId({ value, type: "trigger" });
+  const contentId = getTabsId && getTabsId({ value, type: "content" });
+
+  const hasSameValueAsContext = value === states.value;
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (applyValue) applyValue(value);
+    if (onClick) onClick(event);
   };
 
   return (
     <Button
-      id={triggerId}
-      value={value}
       type="button"
       role="tab"
-      disabled={disabled}
+      id={String(triggerId)}
+      value={value}
       onClick={handleClick}
       aria-selected={hasSameValueAsContext}
-      aria-controls={contentId}
+      data-controls={contentId}
       data-state={hasSameValueAsContext ? "active" : "inactive"}
       {...restProps}
     >
@@ -70,33 +73,33 @@ const TabsTrigger = (props: any) => {
     </Button>
   );
 };
-TabsTrigger.displayName = "Tabs.Trigger";
-TabsTrigger.defaultProps = {
-  disabled: false,
-};
 
-const TabsContent = (props: any) => {
+const TabsContent = (props: ITabsProperties) => {
   const { value, children, ...restProps } = props;
-  const tabs = useTabs();
-  const triggerId = tabs.methods.getTabsId(value, "trigger");
-  const contentId = tabs.methods.getTabsId(value, "content");
-  const hasSameValueAsContext = value === tabs.states.value;
+
+  const tabsContext = useTabs();
+  const { states, methods } = tabsContext;
+  const { getTabsId } = methods;
+
+  const triggerId = getTabsId && getTabsId({ value, type: "trigger" });
+  const contentId = getTabsId && getTabsId({ value, type: "content" });
+
+  const hasSameValueAsContext = value === states.value;
 
   return (
     <div
-      id={contentId}
       tabIndex={0}
       role="tabpanel"
-      value={value}
-      aria-labelledby={triggerId}
+      id={String(contentId)}
+      data-value={value}
       data-state={hasSameValueAsContext ? "active" : "inactive"}
+      aria-labelledby={triggerId || restProps["aria-labelledby"]}
       {...restProps}
     >
       {hasSameValueAsContext && children}
     </div>
   );
 };
-TabsContent.displayName = "Tabs.Content";
 
 Tabs.Root = TabsRoot;
 Tabs.Trigger = TabsTrigger;

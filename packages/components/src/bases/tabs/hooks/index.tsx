@@ -1,7 +1,12 @@
 import React, { createContext, useContext, useState } from "react";
-import { IReactChildren } from "../../../../../../types";
+import { IReactChildren, IComponentAPI } from "../../../../../../types";
 
-const TabsContext = createContext<object | any>({});
+const defaultComponentAPI = {
+  id: "",
+  states: {},
+  methods: {},
+};
+const TabsContext = createContext<IComponentAPI>(defaultComponentAPI);
 export const useTabs = () => useContext(TabsContext);
 
 export const TabsProvider = ({ children }: IReactChildren): JSX.Element => {
@@ -12,17 +17,18 @@ export const TabsProvider = ({ children }: IReactChildren): JSX.Element => {
   );
 };
 
-function useTabsProvider(): object {
-  const [value, setValue] = useState<string | void>();
+function useTabsProvider(): IComponentAPI {
+  const [value, setValue] = useState<string | null>(null);
   const tabsId = React.useId();
 
   return {
+    id: tabsId,
     states: {
       value: value,
     },
     methods: {
       applyValue: (value: string): string | void => setValue(value),
-      getTabsId: (value: string, type: "trigger" | "content"): string =>
+      getTabsId: ({ value, type }: Record<string, string>): string =>
         `${tabsId}-${type}-${value}`,
     },
   };

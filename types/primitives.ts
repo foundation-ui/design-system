@@ -1,4 +1,4 @@
-export type TComponentAPI = boolean | string | number;
+export type TComponentAPI = boolean | string | number | null;
 
 export interface IReactChildren {
   children: React.ReactNode;

@@ -18,7 +18,6 @@ export type TButtonVariant =
 export interface IButtonProperties
   extends IComponentStyling,
     React.ComponentPropsWithoutRef<"button"> {
-  name?: string;
   variant?: TButtonVariant;
 }
 

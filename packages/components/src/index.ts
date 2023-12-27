@@ -12,5 +12,4 @@ export * from "./bases/collapsible";
 export * from "./bases/collapsible/hooks";
 
 export * from "./bases/tabs";
-export * from "./bases/tabs/styles";
-export * from "./bases/tabs/hooks/useTabs";
+export * from "./bases/tabs/hooks";

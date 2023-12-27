@@ -30,7 +30,7 @@ const Checkbox = (props: ICheckboxProperties) => {
   const defaultValue = states.checked ? "checked" : "unchecked";
 
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
-    if (!onClick && toggleChecked) toggleChecked();
+    if (toggleChecked) toggleChecked();
     if (onClick) onClick(event);
   };
 

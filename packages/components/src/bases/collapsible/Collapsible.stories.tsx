@@ -19,12 +19,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Controlled: Story = {
+export const Default: Story = {
   args: {
     defaultOpen: false,
     showFirstChild: true,
     onClick: () => console.log("Click"),
-    children: "Controlled collapsible",
+    children: "Default collapsible",
   },
 
   render: ({ ...args }) => (
@@ -35,33 +35,6 @@ export const Controlled: Story = {
             variant={ButtonVariantEnum.Ghost}
             onClick={() => args.onClick}
           >
-            {args.children}
-          </Collapsible.Trigger>
-          <Collapsible.Content
-            defaultOpen={args.defaultOpen}
-            showFirstChild={args.showFirstChild}
-          >
-            <small>Item 1&nbsp;</small>
-            <small>Item 2&nbsp;</small>
-            <small>Item 3</small>
-          </Collapsible.Content>
-        </Collapsible>
-      </Collapsible.Root>
-    </Wrapper>
-  ),
-};
-export const Uncontrolled: Story = {
-  args: {
-    defaultOpen: false,
-    showFirstChild: true,
-    children: "Uncontrolled collapsible",
-  },
-
-  render: ({ ...args }) => (
-    <Wrapper>
-      <Collapsible.Root>
-        <Collapsible>
-          <Collapsible.Trigger variant={ButtonVariantEnum.Ghost}>
             {args.children}
           </Collapsible.Trigger>
           <Collapsible.Content

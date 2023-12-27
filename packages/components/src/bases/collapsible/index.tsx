@@ -38,7 +38,7 @@ const CollapsibleTrigger = (props: IButtonProperties) => {
   const { toggleCollapsible } = methods;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (!onClick && toggleCollapsible) toggleCollapsible();
+    if (toggleCollapsible) toggleCollapsible();
     if (onClick) onClick(event);
   };
 
