@@ -1,24 +1,30 @@
 import React, { useState, createContext, useContext } from "react";
-import { IReactChildren } from "../../../../../../types";
+import { IReactChildren, IComponentAPI } from "../../../../../../types";
 
-const CollapsibleContext = createContext<object | any>({});
+const defaultComponentAPI = {
+  id: "",
+  states: {},
+  methods: {},
+};
+const CollapsibleContext = createContext<IComponentAPI>(defaultComponentAPI);
 export const useCollapsible = () => useContext(CollapsibleContext);
+
 export const CollapsibleProvider = ({
   children,
 }: IReactChildren): JSX.Element => {
-  const _context = useCollapsibleProvider();
+  const context = useCollapsibleProvider();
 
   return (
-    <CollapsibleContext.Provider value={_context}>
+    <CollapsibleContext.Provider value={context}>
       {children}
     </CollapsibleContext.Provider>
   );
 };
 
-function useCollapsibleProvider(): object {
-  const id = React.useId();
+function useCollapsibleProvider(): IComponentAPI {
   const [expanded, setExpanded] = useState<boolean>(false);
   const [defaultOpen, setDefaultOpen] = useState<boolean>(false);
+  const collapsibleId = React.useId();
 
   const toggleCollapsible = () => {
     setExpanded(!expanded);
@@ -31,7 +37,7 @@ function useCollapsibleProvider(): object {
   };
 
   return {
-    id,
+    id: collapsibleId,
     states: {
       expanded,
       defaultOpen,

@@ -1,51 +1,53 @@
-import React, { Children, useCallback } from "react";
-import { CollapsibleProvider, useCollapsible } from "./hooks/useCollapsible";
-import { applyDataState } from "../../utils";
-import { Button } from "../../";
+import React from "react";
+import { CollapsibleProvider, useCollapsible } from "./hooks";
+import { Button, IButtonProperties } from "../../";
+import { IReactChildren } from "../../../../../types";
 
-const CollapsibleRoot = ({
-  children,
-}: React.ComponentPropsWithoutRef<"div">) => {
+export interface ICollapsibleProperties
+  extends React.ComponentPropsWithoutRef<"div"> {
+  defaultOpen?: boolean;
+  showFirstChild?: boolean;
+}
+
+const applyDataState = (condition: boolean): string | void =>
+  condition ? "open" : "closed";
+
+const CollapsibleRoot = ({ children }: IReactChildren) => {
   return <CollapsibleProvider>{children}</CollapsibleProvider>;
 };
-CollapsibleRoot.displayName = "Collapsible.Root";
 
-const Collapsible: React.FC & any = (
-  props: React.ComponentPropsWithoutRef<"div">
-) => {
+const Collapsible = (props: ICollapsibleProperties) => {
   const { children, ...restProps } = props;
-  const collapsible = useCollapsible();
+  const collapsibleContext = useCollapsible();
+
   return (
     <div
-      data-state={applyDataState(collapsible.states.expanded)}
+      data-state={applyDataState(Boolean(collapsibleContext.states.expanded))}
       {...restProps}
     >
       {children}
     </div>
   );
 };
-Collapsible.displayName = "Collapsible";
 
-const CollapsibleTrigger = (props: any) => {
-  const { children, disabled, onClickCallback, ...restProps } = props;
-  const collapsible = useCollapsible();
+const CollapsibleTrigger = (props: IButtonProperties) => {
+  const { children, disabled, onClick, ...restProps } = props;
 
-  const handleClickCallback = useCallback(
-    () => onClickCallback && onClickCallback(),
-    []
-  );
-  const handleClick = () => {
-    collapsible.methods.toggleCollapsible();
-    handleClickCallback();
+  const collapsibleContext = useCollapsible();
+  const { id, states, methods } = collapsibleContext;
+  const { toggleCollapsible } = methods;
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (!onClick && toggleCollapsible) toggleCollapsible();
+    if (onClick) onClick(event);
   };
 
   return (
     <Button
       disabled={disabled}
-      aria-expanded={collapsible.states.expanded}
-      aria-controls={collapsible.id}
-      data-state={applyDataState(collapsible.states.expanded)}
-      data-disabled={disabled}
+      aria-controls={id}
+      data-state={applyDataState(Boolean(states.expanded))}
+      data-expanded={states.expanded}
       onClick={handleClick}
       {...restProps}
     >
@@ -53,44 +55,34 @@ const CollapsibleTrigger = (props: any) => {
     </Button>
   );
 };
-CollapsibleTrigger.displayName = "Collapsible.Trigger";
-CollapsibleRoot.defaultProps = {
-  disabled: false,
-};
 
-const CollapsibleContent = (props: any) => {
+const CollapsibleContent = (props: ICollapsibleProperties) => {
   const { defaultOpen, showFirstChild, children, ...restProps } = props;
-  const collapsible = useCollapsible();
-  const childArray = Children.toArray(children);
-  const displayChildren =
-    collapsible.states.expanded || collapsible.states.defaultOpen;
+
+  const collapsibleContext = useCollapsible();
+  const { id, states, methods } = collapsibleContext;
+  const { applyDefaultOpen } = methods;
+
+  const childArray = React.Children.toArray(children);
+  const displayChildren = states.expanded || states.defaultOpen;
+
   const displayFirstChild =
-    !defaultOpen &&
-    showFirstChild &&
-    childArray.length > 1 &&
-    !collapsible.states.expanded;
+    showFirstChild && childArray.length > 1 && !states.expanded;
 
   React.useEffect(() => {
-    const applyDefaultOpen = async () =>
-      defaultOpen && collapsible.methods.applyDefaultOpen();
-    applyDefaultOpen();
+    if (defaultOpen && applyDefaultOpen) applyDefaultOpen();
   }, []);
 
   return (
     <div
-      id={collapsible.id}
-      data-state={applyDataState(collapsible.states.expanded)}
+      id={id}
+      data-state={applyDataState(Boolean(states.expanded))}
       {...restProps}
     >
       {displayFirstChild && childArray[0]}
       {displayChildren && children}
     </div>
   );
-};
-CollapsibleContent.displayName = "Collapsible.Content";
-CollapsibleContent.defaultProps = {
-  defaultOpen: false,
-  showFirstChild: true,
 };
 
 Collapsible.Root = CollapsibleRoot;

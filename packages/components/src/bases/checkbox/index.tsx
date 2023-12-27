@@ -30,13 +30,13 @@ const Checkbox = (props: ICheckboxProperties) => {
   const defaultValue = states.checked ? "checked" : "unchecked";
 
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
-    if (toggleChecked) toggleChecked();
+    if (!onClick && toggleChecked) toggleChecked();
     if (onClick) onClick(event);
   };
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (defaultChecked && applyChecked) applyChecked(defaultChecked);
-  }, [defaultChecked]);
+  }, []);
 
   return (
     <CheckboxWrapper role="checkbox" data-raw={raw} data-state={defaultValue}>

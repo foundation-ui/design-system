@@ -24,7 +24,7 @@ export const CheckboxProvider = ({ children }: IReactChildren): JSX.Element => {
 };
 
 function useCheckboxProvider(): IComponentAPI {
-  const [checked, setChecked] = useState<TComponentAPI>(false);
+  const [checked, setChecked] = useState<boolean>(false);
   const checkboxId = React.useId();
 
   return {
@@ -34,7 +34,7 @@ function useCheckboxProvider(): IComponentAPI {
     },
     methods: {
       toggleChecked: () => setChecked(!checked),
-      applyChecked: (state: TComponentAPI) => setChecked(state),
+      applyChecked: (state: TComponentAPI) => setChecked(Boolean(state)),
     },
   };
 }
