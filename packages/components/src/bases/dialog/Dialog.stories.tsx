@@ -26,7 +26,10 @@ export const Default = {
     <React.Fragment>
       <div id="portal" />
       <Dialog.Root>
-        <Dialog.Trigger onClick={() => console.log("Trigger clicked")}>
+        <Dialog.Trigger
+          variant={ButtonVariantEnum.Primary}
+          onClick={() => console.log("Trigger clicked")}
+        >
           Default Dialog
         </Dialog.Trigger>
 
