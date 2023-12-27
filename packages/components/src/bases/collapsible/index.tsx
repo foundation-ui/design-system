@@ -1,6 +1,7 @@
 import React from "react";
 import { CollapsibleProvider, useCollapsible } from "./hooks";
 import { Button, IButtonProperties } from "../../";
+import { applyDataState } from "../../utils";
 import { IReactChildren } from "../../../../../types";
 
 export interface ICollapsibleProperties
@@ -8,9 +9,6 @@ export interface ICollapsibleProperties
   defaultOpen?: boolean;
   showFirstChild?: boolean;
 }
-
-const applyDataState = (condition: boolean): string | void =>
-  condition ? "open" : "closed";
 
 const CollapsibleRoot = ({ children }: IReactChildren) => {
   return <CollapsibleProvider>{children}</CollapsibleProvider>;

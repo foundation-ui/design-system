@@ -39,7 +39,11 @@ const Checkbox = (props: ICheckboxProperties) => {
   }, []);
 
   return (
-    <CheckboxWrapper role="checkbox" data-raw={raw} data-state={defaultValue}>
+    <CheckboxWrapper
+      role="checkbox"
+      data-raw={Boolean(raw)}
+      data-state={defaultValue}
+    >
       <NativeInput
         type="checkbox"
         tabIndex={0}
@@ -52,15 +56,12 @@ const Checkbox = (props: ICheckboxProperties) => {
         aria-disabled={disabled}
         aria-required={required}
         data-state={defaultValue}
-        data-raw={raw}
+        data-raw={Boolean(raw)}
         {...restProps}
       />
       {children}
     </CheckboxWrapper>
   );
-};
-Checkbox.defaultProps = {
-  raw: false,
 };
 
 const CheckboxIndicator = (props: React.ComponentPropsWithoutRef<"span">) => {

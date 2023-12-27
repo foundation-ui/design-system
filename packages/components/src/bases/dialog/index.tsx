@@ -1,159 +1,166 @@
-/* eslint-disable react/jsx-no-useless-fragment */
-import React, { useState, useCallback } from "react";
-// import ReactDOM from "react-dom";
-// import { useKeyPress } from "../../hooks";
+import React from "react";
+import ReactDOM from "react-dom";
+import { useDialog, DialogProvider } from "./hooks";
+import { Button, IButtonProperties } from "../button";
+import { Overlay, DialogWrapper, Menu } from "./styles";
 import { applyDataState } from "../../utils";
-// import {
-//   IDialog,
-//   IDialogComposition,
-//   IDialogMenu,
-//   IDialogOverlay,
-//   IDialogTrigger,
-//   IDialogControl,
-//   IDialogPortal,
-// } from "./interfaces/Dialog.interface";
-import { useDialog, DialogProvider } from "./hooks/useDialog";
-// import { Overlay, Body, Menu } from "./styles/Dialog.styles";
-import { Button } from "../button";
+import { IComponentStyling } from "../../../../../types";
+
+export interface IDialogPortalProperties
+  extends React.ComponentPropsWithoutRef<any> {
+  container: string;
+}
+export interface IDialogOverlayProperties
+  extends IComponentStyling,
+    React.ComponentPropsWithoutRef<"div"> {
+  exitOnInteraction?: boolean;
+}
+export interface IDialogItemProperties
+  extends IComponentStyling,
+    React.ComponentPropsWithoutRef<any> {}
 
 const DialogRoot = ({ children }: React.ComponentPropsWithRef<"div">) => {
   return <DialogProvider>{children}</DialogProvider>;
 };
-DialogRoot.displayName = "Dialog.Root";
 
-const DialogPortal = ({ container, children }: any) => {
-  const [hasMounted, setHasMounted] = useState<boolean>(false);
-  //   const PortalRoot = document.querySelector(`#${container}`)!;
+const DialogPortal = (props: IDialogPortalProperties) => {
+  const { container, children } = props;
+
+  const [hasMounted, setHasMounted] = React.useState<boolean>(false);
+  const PortalRoot = document.querySelector(`#${container}`)!;
 
   React.useEffect(() => setHasMounted(true), []);
 
   if (!hasMounted) return null;
-  //   return ReactDOM.createPortal(children, PortalRoot);
+  return ReactDOM.createPortal(children, PortalRoot);
 };
-DialogPortal.displayName = "Dialog.Portal";
 
-const Dialog: React.FC<any> & any = (props: any) => {
-  const { open, keyboardInteraction = true, children, ...restProps } = props;
-  const dialog = useDialog();
-  const triggerId = dialog.methods.getDialogId("trigger");
-  const contentId = dialog.methods.getDialogId("content");
-  //   const EscapeKeyPressed = useKeyPress("Escape");
+const Dialog = (props: IDialogItemProperties) => {
+  const { raw, open, children, ...restProps } = props;
 
-  React.useLayoutEffect(() => {
-    if (open) dialog.methods.toggleDialog();
-  }, [open]);
+  const dialogContext = useDialog();
+  const { states, methods } = dialogContext;
+  const { getDialogId, toggleDialog } = methods;
 
-  //   React.useEffect(() => {
-  //     if (EscapeKeyPressed && keyboardInteraction && dialog.states.open)
-  //       dialog.methods.toggleDialog();
-  //   }, [EscapeKeyPressed]);
+  const triggerId = getDialogId && getDialogId("trigger");
+  const contentId = getDialogId && getDialogId("content");
+
+  React.useEffect(() => {
+    if (open && toggleDialog) toggleDialog();
+  }, []);
 
   return (
     <React.Fragment>
-      {dialog.states.open && (
-        <dialog
+      {states.open && (
+        <DialogWrapper
           role="dialog"
           tabIndex={-1}
-          id={contentId}
-          open={dialog.states.open}
-          aria-labelledby={triggerId}
-          data-state={applyDataState(dialog.states.open)}
+          id={String(contentId)}
+          open={Boolean(states.open)}
+          aria-labelledby={String(triggerId)}
+          data-state={applyDataState(Boolean(states.open))}
+          data-raw={Boolean(raw)}
           {...restProps}
         >
           {children}
-        </dialog>
+        </DialogWrapper>
       )}
     </React.Fragment>
   );
 };
-Dialog.displayName = "Dialog";
 
-const DialogOverlay = (props: any) => {
-  const { exitIfInteract, ...restProps } = props;
-  const dialog = useDialog();
+const DialogOverlay = (props: IDialogOverlayProperties) => {
+  const { raw, exitOnInteraction, onClick, ...restProps } = props;
 
-  const handleClick = () => exitIfInteract && dialog.methods.toggleDialog();
+  const dialogContext = useDialog();
+  const { states, methods } = dialogContext;
+  const { toggleDialog } = methods;
+
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (exitOnInteraction && toggleDialog) toggleDialog();
+    if (onClick) onClick(event);
+  };
 
   return (
     <React.Fragment>
-      {dialog.states.open && (
-        <div onClick={handleClick} tabIndex={-1} {...restProps} />
+      {states.open && (
+        <Overlay
+          onClick={handleClick}
+          tabIndex={-1}
+          aria-hidden={true}
+          data-raw={Boolean(raw)}
+          {...restProps}
+        />
       )}
     </React.Fragment>
   );
 };
-DialogOverlay.displayName = "Dialog.Overlay";
 
-const DialogTrigger = (props: any) => {
-  const { onClickCallback, children, disabled, ...restProps } = props;
-  const dialog = useDialog();
-  const triggerId = dialog.methods.getDialogId("trigger");
-  const contentId = dialog.methods.getDialogId("content");
+const DialogTrigger = (props: IButtonProperties) => {
+  const { onClick, children, ...restProps } = props;
 
-  const handleClickCallback = useCallback(
-    () => onClickCallback && onClickCallback(),
-    []
-  );
+  const dialogContext = useDialog();
+  const { states, methods } = dialogContext;
+  const { getDialogId, toggleDialog } = methods;
 
-  const handleClick = () => {
-    dialog.methods.toggleDialog();
-    handleClickCallback();
+  const triggerId = getDialogId && getDialogId("trigger");
+  const contentId = getDialogId && getDialogId("content");
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (toggleDialog) toggleDialog();
+    if (onClick) onClick(event);
   };
 
   return (
     <Button
-      id={triggerId}
-      disabled={disabled}
+      id={String(triggerId)}
       onClick={handleClick}
-      aria-controls={contentId}
-      data-state={applyDataState(dialog.states.open)}
+      aria-controls={String(contentId)}
+      data-state={applyDataState(Boolean(states.open))}
       {...restProps}
     >
       {children}
     </Button>
   );
 };
-DialogTrigger.displayName = "Dialog.Trigger";
 
-const DialogMenu = (props: any) => {
-  const { children, ...restProps } = props;
+const DialogMenu = (props: IDialogItemProperties) => {
+  const { raw, children, ...restProps } = props;
 
-  return <menu {...restProps}>{children}</menu>;
+  return (
+    <Menu data-raw={Boolean(raw)} {...restProps}>
+      {children}
+    </Menu>
+  );
 };
 
-DialogMenu.displayName = "Dialog.Menu";
+const DialogControl = (props: IButtonProperties) => {
+  const { onClick, children, ...restProps } = props;
 
-const DialogControl = (props: any) => {
-  const { onClickCallback, disabled, children, ...restProps } = props;
-  const dialog = useDialog();
-  const innerControlId = dialog.methods.getDialogId("inner-control");
-  const contentId = dialog.methods.getDialogId("content");
+  const dialogContext = useDialog();
+  const { states, methods } = dialogContext;
+  const { getDialogId, toggleDialog } = methods;
 
-  const handleClickCallback = useCallback(
-    () => onClickCallback && onClickCallback(),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+  const innerControlId = getDialogId && getDialogId("inner-control");
+  const contentId = getDialogId && getDialogId("content");
 
-  const handleClick = () => {
-    dialog.methods.toggleDialog();
-    handleClickCallback();
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (toggleDialog) toggleDialog();
+    if (onClick) onClick(event);
   };
 
   return (
     <Button
-      id={innerControlId}
-      disabled={disabled}
+      id={String(innerControlId)}
       onClick={handleClick}
-      aria-controls={contentId}
-      data-state={applyDataState(dialog.states.open)}
+      aria-controls={String(contentId)}
+      data-state={applyDataState(Boolean(states.open))}
       {...restProps}
     >
       {children}
     </Button>
   );
 };
-DialogControl.displayName = "Dialog.Control";
 
 Dialog.Root = DialogRoot;
 Dialog.Trigger = DialogTrigger;

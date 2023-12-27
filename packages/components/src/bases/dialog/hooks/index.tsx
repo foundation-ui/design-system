@@ -1,7 +1,12 @@
 import React, { useState, createContext, useContext } from "react";
-import { IReactChildren } from "../../../../../../types";
+import { IReactChildren, IComponentAPI } from "../../../../../../types";
 
-const DialogContext = createContext<object | any>({});
+const defaultComponentAPI = {
+  id: "",
+  states: {},
+  methods: {},
+};
+const DialogContext = createContext<IComponentAPI>(defaultComponentAPI);
 export const useDialog = () => useContext(DialogContext);
 
 export const DialogProvider = ({ children }: IReactChildren): JSX.Element => {
@@ -12,11 +17,12 @@ export const DialogProvider = ({ children }: IReactChildren): JSX.Element => {
   );
 };
 
-function useDialogProvider(): object {
-  const dialogId = React.useId();
+function useDialogProvider(): IComponentAPI {
   const [open, setOpen] = useState<boolean>(false);
+  const dialogId = React.useId();
 
   return {
+    id: dialogId,
     states: {
       open: open,
     },

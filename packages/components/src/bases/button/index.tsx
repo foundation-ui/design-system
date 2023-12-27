@@ -42,14 +42,11 @@ export const Button = (props: IButtonProperties) => {
       aria-description={ButtonFullDesc}
       aria-disabled={disabledState}
       data-variant={variant}
-      data-raw={raw}
+      data-raw={Boolean(raw)}
       tabIndex={0}
       {...restProps}
     >
       {children}
     </ButtonWrapper>
   );
-};
-Button.defaultProps = {
-  raw: false,
 };

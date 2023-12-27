@@ -30,10 +30,10 @@ export const Default: Story = {
     value: "checked",
     defaultChecked: true,
     disabled: false,
-    required: false,
     onChange: () => console.log("Changed"),
     onClick: () => console.log("Clicked"),
     children: "Default Checkbox",
+    raw: false,
   },
   render: ({ ...args }) => (
     <Wrapper>

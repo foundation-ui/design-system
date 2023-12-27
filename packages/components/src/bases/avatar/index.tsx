@@ -38,7 +38,7 @@ export const Avatar = (props: IAvatarProperties) => {
 
   return (
     <AvatarWrapper
-      data-raw={raw}
+      data-raw={Boolean(raw)}
       data-size={size || AvataSizeEnum.Small}
       data-status={status || AvataStatusEnum.Offline}
       aria-label={props["aria-label"] || `${size}-user-avatar`}
@@ -65,7 +65,4 @@ export const Avatar = (props: IAvatarProperties) => {
       )}
     </AvatarWrapper>
   );
-};
-Avatar.defaultProps = {
-  raw: false,
 };

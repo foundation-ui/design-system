@@ -23,6 +23,7 @@ export const Default: Story = {
     disabled: false,
     children: "Button",
     variant: ButtonVariantEnum.Primary,
+    raw: false,
   },
   render: ({ ...args }) => (
     <Wrapper>

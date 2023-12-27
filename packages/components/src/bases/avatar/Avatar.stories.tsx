@@ -19,6 +19,7 @@ export const Default: Story = {
     alt: "",
     size: AvataSizeEnum.Small,
     status: AvataStatusEnum.Online,
+    raw: false,
   },
   render: ({ ...args }) => <Avatar {...args} />,
 };
