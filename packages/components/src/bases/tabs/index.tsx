@@ -1,7 +1,7 @@
 import React, { Children } from "react";
 import { TabsProvider, useTabs } from "./hooks";
-import { IReactChildren } from "../../../../../types";
 import { Button, IButtonProperties } from "../button";
+import { IReactChildren } from "../../../../../types";
 
 export interface ITabsProperties extends React.ComponentPropsWithoutRef<"div"> {
   value?: string;
