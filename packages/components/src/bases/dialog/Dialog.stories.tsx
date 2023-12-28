@@ -4,6 +4,9 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Dialog } from ".";
 import { Button, ButtonVariantEnum } from "../button";
 
+const Wrapper = styled.div`
+  margin: var(--measurement-medium-30);
+`;
 const meta = {
   title: "Components/Bases/Dialog",
   component: Dialog,
@@ -23,11 +26,11 @@ export const Default = {
   },
 
   render: ({ ...args }) => (
-    <React.Fragment>
+    <Wrapper>
       <div id="portal" />
       <Dialog.Root>
         <Dialog.Trigger
-          variant={ButtonVariantEnum.Primary}
+          variant={ButtonVariantEnum.Secondary}
           onClick={() => console.log("Trigger clicked")}
         >
           Default Dialog
@@ -43,7 +46,7 @@ export const Default = {
             </p>
             <Dialog.Menu raw={args.raw}>
               <Dialog.Control
-                variant={ButtonVariantEnum.Ghost}
+                variant={ButtonVariantEnum.Secondary}
                 onClick={() => console.log("Inner control clicked")}
               >
                 Close
@@ -57,6 +60,6 @@ export const Default = {
           />
         </Dialog.Portal>
       </Dialog.Root>
-    </React.Fragment>
+    </Wrapper>
   ),
 };

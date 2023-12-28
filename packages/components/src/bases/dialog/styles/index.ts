@@ -18,7 +18,7 @@ export const Menu = styled.menu`
   &[data-raw="false"] {
     display: flex;
     justify-content: flex-end;
-    gap: var(--measurement-medium-60);
+    gap: var(--measurement-medium-30);
   }
 `;
 export const DialogWrapper = styled.dialog`
@@ -35,6 +35,9 @@ export const DialogWrapper = styled.dialog`
     padding: var(--measurement-medium-60);
 
     background-color: var(--color-mono-whitest);
+    box-shadow: var(--alpha-mono-dark-10) var(--measurement-medium-10)
+      var(--measurement-medium-10) 0 0;
+    border: var(--measurement-small-10) solid var(--alpha-mono-dark-10);
     border-radius: var(--measurement-medium-30);
   }
 `;

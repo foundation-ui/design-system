@@ -126,6 +126,9 @@ importers:
 
   packages/components:
     devDependencies:
+      '@bsw/ds-core':
+        specifier: workspace:^
+        version: link:../core
       '@bsw/ds-foundations':
         specifier: workspace:^
         version: link:../foundations
