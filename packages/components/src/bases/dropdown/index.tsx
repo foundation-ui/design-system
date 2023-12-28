@@ -22,7 +22,10 @@ export interface IDropdownItemProperties
     React.ComponentPropsWithoutRef<"li"> {
   radio?: boolean;
   disabled?: boolean;
-  onClick?: (event: React.MouseEvent<HTMLLIElement>) => void;
+  onClick?: (
+    event: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>
+  ) => void;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLLIElement>) => void;
 }
 
 const DropdownMenuRoot = ({ children }: IReactChildren) => {
@@ -119,18 +122,38 @@ const DropdownMenuItem = (props: IDropdownItemProperties) => {
   const dropdownContext = useDropdownMenu();
   const { toggleOpen } = dropdownContext.methods;
 
+  const EventsHandler = {
+    toggle: () => {
+      if (!radio && toggleOpen) toggleOpen();
+    },
+    click: (
+      event:
+        | React.MouseEvent<HTMLLIElement>
+        | React.KeyboardEvent<HTMLLIElement>
+    ) => {
+      if (onClick) onClick(event);
+    },
+  };
+
   const handleClick = (event: React.MouseEvent<HTMLLIElement>) => {
     if (!disabled) {
-      if (onClick) onClick(event);
-      if (!radio && toggleOpen) toggleOpen();
+      EventsHandler.click(event);
+      EventsHandler.toggle();
+    }
+  };
+  const handleKeydown = (event: React.KeyboardEvent<HTMLLIElement>) => {
+    if (["Space", "Enter"].includes(event.code || event.key) && !disabled) {
+      EventsHandler.click(event);
+      EventsHandler.toggle();
     }
   };
 
   return (
     <ItemWrapper
       role="menuitem"
-      tabIndex={1}
+      tabIndex={0}
       onClick={handleClick}
+      onKeyDown={handleKeydown}
       aria-disabled={disabled}
       data-orientation="vertical"
       data-raw={Boolean(raw)}

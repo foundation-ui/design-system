@@ -29,11 +29,11 @@ export const Default = {
 
   render: ({ ...args }) => (
     <Wrapper>
-      <div id="portal" />
       <DropdownMenu.Root>
         <DropdownMenu.Trigger
           variant={ButtonVariantEnum.Tertiary}
           onClick={() => console.log("Click")}
+          raw={args.raw}
         >
           Default Dropdown
         </DropdownMenu.Trigger>
@@ -45,7 +45,6 @@ export const Default = {
               side={args.side}
               raw={args.raw}
             >
-              <small>Dropdown Items</small>
               <DropdownMenu.Item
                 raw={args.raw}
                 radio={args.radio}
@@ -54,24 +53,25 @@ export const Default = {
               >
                 Item sample
               </DropdownMenu.Item>
-
-              <small>Static items</small>
-              <hr />
-              {Array.from("🦆🦉🦩🐥").map((item: string, key: number) => (
-                <DropdownMenu.Item
-                  radio
-                  key={item}
-                  raw={args.raw}
-                  disabled={key === 1}
-                  onClick={() => console.log(`${item} clicked`)}
-                >
-                  Static Item sample&nbsp;{item}
-                </DropdownMenu.Item>
-              ))}
+              {Array.from("🐥🥚🐣🐥🥚🐣🐥🥚🐣🐥").map(
+                (item: string, key: number) => (
+                  <DropdownMenu.Item
+                    radio
+                    key={item}
+                    raw={args.raw}
+                    disabled={key === 1}
+                    onClick={() => console.log(`${item} clicked`)}
+                  >
+                    Static Item sample&nbsp;{item}
+                  </DropdownMenu.Item>
+                )
+              )}
             </DropdownMenu.Content>
           </DropdownMenu>
         </DropdownMenu.Portal>
       </DropdownMenu.Root>
+
+      <div id="portal" />
     </Wrapper>
   ),
 };

@@ -21,7 +21,7 @@ export const Default = {
   args: {
     container: "portal",
     exitOnInteraction: true,
-    open: true,
+    open: false,
     raw: false,
   },
 
@@ -30,7 +30,7 @@ export const Default = {
       <div id="portal" />
       <Dialog.Root>
         <Dialog.Trigger
-          variant={ButtonVariantEnum.Secondary}
+          variant={ButtonVariantEnum.Tertiary}
           onClick={() => console.log("Trigger clicked")}
         >
           Default Dialog

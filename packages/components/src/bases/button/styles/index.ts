@@ -7,6 +7,7 @@ const ButtonDefaultStyles = css`
   justify-content: center;
 
   font-size: var(--fontsize-medium-20);
+  font-weight: 500;
   line-height: 1.1;
   letter-spacing: calc(
     var(--fontsize-small-10) - ((var(--fontsize-small-10) * 1.066))

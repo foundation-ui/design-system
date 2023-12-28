@@ -43,6 +43,7 @@ const Checkbox = (props: ICheckboxProperties) => {
       role="checkbox"
       data-raw={Boolean(raw)}
       data-state={defaultValue}
+      data-disabled={disabled}
     >
       <NativeInput
         type="checkbox"

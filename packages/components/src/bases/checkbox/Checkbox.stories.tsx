@@ -38,7 +38,7 @@ export const Default: Story = {
   render: ({ ...args }) => (
     <Wrapper>
       <Checkbox.Root>
-        <label>
+        <label style={{ display: "flex", alignItems: "center" }}>
           <Checkbox {...args}>
             <Checkbox.Indicator />
           </Checkbox>

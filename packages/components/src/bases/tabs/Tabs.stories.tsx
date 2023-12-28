@@ -17,10 +17,9 @@ const meta = {
 } satisfies Meta<typeof Tabs>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
+export const Default = {
   args: {
+    raw: false,
     defaultOpen: "2",
     children: "Default Tabs",
   },
@@ -32,18 +31,26 @@ export const Default: Story = {
           defaultOpen={args.defaultOpen}
           style={{ display: "flex", gap: 6 }}
         >
-          <Tabs.Trigger variant={ButtonVariantEnum.Ghost} value="1">
-            Tab 1
+          <Tabs.Trigger
+            variant={ButtonVariantEnum.Tertiary}
+            value="1"
+            raw={args.raw}
+          >
+            Default Tab 1
           </Tabs.Trigger>
-          <Tabs.Trigger variant={ButtonVariantEnum.Ghost} value="2">
-            Tab 2
+          <Tabs.Trigger
+            variant={ButtonVariantEnum.Tertiary}
+            value="2"
+            raw={args.raw}
+          >
+            Default Tab 2
           </Tabs.Trigger>
         </Tabs>
         <Tabs.Content value="1">
-          <small>Item 1</small>
+          <p>Default Tab item 1</p>
         </Tabs.Content>
         <Tabs.Content value="2">
-          <small>Item 2</small>
+          <p>Default Tab item 2</p>
         </Tabs.Content>
       </Tabs.Root>
     </Wrapper>

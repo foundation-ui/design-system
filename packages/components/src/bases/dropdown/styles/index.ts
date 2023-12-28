@@ -21,8 +21,10 @@ export const ContentWrapper = styled.ul`
     width: 100%;
     overflow-y: scroll;
 
+    top: var(--measurement-small-30);
+
     max-width: var(--measurement-large-80);
-    max-height: var(--measurement-large-70);
+    max-height: var(--measurement-large-90);
     padding: var(--measurement-medium-30);
 
     background-color: var(--color-mono-whitest);
@@ -30,10 +32,6 @@ export const ContentWrapper = styled.ul`
     border-radius: var(--measurement-medium-30);
     box-shadow: var(--alpha-mono-dark-10) var(--measurement-medium-10)
       var(--measurement-medium-10) 0 0;
-
-    top: calc(
-      var(--measurement-medium-90) + var(--measurement-small-30)
-    ); // Trigger min-height + Margin
   }
 `;
 

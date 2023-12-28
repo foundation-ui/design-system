@@ -32,7 +32,7 @@ export const Default: Story = {
       <Collapsible.Root>
         <Collapsible>
           <Collapsible.Trigger
-            variant={ButtonVariantEnum.Ghost}
+            variant={ButtonVariantEnum.Tertiary}
             onClick={() => args.onClick}
           >
             {args.children}
@@ -41,9 +41,11 @@ export const Default: Story = {
             defaultOpen={args.defaultOpen}
             showFirstChild={args.showFirstChild}
           >
-            <small>Item 1&nbsp;</small>
-            <small>Item 2&nbsp;</small>
-            <small>Item 3</small>
+            {Array.from("🦠🦖🥚🐣🐥")
+              .reverse()
+              .map((item: string, key: number) => (
+                <p key={item}>Item sample&nbsp;{item}</p>
+              ))}
           </Collapsible.Content>
         </Collapsible>
       </Collapsible.Root>
