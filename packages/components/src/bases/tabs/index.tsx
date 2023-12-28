@@ -1,4 +1,4 @@
-import React, { Children, useCallback } from "react";
+import React, { Children } from "react";
 import { TabsProvider, useTabs } from "./hooks";
 import { IReactChildren } from "../../../../../types";
 import { Button, IButtonProperties } from "../button";
@@ -47,10 +47,11 @@ const TabsTrigger = (props: IButtonProperties) => {
   const { states, methods } = tabsContext;
   const { applyValue, getTabsId } = methods;
 
-  const triggerId = getTabsId && getTabsId({ value, type: "trigger" });
-  const contentId = getTabsId && getTabsId({ value, type: "content" });
-
   const hasSameValueAsContext = value === states.value;
+  const IdHandler = {
+    trigger: getTabsId && getTabsId({ value, type: "trigger" }),
+    content: getTabsId && getTabsId({ value, type: "content" }),
+  };
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (applyValue) applyValue(value);
@@ -61,11 +62,11 @@ const TabsTrigger = (props: IButtonProperties) => {
     <Button
       type="button"
       role="tab"
-      id={String(triggerId)}
+      id={String(IdHandler.trigger)}
       value={value}
       onClick={handleClick}
       aria-selected={hasSameValueAsContext}
-      data-controls={contentId}
+      data-controls={IdHandler.content}
       data-state={hasSameValueAsContext ? "active" : "inactive"}
       {...restProps}
     >
@@ -81,19 +82,20 @@ const TabsContent = (props: ITabsProperties) => {
   const { states, methods } = tabsContext;
   const { getTabsId } = methods;
 
-  const triggerId = getTabsId && getTabsId({ value, type: "trigger" });
-  const contentId = getTabsId && getTabsId({ value, type: "content" });
-
   const hasSameValueAsContext = value === states.value;
+  const IdHandler = {
+    trigger: getTabsId && getTabsId({ value, type: "trigger" }),
+    content: getTabsId && getTabsId({ value, type: "content" }),
+  };
 
   return (
     <div
       tabIndex={0}
       role="tabpanel"
-      id={String(contentId)}
+      id={String(IdHandler.content)}
       data-value={value}
       data-state={hasSameValueAsContext ? "active" : "inactive"}
-      aria-labelledby={triggerId || restProps["aria-labelledby"]}
+      aria-labelledby={IdHandler.trigger || restProps["aria-labelledby"]}
       {...restProps}
     >
       {hasSameValueAsContext && children}
