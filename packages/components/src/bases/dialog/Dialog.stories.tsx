@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Dialog } from ".";
-import { Button, ButtonVariantEnum } from "../button";
+import { Button } from "../button";
+import { ComponentVariantEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -30,7 +31,7 @@ export const Default = {
       <div id="portal" />
       <Dialog.Root>
         <Dialog.Trigger
-          variant={ButtonVariantEnum.Tertiary}
+          variant={ComponentVariantEnum.Tertiary}
           onClick={() => console.log("Trigger clicked")}
         >
           Default Dialog
@@ -46,12 +47,12 @@ export const Default = {
             </p>
             <Dialog.Menu raw={args.raw}>
               <Dialog.Control
-                variant={ButtonVariantEnum.Secondary}
+                variant={ComponentVariantEnum.Secondary}
                 onClick={() => console.log("Inner control clicked")}
               >
                 Close
               </Dialog.Control>
-              <Button variant={ButtonVariantEnum.Primary}>Continue</Button>
+              <Button variant={ComponentVariantEnum.Primary}>Continue</Button>
             </Dialog.Menu>
           </Dialog>
           <Dialog.Overlay

@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { DropdownMenu } from ".";
-import { ButtonVariantEnum } from "../button";
+import { ComponentVariantEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -31,7 +32,7 @@ export const Default = {
     <Wrapper>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger
-          variant={ButtonVariantEnum.Tertiary}
+          variant={ComponentVariantEnum.Tertiary}
           onClick={() => console.log("Click")}
           raw={args.raw}
         >

@@ -5,7 +5,12 @@ import { DropdownMenuProvider, useDropdownMenu } from "./hooks";
 import { RootWrapper, ContentWrapper, ItemWrapper } from "./styles";
 import { Button, IButtonProperties } from "../button";
 import { applyDataState } from "../../utils";
-import { IReactChildren, IComponentStyling } from "../../../../../types";
+import {
+  IReactChildren,
+  IComponentStyling,
+  ComponentSizeEnum,
+  IComponentSize,
+} from "../../../../../types";
 
 export interface IDropdownPortalProperties
   extends React.ComponentPropsWithoutRef<any> {
@@ -13,6 +18,7 @@ export interface IDropdownPortalProperties
 }
 export interface IDropdownContentProperties
   extends IComponentStyling,
+    IComponentSize,
     React.ComponentPropsWithoutRef<"ul"> {
   defaultOpen?: boolean;
   side?: "left" | "right";
@@ -84,7 +90,7 @@ const DropdownMenuPortal = (props: IDropdownPortalProperties) => {
 };
 
 const DropdownMenuContent = (props: IDropdownContentProperties) => {
-  const { raw, defaultOpen, side, children, ...restProps } = props;
+  const { raw, sizing, defaultOpen, side, children, ...restProps } = props;
 
   const dropdownContext = useDropdownMenu();
   const { id, states, methods } = dropdownContext;
@@ -104,6 +110,7 @@ const DropdownMenuContent = (props: IDropdownContentProperties) => {
           aria-orientation="vertical"
           aria-labelledby={id.split("|").at(0)}
           data-state={applyDataState(Boolean(states.open))}
+          data-sizing={sizing || ComponentSizeEnum.Medium}
           data-side={side}
           data-align={side}
           data-raw={Boolean(raw)}

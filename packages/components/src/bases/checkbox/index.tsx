@@ -1,10 +1,19 @@
 import React from "react";
 import { CheckboxProvider, useCheckbox } from "./hooks";
 import { CheckboxWrapper, NativeInput, Indicator } from "./styles";
-import { IReactChildren, IComponentStyling } from "../../../../../types";
+import {
+  IReactChildren,
+  IComponentStyling,
+  ComponentSizeEnum,
+  IComponentSize,
+  ComponentVariantEnum,
+  IComponentVariant,
+} from "../../../../../types";
 
 export interface ICheckboxProperties
   extends IComponentStyling,
+    IComponentSize,
+    IComponentVariant,
     React.ComponentPropsWithoutRef<"input"> {}
 
 const CheckboxRoot = (props: IReactChildren) => {
@@ -18,6 +27,8 @@ const Checkbox = (props: ICheckboxProperties) => {
   const { applyChecked, toggleChecked } = methods;
   const {
     raw,
+    sizing,
+    variant,
     name,
     disabled,
     required,
@@ -43,6 +54,7 @@ const Checkbox = (props: ICheckboxProperties) => {
       role="checkbox"
       data-raw={Boolean(raw)}
       data-state={defaultValue}
+      data-size={sizing || ComponentSizeEnum.Medium}
       data-disabled={disabled}
     >
       <NativeInput
@@ -57,6 +69,7 @@ const Checkbox = (props: ICheckboxProperties) => {
         aria-disabled={disabled}
         aria-required={required}
         data-state={defaultValue}
+        data-variant={variant || ComponentVariantEnum.Tertiary}
         data-raw={Boolean(raw)}
         {...restProps}
       />

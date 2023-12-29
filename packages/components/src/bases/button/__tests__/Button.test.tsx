@@ -1,8 +1,9 @@
 import React from "react";
 import { render, fireEvent, screen, act } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
-import { Button, ButtonVariantEnum } from "../";
-import { StyledButton } from "../styles";
+import { Button } from "../";
+import { ComponentVariantEnum } from "../../../../../../types";
+
 import "@testing-library/jest-dom";
 
 expect.extend(toHaveNoViolations);
@@ -47,22 +48,22 @@ describe("Button", () => {
   });
   it("Renders variants without accessibility violation", async () => {
     const ButtonsVariants = [
-      ButtonVariantEnum.Primary,
-      ButtonVariantEnum.Secondary,
-      ButtonVariantEnum.Tertiary,
-      ButtonVariantEnum.Ghost,
+      ComponentVariantEnum.Primary,
+      ComponentVariantEnum.Secondary,
+      ComponentVariantEnum.Tertiary,
+      ComponentVariantEnum.Ghost,
     ];
 
     const { container } = render(
       <React.Fragment>
         {ButtonsVariants.map((variant) => (
-          <StyledButton
+          <Button
             key={variant}
             name={`test-styled-${variant}`}
             variant={variant}
           >
             {variant}
-          </StyledButton>
+          </Button>
         ))}
       </React.Fragment>
     );

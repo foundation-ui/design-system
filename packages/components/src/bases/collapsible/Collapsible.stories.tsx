@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { Collapsible } from ".";
-import { ButtonVariantEnum } from "../button";
+import { ComponentVariantEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -32,7 +33,7 @@ export const Default: Story = {
       <Collapsible.Root>
         <Collapsible>
           <Collapsible.Trigger
-            variant={ButtonVariantEnum.Tertiary}
+            variant={ComponentVariantEnum.Tertiary}
             onClick={() => args.onClick}
           >
             {args.children}

@@ -1,6 +1,8 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Avatar, AvataSizeEnum, AvataStatusEnum } from ".";
+
+import { Avatar, AvataStatusEnum } from ".";
+import { ComponentSizeEnum } from "../../../../../types";
 
 const meta = {
   title: "Components/Bases/Avatar",
@@ -17,7 +19,7 @@ export const Default: Story = {
   args: {
     src: "",
     alt: "",
-    size: AvataSizeEnum.Small,
+    sizing: ComponentSizeEnum.Small,
     status: AvataStatusEnum.Online,
     raw: false,
   },
@@ -28,7 +30,7 @@ export const WithURL: Story = {
   args: {
     src: "https://avatars.githubusercontent.com/u/153380498?s=160&v=4",
     alt: "external-source-avatar",
-    size: AvataSizeEnum.Small,
+    sizing: ComponentSizeEnum.Small,
     status: AvataStatusEnum.Online,
   },
   render: ({ ...args }) => <Avatar {...args} />,

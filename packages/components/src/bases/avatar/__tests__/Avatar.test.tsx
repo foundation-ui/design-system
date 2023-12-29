@@ -1,21 +1,29 @@
 import React from "react";
 import { render, fireEvent, screen, act } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
-import { Avatar, AvataSizeEnum, AvataStatusEnum } from "../";
+import { Avatar, AvataStatusEnum } from "../";
+import { ComponentSizeEnum } from "../../../../../../types";
+
 import "@testing-library/jest-dom";
 
 expect.extend(toHaveNoViolations);
 describe("Avatar", () => {
   it("Renders without accessibility violation", async () => {
     const { container } = render(
-      <Avatar size={AvataSizeEnum.Small} status={AvataStatusEnum.Online} />
+      <Avatar
+        sizing={ComponentSizeEnum.Small}
+        status={AvataStatusEnum.Online}
+      />
     );
     const ComponentContainer = await axe(container);
     expect(ComponentContainer).toHaveNoViolations();
   });
   it("Renders as Default with accessibility definition", async () => {
     render(
-      <Avatar size={AvataSizeEnum.Small} status={AvataStatusEnum.Online} />
+      <Avatar
+        sizing={ComponentSizeEnum.Small}
+        status={AvataStatusEnum.Online}
+      />
     );
 
     const avatarLabel = "small-user-avatar";
@@ -33,9 +41,9 @@ describe("Avatar", () => {
   });
   it("Renders variants without accessibility violation", async () => {
     const SizeVariants = [
-      AvataSizeEnum.Small,
-      AvataSizeEnum.Medium,
-      AvataSizeEnum.Large,
+      ComponentSizeEnum.Small,
+      ComponentSizeEnum.Medium,
+      ComponentSizeEnum.Large,
     ];
     const StatusVariants = [
       AvataStatusEnum.Online,
@@ -50,7 +58,7 @@ describe("Avatar", () => {
           <Avatar
             key={variant}
             status={variant}
-            size={SizeVariants[key] || AvataSizeEnum.Small}
+            sizing={SizeVariants[key] || ComponentSizeEnum.Small}
           />
         ))}
       </React.Fragment>

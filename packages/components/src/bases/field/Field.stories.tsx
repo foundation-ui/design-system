@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Field, IFieldLabel, FieldVariantEnum } from ".";
+
+import { Field, IFieldLabel } from ".";
+import { ComponentVariantEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -23,16 +25,16 @@ export const Default: Story | LabelStory = {
     raw: false,
     optional: false,
     disabled: false,
-    variant: FieldVariantEnum.Secondary,
+    variant: ComponentVariantEnum.Secondary,
     hint: "Hint message",
     error: "",
   },
   argTypes: {
     variant: {
       options: [
-        FieldVariantEnum.Primary,
-        FieldVariantEnum.Secondary,
-        FieldVariantEnum.Ghost,
+        ComponentVariantEnum.Primary,
+        ComponentVariantEnum.Secondary,
+        ComponentVariantEnum.Ghost,
       ],
       control: { type: "radio" },
     },

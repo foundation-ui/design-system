@@ -1,28 +1,21 @@
 import React from "react";
 import { ButtonWrapper } from "./styles";
-import { IComponentStyling } from "../../../../../types";
-
-export enum ButtonVariantEnum {
-  Primary = "primary",
-  Secondary = "secondary",
-  Tertiary = "tertiary",
-  Ghost = "ghost",
-}
-
-export type TButtonVariant =
-  | ButtonVariantEnum.Primary
-  | ButtonVariantEnum.Secondary
-  | ButtonVariantEnum.Tertiary
-  | ButtonVariantEnum.Ghost;
+import {
+  IComponentStyling,
+  ComponentSizeEnum,
+  IComponentSize,
+  ComponentVariantEnum,
+  IComponentVariant,
+} from "../../../../../types";
 
 export interface IButtonProperties
   extends IComponentStyling,
-    React.ComponentPropsWithoutRef<"button"> {
-  variant?: TButtonVariant;
-}
+    IComponentSize,
+    IComponentVariant,
+    React.ComponentPropsWithoutRef<"button"> {}
 
 export const Button = (props: IButtonProperties) => {
-  const { name, variant, raw, children, ...restProps } = props;
+  const { name, variant, sizing, raw, children, ...restProps } = props;
 
   const defaultName = "button";
   const ariaLabel = `${name || defaultName}-action`;
@@ -41,7 +34,8 @@ export const Button = (props: IButtonProperties) => {
       aria-label={ariaLabel}
       aria-description={ButtonFullDesc}
       aria-disabled={disabledState}
-      data-variant={variant}
+      data-variant={variant || ComponentVariantEnum.Tertiary}
+      data-size={sizing || ComponentSizeEnum.Medium}
       data-raw={Boolean(raw)}
       tabIndex={0}
       {...restProps}

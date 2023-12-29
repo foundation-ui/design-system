@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { Tabs } from ".";
-import { ButtonVariantEnum } from "../button";
+import { ComponentVariantEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -32,14 +33,14 @@ export const Default = {
           style={{ display: "flex", gap: 6 }}
         >
           <Tabs.Trigger
-            variant={ButtonVariantEnum.Tertiary}
+            variant={ComponentVariantEnum.Tertiary}
             value="1"
             raw={args.raw}
           >
             Default Tab 1
           </Tabs.Trigger>
           <Tabs.Trigger
-            variant={ButtonVariantEnum.Tertiary}
+            variant={ComponentVariantEnum.Tertiary}
             value="2"
             raw={args.raw}
           >

@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { Toggle } from ".";
-import { ButtonVariantEnum } from "../button";
+import { ComponentVariantEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -38,7 +39,9 @@ export const Default: Story = {
           disabled={args.disabled}
           defaultChecked={args.defaultChecked}
           variant={
-            checked ? ButtonVariantEnum.Secondary : ButtonVariantEnum.Tertiary
+            checked
+              ? ComponentVariantEnum.Secondary
+              : ComponentVariantEnum.Tertiary
           }
           onClick={() => setChecked(!checked)}
         >

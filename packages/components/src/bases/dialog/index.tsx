@@ -4,7 +4,11 @@ import { useDialog, DialogProvider } from "./hooks";
 import { Button, IButtonProperties } from "../button";
 import { Overlay, DialogWrapper, Menu } from "./styles";
 import { applyDataState } from "../../utils";
-import { IComponentStyling } from "../../../../../types";
+import {
+  IComponentStyling,
+  ComponentSizeEnum,
+  IComponentSize,
+} from "../../../../../types";
 
 export interface IDialogPortalProperties
   extends React.ComponentPropsWithoutRef<any> {
@@ -17,6 +21,7 @@ export interface IDialogOverlayProperties
 }
 export interface IDialogItemProperties
   extends IComponentStyling,
+    IComponentSize,
     React.ComponentPropsWithoutRef<any> {}
 
 const DialogRoot = ({ children }: React.ComponentPropsWithRef<"div">) => {
@@ -36,7 +41,7 @@ const DialogPortal = (props: IDialogPortalProperties) => {
 };
 
 const Dialog = (props: IDialogItemProperties) => {
-  const { raw, open, children, ...restProps } = props;
+  const { raw, sizing, open, children, ...restProps } = props;
 
   const dialogContext = useDialog();
   const { states, methods } = dialogContext;
@@ -59,6 +64,7 @@ const Dialog = (props: IDialogItemProperties) => {
           open={Boolean(states.open)}
           aria-labelledby={String(triggerId)}
           data-state={applyDataState(Boolean(states.open))}
+          data-size={sizing || ComponentSizeEnum.Medium}
           data-raw={Boolean(raw)}
           {...restProps}
         >

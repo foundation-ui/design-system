@@ -1,15 +1,22 @@
 import React from "react";
 import { SwitchProvider, useSwitch } from "./hooks";
 import { TriggerWrapper, Thumb } from "./styles";
-import { IReactChildren, IComponentStyling } from "../../../../../types";
+import {
+  IReactChildren,
+  IComponentStyling,
+  ComponentSizeEnum,
+  IComponentSize,
+} from "../../../../../types";
 
 export interface ISwitchProperties
   extends React.ComponentPropsWithoutRef<"button">,
+    IComponentSize,
     IComponentStyling {
   defaultChecked?: boolean;
 }
 export interface ISwitchThumbProperties
   extends React.ComponentPropsWithoutRef<"span">,
+    IComponentSize,
     IComponentStyling {}
 
 const SwitchRoot = ({ children }: IReactChildren) => {
@@ -19,6 +26,7 @@ const SwitchRoot = ({ children }: IReactChildren) => {
 const Switch = (props: ISwitchProperties) => {
   const {
     raw,
+    sizing,
     value,
     defaultChecked,
     disabled,
@@ -48,6 +56,7 @@ const Switch = (props: ISwitchProperties) => {
       disabled={disabled}
       aria-checked={Boolean(states.checked)}
       data-disabled={String(disabled || false)}
+      data-size={sizing || ComponentSizeEnum.Medium}
       data-raw={Boolean(raw)}
       {...restProps}
     >
@@ -67,6 +76,7 @@ const SwitchThumb = (props: ISwitchThumbProperties) => {
       aria-label={`${id}-switch-thumb`}
       data-checked={states.checked}
       data-raw={Boolean(props.raw)}
+      data-size={props.sizing || ComponentSizeEnum.Medium}
       {...props}
     />
   );

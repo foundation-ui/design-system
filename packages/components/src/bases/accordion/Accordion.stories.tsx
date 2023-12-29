@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { Accordion } from ".";
-import { ButtonVariantEnum } from "../button";
+import { ComponentVariantEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -36,7 +37,7 @@ export const Default = {
             value={args.value}
             onClick={args.onClick}
             disabled={args.disabled}
-            variant={ButtonVariantEnum.Tertiary}
+            variant={ComponentVariantEnum.Tertiary}
           >
             Default Accordion
           </Accordion.Trigger>

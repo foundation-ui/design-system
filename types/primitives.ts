@@ -1,8 +1,26 @@
-export type TComponentAPI = boolean | string | number | null;
-
-export interface IReactChildren {
-  children: React.ReactNode;
+export enum ComponentSizeEnum {
+  Small = "small",
+  Medium = "medium",
+  Large = "large",
 }
+export enum ComponentVariantEnum {
+  Primary = "primary",
+  Secondary = "secondary",
+  Tertiary = "tertiary",
+  Ghost = "ghost",
+}
+
+export type TComponentAPI = boolean | string | number | null;
+export type TComponentSize =
+  | ComponentSizeEnum.Small
+  | ComponentSizeEnum.Medium
+  | ComponentSizeEnum.Large;
+export type TComponentVariant =
+  | ComponentVariantEnum.Primary
+  | ComponentVariantEnum.Secondary
+  | ComponentVariantEnum.Tertiary
+  | ComponentVariantEnum.Ghost;
+
 export interface IComponentAPI {
   id: string;
   states: Record<string, TComponentAPI>;
@@ -10,4 +28,10 @@ export interface IComponentAPI {
 }
 export interface IComponentStyling {
   raw?: boolean;
+}
+export interface IComponentSize {
+  sizing?: TComponentSize;
+}
+export interface IComponentVariant {
+  variant?: TComponentVariant;
 }

@@ -1,35 +1,34 @@
 import React from "react";
 import { FieldProvider, useField } from "./hooks";
 import { Fieldset, Sup, Input, Label, Def } from "./styles";
-import { IReactChildren, IComponentStyling } from "../../../../../types";
+import {
+  IReactChildren,
+  IComponentStyling,
+  ComponentSizeEnum,
+  IComponentSize,
+  ComponentVariantEnum,
+  IComponentVariant,
+} from "../../../../../types";
 
-export enum FieldVariantEnum {
-  Primary = "primary",
-  Secondary = "secondary",
-  Ghost = "ghost",
-}
-export enum FieldModeEnum {
+export enum MetaVariantEnum {
   Default = "default",
   Hint = "hint",
   Emphasis = "emphasis",
   Error = "error",
 }
 
-export type TFieldVariant =
-  | FieldVariantEnum.Primary
-  | FieldVariantEnum.Secondary
-  | FieldVariantEnum.Ghost;
 export type TMetaVariant =
-  | FieldModeEnum.Hint
-  | FieldModeEnum.Emphasis
-  | FieldModeEnum.Error;
+  | MetaVariantEnum.Hint
+  | MetaVariantEnum.Emphasis
+  | MetaVariantEnum.Error;
 
 export interface IField
   extends React.ComponentPropsWithoutRef<"input">,
+    IComponentSize,
+    IComponentVariant,
     IComponentStyling {
   hint?: string;
   error?: string;
-  variant?: TFieldVariant;
 }
 export interface IFieldLabel
   extends React.ComponentPropsWithoutRef<"label">,
@@ -57,7 +56,7 @@ const FieldWrapper = ({ children }: IReactChildren) => {
 };
 
 const Field: React.FC<IField> & IFieldComposition = (props: IField) => {
-  const { raw, variant, error, hint, ...restProps } = props;
+  const { raw, sizing, variant, error, hint, ...restProps } = props;
 
   const metaId = React.useId();
   const fieldContext = useField();
@@ -71,14 +70,15 @@ const Field: React.FC<IField> & IFieldComposition = (props: IField) => {
         aria-describedby={metaId}
         aria-errormessage={error}
         data-error={Boolean(error)}
-        data-variant={variant || FieldVariantEnum.Primary}
+        data-variant={variant || ComponentVariantEnum.Primary}
+        data-size={sizing || ComponentSizeEnum.Medium}
         data-raw={Boolean(raw)}
         {...restProps}
       />
       {(error || hint) && (
         <FieldMeta
           raw={raw}
-          data-variant={error ? FieldModeEnum.Error : FieldModeEnum.Hint}
+          data-variant={error ? MetaVariantEnum.Error : MetaVariantEnum.Hint}
         >
           {error || hint}
         </FieldMeta>
@@ -112,7 +112,7 @@ const FieldMeta = (props: IFieldMeta) => {
     <Def
       id={metaId}
       aria-details={id}
-      data-variant={variant || FieldModeEnum.Emphasis}
+      data-variant={variant || MetaVariantEnum.Emphasis}
       data-raw={Boolean(raw)}
       {...restProps}
     >

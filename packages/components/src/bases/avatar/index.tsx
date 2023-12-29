@@ -1,23 +1,17 @@
 import React from "react";
 import { AvatarWrapper, StatusWrapper } from "./styles";
-import { IComponentStyling } from "../../../../../types";
+import {
+  IComponentStyling,
+  ComponentSizeEnum,
+  IComponentSize,
+} from "../../../../../types";
 
-export enum AvataSizeEnum {
-  Small = "small",
-  Medium = "medium",
-  Large = "large",
-}
 export enum AvataStatusEnum {
   Online = "online",
   Away = "away",
   Busy = "busy",
   Offline = "offline",
 }
-
-export type TAvatarSize =
-  | AvataSizeEnum.Small
-  | AvataSizeEnum.Medium
-  | AvataSizeEnum.Large;
 export type TAvatarStatus =
   | AvataStatusEnum.Offline
   | AvataStatusEnum.Busy
@@ -26,33 +20,33 @@ export type TAvatarStatus =
 
 export interface IAvatarProperties
   extends IComponentStyling,
+    IComponentSize,
     React.HTMLAttributes<HTMLDivElement> {
   src?: string;
   alt?: string;
-  size?: TAvatarSize;
   status?: TAvatarStatus;
 }
 
 export const Avatar = (props: IAvatarProperties) => {
-  const { raw, size, status, src, alt, children, ...restProps } = props;
+  const { raw, sizing, status, src, alt, children, ...restProps } = props;
 
   return (
     <AvatarWrapper
       data-raw={Boolean(raw)}
-      data-size={size || AvataSizeEnum.Small}
+      data-size={sizing || ComponentSizeEnum.Medium}
       data-status={status || AvataStatusEnum.Offline}
-      aria-label={props["aria-label"] || `${size}-user-avatar`}
+      aria-label={props["aria-label"] || `${sizing}-user-avatar`}
       {...restProps}
     >
       {!children && src && (
-        <img alt={alt || `${size}-user-avatar-image`} src={src} />
+        <img alt={alt || `${sizing}-user-avatar-image`} src={src} />
       )}
 
       {children}
       {status && (
         <StatusWrapper
           role="img"
-          aria-label={`${size}-user-avatar-status`}
+          aria-label={`${sizing}-user-avatar-status`}
           aria-labelledby="title desc"
           data-status={status || AvataStatusEnum.Offline}
           height="16"

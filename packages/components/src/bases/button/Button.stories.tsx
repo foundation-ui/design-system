@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button, ButtonVariantEnum } from ".";
+
+import { Button } from ".";
+import { ComponentSizeEnum, ComponentVariantEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -22,7 +24,8 @@ export const Default: Story = {
     name: "variants-btn",
     disabled: false,
     children: "Button",
-    variant: ButtonVariantEnum.Primary,
+    variant: ComponentVariantEnum.Tertiary,
+    sizing: ComponentSizeEnum.Medium,
     raw: false,
   },
   render: ({ ...args }) => (
