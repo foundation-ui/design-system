@@ -1,23 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import type { Meta } from "@storybook/react";
-import { Field, FieldModeEnum } from ".";
-import { Button, ButtonVariantEnum } from "../button";
+import type { Meta, StoryObj } from "@storybook/react";
+import { Field, IFieldLabel, FieldVariantEnum } from ".";
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-
-  div {
-    display: grid;
-    width: 100%;
-    max-width: var(--measurement-large-90);
-  }
+  margin: var(--measurement-medium-30);
 `;
-
 const meta = {
   title: "Components/Bases/Field",
   component: Field,
@@ -27,38 +15,41 @@ const meta = {
 } satisfies Meta<typeof Field>;
 
 export default meta;
-export const Default = {
+type Story = StoryObj<typeof meta>;
+type LabelStory = StoryObj<IFieldLabel>;
+
+export const Default: Story | LabelStory = {
   args: {
     raw: false,
     optional: false,
     disabled: false,
-    hint: FieldModeEnum.Hint,
-    error: "Error message",
+    variant: FieldVariantEnum.Secondary,
+    hint: "Hint message",
+    error: "",
   },
-
+  argTypes: {
+    variant: {
+      options: [
+        FieldVariantEnum.Primary,
+        FieldVariantEnum.Secondary,
+        FieldVariantEnum.Ghost,
+      ],
+      control: { type: "radio" },
+    },
+  },
   render: ({ ...args }) => {
     return (
       <Wrapper>
-        <div>
-          <Field.Root>
-            <Field.Label
-              optional={args.optional}
-              variant={FieldModeEnum.Emphasis}
-            >
+        <Field.Root>
+          <Field.Wrapper>
+            <Field.Label raw={args.raw} optional={args.optional}>
               Default Input
             </Field.Label>
 
-            <Field
-              hint={args.hint}
-              error={args.error}
-              disabled={args.disabled}
-            />
-
-            <Field.Meta variant={FieldModeEnum.Error}>
-              Static Input meta
-            </Field.Meta>
-          </Field.Root>
-        </div>
+            <Field placeholder="Placeholder" raw={args.raw} {...args} />
+          </Field.Wrapper>
+          <Field.Meta raw={args.raw}>External description</Field.Meta>
+        </Field.Root>
       </Wrapper>
     );
   },

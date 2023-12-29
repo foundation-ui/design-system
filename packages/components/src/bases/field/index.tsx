@@ -1,47 +1,63 @@
 import React from "react";
 import { FieldProvider, useField } from "./hooks";
-import { IReactChildren } from "../../../../../types";
+import { Fieldset, Sup, Input, Label, Def } from "./styles";
+import { IReactChildren, IComponentStyling } from "../../../../../types";
 
+export enum FieldVariantEnum {
+  Primary = "primary",
+  Secondary = "secondary",
+  Ghost = "ghost",
+}
 export enum FieldModeEnum {
   Default = "default",
-  Hint = "Hint",
+  Hint = "hint",
   Emphasis = "emphasis",
   Error = "error",
 }
 
-export type TLabelVariant =
-  | FieldModeEnum.Default
-  | FieldModeEnum.Emphasis
-  | FieldModeEnum.Error;
+export type TFieldVariant =
+  | FieldVariantEnum.Primary
+  | FieldVariantEnum.Secondary
+  | FieldVariantEnum.Ghost;
 export type TMetaVariant =
   | FieldModeEnum.Hint
   | FieldModeEnum.Emphasis
   | FieldModeEnum.Error;
 
-export interface IFieldComposition {
-  Root: typeof FieldRoot;
-  Label: typeof FieldLabel;
-  Meta: typeof FieldMeta;
-}
-
-export interface IField extends React.ComponentPropsWithoutRef<"input"> {
+export interface IField
+  extends React.ComponentPropsWithoutRef<"input">,
+    IComponentStyling {
   hint?: string;
   error?: string;
+  variant?: TFieldVariant;
 }
-export interface IFieldLabel extends React.ComponentPropsWithoutRef<"label"> {
+export interface IFieldLabel
+  extends React.ComponentPropsWithoutRef<"label">,
+    IComponentStyling {
   optional?: boolean;
-  variant?: TLabelVariant;
 }
-export interface IFieldMeta extends React.ComponentPropsWithoutRef<"small"> {
+export interface IFieldMeta
+  extends React.ComponentPropsWithoutRef<"small">,
+    IComponentStyling {
   variant?: TMetaVariant;
+}
+export interface IFieldComposition {
+  Root: typeof FieldRoot;
+  Wrapper: typeof FieldWrapper;
+  Label: typeof FieldLabel;
+  Meta: typeof FieldMeta;
 }
 
 const FieldRoot = ({ children }: IReactChildren) => {
   return <FieldProvider>{children}</FieldProvider>;
 };
 
+const FieldWrapper = ({ children }: IReactChildren) => {
+  return <Fieldset>{children}</Fieldset>;
+};
+
 const Field: React.FC<IField> & IFieldComposition = (props: IField) => {
-  const { error, hint, ...restProps } = props;
+  const { raw, variant, error, hint, ...restProps } = props;
 
   const metaId = React.useId();
   const fieldContext = useField();
@@ -49,50 +65,65 @@ const Field: React.FC<IField> & IFieldComposition = (props: IField) => {
 
   return (
     <React.Fragment>
-      <input
+      <Input
         id={id}
         aria-invalid={!!error}
         aria-describedby={metaId}
+        aria-errormessage={error}
+        data-error={Boolean(error)}
+        data-variant={variant || FieldVariantEnum.Primary}
+        data-raw={Boolean(raw)}
         {...restProps}
       />
-      {hint && <FieldMeta data-variant={FieldModeEnum.Hint}>{hint}</FieldMeta>}
-      {error && (
-        <FieldMeta data-variant={FieldModeEnum.Error}>{error}</FieldMeta>
+      {(error || hint) && (
+        <FieldMeta
+          raw={raw}
+          data-variant={error ? FieldModeEnum.Error : FieldModeEnum.Hint}
+        >
+          {error || hint}
+        </FieldMeta>
       )}
     </React.Fragment>
   );
 };
 
 const FieldLabel = (props: IFieldLabel) => {
-  const { optional, variant, children, ...restProps } = props;
+  const { raw, optional, children, ...restProps } = props;
 
   const fieldContext = useField();
   const { id } = fieldContext;
 
   return (
-    <label htmlFor={id} data-variant={variant} {...restProps}>
+    <Label htmlFor={id} data-raw={Boolean(raw)} {...restProps}>
       {children}
-      {!optional && <span>*</span>}
-    </label>
+      {!optional && <Sup>*</Sup>}
+    </Label>
   );
 };
 
 const FieldMeta = (props: IFieldMeta) => {
-  const { variant, children, ...restProps } = props;
+  const { raw, variant, children, ...restProps } = props;
 
   const metaId = React.useId();
   const fieldContext = useField();
   const { id } = fieldContext;
 
   return (
-    <small id={metaId} aria-details={id} data-variant={variant} {...restProps}>
+    <Def
+      id={metaId}
+      aria-details={id}
+      data-variant={variant || FieldModeEnum.Emphasis}
+      data-raw={Boolean(raw)}
+      {...restProps}
+    >
       {children}
-    </small>
+    </Def>
   );
 };
 
 Field.Root = FieldRoot;
+Field.Wrapper = FieldWrapper;
 Field.Label = FieldLabel;
 Field.Meta = FieldMeta;
 
-export { Field, FieldRoot, FieldLabel, FieldMeta };
+export { Field, FieldRoot, FieldWrapper, FieldLabel, FieldMeta };
