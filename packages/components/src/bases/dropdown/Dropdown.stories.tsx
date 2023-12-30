@@ -3,7 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { DropdownMenu } from ".";
-import { ComponentVariantEnum } from "../../../../../types";
+import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -20,21 +20,42 @@ export default meta;
 
 export const Default = {
   args: {
+    raw: false,
+    variant: ComponentVariantEnum.Tertiary,
+    sizing: ComponentSizeEnum.Medium,
     container: "portal",
     defaultOpen: false,
     side: "left",
     radio: false,
-    raw: false,
     disabled: false,
   },
-
+  argTypes: {
+    variant: {
+      options: [
+        ComponentVariantEnum.Primary,
+        ComponentVariantEnum.Secondary,
+        ComponentVariantEnum.Tertiary,
+        ComponentVariantEnum.Ghost,
+      ],
+      control: { type: "radio" },
+    },
+    sizing: {
+      options: [
+        ComponentSizeEnum.Small,
+        ComponentSizeEnum.Medium,
+        ComponentSizeEnum.Large,
+      ],
+      control: { type: "radio" },
+    },
+  },
   render: ({ ...args }) => (
     <Wrapper>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger
-          variant={ComponentVariantEnum.Tertiary}
           onClick={() => console.log("Click")}
           raw={args.raw}
+          variant={args.variant}
+          sizing={args.sizing}
         >
           Default Dropdown
         </DropdownMenu.Trigger>

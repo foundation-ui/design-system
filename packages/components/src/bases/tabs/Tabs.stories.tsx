@@ -3,7 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Tabs } from ".";
-import { ComponentVariantEnum } from "../../../../../types";
+import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -21,10 +21,30 @@ export default meta;
 export const Default = {
   args: {
     raw: false,
+    variant: ComponentVariantEnum.Tertiary,
+    sizing: ComponentSizeEnum.Medium,
     defaultOpen: "2",
     children: "Default Tabs",
   },
-
+  argTypes: {
+    variant: {
+      options: [
+        ComponentVariantEnum.Primary,
+        ComponentVariantEnum.Secondary,
+        ComponentVariantEnum.Tertiary,
+        ComponentVariantEnum.Ghost,
+      ],
+      control: { type: "radio" },
+    },
+    sizing: {
+      options: [
+        ComponentSizeEnum.Small,
+        ComponentSizeEnum.Medium,
+        ComponentSizeEnum.Large,
+      ],
+      control: { type: "radio" },
+    },
+  },
   render: ({ ...args }) => (
     <Wrapper>
       <Tabs.Root>
@@ -33,16 +53,18 @@ export const Default = {
           style={{ display: "flex", gap: 6 }}
         >
           <Tabs.Trigger
-            variant={ComponentVariantEnum.Tertiary}
             value="1"
             raw={args.raw}
+            variant={args.variant}
+            sizing={args.sizing}
           >
             Default Tab 1
           </Tabs.Trigger>
           <Tabs.Trigger
-            variant={ComponentVariantEnum.Tertiary}
             value="2"
             raw={args.raw}
+            variant={args.variant}
+            sizing={args.sizing}
           >
             Default Tab 2
           </Tabs.Trigger>

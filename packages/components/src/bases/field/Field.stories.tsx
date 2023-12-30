@@ -3,7 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Field, IFieldLabel } from ".";
-import { ComponentVariantEnum } from "../../../../../types";
+import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -26,6 +26,7 @@ export const Default: Story | LabelStory = {
     optional: false,
     disabled: false,
     variant: ComponentVariantEnum.Secondary,
+    sizing: ComponentSizeEnum.Medium,
     hint: "Hint message",
     error: "",
   },
@@ -35,6 +36,14 @@ export const Default: Story | LabelStory = {
         ComponentVariantEnum.Primary,
         ComponentVariantEnum.Secondary,
         ComponentVariantEnum.Ghost,
+      ],
+      control: { type: "radio" },
+    },
+    sizing: {
+      options: [
+        ComponentSizeEnum.Small,
+        ComponentSizeEnum.Medium,
+        ComponentSizeEnum.Large,
       ],
       control: { type: "radio" },
     },
@@ -48,7 +57,13 @@ export const Default: Story | LabelStory = {
               Default Input
             </Field.Label>
 
-            <Field placeholder="Placeholder" raw={args.raw} {...args} />
+            <Field
+              placeholder="Placeholder"
+              raw={args.raw}
+              variant={args.variant}
+              sizing={args.sizing}
+              {...args}
+            />
           </Field.Wrapper>
           <Field.Meta raw={args.raw}>External description</Field.Meta>
         </Field.Root>

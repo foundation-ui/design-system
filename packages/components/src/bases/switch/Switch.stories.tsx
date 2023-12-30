@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { Switch } from ".";
+import { ComponentSizeEnum, ComponentVariantEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -18,11 +20,26 @@ export default meta;
 export const Default = {
   args: {
     raw: false,
+    variant: ComponentVariantEnum.Tertiary,
+    sizing: ComponentSizeEnum.Medium,
     defaultChecked: false,
     disabled: false,
     onClick: () => console.log("clicked"),
   },
-
+  argTypes: {
+    variant: {
+      options: [ComponentVariantEnum.Primary, ComponentVariantEnum.Ghost],
+      control: { type: "radio" },
+    },
+    sizing: {
+      options: [
+        ComponentSizeEnum.Small,
+        ComponentSizeEnum.Medium,
+        ComponentSizeEnum.Large,
+      ],
+      control: { type: "radio" },
+    },
+  },
   render: ({ ...args }) => (
     <Wrapper>
       <Switch.Root>
@@ -31,6 +48,8 @@ export const Default = {
         </label>
         <Switch
           raw={args.raw}
+          sizing={args.sizing}
+          variant={args.variant}
           id="switch-demo"
           defaultChecked={args.defaultChecked}
           disabled={args.disabled}

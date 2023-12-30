@@ -1,5 +1,4 @@
 import {
-  MeasureVariantEnum,
   ColorFormatEnum,
   TScaleVariant,
   IColorVariation,
@@ -7,7 +6,7 @@ import {
 } from "./";
 
 export enum TokenTypesEnum {
-  Measurement = MeasureVariantEnum.Measurement,
+  Measurement = "measurement",
   Scale = "scale",
   Color = "color",
 }

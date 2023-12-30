@@ -3,7 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Toggle } from ".";
-import { ComponentVariantEnum } from "../../../../../types";
+import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -18,15 +18,26 @@ const meta = {
 } satisfies Meta<typeof Toggle>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+// type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default = {
   args: {
     raw: false,
+    sizing: ComponentSizeEnum.Medium,
     disabled: false,
     defaultChecked: false,
     onClick: () => console.log("click"),
     name: "toggle-demo",
+  },
+  argTypes: {
+    sizing: {
+      options: [
+        ComponentSizeEnum.Small,
+        ComponentSizeEnum.Medium,
+        ComponentSizeEnum.Large,
+      ],
+      control: { type: "radio" },
+    },
   },
 
   render: ({ ...args }) => {
@@ -36,13 +47,14 @@ export const Default: Story = {
       <Wrapper>
         <Toggle
           raw={args.raw}
-          disabled={args.disabled}
-          defaultChecked={args.defaultChecked}
           variant={
             checked
               ? ComponentVariantEnum.Secondary
               : ComponentVariantEnum.Tertiary
           }
+          sizing={args.sizing}
+          disabled={args.disabled}
+          defaultChecked={args.defaultChecked}
           onClick={() => setChecked(!checked)}
         >
           Checked:<b>{String(checked)}</b>

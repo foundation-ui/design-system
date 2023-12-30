@@ -3,7 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Accordion } from ".";
-import { ComponentVariantEnum } from "../../../../../types";
+import { ComponentSizeEnum, ComponentVariantEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -21,13 +21,32 @@ export default meta;
 export const Default = {
   args: {
     raw: false,
+    variant: ComponentVariantEnum.Tertiary,
+    sizing: ComponentSizeEnum.Medium,
     defaultOpen: false,
     disabled: false,
-    value: "demo-accordion",
     onClick: () => console.log("Click"),
     children: "Default Accordion content",
   },
-
+  argTypes: {
+    variant: {
+      options: [
+        ComponentVariantEnum.Primary,
+        ComponentVariantEnum.Secondary,
+        ComponentVariantEnum.Tertiary,
+        ComponentVariantEnum.Ghost,
+      ],
+      control: { type: "radio" },
+    },
+    sizing: {
+      options: [
+        ComponentSizeEnum.Small,
+        ComponentSizeEnum.Medium,
+        ComponentSizeEnum.Large,
+      ],
+      control: { type: "radio" },
+    },
+  },
   render: ({ ...args }) => (
     <Wrapper>
       <Accordion.Root>
@@ -37,7 +56,8 @@ export const Default = {
             value={args.value}
             onClick={args.onClick}
             disabled={args.disabled}
-            variant={ComponentVariantEnum.Tertiary}
+            sizing={args.sizing}
+            variant={args.variant}
           >
             Default Accordion
           </Accordion.Trigger>

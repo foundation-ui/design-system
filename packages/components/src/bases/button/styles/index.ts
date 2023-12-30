@@ -5,7 +5,7 @@ const ButtonDefaultStyles = css`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  gap: var(--measurement-medium-30);
   font-size: var(--fontsize-medium-20);
   font-weight: 500;
   line-height: 1.1;
@@ -14,13 +14,8 @@ const ButtonDefaultStyles = css`
   );
 
   border: var(--measurement-small-10) solid transparent;
-  border-radius: var(--measurement-medium-30);
   backdrop-filter: blur(var(--measurement-small-10));
 
-  gap: var(--measurement-medium-30);
-  padding: var(--measurement-medium-30) var(--measurement-medium-60);
-  min-width: var(--measurement-medium-90);
-  min-height: var(--measurement-medium-90);
   width: fit-content;
   transition: all ease-in-out 0.2s;
 
@@ -97,10 +92,33 @@ const ButtonVariantsStyles = css`
     }
   }
 `;
+const ButtonSizeStyles = css`
+  &[data-size="small"] {
+    font-size: var(--fontsize-medium-10);
+    border-radius: var(--measurement-medium-20);
+    gap: var(--measurement-medium-10);
+    padding: var(--measurement-medium-10) var(--measurement-medium-30);
+    min-width: var(--measurement-medium-60);
+    min-height: var(--measurement-medium-60);
+  }
+  &[data-size="medium"] {
+    border-radius: var(--measurement-medium-30);
+    padding: var(--measurement-medium-30) var(--measurement-medium-60);
+    min-width: var(--measurement-medium-90);
+    min-height: var(--measurement-medium-90);
+  }
+  &[data-size="large"] {
+    border-radius: var(--measurement-medium-30);
+    padding: var(--measurement-medium-60);
+    min-width: var(--measurement-large-60);
+    min-height: var(--measurement-medium-90);
+  }
+`;
 
 export const ButtonWrapper = styled.button`
   &[data-raw="false"] {
     ${ButtonDefaultStyles}
+    ${ButtonSizeStyles}
     ${ButtonVariantsStyles}
   }
 `;

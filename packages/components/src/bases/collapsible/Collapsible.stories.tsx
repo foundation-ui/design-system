@@ -3,7 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Collapsible } from ".";
-import { ComponentVariantEnum } from "../../../../../types";
+import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -18,23 +18,46 @@ const meta = {
 } satisfies Meta<typeof Collapsible>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+// type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default = {
   args: {
+    raw: false,
+    variant: ComponentVariantEnum.Tertiary,
+    sizing: ComponentSizeEnum.Medium,
     defaultOpen: false,
     showFirstChild: true,
     onClick: () => console.log("Click"),
     children: "Default collapsible",
   },
-
+  argTypes: {
+    variant: {
+      options: [
+        ComponentVariantEnum.Primary,
+        ComponentVariantEnum.Secondary,
+        ComponentVariantEnum.Tertiary,
+        ComponentVariantEnum.Ghost,
+      ],
+      control: { type: "radio" },
+    },
+    sizing: {
+      options: [
+        ComponentSizeEnum.Small,
+        ComponentSizeEnum.Medium,
+        ComponentSizeEnum.Large,
+      ],
+      control: { type: "radio" },
+    },
+  },
   render: ({ ...args }) => (
     <Wrapper>
       <Collapsible.Root>
         <Collapsible>
           <Collapsible.Trigger
-            variant={ComponentVariantEnum.Tertiary}
-            onClick={() => args.onClick}
+            raw={args.raw}
+            variant={args.variant}
+            sizing={args.sizing}
+            onClick={args.onClick}
           >
             {args.children}
           </Collapsible.Trigger>

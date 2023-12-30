@@ -28,6 +28,25 @@ export const Default: Story = {
     sizing: ComponentSizeEnum.Medium,
     raw: false,
   },
+  argTypes: {
+    variant: {
+      options: [
+        ComponentVariantEnum.Primary,
+        ComponentVariantEnum.Secondary,
+        ComponentVariantEnum.Tertiary,
+        ComponentVariantEnum.Ghost,
+      ],
+      control: { type: "radio" },
+    },
+    sizing: {
+      options: [
+        ComponentSizeEnum.Small,
+        ComponentSizeEnum.Medium,
+        ComponentSizeEnum.Large,
+      ],
+      control: { type: "radio" },
+    },
+  },
   render: ({ ...args }) => (
     <Wrapper>
       <Button {...args} />

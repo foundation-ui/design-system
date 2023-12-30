@@ -17,14 +17,8 @@ const FieldDefaultStyles = css`
   border: var(--measurement-small-10) solid transparent;
   border-radius: var(--measurement-medium-30);
   backdrop-filter: blur(var(--measurement-small-10));
-
-  gap: var(--measurement-medium-30);
-  padding: 0 var(--measurement-medium-30);
-  min-width: var(--measurement-medium-90);
-  min-height: var(--measurement-medium-90);
-  width: fit-content;
-
   color: var(--alpha-mono-dark-80);
+  width: fit-content;
 
   transition: all ease-in-out 0.2s;
 
@@ -105,6 +99,26 @@ const FieldVariantsStyles = css`
     }
   }
 `;
+const FieldSizeStyles = css`
+  &[data-size="small"] {
+    gap: var(--measurement-medium-10);
+    padding: 0 var(--measurement-medium-30);
+    min-width: var(--measurement-medium-60);
+    min-height: var(--measurement-medium-80);
+  }
+  &[data-size="medium"] {
+    gap: var(--measurement-medium-30);
+    padding: 0 var(--measurement-medium-30);
+    min-width: var(--measurement-medium-90);
+    min-height: var(--measurement-medium-90);
+    width: fit-content;
+  }
+  &[data-size="large"] {
+    padding: var(--measurement-medium-20) var(--measurement-medium-40);
+    min-width: var(--measurement-medium-90);
+    min-height: var(--measurement-medium-90);
+  }
+`;
 
 export const Fieldset = styled.fieldset`
   all: unset;
@@ -118,6 +132,7 @@ export const Input = styled.input`
   &[data-raw="false"] {
     ${FieldDefaultStyles}
     ${FieldVariantsStyles}
+    ${FieldSizeStyles}
 
   &[data-error="true"] {
       &::placeholder {

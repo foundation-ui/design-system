@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { Dialog } from ".";
 import { Button } from "../button";
-import { ComponentVariantEnum } from "../../../../../types";
+import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   margin: var(--measurement-medium-30);
@@ -24,8 +25,18 @@ export const Default = {
     exitOnInteraction: true,
     open: false,
     raw: false,
+    sizing: ComponentSizeEnum.Medium,
   },
-
+  argTypes: {
+    sizing: {
+      options: [
+        ComponentSizeEnum.Small,
+        ComponentSizeEnum.Medium,
+        ComponentSizeEnum.Large,
+      ],
+      control: { type: "radio" },
+    },
+  },
   render: ({ ...args }) => (
     <Wrapper>
       <div id="portal" />
@@ -38,7 +49,7 @@ export const Default = {
         </Dialog.Trigger>
 
         <Dialog.Portal container={args.container}>
-          <Dialog open={args.open} raw={args.raw}>
+          <Dialog open={args.open} raw={args.raw} sizing={args.sizing}>
             <h4>Dialog component</h4>
             <p>
               This Dialog comes from an open-source design system providing

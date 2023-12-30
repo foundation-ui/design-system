@@ -1,4 +1,28 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const DialogDefaultStyles = css`
+  position: fixed;
+  top: var(--measurement-large-60);
+  width: 100%;
+
+  background-color: var(--color-mono-whitest);
+  box-shadow: var(--alpha-mono-dark-10) var(--measurement-medium-10)
+    var(--measurement-medium-10) 0 0;
+  border: var(--measurement-small-10) solid var(--alpha-mono-dark-10);
+  border-radius: var(--measurement-medium-30);
+  padding: var(--measurement-medium-60);
+`;
+const DialogSizeStyles = css`
+  &[data-size="small"] {
+    max-width: var(--measurement-large-90);
+  }
+  &[data-size="medium"] {
+    max-width: calc(var(--measurement-large-90) * 1.33);
+  }
+  &[data-size="large"] {
+    max-width: calc(var(--measurement-large-90) * 2);
+  }
+`;
 
 export const Overlay = styled.div`
   position: fixed;
@@ -29,17 +53,7 @@ export const DialogWrapper = styled.dialog`
   z-index: 100;
 
   &[data-raw="false"] {
-    position: fixed;
-    top: var(--measurement-large-60);
-
-    width: 100%;
-    max-width: calc(var(--measurement-large-90) * 1.33);
-    padding: var(--measurement-medium-60);
-
-    background-color: var(--color-mono-whitest);
-    box-shadow: var(--alpha-mono-dark-10) var(--measurement-medium-10)
-      var(--measurement-medium-10) 0 0;
-    border: var(--measurement-small-10) solid var(--alpha-mono-dark-10);
-    border-radius: var(--measurement-medium-30);
+    ${DialogDefaultStyles}
+    ${DialogSizeStyles}
   }
 `;

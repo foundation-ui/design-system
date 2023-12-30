@@ -52,10 +52,11 @@ const Checkbox = (props: ICheckboxProperties) => {
   return (
     <CheckboxWrapper
       role="checkbox"
-      data-raw={Boolean(raw)}
       data-state={defaultValue}
-      data-size={sizing || ComponentSizeEnum.Medium}
       data-disabled={disabled}
+      data-raw={Boolean(raw)}
+      data-size={sizing || ComponentSizeEnum.Medium}
+      data-variant={variant || ComponentVariantEnum.Tertiary}
     >
       <NativeInput
         type="checkbox"
@@ -69,7 +70,6 @@ const Checkbox = (props: ICheckboxProperties) => {
         aria-disabled={disabled}
         aria-required={required}
         data-state={defaultValue}
-        data-variant={variant || ComponentVariantEnum.Tertiary}
         data-raw={Boolean(raw)}
         {...restProps}
       />

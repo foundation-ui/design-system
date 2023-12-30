@@ -5,12 +5,15 @@ import {
   IReactChildren,
   IComponentStyling,
   ComponentSizeEnum,
+  ComponentVariantEnum,
   IComponentSize,
+  IComponentVariant,
 } from "../../../../../types";
 
 export interface ISwitchProperties
   extends React.ComponentPropsWithoutRef<"button">,
     IComponentSize,
+    IComponentVariant,
     IComponentStyling {
   defaultChecked?: boolean;
 }
@@ -27,6 +30,7 @@ const Switch = (props: ISwitchProperties) => {
   const {
     raw,
     sizing,
+    variant,
     value,
     defaultChecked,
     disabled,
@@ -56,6 +60,7 @@ const Switch = (props: ISwitchProperties) => {
       disabled={disabled}
       aria-checked={Boolean(states.checked)}
       data-disabled={String(disabled || false)}
+      data-variant={variant || ComponentVariantEnum.Primary}
       data-size={sizing || ComponentSizeEnum.Medium}
       data-raw={Boolean(raw)}
       {...restProps}
