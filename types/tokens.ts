@@ -3,6 +3,7 @@ import {
   TScaleVariant,
   IColorVariation,
   IScaleVariation,
+  MeasurementFormatEnum,
 } from "./";
 
 export enum TokenTypesEnum {
@@ -17,7 +18,13 @@ export interface IQueryProperties {
   source: IDesignTokensLibrary;
   token_category: TokenTypesEnum.Color | TokenTypesEnum.Measurement;
   query: string;
-  unit?: ColorFormatEnum.Hex | ColorFormatEnum.Rgb | ColorFormatEnum.Hsl;
+  unit?:
+    | ColorFormatEnum.Hex
+    | ColorFormatEnum.Rgb
+    | ColorFormatEnum.Hsl
+    | MeasurementFormatEnum.Px
+    | MeasurementFormatEnum.Pt
+    | MeasurementFormatEnum.Rem;
 }
 export interface IComposedLibraryItem {
   name: string;

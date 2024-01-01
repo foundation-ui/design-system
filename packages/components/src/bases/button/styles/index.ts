@@ -42,38 +42,39 @@ const ButtonDefaultStyles = css`
 `;
 const ButtonVariantsStyles = css`
   &[data-variant="primary"] {
-    color: var(--alpha-mono-light-90);
-    background-color: var(--color-mono-darker);
+    color: ${({ theme }) => theme.colors.body.alpha[8].rgb};
+    background-color: ${({ theme }) => theme.colors.text.base};
 
     &:hover,
     &:focus,
     &:active {
-      color: var(--color-mono-whitest);
-      background-color: var(--color-mono-darkest);
+      color: ${({ theme }) => theme.colors.body.base};
     }
   }
 
   &[data-variant="secondary"] {
-    color: var(--alpha-mono-dark-60);
-    background-color: var(--alpha-mono-dark-10);
+    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
+    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
 
     &:hover,
     &:focus,
     &:active {
-      color: var(--color-mono-dark);
+      color: ${({ theme }) => theme.colors.text.base};
+      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
   }
 
   &[data-variant="tertiary"] {
-    color: var(--alpha-mono-dark-60);
-    background-color: var(--color-mono-lightest);
-    border-color: var(--alpha-mono-dark-10);
+    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
+    border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    background-color: transparent;
 
     &:hover,
     &:focus,
     &:active {
-      color: var(--color-mono-dark);
-      background-color: var(--alpha-mono-dark-10);
+      color: ${({ theme }) => theme.colors.text.base};
+      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+      border-color: transparent;
     }
   }
 
@@ -83,12 +84,12 @@ const ButtonVariantsStyles = css`
     background-color: transparent;
     min-width: fit-content;
     min-height: var(--measurement-medium-60);
-    color: var(--alpha-mono-dark-60);
+    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
 
     &:hover,
     &:focus,
     &:active {
-      color: var(--color-mono-dark);
+      color: ${({ theme }) => theme.colors.text.base};
     }
   }
 `;

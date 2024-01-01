@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+// color: ${({ theme }) => theme.colors.text.base};
+// border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
 const AvatarSizesStyles = css`
   &[data-size="small"] {
     width: var(--measurement-large-10);
@@ -33,8 +35,8 @@ const AvatarStatusesStyles = css`
   }
 
   &[data-status="offline"] {
-    fill: var(--color-mono-white);
-    stroke: var(--color-mono-whitest);
+    fill: ${({ theme }) => theme.colors.body.base};
+    stroke: ${({ theme }) => theme.colors.text.alpha[0].rgb};
   }
 `;
 
@@ -43,7 +45,8 @@ export const AvatarWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-mono-white);
+
+    background-color: ${({ theme }) => theme.colors.body.base};
     border-radius: 100%;
 
     img {

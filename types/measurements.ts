@@ -2,6 +2,11 @@ export enum MeasureVariantEnum {
   FontSize = "fontsize",
   Measurement = "measurement",
 }
+export enum MeasurementFormatEnum {
+  Px = "px",
+  Rem = "rem",
+  Pt = "pt",
+}
 export enum SizesEnum {
   XSmall = "xsmall",
   Small = "small",

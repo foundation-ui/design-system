@@ -2,21 +2,26 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import {
   useDesignTokens,
+  GetTokenFromSource,
   GetTokenBase,
   js_design_tokens,
 } from "../../../packages/tokens";
+import {
+  TokenTypesEnum,
+  SizesEnum,
+  MeasurementFormatEnum,
+} from "../../../types";
 
 const Introduction = () => {
   const tokens = useDesignTokens();
 
   // console.log(js_design_tokens);
   console.log(
-    GetTokenBase({
+    GetTokenFromSource({
       source: js_design_tokens,
-      token_category: "measurement",
-      query: "small",
-      unit: "px",
-    })
+      token_category: TokenTypesEnum.Color,
+      query: "mono-darker",
+    })?.alpha
   );
   return (
     <section>

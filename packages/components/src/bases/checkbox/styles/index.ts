@@ -10,59 +10,60 @@ const CheckboxDefaultStyles = css`
 `;
 const CheckboxVariantsStyles = css`
   &[data-variant="primary"] {
-    background-color: var(--alpha-mono-dark-10);
+    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     border: var(--measurement-small-10) solid transparent;
 
     &:hover,
     &:focus {
-      border-color: var(--alpha-mono-dark-10);
+      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
 
     &:active,
     &[data-state="checked"] {
-      background-color: var(--color-mono-darker);
+      background-color: ${({ theme }) => theme.colors.text.base};
     }
 
     &[data-state="checked"] {
       svg {
-        stroke: var(--color-mono-white);
+        stroke: ${({ theme }) => theme.colors.body.base};
       }
     }
   }
 
   &[data-variant="secondary"] {
-    background-color: var(--alpha-mono-dark-10);
+    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     border: var(--measurement-small-10) solid transparent;
 
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
-      border-color: var(--alpha-mono-dark-10);
+      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
 
     &[data-state="checked"] {
       svg {
-        stroke: var(--color-mono-dark);
+        stroke: ${({ theme }) => theme.colors.text.base};
       }
     }
   }
 
   &[data-variant="tertiary"] {
-    background-color: var(--color-mono-lightest);
-    border: var(--measurement-small-10) solid var(--alpha-mono-dark-10);
+    background-color: ${({ theme }) => theme.colors.body.base};
+    border: var(--measurement-small-10) solid
+      ${({ theme }) => theme.colors.text.alpha[0].rgb};
 
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
-      background-color: var(--alpha-mono-dark-10);
+      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
       border-color: transparent;
     }
 
     &[data-state="checked"] {
       svg {
-        stroke: var(--color-mono-dark);
+        stroke: ${({ theme }) => theme.colors.text.base};
       }
     }
   }
@@ -74,10 +75,10 @@ const CheckboxVariantsStyles = css`
     &:focus,
     &:active,
     &[data-state="checked"] {
-      border-color: var(--alpha-mono-dark-10);
+      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
 
       svg {
-        stroke: var(--color-mono-dark);
+        stroke: ${({ theme }) => theme.colors.text.base};
       }
     }
   }
