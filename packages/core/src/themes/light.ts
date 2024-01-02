@@ -21,7 +21,7 @@ export const lightTheme = {
       contrast: GetTokenBase({
         source: js_design_tokens,
         token_category: TokenTypesEnum.Color,
-        query: "mono-white",
+        query: "mono-whitest",
       }),
     },
     text: {
@@ -38,7 +38,7 @@ export const lightTheme = {
       contrast: GetTokenBase({
         source: js_design_tokens,
         token_category: TokenTypesEnum.Color,
-        query: "mono-darker",
+        query: "mono-dark",
       }),
     },
   },

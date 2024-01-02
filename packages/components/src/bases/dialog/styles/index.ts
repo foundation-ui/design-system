@@ -5,7 +5,7 @@ const DialogDefaultStyles = css`
   top: var(--measurement-large-60);
   width: 100%;
 
-  background-color: ${({ theme }) => theme.colors.body.base};
+  background-color: ${({ theme }) => theme.colors.body.contrast};
   border: var(--measurement-small-10) solid
     ${({ theme }) => theme.colors.text.alpha[0].rgb};
   border-radius: var(--measurement-medium-30);

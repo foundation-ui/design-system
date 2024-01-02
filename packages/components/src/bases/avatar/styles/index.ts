@@ -1,7 +1,5 @@
 import styled, { css } from "styled-components";
 
-// color: ${({ theme }) => theme.colors.text.base};
-// border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
 const AvatarSizesStyles = css`
   &[data-size="small"] {
     width: var(--measurement-large-10);
@@ -42,22 +40,20 @@ const AvatarStatusesStyles = css`
 
 export const AvatarWrapper = styled.div`
   &[data-raw="false"] {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background-color: ${({ theme }) => theme.colors.body.base};
+    background-color: ${({ theme }) => theme.colors.body.contrast};
     border-radius: 100%;
 
     img {
+      width: inherit;
       border-radius: 100%;
     }
-  }
 
-  position: relative;
-  ${AvatarSizesStyles}
-  img {
-    width: inherit;
+    ${AvatarSizesStyles}
   }
 `;
 export const StatusWrapper = styled.svg`

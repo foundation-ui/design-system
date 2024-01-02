@@ -27,7 +27,7 @@ export const ContentWrapper = styled.ul`
     max-height: var(--measurement-large-90);
     padding: var(--measurement-medium-30);
 
-    background-color: ${({ theme }) => theme.colors.body.base};
+    background-color: ${({ theme }) => theme.colors.body.contrast};
     border: var(--measurement-small-10) solid
       ${({ theme }) => theme.colors.text.alpha[0].rgb};
     border-radius: var(--measurement-medium-30);
