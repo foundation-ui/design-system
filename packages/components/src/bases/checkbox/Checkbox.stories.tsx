@@ -6,8 +6,6 @@ import { Checkbox } from ".";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
-  margin: var(--measurement-medium-30);
-
   label {
     display: flex;
     align-items: flex-start;

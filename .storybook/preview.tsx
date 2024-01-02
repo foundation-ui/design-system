@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { Preview } from "@storybook/react";
 import { DesignTokensProvider } from "../packages/tokens";
 import {
@@ -7,6 +8,16 @@ import {
   ColorModeProvider,
   SystemThemeProvider,
 } from "../packages/core";
+
+const StoriesWrapepr = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: var(--measurement-medium-30);
+  background-color: ${({ theme }) => theme.colors.body.base};
+`;
 
 const preview: Preview = {
   parameters: {
@@ -19,17 +30,21 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <DesignTokensProvider>
-        <ColorModeProvider>
-          <SystemThemeProvider>
-            <CSSRoot />
-            <ResetStyles />
-            <Story />
-          </SystemThemeProvider>
-        </ColorModeProvider>
-      </DesignTokensProvider>
-    ),
+    (Story) => {
+      return (
+        <DesignTokensProvider>
+          <ColorModeProvider>
+            <SystemThemeProvider>
+              <CSSRoot />
+              <ResetStyles />
+              <StoriesWrapepr>
+                <Story />
+              </StoriesWrapepr>
+            </SystemThemeProvider>
+          </ColorModeProvider>
+        </DesignTokensProvider>
+      );
+    },
   ],
 };
 

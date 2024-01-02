@@ -5,9 +5,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { DropdownMenu } from ".";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
-const Wrapper = styled.div`
-  margin: var(--measurement-medium-30);
-`;
+const Wrapper = styled.div``;
 const meta = {
   title: "Components/Bases/DropdownMenu",
   component: DropdownMenu,

@@ -27,11 +27,10 @@ export const ContentWrapper = styled.ul`
     max-height: var(--measurement-large-90);
     padding: var(--measurement-medium-30);
 
-    background-color: var(--color-mono-whitest);
-    border: var(--measurement-small-10) solid var(--alpha-mono-dark-10);
+    background-color: ${({ theme }) => theme.colors.body.base};
+    border: var(--measurement-small-10) solid
+      ${({ theme }) => theme.colors.text.alpha[0].rgb};
     border-radius: var(--measurement-medium-30);
-    box-shadow: var(--alpha-mono-dark-10) var(--measurement-medium-10)
-      var(--measurement-medium-10) 0 0;
   }
 `;
 
@@ -45,7 +44,7 @@ export const ItemWrapper = styled.li`
     font-size: var(--fontsize-medium-20);
     padding: var(--measurement-medium-30);
     border-radius: var(--measurement-medium-30);
-    color: var(--alpha-mono-dark-60);
+    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
     outline: none;
     transition: all ease-in-out 0.2s;
     cursor: pointer;
@@ -53,7 +52,7 @@ export const ItemWrapper = styled.li`
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--alpha-mono-dark-10);
+      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
   }
 

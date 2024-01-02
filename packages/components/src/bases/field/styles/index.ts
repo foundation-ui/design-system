@@ -17,7 +17,7 @@ const FieldDefaultStyles = css`
   border: var(--measurement-small-10) solid transparent;
   border-radius: var(--measurement-medium-30);
   backdrop-filter: blur(var(--measurement-small-10));
-  color: var(--alpha-mono-dark-80);
+  color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
   width: fit-content;
 
   transition: all ease-in-out 0.2s;
@@ -31,7 +31,7 @@ const FieldDefaultStyles = css`
   &:hover,
   &:focus,
   &:active {
-    color: var(--color-mono-dark);
+    color: ${({ theme }) => theme.colors.text.base};
 
     svg,
     span,
@@ -40,7 +40,7 @@ const FieldDefaultStyles = css`
     }
   }
   &::placeholder {
-    color: var(--alpha-mono-dark-30);
+    color: ${({ theme }) => theme.colors.text.alpha[2].rgb};
   }
   &:disabled {
     cursor: not-allowed;
@@ -49,7 +49,7 @@ const FieldDefaultStyles = css`
 `;
 const FieldVariantsStyles = css`
   &[data-variant="primary"] {
-    background-color: var(--alpha-mono-dark-10);
+    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
 
     &[data-error="true"] {
       color: var(--color-red);
@@ -59,13 +59,13 @@ const FieldVariantsStyles = css`
   }
 
   &[data-variant="secondary"] {
-    background-color: var(--color-mono-lightest);
-    border-color: var(--alpha-mono-dark-10);
+    background-color: transparent;
+    border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
 
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--alpha-mono-dark-10);
+      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
 
     &[data-error="true"] {
@@ -86,12 +86,12 @@ const FieldVariantsStyles = css`
     background-color: transparent;
     min-width: fit-content;
     min-height: var(--measurement-medium-60);
-    color: var(--alpha-mono-dark-60);
+    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
 
     &:hover,
     &:focus,
     &:active {
-      color: var(--color-mono-dark);
+      color: ${({ theme }) => theme.colors.text.base};
     }
 
     &[data-error="true"] {
@@ -157,7 +157,7 @@ export const Def = styled.dfn`
     font-size: var(--fontsize-medium-10);
 
     &[data-variant="hint"] {
-      color: var(--alpha-mono-dark-30);
+      color: ${({ theme }) => theme.colors.text.alpha[2].rgb};
     }
     &[data-variant="error"] {
       color: var(--color-red);

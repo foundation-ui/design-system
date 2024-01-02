@@ -5,10 +5,9 @@ const DialogDefaultStyles = css`
   top: var(--measurement-large-60);
   width: 100%;
 
-  background-color: var(--color-mono-whitest);
-  box-shadow: var(--alpha-mono-dark-10) var(--measurement-medium-10)
-    var(--measurement-medium-10) 0 0;
-  border: var(--measurement-small-10) solid var(--alpha-mono-dark-10);
+  background-color: ${({ theme }) => theme.colors.body.base};
+  border: var(--measurement-small-10) solid
+    ${({ theme }) => theme.colors.text.alpha[0].rgb};
   border-radius: var(--measurement-medium-30);
   padding: var(--measurement-medium-60);
 `;
@@ -33,7 +32,7 @@ export const Overlay = styled.div`
   z-index: 10;
 
   &[data-raw="false"] {
-    background-color: var(--alpha-mono-dark-10);
+    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     backdrop-filter: blur(var(--measurement-small-30));
   }
 `;

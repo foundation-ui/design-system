@@ -17,27 +17,29 @@ const SwitchDefaultStyles = css`
 const SwitchVariantsStyles = css`
   &[data-variant="primary"] {
     &[aria-checked="true"] {
-      background-color: var(--color-mono-dark);
+      background-color: ${({ theme }) => theme.colors.text.base};
     }
     &[aria-checked="false"] {
-      background-color: var(--alpha-mono-dark-10);
+      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
   }
 
   &[data-variant="ghost"] {
     &[aria-checked="true"] {
-      border-color: var(--alpha-mono-dark-10);
+      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
 
       span {
-        border: var(--measurement-small-10) solid var(--alpha-mono-dark-10);
+        border: var(--measurement-small-10) solid
+          ${({ theme }) => theme.colors.text.alpha[0].rgb};
         background-color: transparent;
       }
     }
     &[aria-checked="false"] {
-      border-color: var(--alpha-mono-dark-10);
+      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
 
       span {
-        border: var(--measurement-small-10) solid var(--alpha-mono-dark-10);
+        border: var(--measurement-small-10) solid
+          ${({ theme }) => theme.colors.text.alpha[0].rgb};
         background-color: transparent;
       }
     }
@@ -105,7 +107,7 @@ export const Thumb = styled.span`
     all: unset;
     display: block;
 
-    background: var(--color-mono-whitest);
+    background: ${({ theme }) => theme.colors.body.base};
     border-radius: 100%;
     transition: all 0.1s ease-in-out 0s;
   }
