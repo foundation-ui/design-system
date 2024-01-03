@@ -3,6 +3,12 @@ export enum ComponentSizeEnum {
   Medium = "medium",
   Large = "large",
 }
+export enum ComponentSideEnum {
+  Top = "top",
+  Right = "right",
+  Bottom = "bottom",
+  Left = "left",
+}
 export enum ComponentVariantEnum {
   Primary = "primary",
   Secondary = "secondary",

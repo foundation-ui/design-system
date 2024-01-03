@@ -20,7 +20,7 @@ export const ToolbarProvider = ({ children }: IReactChildren): JSX.Element => {
 };
 
 function useToolbarProvider(): IComponentAPI {
-  const [expanded, setExpanded] = useState<boolean>(true);
+  const [expanded, setExpanded] = useState<boolean>(false);
   const toolbarId = React.useId();
 
   return {

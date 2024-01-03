@@ -27,16 +27,16 @@ export const ToolbarSizeStyles = css`
 `;
 export const ToolbarSideStyles = css`
   &[data-side="top"] {
-    border-top-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-  }
-  &[data-side="right"] {
-    border-right-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-  }
-  &[data-side="bottom"] {
     border-bottom-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
   }
-  &[data-side="left"] {
+  &[data-side="right"] {
     border-left-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+  }
+  &[data-side="bottom"] {
+    border-top-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+  }
+  &[data-side="left"] {
+    border-right-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
   }
 `;
 
@@ -48,6 +48,8 @@ export const ToolbarWrapper = styled.aside`
   }
 `;
 export const ToolbarTriggerWrapper = styled.menu`
-  all: unset;
-  align-self: flex-end;
+  &[data-raw="false"] {
+    all: unset;
+    align-self: flex-end;
+  }
 `;
