@@ -1,7 +1,7 @@
 import React from "react";
 import { ToolbarProvider, useToolbar } from "./hooks";
 import { ToolbarWrapper, ToolbarTriggerWrapper } from "./styles";
-import { Button, IButtonProperties } from "../../";
+import { Button, IButtonProperties } from "../..";
 import {
   IComponentStyling,
   ComponentSizeEnum,

@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 `;
 
 const meta = {
-  title: "Components/Layout/Toolbar",
+  title: "Components/Bases/Toolbar",
   component: Toolbar,
   parameters: {
     layout: "fullscreen",
