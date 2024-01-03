@@ -4,14 +4,30 @@ import ReactDOM from "react-dom";
 import { useContainer, ContainerProvider } from "./hooks";
 import { IReactChildren } from "../../../../../types";
 
+import styled from "styled-components";
+
+const ContainerGridWrapper = styled.section`
+  position: relative;
+  display: grid;
+  grid-template-rows: min-content;
+  width: 100%;
+`;
+const ContainerRowWrapper = styled.section`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+`;
+
 const ContainerRoot = ({ children }: IReactChildren) => {
   return <ContainerProvider>{children}</ContainerProvider>;
 };
 const ContainerRow = (props: any) => {
-  return;
+  const { children } = props;
+  return <ContainerRowWrapper>{children}</ContainerRowWrapper>;
 };
 const ContainerCol = (props: any) => {
-  return;
+  const { children } = props;
+  return <ContainerGridWrapper>{children}</ContainerGridWrapper>;
 };
 const ContainerBox = (props: any) => {
   return;

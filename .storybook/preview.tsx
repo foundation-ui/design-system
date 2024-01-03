@@ -15,7 +15,6 @@ const StoriesWrapepr = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  padding: var(--measurement-medium-30);
   background-color: ${({ theme }) => theme.colors.body.base};
 `;
 
