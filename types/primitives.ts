@@ -29,7 +29,7 @@ export type TComponentVariant =
 
 export interface IComponentAPI {
   id: string;
-  states: Record<string, TComponentAPI>;
+  states: Record<string, TComponentAPI | Record<string, TComponentAPI>>;
   methods: Record<string, (args?: TComponentAPI | any) => void>;
 }
 export interface IComponentStyling {
@@ -40,4 +40,11 @@ export interface IComponentSize {
 }
 export interface IComponentVariant {
   variant?: TComponentVariant;
+}
+export interface IComponentControlProperties {
+  controls: string;
+  shortcut?: boolean;
+  hotkey?: string;
+  combokey?: boolean;
+  bindkey?: string;
 }

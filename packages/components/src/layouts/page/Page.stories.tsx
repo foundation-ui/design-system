@@ -2,6 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Page } from ".";
+import { Container } from "../../";
 import { Button } from "../../";
 import {
   IComponentStyling,
@@ -39,27 +40,34 @@ export const Default = {
             >
               Tools
             </Page.Tools>
-            <Page.Section>
+
+            <Container.Col>
               <Page.Navigation>Nav</Page.Navigation>
               <Page.Menu>Menu</Page.Menu>
+
               <Page.Content>
-                <h1>Birbs UI</h1>
-                <p>
-                  An open-source design system providing low-level components
-                  and foundations to help you build high-quality, accessible
-                  applications. An open-source design system providing low-level
-                  components and foundations to help you build high-quality,
-                  accessible applications. An open-source design system
-                  providing low-level components and foundations to help you
-                  build high-quality, accessible applications.
-                </p>
+                <Container.Title>
+                  <h1>Title sample</h1>
+                  <p>
+                    An open-source design system providing low-level components
+                    and foundations to help you build high-quality, accessible
+                    applications. An open-source design system providing
+                    low-level components and foundations to help you build
+                    high-quality, accessible applications. An open-source design
+                    system providing low-level components and foundations to
+                    help you build high-quality, accessible applications.
+                  </p>
+                  <Button>Sample button</Button>
+                </Container.Title>
               </Page.Content>
 
               <Page.Panel>
                 <p>Page panel</p>
               </Page.Panel>
-            </Page.Section>
+            </Container.Col>
+
             <Page.Tools
+              defaultOpen
               side={ComponentSideEnum.Right}
               sizing={ComponentSizeEnum.Large}
             >

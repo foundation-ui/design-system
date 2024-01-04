@@ -17,6 +17,9 @@ const ContainerRowWrapper = styled.section`
   display: flex;
   justify-content: space-between;
 `;
+const ContainerTitleWrapper = styled.hgroup`
+  max-width: calc(var(--measurement-large-90) * 2);
+`;
 
 const ContainerRoot = ({ children }: IReactChildren) => {
   return <ContainerProvider>{children}</ContainerProvider>;
@@ -42,7 +45,9 @@ const ContainerDivider = (props: any) => {
   return;
 };
 const ContainerTitle = (props: any) => {
-  return;
+  const { children } = props;
+
+  return <ContainerTitleWrapper>{children}</ContainerTitleWrapper>;
 };
 const Container = (props: any) => {
   const containerContext = useContainer();
