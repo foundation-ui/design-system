@@ -20,12 +20,12 @@ export const PageNavWrapper = styled.nav`
   border-bottom-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
 
   height: 100%;
-  max-height: var(--measurement-large-30);
-  padding: var(--measurement-medium-60) var(--measurement-medium-30);
+  max-height: var(--measurement-large-20);
+  padding: var(--measurement-medium-30);
 `;
 export const PageMenuWrapper = styled.menu`
   position: absolute;
-  top: var(--measurement-large-30);
+  top: var(--measurement-large-20);
   width: 100%;
   background-color: ${({ theme }) => theme.colors.body.contrast};
   border: var(--measurement-small-10) solid transparent;
@@ -44,12 +44,14 @@ export const PagePanelWrapper = styled(Toolbar)`
   ${ScrollbarReset}
 `;
 export const PageSectionWrapper = styled.div`
-  height: calc(100dvh - (var(--measurement-large-30) * 2));
-  background: ${({ theme }) => theme.colors.body.base};
+  background: ${({ theme }) => theme.colors.body.contrast};
   position: absolute;
   width: 100%;
-  top: calc(var(--measurement-large-30) * 2);
   padding: var(--measurement-medium-60) var(--measurement-medium-30);
+  top: calc(var(--measurement-large-30) + var(--measurement-large-20));
+  height: calc(
+    100dvh - (var(--measurement-large-30) + var(--measurement-large-20))
+  );
 
   overflow-y: scroll;
   ${ScrollbarReset}

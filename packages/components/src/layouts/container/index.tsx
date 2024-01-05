@@ -26,11 +26,11 @@ const ContainerRoot = ({ children }: IReactChildren) => {
 };
 const ContainerRow = (props: any) => {
   const { children } = props;
-  return <ContainerRowWrapper>{children}</ContainerRowWrapper>;
+  return <ContainerRowWrapper {...props}>{children}</ContainerRowWrapper>;
 };
 const ContainerCol = (props: any) => {
   const { children } = props;
-  return <ContainerGridWrapper>{children}</ContainerGridWrapper>;
+  return <ContainerGridWrapper {...props}>{children}</ContainerGridWrapper>;
 };
 const ContainerBox = (props: any) => {
   return;

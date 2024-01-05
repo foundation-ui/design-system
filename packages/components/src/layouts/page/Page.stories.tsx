@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Page } from ".";
 import { Container } from "../../";
-import { Avatar, AvataStatusEnum, Accordion, Button } from "../../";
+import { Avatar, AvataStatusEnum, Accordion, Button, Toolbar } from "../../";
 import {
   ComponentSizeEnum,
   ComponentVariantEnum,
@@ -38,64 +38,78 @@ export const Default = {
               side={ComponentSideEnum.Left}
               sizing={ComponentSizeEnum.Small}
             >
-              <Avatar
-                src="https://avatars.githubusercontent.com/u/153380498?s=160&v=4"
-                alt="external-source-avatar"
-                sizing={ComponentSizeEnum.Small}
-                status={AvataStatusEnum.Online}
-              />
-              <Accordion.Root>
-                <Accordion>
-                  <Accordion.Trigger
-                    value="primary-tools"
-                    sizing={ComponentSizeEnum.Medium}
-                    variant={ComponentVariantEnum.Ghost}
-                  >
-                    Primary nav tools
-                  </Accordion.Trigger>
-                  <Accordion.Content value="primary-tools">
-                    Tool
-                  </Accordion.Content>
-                </Accordion>
-              </Accordion.Root>
-              <Accordion.Root>
-                <Accordion>
-                  <Accordion.Trigger
-                    value="secondary-tools"
-                    sizing={ComponentSizeEnum.Medium}
-                    variant={ComponentVariantEnum.Ghost}
-                  >
-                    Secondary nav tools
-                  </Accordion.Trigger>
-                  <Accordion.Content value="secondary-tools">
-                    Tool
-                  </Accordion.Content>
-                </Accordion>
-              </Accordion.Root>
+              <Toolbar.Item
+                showFirstChild
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <Avatar
+                  src="https://avatars.githubusercontent.com/u/153380498?s=160&v=4"
+                  alt="external-source-avatar"
+                  sizing={ComponentSizeEnum.Large}
+                  // status={AvataStatusEnum.Online}
+                />
+                <span />
+              </Toolbar.Item>
+
+              <Toolbar.Item>
+                <Container.Col style={{ gap: 6, marginTop: 24 }}>
+                  {[1, 2, 3].map((item) => (
+                    <small key={item}>Tool n°{item}</small>
+                  ))}
+                </Container.Col>
+              </Toolbar.Item>
             </Page.Tools>
 
             <Container.Col>
-              <Page.Navigation>Nav</Page.Navigation>
-              <Page.Menu>Menu</Page.Menu>
+              <Page.Navigation>
+                <Container.Row>
+                  <Container.Row style={{ gap: 6 }}>
+                    <Button sizing={ComponentSizeEnum.Small}>
+                      &nbsp;&nbsp;&nbsp;
+                    </Button>
+                    <Button sizing={ComponentSizeEnum.Small}>
+                      &nbsp;&nbsp;&nbsp;
+                    </Button>
+                  </Container.Row>
+                  <Container.Row style={{ gap: 6 }}>
+                    <Button sizing={ComponentSizeEnum.Small}>
+                      &nbsp;&nbsp;&nbsp;
+                    </Button>
+                    <Button sizing={ComponentSizeEnum.Small}>
+                      &nbsp;&nbsp;&nbsp;
+                    </Button>
+                    <Button sizing={ComponentSizeEnum.Small}>
+                      &nbsp;&nbsp;&nbsp;
+                    </Button>
+                  </Container.Row>
+                </Container.Row>
+              </Page.Navigation>
+              <Page.Menu>
+                <Container.Row>
+                  <Button sizing={ComponentSizeEnum.Small}>
+                    &nbsp;&nbsp;&nbsp;
+                  </Button>
+                  <Container.Row style={{ gap: 6 }}>
+                    <Button sizing={ComponentSizeEnum.Small}>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </Button>
+                    <Button sizing={ComponentSizeEnum.Small}>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </Button>
+                  </Container.Row>
+                </Container.Row>
+              </Page.Menu>
+
               <Page.Content>
                 <Container.Title>
-                  <h1>Title sample</h1>
-                  <p>
-                    An open-source design system providing low-level components
-                    and foundations to help you build high-quality, accessible
-                    applications. An open-source design system providing
-                    low-level components and foundations to help you build
-                    high-quality, accessible applications. An open-source design
-                    system providing low-level components and foundations to
-                    help you build high-quality, accessible applications.
-                  </p>
                   <Button>Sample button</Button>
                 </Container.Title>
               </Page.Content>
+
               <Page.Panel
                 shortcut
                 hotkey=","
-                trigger={<span>ctrl&nbsp;+&nbsp;,</span>}
+                // trigger="panel"
                 side={ComponentSideEnum.Bottom}
                 sizing={ComponentSizeEnum.Large}
               >
@@ -120,31 +134,20 @@ export const Default = {
               side={ComponentSideEnum.Right}
               sizing={ComponentSizeEnum.Large}
             >
-              <Accordion.Root>
-                <Accordion>
-                  <Accordion.Trigger
-                    value="primary-tools"
-                    sizing={ComponentSizeEnum.Medium}
-                    variant={ComponentVariantEnum.Ghost}
+              <Container.Col style={{ gap: 6 }}>
+                {[4, 5, 6, 7, 8].map((item) => (
+                  <Toolbar.Item
+                    key={item}
+                    showFirstChild
+                    style={{ display: "flex", alignItems: "center", gap: 6 }}
                   >
-                    Primary tools
-                  </Accordion.Trigger>
-                  <Accordion.Content value="primary-tools">
-                    Tool
-                  </Accordion.Content>
-
-                  <Accordion.Trigger
-                    value="secondary-tools"
-                    sizing={ComponentSizeEnum.Medium}
-                    variant={ComponentVariantEnum.Ghost}
-                  >
-                    Secondary tools
-                  </Accordion.Trigger>
-                  <Accordion.Content value="secondary-tools">
-                    Tool
-                  </Accordion.Content>
-                </Accordion>
-              </Accordion.Root>
+                    <Button sizing={ComponentSizeEnum.Small}>
+                      &nbsp;&nbsp;&nbsp;
+                    </Button>
+                    <small>Tool n°{item}</small>
+                  </Toolbar.Item>
+                ))}
+              </Container.Col>
             </Page.Tools>
           </Page>
           <Page.Portal container="notification-page-portal" />

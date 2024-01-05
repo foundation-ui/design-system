@@ -31,6 +31,10 @@ export interface IToolbarSectionProperties
   extends React.ComponentPropsWithRef<"section"> {
   showOnCollapse?: boolean;
 }
+export interface IToolbarItemProperties
+  extends React.ComponentPropsWithRef<"div"> {
+  showFirstChild?: boolean;
+}
 
 const ToolbarRoot = ({ children }: IReactChildren) => {
   return <ToolbarProvider>{children}</ToolbarProvider>;
@@ -127,9 +131,41 @@ const ToolbarSection = (props: IToolbarSectionProperties) => {
   if (showOnCollapse) return <section {...restProps}>{children}</section>;
   return <section {...restProps}>{expanded && children}</section>;
 };
+const ToolbarItem = (props: IToolbarItemProperties) => {
+  const { showFirstChild, onClick, children, ...restProps } = props;
+  const childArray = React.Children.toArray(children);
+
+  const toolbarContext = useToolbar();
+  const { id } = toolbarContext;
+  const { expanded } = toolbarContext.states;
+  const { toggleToolbar } = toolbarContext.methods;
+
+  const displayFirstChild =
+    showFirstChild && childArray.length > 1 && !expanded;
+
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (onClick) onClick(event);
+    if (toggleToolbar && !expanded) toggleToolbar(true);
+  };
+
+  return (
+    <div
+      tabIndex={-1}
+      aria-hidden
+      aria-describedby={id}
+      data-expanded={expanded}
+      onClick={handleClick}
+      {...restProps}
+    >
+      {displayFirstChild && childArray[0]}
+      {expanded && children}
+    </div>
+  );
+};
 
 Toolbar.Root = ToolbarRoot;
 Toolbar.Trigger = ToolbarTrigger;
+Toolbar.Item = ToolbarItem;
 Toolbar.Section = ToolbarSection;
 
-export { Toolbar, ToolbarRoot, ToolbarTrigger, ToolbarSection };
+export { Toolbar, ToolbarRoot, ToolbarTrigger, ToolbarItem, ToolbarSection };
