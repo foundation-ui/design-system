@@ -3,7 +3,11 @@ import ReactDOM from "react-dom";
 
 import { usePage, PageProvider } from "./hooks";
 import { Container } from "../../";
-import { Toolbar, IToolbarBodyProperties } from "../../";
+import {
+  Toolbar,
+  IToolbarBodyProperties,
+  IToolbarSectionProperties,
+} from "../../";
 import {
   PageNavWrapper,
   PageMenuWrapper,
@@ -17,7 +21,9 @@ import {
   IComponentVariant,
 } from "../../../../../types";
 
-export interface IPageToolsProperties extends IToolbarBodyProperties {
+export interface IPageToolsProperties
+  extends IToolbarBodyProperties,
+    IToolbarSectionProperties {
   trigger?: React.ReactNode | string;
   triggerProps?: IComponentStyling & IComponentSize & IComponentVariant;
 }
@@ -38,6 +44,7 @@ const PageTools = (props: IPageToolsProperties) => {
     sizing,
     side,
     defaultOpen,
+    showOnCollapse,
     onClick,
     trigger,
     triggerProps,
@@ -63,7 +70,9 @@ const PageTools = (props: IPageToolsProperties) => {
         bindkey={bindkey}
         defaultOpen={defaultOpen}
       >
-        <Toolbar.Section>{children}</Toolbar.Section>
+        <Toolbar.Section showOnCollapse={showOnCollapse}>
+          {children}
+        </Toolbar.Section>
         <Toolbar.Trigger
           title={
             shortcut
@@ -92,6 +101,7 @@ const PagePanel = (props: IPageToolsProperties) => {
     sizing,
     side,
     defaultOpen,
+    showOnCollapse,
     onClick,
     trigger,
     triggerProps,
@@ -130,7 +140,9 @@ const PagePanel = (props: IPageToolsProperties) => {
             <span style={{ transform: "rotate(90deg)" }}>&harr;</span>
           )}
         </Toolbar.Trigger>
-        <Toolbar.Section>{children}</Toolbar.Section>
+        <Toolbar.Section showOnCollapse={showOnCollapse}>
+          {children}
+        </Toolbar.Section>
       </PagePanelWrapper>
     </Toolbar.Root>
   );

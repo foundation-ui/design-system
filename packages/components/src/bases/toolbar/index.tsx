@@ -27,6 +27,10 @@ export interface IToolbarBodyProperties
     | ComponentSideEnum.Bottom
     | ComponentSideEnum.Left;
 }
+export interface IToolbarSectionProperties
+  extends React.ComponentPropsWithRef<"section"> {
+  showOnCollapse?: boolean;
+}
 
 const ToolbarRoot = ({ children }: IReactChildren) => {
   return <ToolbarProvider>{children}</ToolbarProvider>;
@@ -114,12 +118,13 @@ const ToolbarTrigger = (props: IButtonProperties) => {
     </ToolbarTriggerWrapper>
   );
 };
-const ToolbarSection = (props: React.ComponentPropsWithRef<"section">) => {
-  const { children, ...restProps } = props;
+const ToolbarSection = (props: IToolbarSectionProperties) => {
+  const { showOnCollapse, children, ...restProps } = props;
 
   const toolbarContext = useToolbar();
   const { expanded } = toolbarContext.states;
 
+  if (showOnCollapse) return <section {...restProps}>{children}</section>;
   return <section {...restProps}>{expanded && children}</section>;
 };
 
