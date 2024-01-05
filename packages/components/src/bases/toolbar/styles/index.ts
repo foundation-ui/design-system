@@ -9,20 +9,48 @@ export const ToolbarDefaultStyles = css`
 
   &[aria-expanded="true"] {
     width: 100%;
+
+    &[aria-orientation="horizontal"] {
+      height: 100%;
+      width: 100%;
+    }
   }
+
   &[aria-expanded="false"] {
     width: fit-content;
+
+    &[aria-orientation="horizontal"] {
+      height: fit-content;
+      width: 100%;
+    }
   }
 `;
 export const ToolbarSizeStyles = css`
   &[data-size="small"] {
-    max-width: var(--measurement-large-70);
+    &[aria-orientation="vertical"] {
+      max-width: var(--measurement-large-70);
+    }
+    &[aria-orientation="horizontal"] {
+      max-height: var(--measurement-large-70);
+    }
   }
+
   &[data-size="medium"] {
-    max-width: var(--measurement-large-80);
+    &[aria-orientation="vertical"] {
+      max-width: var(--measurement-large-80);
+    }
+    &[aria-orientation="horizontal"] {
+      max-height: var(--measurement-large-80);
+    }
   }
+
   &[data-size="large"] {
-    max-width: var(--measurement-large-90);
+    &[aria-orientation="vertical"] {
+      max-width: var(--measurement-large-90);
+    }
+    &[aria-orientation="horizontal"] {
+      max-height: var(--measurement-large-90);
+    }
   }
 `;
 export const ToolbarSideStyles = css`

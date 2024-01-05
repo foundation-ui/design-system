@@ -15,6 +15,12 @@ export enum ComponentVariantEnum {
   Tertiary = "tertiary",
   Ghost = "ghost",
 }
+export enum KeyBindingEnum {
+  Ctrl = "ctrlKey",
+  Meta = "metaKey",
+  Alt = "altKey",
+  Shift = "shiftKey",
+}
 
 export type TComponentAPI = boolean | string | number | null;
 export type TComponentSize =
@@ -26,6 +32,11 @@ export type TComponentVariant =
   | ComponentVariantEnum.Secondary
   | ComponentVariantEnum.Tertiary
   | ComponentVariantEnum.Ghost;
+export type TKeyBinding =
+  | KeyBindingEnum.Ctrl
+  | KeyBindingEnum.Meta
+  | KeyBindingEnum.Alt
+  | KeyBindingEnum.Shift;
 
 export interface IComponentAPI {
   id: string;
@@ -45,6 +56,5 @@ export interface IComponentControlProperties {
   controls: string;
   shortcut?: boolean;
   hotkey?: string;
-  combokey?: boolean;
-  bindkey?: string;
+  bindkey?: TKeyBinding;
 }

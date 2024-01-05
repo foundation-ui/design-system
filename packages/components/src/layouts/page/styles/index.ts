@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Toolbar } from "../../../";
 
 export const ScrollbarReset = css`
   scrollbar-width: none;
@@ -35,20 +36,10 @@ export const PageMenuWrapper = styled.menu`
   margin: 0;
   padding: var(--measurement-medium-60) var(--measurement-medium-30);
 `;
-export const PagePanelWrapper = styled.menu`
-  width: 100%;
-  background-color: ${({ theme }) => theme.colors.body.contrast};
-  border: var(--measurement-small-10) solid transparent;
-  border-top-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-
+export const PagePanelWrapper = styled(Toolbar)`
   position: absolute;
   bottom: 0;
-
-  height: fit-content;
-  min-height: var(--measurement-large-20);
-  max-height: var(--measurement-large-90);
-  margin: 0;
-  padding: var(--measurement-medium-30);
+  width: 100%;
   overflow-y: scroll;
   ${ScrollbarReset}
 `;

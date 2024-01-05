@@ -35,6 +35,9 @@ export const Default = {
         <Page.Root>
           <Page>
             <Page.Tools
+              shortcut
+              hotkey=";"
+              controls="secondaryTool"
               side={ComponentSideEnum.Left}
               sizing={ComponentSizeEnum.Small}
             >
@@ -44,7 +47,6 @@ export const Default = {
             <Container.Col>
               <Page.Navigation>Nav</Page.Navigation>
               <Page.Menu>Menu</Page.Menu>
-
               <Page.Content>
                 <Container.Title>
                   <h1>Title sample</h1>
@@ -60,14 +62,19 @@ export const Default = {
                   <Button>Sample button</Button>
                 </Container.Title>
               </Page.Content>
-
-              <Page.Panel>
-                <p>Page panel</p>
+              <Page.Panel
+                side={ComponentSideEnum.Bottom}
+                sizing={ComponentSizeEnum.Large}
+              >
+                <p style={{ height: 325 }}>Page panel</p>
               </Page.Panel>
             </Container.Col>
 
             <Page.Tools
               defaultOpen
+              shortcut
+              hotkey=":"
+              controls="primaryTool"
               side={ComponentSideEnum.Right}
               sizing={ComponentSizeEnum.Large}
             >

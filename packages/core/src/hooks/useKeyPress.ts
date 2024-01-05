@@ -1,22 +1,10 @@
-import { useState, useEffect, useCallback } from "react";
-
-export enum KeyBindingEnum {
-  Ctrl = "ctrlKey",
-  Meta = "metaKey",
-  Alt = "altKey",
-  Shift = "shiftKey",
-  Up = "keyUp",
-  Down = "keyDown",
-}
+import { useEffect, useState, useCallback } from "react";
+import { KeyBindingEnum, TKeyBinding } from "../../../../types";
 
 export function useKeyPress(
   targetKey: KeyboardEvent["key"],
   hotkey?: boolean,
-  bindKey?:
-    | KeyBindingEnum.Ctrl
-    | KeyBindingEnum.Meta
-    | KeyBindingEnum.Alt
-    | KeyBindingEnum.Shift
+  bindKey?: TKeyBinding
 ): boolean {
   const [keyPressed, setKeyPressed] = useState(false);
 
@@ -47,11 +35,11 @@ export function useKeyPress(
   );
 
   useEffect(() => {
-    window.addEventListener(KeyBindingEnum.Down, KeyDownHandler);
-    window.addEventListener(KeyBindingEnum.Up, KeyUpHandler);
+    window.addEventListener("keydown", KeyDownHandler);
+    window.addEventListener("keyup", KeyUpHandler);
     return () => {
-      window.removeEventListener(KeyBindingEnum.Down, KeyDownHandler);
-      window.removeEventListener(KeyBindingEnum.Up, KeyUpHandler);
+      window.removeEventListener("keydown", KeyDownHandler);
+      window.removeEventListener("keyup", KeyUpHandler);
     };
   }, [KeyDownHandler, KeyUpHandler]);
   return keyPressed;

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import { useKeyPress } from "@bsw/ds-core";
 import { usePage, PageProvider } from "./hooks";
 import { Container } from "../../";
 import { Toolbar, IToolbarBodyProperties } from "../../";
@@ -16,6 +16,7 @@ import {
   IComponentStyling,
   IComponentSize,
   IComponentVariant,
+  KeyBindingEnum,
 } from "../../../../../types";
 
 interface IToolTriggerProperties
@@ -25,6 +26,10 @@ interface IToolTriggerProperties
 export interface IPageToolsProperties
   extends IToolbarBodyProperties,
     IComponentControlProperties {
+  trigger?: React.ReactNode | string;
+  triggerProps?: IToolTriggerProperties;
+}
+export interface IPagePanelProperties extends IToolbarBodyProperties {
   trigger?: React.ReactNode | string;
   triggerProps?: IToolTriggerProperties;
 }
@@ -41,7 +46,6 @@ const PageTools = (props: IPageToolsProperties) => {
     controls,
     shortcut,
     hotkey,
-    combokey,
     bindkey,
     raw,
     sizing,
@@ -56,20 +60,43 @@ const PageTools = (props: IPageToolsProperties) => {
   const pageContext = usePage();
   const { id, states, methods } = pageContext;
   const { updateControls } = methods;
+  const shortcutControls = useKeyPress(
+    String(hotkey),
+    true,
+    bindkey || KeyBindingEnum.Ctrl
+  );
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
-
-    updateControls &&
+    if (updateControls)
       updateControls({ target: controls, value: !states[controls] });
   };
 
+  React.useLayoutEffect(() => {
+    if (updateControls && defaultOpen) {
+      updateControls({ target: controls, value: true });
+    }
+  }, []);
+
+  React.useEffect(() => {
+    if (shortcut && shortcutControls && updateControls) {
+      updateControls({ target: controls, value: !states[controls] });
+    }
+  }, [shortcutControls]);
+
   return (
     <Toolbar.Root>
-      <Toolbar raw={raw} sizing={sizing} side={side} defaultOpen={defaultOpen}>
-        <Toolbar.Section>{children}</Toolbar.Section>
+      <Toolbar
+        id={id}
+        raw={raw}
+        sizing={sizing}
+        side={side}
+        defaultOpen={defaultOpen}
+        aria-expanded={Boolean(states[controls])}
+      >
+        {states[controls] && <Toolbar.Section>{children}</Toolbar.Section>}
         <Toolbar.Trigger onClick={handleClick} {...triggerProps}>
-          {trigger || <React.Fragment>&hArr;</React.Fragment>}
+          {trigger || <span>&harr;</span>}
         </Toolbar.Trigger>
       </Toolbar>
     </Toolbar.Root>
@@ -79,35 +106,41 @@ const PageContent = (props: any) => {
   const { children } = props;
   return <PageSectionWrapper>{children}</PageSectionWrapper>;
 };
-const PagePanel = (props: IPageToolsProperties) => {
+const PagePanel = (props: IPagePanelProperties) => {
   const {
-    controls,
-    shortcut,
-    hotkey,
-    combokey,
-    bindkey,
+    raw,
     sizing,
     side,
     defaultOpen,
+    onClick,
+    trigger,
+    triggerProps,
     children,
   } = props;
 
-  const pageContext = usePage();
-  const { id, states, methods } = pageContext;
-  const { panelTool, primaryTool, secondaryTool } = states;
-  const { updateControls } = methods;
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (onClick) onClick(event);
+  };
 
   return (
     <Toolbar.Root>
-      <PagePanelWrapper>
-        <Toolbar raw sizing={sizing} side={side} defaultOpen={defaultOpen}>
-          <Toolbar.Section>{children}</Toolbar.Section>
-          <Toolbar.Trigger>Panel</Toolbar.Trigger>
-        </Toolbar>
+      <PagePanelWrapper
+        raw={raw}
+        sizing={sizing}
+        side={side}
+        defaultOpen={defaultOpen}
+      >
+        <Toolbar.Trigger onClick={handleClick} {...triggerProps}>
+          {trigger || (
+            <span style={{ transform: "rotate(90deg)" }}>&harr;</span>
+          )}
+        </Toolbar.Trigger>
+        <Toolbar.Section>{children}</Toolbar.Section>
       </PagePanelWrapper>
     </Toolbar.Root>
   );
 };
+
 const PageMenu = (props: any) => {
   const { children } = props;
   return <PageMenuWrapper>{children}</PageMenuWrapper>;
