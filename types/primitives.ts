@@ -53,7 +53,6 @@ export interface IComponentVariant {
   variant?: TComponentVariant;
 }
 export interface IComponentControlProperties {
-  controls: string;
   shortcut?: boolean;
   hotkey?: string;
   bindkey?: TKeyBinding;

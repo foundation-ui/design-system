@@ -3,13 +3,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Page } from ".";
 import { Container } from "../../";
-import { Button } from "../../";
+import { Avatar, AvataStatusEnum, Accordion, Button } from "../../";
 import {
-  IComponentStyling,
   ComponentSizeEnum,
   ComponentVariantEnum,
-  IComponentSize,
-  IReactChildren,
   ComponentSideEnum,
 } from "../../../../../types";
 
@@ -37,11 +34,43 @@ export const Default = {
             <Page.Tools
               shortcut
               hotkey=";"
-              controls="secondaryTool"
               side={ComponentSideEnum.Left}
               sizing={ComponentSizeEnum.Small}
             >
-              Tools
+              <Avatar
+                src="https://avatars.githubusercontent.com/u/153380498?s=160&v=4"
+                alt="external-source-avatar"
+                sizing={ComponentSizeEnum.Small}
+                status={AvataStatusEnum.Online}
+              />
+              <Accordion.Root>
+                <Accordion>
+                  <Accordion.Trigger
+                    value="primary-tools"
+                    sizing={ComponentSizeEnum.Medium}
+                    variant={ComponentVariantEnum.Ghost}
+                  >
+                    Primary nav tools
+                  </Accordion.Trigger>
+                  <Accordion.Content value="primary-tools">
+                    Tool
+                  </Accordion.Content>
+                </Accordion>
+              </Accordion.Root>
+              <Accordion.Root>
+                <Accordion>
+                  <Accordion.Trigger
+                    value="secondary-tools"
+                    sizing={ComponentSizeEnum.Medium}
+                    variant={ComponentVariantEnum.Ghost}
+                  >
+                    Secondary nav tools
+                  </Accordion.Trigger>
+                  <Accordion.Content value="secondary-tools">
+                    Tool
+                  </Accordion.Content>
+                </Accordion>
+              </Accordion.Root>
             </Page.Tools>
 
             <Container.Col>
@@ -63,10 +92,22 @@ export const Default = {
                 </Container.Title>
               </Page.Content>
               <Page.Panel
+                shortcut
+                hotkey=","
+                trigger={<span>ctrl&nbsp;+&nbsp;,</span>}
                 side={ComponentSideEnum.Bottom}
                 sizing={ComponentSizeEnum.Large}
               >
-                <p style={{ height: 325 }}>Page panel</p>
+                <div
+                  style={{
+                    background: "red",
+                    opacity: 0.1,
+                    width: "100%",
+                    height: "90%",
+                    marginTop: 12,
+                    borderRadius: 4,
+                  }}
+                />
               </Page.Panel>
             </Container.Col>
 
@@ -74,11 +115,34 @@ export const Default = {
               defaultOpen
               shortcut
               hotkey=":"
-              controls="primaryTool"
               side={ComponentSideEnum.Right}
               sizing={ComponentSizeEnum.Large}
             >
-              Tools
+              <Accordion.Root>
+                <Accordion>
+                  <Accordion.Trigger
+                    value="primary-tools"
+                    sizing={ComponentSizeEnum.Medium}
+                    variant={ComponentVariantEnum.Ghost}
+                  >
+                    Primary tools
+                  </Accordion.Trigger>
+                  <Accordion.Content value="primary-tools">
+                    Tool
+                  </Accordion.Content>
+
+                  <Accordion.Trigger
+                    value="secondary-tools"
+                    sizing={ComponentSizeEnum.Medium}
+                    variant={ComponentVariantEnum.Ghost}
+                  >
+                    Secondary tools
+                  </Accordion.Trigger>
+                  <Accordion.Content value="secondary-tools">
+                    Tool
+                  </Accordion.Content>
+                </Accordion>
+              </Accordion.Root>
             </Page.Tools>
           </Page>
           <Page.Portal container="notification-page-portal" />

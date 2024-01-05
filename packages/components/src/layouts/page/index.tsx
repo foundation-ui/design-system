@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { useKeyPress } from "@bsw/ds-core";
+
 import { usePage, PageProvider } from "./hooks";
 import { Container } from "../../";
 import { Toolbar, IToolbarBodyProperties } from "../../";
@@ -12,26 +12,14 @@ import {
 } from "./styles";
 import {
   IReactChildren,
-  IComponentControlProperties,
   IComponentStyling,
   IComponentSize,
   IComponentVariant,
-  KeyBindingEnum,
 } from "../../../../../types";
 
-interface IToolTriggerProperties
-  extends IComponentStyling,
-    IComponentSize,
-    IComponentVariant {}
-export interface IPageToolsProperties
-  extends IToolbarBodyProperties,
-    IComponentControlProperties {
+export interface IPageToolsProperties extends IToolbarBodyProperties {
   trigger?: React.ReactNode | string;
-  triggerProps?: IToolTriggerProperties;
-}
-export interface IPagePanelProperties extends IToolbarBodyProperties {
-  trigger?: React.ReactNode | string;
-  triggerProps?: IToolTriggerProperties;
+  triggerProps?: IComponentStyling & IComponentSize & IComponentVariant;
 }
 
 const PageRoot = ({ children }: IReactChildren) => {
@@ -43,7 +31,6 @@ const PageNavigation = (props: any) => {
 };
 const PageTools = (props: IPageToolsProperties) => {
   const {
-    controls,
     shortcut,
     hotkey,
     bindkey,
@@ -59,30 +46,10 @@ const PageTools = (props: IPageToolsProperties) => {
 
   const pageContext = usePage();
   const { id, states, methods } = pageContext;
-  const { updateControls } = methods;
-  const shortcutControls = useKeyPress(
-    String(hotkey),
-    true,
-    bindkey || KeyBindingEnum.Ctrl
-  );
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
-    if (updateControls)
-      updateControls({ target: controls, value: !states[controls] });
   };
-
-  React.useLayoutEffect(() => {
-    if (updateControls && defaultOpen) {
-      updateControls({ target: controls, value: true });
-    }
-  }, []);
-
-  React.useEffect(() => {
-    if (shortcut && shortcutControls && updateControls) {
-      updateControls({ target: controls, value: !states[controls] });
-    }
-  }, [shortcutControls]);
 
   return (
     <Toolbar.Root>
@@ -91,11 +58,21 @@ const PageTools = (props: IPageToolsProperties) => {
         raw={raw}
         sizing={sizing}
         side={side}
+        shortcut={shortcut}
+        hotkey={hotkey}
+        bindkey={bindkey}
         defaultOpen={defaultOpen}
-        aria-expanded={Boolean(states[controls])}
       >
-        {states[controls] && <Toolbar.Section>{children}</Toolbar.Section>}
-        <Toolbar.Trigger onClick={handleClick} {...triggerProps}>
+        <Toolbar.Section>{children}</Toolbar.Section>
+        <Toolbar.Trigger
+          title={
+            shortcut
+              ? `${bindkey || "ctrl"} + ${hotkey}`
+              : `${id}-toolbar-trigger`
+          }
+          onClick={handleClick}
+          {...triggerProps}
+        >
           {trigger || <span>&harr;</span>}
         </Toolbar.Trigger>
       </Toolbar>
@@ -106,8 +83,11 @@ const PageContent = (props: any) => {
   const { children } = props;
   return <PageSectionWrapper>{children}</PageSectionWrapper>;
 };
-const PagePanel = (props: IPagePanelProperties) => {
+const PagePanel = (props: IPageToolsProperties) => {
   const {
+    shortcut,
+    hotkey,
+    bindkey,
     raw,
     sizing,
     side,
@@ -118,6 +98,9 @@ const PagePanel = (props: IPagePanelProperties) => {
     children,
   } = props;
 
+  const pageContext = usePage();
+  const { id, states, methods } = pageContext;
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
   };
@@ -125,12 +108,24 @@ const PagePanel = (props: IPagePanelProperties) => {
   return (
     <Toolbar.Root>
       <PagePanelWrapper
+        id={id}
         raw={raw}
         sizing={sizing}
         side={side}
+        shortcut={shortcut}
+        hotkey={hotkey}
+        bindkey={bindkey}
         defaultOpen={defaultOpen}
       >
-        <Toolbar.Trigger onClick={handleClick} {...triggerProps}>
+        <Toolbar.Trigger
+          title={
+            shortcut
+              ? `${bindkey || "ctrl"} + ${hotkey}`
+              : `${id}-toolbar-trigger`
+          }
+          onClick={handleClick}
+          {...triggerProps}
+        >
           {trigger || (
             <span style={{ transform: "rotate(90deg)" }}>&harr;</span>
           )}
@@ -140,7 +135,6 @@ const PagePanel = (props: IPagePanelProperties) => {
     </Toolbar.Root>
   );
 };
-
 const PageMenu = (props: any) => {
   const { children } = props;
   return <PageMenuWrapper>{children}</PageMenuWrapper>;

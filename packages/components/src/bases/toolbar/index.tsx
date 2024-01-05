@@ -1,4 +1,6 @@
 import React from "react";
+import { useKeyPress } from "@bsw/ds-core";
+
 import { ToolbarProvider, useToolbar } from "./hooks";
 import { ToolbarWrapper, ToolbarTriggerWrapper } from "./styles";
 import { Button, IButtonProperties } from "../..";
@@ -9,11 +11,14 @@ import {
   IComponentSize,
   IReactChildren,
   ComponentSideEnum,
+  IComponentControlProperties,
+  KeyBindingEnum,
 } from "../../../../../types";
 
 export interface IToolbarBodyProperties
   extends IComponentStyling,
     IComponentSize,
+    IComponentControlProperties,
     React.ComponentPropsWithoutRef<"aside"> {
   defaultOpen?: boolean;
   side?:
@@ -26,17 +31,38 @@ export interface IToolbarBodyProperties
 const ToolbarRoot = ({ children }: IReactChildren) => {
   return <ToolbarProvider>{children}</ToolbarProvider>;
 };
-
 const Toolbar = (props: IToolbarBodyProperties) => {
-  const { raw, sizing, side, defaultOpen, children, ...restProps } = props;
+  const {
+    shortcut,
+    hotkey,
+    bindkey,
+    raw,
+    sizing,
+    side,
+    defaultOpen,
+    onClick,
+    children,
+    ...restProps
+  } = props;
   const sideDefinition = side || ComponentSideEnum.Left;
 
   const toolbarContext = useToolbar();
   const { id, methods, states } = toolbarContext;
   const { toggleToolbar } = methods;
+
+  const shortcutControls = useKeyPress(
+    String(hotkey),
+    true,
+    bindkey || KeyBindingEnum.Ctrl
+  );
+
   React.useEffect(() => {
     if (defaultOpen && toggleToolbar) return toggleToolbar(true);
   }, [defaultOpen]);
+
+  React.useEffect(() => {
+    if (shortcut && shortcutControls && toggleToolbar) toggleToolbar();
+  }, [shortcutControls]);
 
   return (
     <ToolbarWrapper
@@ -61,7 +87,6 @@ const Toolbar = (props: IToolbarBodyProperties) => {
     </ToolbarWrapper>
   );
 };
-
 const ToolbarTrigger = (props: IButtonProperties) => {
   const { raw, onClick, children, ...restProps } = props;
 
@@ -89,14 +114,13 @@ const ToolbarTrigger = (props: IButtonProperties) => {
     </ToolbarTriggerWrapper>
   );
 };
-
 const ToolbarSection = (props: React.ComponentPropsWithRef<"section">) => {
   const { children, ...restProps } = props;
 
   const toolbarContext = useToolbar();
   const { expanded } = toolbarContext.states;
 
-  if (expanded) return <section {...restProps}>{children}</section>;
+  return <section {...restProps}>{expanded && children}</section>;
 };
 
 Toolbar.Root = ToolbarRoot;
