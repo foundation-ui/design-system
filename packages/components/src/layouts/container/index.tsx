@@ -53,7 +53,7 @@ const Container = (props: any) => {
   const containerContext = useContainer();
   const { id, states, methods } = containerContext;
 
-  return;
+  return <React.Fragment />;
 };
 
 Container.Root = ContainerRoot;
