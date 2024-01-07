@@ -2,8 +2,16 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Page } from ".";
-import { Container } from "../../";
-import { Avatar, AvataStatusEnum, Accordion, Button, Toolbar } from "../../";
+import {
+  Container,
+  Portal,
+  Avatar,
+  AvataStatusEnum,
+  Accordion,
+  Button,
+  Toolbar,
+} from "../../";
+
 import {
   ComponentSizeEnum,
   ComponentVariantEnum,
@@ -150,7 +158,8 @@ export const Default = {
               </Container.Col>
             </Page.Tools>
           </Page>
-          <Page.Portal container="notification-page-portal" />
+
+          <Portal container="notification-page-portal" />
         </Page.Root>
       </React.Fragment>
     );

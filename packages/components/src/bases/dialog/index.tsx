@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { useDialog, DialogProvider } from "./hooks";
 import { Overlay, IOverlayProperties, Button, IButtonProperties } from "../../";
 import { DialogWrapper, Menu } from "./styles";
@@ -10,10 +9,6 @@ import {
   IComponentSize,
 } from "../../../../../types";
 
-export interface IDialogPortalProperties
-  extends React.ComponentPropsWithoutRef<any> {
-  container: string;
-}
 export interface IDialogOverlayProperties
   extends IComponentStyling,
     React.ComponentPropsWithoutRef<"div"> {
@@ -26,18 +21,6 @@ export interface IDialogItemProperties
 
 const DialogRoot = ({ children }: React.ComponentPropsWithRef<"div">) => {
   return <DialogProvider>{children}</DialogProvider>;
-};
-
-const DialogPortal = (props: IDialogPortalProperties) => {
-  const { container, children } = props;
-
-  const [hasMounted, setHasMounted] = React.useState<boolean>(false);
-  const PortalRoot = document.querySelector(`#${container}`)!;
-
-  React.useEffect(() => setHasMounted(true), []);
-
-  if (!hasMounted) return null;
-  return ReactDOM.createPortal(children, PortalRoot);
 };
 
 const Dialog = (props: IDialogItemProperties) => {
@@ -168,7 +151,6 @@ Dialog.Trigger = DialogTrigger;
 Dialog.Control = DialogControl;
 Dialog.Menu = DialogMenu;
 Dialog.Overlay = DialogOverlay;
-Dialog.Portal = DialogPortal;
 
 export {
   Dialog,
@@ -177,5 +159,4 @@ export {
   DialogControl,
   DialogMenu,
   DialogOverlay,
-  DialogPortal,
 };

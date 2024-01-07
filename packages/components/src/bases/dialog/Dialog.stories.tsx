@@ -3,7 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Dialog } from ".";
-import { Button } from "../button";
+import { Button, Portal } from "../../";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div``;
@@ -46,7 +46,7 @@ export const Default = {
           Default Dialog
         </Dialog.Trigger>
 
-        <Dialog.Portal container={args.container}>
+        <Portal container={args.container}>
           <Dialog open={args.open} raw={args.raw} sizing={args.sizing}>
             <h4>Dialog component</h4>
             <p>
@@ -68,7 +68,7 @@ export const Default = {
             raw={args.raw}
             closeOnInteract={args.closeOnInteract}
           />
-        </Dialog.Portal>
+        </Portal>
       </Dialog.Root>
     </Wrapper>
   ),

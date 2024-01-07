@@ -3,6 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { DropdownMenu } from ".";
+import { Portal } from "../../";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div``;
@@ -58,7 +59,7 @@ export const Default = {
           Default Dropdown
         </DropdownMenu.Trigger>
 
-        <DropdownMenu.Portal container={args.container}>
+        <Portal container={args.container}>
           <DropdownMenu>
             <DropdownMenu.Content
               defaultOpen={args.defaultOpen}
@@ -88,7 +89,7 @@ export const Default = {
               )}
             </DropdownMenu.Content>
           </DropdownMenu>
-        </DropdownMenu.Portal>
+        </Portal>
       </DropdownMenu.Root>
 
       <div id="portal" />

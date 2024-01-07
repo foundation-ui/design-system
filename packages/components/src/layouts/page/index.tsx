@@ -1,6 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
 import { usePage, PageProvider } from "./hooks";
 import { Container } from "../../";
 import {
@@ -31,10 +29,12 @@ export interface IPageToolsProperties
 const PageRoot = ({ children }: IReactChildren) => {
   return <PageProvider>{children}</PageProvider>;
 };
+
 const PageNavigation = (props: any) => {
   const { children } = props;
   return <PageNavWrapper>{children}</PageNavWrapper>;
 };
+
 const PageTools = (props: IPageToolsProperties) => {
   const {
     shortcut,
@@ -88,10 +88,12 @@ const PageTools = (props: IPageToolsProperties) => {
     </Toolbar.Root>
   );
 };
+
 const PageContent = (props: any) => {
   const { children } = props;
   return <PageSectionWrapper>{children}</PageSectionWrapper>;
 };
+
 const PagePanel = (props: IPageToolsProperties) => {
   const {
     shortcut,
@@ -148,14 +150,12 @@ const PagePanel = (props: IPageToolsProperties) => {
     </Toolbar.Root>
   );
 };
+
 const PageMenu = (props: any) => {
   const { children } = props;
   return <PageMenuWrapper>{children}</PageMenuWrapper>;
 };
-const PagePortal = (props: any) => {
-  const { children } = props;
-  return <React.Fragment>{children}</React.Fragment>;
-};
+
 const Page = (props: any) => {
   const { children } = props;
 
@@ -171,7 +171,6 @@ Page.Tools = PageTools;
 Page.Content = PageContent;
 Page.Panel = PagePanel;
 Page.Menu = PageMenu;
-Page.Portal = PagePortal;
 
 export {
   Page,
@@ -181,5 +180,4 @@ export {
   PagePanel,
   PageContent,
   PageMenu,
-  PagePortal,
 };

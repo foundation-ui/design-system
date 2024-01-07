@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { useClickOutside } from "@bsw/ds-core";
 import { DropdownMenuProvider, useDropdownMenu } from "./hooks";
 import { RootWrapper, ContentWrapper, ItemWrapper } from "./styles";
@@ -76,17 +75,6 @@ const DropdownMenuTrigger = (props: IButtonProperties) => {
       {children}
     </Button>
   );
-};
-
-const DropdownMenuPortal = (props: IDropdownPortalProperties) => {
-  const { container, children } = props;
-  const [hasMounted, setHasMounted] = React.useState<boolean>(false);
-  const PortalRoot = document.querySelector(`#${container}`)!;
-
-  React.useEffect(() => setHasMounted(true), []);
-
-  if (!hasMounted) return null;
-  return ReactDOM.createPortal(children, PortalRoot);
 };
 
 const DropdownMenuContent = (props: IDropdownContentProperties) => {
@@ -174,14 +162,12 @@ const DropdownMenuItem = (props: IDropdownItemProperties) => {
 DropdownMenu.Root = DropdownMenuRoot;
 DropdownMenu.Trigger = DropdownMenuTrigger;
 DropdownMenu.Content = DropdownMenuContent;
-DropdownMenu.Portal = DropdownMenuPortal;
 DropdownMenu.Item = DropdownMenuItem;
 
 export {
   DropdownMenuRoot,
   DropdownMenu,
   DropdownMenuTrigger,
-  DropdownMenuPortal,
   DropdownMenuContent,
   DropdownMenuItem,
 };
