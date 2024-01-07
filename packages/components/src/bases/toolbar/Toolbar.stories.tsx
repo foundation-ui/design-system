@@ -3,14 +3,8 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Toolbar } from ".";
-import {
-  IComponentStyling,
-  ComponentSizeEnum,
-  ComponentVariantEnum,
-  IComponentSize,
-  IReactChildren,
-  ComponentSideEnum,
-} from "../../../../../types";
+import { Avatar, Container } from "../../";
+import { ComponentSizeEnum, ComponentSideEnum } from "../../../../../types";
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,10 +24,15 @@ export default meta;
 
 export const Default = {
   args: {
-    defaultOpen: true,
     raw: false,
     side: ComponentSideEnum.Left,
     sizing: ComponentSizeEnum.Large,
+    defaultOpen: true,
+    showOnCollapse: true,
+    showFirstChild: true,
+    shortcut: true,
+    hotkey: ":",
+    bindkey: null,
   },
   argTypes: {
     side: {
@@ -62,11 +61,28 @@ export const Default = {
           side={args.side}
           sizing={args.sizing}
           defaultOpen={args.defaultOpen}
-          style={{
-            height: "calc(100dvh - (var(--measurement-medium-30) * 2))",
-          }}
+          shortcut={args.shortcut}
+          hotkey={args.hotkey}
+          // bindkey={bindkey}
         >
-          <Toolbar.Section>Item</Toolbar.Section>
+          <Toolbar.Section showOnCollapse={args.showOnCollapse}>
+            <Container.Row
+              style={{ justifyContent: "start", gap: 6, alignItems: "end" }}
+            >
+              <Avatar
+                src="https://avatars.githubusercontent.com/u/153380498?s=160&v=4"
+                alt="external-source-avatar"
+                sizing={ComponentSizeEnum.Large}
+              />
+              <Toolbar.Item>
+                <Container.Col>
+                  <b>Foundation UI</b>
+                  <small style={{ opacity: 0.3 }}>Toolbar component</small>
+                </Container.Col>
+              </Toolbar.Item>
+            </Container.Row>
+          </Toolbar.Section>
+
           <Toolbar.Trigger>&hArr;</Toolbar.Trigger>
         </Toolbar>
       </Toolbar.Root>

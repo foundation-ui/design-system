@@ -118,6 +118,7 @@ const PagePanel = (props: IPageToolsProperties) => {
   return (
     <Toolbar.Root>
       <PagePanelWrapper
+        as={Toolbar}
         id={id}
         raw={raw}
         sizing={sizing}

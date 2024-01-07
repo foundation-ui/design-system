@@ -19,8 +19,10 @@ export const ToolbarDefaultStyles = css`
 
   &[aria-expanded="false"] {
     width: fit-content;
+    justify-items: center;
 
     &[aria-orientation="horizontal"] {
+      justify-items: start;
       height: fit-content;
       width: 100%;
     }

@@ -36,7 +36,7 @@ export const PageMenuWrapper = styled.menu`
   margin: 0;
   padding: var(--measurement-medium-60) var(--measurement-medium-30);
 `;
-export const PagePanelWrapper = styled(Toolbar)`
+export const PagePanelWrapper = styled.aside`
   position: absolute;
   bottom: 0;
   width: 100%;
