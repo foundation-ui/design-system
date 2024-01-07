@@ -5,18 +5,34 @@ import { IComponentStyling } from "../../../../../types";
 export interface IOverlayProperties
   extends IComponentStyling,
     React.ComponentPropsWithoutRef<"div"> {
-  visible: boolean;
+  visible?: boolean;
+  defaultVisible?: boolean;
   closeOnInteract: boolean;
 }
 
 export const Overlay = (props: IOverlayProperties) => {
-  const { raw, visible, closeOnInteract, onClick, ...restProps } = props;
-  const [mounted, setMounted] = React.useState<boolean>(visible);
+  const {
+    raw,
+    visible,
+    defaultVisible,
+    closeOnInteract,
+    onClick,
+    ...restProps
+  } = props;
+  const [mounted, setMounted] = React.useState<boolean>(Boolean(visible));
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     if (onClick) onClick(event);
     if (closeOnInteract) setMounted(false);
   };
+
+  React.useLayoutEffect(() => {
+    if (defaultVisible) setMounted(true);
+  }, []);
+
+  React.useEffect(() => {
+    if (visible !== mounted) setMounted(Boolean(visible));
+  }, [visible]);
 
   return (
     <React.Fragment>

@@ -1,10 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Overlay } from ".";
+import { Container } from "../../";
 
-const Wrapper = styled.div``;
 const meta = {
   title: "Components/Layers/Overlay",
   component: Overlay,
@@ -16,7 +15,25 @@ const meta = {
 export default meta;
 
 export const Default = {
-  args: {},
+  args: {
+    raw: false,
+    visible: true,
+    defaultVisible: true,
+    closeOnInteract: true,
+  },
   argTypes: {},
-  render: ({ ...args }) => <Wrapper></Wrapper>,
+  render: ({ ...args }) => (
+    <React.Fragment>
+      <Overlay
+        raw={args.raw}
+        visible={args.visible}
+        defaultVisible={args.defaultVisible}
+        closeOnInteract={args.closeOnInteract}
+      />
+      <Container.Col>
+        <b>Foundation UI</b>
+        <small style={{ opacity: 0.3 }}>Overlay component</small>
+      </Container.Col>
+    </React.Fragment>
+  ),
 };

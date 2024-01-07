@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useDialog, DialogProvider } from "./hooks";
-import { Button, IButtonProperties } from "../button";
-import { Overlay, DialogWrapper, Menu } from "./styles";
+import { Overlay, IOverlayProperties, Button, IButtonProperties } from "../../";
+import { DialogWrapper, Menu } from "./styles";
 import { applyDataState } from "../../utils";
 import {
   IComponentStyling,
@@ -75,30 +75,25 @@ const Dialog = (props: IDialogItemProperties) => {
   );
 };
 
-const DialogOverlay = (props: IDialogOverlayProperties) => {
-  const { raw, exitOnInteraction, onClick, ...restProps } = props;
+const DialogOverlay = (props: IOverlayProperties) => {
+  const { closeOnInteract, onClick, ...restProps } = props;
 
   const dialogContext = useDialog();
   const { states, methods } = dialogContext;
   const { toggleDialog } = methods;
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (exitOnInteraction && toggleDialog) toggleDialog();
+    if (closeOnInteract && toggleDialog) toggleDialog();
     if (onClick) onClick(event);
   };
 
   return (
-    <React.Fragment>
-      {states.open && (
-        <Overlay
-          onClick={handleClick}
-          tabIndex={-1}
-          aria-hidden={true}
-          data-raw={Boolean(raw)}
-          {...restProps}
-        />
-      )}
-    </React.Fragment>
+    <Overlay
+      visible={Boolean(states.open)}
+      closeOnInteract={closeOnInteract}
+      onClick={handleClick}
+      {...restProps}
+    />
   );
 };
 

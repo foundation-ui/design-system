@@ -11,5 +11,8 @@ export * from "./bases/tabs";
 export * from "./bases/toggle";
 export * from "./bases/toolbar";
 
+export * from "./layers/overlay";
+export * from "./layers/portal";
+
 export * from "./layouts/container";
 export * from "./layouts/page";

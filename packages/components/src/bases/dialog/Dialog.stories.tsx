@@ -20,7 +20,7 @@ export default meta;
 export const Default = {
   args: {
     container: "portal",
-    exitOnInteraction: true,
+    closeOnInteract: true,
     open: false,
     raw: false,
     sizing: ComponentSizeEnum.Medium,
@@ -66,7 +66,7 @@ export const Default = {
           </Dialog>
           <Dialog.Overlay
             raw={args.raw}
-            exitOnInteraction={args.exitOnInteraction}
+            closeOnInteract={args.closeOnInteract}
           />
         </Dialog.Portal>
       </Dialog.Root>
