@@ -3,6 +3,7 @@ import {
   ContainerGridWrapper,
   ContainerRowWrapper,
   ContainerTitleWrapper,
+  ContainerWrapper,
 } from "./styles";
 import {
   IComponentSpacing,
@@ -15,8 +16,13 @@ export enum ContainerAlignModeEnum {
   End = "end",
   SpaceBetween = "space-between",
 }
+
 export interface IContainerAlignMode {
   alignMode?: ContainerAlignModeEnum;
+}
+export interface IProximityProperties {
+  proximity?: boolean;
+  global?: boolean;
 }
 export interface IContainerProperties
   extends IComponentStyling,
@@ -67,17 +73,19 @@ const ContainerTitle = (props: IContainerProperties) => {
     </ContainerTitleWrapper>
   );
 };
+const Container = (
+  props: IProximityProperties & IComponentSpacing & React.ComponentProps<any>
+) => {
+  const { spacing, proximity, global, children } = props;
 
-const Container = (props: IContainerProperties) => {
-  const { raw, spacing, alignMode, children } = props;
   return (
-    <div
-      data-raw={Boolean(raw)}
-      data-align={alignMode || ContainerAlignModeEnum.Start}
+    <ContainerWrapper
       data-spacing={spacing || ComponentSizeEnum.Small}
+      data-proximity={Boolean(proximity)}
+      data-global={Boolean(global)}
     >
       {children}
-    </div>
+    </ContainerWrapper>
   );
 };
 

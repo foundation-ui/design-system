@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, RuleSet } from "styled-components";
 
 const ContainerBaseStyles = css`
   position: relative;
@@ -27,6 +27,48 @@ const ContainerSpacingStyles = css`
   }
 `;
 
+const proximityBase = (spacing: RuleSet<object>) => {
+  return css`
+    * {
+      &:nth-child(1) {
+        ${spacing};
+      }
+    }
+    &[data-global="true"] {
+      * {
+        ${spacing};
+
+        &:nth-last-child(1) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  `;
+};
+const ContainerProximityStyles = css`
+  &[data-spacing="small"] {
+    ${proximityBase(
+      css`
+        margin-bottom: var(--measurement-medium-10);
+      `
+    )}
+  }
+  &[data-spacing="medium"] {
+    ${proximityBase(
+      css`
+        margin-bottom: var(--measurement-medium-30);
+      `
+    )}
+  }
+  &[data-spacing="large"] {
+    ${proximityBase(
+      css`
+        margin-bottom: var(--measurement-medium-60);
+      `
+    )}
+  }
+`;
+
 export const ContainerGridWrapper = styled.section`
   display: grid;
   grid-template-rows: min-content;
@@ -41,4 +83,9 @@ export const ContainerRowWrapper = styled.section`
 `;
 export const ContainerTitleWrapper = styled.hgroup`
   max-width: calc(var(--measurement-large-90) * 2);
+`;
+export const ContainerWrapper = styled.div`
+  &[data-proximity="true"] {
+    ${ContainerProximityStyles}
+  }
 `;
