@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Page } from ".";
 import {
   Container,
+  ContainerAlignModeEnum,
   Portal,
   Avatar,
   AvataStatusEnum,
@@ -46,21 +47,17 @@ export const Default = {
               side={ComponentSideEnum.Left}
               sizing={ComponentSizeEnum.Small}
             >
-              <Toolbar.Item
-                showFirstChild
-                style={{ display: "flex", alignItems: "center" }}
-              >
-                <Avatar
-                  src="https://avatars.githubusercontent.com/u/153380498?s=160&v=4"
-                  alt="external-source-avatar"
-                  sizing={ComponentSizeEnum.Large}
-                  // status={AvataStatusEnum.Online}
-                />
-                <span />
-              </Toolbar.Item>
+              <Avatar
+                src="https://avatars.githubusercontent.com/u/153380498?s=160&v=4"
+                alt="external-source-avatar"
+                sizing={ComponentSizeEnum.Small}
+              />
 
               <Toolbar.Item>
-                <Container.Col style={{ gap: 6, marginTop: 24 }}>
+                <Container.Col
+                  spacing={ComponentSizeEnum.Small}
+                  style={{ marginTop: 12 }}
+                >
                   {[1, 2, 3].map((item) => (
                     <small key={item}>Tool n°{item}</small>
                   ))}
@@ -70,8 +67,14 @@ export const Default = {
 
             <Container.Col>
               <Page.Navigation>
-                <Container.Row>
-                  <Container.Row style={{ gap: 6 }}>
+                <Container.Row
+                  spacing={ComponentSizeEnum.Small}
+                  alignMode={ContainerAlignModeEnum.SpaceBetween}
+                >
+                  <Container.Row
+                    spacing={ComponentSizeEnum.Small}
+                    alignMode={ContainerAlignModeEnum.Start}
+                  >
                     <Button sizing={ComponentSizeEnum.Small}>
                       &nbsp;&nbsp;&nbsp;
                     </Button>
@@ -79,7 +82,10 @@ export const Default = {
                       &nbsp;&nbsp;&nbsp;
                     </Button>
                   </Container.Row>
-                  <Container.Row style={{ gap: 6 }}>
+                  <Container.Row
+                    spacing={ComponentSizeEnum.Small}
+                    alignMode={ContainerAlignModeEnum.End}
+                  >
                     <Button sizing={ComponentSizeEnum.Small}>
                       &nbsp;&nbsp;&nbsp;
                     </Button>
@@ -93,11 +99,22 @@ export const Default = {
                 </Container.Row>
               </Page.Navigation>
               <Page.Menu>
-                <Container.Row>
-                  <Button sizing={ComponentSizeEnum.Small}>
-                    &nbsp;&nbsp;&nbsp;
-                  </Button>
-                  <Container.Row style={{ gap: 6 }}>
+                <Container.Row
+                  spacing={ComponentSizeEnum.Small}
+                  alignMode={ContainerAlignModeEnum.SpaceBetween}
+                >
+                  <Container.Row
+                    spacing={ComponentSizeEnum.Small}
+                    alignMode={ContainerAlignModeEnum.Start}
+                  >
+                    <Button sizing={ComponentSizeEnum.Small}>
+                      &nbsp;&nbsp;&nbsp;
+                    </Button>
+                  </Container.Row>
+                  <Container.Row
+                    spacing={ComponentSizeEnum.Small}
+                    alignMode={ContainerAlignModeEnum.End}
+                  >
                     <Button sizing={ComponentSizeEnum.Small}>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </Button>
@@ -142,7 +159,7 @@ export const Default = {
               side={ComponentSideEnum.Right}
               sizing={ComponentSizeEnum.Large}
             >
-              <Container.Col style={{ gap: 6 }}>
+              <Container.Col spacing={ComponentSizeEnum.Small}>
                 {[4, 5, 6, 7, 8].map((item) => (
                   <Toolbar.Item
                     key={item}

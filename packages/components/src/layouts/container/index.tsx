@@ -1,78 +1,88 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import {
+  ContainerGridWrapper,
+  ContainerRowWrapper,
+  ContainerTitleWrapper,
+} from "./styles";
+import {
+  IComponentSpacing,
+  IComponentStyling,
+  ComponentSizeEnum,
+} from "../../../../../types";
 
-import { useContainer, ContainerProvider } from "./hooks";
-import { IReactChildren } from "../../../../../types";
+export enum ContainerAlignModeEnum {
+  Start = "start",
+  End = "end",
+  SpaceBetween = "space-between",
+}
+export interface IContainerAlignMode {
+  alignMode?: ContainerAlignModeEnum;
+}
+export interface IContainerProperties
+  extends IComponentStyling,
+    IComponentSpacing,
+    IContainerAlignMode,
+    React.ComponentPropsWithoutRef<any> {}
 
-import styled from "styled-components";
-
-const ContainerGridWrapper = styled.section`
-  position: relative;
-  display: grid;
-  grid-template-rows: min-content;
-  width: 100%;
-`;
-const ContainerRowWrapper = styled.section`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-`;
-const ContainerTitleWrapper = styled.hgroup`
-  max-width: calc(var(--measurement-large-90) * 2);
-`;
-
-const ContainerRoot = ({ children }: IReactChildren) => {
-  return <ContainerProvider>{children}</ContainerProvider>;
+const ContainerRow = (props: IContainerProperties) => {
+  const { raw, spacing, alignMode, children } = props;
+  return (
+    <ContainerRowWrapper
+      tabIndex={-1}
+      aria-orientation="horizontal"
+      data-raw={Boolean(raw)}
+      data-align={alignMode || ContainerAlignModeEnum.Start}
+      data-spacing={spacing || ComponentSizeEnum.None}
+      {...props}
+    >
+      {children}
+    </ContainerRowWrapper>
+  );
 };
-const ContainerRow = (props: any) => {
-  const { children } = props;
-  return <ContainerRowWrapper {...props}>{children}</ContainerRowWrapper>;
+const ContainerCol = (props: IContainerProperties) => {
+  const { raw, spacing, alignMode, children } = props;
+  return (
+    <ContainerGridWrapper
+      tabIndex={-1}
+      aria-orientation="vertical"
+      data-raw={Boolean(raw)}
+      data-align={alignMode || ContainerAlignModeEnum.Start}
+      data-spacing={spacing || ComponentSizeEnum.None}
+      {...props}
+    >
+      {children}
+    </ContainerGridWrapper>
+  );
 };
-const ContainerCol = (props: any) => {
-  const { children } = props;
-  return <ContainerGridWrapper {...props}>{children}</ContainerGridWrapper>;
-};
-const ContainerBox = (props: any) => {
-  return;
-};
-const ContainerSection = (props: any) => {
-  return;
-};
-const ContainerCanvas = (props: any) => {
-  return;
-};
-const ContainerDivider = (props: any) => {
-  return;
-};
-const ContainerTitle = (props: any) => {
-  const { children } = props;
-
-  return <ContainerTitleWrapper>{children}</ContainerTitleWrapper>;
-};
-const Container = (props: any) => {
-  const containerContext = useContainer();
-  const { id, states, methods } = containerContext;
-
-  return <React.Fragment />;
+const ContainerTitle = (props: IContainerProperties) => {
+  const { raw, spacing, alignMode, children } = props;
+  return (
+    <ContainerTitleWrapper
+      data-raw={Boolean(raw)}
+      data-align={alignMode || ContainerAlignModeEnum.Start}
+      data-spacing={spacing || ComponentSizeEnum.Small}
+      {...props}
+    >
+      {children}
+    </ContainerTitleWrapper>
+  );
 };
 
-Container.Root = ContainerRoot;
+const Container = (props: IContainerProperties) => {
+  const { raw, spacing, alignMode, children } = props;
+  return (
+    <div
+      data-raw={Boolean(raw)}
+      data-align={alignMode || ContainerAlignModeEnum.Start}
+      data-spacing={spacing || ComponentSizeEnum.Small}
+    >
+      {children}
+    </div>
+  );
+};
+
 Container.Row = ContainerRow;
 Container.Col = ContainerCol;
-Container.Box = ContainerBox;
-Container.Section = ContainerSection;
-Container.Canvas = ContainerCanvas;
-Container.Divider = ContainerDivider;
 Container.Title = ContainerTitle;
 
-export {
-  Container,
-  ContainerRoot,
-  ContainerRow,
-  ContainerCol,
-  ContainerBox,
-  ContainerSection,
-  ContainerCanvas,
-  ContainerDivider,
-  ContainerTitle,
-};
+export { Container, ContainerRow, ContainerCol, ContainerTitle };

@@ -1,4 +1,5 @@
 export enum ComponentSizeEnum {
+  None = "none",
   Small = "small",
   Medium = "medium",
   Large = "large",
@@ -56,4 +57,7 @@ export interface IComponentControlProperties {
   shortcut?: boolean;
   hotkey?: string;
   bindkey?: TKeyBinding;
+}
+export interface IComponentSpacing {
+  spacing?: ComponentSizeEnum;
 }
