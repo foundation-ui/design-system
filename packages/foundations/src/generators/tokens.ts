@@ -1,5 +1,6 @@
 import {
   HEXToRGB,
+  HEXToHSL,
   calculateContrastScore,
   generateAlpha,
   generateVariation,
@@ -26,7 +27,7 @@ export const generateColorTokens = (
     base: {
       hex: hex,
       rgb: HEXToRGB(hex),
-      hsl: HEXToRGB(hex),
+      hsl: HEXToHSL(hex),
       contrast_score: {
         light: calculateContrastScore(hex, "ffffff"),
         dark: calculateContrastScore(hex, "000000"),
@@ -97,6 +98,38 @@ export const generateSequenceTokens = (
     values: sequencePayload,
   };
 };
-const generateTokensLibrary = () => {
-  return;
+export const generateTokensFromTemplate = (payload) =>
+  payload.values.map((value) => {
+    if (payload.type === "color") {
+      return generateColorTokens(value.name, value.base, value.variations);
+    }
+    if (payload.type === "measurement") {
+      return generateMeasurementTokens(
+        value.name,
+        value.base,
+        value.units,
+        value.ratio,
+        value.variant
+      );
+    }
+    if (payload.type === "sequence") {
+      return generateSequenceTokens(
+        value.name,
+        value.base,
+        value.units,
+        value.steps,
+        value.decimal
+      );
+    }
+  });
+export const generateTokensLibrary = (name: string, template: any) => {
+  template.forEach((token) => {
+    if (!token.type) return;
+    if (token.type && token.values) {
+      return {
+        name,
+        design_tokens: generateTokensFromTemplate(token),
+      };
+    }
+  });
 };

@@ -1,6 +1,5 @@
-import { THex, TTone, TMode, TLuminance } from "../../../../types";
+import { THex } from "../../../../types";
 
-/** Format convertors */
 export const checkDecimals = (value: number): boolean =>
   value === Math.floor(value);
 export const formatDecimals = (value: number): number =>
@@ -51,10 +50,7 @@ export const RGBAToHEX = (rgba: string, backgroundHex: string): string => {
   // Calculate the resulting color by blending the foreground and background colors
   const foregroundColor = `${redHex}${greenHex}${blueHex}`;
   const backgroundColor = backgroundHex.replace("#", "");
-
   const alpha = Math.max(0, Math.min(1, a)); // Ensure alpha is within the valid range [0, 1]
-
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const resultColor = foregroundColor
     .match(/.{1,2}/g)!
     .map((channel, index) =>
