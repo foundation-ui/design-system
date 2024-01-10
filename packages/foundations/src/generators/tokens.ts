@@ -4,6 +4,8 @@ import {
   generateAlpha,
   generateVariation,
   generateModularScales,
+  generateSequences,
+  generateSequenceVariation,
 } from "../";
 import { ColorModesEnum, MeasureVariantEnum } from "../../../../types";
 
@@ -61,9 +63,43 @@ export const generateMeasurementTokens = (
   };
 };
 
-const generateSequenceTokens = () => {
-  return;
+export const generateSequenceTokens = (
+  name: string,
+  base: number,
+  units: number,
+  steps: number,
+  decimal: boolean
+) => {
+  const sequenceValues = generateSequences({
+    base: base,
+    units: units,
+    steps: steps,
+    decimal,
+  });
+
+  const sequencePayload = sequenceValues.map((value: number, key: number) => {
+    const sequenceDetails = decimal
+      ? generateSequenceVariation({ contrast: value })
+      : generateSequenceVariation({
+          sequence: sequenceValues,
+          index: key || 0,
+        });
+
+    return {
+      value: value,
+      ...sequenceDetails,
+    };
+  });
+
+  return {
+    name: name,
+    base: base,
+    units: units,
+    steps: steps,
+    values: sequencePayload,
+  };
 };
+
 const generateTokensLibrary = () => {
   return;
 };
