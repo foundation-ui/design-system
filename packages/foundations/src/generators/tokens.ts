@@ -3,8 +3,9 @@ import {
   calculateContrastScore,
   generateAlpha,
   generateVariation,
+  generateModularScales,
 } from "../";
-import { ColorModesEnum, ColorVariantEnum } from "../../../../types";
+import { ColorModesEnum, MeasureVariantEnum } from "../../../../types";
 
 export const generateColorTokens = (
   name: string,
@@ -37,9 +38,29 @@ export const generateColorTokens = (
   };
 };
 
-const generateMeasurementTokens = () => {
-  return;
+export const generateMeasurementTokens = (
+  name: string,
+  base: number,
+  units: number,
+  ratio: number,
+  variant: MeasureVariantEnum
+) => {
+  return {
+    name: name,
+    base: base,
+    units: units,
+    ratio: ratio,
+    values: generateModularScales({
+      base: base,
+      ratio: [ratio],
+      units: units,
+      convert:
+        variant === MeasureVariantEnum.Measurement ||
+        variant === MeasureVariantEnum.FontSize,
+    }),
+  };
 };
+
 const generateSequenceTokens = () => {
   return;
 };
