@@ -3,8 +3,39 @@ import {
   TModularScalesOptions,
   TSequencesOptions,
   IScaleVariation,
+  RatioEnum,
 } from "../../../../types";
 
+export const MeasurementRatios = [
+  {
+    name: "Minor Second",
+    value: RatioEnum.MinorSecond,
+  },
+  {
+    name: "Major Second",
+    value: RatioEnum.MajorSecond,
+  },
+  {
+    name: "Minor Third",
+    value: RatioEnum.MinorThird,
+  },
+  {
+    name: "Major Third",
+    value: RatioEnum.MajorThird,
+  },
+  {
+    name: "Perfect Fourth",
+    value: RatioEnum.PerfectFourth,
+  },
+  {
+    name: "Perfect Fifth",
+    value: RatioEnum.PerfectFifth,
+  },
+  {
+    name: "Golden Ratio",
+    value: RatioEnum.GoldenRatio,
+  },
+];
 export const generateModularScales = (
   options: TModularScalesOptions
 ): IScaleVariation[] | number[] => {
@@ -63,7 +94,10 @@ export const calculateStackOrder = (index: number, sequence: number[]) => {
 
   return;
 };
-export const getUsages = (contrastScore: any | null, stackOrder?: any) => {
+export const getSequenceUsages = (
+  contrastScore: any | null,
+  stackOrder?: any
+) => {
   const contrastScoreRef = JSON.stringify(Object.values(contrastScore || ""));
   const scores = {
     depth: {
@@ -116,11 +150,11 @@ export const generateSequenceVariation = ({
 
   const variations = {
     depth: {
-      usage: getUsages(null, stackOrder),
+      usage: getSequenceUsages(null, stackOrder),
       stack_order: stackOrder,
     },
     opacity: {
-      usage: getUsages(contrastScore),
+      usage: getSequenceUsages(contrastScore),
       contrast_score: contrastScore,
     },
   };

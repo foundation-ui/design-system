@@ -14,6 +14,15 @@ export enum SizesEnum {
   Large = "large",
   XLarge = "xlarge",
 }
+export enum RatioEnum {
+  MinorSecond = 16 / 15,
+  MajorSecond = 9 / 8,
+  MinorThird = 6 / 5,
+  MajorThird = 5 / 4,
+  PerfectFourth = 4 / 3,
+  PerfectFifth = 3 / 2,
+  GoldenRatio = 1.618 / 1,
+}
 
 export type TSize =
   | SizesEnum.XSmall
