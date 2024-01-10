@@ -39,7 +39,6 @@ export const generateColorTokens = (
       : [],
   };
 };
-
 export const generateMeasurementTokens = (
   name: string,
   base: number,
@@ -62,7 +61,6 @@ export const generateMeasurementTokens = (
     }),
   };
 };
-
 export const generateSequenceTokens = (
   name: string,
   base: number,
@@ -99,7 +97,6 @@ export const generateSequenceTokens = (
     values: sequencePayload,
   };
 };
-
 const generateTokensLibrary = () => {
   return;
 };
