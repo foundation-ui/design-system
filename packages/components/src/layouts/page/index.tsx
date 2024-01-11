@@ -91,6 +91,11 @@ const PageTools = (props: IPageToolsProperties) => {
 
 const PageContent = (props: any) => {
   const { children } = props;
+
+  /** TODO:
+   * Check if Page content has rendered and check if it matches one of the following case:
+   * nav + menu | nav only | menu only | content standalone
+   */
   return <PageSectionWrapper>{children}</PageSectionWrapper>;
 };
 
