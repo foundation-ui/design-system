@@ -69,11 +69,11 @@ export const Default = {
               <Page.Navigation>
                 <Container.Row
                   spacing={ComponentSizeEnum.Small}
-                  alignMode={ContainerAlignModeEnum.SpaceBetween}
+                  alignmode={ContainerAlignModeEnum.SpaceBetween}
                 >
                   <Container.Row
                     spacing={ComponentSizeEnum.Small}
-                    alignMode={ContainerAlignModeEnum.Start}
+                    alignmode={ContainerAlignModeEnum.Start}
                   >
                     <Button sizing={ComponentSizeEnum.Small}>
                       &nbsp;&nbsp;&nbsp;
@@ -84,7 +84,7 @@ export const Default = {
                   </Container.Row>
                   <Container.Row
                     spacing={ComponentSizeEnum.Small}
-                    alignMode={ContainerAlignModeEnum.End}
+                    alignmode={ContainerAlignModeEnum.End}
                   >
                     <Button sizing={ComponentSizeEnum.Small}>
                       &nbsp;&nbsp;&nbsp;
@@ -101,11 +101,11 @@ export const Default = {
               <Page.Menu>
                 <Container.Row
                   spacing={ComponentSizeEnum.Small}
-                  alignMode={ContainerAlignModeEnum.SpaceBetween}
+                  alignmode={ContainerAlignModeEnum.SpaceBetween}
                 >
                   <Container.Row
                     spacing={ComponentSizeEnum.Small}
-                    alignMode={ContainerAlignModeEnum.Start}
+                    alignmode={ContainerAlignModeEnum.Start}
                   >
                     <Button sizing={ComponentSizeEnum.Small}>
                       &nbsp;&nbsp;&nbsp;
@@ -113,7 +113,7 @@ export const Default = {
                   </Container.Row>
                   <Container.Row
                     spacing={ComponentSizeEnum.Small}
-                    alignMode={ContainerAlignModeEnum.End}
+                    alignmode={ContainerAlignModeEnum.End}
                   >
                     <Button sizing={ComponentSizeEnum.Small}>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

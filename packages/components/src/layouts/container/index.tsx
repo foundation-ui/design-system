@@ -18,7 +18,7 @@ export enum ContainerAlignModeEnum {
 }
 
 export interface IContainerAlignMode {
-  alignMode?: ContainerAlignModeEnum;
+  alignmode?: ContainerAlignModeEnum;
 }
 export interface IProximityProperties {
   proximity?: boolean;
@@ -31,13 +31,13 @@ export interface IContainerProperties
     React.ComponentPropsWithoutRef<any> {}
 
 const ContainerRow = (props: IContainerProperties) => {
-  const { raw, spacing, alignMode, children } = props;
+  const { raw, spacing, alignmode, children } = props;
   return (
     <ContainerRowWrapper
       tabIndex={-1}
       aria-orientation="horizontal"
       data-raw={Boolean(raw)}
-      data-align={alignMode || ContainerAlignModeEnum.Start}
+      data-align={alignmode || ContainerAlignModeEnum.Start}
       data-spacing={spacing || ComponentSizeEnum.None}
       {...props}
     >
@@ -46,13 +46,13 @@ const ContainerRow = (props: IContainerProperties) => {
   );
 };
 const ContainerCol = (props: IContainerProperties) => {
-  const { raw, spacing, alignMode, children } = props;
+  const { raw, spacing, alignmode, children } = props;
   return (
     <ContainerGridWrapper
       tabIndex={-1}
       aria-orientation="vertical"
       data-raw={Boolean(raw)}
-      data-align={alignMode || ContainerAlignModeEnum.Start}
+      data-align={alignmode || ContainerAlignModeEnum.Start}
       data-spacing={spacing || ComponentSizeEnum.None}
       {...props}
     >
@@ -61,11 +61,11 @@ const ContainerCol = (props: IContainerProperties) => {
   );
 };
 const ContainerTitle = (props: IContainerProperties) => {
-  const { raw, spacing, alignMode, children } = props;
+  const { raw, spacing, alignmode, children } = props;
   return (
     <ContainerTitleWrapper
       data-raw={Boolean(raw)}
-      data-align={alignMode || ContainerAlignModeEnum.Start}
+      data-align={alignmode || ContainerAlignModeEnum.Start}
       data-spacing={spacing || ComponentSizeEnum.Small}
       {...props}
     >
