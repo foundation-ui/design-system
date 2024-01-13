@@ -41,6 +41,8 @@ export interface IDesignTokensSet {
   color: IComposedLibraryItem[];
   measurement: IComposedLibraryItem[];
   fontsize: IComposedLibraryItem[];
+  depth: IComposedLibraryItem[];
+  opacity: IComposedLibraryItem[];
 }
 export interface IDesignTokensLibrary {
   name: string;
