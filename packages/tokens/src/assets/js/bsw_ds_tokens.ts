@@ -5,7 +5,7 @@ export default {
       {
         name: "mono-dark",
         base: {
-          hex: "212121",
+          hex: "#212121",
           rgb: "rgb(33, 33, 33)",
           hsl: "rgb(33, 33, 33)",
           contrast_score: { light: "AAA", dark: "F" },
@@ -78,7 +78,7 @@ export default {
       {
         name: "mono-darker",
         base: {
-          hex: "111111",
+          hex: "#111111",
           rgb: "rgb(17, 17, 17)",
           hsl: "rgb(17, 17, 17)",
           contrast_score: { light: "AAA", dark: "F" },
@@ -151,7 +151,7 @@ export default {
       {
         name: "mono-darkest",
         base: {
-          hex: "0e0e0e",
+          hex: "#0e0e0e",
           rgb: "rgb(14, 14, 14)",
           hsl: "rgb(14, 14, 14)",
           contrast_score: { light: "AAA", dark: "F" },
@@ -224,7 +224,7 @@ export default {
       {
         name: "mono-light",
         base: {
-          hex: "fafafa",
+          hex: "#fafafa",
           rgb: "rgb(250, 250, 250)",
           hsl: "rgb(250, 250, 250)",
           contrast_score: { light: "F", dark: "AAA" },
@@ -297,7 +297,7 @@ export default {
       {
         name: "mono-white",
         base: {
-          hex: "f1f1f1",
+          hex: "#f1f1f1",
           rgb: "rgb(241, 241, 241)",
           hsl: "rgb(241, 241, 241)",
           contrast_score: { light: "F", dark: "AAA" },
@@ -370,7 +370,7 @@ export default {
       {
         name: "mono-whitest",
         base: {
-          hex: "ffffff",
+          hex: "#ffffff",
           rgb: "rgb(255, 255, 255)",
           hsl: "rgb(255, 255, 255)",
           contrast_score: { light: "F", dark: "AAA" },
@@ -382,7 +382,7 @@ export default {
       {
         name: "yellow",
         base: {
-          hex: "ffd233",
+          hex: "#ffd233",
           rgb: "rgb(255, 210, 51)",
           hsl: "rgb(255, 210, 51)",
           contrast_score: { light: "F", dark: "AAA" },
@@ -577,7 +577,7 @@ export default {
       {
         name: "red",
         base: {
-          hex: "ff6a66",
+          hex: "#ff6a66",
           rgb: "rgb(255, 106, 102)",
           hsl: "rgb(255, 106, 102)",
           contrast_score: { light: "F", dark: "AAA" },
@@ -772,7 +772,7 @@ export default {
       {
         name: "blue",
         base: {
-          hex: "5e6eff",
+          hex: "#5e6eff",
           rgb: "rgb(94, 110, 255)",
           hsl: "rgb(94, 110, 255)",
           contrast_score: { light: "F", dark: "AA" },
@@ -967,7 +967,7 @@ export default {
       {
         name: "green",
         base: {
-          hex: "25ffa4",
+          hex: "#25ffa4",
           rgb: "rgb(37, 255, 164)",
           hsl: "rgb(37, 255, 164)",
           contrast_score: { light: "F", dark: "AAA" },
