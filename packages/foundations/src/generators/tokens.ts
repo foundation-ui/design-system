@@ -8,7 +8,14 @@ import {
   generateSequences,
   generateSequenceVariation,
 } from "../";
-import { ColorModesEnum, MeasureVariantEnum } from "../../../../types";
+import {
+  IDesignTokensLibrary,
+  ColorModesEnum,
+  MeasureVariantEnum,
+  SequenceVariantEnum,
+  TokenTypesEnum,
+  ITemplatePayload,
+} from "../../../../types";
 
 export const generateColorTokens = (
   name: string,
@@ -25,7 +32,7 @@ export const generateColorTokens = (
   return {
     name: name,
     base: {
-      hex: hex,
+      hex: `#${hex}`,
       rgb: HEXToRGB(hex),
       hsl: HEXToHSL(hex),
       contrast_score: {
@@ -98,12 +105,24 @@ export const generateSequenceTokens = (
     values: sequencePayload,
   };
 };
-export const generateTokensFromTemplate = (payload) =>
-  payload.values.map((value) => {
-    if (payload.type === "color") {
+export const generateTokensFromTemplate = (payload) => {
+  return payload.values.map((value) => {
+    const isColorType = payload.type === TokenTypesEnum.Color;
+
+    const isMeasurementType = [
+      MeasureVariantEnum.Measurement,
+      MeasureVariantEnum.FontSize,
+    ].includes(payload.type);
+
+    const isSequenceType = [
+      SequenceVariantEnum.Depth,
+      SequenceVariantEnum.Opacity,
+    ].includes(payload.type);
+
+    if (isColorType) {
       return generateColorTokens(value.name, value.base, value.variations);
     }
-    if (payload.type === "measurement") {
+    if (isMeasurementType) {
       return generateMeasurementTokens(
         value.name,
         value.base,
@@ -112,7 +131,7 @@ export const generateTokensFromTemplate = (payload) =>
         value.variant
       );
     }
-    if (payload.type === "sequence") {
+    if (isSequenceType) {
       return generateSequenceTokens(
         value.name,
         value.base,
@@ -122,14 +141,30 @@ export const generateTokensFromTemplate = (payload) =>
       );
     }
   });
-export const generateTokensLibrary = (name: string, template: any) => {
+};
+
+export const generateTokensLibrary = (
+  name: string,
+  template: ITemplatePayload[]
+): IDesignTokensLibrary => {
+  let design_tokens = {
+    color: [],
+    measurement: [],
+    fontsize: [],
+    opacity: [],
+    depth: [],
+  };
+
   template.forEach((token) => {
     if (!token.type) return;
-    if (token.type && token.values) {
-      return {
-        name,
-        design_tokens: generateTokensFromTemplate(token),
-      };
-    }
+    if (token.type && token.values)
+      return design_tokens[token.type].push(
+        ...generateTokensFromTemplate(token)
+      );
   });
+
+  return {
+    name: name.trim().replace(" ", "-").toLowerCase(),
+    design_tokens: design_tokens,
+  };
 };

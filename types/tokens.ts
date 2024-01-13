@@ -3,6 +3,7 @@ import {
   TScaleVariant,
   IColorVariation,
   IScaleVariation,
+  ISequenceVariation,
   MeasurementFormatEnum,
 } from "./";
 
@@ -16,7 +17,7 @@ export type TDesignTokensVariant = TokenTypesEnum.Color | TScaleVariant;
 
 export interface IQueryProperties {
   source: IDesignTokensLibrary;
-  token_category: TokenTypesEnum.Color | TokenTypesEnum.Measurement;
+  token_category: "color" | "measurement" | "fontsize" | "depth" | "opacity";
   query: string;
   unit?:
     | ColorFormatEnum.Hex
@@ -27,15 +28,15 @@ export interface IQueryProperties {
     | MeasurementFormatEnum.Rem;
 }
 export interface IComposedLibraryItem {
-  name: string;
-  base: number | IColorVariation;
-  alpha?: IColorVariation[];
-  tint?: IColorVariation[];
-  shade?: IColorVariation[];
+  name?: string;
+  base?: number | IColorVariation;
+  alpha?: IColorVariation[] | [];
+  tint?: IColorVariation[] | [];
+  shade?: IColorVariation[] | [];
   units?: number;
   ratio?: number;
   variant?: TScaleVariant;
-  values?: IScaleVariation[] | [];
+  values?: ISequenceVariation[] | IScaleVariation[] | [];
 }
 export interface IDesignTokensSet {
   color: IComposedLibraryItem[];

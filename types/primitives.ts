@@ -48,15 +48,15 @@ export interface IComponentStyling {
   raw?: boolean;
 }
 export interface IComponentSize {
-  sizing?: TComponentSize;
+  sizing?: ComponentSizeEnum;
 }
 export interface IComponentVariant {
-  variant?: TComponentVariant;
+  variant?: ComponentVariantEnum;
 }
 export interface IComponentControlProperties {
   shortcut?: boolean;
   hotkey?: string;
-  bindkey?: TKeyBinding;
+  bindkey?: KeyBindingEnum;
 }
 export interface IComponentSpacing {
   spacing?: ComponentSizeEnum;

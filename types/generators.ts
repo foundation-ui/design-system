@@ -14,6 +14,7 @@ export type TSequencesOptions = {
 };
 
 export interface ITemplateValues {
+  name?: string;
   base?: string | number;
   ratio?: number;
   units?: number;
@@ -26,13 +27,7 @@ export interface ITemplateValues {
   };
 }
 export interface ITemplatePayload {
-  name: string;
-  type:
-    | TokenTypesEnum.Color
-    | MeasureVariantEnum.FontSize
-    | MeasureVariantEnum.Measurement
-    | SequenceVariantEnum.Depth
-    | SequenceVariantEnum.Opacity;
+  type: string;
   values: ITemplateValues[];
   data?: any[];
 }

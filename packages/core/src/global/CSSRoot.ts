@@ -11,6 +11,8 @@ export const CSSRoot = createGlobalStyle`
 		${cssVariables.shade}
 		${cssVariables.fontsize}
 		${cssVariables.measurement}
+		${cssVariables.depth}
+		${cssVariables.opacity}
 
 		--breakpoint-mobile: 375px;
 		--breakpoint-mobile-large: 425px;

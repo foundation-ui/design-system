@@ -6,6 +6,7 @@ import {
   IComposedLibraryItem,
   ColorVariantEnum,
   MeasureVariantEnum,
+  SequenceVariantEnum,
 } from "../../../../types";
 
 export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
@@ -19,6 +20,10 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
     MeasureVariantEnum.FontSize,
     MeasureVariantEnum.Measurement,
   ];
+  const SEQUENCE_TOKENS_VARIANT: SequenceVariantEnum[] = [
+    SequenceVariantEnum.Depth,
+    SequenceVariantEnum.Opacity,
+  ];
 
   const variantName = (variant: string, name: string) =>
     `--${variant}-${name}-`;
@@ -26,12 +31,12 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
   const variableName = (variant: string, name: string, key: number) =>
     `${variantName(variant, name)}${variantIndex(key)}`;
 
-  const variations = {
+  const variationsTransformers = {
     color: (library: IComposedLibraryItem[], variant?: TColorVariant) => {
       if (!variant) {
         return library.map(
           (token) => css`
-            ${`--${DEFAULT_COLOR_TOKENS_VARIANT}-${token.name}: #${token.base["hex"]};`}
+            ${`--${DEFAULT_COLOR_TOKENS_VARIANT}-${token.name}: ${token.base["hex"]};`}
           `
         );
       }
@@ -53,15 +58,30 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
         )
       );
     },
+    sequence: (
+      library: IComposedLibraryItem[],
+      variant: SequenceVariantEnum
+    ) => {
+      return library.map((token) =>
+        token.values.map(
+          (value, key) => css`
+            ${`${variableName(variant, token.name, key)}: ${value.value};`}
+          `
+        )
+      );
+    },
   };
 
-  const [color, alpha, tint, shade, fontsize, measurement] = [
-    variations.color(payload.design_tokens.color),
-    COLOR_TOKENS_VARIANT.map((variant) =>
-      variations.color(payload.design_tokens.color, variant)
+  const [color, alpha, tint, shade, fontsize, measurement, depth, opacity] = [
+    variationsTransformers.color(payload.design_tokens.color),
+    ...COLOR_TOKENS_VARIANT.map((variant) =>
+      variationsTransformers.color(payload.design_tokens.color, variant)
     ),
     ...SCALE_TOKENS_VARIANT.map((variant) =>
-      variations.scale(payload.design_tokens[variant], variant)
+      variationsTransformers.scale(payload.design_tokens[variant], variant)
+    ),
+    ...SEQUENCE_TOKENS_VARIANT.map((variant) =>
+      variationsTransformers.sequence(payload.design_tokens[variant], variant)
     ),
   ];
 
@@ -72,5 +92,7 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
     shade,
     fontsize,
     measurement,
+    depth,
+    opacity,
   });
 };

@@ -48,7 +48,7 @@ export interface IColorVariation {
   hsl?: string;
 }
 export interface IColorProperties {
-  alpha: IColorVariation[];
-  tint: IColorVariation[];
-  shade: IColorVariation[];
+  alpha?: IColorVariation[] | [];
+  tint?: IColorVariation[] | [];
+  shade?: IColorVariation[] | [];
 }
