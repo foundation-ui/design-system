@@ -19,20 +19,17 @@ export interface IQueryProperties {
   source: IDesignTokensLibrary;
   token_category: "color" | "measurement" | "fontsize" | "depth" | "opacity";
   query: string;
-  unit?:
-    | ColorFormatEnum.Hex
-    | ColorFormatEnum.Rgb
-    | ColorFormatEnum.Hsl
-    | MeasurementFormatEnum.Px
-    | MeasurementFormatEnum.Pt
-    | MeasurementFormatEnum.Rem;
+  unit?: ColorFormatEnum | MeasurementFormatEnum;
 }
 export interface IComposedLibraryItem {
   name?: string;
   base?: number | IColorVariation;
-  alpha?: IColorVariation[] | [];
-  tint?: IColorVariation[] | [];
-  shade?: IColorVariation[] | [];
+  /**
+   * TODO: Update any for IColorVariation withtout breaking Core's build
+   */
+  alpha?: any[] | [];
+  tint?: any[] | [];
+  shade?: any[] | [];
   units?: number;
   ratio?: number;
   variant?: TScaleVariant;

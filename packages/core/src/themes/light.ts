@@ -38,7 +38,7 @@ export const lightTheme = {
       contrast: GetTokenBase({
         source: js_design_tokens,
         token_category: TokenTypesEnum.Color,
-        query: "mono-dark",
+        query: "mono-darkest",
       }),
     },
   },

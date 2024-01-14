@@ -4,10 +4,17 @@ import {
   IQueryProperties,
 } from "../../../../types";
 
-export const GetTokenFromSource = (props: IQueryProperties) => {
-  return [...props.source.design_tokens[props.token_category]].filter(
-    (token: IComposedLibraryItem) => token.name === props.query
-  )[0];
+export const GetTokenFromSource = (
+  props: IQueryProperties
+): IComposedLibraryItem | null => {
+  const { source, token_category, query } = props;
+
+  const filterSource = source.design_tokens[token_category].find(
+    (token: IComposedLibraryItem) => token.name === query
+  );
+
+  if (filterSource) return filterSource;
+  else return null;
 };
 
 export const GetTokenBase = (props: IQueryProperties) => {

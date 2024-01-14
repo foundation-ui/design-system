@@ -42,10 +42,15 @@ export type TColorVariant =
   | ColorVariantEnum.Tint
   | ColorVariantEnum.Shade;
 
+export interface IContrastScore {
+  light: string;
+  dark: string;
+}
 export interface IColorVariation {
   hex?: THex;
   rgb?: string;
   hsl?: string;
+  contrast_score?: IContrastScore;
 }
 export interface IColorProperties {
   alpha?: IColorVariation[] | [];
