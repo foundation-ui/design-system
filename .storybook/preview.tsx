@@ -5,6 +5,7 @@ import { DesignTokensProvider } from "../packages/tokens";
 import {
   CSSRoot,
   ResetStyles,
+  TypographyColors,
   ColorModeProvider,
   SystemThemeProvider,
 } from "../packages/core";
@@ -36,6 +37,7 @@ const preview: Preview = {
             <SystemThemeProvider>
               <CSSRoot />
               <ResetStyles />
+              <TypographyColors />
               <StoriesWrapepr>
                 <Story />
               </StoriesWrapepr>

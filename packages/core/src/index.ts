@@ -3,6 +3,7 @@ export * from "./contexts/SystemThemeProvider";
 
 export * from "./global/CSSRoot";
 export * from "./global/ResetStyles";
+export * from "./global/TypographyColors";
 
 export * from "./hooks/useClickOutside";
 export * from "./hooks/useEventListener";
