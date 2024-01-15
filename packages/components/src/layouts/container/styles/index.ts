@@ -69,9 +69,9 @@ const ContainerProximityStyles = css`
   }
 `;
 
-export const ContainerGridWrapper = styled.section`
-  display: grid;
-  grid-template-rows: min-content;
+export const ContainerColWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
   ${ContainerBaseStyles}
   ${ContainerSpacingStyles}
 `;

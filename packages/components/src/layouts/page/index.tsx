@@ -44,15 +44,14 @@ const PageTools = (props: IPageToolsProperties) => {
     sizing,
     side,
     defaultOpen,
+    fixed,
     showOnCollapse,
     onClick,
     trigger,
     triggerProps,
     children,
   } = props;
-
-  const pageContext = usePage();
-  const { id, states, methods } = pageContext;
+  const { id, states, methods } = usePage();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
@@ -65,7 +64,7 @@ const PageTools = (props: IPageToolsProperties) => {
         raw={raw}
         sizing={sizing}
         side={side}
-        shortcut={shortcut}
+        shortcut={!fixed && shortcut}
         hotkey={hotkey}
         bindkey={bindkey}
         defaultOpen={defaultOpen}
@@ -73,17 +72,20 @@ const PageTools = (props: IPageToolsProperties) => {
         <Toolbar.Section showOnCollapse={showOnCollapse}>
           {children}
         </Toolbar.Section>
-        <Toolbar.Trigger
-          title={
-            shortcut
-              ? `${bindkey || "ctrl"} + ${hotkey}`
-              : `${id}-toolbar-trigger`
-          }
-          onClick={handleClick}
-          {...triggerProps}
-        >
-          {trigger || <span>&harr;</span>}
-        </Toolbar.Trigger>
+
+        {!fixed && (
+          <Toolbar.Trigger
+            title={
+              shortcut
+                ? `${bindkey || "ctrl"} + ${hotkey}`
+                : `${id}-toolbar-trigger`
+            }
+            onClick={handleClick}
+            {...triggerProps}
+          >
+            {trigger || <span>&harr;</span>}
+          </Toolbar.Trigger>
+        )}
       </Toolbar>
     </Toolbar.Root>
   );
@@ -91,12 +93,9 @@ const PageTools = (props: IPageToolsProperties) => {
 
 const PageContent = (props: any) => {
   const { children } = props;
+  const { id } = usePage();
 
-  /** TODO:
-   * Check if Page content has rendered and check if it matches one of the following case:
-   * nav + menu | nav only | menu only | content standalone
-   */
-  return <PageSectionWrapper>{children}</PageSectionWrapper>;
+  return <PageSectionWrapper id={id}>{children}</PageSectionWrapper>;
 };
 
 const PagePanel = (props: IPageToolsProperties) => {
@@ -108,6 +107,7 @@ const PagePanel = (props: IPageToolsProperties) => {
     sizing,
     side,
     defaultOpen,
+    fixed,
     showOnCollapse,
     onClick,
     trigger,
@@ -115,8 +115,7 @@ const PagePanel = (props: IPageToolsProperties) => {
     children,
   } = props;
 
-  const pageContext = usePage();
-  const { id, states, methods } = pageContext;
+  const { id, states, methods } = usePage();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
@@ -130,24 +129,27 @@ const PagePanel = (props: IPageToolsProperties) => {
         raw={raw}
         sizing={sizing}
         side={side}
-        shortcut={shortcut}
+        shortcut={!fixed && shortcut}
         hotkey={hotkey}
         bindkey={bindkey}
         defaultOpen={defaultOpen}
       >
-        <Toolbar.Trigger
-          title={
-            shortcut
-              ? `${bindkey || "ctrl"} + ${hotkey}`
-              : `${id}-toolbar-trigger`
-          }
-          onClick={handleClick}
-          {...triggerProps}
-        >
-          {trigger || (
-            <span style={{ transform: "rotate(90deg)" }}>&harr;</span>
-          )}
-        </Toolbar.Trigger>
+        {!fixed && (
+          <Toolbar.Trigger
+            title={
+              shortcut
+                ? `${bindkey || "ctrl"} + ${hotkey}`
+                : `${id}-toolbar-trigger`
+            }
+            onClick={handleClick}
+            {...triggerProps}
+          >
+            {trigger || (
+              <span style={{ transform: "rotate(90deg)" }}>&harr;</span>
+            )}
+          </Toolbar.Trigger>
+        )}
+
         <Toolbar.Section showOnCollapse={showOnCollapse}>
           {children}
         </Toolbar.Section>
@@ -163,10 +165,6 @@ const PageMenu = (props: any) => {
 
 const Page = (props: any) => {
   const { children } = props;
-
-  const pageContext = usePage();
-  const { id, states, methods } = pageContext;
-
   return <Container.Row>{children}</Container.Row>;
 };
 

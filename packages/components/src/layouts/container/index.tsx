@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  ContainerGridWrapper,
+  ContainerColWrapper,
   ContainerRowWrapper,
   ContainerTitleWrapper,
   ContainerWrapper,
@@ -48,7 +48,7 @@ const ContainerRow = (props: IContainerProperties) => {
 const ContainerCol = (props: IContainerProperties) => {
   const { raw, spacing, alignmode, children } = props;
   return (
-    <ContainerGridWrapper
+    <ContainerColWrapper
       tabIndex={-1}
       aria-orientation="vertical"
       data-raw={Boolean(raw)}
@@ -57,7 +57,7 @@ const ContainerCol = (props: IContainerProperties) => {
       {...props}
     >
       {children}
-    </ContainerGridWrapper>
+    </ContainerColWrapper>
   );
 };
 const ContainerTitle = (props: IContainerProperties) => {
