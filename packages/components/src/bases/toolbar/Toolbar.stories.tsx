@@ -28,6 +28,7 @@ export const Default = {
     side: ComponentSideEnum.Left,
     sizing: ComponentSizeEnum.Large,
     defaultOpen: true,
+    fixed: false,
     showOnCollapse: true,
     showFirstChild: true,
     shortcut: true,
@@ -63,6 +64,7 @@ export const Default = {
           defaultOpen={args.defaultOpen}
           shortcut={args.shortcut}
           hotkey={args.hotkey}
+          fixed={args.fixed}
           // bindkey={bindkey}
         >
           <Toolbar.Section showOnCollapse={args.showOnCollapse}>
@@ -83,7 +85,7 @@ export const Default = {
             </Container.Row>
           </Toolbar.Section>
 
-          <Toolbar.Trigger>&hArr;</Toolbar.Trigger>
+          {!args.fixed && <Toolbar.Trigger>&hArr;</Toolbar.Trigger>}
         </Toolbar>
       </Toolbar.Root>
     </Wrapper>

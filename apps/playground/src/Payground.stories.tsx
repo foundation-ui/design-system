@@ -3,20 +3,35 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { ColorModeContext } from "../../../packages/core";
 import {
+  json_design_tokens_template,
+  js_design_tokens,
+  json_design_tokens,
+  GetTokenFromSource,
+} from "../../../packages/tokens";
+import {
+  generateColorTokens,
+  generateMeasurementTokens,
+  generateSequenceTokens,
+  generateTokensFromTemplate,
+  generateTokensLibrary,
+  generateCSSVariables,
+} from "../../../packages/foundations";
+import {
   Portal,
   Page,
   Container,
   ContainerAlignModeEnum,
   Avatar,
-  AvataStatusEnum,
-  Accordion,
   Button,
   Toolbar,
 } from "../../../packages/components";
+
 import {
   ComponentVariantEnum,
   ComponentSideEnum,
   ComponentSizeEnum,
+  RatioEnum,
+  MeasureVariantEnum,
 } from "../../../types";
 
 const meta = {
@@ -38,6 +53,39 @@ export const App = {
     const darkMode = colorMode === "dark";
     const updateColorMode = () =>
       darkMode ? setColorMode("light") : setColorMode("dark");
+
+    const generators = {
+      color: () => generateColorTokens("black", "212121", { alpha: true }),
+      opacity: () => generateSequenceTokens("opacity-base", 1, 10, 10, true),
+      depth: () => generateSequenceTokens("depth-base", 1, 10, 10, false),
+      fs: () =>
+        generateMeasurementTokens(
+          "fs-base",
+          12,
+          10,
+          RatioEnum.MajorThird,
+          MeasureVariantEnum.FontSize
+        ),
+      ms: () =>
+        generateMeasurementTokens(
+          "ms-base",
+          12,
+          10,
+          RatioEnum.MajorThird,
+          MeasureVariantEnum.Measurement
+        ),
+
+      tokenFromTemplate: () =>
+        generateTokensFromTemplate(json_design_tokens_template[3]),
+
+      libraryFromTemplate: () =>
+        generateTokensLibrary("basic UI dsl", json_design_tokens_template),
+
+      cssVariables: () =>
+        generateCSSVariables(
+          generateTokensLibrary("basic UI dsl", json_design_tokens_template)
+        ),
+    };
 
     return (
       <React.Fragment>
@@ -78,11 +126,11 @@ export const App = {
                     &nbsp;&nbsp;&nbsp;
                   </Button>
                   <Button
-                    variant={ComponentVariantEnum.Ghost}
-                    sizing={ComponentSizeEnum.Large}
+                    variant={ComponentVariantEnum.Tertiary}
+                    sizing={ComponentSizeEnum.Small}
                     onClick={updateColorMode}
                   >
-                    {darkMode ? "🌞" : "🌘"}
+                    {darkMode ? <span>&#9728;</span> : <span>&#9790;</span>}
                   </Button>
                 </Container.Row>
               </Page.Navigation>
@@ -91,27 +139,47 @@ export const App = {
               </Page.Menu>
 
               <Page.Content>
-                <Container.Col spacing={ComponentSizeEnum.Large}>
-                  <Container proximity spacing="medium">
-                    <h3>Generate a Design Tokens Library</h3>
-                    <p style={{ margin: 0, maxWidth: 480, opacity: 0.6 }}>
-                      Generate Design Tokens within a single step, export your
-                      library to use it in your Design System and Applications,
-                      regardless of the technologies used.
-                    </p>
-                  </Container>
-                  <Container.Row spacing={ComponentSizeEnum.Medium}>
-                    <Button>Generate Colors</Button>
-                    <Button>Generate Measurements</Button>
-                    <Button>Generate Sequences</Button>
-                    <Button>Generate Library</Button>
-                  </Container.Row>
+                <Container.Col spacing={ComponentSizeEnum.Small}>
+                  <Button onClick={() => console.log(generators.color())}>
+                    Colors
+                  </Button>
+
+                  <Button onClick={() => console.log(generators.depth())}>
+                    Depth
+                  </Button>
+                  <Button onClick={() => console.log(generators.opacity())}>
+                    Opacity
+                  </Button>
+
+                  <Button onClick={() => console.log(generators.ms())}>
+                    Measurements
+                  </Button>
+                  <Button onClick={() => console.log(generators.fs())}>
+                    FontSizes
+                  </Button>
+
+                  <Button
+                    onClick={() => console.log(generators.tokenFromTemplate())}
+                  >
+                    Tokens from template
+                  </Button>
+                  <Button
+                    onClick={() =>
+                      console.log(generators.libraryFromTemplate())
+                    }
+                  >
+                    Library from template
+                  </Button>
+
+                  <Button
+                    onClick={() => console.log(generators.cssVariables())}
+                  >
+                    Css Variables
+                  </Button>
                 </Container.Col>
               </Page.Content>
             </Container.Col>
           </Page>
-
-          <Portal container="notification-page-portal" />
         </Page.Root>
       </React.Fragment>
     );

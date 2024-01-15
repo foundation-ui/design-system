@@ -21,6 +21,7 @@ export interface IToolbarBodyProperties
     IComponentControlProperties,
     React.ComponentPropsWithoutRef<"aside"> {
   defaultOpen?: boolean;
+  fixed?: boolean;
   side?:
     | ComponentSideEnum.Top
     | ComponentSideEnum.Right
@@ -48,6 +49,7 @@ const Toolbar = (props: IToolbarBodyProperties) => {
     sizing,
     side,
     defaultOpen,
+    fixed,
     onClick,
     children,
     ...restProps
@@ -69,7 +71,9 @@ const Toolbar = (props: IToolbarBodyProperties) => {
   }, [defaultOpen]);
 
   React.useEffect(() => {
-    if (shortcut && shortcutControls && toggleToolbar) toggleToolbar();
+    if (!fixed) {
+      if (shortcut && shortcutControls && toggleToolbar) toggleToolbar();
+    }
   }, [shortcutControls]);
 
   return (
