@@ -66,7 +66,7 @@ export const RGBAToHEX = (rgba: string, backgroundHex: string): string => {
 
   return `#${resultColor.toUpperCase()}`; // Convert to uppercase for consistency (optional)
 };
-const RGBToHSL = (r: number, g: number, b: number): number[] => {
+export const RGBToHSL = (r: number, g: number, b: number): number[] => {
   const normalizedR = r / 255;
   const normalizedG = g / 255;
   const normalizedB = b / 255;

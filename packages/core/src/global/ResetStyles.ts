@@ -24,7 +24,7 @@ export const ResetStyles = createGlobalStyle`
         font-family: 'Helvetica Neue', system-ui, -apple-system, sans-serif;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6, p {
         margin: 0;
         padding: 0;
         line-height: 1.1em;
