@@ -1,29 +1,34 @@
 import React from "react";
-import { render, fireEvent, screen, act } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
-import { Avatar, AvataStatusEnum } from "../";
-import { ComponentSizeEnum } from "../../../../../../types";
 
+import { Avatar, AvataStatusEnum } from "../";
+import { SystemThemeProvider } from "@bsw/ds-core";
+import { ComponentSizeEnum } from "../../../../../../types";
 import "@testing-library/jest-dom";
 
 expect.extend(toHaveNoViolations);
 describe("Avatar", () => {
   it("Renders without accessibility violation", async () => {
     const { container } = render(
-      <Avatar
-        sizing={ComponentSizeEnum.Small}
-        status={AvataStatusEnum.Online}
-      />
+      <SystemThemeProvider>
+        <Avatar
+          sizing={ComponentSizeEnum.Small}
+          status={AvataStatusEnum.Online}
+        />
+      </SystemThemeProvider>
     );
     const ComponentContainer = await axe(container);
     expect(ComponentContainer).toHaveNoViolations();
   });
   it("Renders as Default with accessibility definition", async () => {
     render(
-      <Avatar
-        sizing={ComponentSizeEnum.Small}
-        status={AvataStatusEnum.Online}
-      />
+      <SystemThemeProvider>
+        <Avatar
+          sizing={ComponentSizeEnum.Small}
+          status={AvataStatusEnum.Online}
+        />
+      </SystemThemeProvider>
     );
 
     const avatarLabel = "small-user-avatar";
@@ -39,6 +44,22 @@ describe("Avatar", () => {
     expect(AvatarStatus).toHaveAttribute("role", "img");
     expect(AvatarStatus).toHaveAttribute("data-status", "online");
   });
+  it("Renders as Default with Image as background", async () => {
+    render(
+      <SystemThemeProvider>
+        <Avatar src="http://www.bui/tests" />
+      </SystemThemeProvider>
+    );
+
+    const avatarLabel = "medium-user-avatar";
+    const AvatarWrapper = screen.getByLabelText(avatarLabel);
+    const AvatarImage = screen.getByLabelText("medium-user-avatar-image");
+
+    expect(AvatarWrapper).toBeDefined();
+    expect(AvatarImage).toBeDefined();
+    expect(AvatarWrapper).toHaveAttribute("data-size", "medium");
+    expect(AvatarWrapper).toHaveAttribute("data-status", "offline");
+  });
   it("Renders variants without accessibility violation", async () => {
     const SizeVariants = [
       ComponentSizeEnum.Small,
@@ -53,7 +74,7 @@ describe("Avatar", () => {
     ];
 
     const { container } = render(
-      <React.Fragment>
+      <SystemThemeProvider>
         {StatusVariants.map((variant, key) => (
           <Avatar
             key={variant}
@@ -61,7 +82,7 @@ describe("Avatar", () => {
             sizing={SizeVariants[key] || ComponentSizeEnum.Small}
           />
         ))}
-      </React.Fragment>
+      </SystemThemeProvider>
     );
 
     const ComponentContainer = await axe(container);

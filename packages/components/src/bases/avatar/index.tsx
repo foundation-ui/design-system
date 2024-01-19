@@ -29,17 +29,22 @@ export interface IAvatarProperties
 
 export const Avatar = (props: IAvatarProperties) => {
   const { raw, sizing, status, src, alt, children, ...restProps } = props;
+  const sizeLabel = sizing || ComponentSizeEnum.Medium;
 
   return (
     <AvatarWrapper
       data-raw={Boolean(raw)}
       data-size={sizing || ComponentSizeEnum.Medium}
       data-status={status || AvataStatusEnum.Offline}
-      aria-label={props["aria-label"] || `${sizing}-user-avatar`}
+      aria-label={props["aria-label"] || `${sizeLabel}-user-avatar`}
       {...restProps}
     >
       {!children && src && (
-        <img alt={alt || `${sizing}-user-avatar-image`} src={src} />
+        <img
+          aria-label={`${sizeLabel}-user-avatar-image`}
+          alt={alt || `${sizeLabel}-user-avatar-image`}
+          src={src}
+        />
       )}
 
       {children}
@@ -48,7 +53,7 @@ export const Avatar = (props: IAvatarProperties) => {
           role="img"
           aria-label={`${sizing}-user-avatar-status`}
           aria-labelledby="title desc"
-          data-status={status || AvataStatusEnum.Offline}
+          data-status={status}
           height="16"
           width="16"
         >

@@ -22,9 +22,9 @@ export const Button = (props: IButtonProperties) => {
   const disabledState = props.disabled || false;
   const buttonType = props.type || "button";
 
-  const buttonDescription = `A ${buttonType} action named ${ariaLabel}`;
-  const buttonStateDescription = `The action has a disabled state of: ${disabledState}`;
-  const ButtonFullDesc = `${buttonDescription}. ${buttonStateDescription}`;
+  const buttonDescription = `${ariaLabel}:${buttonType}`;
+  const buttonStateDescription = `disabled:${disabledState}`;
+  const ButtonFullDesc = `${buttonDescription}/${buttonStateDescription}`;
 
   return (
     <ButtonWrapper
