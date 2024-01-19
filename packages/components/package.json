@@ -6,7 +6,8 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
+    "test:coverage": "open coverage/lcov-report/index.html",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc"
   },
