@@ -52,11 +52,13 @@ const Checkbox = (props: ICheckboxProperties) => {
   return (
     <CheckboxWrapper
       role="checkbox"
+      aria-hidden="true"
       data-state={defaultValue}
       data-disabled={disabled}
       data-raw={Boolean(raw)}
       data-size={sizing || ComponentSizeEnum.Medium}
       data-variant={variant || ComponentVariantEnum.Tertiary}
+      aria-label={props["aria-label"] || `${name}-checkbox`}
     >
       <NativeInput
         type="checkbox"
@@ -67,10 +69,12 @@ const Checkbox = (props: ICheckboxProperties) => {
         required={required}
         disabled={disabled}
         onInput={handleClick}
-        aria-disabled={disabled}
-        aria-required={required}
         data-state={defaultValue}
         data-raw={Boolean(raw)}
+        aria-disabled={Boolean(disabled)}
+        aria-required={Boolean(required)}
+        aria-checked={Boolean(states.checked)}
+        aria-label={props["aria-label"] || `${name}-native-checkbox`}
         {...restProps}
       />
       {children}
@@ -89,7 +93,10 @@ const CheckboxIndicator = (props: React.ComponentPropsWithoutRef<"span">) => {
         <Indicator {...restProps}>
           {children || (
             <svg
+              tabIndex={-1}
+              aria-hidden="true"
               aria-label="checked-icon"
+              focusable="false"
               width="10"
               height="10"
               viewBox="0 0 10 10"
