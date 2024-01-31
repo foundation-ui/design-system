@@ -28,7 +28,7 @@ export interface IContainerProperties
   extends IComponentStyling,
     IComponentSpacing,
     IContainerAlignMode,
-    React.ComponentPropsWithoutRef<any> {}
+    React.ComponentProps<"div"> {}
 
 const ContainerRow = (props: IContainerProperties) => {
   const { raw, spacing, alignmode, children } = props;
@@ -74,7 +74,7 @@ const ContainerTitle = (props: IContainerProperties) => {
   );
 };
 const Container = (
-  props: IProximityProperties & IComponentSpacing & React.ComponentProps<any>
+  props: IProximityProperties & IComponentSpacing & React.ComponentProps<"div">
 ) => {
   const { spacing, proximity, global, children } = props;
 
@@ -83,6 +83,7 @@ const Container = (
       data-spacing={spacing || ComponentSizeEnum.Small}
       data-proximity={Boolean(proximity)}
       data-global={Boolean(global)}
+      {...props}
     >
       {children}
     </ContainerWrapper>
