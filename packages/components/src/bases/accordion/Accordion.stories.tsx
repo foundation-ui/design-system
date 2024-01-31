@@ -60,7 +60,12 @@ export const Default = {
             Default Accordion
           </Accordion.Trigger>
 
-          <Accordion.Content defaultOpen={args.defaultOpen} value={args.value}>
+          <Accordion.Content
+            proximity
+            spacing={ComponentSizeEnum.Large}
+            defaultOpen={args.defaultOpen}
+            value={args.value}
+          >
             {args.children}
           </Accordion.Content>
         </Accordion>

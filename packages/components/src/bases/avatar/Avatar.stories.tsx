@@ -35,3 +35,12 @@ export const WithURL: Story = {
   },
   render: ({ ...args }) => <Avatar {...args} />,
 };
+
+export const NoStatus: Story = {
+  args: {
+    src: "https://avatars.githubusercontent.com/u/153380498?s=160&v=4",
+    alt: "external-source-avatar",
+    sizing: ComponentSizeEnum.Small,
+  },
+  render: ({ ...args }) => <Avatar {...args} />,
+};
