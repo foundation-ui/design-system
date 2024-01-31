@@ -1,17 +1,23 @@
 import React from "react";
 import { AccordionProvider, useAccordion } from "./hooks";
 import { Button, IButtonProperties } from "../button";
-import { IReactChildren } from "../../../../../types";
 
+import { Container, IProximityProperties } from "../../";
+import { IReactChildren, IComponentSpacing } from "../../../../../types";
+
+export interface IAccordionComposition {
+  Root: typeof AccordionRoot;
+  Trigger: typeof AccordionTrigger;
+  Content: typeof AccordionContent;
+}
 export interface IAccordionProperties
-  extends React.ComponentPropsWithoutRef<"div"> {}
-
+  extends IProximityProperties,
+    IComponentSpacing,
+    React.ComponentProps<"div"> {}
 export interface IAccordionTriggerProperties extends IButtonProperties {
   value: string;
 }
-
-export interface IAccordionContentProperties
-  extends React.ComponentPropsWithoutRef<"div"> {
+export interface IAccordionContentProperties extends IAccordionProperties {
   defaultOpen?: boolean;
   value: string;
 }
@@ -19,25 +25,20 @@ export interface IAccordionContentProperties
 const AccordionRoot = ({ children }: IReactChildren) => {
   return <AccordionProvider>{children}</AccordionProvider>;
 };
-
 const Accordion = (props: IAccordionProperties) => {
   const { children, ...restProps } = props;
-
-  const accordionContext = useAccordion();
-  const { id } = accordionContext;
+  const { id } = useAccordion();
 
   return (
-    <div id={id} {...restProps}>
+    <Container id={id} {...restProps}>
       {children}
-    </div>
+    </Container>
   );
 };
-
 const AccordionTrigger = (props: IAccordionTriggerProperties) => {
   const { value, disabled, onClick, children, ...restProps } = props;
 
-  const accordionContext = useAccordion();
-  const { states, methods } = accordionContext;
+  const { states, methods } = useAccordion();
   const { getAccordionId, applyValue } = methods;
 
   const hasSameValueAsContext = value === states.value;
@@ -74,12 +75,10 @@ const AccordionTrigger = (props: IAccordionTriggerProperties) => {
     </Button>
   );
 };
-
 const AccordionContent = (props: IAccordionContentProperties) => {
   const { defaultOpen, value, children, ...restProps } = props;
 
-  const accordionContext = useAccordion();
-  const { states, methods } = accordionContext;
+  const { states, methods } = useAccordion();
   const { getAccordionId, applyValue } = methods;
 
   const hasSameValueAsContext = value === states.value;
@@ -95,7 +94,7 @@ const AccordionContent = (props: IAccordionContentProperties) => {
   return (
     <React.Fragment>
       {hasSameValueAsContext && (
-        <div
+        <Container
           role="region"
           id={String(IdHandler.content)}
           aria-labelledby={String(IdHandler.trigger)}
@@ -104,7 +103,7 @@ const AccordionContent = (props: IAccordionContentProperties) => {
           {...restProps}
         >
           {children}
-        </div>
+        </Container>
       )}
     </React.Fragment>
   );
