@@ -3,7 +3,7 @@ import { TabsProvider, useTabs } from "./hooks";
 import { Button, IButtonProperties } from "../button";
 import { IReactChildren } from "../../../../../types";
 
-export interface ITabsProperties extends React.ComponentPropsWithoutRef<"div"> {
+export interface ITabsProperties extends React.ComponentProps<"div"> {
   value?: string;
   defaultOpen?: string;
 }
@@ -14,9 +14,7 @@ const TabsRoot = ({ children }: IReactChildren) => {
 
 const Tabs = (props: ITabsProperties) => {
   const { defaultOpen, children, ...restProps } = props;
-
-  const tabsContext = useTabs();
-  const { methods } = tabsContext;
+  const { methods } = useTabs();
   const { applyValue } = methods;
 
   const childArray = Children.toArray(children);
@@ -42,9 +40,7 @@ const Tabs = (props: ITabsProperties) => {
 
 const TabsTrigger = (props: IButtonProperties) => {
   const { value, onClick, children, ...restProps } = props;
-
-  const tabsContext = useTabs();
-  const { states, methods } = tabsContext;
+  const { states, methods } = useTabs();
   const { applyValue, getTabsId } = methods;
 
   const hasSameValueAsContext = value === states.value;
@@ -77,9 +73,7 @@ const TabsTrigger = (props: IButtonProperties) => {
 
 const TabsContent = (props: ITabsProperties) => {
   const { value, children, ...restProps } = props;
-
-  const tabsContext = useTabs();
-  const { states, methods } = tabsContext;
+  const { states, methods } = useTabs();
   const { getTabsId } = methods;
 
   const hasSameValueAsContext = value === states.value;

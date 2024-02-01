@@ -4,7 +4,7 @@ import { IComponentStyling } from "../../../../../types";
 
 export interface IOverlayProperties
   extends IComponentStyling,
-    React.ComponentPropsWithoutRef<"div"> {
+    React.ComponentProps<"div"> {
   visible?: boolean;
   defaultVisible?: boolean;
   closeOnInteract: boolean;

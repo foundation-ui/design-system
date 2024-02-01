@@ -51,7 +51,7 @@ const PageTools = (props: IPageToolsProperties) => {
     triggerProps,
     children,
   } = props;
-  const { id, states, methods } = usePage();
+  const { id } = usePage();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
@@ -115,7 +115,7 @@ const PagePanel = (props: IPageToolsProperties) => {
     children,
   } = props;
 
-  const { id, states, methods } = usePage();
+  const { id } = usePage();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);

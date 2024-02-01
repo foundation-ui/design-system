@@ -19,7 +19,7 @@ export interface IToolbarBodyProperties
   extends IComponentStyling,
     IComponentSize,
     IComponentControlProperties,
-    React.ComponentPropsWithoutRef<"aside"> {
+    React.ComponentProps<"aside"> {
   defaultOpen?: boolean;
   fixed?: boolean;
   side?:
@@ -29,11 +29,10 @@ export interface IToolbarBodyProperties
     | ComponentSideEnum.Left;
 }
 export interface IToolbarSectionProperties
-  extends React.ComponentPropsWithRef<"section"> {
+  extends React.ComponentProps<"section"> {
   showOnCollapse?: boolean;
 }
-export interface IToolbarItemProperties
-  extends React.ComponentPropsWithRef<"div"> {
+export interface IToolbarItemProperties extends React.ComponentProps<"div"> {
   showFirstChild?: boolean;
 }
 
@@ -56,8 +55,7 @@ const Toolbar = (props: IToolbarBodyProperties) => {
   } = props;
   const sideDefinition = side || ComponentSideEnum.Left;
 
-  const toolbarContext = useToolbar();
-  const { id, methods, states } = toolbarContext;
+  const { id, methods, states } = useToolbar();
   const { toggleToolbar } = methods;
 
   const shortcutControls = useKeyPress(
@@ -101,9 +99,7 @@ const Toolbar = (props: IToolbarBodyProperties) => {
 };
 const ToolbarTrigger = (props: IButtonProperties) => {
   const { raw, onClick, children, ...restProps } = props;
-
-  const toolbarContext = useToolbar();
-  const { id, methods, states } = toolbarContext;
+  const { id, methods, states } = useToolbar();
   const { toggleToolbar } = methods;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -128,9 +124,8 @@ const ToolbarTrigger = (props: IButtonProperties) => {
 };
 const ToolbarSection = (props: IToolbarSectionProperties) => {
   const { showOnCollapse, children, ...restProps } = props;
-
-  const toolbarContext = useToolbar();
-  const { expanded } = toolbarContext.states;
+  const { states } = useToolbar();
+  const { expanded } = states;
 
   if (showOnCollapse) return <section {...restProps}>{children}</section>;
   return <section {...restProps}>{expanded && children}</section>;
@@ -139,10 +134,9 @@ const ToolbarItem = (props: IToolbarItemProperties) => {
   const { showFirstChild, onClick, children, ...restProps } = props;
   const childArray = React.Children.toArray(children);
 
-  const toolbarContext = useToolbar();
-  const { id } = toolbarContext;
-  const { expanded } = toolbarContext.states;
-  const { toggleToolbar } = toolbarContext.methods;
+  const { id, states, methods } = useToolbar();
+  const { expanded } = states;
+  const { toggleToolbar } = methods;
 
   const displayFirstChild =
     showFirstChild && childArray.length > 1 && !expanded;

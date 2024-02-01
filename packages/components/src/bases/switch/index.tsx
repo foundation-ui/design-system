@@ -11,14 +11,14 @@ import {
 } from "../../../../../types";
 
 export interface ISwitchProperties
-  extends React.ComponentPropsWithoutRef<"button">,
+  extends React.ComponentProps<"button">,
     IComponentSize,
     IComponentVariant,
     IComponentStyling {
   defaultChecked?: boolean;
 }
 export interface ISwitchThumbProperties
-  extends React.ComponentPropsWithoutRef<"span">,
+  extends React.ComponentProps<"span">,
     IComponentSize,
     IComponentStyling {}
 
@@ -38,8 +38,7 @@ const Switch = (props: ISwitchProperties) => {
     children,
     ...restProps
   } = props;
-  const switchContext = useSwitch();
-  const { states, methods } = switchContext;
+  const { states, methods } = useSwitch();
   const { toggleSwitch } = methods;
 
   const handleClick = (event: any) => {
@@ -71,8 +70,7 @@ const Switch = (props: ISwitchProperties) => {
 };
 
 const SwitchThumb = (props: ISwitchThumbProperties) => {
-  const switchContext = useSwitch();
-  const { id, states } = switchContext;
+  const { id, states } = useSwitch();
 
   return (
     <Thumb
