@@ -22,8 +22,7 @@ const CheckboxRoot = (props: IReactChildren) => {
 };
 
 const Checkbox = (props: ICheckboxProperties) => {
-  const checkboxContext = useCheckbox();
-  const { states, methods } = checkboxContext;
+  const { states, methods } = useCheckbox();
   const { applyChecked, toggleChecked } = methods;
   const {
     raw,
@@ -83,8 +82,7 @@ const Checkbox = (props: ICheckboxProperties) => {
 };
 
 const CheckboxIndicator = (props: React.ComponentProps<"span">) => {
-  const checkboxContext = useCheckbox();
-  const { states } = checkboxContext;
+  const { states } = useCheckbox();
   const { children, ...restProps } = props;
 
   return (

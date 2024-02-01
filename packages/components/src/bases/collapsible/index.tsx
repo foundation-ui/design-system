@@ -29,9 +29,7 @@ const Collapsible = (props: ICollapsibleProperties) => {
 
 const CollapsibleTrigger = (props: IButtonProperties) => {
   const { children, disabled, onClick, ...restProps } = props;
-
-  const collapsibleContext = useCollapsible();
-  const { id, states, methods } = collapsibleContext;
+  const { id, states, methods } = useCollapsible();
   const { toggleCollapsible } = methods;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -55,9 +53,7 @@ const CollapsibleTrigger = (props: IButtonProperties) => {
 
 const CollapsibleContent = (props: ICollapsibleProperties) => {
   const { defaultOpen, showFirstChild, children, ...restProps } = props;
-
-  const collapsibleContext = useCollapsible();
-  const { id, states, methods } = collapsibleContext;
+  const { id, states, methods } = useCollapsible();
   const { applyDefaultOpen } = methods;
 
   const childArray = React.Children.toArray(children);

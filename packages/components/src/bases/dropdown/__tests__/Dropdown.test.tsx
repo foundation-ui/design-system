@@ -3,7 +3,7 @@ import { screen, render, fireEvent, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { DropdownMenu } from "../";
-import { useClickOutside, SystemThemeProvider } from "@bsw/ds-core";
+import { SystemThemeProvider } from "@bsw/ds-core";
 
 const onClickCallback = jest.fn();
 const DropdownDefault = (args: { defaultOpen?: boolean }) => {
@@ -38,9 +38,8 @@ const DropdownDefault = (args: { defaultOpen?: boolean }) => {
 expect.extend(toHaveNoViolations);
 describe("Dropdown", () => {
   it("Renders without accessibility violation", async () => {
-    const { container } = render(<DropdownDefault />);
+    const { container } = render(<DropdownDefault defaultOpen />);
     const ComponentContainer = await axe(container);
-
     expect(ComponentContainer).toHaveNoViolations();
   });
   it("Renders with accessibility definition", async () => {

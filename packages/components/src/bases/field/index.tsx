@@ -23,7 +23,7 @@ export type TMetaVariant =
   | MetaVariantEnum.Error;
 
 export interface IField
-  extends React.ComponentPropsWithoutRef<"input">,
+  extends React.ComponentProps<"input">,
     IComponentSize,
     IComponentVariant,
     IComponentStyling {
@@ -31,12 +31,12 @@ export interface IField
   error?: string;
 }
 export interface IFieldLabel
-  extends React.ComponentPropsWithoutRef<"label">,
+  extends React.ComponentProps<"label">,
     IComponentStyling {
   optional?: boolean;
 }
 export interface IFieldMeta
-  extends React.ComponentPropsWithoutRef<"small">,
+  extends React.ComponentProps<"small">,
     IComponentStyling {
   variant?: TMetaVariant;
 }
@@ -59,8 +59,7 @@ const Field: React.FC<IField> & IFieldComposition = (props: IField) => {
   const { raw, sizing, variant, error, hint, ...restProps } = props;
 
   const metaId = React.useId();
-  const fieldContext = useField();
-  const { id } = fieldContext;
+  const { id } = useField();
 
   return (
     <React.Fragment>
@@ -89,9 +88,7 @@ const Field: React.FC<IField> & IFieldComposition = (props: IField) => {
 
 const FieldLabel = (props: IFieldLabel) => {
   const { raw, optional, children, ...restProps } = props;
-
-  const fieldContext = useField();
-  const { id } = fieldContext;
+  const { id } = useField();
 
   return (
     <Label htmlFor={id} data-raw={Boolean(raw)} {...restProps}>
@@ -105,8 +102,7 @@ const FieldMeta = (props: IFieldMeta) => {
   const { raw, variant, children, ...restProps } = props;
 
   const metaId = React.useId();
-  const fieldContext = useField();
-  const { id } = fieldContext;
+  const { id } = useField();
 
   return (
     <Def

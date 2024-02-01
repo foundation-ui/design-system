@@ -25,9 +25,7 @@ const DialogRoot = ({ children }: React.ComponentProps<"div">) => {
 
 const Dialog = (props: IDialogItemProperties) => {
   const { raw, sizing, open, children, ...restProps } = props;
-
-  const dialogContext = useDialog();
-  const { states, methods } = dialogContext;
+  const { states, methods } = useDialog();
   const { getDialogId, toggleDialog } = methods;
 
   const triggerId = getDialogId && getDialogId("trigger");
@@ -60,9 +58,7 @@ const Dialog = (props: IDialogItemProperties) => {
 
 const DialogOverlay = (props: IOverlayProperties) => {
   const { closeOnInteract, onClick, ...restProps } = props;
-
-  const dialogContext = useDialog();
-  const { states, methods } = dialogContext;
+  const { states, methods } = useDialog();
   const { toggleDialog } = methods;
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -82,9 +78,7 @@ const DialogOverlay = (props: IOverlayProperties) => {
 
 const DialogTrigger = (props: IButtonProperties) => {
   const { onClick, children, ...restProps } = props;
-
-  const dialogContext = useDialog();
-  const { states, methods } = dialogContext;
+  const { states, methods } = useDialog();
   const { getDialogId, toggleDialog } = methods;
 
   const triggerId = getDialogId && getDialogId("trigger");
@@ -121,9 +115,7 @@ const DialogMenu = (props: IDialogItemProperties) => {
 
 const DialogControl = (props: IButtonProperties) => {
   const { onClick, children, ...restProps } = props;
-
-  const dialogContext = useDialog();
-  const { states, methods } = dialogContext;
+  const { states, methods } = useDialog();
   const { getDialogId, toggleDialog } = methods;
 
   const innerControlId = getDialogId && getDialogId("inner-control");

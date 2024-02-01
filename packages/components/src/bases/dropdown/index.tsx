@@ -35,9 +35,7 @@ const DropdownMenuRoot = ({ children }: IReactChildren) => {
 
 const DropdownMenu = ({ children }: React.ComponentProps<"div">) => {
   const DropdownContentRef = React.useRef(null);
-
-  const dropdownContext = useDropdownMenu();
-  const { states, methods } = dropdownContext;
+  const { states, methods } = useDropdownMenu();
   const { toggleOpen } = methods;
 
   const handleClickOutside = () => {
@@ -50,9 +48,7 @@ const DropdownMenu = ({ children }: React.ComponentProps<"div">) => {
 
 const DropdownMenuTrigger = (props: IButtonProperties) => {
   const { onClick, children, ...restProps } = props;
-
-  const dropdownContext = useDropdownMenu();
-  const { id, states, methods } = dropdownContext;
+  const { id, states, methods } = useDropdownMenu();
   const { toggleOpen } = methods;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -75,9 +71,7 @@ const DropdownMenuTrigger = (props: IButtonProperties) => {
 
 const DropdownMenuContent = (props: IDropdownContentProperties) => {
   const { raw, sizing, defaultOpen, side, children, ...restProps } = props;
-
-  const dropdownContext = useDropdownMenu();
-  const { id, states, methods } = dropdownContext;
+  const { id, states, methods } = useDropdownMenu();
   const { toggleOpen } = methods;
 
   React.useEffect(() => {
@@ -109,9 +103,8 @@ const DropdownMenuContent = (props: IDropdownContentProperties) => {
 
 const DropdownMenuItem = (props: IDropdownItemProperties) => {
   const { raw, onClick, radio, disabled, children, ...restProps } = props;
-
-  const dropdownContext = useDropdownMenu();
-  const { toggleOpen } = dropdownContext.methods;
+  const { methods } = useDropdownMenu();
+  const { toggleOpen } = methods;
 
   const EventsHandler = {
     toggle: () => {
