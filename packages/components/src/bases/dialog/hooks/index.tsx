@@ -28,7 +28,6 @@ function useDialogProvider(): IComponentAPI {
     },
     methods: {
       toggleDialog: () => setOpen(!open),
-      openDialog: () => setOpen(true),
       getDialogId: (type: "trigger" | "dialog" | "inner-control"): string =>
         `${dialogId}-${type}`,
     },

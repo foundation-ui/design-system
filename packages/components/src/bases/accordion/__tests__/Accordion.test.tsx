@@ -26,7 +26,7 @@ describe("Accordion", () => {
     const ComponentContainer = await axe(container);
     expect(ComponentContainer).toHaveNoViolations();
   });
-  it("Renders as Default with accessibility definition", async () => {
+  it("Renders with accessibility definition", async () => {
     render(
       <SystemThemeProvider>
         <Accordion.Root>

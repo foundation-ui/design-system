@@ -11,7 +11,7 @@ expect.extend(toHaveNoViolations);
 const handleClick = jest.fn();
 
 describe("Button", () => {
-  it("Renders as Default with accessibility definition", async () => {
+  it("Renders with accessibility definition", async () => {
     render(
       <SystemThemeProvider>
         <Button onClick={handleClick}>Test</Button>

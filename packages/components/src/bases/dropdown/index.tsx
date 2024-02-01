@@ -11,20 +11,16 @@ import {
   IComponentSize,
 } from "../../../../../types";
 
-export interface IDropdownPortalProperties
-  extends React.ComponentPropsWithoutRef<any> {
-  container: string;
-}
 export interface IDropdownContentProperties
   extends IComponentStyling,
     IComponentSize,
-    React.ComponentPropsWithoutRef<"ul"> {
+    React.ComponentProps<"ul"> {
   defaultOpen?: boolean;
   side?: "left" | "right";
 }
 export interface IDropdownItemProperties
   extends IComponentStyling,
-    React.ComponentPropsWithoutRef<"li"> {
+    React.ComponentProps<"li"> {
   radio?: boolean;
   disabled?: boolean;
   onClick?: (
@@ -37,7 +33,7 @@ const DropdownMenuRoot = ({ children }: IReactChildren) => {
   return <DropdownMenuProvider>{children}</DropdownMenuProvider>;
 };
 
-const DropdownMenu = ({ children }: React.ComponentPropsWithoutRef<"div">) => {
+const DropdownMenu = ({ children }: React.ComponentProps<"div">) => {
   const DropdownContentRef = React.useRef(null);
 
   const dropdownContext = useDropdownMenu();
