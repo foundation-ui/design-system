@@ -11,15 +11,15 @@ import {
 
 export interface IDialogOverlayProperties
   extends IComponentStyling,
-    React.ComponentPropsWithoutRef<"div"> {
+    React.ComponentProps<"div"> {
   exitOnInteraction?: boolean;
 }
 export interface IDialogItemProperties
   extends IComponentStyling,
     IComponentSize,
-    React.ComponentPropsWithoutRef<any> {}
+    React.ComponentProps<any> {}
 
-const DialogRoot = ({ children }: React.ComponentPropsWithRef<"div">) => {
+const DialogRoot = ({ children }: React.ComponentProps<"div">) => {
   return <DialogProvider>{children}</DialogProvider>;
 };
 
@@ -100,6 +100,7 @@ const DialogTrigger = (props: IButtonProperties) => {
       id={String(triggerId)}
       onClick={handleClick}
       aria-controls={String(contentId)}
+      aria-expanded={Boolean(states.open)}
       data-state={applyDataState(Boolean(states.open))}
       {...restProps}
     >
@@ -138,6 +139,7 @@ const DialogControl = (props: IButtonProperties) => {
       id={String(innerControlId)}
       onClick={handleClick}
       aria-controls={String(contentId)}
+      aria-expanded={Boolean(states.open)}
       data-state={applyDataState(Boolean(states.open))}
       {...restProps}
     >
