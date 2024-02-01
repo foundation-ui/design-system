@@ -35,7 +35,7 @@ const DialogDefault = (args: { open?: boolean; closeOnInteract?: boolean }) => {
 };
 
 expect.extend(toHaveNoViolations);
-describe("Collapsible", () => {
+describe("Dialog", () => {
   it("Renders without accessibility violation", async () => {
     const { container } = render(<DialogDefault open />);
     const ComponentContainer = await axe(container);

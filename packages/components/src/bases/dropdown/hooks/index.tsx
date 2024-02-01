@@ -34,7 +34,6 @@ function useDropdownMenuProvider(): IComponentAPI {
       open,
     },
     methods: {
-      close: (): boolean | void => setOpen(false),
       toggleOpen: (): boolean | void => setOpen(!open),
     },
   };
