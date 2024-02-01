@@ -14,7 +14,7 @@ export interface ICheckboxProperties
   extends IComponentStyling,
     IComponentSize,
     IComponentVariant,
-    React.ComponentPropsWithoutRef<"input"> {}
+    React.ComponentProps<"input"> {}
 
 const CheckboxRoot = (props: IReactChildren) => {
   const { children, ...restProps } = props;
@@ -82,7 +82,7 @@ const Checkbox = (props: ICheckboxProperties) => {
   );
 };
 
-const CheckboxIndicator = (props: React.ComponentPropsWithoutRef<"span">) => {
+const CheckboxIndicator = (props: React.ComponentProps<"span">) => {
   const checkboxContext = useCheckbox();
   const { states } = checkboxContext;
   const { children, ...restProps } = props;
