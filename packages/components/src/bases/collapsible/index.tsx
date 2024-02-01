@@ -4,8 +4,7 @@ import { Button, IButtonProperties } from "../../";
 import { applyDataState } from "../../utils";
 import { IReactChildren } from "../../../../../types";
 
-export interface ICollapsibleProperties
-  extends React.ComponentPropsWithoutRef<"div"> {
+export interface ICollapsibleProperties extends React.ComponentProps<"div"> {
   defaultOpen?: boolean;
   showFirstChild?: boolean;
 }
@@ -75,6 +74,7 @@ const CollapsibleContent = (props: ICollapsibleProperties) => {
     <div
       id={id}
       data-state={applyDataState(Boolean(states.expanded))}
+      role="region"
       {...restProps}
     >
       {displayFirstChild && childArray[0]}
