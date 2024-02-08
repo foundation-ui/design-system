@@ -70,6 +70,7 @@ const Switch = (props: ISwitchProperties) => {
 };
 
 const SwitchThumb = (props: ISwitchThumbProperties) => {
+  const { raw, sizing } = props;
   const { id, states } = useSwitch();
 
   return (
@@ -78,8 +79,8 @@ const SwitchThumb = (props: ISwitchThumbProperties) => {
       aria-hidden={true}
       aria-label={`${id}-switch-thumb`}
       data-checked={states.checked}
-      data-raw={Boolean(props.raw)}
-      data-size={props.sizing || ComponentSizeEnum.Medium}
+      data-raw={Boolean(raw)}
+      data-size={sizing || ComponentSizeEnum.Medium}
       {...props}
     />
   );
