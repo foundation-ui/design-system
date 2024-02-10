@@ -10,14 +10,14 @@ const Switchefault = (args: { defaultChecked?: boolean }) => {
   return (
     <SystemThemeProvider>
       <Switch.Root>
-        <label id="label" htmlFor="switch-demo">
+        <label id="label" htmlFor="switch-test">
           test switch
         </label>
         <Switch
-          id="switch-demo"
           defaultChecked={args.defaultChecked}
           onClick={onClickCallback}
           aria-labelledby="label"
+          disabled={false}
         >
           <Switch.Thumb />
         </Switch>
@@ -36,8 +36,44 @@ describe("Switch", () => {
   });
   it("Renders with accessibility definition", async () => {
     render(<Switchefault />);
+    const Trigger = screen.getByTitle("switch-trigger");
+    const Thumb = screen.getByTitle("switch-thumb");
+
+    expect(Trigger.getAttribute("value")).toBe("false");
+    expect(Trigger.getAttribute("type")).toBe("button");
+    expect(Trigger.getAttribute("aria-checked")).toBe("false");
+    expect(Trigger.getAttribute("data-disabled")).toBe("false");
+
+    expect(Thumb.getAttribute("aria-hidden")).toBeDefined();
+    expect(Thumb.getAttribute("tabIndex")).toBe("-1");
+    expect(Thumb.getAttribute("role")).toBe("presentation");
+    expect(Thumb.getAttribute("data-checked")).toBe("false");
   });
   it("Update the component state on click and fires the defined callback function", async () => {
     render(<Switchefault />);
+    const Trigger = screen.getByTitle("switch-trigger");
+    const Thumb = screen.getByTitle("switch-thumb");
+
+    fireEvent.click(Trigger);
+
+    await waitFor(() => {
+      expect(Trigger.getAttribute("value")).toBe("true");
+      expect(Trigger.getAttribute("aria-checked")).toBe("true");
+      expect(Thumb.getAttribute("data-checked")).toBe("true");
+      expect(Thumb.getAttribute("data-checked")).toBe("true");
+
+      expect(onClickCallback).toHaveBeenCalled();
+      expect(onClickCallback).toHaveBeenCalledTimes(1);
+    });
+  });
+  it("Renders as checked if defaultChecked is defined", async () => {
+    render(<Switchefault defaultChecked />);
+    const Trigger = screen.getByTitle("switch-trigger");
+    const Thumb = screen.getByTitle("switch-thumb");
+
+    expect(Trigger.getAttribute("value")).toBe("true");
+    expect(Trigger.getAttribute("aria-checked")).toBe("true");
+    expect(Thumb.getAttribute("data-checked")).toBe("true");
+    expect(Thumb.getAttribute("data-checked")).toBe("true");
   });
 });

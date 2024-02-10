@@ -38,7 +38,7 @@ const Switch = (props: ISwitchProperties) => {
     children,
     ...restProps
   } = props;
-  const { states, methods } = useSwitch();
+  const { id, states, methods } = useSwitch();
   const { toggleSwitch } = methods;
 
   const handleClick = (event: any) => {
@@ -54,9 +54,10 @@ const Switch = (props: ISwitchProperties) => {
     <TriggerWrapper
       type="button"
       role="switch"
+      title="switch-trigger"
       onClick={handleClick}
       value={String(states.checked)}
-      disabled={disabled}
+      aria-label={`${id}-switch-trigger`}
       aria-checked={Boolean(states.checked)}
       data-disabled={String(disabled || false)}
       data-variant={variant || ComponentVariantEnum.Primary}
@@ -64,6 +65,7 @@ const Switch = (props: ISwitchProperties) => {
       data-raw={Boolean(raw)}
       {...restProps}
     >
+      <title>Switch</title>
       {children}
     </TriggerWrapper>
   );
@@ -75,6 +77,8 @@ const SwitchThumb = (props: ISwitchThumbProperties) => {
 
   return (
     <Thumb
+      role="presentation"
+      title="switch-thumb"
       tabIndex={-1}
       aria-hidden={true}
       aria-label={`${id}-switch-thumb`}

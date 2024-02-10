@@ -17,7 +17,7 @@ const meta = {
 export default meta;
 export const Default = {
   args: {
-    raw: false,
+    // raw: false,
     variant: ComponentVariantEnum.Primary,
     sizing: ComponentSizeEnum.Medium,
     defaultChecked: false,

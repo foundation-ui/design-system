@@ -72,7 +72,7 @@ describe("Checkbox", () => {
       expect(CheckboxNative.getAttribute("aria-checked")).toBe("false");
     });
   });
-  it("Behave as checked if defaultChecked is defined", async () => {
+  it("Renders as checked if defaultChecked is defined", async () => {
     render(
       <SystemThemeProvider>
         <Checkbox.Root>
