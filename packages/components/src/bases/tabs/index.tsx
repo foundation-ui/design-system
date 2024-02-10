@@ -58,6 +58,7 @@ const TabsTrigger = (props: IButtonProperties) => {
     <Button
       type="button"
       role="tab"
+      title={`${value}-tab`}
       id={String(IdHandler.trigger)}
       value={value}
       onClick={handleClick}
@@ -86,6 +87,7 @@ const TabsContent = (props: ITabsProperties) => {
     <div
       tabIndex={0}
       role="tabpanel"
+      title={`${value}-tabpanel`}
       id={String(IdHandler.content)}
       data-value={value}
       data-state={hasSameValueAsContext ? "active" : "inactive"}
