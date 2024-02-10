@@ -29,7 +29,7 @@ const TabsDefault = () => {
 };
 
 expect.extend(toHaveNoViolations);
-describe("Switch", () => {
+describe("Tabs", () => {
   it("Renders without accessibility violation", async () => {
     const { container } = render(<TabsDefault />);
     const ComponentContainer = await axe(container);

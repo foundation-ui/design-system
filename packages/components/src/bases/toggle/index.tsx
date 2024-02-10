@@ -28,11 +28,10 @@ export const Toggle = React.forwardRef<HTMLButtonElement, IToggleProperties>(
     return (
       <Button
         ref={forwardedRef}
-        value={String(checked)}
-        disabled={disabled}
         onClick={handleClick}
-        aria-checked={checked}
-        data-disabled={disabled}
+        value={String(checked)}
+        data-checked={Boolean(checked)}
+        data-disabled={Boolean(disabled)}
         {...restProps}
       >
         {children}
