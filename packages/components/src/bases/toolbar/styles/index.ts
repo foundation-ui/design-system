@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const ToolbarDefaultStyles = css`
+  margin: 0;
   height: 100dvh;
   display: grid;
   grid-template-rows: min-content;
@@ -71,7 +72,7 @@ export const ToolbarSideStyles = css`
   }
 `;
 
-export const ToolbarWrapper = styled.aside`
+export const ToolbarWrapper = styled.menu`
   &[data-raw="false"] {
     ${ToolbarDefaultStyles}
     ${ToolbarSizeStyles}
