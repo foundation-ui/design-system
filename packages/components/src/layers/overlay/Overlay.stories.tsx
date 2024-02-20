@@ -18,7 +18,6 @@ export const Default = {
   args: {
     raw: false,
     visible: true,
-    defaultVisible: true,
     closeOnInteract: true,
   },
   argTypes: {},
@@ -27,7 +26,6 @@ export const Default = {
       <Overlay
         raw={args.raw}
         visible={args.visible}
-        defaultVisible={args.defaultVisible}
         closeOnInteract={args.closeOnInteract}
       />
       <Container.Col>
