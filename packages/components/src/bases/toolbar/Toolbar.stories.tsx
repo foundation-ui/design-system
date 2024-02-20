@@ -85,7 +85,11 @@ export const Default = {
             </Container.Row>
           </Toolbar.Section>
 
-          {!args.fixed && <Toolbar.Trigger>&hArr;</Toolbar.Trigger>}
+          {!args.fixed && (
+            <Toolbar.Trigger onClick={() => console.log("click")}>
+              &hArr;
+            </Toolbar.Trigger>
+          )}
         </Toolbar>
       </Toolbar.Root>
     </Wrapper>

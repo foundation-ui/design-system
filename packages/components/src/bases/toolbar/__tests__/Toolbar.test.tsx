@@ -22,6 +22,7 @@ const ToolbarDefault = (args: {
   shortcut?: boolean;
   side?: ComponentSideEnum;
   sizing?: ComponentSizeEnum;
+  hotkey?: string;
 }) => {
   return (
     <SystemThemeProvider>
@@ -32,9 +33,11 @@ const ToolbarDefault = (args: {
           defaultOpen={args.defaultOpen}
           shortcut={args.shortcut}
           fixed={args.fixed}
+          hotkey={args.hotkey}
         >
           <Toolbar.Section showOnCollapse={args.showOnCollapse}>
-            <Toolbar.Item>item</Toolbar.Item>
+            <Toolbar.Item aria-label="test-item">item</Toolbar.Item>
+            <Toolbar.Item aria-label="test-item-2">item2</Toolbar.Item>
           </Toolbar.Section>
 
           {!args.fixed && (
@@ -48,6 +51,7 @@ const ToolbarDefault = (args: {
 
 expect.extend(toHaveNoViolations);
 describe("Toolbar", () => {
+  afterEach(() => jest.clearAllMocks());
   it("Renders without accessibility violation", async () => {
     const { container } = render(<ToolbarDefault />);
     const ComponentContainer = await axe(container);
@@ -87,9 +91,55 @@ describe("Toolbar", () => {
     render(<ToolbarDefault />);
     const Trigger = screen.getByRole("button");
 
-    fireEvent.click(Trigger);
+    act(() => fireEvent.click(Trigger));
     await waitFor(() => {
       expect(onClickCallback).toHaveBeenCalled();
+      expect(onClickCallback).toHaveBeenCalledTimes(1);
     });
+  });
+  it("Toggle the component when the trigger is clicked", async () => {
+    render(<ToolbarDefault />);
+    const Trigger = screen.getByRole("button");
+
+    expect(() => screen.getByText("item")).toThrow();
+    act(() => fireEvent.click(Trigger));
+    await waitFor(() => {
+      expect(screen.getByText("item")).toBeDefined();
+    });
+  });
+  it("Toggle the component when the children item is clicked if showOnCollapse is defined", async () => {
+    render(<ToolbarDefault showOnCollapse />);
+    const Item = screen.getByLabelText("test-item");
+    const Container = screen.getByRole("toolbar");
+
+    fireEvent.click(Item);
+    await waitFor(() => {
+      expect(screen.getByLabelText("test-item")).toBeDefined();
+      expect(Container.getAttribute("aria-expanded")).toBe("true");
+    });
+  });
+  it("Renders the children sections even when it's closed if showOnCollapse is defined", async () => {
+    render(<ToolbarDefault showOnCollapse />);
+    const Item = screen.getByLabelText("test-item");
+    const Container = screen.getByRole("toolbar");
+
+    fireEvent.click(Item);
+    await waitFor(() => {
+      expect(screen.getByLabelText("test-item")).toBeDefined();
+      expect(Container.getAttribute("aria-expanded")).toBe("true");
+    });
+  });
+  it("Renders the component opened if defaultOpen is defined", async () => {
+    render(<ToolbarDefault defaultOpen />);
+    expect(screen.getByText("item")).toBeDefined();
+  });
+  it("Toggle the component when the keyboard shortcut is pressed", async () => {
+    const { container } = render(
+      <ToolbarDefault defaultOpen shortcut hotkey="a" />
+    );
+    expect(screen.getByText("item")).toBeDefined();
+
+    fireEvent.keyDown(container, { key: "a", code: "KeyA", ctrlKey: true });
+    await waitFor(() => expect(() => screen.getByText("item")).toThrow());
   });
 });
