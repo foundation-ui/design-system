@@ -4,10 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { Portal } from "../";
 import "@testing-library/jest-dom";
 
-const PortalDefault = (args: {
-  visible?: boolean;
-  closeOnInteract?: boolean;
-}) => {
+const PortalDefault = () => {
   return (
     <React.Fragment>
       <Portal container="portal">portal-content</Portal>
