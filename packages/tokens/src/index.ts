@@ -1,4 +1,6 @@
-export * from './utils/getToken';
-export const designTokens = './json/design_tokens.json';
-export const designTokensTemplate =
-	'./templates/design_tokens_generator_template.json';
+export * from "./contexts/DesignTokensProvider";
+export * from "./utils";
+
+export { default as js_design_tokens } from "./assets/js/bsw_ds_tokens";
+export { default as json_design_tokens } from "./assets/json/bsw_ds_tokens.json";
+export { default as json_design_tokens_template } from "./assets/templates/tokens_generator_template.json";

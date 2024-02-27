@@ -1,15 +1,36 @@
 {
-	"name": "@birbs-softwares/design-system-components",
-	"packageManager": "yarn@4.0.2",
-	"scripts": {
-		"build": "tsc"
-	},
-	"dependencies": {
-		"@birbs-softwares/design-system-core": "workspace:^",
-		"@birbs-softwares/design-system-foundations": "workspace:^",
-		"@birbs-softwares/design-system-tokens": "workspace:^"
-	},
-	"devDependencies": {
-		"typescript": "^5.3.3"
-	}
+  "name": "@foundation/components",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --coverage",
+    "test:coverage": "open coverage/lcov-report/index.html",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
+  "keywords": [],
+  "author": "Nicolas Nunes",
+  "license": "ISC",
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "@types/styled-components": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "@foundation/tokens": "workspace:^",
+    "@foundation/core": "workspace:^",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@types/styled-components": "^5.1.34",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.1",
+    "typescript": "^5.3.3"
+  }
 }

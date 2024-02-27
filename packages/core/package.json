@@ -1,7 +1,34 @@
 {
-	"name": "@birbs-softwares/design-system-core",
-	"packageManager": "yarn@4.0.2",
-	"devDependencies": {
-		"typescript": "^5.3.3"
-	}
+  "name": "@foundation/core",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
+  "keywords": [],
+  "author": "Nicolas Nunes",
+  "license": "ISC",
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "@types/styled-components": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/styled-components": "^5.1.34",
+    "polished": "^4.2.2",
+    "react": "^18.2.0",
+    "styled-components": "^6.1.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@foundation/tokens": "workspace:^"
+  }
 }

@@ -1,0 +1,107 @@
+[
+  {
+    "type": "color",
+    "values": [
+      {
+        "name": "red",
+        "base": "cc0000",
+        "variations": {
+          "alpha": true,
+          "shade": true,
+          "tint": true
+        }
+      },
+      {
+        "name": "grey",
+        "base": "C0C0C0",
+        "variations": {
+          "alpha": true,
+          "shade": true,
+          "tint": true
+        }
+      }
+    ]
+  },
+  {
+    "type": "measurement",
+    "values": [
+      {
+        "name": "small",
+        "base": 3,
+        "ratio": 1.62,
+        "units": 10
+      },
+      {
+        "name": "medium",
+        "base": 3,
+        "ratio": 1.62,
+        "units": 10
+      },
+      {
+        "name": "large",
+        "base": 3,
+        "ratio": 1.62,
+        "units": 10
+      }
+    ]
+  },
+  {
+    "type": "fontsize",
+    "values": [
+      {
+        "name": "small",
+        "base": 16,
+        "ratio": 1.13,
+        "units": 10
+      },
+      {
+        "name": "medium",
+        "base": 16,
+        "ratio": 1.13,
+        "units": 10
+      },
+      {
+        "name": "large",
+        "base": 16,
+        "ratio": 1.13,
+        "units": 10
+      }
+    ]
+  },
+  {
+    "type": "depth",
+    "values": [
+      {
+        "name": "layout",
+        "base": 1,
+        "units": 10,
+        "steps": 10
+      },
+      {
+        "name": "notifications",
+        "base": 10,
+        "units": 2,
+        "steps": 1
+      }
+    ]
+  },
+  {
+    "type": "opacity",
+    "values": [
+      {
+        "name": "base",
+        "base": 1,
+        "units": 10,
+        "steps": 10,
+        "decimal": true
+      },
+      {
+        "name": "action",
+        "base": 1,
+        "units": 10,
+        "steps": 10,
+        "decimal": true
+      }
+    ]
+  }
+]

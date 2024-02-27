@@ -1,11 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "jsx": "react",
     "baseUrl": "./src",
-    "outDir": "./lib",
-    "downlevelIteration": true,
-    "target": "esnext",
-    "jsx": "react-jsx"
+    "outDir": "./dist"
   },
   "include": ["./src"]
 }
