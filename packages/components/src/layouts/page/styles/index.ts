@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { Toolbar } from "../../../";
 
 export const ScrollbarReset = css`
   scrollbar-width: none;

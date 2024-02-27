@@ -30,7 +30,7 @@ export interface IToolbarBodyProperties
 }
 export interface IToolbarSectionProperties
   extends React.ComponentProps<"section"> {
-  showOnCollapse?: boolean;
+  showoncollapse?: boolean;
 }
 export interface IToolbarItemProperties extends React.ComponentProps<"div"> {
   showFirstChild?: boolean;
@@ -123,11 +123,11 @@ const ToolbarTrigger = (props: IButtonProperties) => {
   );
 };
 const ToolbarSection = (props: IToolbarSectionProperties) => {
-  const { showOnCollapse, children, ...restProps } = props;
+  const { showoncollapse, children, ...restProps } = props;
   const { states } = useToolbar();
   const { expanded } = states;
 
-  if (showOnCollapse) return <section {...restProps}>{children}</section>;
+  if (showoncollapse) return <section {...restProps}>{children}</section>;
   return <section {...restProps}>{expanded && children}</section>;
 };
 const ToolbarItem = (props: IToolbarItemProperties) => {

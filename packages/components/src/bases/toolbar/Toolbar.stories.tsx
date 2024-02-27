@@ -29,7 +29,7 @@ export const Default = {
     sizing: ComponentSizeEnum.Large,
     defaultOpen: true,
     fixed: false,
-    showOnCollapse: true,
+    showoncollapse: true,
     showFirstChild: true,
     shortcut: true,
     hotkey: ":",
@@ -67,7 +67,7 @@ export const Default = {
           fixed={args.fixed}
           // bindkey={bindkey}
         >
-          <Toolbar.Section showOnCollapse={args.showOnCollapse}>
+          <Toolbar.Section showoncollapse={args.showoncollapse}>
             <Container.Row
               style={{ justifyContent: "start", gap: 6, alignItems: "end" }}
             >

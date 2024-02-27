@@ -16,7 +16,7 @@ import "@testing-library/jest-dom";
 
 const onClickCallback = jest.fn();
 const ToolbarDefault = (args: {
-  showOnCollapse?: boolean;
+  showoncollapse?: boolean;
   defaultOpen?: boolean;
   fixed?: boolean;
   shortcut?: boolean;
@@ -35,7 +35,7 @@ const ToolbarDefault = (args: {
           fixed={args.fixed}
           hotkey={args.hotkey}
         >
-          <Toolbar.Section showOnCollapse={args.showOnCollapse}>
+          <Toolbar.Section showoncollapse={args.showoncollapse}>
             <Toolbar.Item aria-label="test-item">item</Toolbar.Item>
             <Toolbar.Item aria-label="test-item-2">item2</Toolbar.Item>
           </Toolbar.Section>
@@ -107,8 +107,8 @@ describe("Toolbar", () => {
       expect(screen.getByText("item")).toBeDefined();
     });
   });
-  it("Toggle the component when the children item is clicked if showOnCollapse is defined", async () => {
-    render(<ToolbarDefault showOnCollapse />);
+  it("Toggle the component when the children item is clicked if showoncollapse is defined", async () => {
+    render(<ToolbarDefault showoncollapse />);
     const Item = screen.getByLabelText("test-item");
     const Container = screen.getByRole("toolbar");
 
@@ -118,8 +118,8 @@ describe("Toolbar", () => {
       expect(Container.getAttribute("aria-expanded")).toBe("true");
     });
   });
-  it("Renders the children sections even when it's closed if showOnCollapse is defined", async () => {
-    render(<ToolbarDefault showOnCollapse />);
+  it("Renders the children sections even when it's closed if showoncollapse is defined", async () => {
+    render(<ToolbarDefault showoncollapse />);
     const Item = screen.getByLabelText("test-item");
     const Container = screen.getByRole("toolbar");
 

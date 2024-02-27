@@ -32,7 +32,7 @@ const PageRoot = ({ children }: IReactChildren) => {
 
 const PageNavigation = (props: any) => {
   const { children } = props;
-  return <PageNavWrapper>{children}</PageNavWrapper>;
+  return <PageNavWrapper {...props}>{children}</PageNavWrapper>;
 };
 
 const PageTools = (props: IPageToolsProperties) => {
@@ -45,13 +45,12 @@ const PageTools = (props: IPageToolsProperties) => {
     side,
     defaultOpen,
     fixed,
-    showOnCollapse,
+    showoncollapse,
     onClick,
     trigger,
     triggerProps,
     children,
   } = props;
-  const { id } = usePage();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
@@ -60,7 +59,6 @@ const PageTools = (props: IPageToolsProperties) => {
   return (
     <Toolbar.Root>
       <Toolbar
-        id={id}
         raw={raw}
         sizing={sizing}
         side={side}
@@ -68,17 +66,16 @@ const PageTools = (props: IPageToolsProperties) => {
         hotkey={hotkey}
         bindkey={bindkey}
         defaultOpen={defaultOpen}
+        {...props}
       >
-        <Toolbar.Section showOnCollapse={showOnCollapse}>
+        <Toolbar.Section showoncollapse={showoncollapse}>
           {children}
         </Toolbar.Section>
 
         {!fixed && (
           <Toolbar.Trigger
             title={
-              shortcut
-                ? `${bindkey || "ctrl"} + ${hotkey}`
-                : `${id}-toolbar-trigger`
+              shortcut ? `${bindkey || "ctrl"} + ${hotkey}` : "toolbar-trigger"
             }
             onClick={handleClick}
             {...triggerProps}
@@ -93,9 +90,7 @@ const PageTools = (props: IPageToolsProperties) => {
 
 const PageContent = (props: any) => {
   const { children } = props;
-  const { id } = usePage();
-
-  return <PageSectionWrapper id={id}>{children}</PageSectionWrapper>;
+  return <PageSectionWrapper {...props}>{children}</PageSectionWrapper>;
 };
 
 const PagePanel = (props: IPageToolsProperties) => {
@@ -108,14 +103,12 @@ const PagePanel = (props: IPageToolsProperties) => {
     side,
     defaultOpen,
     fixed,
-    showOnCollapse,
+    showoncollapse,
     onClick,
     trigger,
     triggerProps,
     children,
   } = props;
-
-  const { id } = usePage();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
@@ -125,7 +118,6 @@ const PagePanel = (props: IPageToolsProperties) => {
     <Toolbar.Root>
       <PagePanelWrapper
         as={Toolbar}
-        id={id}
         raw={raw}
         sizing={sizing}
         side={side}
@@ -133,13 +125,12 @@ const PagePanel = (props: IPageToolsProperties) => {
         hotkey={hotkey}
         bindkey={bindkey}
         defaultOpen={defaultOpen}
+        aria-label={props["aria-label"]}
       >
         {!fixed && (
           <Toolbar.Trigger
             title={
-              shortcut
-                ? `${bindkey || "ctrl"} + ${hotkey}`
-                : `${id}-toolbar-trigger`
+              shortcut ? `${bindkey || "ctrl"} + ${hotkey}` : "toolbar-trigger"
             }
             onClick={handleClick}
             {...triggerProps}
@@ -150,7 +141,7 @@ const PagePanel = (props: IPageToolsProperties) => {
           </Toolbar.Trigger>
         )}
 
-        <Toolbar.Section showOnCollapse={showOnCollapse}>
+        <Toolbar.Section showoncollapse={showoncollapse}>
           {children}
         </Toolbar.Section>
       </PagePanelWrapper>
@@ -160,12 +151,12 @@ const PagePanel = (props: IPageToolsProperties) => {
 
 const PageMenu = (props: any) => {
   const { children } = props;
-  return <PageMenuWrapper>{children}</PageMenuWrapper>;
+  return <PageMenuWrapper {...props}>{children}</PageMenuWrapper>;
 };
 
 const Page = (props: any) => {
   const { children } = props;
-  return <Container.Row>{children}</Container.Row>;
+  return <Container.Row {...props}>{children}</Container.Row>;
 };
 
 Page.Root = PageRoot;

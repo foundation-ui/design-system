@@ -264,7 +264,7 @@ export const App = {
           <Page>
             <Page.Tools
               fixed
-              showOnCollapse
+              showoncollapse
               side={ComponentSideEnum.Left}
               sizing={ComponentSizeEnum.Small}
             >
@@ -390,7 +390,7 @@ export const App = {
 
             <Page.Tools
               fixed
-              showOnCollapse
+              showoncollapse
               defaultOpen
               side={ComponentSideEnum.Right}
               sizing={ComponentSizeEnum.Large}

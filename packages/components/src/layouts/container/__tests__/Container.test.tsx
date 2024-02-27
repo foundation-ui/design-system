@@ -28,7 +28,7 @@ const ContainerDefault = (args: {
 };
 
 expect.extend(toHaveNoViolations);
-describe("Portal", () => {
+describe("Container", () => {
   it("Renders without accessibility violation", async () => {
     const { container } = render(<ContainerDefault />);
     const ComponentContainer = await axe(container);

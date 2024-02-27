@@ -43,7 +43,7 @@ export const Default = {
             <Page.Tools
               shortcut
               hotkey=";"
-              showOnCollapse
+              showoncollapse
               side={ComponentSideEnum.Left}
               sizing={ComponentSizeEnum.Small}
             >
@@ -155,7 +155,7 @@ export const Default = {
               shortcut
               hotkey=":"
               defaultOpen
-              showOnCollapse
+              showoncollapse
               side={ComponentSideEnum.Right}
               sizing={ComponentSizeEnum.Large}
             >
