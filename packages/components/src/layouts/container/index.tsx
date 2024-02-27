@@ -35,7 +35,7 @@ const ContainerRow = (props: IContainerProperties) => {
   return (
     <ContainerRowWrapper
       tabIndex={-1}
-      aria-orientation="horizontal"
+      data-orientation="horizontal"
       data-raw={Boolean(raw)}
       data-align={alignmode || ContainerAlignModeEnum.Start}
       data-spacing={spacing || ComponentSizeEnum.None}
@@ -50,7 +50,7 @@ const ContainerCol = (props: IContainerProperties) => {
   return (
     <ContainerColWrapper
       tabIndex={-1}
-      aria-orientation="vertical"
+      data-orientation="vertical"
       data-raw={Boolean(raw)}
       data-align={alignmode || ContainerAlignModeEnum.Start}
       data-spacing={spacing || ComponentSizeEnum.None}
