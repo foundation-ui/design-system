@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import { generateCSSVariables } from "@bsw/ds-foundations";
-import { js_design_tokens } from "@bsw/ds-tokens";
+import { js_design_tokens } from "@foundation/tokens";
+import { generateCSSVariables } from "../generators/css-variables";
 
 const cssVariables = generateCSSVariables(js_design_tokens);
 export const CSSRoot = createGlobalStyle`

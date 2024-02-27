@@ -1,5 +1,5 @@
 import React from "react";
-import { useKeyPress } from "@bsw/ds-core";
+import { useKeyPress } from "@foundation/core";
 
 import { ToolbarProvider, useToolbar } from "./hooks";
 import { ToolbarWrapper, ToolbarTriggerWrapper } from "./styles";

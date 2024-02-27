@@ -90,16 +90,13 @@ importers:
 
   apps/playground:
     devDependencies:
-      '@bsw/ds-components':
+      '@foundation/components':
         specifier: workspace:^
         version: link:../../packages/components
-      '@bsw/ds-core':
+      '@foundation/core':
         specifier: workspace:^
         version: link:../../packages/core
-      '@bsw/ds-foundations':
-        specifier: workspace:^
-        version: link:../../packages/foundations
-      '@bsw/ds-tokens':
+      '@foundation/tokens':
         specifier: workspace:^
         version: link:../../packages/tokens
       '@types/react':
@@ -126,16 +123,13 @@ importers:
 
   apps/stories:
     devDependencies:
-      '@bsw/ds-components':
+      '@foundation/components':
         specifier: workspace:^
         version: link:../../packages/components
-      '@bsw/ds-core':
+      '@foundation/core':
         specifier: workspace:^
         version: link:../../packages/core
-      '@bsw/ds-foundations':
-        specifier: workspace:^
-        version: link:../../packages/foundations
-      '@bsw/ds-tokens':
+      '@foundation/tokens':
         specifier: workspace:^
         version: link:../../packages/tokens
       '@types/react':
@@ -162,13 +156,10 @@ importers:
 
   packages/components:
     devDependencies:
-      '@bsw/ds-core':
+      '@foundation/core':
         specifier: workspace:^
         version: link:../core
-      '@bsw/ds-foundations':
-        specifier: workspace:^
-        version: link:../foundations
-      '@bsw/ds-tokens':
+      '@foundation/tokens':
         specifier: workspace:^
         version: link:../tokens
       '@types/react':
@@ -195,10 +186,7 @@ importers:
 
   packages/core:
     dependencies:
-      '@bsw/ds-foundations':
-        specifier: workspace:^
-        version: link:../foundations
-      '@bsw/ds-tokens':
+      '@foundation/tokens':
         specifier: workspace:^
         version: link:../tokens
       '@types/react-dom':
@@ -220,18 +208,6 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
-      styled-components:
-        specifier: ^6.1.1
-        version: 6.1.1(react-dom@18.2.0)(react@18.2.0)
-      typescript:
-        specifier: ^5.3.3
-        version: 5.3.3
-
-  packages/foundations:
-    devDependencies:
-      '@types/styled-components':
-        specifier: ^5.1.34
-        version: 5.1.34
       styled-components:
         specifier: ^6.1.1
         version: 6.1.1(react-dom@18.2.0)(react@18.2.0)

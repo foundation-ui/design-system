@@ -2,7 +2,7 @@ import {
   GetTokenBase,
   GetTokenFromSource,
   js_design_tokens,
-} from "@bsw/ds-tokens";
+} from "@foundation/tokens";
 import { TokenTypesEnum } from "../../../../types";
 
 export const lightTheme = {

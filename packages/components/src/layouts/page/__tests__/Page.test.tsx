@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Page } from "..";
-import { SystemThemeProvider } from "@bsw/ds-core";
+import { SystemThemeProvider } from "@foundation/core";
 
 import "@testing-library/jest-dom";
 

@@ -1,5 +1,5 @@
 {
-  "name": "@bsw/ds-core",
+  "name": "@foundation/core",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
@@ -29,7 +29,6 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@bsw/ds-tokens": "workspace:^",
-    "@bsw/ds-foundations": "workspace:^"
+    "@foundation/tokens": "workspace:^"
   }
 }

@@ -1,4 +1,4 @@
-import { RGBAToHEX, calculateContrastScore, PXToREM, PXToPT } from "../";
+import { RGBAToHEX, calculateContrastScore, PXToREM, PXToPT } from "..";
 import {
   TModularScalesOptions,
   TSequencesOptions,

@@ -1,5 +1,5 @@
 {
-  "name": "@bsw/ds-stories",
+  "name": "@foundation/stories",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
@@ -13,10 +13,9 @@
   "author": "Nicolas Nunes",
   "license": "ISC",
   "devDependencies": {
-    "@bsw/ds-tokens": "workspace:^",
-    "@bsw/ds-core": "workspace:^",
-    "@bsw/ds-foundations": "workspace:^",
-    "@bsw/ds-components": "workspace:^",
+    "@foundation/tokens": "workspace:^",
+    "@foundation/core": "workspace:^",
+    "@foundation/components": "workspace:^",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@types/styled-components": "^5.1.34",

@@ -1,5 +1,5 @@
 import React from "react";
-import { useClickOutside } from "@bsw/ds-core";
+import { useClickOutside } from "@foundation/core";
 import { DropdownMenuProvider, useDropdownMenu } from "./hooks";
 import { RootWrapper, ContentWrapper, ItemWrapper } from "./styles";
 import { Button, IButtonProperties } from "../button";

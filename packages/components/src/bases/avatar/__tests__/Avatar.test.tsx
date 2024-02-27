@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Avatar, AvataStatusEnum } from "../";
-import { SystemThemeProvider } from "@bsw/ds-core";
+import { SystemThemeProvider } from "@foundation/core";
 import { ComponentSizeEnum } from "../../../../../../types";
 import "@testing-library/jest-dom";
 

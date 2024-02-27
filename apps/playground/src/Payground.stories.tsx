@@ -2,15 +2,8 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ColorModeContext } from "../../../packages/core";
 import {
-  json_design_tokens_template,
-  js_design_tokens,
-  json_design_tokens,
-  GetTokenFromSource,
-  GetTokenBase,
-} from "../../../packages/tokens";
-import {
+  ColorModeContext,
   generateColorTokens,
   generateMeasurementTokens,
   generateSequenceTokens,
@@ -31,7 +24,14 @@ import {
   RGBAToHEX,
   RGBToHSL,
   HEXToHSL,
-} from "../../../packages/foundations";
+} from "../../../packages/core";
+import {
+  json_design_tokens_template,
+  js_design_tokens,
+  json_design_tokens,
+  GetTokenFromSource,
+  GetTokenBase,
+} from "../../../packages/tokens";
 import {
   Portal,
   Page,

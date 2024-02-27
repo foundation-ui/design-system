@@ -1,5 +1,5 @@
 {
-  "name": "@bsw/ds-tokens",
+  "name": "@foundation/tokens",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",

@@ -3,7 +3,7 @@ import { screen, render, fireEvent, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { DropdownMenu } from "../";
-import { SystemThemeProvider } from "@bsw/ds-core";
+import { SystemThemeProvider } from "@foundation/core";
 
 const onClickCallback = jest.fn();
 const DropdownDefault = (args: { defaultOpen?: boolean }) => {
