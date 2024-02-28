@@ -142,7 +142,6 @@ export const generateTokensFromTemplate = (payload) => {
     }
   });
 };
-
 export const generateTokensLibrary = (
   name: string,
   template: ITemplatePayload[]

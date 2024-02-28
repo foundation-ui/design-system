@@ -1,4 +1,5 @@
 import { HEXToRGB, HEXToHSL, RGBAToHEX } from "../utils";
+import { calculateContrastScore } from "./score";
 import {
   TMode,
   IColorVariation,
@@ -7,39 +8,6 @@ import {
   TLuminance,
 } from "../../../../types";
 
-export const getContrastRatio = (
-  textRgb: [number, number, number],
-  backgroundRgb: [number, number, number]
-): number => {
-  const textLuminance = getRelativeLuminance(textRgb);
-  const backgroundLuminance = getRelativeLuminance(backgroundRgb);
-  return (
-    (Math.max(textLuminance, backgroundLuminance) + 0.05) /
-    (Math.min(textLuminance, backgroundLuminance) + 0.05)
-  );
-};
-export const calculateContrastScore = (
-  textColor: string,
-  backgroundColor: string
-): string => {
-  const textRgb = HEXToRGB(textColor, true);
-  const backgroundRgb = HEXToRGB(backgroundColor, true);
-
-  // Calculate the contrast ratio using the relative luminance formula
-  const contrastRatio =
-    typeof textRgb !== "string" &&
-    typeof backgroundRgb !== "string" &&
-    getContrastRatio(textRgb, backgroundRgb);
-
-  // Determine the WCAG level based on the contrast ratio
-  if (Number(contrastRatio) >= 7) {
-    return "AAA";
-  } else if (Number(contrastRatio) >= 4.5) {
-    return "AA";
-  } else {
-    return "F";
-  }
-};
 export function applyColorLuminance(hex: THex, luminance: TLuminance): string {
   const RGBA_PATTERN = /[^0-9a-f]/gi;
   const HEX_PATTERN = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
