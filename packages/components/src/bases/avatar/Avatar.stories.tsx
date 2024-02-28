@@ -28,7 +28,7 @@ export const Default: Story = {
 
 export const WithURL: Story = {
   args: {
-    src: "https://avatars.githubusercontent.com/u/153380498?s=160&v=4",
+    src: "https://avatars.githubusercontent.com/u/153380498?s=200&v=4",
     alt: "external-source-avatar",
     sizing: ComponentSizeEnum.Small,
     status: AvataStatusEnum.Online,
@@ -38,7 +38,7 @@ export const WithURL: Story = {
 
 export const NoStatus: Story = {
   args: {
-    src: "https://avatars.githubusercontent.com/u/153380498?s=160&v=4",
+    src: "https://avatars.githubusercontent.com/u/153380498?s=200&v=4",
     alt: "external-source-avatar",
     sizing: ComponentSizeEnum.Small,
   },
