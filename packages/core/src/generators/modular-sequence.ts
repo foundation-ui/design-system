@@ -64,9 +64,6 @@ export const generateSequences = (options: TSequencesOptions): number[] => {
   const { base, units, steps, decimal } = options;
   const sequences: number[] = [];
 
-  if (base <= 0 || units <= 0 || steps <= 0) return;
-  if (decimal && units * steps !== 100) return;
-
   for (let i = 0; i < units; i++) {
     if (decimal) sequences.push(((base + i) * steps) / 100);
     else sequences.push(base + i * steps);

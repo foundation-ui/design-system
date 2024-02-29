@@ -9,13 +9,11 @@ import {
 } from "../../../../types";
 
 export function applyColorLuminance(hex: THex, luminance: TLuminance): string {
-  const RGBA_PATTERN = /[^0-9a-f]/gi;
-  const HEX_PATTERN = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
-  const HEX_LENGTH_CHECK = hex.length < 6;
+  if (hex.length < 6) return;
 
+  const RGBA_PATTERN = /[^0-9a-f]/gi;
   luminance = luminance || 0;
   hex = String(hex).replace(RGBA_PATTERN, "");
-  if (HEX_LENGTH_CHECK) hex = HEX_PATTERN;
 
   let RGBHex = "#";
   let RBGDec;

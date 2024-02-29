@@ -25,7 +25,6 @@ export const calculateContrastScore = (
     typeof backgroundRgb !== "string" &&
     getContrastRatio(textRgb, backgroundRgb);
 
-  // Determine the WCAG level based on the contrast ratio
   if (Number(contrastRatio) >= 7) {
     return "AAA";
   } else if (Number(contrastRatio) >= 4.5) {
@@ -47,8 +46,6 @@ export const calculateStackOrder = (index: number, sequence: number[]) => {
   ) {
     return { label: "median", score: 2 };
   }
-
-  return;
 };
 export const getSequenceUsages = (
   contrastScore: any | null,
@@ -63,9 +60,7 @@ export const getSequenceUsages = (
     },
     opacity: {
       low: contrastScoreRef.includes("F"),
-      high:
-        (contrastScoreRef.includes("AA") || contrastScoreRef.includes("AAA")) &&
-        !contrastScoreRef.includes("F"),
+      high: !contrastScoreRef.includes("F"),
     },
   };
 
@@ -79,41 +74,4 @@ export const getSequenceUsages = (
   }
 
   return [];
-};
-export const generateSequenceVariation = ({
-  contrast,
-  sequence,
-  index,
-}: any) => {
-  const stackOrder =
-    index && sequence
-      ? calculateStackOrder(index, sequence)
-      : { label: "low", score: 1 }; // Fallback
-  const contrastScore = {
-    light:
-      contrast &&
-      calculateContrastScore(
-        RGBAToHEX(`rgba(0, 0, 0, ${contrast})`, "ffffff"),
-        "ffffff"
-      ),
-    dark:
-      contrast &&
-      calculateContrastScore(
-        RGBAToHEX(`rgba(255, 255, 255, ${contrast})`, "000000"),
-        "000000"
-      ),
-  };
-
-  const variations = {
-    depth: {
-      usage: getSequenceUsages(null, stackOrder),
-      stack_order: stackOrder,
-    },
-    opacity: {
-      usage: getSequenceUsages(contrastScore),
-      contrast_score: contrastScore,
-    },
-  };
-
-  return !contrast ? variations.depth : variations.opacity;
 };

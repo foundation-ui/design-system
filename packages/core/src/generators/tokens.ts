@@ -1,12 +1,14 @@
 import {
   HEXToRGB,
   HEXToHSL,
+  RGBAToHEX,
+  calculateStackOrder,
+  getSequenceUsages,
   calculateContrastScore,
   generateAlpha,
   generateVariation,
   generateModularScales,
   generateSequences,
-  generateSequenceVariation,
 } from "../";
 import {
   IDesignTokensLibrary,
@@ -68,6 +70,43 @@ export const generateMeasurementTokens = (
         variant === MeasureVariantEnum.FontSize,
     }),
   };
+};
+export const generateSequenceVariation = ({
+  contrast,
+  sequence,
+  index,
+}: any) => {
+  const stackOrder =
+    index && sequence
+      ? calculateStackOrder(index, sequence)
+      : { label: "low", score: 1 }; // Fallback
+  const contrastScore = {
+    light:
+      contrast &&
+      calculateContrastScore(
+        RGBAToHEX(`rgba(0, 0, 0, ${contrast})`, "ffffff"),
+        "ffffff"
+      ),
+    dark:
+      contrast &&
+      calculateContrastScore(
+        RGBAToHEX(`rgba(255, 255, 255, ${contrast})`, "000000"),
+        "000000"
+      ),
+  };
+
+  const variations = {
+    depth: {
+      usage: getSequenceUsages(null, stackOrder),
+      stack_order: stackOrder,
+    },
+    opacity: {
+      usage: getSequenceUsages(contrastScore),
+      contrast_score: contrastScore,
+    },
+  };
+
+  return !contrast ? variations.depth : variations.opacity;
 };
 export const generateSequenceTokens = (
   name: string,
