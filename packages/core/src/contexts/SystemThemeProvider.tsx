@@ -7,7 +7,7 @@ import { ColorModesEnum } from "../../../../types";
 import { IDesignTokensLibrary, IReactChildren } from "../../../../types";
 
 export interface ISystemThemeProvider {
-  theme?: IDesignTokensLibrary;
+  theme?: unknown;
   children: IReactChildren | React.ReactNode | any;
 }
 export const SystemThemeProvider = ({

@@ -29,6 +29,10 @@ describe("ColorModeContext", () => {
     });
   });
 
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
+
   it("Initialize with correct color mode", () => {
     render(
       <ColorModeProvider>
