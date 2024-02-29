@@ -6,6 +6,7 @@ import {
   CSSRoot,
   ResetStyles,
   TypographyColors,
+  TypographySizing,
   ColorModeProvider,
   SystemThemeProvider,
 } from "../packages/core";
@@ -38,6 +39,7 @@ const preview: Preview = {
               <CSSRoot />
               <ResetStyles />
               <TypographyColors />
+              <TypographySizing />
               <StoriesWrapepr>
                 <Story />
               </StoriesWrapepr>
