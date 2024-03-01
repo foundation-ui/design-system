@@ -28,11 +28,7 @@ export const RGBAToHEX = (rgba: string, backgroundHex: string): string => {
   const rgbaRegex = /^rgba\((\d+),\s*(\d+),\s*(\d+),\s*([0-1](\.\d+)?)\)$/;
   const match = rgba.match(rgbaRegex);
 
-  if (!match) {
-    throw new Error(
-      'Invalid RGBA format. Expected format: "rgba(r, g, b, a)".'
-    );
-  }
+  if (!match) return;
 
   // Extract the RGBA components from the matched groups
   const [, r, g, b, a] = match.map(Number);

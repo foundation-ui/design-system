@@ -241,7 +241,7 @@ export const App = {
       },
       {
         label: "RGBAToHEX",
-        desc: "Converts an Rgba value into Hsl",
+        desc: "Converts an Rgba value into Hex",
         fn: RGBAToHEX("rgba(255, 0, 0, 0.1)", "212121"),
       },
       {
