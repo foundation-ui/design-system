@@ -1,4 +1,4 @@
-import { PXToREM, PXToPT } from "..";
+import { PXToREM, PXToPT } from "./formats";
 import {
   TModularScalesOptions,
   TSequencesOptions,

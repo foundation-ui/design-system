@@ -1,4 +1,4 @@
-import { HEXToRGB, HEXToHSL, RGBAToHEX } from "../utils";
+import { HEXToRGB, HEXToHSL, RGBAToHEX } from "./formats";
 import { calculateContrastScore } from "./score";
 import {
   TMode,
