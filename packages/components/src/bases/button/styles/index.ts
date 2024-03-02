@@ -42,13 +42,13 @@ const ButtonDefaultStyles = css`
 `;
 const ButtonVariantsStyles = css`
   &[data-variant="primary"] {
-    color: ${({ theme }) => theme.colors.body.alpha[8].rgb};
-    background-color: ${({ theme }) => theme.colors.text.base};
+    color: ${({ theme }) => theme.colors.primary.alpha[8].rgb};
+    background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
 
     &:hover,
     &:focus,
     &:active {
-      color: ${({ theme }) => theme.colors.body.base};
+      color: ${({ theme }) => theme.colors.primary.base};
     }
   }
 

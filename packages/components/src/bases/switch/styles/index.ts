@@ -17,31 +17,19 @@ const SwitchDefaultStyles = css`
 const SwitchVariantsStyles = css`
   &[data-variant="primary"] {
     &[aria-checked="true"] {
-      background-color: ${({ theme }) => theme.colors.text.base};
+      background-color: ${({ theme }) => theme.colors.primary.base};
     }
     &[aria-checked="false"] {
-      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+      background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     }
   }
 
   &[data-variant="ghost"] {
     &[aria-checked="true"] {
-      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-
-      span {
-        border: var(--measurement-small-10) solid
-          ${({ theme }) => theme.colors.text.alpha[0].rgb};
-        background-color: transparent;
-      }
+      background-color: ${({ theme }) => theme.colors.text.base};
     }
     &[aria-checked="false"] {
-      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-
-      span {
-        border: var(--measurement-small-10) solid
-          ${({ theme }) => theme.colors.text.alpha[0].rgb};
-        background-color: transparent;
-      }
+      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
   }
 `;

@@ -10,17 +10,17 @@ const CheckboxDefaultStyles = css`
 `;
 const CheckboxVariantsStyles = css`
   &[data-variant="primary"] {
-    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     border: var(--measurement-small-10) solid transparent;
 
     &:hover,
     &:focus {
-      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+      border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     }
 
     &:active,
     &[data-state="checked"] {
-      background-color: ${({ theme }) => theme.colors.text.base};
+      background-color: ${({ theme }) => theme.colors.primary.base};
     }
 
     &[data-state="checked"] {

@@ -14,6 +14,13 @@ const dark = {
     ...contrast_theme_colors,
   },
 };
+const contrast = {
+  colors: {
+    ...mono_theme_base.dark,
+    ...contrast_theme_colors,
+  },
+};
+
 const light_mono = {
   colors: {
     ...mono_theme_base.light,
@@ -24,12 +31,6 @@ const dark_mono = {
   colors: {
     ...mono_theme_base.dark,
     ...mono_theme_colors,
-  },
-};
-const contrast = {
-  colors: {
-    ...mono_theme_base.dark,
-    ...contrast_theme_colors,
   },
 };
 

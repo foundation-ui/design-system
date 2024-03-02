@@ -17,10 +17,5 @@ export default create({
   textColor: "#FAFAFA",
 
   // Toolbar default and active colors
-  barSelectedColor: "#111111",
   barBg: "#212121",
-
-  // Form colors
-  inputBg: "#212121",
-  inputBorder: "#FFFFFF10",
 });
