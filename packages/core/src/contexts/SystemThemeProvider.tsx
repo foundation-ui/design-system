@@ -1,10 +1,9 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "@foundation/tokens";
 import { ColorModeContext } from "./ColorModeProvider";
-import { darkTheme } from "../themes/dark";
-import { lightTheme } from "../themes/light";
-import { ColorModesEnum } from "../../../../types";
-import { IDesignTokensLibrary, IReactChildren } from "../../../../types";
+
+import { ColorModesEnum, IReactChildren } from "../../../../types";
 
 export interface ISystemThemeProvider {
   theme?: unknown;

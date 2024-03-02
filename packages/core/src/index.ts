@@ -9,9 +9,6 @@ export * from "./hooks/useClickOutside";
 export * from "./hooks/useEventListener";
 export * from "./hooks/useKeyPress";
 
-export * from "./themes/dark";
-export * from "./themes/light";
-
 export * from "./generators/colors";
 export * from "./generators/modular-sequence";
 export * from "./generators/css-variables";

@@ -1,8 +1,5 @@
-import {
-  GetTokenBase,
-  GetTokenFromSource,
-  js_design_tokens,
-} from "@foundation/tokens";
+import { GetTokenBase, GetTokenFromSource } from "../services/get-token";
+import { default as js_design_tokens } from "../assets/js/bsw_ds_tokens";
 import { TokenTypesEnum } from "../../../../types";
 
 export const darkTheme = {
