@@ -34,7 +34,7 @@ export const Button = (props: IButtonProperties) => {
       aria-label={ariaLabel}
       aria-description={ButtonFullDesc}
       aria-disabled={disabledState}
-      data-variant={variant || ComponentVariantEnum.Tertiary}
+      data-variant={variant || ComponentVariantEnum.Mono}
       data-size={sizing || ComponentSizeEnum.Medium}
       data-raw={Boolean(raw)}
       tabIndex={0}

@@ -48,9 +48,7 @@ export const Default = {
         <Toggle
           raw={args.raw}
           variant={
-            checked
-              ? ComponentVariantEnum.Secondary
-              : ComponentVariantEnum.Tertiary
+            checked ? ComponentVariantEnum.Primary : ComponentVariantEnum.Border
           }
           sizing={args.sizing}
           disabled={args.disabled}

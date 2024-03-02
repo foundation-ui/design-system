@@ -14,6 +14,8 @@ export enum ComponentVariantEnum {
   Primary = "primary",
   Secondary = "secondary",
   Tertiary = "tertiary",
+  Border = "border",
+  Mono = "mono",
   Ghost = "ghost",
 }
 export enum KeyBindingEnum {

@@ -40,7 +40,7 @@ export const Default = {
       <div id="portal" />
       <Dialog.Root>
         <Dialog.Trigger
-          variant={ComponentVariantEnum.Tertiary}
+          variant={ComponentVariantEnum.Mono}
           onClick={() => console.log("Trigger clicked")}
         >
           Default Dialog
@@ -56,7 +56,7 @@ export const Default = {
             </p>
             <Dialog.Menu raw={args.raw}>
               <Dialog.Control
-                variant={ComponentVariantEnum.Secondary}
+                variant={ComponentVariantEnum.Border}
                 onClick={() => console.log("Inner control clicked")}
               >
                 Close

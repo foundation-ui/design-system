@@ -29,26 +29,48 @@ const CheckboxVariantsStyles = css`
       }
     }
   }
-
   &[data-variant="secondary"] {
-    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    background-color: ${({ theme }) => theme.colors.secondary.alpha[0].rgb};
     border: var(--measurement-small-10) solid transparent;
 
     &:hover,
-    &:focus,
+    &:focus {
+      border-color: ${({ theme }) => theme.colors.secondary.alpha[0].rgb};
+    }
+
     &:active,
     &[data-state="checked"] {
-      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+      background-color: ${({ theme }) => theme.colors.secondary.base};
     }
 
     &[data-state="checked"] {
       svg {
-        stroke: ${({ theme }) => theme.colors.text.base};
+        stroke: ${({ theme }) => theme.colors.body.base};
+      }
+    }
+  }
+  &[data-variant="tertiary"] {
+    background-color: ${({ theme }) => theme.colors.tertiary.alpha[0].rgb};
+    border: var(--measurement-small-10) solid transparent;
+
+    &:hover,
+    &:focus {
+      border-color: ${({ theme }) => theme.colors.tertiary.alpha[0].rgb};
+    }
+
+    &:active,
+    &[data-state="checked"] {
+      background-color: ${({ theme }) => theme.colors.tertiary.base};
+    }
+
+    &[data-state="checked"] {
+      svg {
+        stroke: ${({ theme }) => theme.colors.body.base};
       }
     }
   }
 
-  &[data-variant="tertiary"] {
+  &[data-variant="border"] {
     background-color: ${({ theme }) => theme.colors.body.base};
     border: var(--measurement-small-10) solid
       ${({ theme }) => theme.colors.text.alpha[0].rgb};
@@ -67,7 +89,23 @@ const CheckboxVariantsStyles = css`
       }
     }
   }
+  &[data-variant="mono"] {
+    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    border: var(--measurement-small-10) solid transparent;
 
+    &:hover,
+    &:focus,
+    &:active,
+    &[data-state="checked"] {
+      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    }
+
+    &[data-state="checked"] {
+      svg {
+        stroke: ${({ theme }) => theme.colors.text.base};
+      }
+    }
+  }
   &[data-variant="ghost"] {
     border: var(--measurement-small-10) solid transparent;
 

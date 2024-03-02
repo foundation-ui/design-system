@@ -20,7 +20,7 @@ export default meta;
 export const Default = {
   args: {
     raw: false,
-    variant: ComponentVariantEnum.Tertiary,
+    variant: ComponentVariantEnum.Mono,
     sizing: ComponentSizeEnum.Medium,
     container: "portal",
     defaultOpen: false,
@@ -34,6 +34,8 @@ export const Default = {
         ComponentVariantEnum.Primary,
         ComponentVariantEnum.Secondary,
         ComponentVariantEnum.Tertiary,
+        ComponentVariantEnum.Mono,
+        ComponentVariantEnum.Border,
         ComponentVariantEnum.Ghost,
       ],
       control: { type: "radio" },

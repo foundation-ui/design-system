@@ -282,7 +282,6 @@ export const App = {
                 alignmode={ContainerAlignModeEnum.End}
               >
                 <Button
-                  variant={ComponentVariantEnum.Tertiary}
                   sizing={ComponentSizeEnum.Small}
                   onClick={updateColorMode}
                 >
@@ -412,16 +411,14 @@ export const App = {
                           .then(() => alert("Copied!"))
                       }
                       disabled={generated === ""}
-                      variant="tertiary"
-                      sizing="small"
+                      sizing={ComponentSizeEnum.Small}
                     >
                       Copy
                     </Button>
                     <Button
                       onClick={() => setGenerated("")}
                       disabled={generated === ""}
-                      variant="tertiary"
-                      sizing="small"
+                      sizing={ComponentSizeEnum.Small}
                     >
                       Clear
                     </Button>

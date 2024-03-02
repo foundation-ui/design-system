@@ -111,7 +111,6 @@ const ToolbarTrigger = (props: IButtonProperties) => {
     <ToolbarTriggerWrapper data-raw={Boolean(raw)}>
       <Button
         id={`${id}-trigger`}
-        variant={ComponentVariantEnum.Tertiary}
         sizing={ComponentSizeEnum.Small}
         onClick={handleClick}
         data-raw={Boolean(raw)}

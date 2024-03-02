@@ -51,8 +51,28 @@ const ButtonVariantsStyles = css`
       color: ${({ theme }) => theme.colors.primary.base};
     }
   }
-
   &[data-variant="secondary"] {
+    color: ${({ theme }) => theme.colors.secondary.alpha[8].rgb};
+    background-color: ${({ theme }) => theme.colors.secondary.alpha[0].rgb};
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: ${({ theme }) => theme.colors.secondary.base};
+    }
+  }
+  &[data-variant="tertiary"] {
+    color: ${({ theme }) => theme.colors.tertiary.alpha[8].rgb};
+    background-color: ${({ theme }) => theme.colors.tertiary.alpha[0].rgb};
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: ${({ theme }) => theme.colors.tertiary.base};
+    }
+  }
+
+  &[data-variant="mono"] {
     color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
     background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
 
@@ -63,8 +83,7 @@ const ButtonVariantsStyles = css`
       border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
   }
-
-  &[data-variant="tertiary"] {
+  &[data-variant="border"] {
     color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
     border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     background-color: transparent;
@@ -77,7 +96,6 @@ const ButtonVariantsStyles = css`
       border-color: transparent;
     }
   }
-
   &[data-variant="ghost"] {
     padding: 0;
     border: none;
