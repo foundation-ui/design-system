@@ -5,6 +5,7 @@ import { DesignTokensProvider } from "../packages/tokens";
 import {
   CSSRoot,
   ResetStyles,
+  TypographyColors,
   TypographySizing,
   ColorModeProvider,
   SystemThemeProvider,
