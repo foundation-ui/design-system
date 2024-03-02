@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "@foundation/tokens";
+import { design_system_themes } from "@foundation/tokens";
 import { ColorModeContext } from "./ColorModeProvider";
 
 import { ColorModesEnum, IReactChildren } from "../../../../types";
@@ -16,8 +16,8 @@ export const SystemThemeProvider = ({
   const UISysPrefs = React.useContext(ColorModeContext);
   const themeDefinition =
     UISysPrefs && UISysPrefs.colorMode === ColorModesEnum.Dark
-      ? darkTheme
-      : lightTheme;
+      ? design_system_themes.dark
+      : design_system_themes.light;
 
   return (
     <ThemeProvider theme={theme || themeDefinition}>{children}</ThemeProvider>

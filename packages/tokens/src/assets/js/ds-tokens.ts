@@ -1,5 +1,5 @@
 export default {
-  name: "birbs-softwares",
+  name: "foundation-ui",
   design_tokens: {
     color: [
       {

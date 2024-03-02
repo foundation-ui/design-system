@@ -1,5 +1,5 @@
 import { GetTokenFromSource, GetColorTokenBase } from "../get-token";
-import { default as js_design_tokens } from "../../assets/js/bsw_ds_tokens";
+import { default as js_design_tokens } from "../../assets/js/ds-tokens";
 
 describe("GetColorTokenBase", () => {
   it("Returns a Color Design Tokens Base value from a structured source", () => {
