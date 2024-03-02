@@ -1,5 +1,4 @@
 import React from "react";
-import { usePage, PageProvider } from "./hooks";
 import { Container } from "../../";
 import {
   Toolbar,
@@ -13,7 +12,6 @@ import {
   PageSectionWrapper,
 } from "./styles";
 import {
-  IReactChildren,
   IComponentStyling,
   IComponentSize,
   IComponentVariant,
@@ -25,10 +23,6 @@ export interface IPageToolsProperties
   trigger?: React.ReactNode | string;
   triggerProps?: IComponentStyling & IComponentSize & IComponentVariant;
 }
-
-const PageRoot = ({ children }: IReactChildren) => {
-  return <PageProvider>{children}</PageProvider>;
-};
 
 const PageNavigation = (props: any) => {
   const { children } = props;
@@ -159,19 +153,10 @@ const Page = (props: any) => {
   return <Container.Row {...props}>{children}</Container.Row>;
 };
 
-Page.Root = PageRoot;
 Page.Navigation = PageNavigation;
 Page.Tools = PageTools;
 Page.Content = PageContent;
 Page.Panel = PagePanel;
 Page.Menu = PageMenu;
 
-export {
-  Page,
-  PageRoot,
-  PageNavigation,
-  PageTools,
-  PagePanel,
-  PageContent,
-  PageMenu,
-};
+export { Page, PageNavigation, PageTools, PagePanel, PageContent, PageMenu };

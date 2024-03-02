@@ -260,186 +260,184 @@ export const App = {
       <React.Fragment>
         <div id="notification-page-portal" />
 
-        <Page.Root>
-          <Page>
-            <Page.Tools
-              fixed
-              showoncollapse
-              side={ComponentSideEnum.Left}
+        <Page>
+          <Page.Tools
+            fixed
+            showoncollapse
+            side={ComponentSideEnum.Left}
+            sizing={ComponentSizeEnum.Small}
+          >
+            <Avatar
+              src="https://avatars.githubusercontent.com/u/153380498?s=160&v=4"
+              alt="external-source-avatar"
               sizing={ComponentSizeEnum.Small}
-            >
-              <Avatar
-                src="https://avatars.githubusercontent.com/u/153380498?s=160&v=4"
-                alt="external-source-avatar"
-                sizing={ComponentSizeEnum.Small}
-              />
-            </Page.Tools>
+            />
+          </Page.Tools>
 
-            <Container.Col>
-              <Page.Navigation>
-                <Container.Row
-                  spacing={ComponentSizeEnum.Small}
-                  alignmode={ContainerAlignModeEnum.End}
+          <Container.Col>
+            <Page.Navigation>
+              <Container.Row
+                spacing={ComponentSizeEnum.Small}
+                alignmode={ContainerAlignModeEnum.End}
+              >
+                <Button
+                  variant={ComponentVariantEnum.Tertiary}
+                  sizing={ComponentSizeEnum.Small}
+                  onClick={updateColorMode}
                 >
-                  <Button
-                    variant={ComponentVariantEnum.Tertiary}
-                    sizing={ComponentSizeEnum.Small}
-                    onClick={updateColorMode}
-                  >
-                    {darkMode ? <span>&#9728;</span> : <span>&#9790;</span>}
-                  </Button>
+                  {darkMode ? <span>&#9728;</span> : <span>&#9790;</span>}
+                </Button>
+              </Container.Row>
+            </Page.Navigation>
+
+            <Page.Content>
+              <Container.Col spacing="large">
+                <p>
+                  <strong>Generators</strong>
+                </p>
+                <Container.Row
+                  spacing={ComponentSizeEnum.Medium}
+                  style={{ flexWrap: "wrap" }}
+                >
+                  {GENERATORS.map((item, key) => (
+                    <Card key={item.label}>
+                      <p style={{ textTransform: "capitalize" }}>
+                        {item.label}
+                      </p>
+                      <small data-emphasis-level="low">{item.desc}</small>
+                      <Button
+                        onClick={() => setGenerated(JSON.stringify(item.fn))}
+                        sizing={ComponentSizeEnum.Small}
+                      >
+                        Sample&nbsp;&rarr;
+                      </Button>
+                    </Card>
+                  ))}
                 </Container.Row>
-              </Page.Navigation>
 
-              <Page.Content>
-                <Container.Col spacing="large">
-                  <p>
-                    <strong>Generators</strong>
-                  </p>
-                  <Container.Row
-                    spacing={ComponentSizeEnum.Medium}
-                    style={{ flexWrap: "wrap" }}
-                  >
-                    {GENERATORS.map((item, key) => (
-                      <Card key={item.label}>
-                        <p style={{ textTransform: "capitalize" }}>
-                          {item.label}
-                        </p>
-                        <small data-emphasis-level="low">{item.desc}</small>
-                        <Button
-                          onClick={() => setGenerated(JSON.stringify(item.fn))}
-                          sizing={ComponentSizeEnum.Small}
-                        >
-                          Sample&nbsp;&rarr;
-                        </Button>
-                      </Card>
-                    ))}
+                <p>
+                  <strong>Themes</strong>
+                </p>
+                <Container.Row
+                  spacing={ComponentSizeEnum.Medium}
+                  style={{ flexWrap: "wrap" }}
+                >
+                  {THEMES.map((item, key) => (
+                    <Card key={item.label}>
+                      <p style={{ textTransform: "capitalize" }}>
+                        {item.label}
+                      </p>
+                      <small data-emphasis-level="low">{item.desc}</small>
+                      <Button
+                        onClick={() => setGenerated(JSON.stringify(item.fn))}
+                        sizing={ComponentSizeEnum.Small}
+                      >
+                        Sample&nbsp;&rarr;
+                      </Button>
+                    </Card>
+                  ))}
+                </Container.Row>
+
+                <p>
+                  <strong>Utils</strong>
+                </p>
+                <Container.Row
+                  spacing={ComponentSizeEnum.Medium}
+                  style={{ flexWrap: "wrap" }}
+                >
+                  {UTILS.map((item) => (
+                    <Card key={item.label}>
+                      <p style={{ textTransform: "capitalize" }}>
+                        {item.label}
+                      </p>
+                      <small data-emphasis-level="low">{item.desc}</small>
+                      <Button
+                        onClick={() => setGenerated(JSON.stringify(item.fn))}
+                        sizing={ComponentSizeEnum.Small}
+                      >
+                        Sample&nbsp;&rarr;
+                      </Button>
+                    </Card>
+                  ))}
+                </Container.Row>
+
+                <p>
+                  <strong>Convertors</strong>
+                </p>
+                <Container.Row
+                  spacing={ComponentSizeEnum.Medium}
+                  style={{ flexWrap: "wrap" }}
+                >
+                  {CONVERTORS.map((item) => (
+                    <Card key={item.label}>
+                      <p style={{ textTransform: "capitalize" }}>
+                        {item.label}
+                      </p>
+                      <small data-emphasis-level="low">{item.desc}</small>
+                      <Button
+                        onClick={() => setGenerated(JSON.stringify(item.fn))}
+                        sizing={ComponentSizeEnum.Small}
+                      >
+                        Sample&nbsp;&rarr;
+                      </Button>
+                    </Card>
+                  ))}
+                </Container.Row>
+              </Container.Col>
+            </Page.Content>
+          </Container.Col>
+
+          <Page.Tools
+            fixed
+            showoncollapse
+            defaultOpen
+            side={ComponentSideEnum.Right}
+            sizing={ComponentSizeEnum.Large}
+          >
+            <Toolbar.Item>
+              <Container.Col spacing={ComponentSizeEnum.Small}>
+                <div
+                  style={{
+                    wordBreak: "break-all",
+                    maxHeight: "90dvh",
+                    overflowY: "hidden",
+                  }}
+                >
+                  <Container.Row alignmode="space-between">
+                    <Button
+                      onClick={() =>
+                        navigator.clipboard
+                          .writeText(generated)
+                          .then(() => alert("Copied!"))
+                      }
+                      disabled={generated === ""}
+                      variant="tertiary"
+                      sizing="small"
+                    >
+                      Copy
+                    </Button>
+                    <Button
+                      onClick={() => setGenerated("")}
+                      disabled={generated === ""}
+                      variant="tertiary"
+                      sizing="small"
+                    >
+                      Clear
+                    </Button>
                   </Container.Row>
-
-                  <p>
-                    <strong>Themes</strong>
-                  </p>
-                  <Container.Row
-                    spacing={ComponentSizeEnum.Medium}
-                    style={{ flexWrap: "wrap" }}
-                  >
-                    {THEMES.map((item, key) => (
-                      <Card key={item.label}>
-                        <p style={{ textTransform: "capitalize" }}>
-                          {item.label}
-                        </p>
-                        <small data-emphasis-level="low">{item.desc}</small>
-                        <Button
-                          onClick={() => setGenerated(JSON.stringify(item.fn))}
-                          sizing={ComponentSizeEnum.Small}
-                        >
-                          Sample&nbsp;&rarr;
-                        </Button>
-                      </Card>
-                    ))}
-                  </Container.Row>
-
-                  <p>
-                    <strong>Utils</strong>
-                  </p>
-                  <Container.Row
-                    spacing={ComponentSizeEnum.Medium}
-                    style={{ flexWrap: "wrap" }}
-                  >
-                    {UTILS.map((item) => (
-                      <Card key={item.label}>
-                        <p style={{ textTransform: "capitalize" }}>
-                          {item.label}
-                        </p>
-                        <small data-emphasis-level="low">{item.desc}</small>
-                        <Button
-                          onClick={() => setGenerated(JSON.stringify(item.fn))}
-                          sizing={ComponentSizeEnum.Small}
-                        >
-                          Sample&nbsp;&rarr;
-                        </Button>
-                      </Card>
-                    ))}
-                  </Container.Row>
-
-                  <p>
-                    <strong>Convertors</strong>
-                  </p>
-                  <Container.Row
-                    spacing={ComponentSizeEnum.Medium}
-                    style={{ flexWrap: "wrap" }}
-                  >
-                    {CONVERTORS.map((item) => (
-                      <Card key={item.label}>
-                        <p style={{ textTransform: "capitalize" }}>
-                          {item.label}
-                        </p>
-                        <small data-emphasis-level="low">{item.desc}</small>
-                        <Button
-                          onClick={() => setGenerated(JSON.stringify(item.fn))}
-                          sizing={ComponentSizeEnum.Small}
-                        >
-                          Sample&nbsp;&rarr;
-                        </Button>
-                      </Card>
-                    ))}
-                  </Container.Row>
-                </Container.Col>
-              </Page.Content>
-            </Container.Col>
-
-            <Page.Tools
-              fixed
-              showoncollapse
-              defaultOpen
-              side={ComponentSideEnum.Right}
-              sizing={ComponentSizeEnum.Large}
-            >
-              <Toolbar.Item>
-                <Container.Col spacing={ComponentSizeEnum.Small}>
-                  <div
+                  <code
+                    data-emphasis-level="low"
                     style={{
-                      wordBreak: "break-all",
-                      maxHeight: "90dvh",
-                      overflowY: "hidden",
+                      fontSize: "66%",
                     }}
                   >
-                    <Container.Row alignmode="space-between">
-                      <Button
-                        onClick={() =>
-                          navigator.clipboard
-                            .writeText(generated)
-                            .then(() => alert("Copied!"))
-                        }
-                        disabled={generated === ""}
-                        variant="tertiary"
-                        sizing="small"
-                      >
-                        Copy
-                      </Button>
-                      <Button
-                        onClick={() => setGenerated("")}
-                        disabled={generated === ""}
-                        variant="tertiary"
-                        sizing="small"
-                      >
-                        Clear
-                      </Button>
-                    </Container.Row>
-                    <code
-                      data-emphasis-level="low"
-                      style={{
-                        fontSize: "66%",
-                      }}
-                    >
-                      {generated}
-                    </code>
-                  </div>
-                </Container.Col>
-              </Toolbar.Item>
-            </Page.Tools>
-          </Page>
-        </Page.Root>
+                    {generated}
+                  </code>
+                </div>
+              </Container.Col>
+            </Toolbar.Item>
+          </Page.Tools>
+        </Page>
       </React.Fragment>
     );
   },

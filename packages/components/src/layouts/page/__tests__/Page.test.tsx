@@ -11,35 +11,33 @@ const onClickCallback = jest.fn();
 const PageDefault = (args: {}) => {
   return (
     <SystemThemeProvider>
-      <Page.Root>
-        <Page>
-          <Page.Tools
-            aria-label="page-tools"
-            shortcut
-            hotkey="a"
-            side="left"
-            sizing="small"
-            onClick={onClickCallback}
-          >
-            tool item
-          </Page.Tools>
-          <Page.Navigation aria-label="page-nav">nav item</Page.Navigation>
-          <Page.Menu aria-label="page-menu">menu item</Page.Menu>
+      <Page>
+        <Page.Tools
+          aria-label="page-tools"
+          shortcut
+          hotkey="a"
+          side="left"
+          sizing="small"
+          onClick={onClickCallback}
+        >
+          tool item
+        </Page.Tools>
+        <Page.Navigation aria-label="page-nav">nav item</Page.Navigation>
+        <Page.Menu aria-label="page-menu">menu item</Page.Menu>
 
-          <Page.Content aria-label="page-content">content item</Page.Content>
+        <Page.Content aria-label="page-content">content item</Page.Content>
 
-          <Page.Panel
-            shortcut
-            hotkey="b"
-            side="bottom"
-            sizing="large"
-            aria-label="page-panel"
-            onClick={onClickCallback}
-          >
-            panel item
-          </Page.Panel>
-        </Page>
-      </Page.Root>
+        <Page.Panel
+          shortcut
+          hotkey="b"
+          side="bottom"
+          sizing="large"
+          aria-label="page-panel"
+          onClick={onClickCallback}
+        >
+          panel item
+        </Page.Panel>
+      </Page>
     </SystemThemeProvider>
   );
 };
