@@ -1,11 +1,11 @@
-import { GetTokenBase, GetTokenFromSource } from "../services/get-token";
+import { GetColorTokenBase, GetTokenFromSource } from "../services/get-token";
 import { default as js_design_tokens } from "../assets/js/bsw_ds_tokens";
 import { TokenTypesEnum } from "../../../../types";
 
 export const lightTheme = {
   colors: {
     body: {
-      base: GetTokenBase({
+      base: GetColorTokenBase({
         source: js_design_tokens,
         token_category: TokenTypesEnum.Color,
         query: "mono-white",
@@ -15,14 +15,14 @@ export const lightTheme = {
         token_category: TokenTypesEnum.Color,
         query: "mono-white",
       })?.alpha,
-      contrast: GetTokenBase({
+      contrast: GetColorTokenBase({
         source: js_design_tokens,
         token_category: TokenTypesEnum.Color,
         query: "mono-whitest",
       }),
     },
     text: {
-      base: GetTokenBase({
+      base: GetColorTokenBase({
         source: js_design_tokens,
         token_category: TokenTypesEnum.Color,
         query: "mono-dark",
@@ -32,7 +32,7 @@ export const lightTheme = {
         token_category: TokenTypesEnum.Color,
         query: "mono-dark",
       })?.alpha,
-      contrast: GetTokenBase({
+      contrast: GetColorTokenBase({
         source: js_design_tokens,
         token_category: TokenTypesEnum.Color,
         query: "mono-darkest",

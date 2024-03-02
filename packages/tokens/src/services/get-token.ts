@@ -6,7 +6,7 @@ import {
 
 export const GetTokenFromSource = (
   props: IQueryProperties
-): IComposedLibraryItem | null => {
+): IComposedLibraryItem | void => {
   const { source, token_category, query } = props;
 
   const filterSource = source.design_tokens[token_category].find(
@@ -14,13 +14,12 @@ export const GetTokenFromSource = (
   );
 
   if (filterSource) return filterSource;
-  else return null;
 };
 
-export const GetTokenBase = (props: IQueryProperties) => {
+export const GetColorTokenBase = (props: IQueryProperties) => {
   const values = GetTokenFromSource(props);
   const defaultFallback =
-    values && values.base && Object.values(values.base)[1]; // Rem | Rgb
+    values && values.base && Object.values(values.base)[0]; // Hex
 
   if (values && !props.unit) return defaultFallback;
   if (values && values.base && props.unit) {
@@ -28,9 +27,5 @@ export const GetTokenBase = (props: IQueryProperties) => {
 
     if (props.token_category === TokenTypesEnum.Color)
       return Object.values(values.base)[unitIndex];
-    if (props.token_category === TokenTypesEnum.Measurement)
-      return defaultFallback;
   }
-
-  return;
 };

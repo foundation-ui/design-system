@@ -30,7 +30,7 @@ import {
   js_design_tokens,
   json_design_tokens,
   GetTokenFromSource,
-  GetTokenBase,
+  GetColorTokenBase,
 } from "../../../packages/tokens";
 import {
   Portal,
@@ -151,7 +151,7 @@ export const App = {
       {
         label: "tokens",
         desc: "Generate a design tokens set with a few parameters",
-        fn: generateTokensFromTemplate(json_design_tokens_template[3]),
+        fn: generateTokensFromTemplate(json_design_tokens_template[2]),
       },
       {
         label: "library",
@@ -177,12 +177,13 @@ export const App = {
         }),
       },
       {
-        label: "get token base value",
+        label: "get a color token base value",
         desc: "Get the value declared as base from the requested Design Tokens",
-        fn: GetTokenBase({
+        fn: GetColorTokenBase({
           source: json_design_tokens,
           token_category: "color",
           query: "blue",
+          unit: "hsl",
         }),
       },
       {
