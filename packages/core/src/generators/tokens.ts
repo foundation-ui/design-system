@@ -65,9 +65,7 @@ export const generateMeasurementTokens = (
       base: base,
       ratio: [ratio],
       units: units,
-      convert:
-        variant === MeasureVariantEnum.Measurement ||
-        variant === MeasureVariantEnum.FontSize,
+      convert: true,
     }),
   };
 };

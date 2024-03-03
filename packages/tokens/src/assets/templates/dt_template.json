@@ -3,8 +3,53 @@
     "type": "color",
     "values": [
       {
+        "name": "dark",
+        "base": "353531",
+        "variations": {
+          "alpha": true,
+          "shade": false,
+          "tint": false
+        }
+      },
+      {
+        "name": "darker",
+        "base": "1b1b1b",
+        "variations": {
+          "alpha": true,
+          "shade": false,
+          "tint": false
+        }
+      },
+      {
+        "name": "darkest",
+        "base": "0E0E0E",
+        "variations": {
+          "alpha": true,
+          "shade": false,
+          "tint": false
+        }
+      },
+      {
+        "name": "light",
+        "base": "EBEBEB",
+        "variations": {
+          "alpha": true,
+          "shade": false,
+          "tint": false
+        }
+      },
+      {
+        "name": "deep-blue",
+        "base": "0D00A4",
+        "variations": {
+          "alpha": true,
+          "shade": false,
+          "tint": true
+        }
+      },
+      {
         "name": "red",
-        "base": "cc0000",
+        "base": "EC4E20",
         "variations": {
           "alpha": true,
           "shade": true,
@@ -12,8 +57,26 @@
         }
       },
       {
-        "name": "grey",
-        "base": "C0C0C0",
+        "name": "orange",
+        "base": "FF7F11",
+        "variations": {
+          "alpha": true,
+          "shade": true,
+          "tint": true
+        }
+      },
+      {
+        "name": "green",
+        "base": "69DC9E",
+        "variations": {
+          "alpha": true,
+          "shade": true,
+          "tint": true
+        }
+      },
+      {
+        "name": "purple",
+        "base": "944BBB",
         "variations": {
           "alpha": true,
           "shade": true,
