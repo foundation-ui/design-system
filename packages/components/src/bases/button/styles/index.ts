@@ -42,17 +42,16 @@ const ButtonDefaultStyles = css`
 `;
 const ButtonVariantsStyles = css`
   &[data-variant="primary"] {
-    color: var(--alpha-mono-light-90);
+    color: ${({ theme }) => theme.colors.primary.contrast};
     background-color: ${({ theme }) => theme.colors.primary.base};
 
     &:hover,
     &:focus {
-      color: var(--color-mono-light);
-      background-color: ${({ theme }) => theme.colors.primary.contrast[0].rgb};
+      border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     }
 
     &:active {
-      background-color: ${({ theme }) => theme.colors.primary.contrast[1].rgb};
+      border-color: ${({ theme }) => theme.colors.primary.alpha[1].rgb};
     }
   }
   &[data-variant="secondary"] {

@@ -16,8 +16,8 @@ export const SystemThemeProvider = ({
   const UISysPrefs = React.useContext(ColorModeContext);
   const themeDefinition =
     UISysPrefs && UISysPrefs.colorMode === ColorModesEnum.Dark
-      ? design_system_themes.dark
-      : design_system_themes.light;
+      ? design_system_themes.dark_mono
+      : design_system_themes.light_mono;
 
   return (
     <ThemeProvider theme={theme || themeDefinition}>{children}</ThemeProvider>

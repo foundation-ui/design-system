@@ -10,18 +10,18 @@ export const default_theme_colors = {
     base: GetColorTokenBase({
       source: js_design_tokens,
       token_category: TokenTypesEnum.Color,
-      query: "orange",
+      query: "blue",
     }),
     alpha: GetTokenFromSource({
       source: js_design_tokens,
       token_category: TokenTypesEnum.Color,
-      query: "orange",
+      query: "blue",
     })?.alpha,
-    contrast: GetTokenFromSource({
+    contrast: GetColorTokenBase({
       source: js_design_tokens,
       token_category: TokenTypesEnum.Color,
-      query: "orange",
-    })?.shade,
+      query: "mono-white",
+    }),
   },
   secondary: {
     base: GetColorTokenBase({
@@ -38,7 +38,7 @@ export const default_theme_colors = {
       source: js_design_tokens,
       token_category: TokenTypesEnum.Color,
       query: "blue",
-    })?.shade,
+    }),
   },
   tertiary: {
     base: GetColorTokenBase({
@@ -55,6 +55,6 @@ export const default_theme_colors = {
       source: js_design_tokens,
       token_category: TokenTypesEnum.Color,
       query: "deep-blue",
-    })?.tint,
+    }),
   },
 };

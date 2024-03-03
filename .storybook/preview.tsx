@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Preview } from "@storybook/react";
-import { DesignTokensProvider } from "../packages/tokens";
+import { DesignTokensProvider, design_system_themes } from "../packages/tokens";
 import {
   CSSRoot,
   ResetStyles,
