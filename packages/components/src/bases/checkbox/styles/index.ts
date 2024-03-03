@@ -25,47 +25,47 @@ const CheckboxVariantsStyles = css`
 
     &[data-state="checked"] {
       svg {
-        stroke: ${({ theme }) => theme.colors.body.base};
+        stroke: var(--color-mono-white);
       }
     }
   }
   &[data-variant="secondary"] {
-    background-color: ${({ theme }) => theme.colors.secondary.alpha[0].rgb};
+    background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     border: var(--measurement-small-10) solid transparent;
 
     &:hover,
     &:focus {
-      border-color: ${({ theme }) => theme.colors.secondary.alpha[0].rgb};
+      border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     }
 
     &:active,
     &[data-state="checked"] {
-      background-color: ${({ theme }) => theme.colors.secondary.base};
+      border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     }
 
     &[data-state="checked"] {
       svg {
-        stroke: ${({ theme }) => theme.colors.body.base};
+        stroke: ${({ theme }) => theme.colors.primary.base};
       }
     }
   }
   &[data-variant="tertiary"] {
-    background-color: ${({ theme }) => theme.colors.tertiary.alpha[0].rgb};
+    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     border: var(--measurement-small-10) solid transparent;
 
     &:hover,
     &:focus {
-      border-color: ${({ theme }) => theme.colors.tertiary.alpha[0].rgb};
+      border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     }
 
     &:active,
     &[data-state="checked"] {
-      background-color: ${({ theme }) => theme.colors.tertiary.base};
+      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
 
     &[data-state="checked"] {
       svg {
-        stroke: ${({ theme }) => theme.colors.body.base};
+        stroke: ${({ theme }) => theme.colors.primary.base};
       }
     }
   }

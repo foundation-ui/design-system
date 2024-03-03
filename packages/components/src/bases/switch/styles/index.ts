@@ -95,7 +95,7 @@ export const Thumb = styled.span`
     all: unset;
     display: block;
 
-    background: ${({ theme }) => theme.colors.body.base};
+    background: var(--color-mono-white);
     border-radius: 100%;
     transition: all 0.1s ease-in-out 0s;
   }

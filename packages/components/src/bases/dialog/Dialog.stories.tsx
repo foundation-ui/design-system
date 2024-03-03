@@ -3,7 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Dialog } from ".";
-import { Button, Portal } from "../../";
+import { Button, Container, Portal } from "../../";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div``;
@@ -48,21 +48,26 @@ export const Default = {
 
         <Portal container={args.container}>
           <Dialog open={args.open} raw={args.raw} sizing={args.sizing}>
-            <h4>Dialog component</h4>
-            <p>
-              This Dialog comes from an open-source design system providing
-              low-level components and foundations to help you build
-              high-quality, accessible applications.
-            </p>
-            <Dialog.Menu raw={args.raw}>
-              <Dialog.Control
-                variant={ComponentVariantEnum.Border}
-                onClick={() => console.log("Inner control clicked")}
-              >
-                Close
-              </Dialog.Control>
-              <Button variant={ComponentVariantEnum.Primary}>Continue</Button>
-            </Dialog.Menu>
+            <Container.Col spacing="large">
+              <Container.Title>
+                <h3>Dialog component</h3>
+                <br />
+                <p data-emphasis-level="low">
+                  This Dialog comes from an open-source design system providing
+                  low-level components and foundations to help you build
+                  high-quality, accessible applications.
+                </p>
+              </Container.Title>
+              <Dialog.Menu raw={args.raw}>
+                <Dialog.Control
+                  variant={ComponentVariantEnum.Border}
+                  onClick={() => console.log("Inner control clicked")}
+                >
+                  Close
+                </Dialog.Control>
+                <Button variant={ComponentVariantEnum.Primary}>Continue</Button>
+              </Dialog.Menu>
+            </Container.Col>
           </Dialog>
           <Dialog.Overlay
             raw={args.raw}

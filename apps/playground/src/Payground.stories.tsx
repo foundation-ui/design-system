@@ -396,37 +396,42 @@ export const App = {
           >
             <Toolbar.Item>
               <Container.Col spacing={ComponentSizeEnum.Small}>
+                <Container.Row alignmode="space-between">
+                  <Button
+                    onClick={() =>
+                      navigator.clipboard
+                        .writeText(generated)
+                        .then(() => alert("Copied!"))
+                    }
+                    disabled={generated === ""}
+                    sizing={ComponentSizeEnum.Small}
+                  >
+                    Copy
+                  </Button>
+                  <Button
+                    onClick={() => setGenerated("")}
+                    disabled={generated === ""}
+                    sizing={ComponentSizeEnum.Small}
+                  >
+                    Clear
+                  </Button>
+                </Container.Row>
                 <div
                   style={{
                     wordBreak: "break-all",
-                    maxHeight: "90dvh",
+                    height: "90dvh",
                     overflowY: "hidden",
+                    background: "var(--color-mono-dark)",
+                    marginTop: 24,
+                    padding: 12,
+                    borderRadius: 8,
                   }}
                 >
-                  <Container.Row alignmode="space-between">
-                    <Button
-                      onClick={() =>
-                        navigator.clipboard
-                          .writeText(generated)
-                          .then(() => alert("Copied!"))
-                      }
-                      disabled={generated === ""}
-                      sizing={ComponentSizeEnum.Small}
-                    >
-                      Copy
-                    </Button>
-                    <Button
-                      onClick={() => setGenerated("")}
-                      disabled={generated === ""}
-                      sizing={ComponentSizeEnum.Small}
-                    >
-                      Clear
-                    </Button>
-                  </Container.Row>
                   <code
                     data-emphasis-level="low"
                     style={{
                       fontSize: "66%",
+                      color: "var(--alpha-mono-white-60)",
                     }}
                   >
                     {generated}
