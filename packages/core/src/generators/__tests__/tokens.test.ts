@@ -443,7 +443,7 @@ describe("generateTokensFromTemplate", () => {
             name: "small",
             base: 16,
             ratio: 1.13,
-            units: 10,
+            units: 2,
           },
         ],
       })
@@ -452,11 +452,13 @@ describe("generateTokensFromTemplate", () => {
         base: 16,
         name: "small",
         ratio: 1.13,
-        units: 10,
+        units: 2,
         values: [
-          16, 18.08, 20.430399999999995, 23.08635199999999, 26.087577759999988,
-          29.478962868799982, 33.31122804174397, 37.64168768717069,
-          42.535107086502876, 48.064671007748245,
+          {
+            pt: 13.559999999999999,
+            px: 18.08,
+            rem: 1.13,
+          },
         ],
       },
     ]);
@@ -602,11 +604,29 @@ describe("generateTokensLibrary", () => {
             name: "small",
             ratio: 1.13,
             units: 2,
-            values: [16, 18.08],
+            values: [
+              {
+                pt: 13.559999999999999,
+                px: 18.08,
+                rem: 1.13,
+              },
+            ],
           },
         ],
         measurement: [
-          { base: 3, name: "small", ratio: 1.62, units: 2, values: [3, 4.86] },
+          {
+            base: 3,
+            name: "small",
+            ratio: 1.62,
+            units: 2,
+            values: [
+              {
+                pt: 3.6450000000000005,
+                px: 4.86,
+                rem: 0.30375,
+              },
+            ],
+          },
         ],
         opacity: [
           {

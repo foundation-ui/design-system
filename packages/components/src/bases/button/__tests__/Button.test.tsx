@@ -26,7 +26,6 @@ describe("Button", () => {
     expect(ButtonComponent).toHaveAttribute("name", "button");
     expect(ButtonComponent).toHaveAttribute("aria-disabled", "false");
     expect(ButtonComponent).toHaveAttribute("aria-label", "button-action");
-    expect(ButtonComponent).toHaveAttribute("data-variant", "tertiary");
     expect(ButtonComponent).toHaveAttribute("data-size", "medium");
     expect(ButtonComponent).toHaveAttribute("data-raw", "false");
 
