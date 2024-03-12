@@ -2,4 +2,87 @@ import { Canvas, Meta } from "@storybook/blocks";
 
 <Meta title="Core/Generators" />
 
-# Generators
+### **Color Utility Functions**
+
+This document provides an overview of the color utility functions used in the design system.
+
+---
+
+#### applyColorLuminance
+
+This function applies a luminance factor to a given hexadecimal color value. It first validates the input hex color and luminance, then converts the hex color to RGB decimal values, applies the luminance factor, and returns the result in hexadecimal format.
+
+**Parameters**:
+
+- hex: A string representing a hexadecimal color value.
+- luminance: A number representing the luminance factor to apply.
+
+**Returns**: A string representing the resulting hexadecimal color value.
+
+---
+
+#### setLuminanceTone
+
+This function sets the luminance tone based on the provided mode. If the mode is 'darken', it returns the absolute value of the tone multiplied by -1, otherwise it returns the tone as is.
+
+**Parameters**:
+
+- tone: A number representing the luminance tone.
+- mode: An optional string representing the mode. It can be 'darken' or 'lighten'.
+
+**Returns**: A number representing the adjusted luminance tone.
+
+---
+
+#### luminanceAmountFormatter
+
+This function formats the luminance amount based on the length of the provided array. If the array length is 9, it returns 1, otherwise it returns a number between 0 and 1.
+
+**Parameters**:
+
+array: An array of strings or unknown values.
+
+**Returns**: A number representing the formatted luminance amount.
+
+---
+
+#### getRelativeLuminance
+
+This function calculates the relative luminance of a color given its RGB values. It first converts the RGB values to linear sRGB values, then calculates the relative luminance using the standard formula.
+
+**Parameters**:
+
+- rgb: An array of three numbers representing the RGB values of a color.
+
+**Returns**: A number representing the relative luminance of the color.
+
+---
+
+#### generateAlpha
+
+This function generates an array of color values with varying alpha transparency. It uses the provided hex color and generates the corresponding RGB and HSL values with varying alpha transparency. It also calculates the contrast score against white and black for each color.
+
+**Parameters**:
+
+- Hex: A string representing a hexadecimal color value.
+- amount: An optional number indicating how many color values to generate. The default is 10.
+
+**Returns**: An array of objects, each containing the hex, rgb, hsl, and contrast scores for a color with a specific alpha transparency.
+
+---
+
+#### generateVariation
+
+This function generates an array of color variations by adjusting the luminance of the provided hex color. It uses the provided mode to determine whether to lighten or darken the color. It also calculates the contrast score against white and black for each color variation.
+
+**Parameters**:
+
+- Hex: A string representing a hexadecimal color value.
+- mode: A string representing the mode. It can be 'lighten' or 'darken'.
+- amount: An optional number indicating how many color variations to generate. The default is 10.
+
+  **Returns**: An array of IColorVariation objects, each containing the hex, rgb, hsl, and contrast scores for a color variation.
+
+---
+
+_This documentation is generated based on the TypeScript functions and may not cover all possible use cases or edge cases. Always refer to the source code for the most accurate information._
