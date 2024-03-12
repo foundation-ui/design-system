@@ -72,4 +72,15 @@ describe("ColorModeContext", () => {
       ColorModesEnum.Dark
     );
   });
+  it("Loads the defined color mode by default", () => {
+    render(
+      <ColorModeProvider colorMode="dark">
+        <Component />
+      </ColorModeProvider>
+    );
+
+    const colorMode = screen.getByTestId("set-color-mode");
+    expect(colorMode.textContent).toBe(ColorModesEnum.Dark);
+    expect(localStorage.getItem("color-mode")).toEqual(ColorModesEnum.Dark);
+  });
 });
