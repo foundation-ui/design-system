@@ -22,6 +22,18 @@ const StoriesWrapepr = styled.div`
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: [
+          "Introduction",
+          "Getting Started",
+          "DesignTokens",
+          "Theming",
+          "Styling",
+          "Accessibility",
+        ],
+      },
+    },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
