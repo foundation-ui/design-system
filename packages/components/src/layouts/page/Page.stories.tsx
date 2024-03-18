@@ -34,6 +34,22 @@ export const Default = {
   args: {},
   argTypes: {},
   render: ({ ...args }) => {
+    const links = [
+      "Requests",
+      "History",
+      "Peoples",
+      "Metrics",
+      "API",
+      "Settings",
+    ];
+    const tools = [
+      "Color",
+      "Font Size",
+      "Measurement",
+      "Opacity",
+      "Depth",
+      "Library",
+    ];
     return (
       <React.Fragment>
         <div id="notification-page-portal" />
@@ -44,7 +60,7 @@ export const Default = {
             hotkey=";"
             showoncollapse
             side={ComponentSideEnum.Left}
-            sizing={ComponentSizeEnum.Small}
+            sizing={ComponentSizeEnum.Medium}
           >
             <Avatar
               src="https://avatars.githubusercontent.com/u/153380498?s=160&v=4"
@@ -53,14 +69,18 @@ export const Default = {
             />
 
             <Toolbar.Item>
-              <Container.Col
-                spacing={ComponentSizeEnum.Small}
+              <Container
+                proximity
+                global
+                spacing={ComponentSizeEnum.Medium}
                 style={{ marginTop: 12 }}
               >
-                {[1, 2, 3].map((item) => (
-                  <small key={item}>Tool n°{item}</small>
+                {links.map((item) => (
+                  <Button variant="ghost" key={item}>
+                    {item}
+                  </Button>
                 ))}
-              </Container.Col>
+              </Container>
             </Toolbar.Item>
           </Page.Tools>
 
@@ -154,24 +174,22 @@ export const Default = {
             shortcut
             hotkey=":"
             defaultOpen
-            showoncollapse
+            // showoncollapse
             side={ComponentSideEnum.Right}
             sizing={ComponentSizeEnum.Large}
           >
-            <Container.Col spacing={ComponentSizeEnum.Small}>
-              {[4, 5, 6, 7, 8].map((item) => (
-                <Toolbar.Item
-                  key={item}
-                  showFirstChild
-                  style={{ display: "flex", alignItems: "center", gap: 6 }}
-                >
-                  <Button sizing={ComponentSizeEnum.Small}>
-                    &nbsp;&nbsp;&nbsp;
-                  </Button>
-                  <small>Tool n°{item}</small>
-                </Toolbar.Item>
+            <Container
+              proximity
+              global
+              spacing={ComponentSizeEnum.Medium}
+              style={{ marginTop: 12 }}
+            >
+              {tools.map((item) => (
+                <Button variant="ghost" key={item}>
+                  {item}
+                </Button>
               ))}
-            </Container.Col>
+            </Container>
           </Page.Tools>
         </Page>
 
