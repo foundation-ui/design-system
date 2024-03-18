@@ -418,7 +418,7 @@ export const App = {
 };
 
 const meta = {
-  title: "Payground",
+  title: "Playground/App",
   component: Page,
   parameters: {
     layout: "fullscreen",
