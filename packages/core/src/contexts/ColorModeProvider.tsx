@@ -21,13 +21,13 @@ export const GetInitialColorMode = () => {
   const persistedColorPreference = window.localStorage.getItem("color-mode");
   const hasPersistedPreference = typeof persistedColorPreference === "string";
   const mediaQueryList = window.matchMedia(
-    `(prefers-color-scheme: ${ColorModesEnum.Light})`
+    `(prefers-color-scheme: ${ColorModesEnum.System})`
   );
   const hasMediaQueryPreference = typeof mediaQueryList.matches === "boolean";
 
   if (hasPersistedPreference) return persistedColorPreference;
-  if (hasMediaQueryPreference)
-    return mediaQueryList.matches ? ColorModesEnum.Dark : ColorModesEnum.Light;
+  if (hasMediaQueryPreference && mediaQueryList.matches)
+    return ColorModesEnum.System;
 
   return ColorModesEnum.Light;
 };

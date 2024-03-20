@@ -24,9 +24,6 @@ export interface IQueryProperties {
 export interface IComposedLibraryItem {
   name?: string;
   base?: number | IColorVariation;
-  /**
-   * TODO: Update any for IColorVariation withtout breaking Core's build
-   */
   alpha?: any[] | [];
   tint?: any[] | [];
   shade?: any[] | [];
