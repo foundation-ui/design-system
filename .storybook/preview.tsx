@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Preview } from "@storybook/react";
-import { DesignTokensProvider, design_system_themes } from "../packages/tokens";
+import { DesignTokensProvider } from "../packages/tokens";
 import {
   CSSRoot,
   ResetStyles,
@@ -27,7 +27,7 @@ const preview: Preview = {
         order: [
           "Introduction",
           "Getting Started",
-          "DesignTokens",
+          "Design Tokens",
           "Theming",
           "Styling",
           "Accessibility",

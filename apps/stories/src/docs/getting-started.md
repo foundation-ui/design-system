@@ -32,7 +32,7 @@ _If you plan to use every packages in your app, considere adding `@foundation/de
 
 ### Setup
 
-Foundation Design System are styled using CSS in JS with [styled-components](https://styled-components.com/). This technique, coupled with `@foundation/core`, requires a [GlobalStyle](https://styled-components.com/docs/faqs#note-regarding-css-import-and-createglobalstyle) definition to convert your Design Tokens Library as CSS variables.
+Foundation Design System is styled using CSS in JS with [styled-components](https://styled-components.com/). This technique, coupled with `@foundation/core`, requires a [GlobalStyle](https://styled-components.com/docs/faqs#note-regarding-css-import-and-createglobalstyle) definition to convert your Design Tokens Library as CSS variables.
 
 The Theme definition is based on styled-components [theming](https://styled-components.com/docs/advanced#theming) support. **_If you are planning to use the `styled` version of the component library, include the `SystemThemeProvider` context in your setup definition_**.
 
