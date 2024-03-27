@@ -8,10 +8,10 @@ export default create({
 
   // UI
   appBg: "#212121",
-  // appContentBg: "#212121",
-  // appPreviewBg: "#212121",
+  appContentBg: "#212121",
+  appPreviewBg: "#212121",
   appBorderColor: "#111111",
-  appBorderRadius: 4,
+  appBorderRadius: 0,
 
   // Text colors
   textColor: "#FAFAFA",

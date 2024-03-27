@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import theme from "./theme";
+
 import { Preview } from "@storybook/react";
+import DocumentationTemplate from "./DocumentationTemplate.mdx";
 import { DesignTokensProvider } from "../packages/tokens";
 import {
   CSSRoot,
@@ -22,15 +25,25 @@ const StoriesWrapepr = styled.div`
 
 const preview: Preview = {
   parameters: {
+    docs: {
+      theme: theme,
+      page: DocumentationTemplate,
+      canvas: {
+        sourceState: "shown",
+      },
+    },
     options: {
       storySort: {
         order: [
           "Introduction",
           "Getting Started",
           "Design Tokens",
+          "Assets",
+          "Generators",
           "Theming",
           "Styling",
-          "Accessibility",
+          "Components",
+          "Sandbox",
         ],
       },
     },
