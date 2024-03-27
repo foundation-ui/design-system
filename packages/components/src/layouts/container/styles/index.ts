@@ -3,6 +3,7 @@ import styled, { css, RuleSet } from "styled-components";
 const ContainerBaseStyles = css`
   position: relative;
   width: 100%;
+  height: fit-content;
 `;
 const ContainerAlignModeStyles = css`
   &[data-align="start"] {
@@ -13,6 +14,9 @@ const ContainerAlignModeStyles = css`
   }
   &[data-align="space-between"] {
     justify-content: space-between;
+  }
+  &[data-align="center"] {
+    align-items: center;
   }
 `;
 const ContainerSpacingStyles = css`

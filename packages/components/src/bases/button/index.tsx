@@ -14,6 +14,16 @@ export interface IButtonProperties
     IComponentVariant,
     React.ComponentPropsWithoutRef<"button"> {}
 
+/**
+ * Buttons are used to initialize an action. Button labels express what action will
+ * occur when the user interacts with it.
+ *
+ * **Best practices:**
+ *
+ * - Define the hierarchy of buttons with different variants.
+ * - Button label must be short and understandable.
+ *
+ */
 export const Button = (props: IButtonProperties) => {
   const { name, variant, sizing, raw, children, ...restProps } = props;
 
@@ -34,8 +44,8 @@ export const Button = (props: IButtonProperties) => {
       aria-label={ariaLabel}
       aria-description={ButtonFullDesc}
       aria-disabled={disabledState}
-      data-variant={variant || ComponentVariantEnum.Mono}
-      data-size={sizing || ComponentSizeEnum.Medium}
+      data-variant={variant}
+      data-size={sizing}
       data-raw={Boolean(raw)}
       tabIndex={0}
       {...restProps}
@@ -43,4 +53,9 @@ export const Button = (props: IButtonProperties) => {
       {children}
     </ButtonWrapper>
   );
+};
+Button.defaultProps = {
+  variant: ComponentVariantEnum.Mono,
+  sizing: ComponentSizeEnum.Medium,
+  raw: false,
 };
