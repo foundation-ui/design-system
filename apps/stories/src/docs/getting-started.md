@@ -60,7 +60,7 @@ ReactDOM.render(
     <DesignTokensProvider tokenLibrary={/**/}>
       <ColorModeProvider>
         <SystemThemeProvider theme={/**/}>
-          {/** Design Tokens as CSS Vars **/}
+          {/** Built-in Design Tokens as CSS Vars **/}
           <CSSRoot />
 
           {/** GlobalStyles **/}

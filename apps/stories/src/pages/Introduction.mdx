@@ -1,0 +1,12 @@
+import { Canvas, Meta, Markdown } from "@storybook/blocks";
+import Introduction from "../docs/introduction.md?raw";
+import HeaderImage from "../../../static/foundation-header.png";
+
+<Meta title="Introduction" />
+
+<img src={HeaderImage} alt="foundation-header" style={{ marginBottom: 48 }} />
+<Markdown>{Introduction}</Markdown>
+
+---
+
+Next: [Getting Started](/?path=/docs/getting-started--documentation)
