@@ -52,6 +52,7 @@ export const Toggle = React.forwardRef<HTMLButtonElement, IToggleProperties>(
     );
   }
 );
+Toggle.displayName = "Toggle";
 Toggle.defaultProps = {
   raw: false,
 };

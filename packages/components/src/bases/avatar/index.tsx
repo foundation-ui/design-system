@@ -77,6 +77,7 @@ export const Avatar = (props: IAvatarProperties) => {
     </AvatarWrapper>
   );
 };
+Avatar.displayName = "Avatar";
 Avatar.defaultProps = {
   sizing: ComponentSizeEnum.Medium,
   raw: false,

@@ -22,6 +22,12 @@ export interface IButtonProperties
  * - Define the hierarchy of buttons with different variants.
  * - Button label must be short and understandable.
  *
+ * @param {IButtonProperties} props - The props for the Button component.
+ * @param {boolean} props.raw - Whether the button is styled or not.
+ * @param {ComponentSizeEnum} props.sizing - The size of the button. Defaults to ComponentSizeEnum.Medium.
+ * @param {string} props.variant - The style definition used by the avatar.
+ * @param {ReactNode} props.children - The content to be rendered inside the button.
+ * @returns {ReactElement} The Button component.
  */
 export const Button = (props: IButtonProperties) => {
   const { name, variant, sizing, raw, children, ...restProps } = props;
@@ -53,6 +59,7 @@ export const Button = (props: IButtonProperties) => {
     </ButtonWrapper>
   );
 };
+Button.displayName = "Button";
 Button.defaultProps = {
   variant: ComponentVariantEnum.Mono,
   sizing: ComponentSizeEnum.Medium,

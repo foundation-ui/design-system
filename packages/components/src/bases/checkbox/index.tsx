@@ -20,7 +20,23 @@ const CheckboxRoot = (props: IReactChildren) => {
   const { children, ...restProps } = props;
   return <CheckboxProvider {...restProps}>{children}</CheckboxProvider>;
 };
+CheckboxRoot.displayName = "Checkbox.Root";
 
+/**
+ * Checkbox is a component that allows users to select one or more options from a set.
+ *
+ * **Best practices:**
+ *
+ * - Use a clear and descriptive label for each checkbox.
+ *
+ * @param {ICheckboxProperties} props - The props for the Checkbox component.
+ * @param {boolean} props.raw - Whether the checkbox is styled or not. Defaults to `false`.
+ * @param {ComponentSizeEnum} props.sizing - The size of the checkbox. Defaults to `medium`.
+ * @param {ComponentVariantEnum} props.variant - The variant of the checkbox. Defaults to `tertiary`.
+ * @param {boolean} props.defaultChecked - The initial checked state of the checkbox..
+ * @param {ReactNode} props.children - The content to be rendered inside the checkbox.
+ * @returns {ReactElement} The Checkbox component.
+ */
 const Checkbox = (props: ICheckboxProperties) => {
   const { states, methods } = useCheckbox();
   const { applyChecked, toggleChecked } = methods;
@@ -80,6 +96,7 @@ const Checkbox = (props: ICheckboxProperties) => {
     </CheckboxWrapper>
   );
 };
+Checkbox.displayName = "Checkbox";
 
 const CheckboxIndicator = (props: React.ComponentProps<"span">) => {
   const { states } = useCheckbox();
@@ -114,6 +131,7 @@ const CheckboxIndicator = (props: React.ComponentProps<"span">) => {
     </React.Fragment>
   );
 };
+CheckboxIndicator.displayName = "Checkbox.Indicator";
 
 Checkbox.Root = CheckboxRoot;
 Checkbox.Indicator = CheckboxIndicator;

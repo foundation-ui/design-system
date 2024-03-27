@@ -1,10 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Toggle } from ".";
 import { Container } from "../../";
-import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
+import { ComponentVariantEnum } from "../../../../../types";
 
 const meta = {
   title: "Components/Bases/Toggle",
@@ -18,11 +17,10 @@ const meta = {
     ),
   ],
 } satisfies Meta<typeof Toggle>;
-
 export default meta;
-// type Story = StoryObj<typeof meta>;
 
-export const Default = {
+type Story = StoryObj<typeof meta>;
+export const Default: Story = {
   render: ({ ...args }) => {
     const [checked, setChecked] = React.useState(false);
     const variant = checked
@@ -36,7 +34,7 @@ export const Default = {
     );
   },
 };
-export const DefaultChecked = {
+export const DefaultChecked: Story = {
   render: ({ ...args }) => {
     const [checked, setChecked] = React.useState(true);
     const variant = checked
@@ -54,11 +52,11 @@ export const DefaultChecked = {
     );
   },
 };
-export const Group = {
+export const Group: Story = {
   render: ({ ...args }) => {
     const [checkedItems, setCheckedItems] = React.useState<object>({
       primary: false,
-      secondary: false,
+      secondary: true,
       tertiary: false,
     });
 
@@ -84,6 +82,41 @@ export const Group = {
             >
               {Boolean(checkedItems[item]) ? "👍" : "👎"}
             </Toggle>
+          )),
+        ]}
+      </Container.Row>
+    );
+  },
+};
+export const Sizes: Story = {
+  render: ({ ...args }) => {
+    const [checkedItems, setCheckedItems] = React.useState<object>({
+      large: false,
+      medium: false,
+      small: false,
+    });
+
+    const getVariant = (label) => {
+      return Boolean(checkedItems[label])
+        ? ComponentVariantEnum.Mono
+        : ComponentVariantEnum.Border;
+    };
+    const handleCheckedItem = (event: any) => {
+      checkedItems[event.target.name] = !checkedItems[event.target.name];
+      setCheckedItems({ ...checkedItems });
+    };
+
+    return (
+      <Container.Row spacing="small" alignmode="center">
+        {[
+          Object.keys(checkedItems).map((item) => (
+            <Toggle
+              key={item}
+              name={item}
+              variant={getVariant(item)}
+              sizing={item}
+              onClick={handleCheckedItem}
+            ></Toggle>
           )),
         ]}
       </Container.Row>
