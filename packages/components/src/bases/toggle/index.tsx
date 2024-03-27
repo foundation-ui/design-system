@@ -9,6 +9,19 @@ export interface IToggleProperties
   defaultChecked?: boolean;
 }
 
+/**
+ * Toggle are button that can be switched on or off.
+ *
+ * **Best practices:**
+ *
+ * - Define the checked state of toggles with different variants, labels.
+ * - The interaction must have predictable behavior.
+ *
+ * @param {IToggleProperties} props - The props for the Toggle component.
+ * @param {boolean} props.defaultChecked - The initial checked state of the toggle. Defaults to false.
+ * @param {ReactNode} props.children - The content to be rendered inside the toggle button.
+ * @returns {ReactElement} The Toggle component.
+ */
 export const Toggle = React.forwardRef<HTMLButtonElement, IToggleProperties>(
   (props, forwardedRef) => {
     const { defaultChecked, onClick, disabled, children, ...restProps } = props;
@@ -39,3 +52,6 @@ export const Toggle = React.forwardRef<HTMLButtonElement, IToggleProperties>(
     );
   }
 );
+Toggle.defaultProps = {
+  raw: false,
+};
