@@ -47,6 +47,12 @@ import {
   ColorModesEnum,
 } from "../../../types";
 
+const meta = {
+  title: "Sandbox/Design Tokens System",
+  component: Page,
+} satisfies Meta<typeof Page>;
+export default meta;
+
 const GENERATORS = [
   {
     label: "color",
@@ -231,7 +237,8 @@ const Card = styled.article`
   width: 100%;
   max-width: var(--measurement-large-90);
 `;
-export const App = {
+
+export const DesignTokensSystem = {
   render: () => {
     const { colorMode, setColorMode } = React.useContext(ColorModeContext);
     const [generated, setGenerated] = React.useState<string>("");
@@ -416,12 +423,3 @@ export const App = {
     );
   },
 };
-
-const meta = {
-  title: "Playground/App",
-  component: Page,
-  parameters: {
-    layout: "fullscreen",
-  },
-} satisfies Meta<typeof Page>;
-export default meta;
