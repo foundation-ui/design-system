@@ -12,21 +12,33 @@ export enum AvataStatusEnum {
   Busy = "busy",
   Offline = "offline",
 }
-export type TAvatarStatus =
-  | AvataStatusEnum.Offline
-  | AvataStatusEnum.Busy
-  | AvataStatusEnum.Away
-  | AvataStatusEnum.Online;
-
 export interface IAvatarProperties
   extends IComponentStyling,
     IComponentSize,
     React.HTMLAttributes<HTMLDivElement> {
   src?: string;
   alt?: string;
-  status?: TAvatarStatus;
+  status?: AvataStatusEnum;
 }
 
+/**
+ * Avatar are used to represents a user or an entity on an interface.
+ *
+ * **Best practices:**
+ *
+ * - Use the appropriate size to match the context and the importance of the information.
+ * - Always provide an `alt` attribute for accessibility when using an image.
+ * - Use the `status` prop to indicate the user's activity status.
+ *
+ * @param {IAvatarProperties} props - The props for the Avatar component.
+ * @param {boolean} props.raw - Whether the avatar is styled or not.
+ * @param {ComponentSizeEnum} props.sizing - The size of the avatar. Defaults to ComponentSizeEnum.Medium.
+ * @param {string} props.status - The status of the user represented by the avatar.
+ * @param {string} props.src - The source URL of the image to be displayed in the avatar.
+ * @param {string} props.alt - The alternative text for the image in the avatar.
+ * @param {ReactNode} props.children - The content to be rendered inside the avatar.
+ * @returns {ReactElement} The Avatar component.
+ */
 export const Avatar = (props: IAvatarProperties) => {
   const { raw, sizing, status, src, alt, children, ...restProps } = props;
   const sizeLabel = sizing || ComponentSizeEnum.Medium;
@@ -34,8 +46,8 @@ export const Avatar = (props: IAvatarProperties) => {
   return (
     <AvatarWrapper
       data-raw={Boolean(raw)}
-      data-size={sizing || ComponentSizeEnum.Medium}
-      data-status={status || AvataStatusEnum.Offline}
+      data-size={sizing}
+      data-status={status}
       aria-label={props["aria-label"] || `${sizeLabel}-user-avatar`}
       {...restProps}
     >
@@ -64,4 +76,8 @@ export const Avatar = (props: IAvatarProperties) => {
       )}
     </AvatarWrapper>
   );
+};
+Avatar.defaultProps = {
+  sizing: ComponentSizeEnum.Medium,
+  raw: false,
 };

@@ -1,46 +1,65 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Avatar, AvataStatusEnum } from ".";
-import { ComponentSizeEnum } from "../../../../../types";
+import { Avatar } from ".";
+import { Container } from "../../";
 
 const meta = {
   title: "Components/Bases/Avatar",
   component: Avatar,
-  parameters: {
-    layout: "fullscreen",
-  },
+  tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ margin: "var(--measurement-medium-30)" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Avatar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    src: "",
-    alt: "",
-    sizing: ComponentSizeEnum.Small,
-    status: AvataStatusEnum.Online,
-    raw: false,
-  },
   render: ({ ...args }) => <Avatar {...args} />,
 };
-
-export const WithURL: Story = {
-  args: {
-    src: "https://avatars.githubusercontent.com/u/153380498?s=200&v=4",
-    alt: "external-source-avatar",
-    sizing: ComponentSizeEnum.Small,
-    status: AvataStatusEnum.Online,
-  },
-  render: ({ ...args }) => <Avatar {...args} />,
+export const Status: Story = {
+  render: ({ ...args }) => (
+    <Container.Row spacing="large">
+      <Avatar status="online" {...args} />
+      <Avatar status="away" {...args} />
+      <Avatar status="busy" {...args} />
+      <Avatar status="offline" {...args} />
+      <Avatar {...args} />
+    </Container.Row>
+  ),
 };
-
-export const NoStatus: Story = {
-  args: {
-    src: "https://avatars.githubusercontent.com/u/153380498?s=200&v=4",
-    alt: "external-source-avatar",
-    sizing: ComponentSizeEnum.Small,
-  },
-  render: ({ ...args }) => <Avatar {...args} />,
+export const Sizes: Story = {
+  render: ({ ...args }) => (
+    <Container.Row spacing="large">
+      <Avatar sizing="large" {...args} />
+      <Avatar sizing="medium" {...args} />
+      <Avatar sizing="small" {...args} />
+    </Container.Row>
+  ),
+};
+export const Variants: Story = {
+  render: ({ ...args }) => (
+    <Container.Row spacing="large">
+      <Avatar />
+      <Avatar
+        alt="foundation-logo"
+        src="https://avatars.githubusercontent.com/u/153380498?s=200&v=4"
+      />
+      <Avatar>
+        <b>AZ</b>
+      </Avatar>
+      <Avatar
+        style={{ backgroundColor: "var(--color-purple)" }}
+        status="online"
+      >
+        <small>Acme</small>
+      </Avatar>
+    </Container.Row>
+  ),
 };
