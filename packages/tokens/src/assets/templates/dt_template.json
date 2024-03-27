@@ -39,15 +39,6 @@
         }
       },
       {
-        "name": "deep-blue",
-        "base": "0D00A4",
-        "variations": {
-          "alpha": true,
-          "shade": false,
-          "tint": true
-        }
-      },
-      {
         "name": "red",
         "base": "EC4E20",
         "variations": {

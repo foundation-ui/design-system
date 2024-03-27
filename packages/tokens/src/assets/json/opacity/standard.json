@@ -1,0 +1,60 @@
+[
+  {
+    "base": 1,
+    "units": 10,
+    "steps": 10,
+    "name": "default",
+    "values": [
+      {
+        "value": 0.1,
+        "usage": ["backdrop", "transparent"],
+        "contrast_score": { "light": "F", "dark": "F" }
+      },
+      {
+        "value": 0.2,
+        "usage": ["backdrop", "transparent"],
+        "contrast_score": { "light": "F", "dark": "F" }
+      },
+      {
+        "value": 0.3,
+        "usage": ["backdrop", "transparent"],
+        "contrast_score": { "light": "F", "dark": "F" }
+      },
+      {
+        "value": 0.4,
+        "usage": ["backdrop", "transparent"],
+        "contrast_score": { "light": "F", "dark": "F" }
+      },
+      {
+        "value": 0.5,
+        "usage": ["backdrop", "transparent"],
+        "contrast_score": { "light": "F", "dark": "AA" }
+      },
+      {
+        "value": 0.6,
+        "usage": ["icons", "animations", "layout"],
+        "contrast_score": { "light": "AA", "dark": "AAA" }
+      },
+      {
+        "value": 0.7,
+        "usage": ["icons", "animations", "layout"],
+        "contrast_score": { "light": "AAA", "dark": "AAA" }
+      },
+      {
+        "value": 0.8,
+        "usage": ["icons", "animations", "layout"],
+        "contrast_score": { "light": "AAA", "dark": "AAA" }
+      },
+      {
+        "value": 0.9,
+        "usage": ["icons", "animations", "layout"],
+        "contrast_score": { "light": "AAA", "dark": "AAA" }
+      },
+      {
+        "value": 1,
+        "usage": ["icons", "animations", "layout"],
+        "contrast_score": { "light": "AAA", "dark": "AAA" }
+      }
+    ]
+  }
+]

@@ -221,6 +221,7 @@
         "tint": [],
         "shade": []
       },
+
       {
         "name": "mono-light",
         "base": {
@@ -379,6 +380,7 @@
         "tint": [],
         "shade": []
       },
+
       {
         "name": "yellow",
         "base": {
@@ -768,140 +770,6 @@
             "contrast_score": { "light": "AAA", "dark": "F" }
           }
         ]
-      },
-      {
-        "name": "deep-blue",
-        "base": {
-          "hex": "#0D00A4",
-          "rgb": "rgb(13, 0, 164)",
-          "hsl": "hsl(245deg 100% 32%)",
-          "contrast_score": { "light": "AAA", "dark": "F" }
-        },
-        "alpha": [
-          {
-            "hex": "#0D00A410",
-            "rgb": "rgba(13, 0, 164, 0.1)",
-            "hsl": "hsl(245deg 100% 32% / 10%)",
-            "contrast_score": { "light": "F", "dark": "F" }
-          },
-          {
-            "hex": "#0D00A420",
-            "rgb": "rgba(13, 0, 164, 0.2)",
-            "hsl": "hsl(245deg 100% 32% / 20%)",
-            "contrast_score": { "light": "F", "dark": "F" }
-          },
-          {
-            "hex": "#0D00A430",
-            "rgb": "rgba(13, 0, 164, 0.3)",
-            "hsl": "hsl(245deg 100% 32% / 30%)",
-            "contrast_score": { "light": "F", "dark": "F" }
-          },
-          {
-            "hex": "#0D00A440",
-            "rgb": "rgba(13, 0, 164, 0.4)",
-            "hsl": "hsl(245deg 100% 32% / 40%)",
-            "contrast_score": { "light": "F", "dark": "F" }
-          },
-          {
-            "hex": "#0D00A450",
-            "rgb": "rgba(13, 0, 164, 0.5)",
-            "hsl": "hsl(245deg 100% 32% / 50%)",
-            "contrast_score": { "light": "F", "dark": "F" }
-          },
-          {
-            "hex": "#0D00A460",
-            "rgb": "rgba(13, 0, 164, 0.6)",
-            "hsl": "hsl(245deg 100% 32% / 60%)",
-            "contrast_score": { "light": "AA", "dark": "F" }
-          },
-          {
-            "hex": "#0D00A470",
-            "rgb": "rgba(13, 0, 164, 0.7)",
-            "hsl": "hsl(245deg 100% 32% / 70%)",
-            "contrast_score": { "light": "AA", "dark": "F" }
-          },
-          {
-            "hex": "#0D00A480",
-            "rgb": "rgba(13, 0, 164, 0.8)",
-            "hsl": "hsl(245deg 100% 32% / 80%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#0D00A490",
-            "rgb": "rgba(13, 0, 164, 0.9)",
-            "hsl": "hsl(245deg 100% 32% / 90%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#0D00A4",
-            "rgb": "rgba(13, 0, 164, 1)",
-            "hsl": "hsl(245deg 100% 32% / 100%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          }
-        ],
-        "tint": [
-          {
-            "hex": "#0e00b4",
-            "rgb": "rgb(14, 0, 180)",
-            "hsl": "hsl(245deg 100% 35%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#1000c5",
-            "rgb": "rgb(16, 0, 197)",
-            "hsl": "hsl(245deg 100% 39%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#1100d5",
-            "rgb": "rgb(17, 0, 213)",
-            "hsl": "hsl(245deg 100% 42%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#1200e6",
-            "rgb": "rgb(18, 0, 230)",
-            "hsl": "hsl(245deg 100% 45%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#1400f6",
-            "rgb": "rgb(20, 0, 246)",
-            "hsl": "hsl(245deg 100% 48%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#1500ff",
-            "rgb": "rgb(21, 0, 255)",
-            "hsl": "hsl(245deg 100% 50%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#1600ff",
-            "rgb": "rgb(22, 0, 255)",
-            "hsl": "hsl(245deg 100% 50%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#1700ff",
-            "rgb": "rgb(23, 0, 255)",
-            "hsl": "hsl(245deg 100% 50%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#1900ff",
-            "rgb": "rgb(25, 0, 255)",
-            "hsl": "hsl(246deg 100% 50%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          },
-          {
-            "hex": "#1a00ff",
-            "rgb": "rgb(26, 0, 255)",
-            "hsl": "hsl(246deg 100% 50%)",
-            "contrast_score": { "light": "AAA", "dark": "F" }
-          }
-        ],
-        "shade": []
       },
       {
         "name": "red",

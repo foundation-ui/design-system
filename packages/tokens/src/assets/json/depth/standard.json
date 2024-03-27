@@ -1,0 +1,60 @@
+[
+  {
+    "base": 10,
+    "units": 10,
+    "steps": 10,
+    "name": "default",
+    "values": [
+      {
+        "value": 10,
+        "usage": ["base", "toolbar", "dropdown"],
+        "stack_order": { "label": "low", "score": 1 }
+      },
+      {
+        "value": 20,
+        "usage": ["base", "toolbar", "dropdown"],
+        "stack_order": { "label": "low", "score": 1 }
+      },
+      {
+        "value": 30,
+        "usage": ["base", "toolbar", "dropdown"],
+        "stack_order": { "label": "low", "score": 1 }
+      },
+      {
+        "value": 40,
+        "usage": ["base", "toolbar", "dropdown"],
+        "stack_order": { "label": "low", "score": 1 }
+      },
+      {
+        "value": 50,
+        "usage": ["base", "toolbar", "dropdown"],
+        "stack_order": { "label": "low", "score": 1 }
+      },
+      {
+        "value": 60,
+        "usage": ["fixed", "off-canvas", "overlay"],
+        "stack_order": { "label": "median", "score": 2 }
+      },
+      {
+        "value": 70,
+        "usage": ["notification", "above-content"],
+        "stack_order": { "label": "high", "score": 3 }
+      },
+      {
+        "value": 80,
+        "usage": ["notification", "above-content"],
+        "stack_order": { "label": "high", "score": 3 }
+      },
+      {
+        "value": 90,
+        "usage": ["notification", "above-content"],
+        "stack_order": { "label": "high", "score": 3 }
+      },
+      {
+        "value": 100,
+        "usage": ["notification", "above-content"],
+        "stack_order": { "label": "high", "score": 3 }
+      }
+    ]
+  }
+]
