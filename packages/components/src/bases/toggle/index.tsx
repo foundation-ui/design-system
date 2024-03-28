@@ -1,11 +1,7 @@
 import React from "react";
 import { Button, IButtonProperties } from "..//button";
-import { IComponentStyling } from "../../../../../types";
 
-export interface IToggleProperties
-  extends React.ComponentPropsWithRef<"button">,
-    IButtonProperties,
-    IComponentStyling {
+export interface IToggleProperties extends IButtonProperties {
   defaultChecked?: boolean;
 }
 
@@ -22,36 +18,35 @@ export interface IToggleProperties
  * @param {ReactNode} props.children - The content to be rendered inside the toggle button.
  * @returns {ReactElement} The Toggle component.
  */
-export const Toggle = React.forwardRef<HTMLButtonElement, IToggleProperties>(
-  (props, forwardedRef) => {
-    const { defaultChecked, onClick, disabled, children, ...restProps } = props;
-    const [checked, setChecked] = React.useState<boolean>(
-      defaultChecked || false
-    );
+export const Toggle = (props: IToggleProperties) => {
+  const { defaultChecked, onClick, disabled, children, ...restProps } = props;
+  const [checked, setChecked] = React.useState<boolean>(
+    defaultChecked || false
+  );
 
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-      if (onClick) onClick(event);
-      if (!disabled) setChecked(!checked);
-    };
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (onClick) onClick(event);
+    if (!disabled) setChecked(!checked);
+  };
 
-    React.useEffect(() => {
-      if (defaultChecked) setChecked(true);
-    }, [defaultChecked]);
+  React.useEffect(() => {
+    if (defaultChecked) setChecked(true);
+  }, [defaultChecked]);
 
-    return (
-      <Button
-        ref={forwardedRef}
-        onClick={handleClick}
-        value={String(checked)}
-        data-checked={Boolean(checked)}
-        data-disabled={Boolean(disabled)}
-        {...restProps}
-      >
-        {children}
-      </Button>
-    );
-  }
-);
+  return (
+    <Button
+      role="switch"
+      onClick={handleClick}
+      value={String(checked)}
+      aria-checked={checked}
+      data-checked={Boolean(checked)}
+      data-disabled={Boolean(disabled)}
+      {...restProps}
+    >
+      {children}
+    </Button>
+  );
+};
 Toggle.displayName = "Toggle";
 Toggle.defaultProps = {
   raw: false,

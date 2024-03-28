@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Toggle } from ".";
 import { Container } from "../../";
-import { ComponentVariantEnum } from "../../../../../types";
+import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const meta = {
   title: "Components/Bases/Toggle",
@@ -24,21 +24,17 @@ export const Default: Story = {
   render: ({ ...args }) => {
     const [checked, setChecked] = React.useState(false);
     const variant = checked
-      ? ComponentVariantEnum.Mono
+      ? ComponentVariantEnum.Secondary
       : ComponentVariantEnum.Border;
 
-    return (
-      <Toggle variant={variant} onClick={() => setChecked(!checked)}>
-        {checked ? "👍" : "👎"}
-      </Toggle>
-    );
+    return <Toggle variant={variant} onClick={() => setChecked(!checked)} />;
   },
 };
 export const DefaultChecked: Story = {
   render: ({ ...args }) => {
     const [checked, setChecked] = React.useState(true);
     const variant = checked
-      ? ComponentVariantEnum.Mono
+      ? ComponentVariantEnum.Secondary
       : ComponentVariantEnum.Border;
 
     return (
@@ -46,9 +42,7 @@ export const DefaultChecked: Story = {
         defaultChecked
         variant={variant}
         onClick={() => setChecked(!checked)}
-      >
-        {checked ? "👍" : "👎"}
-      </Toggle>
+      />
     );
   },
 };
@@ -62,7 +56,7 @@ export const Group: Story = {
 
     const getVariant = (label) => {
       return Boolean(checkedItems[label])
-        ? ComponentVariantEnum.Mono
+        ? ComponentVariantEnum.Secondary
         : ComponentVariantEnum.Border;
     };
     const handleCheckedItem = (event: any) => {
@@ -79,9 +73,7 @@ export const Group: Story = {
               name={item}
               variant={getVariant(item)}
               onClick={handleCheckedItem}
-            >
-              {Boolean(checkedItems[item]) ? "👍" : "👎"}
-            </Toggle>
+            />
           )),
         ]}
       </Container.Row>
@@ -98,7 +90,7 @@ export const Sizes: Story = {
 
     const getVariant = (label) => {
       return Boolean(checkedItems[label])
-        ? ComponentVariantEnum.Mono
+        ? ComponentVariantEnum.Secondary
         : ComponentVariantEnum.Border;
     };
     const handleCheckedItem = (event: any) => {
@@ -116,7 +108,9 @@ export const Sizes: Story = {
               variant={getVariant(item)}
               sizing={item}
               onClick={handleCheckedItem}
-            ></Toggle>
+            >
+              {item}
+            </Toggle>
           )),
         ]}
       </Container.Row>

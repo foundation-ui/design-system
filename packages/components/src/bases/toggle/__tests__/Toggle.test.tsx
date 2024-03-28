@@ -33,7 +33,7 @@ describe("Toggle", () => {
   });
   it("Renders with accessibility definition", async () => {
     render(<ToggleDefault />);
-    const ToggleComponent = screen.getByRole("button");
+    const ToggleComponent = screen.getByRole("switch");
 
     expect(ToggleComponent.getAttribute("type")).toBe("button");
     expect(ToggleComponent.getAttribute("value")).toBe("false");
@@ -42,7 +42,7 @@ describe("Toggle", () => {
   });
   it("Update the component state on click and fires the defined callback function", async () => {
     render(<ToggleDefault />);
-    const ToggleComponent = screen.getByRole("button");
+    const ToggleComponent = screen.getByRole("switch");
 
     fireEvent.click(ToggleComponent);
     await waitFor(() => {
@@ -55,7 +55,7 @@ describe("Toggle", () => {
   });
   it("Renders as checked if defaultChecked is defined", async () => {
     render(<ToggleDefault defaultChecked />);
-    const ToggleComponent = screen.getByRole("button");
+    const ToggleComponent = screen.getByRole("switch");
 
     expect(ToggleComponent.getAttribute("value")).toBe("true");
     expect(ToggleComponent.getAttribute("data-checked")).toBe("true");
