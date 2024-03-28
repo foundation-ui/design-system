@@ -28,7 +28,7 @@ export interface IAvatarProperties
  *
  * - Use the appropriate size to match the context and the importance of the information.
  * - Always provide an `alt` attribute for accessibility when using an image.
- * - Use the `status` prop to indicate the user's activity status.
+ * - Indicate the user's activity status.
  *
  * @param {IAvatarProperties} props - The props for the Avatar component.
  * @param {boolean} props.raw - Whether the avatar is styled or not.

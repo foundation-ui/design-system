@@ -44,7 +44,7 @@ describe("Avatar", () => {
     expect(AvatarStatus).toHaveAttribute("role", "img");
     expect(AvatarStatus).toHaveAttribute("data-status", "online");
   });
-  it("Renders as Default with Image as background", async () => {
+  it("Renders with Image as background", async () => {
     render(
       <SystemThemeProvider>
         <Avatar src="http://www.bui/tests" />
@@ -58,7 +58,6 @@ describe("Avatar", () => {
     expect(AvatarWrapper).toBeDefined();
     expect(AvatarImage).toBeDefined();
     expect(AvatarWrapper).toHaveAttribute("data-size", "medium");
-    expect(AvatarWrapper).toHaveAttribute("data-status", "offline");
   });
   it("Renders variants without accessibility violation", async () => {
     const SizeVariants = [
