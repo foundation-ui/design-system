@@ -1,31 +1,30 @@
 import React from "react";
-import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Collapsible } from ".";
+import { Container } from "../../";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
-const Wrapper = styled.div``;
 const meta = {
   title: "Components/Bases/Collapsible",
   component: Collapsible,
-  parameters: {
-    layout: "fullscreen",
-  },
+  tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ margin: "var(--measurement-medium-30)" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Collapsible>;
-
 export default meta;
-// type Story = StoryObj<typeof meta>;
 
-export const Default = {
+type Story = StoryObj<typeof meta>;
+export const Default: Story = {
   args: {
     raw: false,
-    variant: ComponentVariantEnum.Mono,
-    sizing: ComponentSizeEnum.Medium,
     defaultOpen: false,
-    showFirstChild: true,
-    onClick: () => console.log("Click"),
-    children: "Default collapsible",
+    showFirstChild: false,
   },
   argTypes: {
     variant: {
@@ -49,29 +48,49 @@ export const Default = {
     },
   },
   render: ({ ...args }) => (
-    <Wrapper>
-      <Collapsible.Root>
-        <Collapsible>
-          <Collapsible.Trigger
-            raw={args.raw}
-            variant={args.variant}
-            sizing={args.sizing}
-            onClick={args.onClick}
-          >
-            {args.children}
-          </Collapsible.Trigger>
-          <Collapsible.Content
-            defaultOpen={args.defaultOpen}
-            showFirstChild={args.showFirstChild}
-          >
-            {Array.from("🦠🦖🥚🐣🐥")
-              .reverse()
-              .map((item: string, key: number) => (
-                <p key={item}>Item sample&nbsp;{item}</p>
-              ))}
-          </Collapsible.Content>
-        </Collapsible>
-      </Collapsible.Root>
-    </Wrapper>
+    <Collapsible.Root>
+      <Collapsible>
+        <Collapsible.Trigger>🐻‍❄️</Collapsible.Trigger>
+        <Collapsible.Content>🐻🐻‍❄️🦊🐱🐶</Collapsible.Content>
+      </Collapsible>
+    </Collapsible.Root>
+  ),
+};
+export const DefaultOpen: Story = {
+  render: ({ ...args }) => (
+    <Collapsible.Root>
+      <Collapsible>
+        <Collapsible.Trigger>🐻‍❄️</Collapsible.Trigger>
+        <Collapsible.Content defaultOpen>🐻🐻‍❄️🦊🐱🐶</Collapsible.Content>
+      </Collapsible>
+    </Collapsible.Root>
+  ),
+};
+export const ShowFirstChild: Story = {
+  render: ({ ...args }) => (
+    <Collapsible.Root>
+      <Collapsible>
+        <Collapsible.Trigger>🐻‍❄️</Collapsible.Trigger>
+        <Collapsible.Content showFirstChild>
+          {["🐻", "🐻‍❄️", "🦊", "🐱", "🐶"].map((item) => (
+            <p>{item}</p>
+          ))}
+        </Collapsible.Content>
+      </Collapsible>
+    </Collapsible.Root>
+  ),
+};
+export const Group: Story = {
+  render: ({ ...args }) => (
+    <Container.Row spacing="large">
+      {["🐻", "🐻‍❄️", "🦊", "🐱", "🐶"].map((item) => (
+        <Collapsible.Root>
+          <Collapsible key={item}>
+            <Collapsible.Trigger>{item}</Collapsible.Trigger>
+            <Collapsible.Content>{item}</Collapsible.Content>
+          </Collapsible>
+        </Collapsible.Root>
+      ))}
+    </Container.Row>
   ),
 };
