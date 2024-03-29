@@ -124,7 +124,7 @@ DropdownMenuTrigger.defaultProps = {
  * @param {ComponentSizeEnum} props.sizing - The size of the component.
  * @param {"left" | "right"} props.side - The side on which the component's width will extend.
  * @param {boolean} props.defaultOpen - The initial open state of the dropdown menu. Defaults to false.
- * @param {ReactNode} props.children - The content to be rendered inside the accordion.
+ * @param {ReactNode} props.children - The content to be rendered inside the dropdown menu.
  * @returns {ReactElement} The DropdownMenu.Content component.
  */
 const DropdownMenuContent = (props: IDropdownContentProperties) => {

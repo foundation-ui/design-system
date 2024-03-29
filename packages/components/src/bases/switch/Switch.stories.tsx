@@ -12,7 +12,7 @@ import { ComponentSizeEnum, ComponentVariantEnum } from "../../../../../types";
  *
  * **Best practices:**
  *
- * - Use a clear and descriptive label for each checkbox.
+ * - Use a clear and descriptive label for each switch.
  * - The interaction must have predictable behavior.
  */
 const meta = {

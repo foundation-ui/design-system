@@ -1,30 +1,42 @@
 import React from "react";
-import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Tabs } from ".";
+import { Container } from "../../";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
-const Wrapper = styled.div`
-  margin: var(--measurement-medium-30);
-`;
+// Duplicated doc: The JSDoc content isn't rendering on Storybook.
 
+/**
+ * Tabs are container components for a set of tab panels that allows the user to switch between them.
+ *
+ * **Best practices:**
+ *
+ * - Ensure that the tabs can be navigated and activated using the keyboard.
+ * - Ensure that the focus is managed correctly when switching between tabs.
+ * - Ensure that the active tab is visibly indicated and that its content is visible and focusable.
+ *
+ */
 const meta = {
   title: "Components/Bases/Tabs",
   component: Tabs,
-  parameters: {
-    layout: "fullscreen",
-  },
+  tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ margin: "var(--measurement-medium-30)" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Tabs>;
-
 export default meta;
-export const Default = {
+
+type Story = StoryObj<typeof meta>;
+export const Default: Story = {
   args: {
     raw: false,
-    variant: ComponentVariantEnum.Mono,
-    sizing: ComponentSizeEnum.Medium,
-    defaultOpen: "2",
-    children: "Default Tabs",
+    defaultOpen: "",
+    value: "",
   },
   argTypes: {
     variant: {
@@ -48,36 +60,29 @@ export const Default = {
     },
   },
   render: ({ ...args }) => (
-    <Wrapper>
-      <Tabs.Root>
-        <Tabs
-          defaultOpen={args.defaultOpen}
-          style={{ display: "flex", gap: 6 }}
-        >
-          <Tabs.Trigger
-            value="1"
-            raw={args.raw}
-            variant={args.variant}
-            sizing={args.sizing}
-          >
-            Default Tab 1
-          </Tabs.Trigger>
-          <Tabs.Trigger
-            value="2"
-            raw={args.raw}
-            variant={args.variant}
-            sizing={args.sizing}
-          >
-            Default Tab 2
-          </Tabs.Trigger>
-        </Tabs>
-        <Tabs.Content value="1">
-          <p>Default Tab item 1</p>
-        </Tabs.Content>
-        <Tabs.Content value="2">
-          <p>Default Tab item 2</p>
-        </Tabs.Content>
-      </Tabs.Root>
-    </Wrapper>
+    <Tabs.Root>
+      <Tabs>
+        <Container.Row spacing="large">
+          <Tabs.Trigger value="🐻‍❄️">🐻‍❄️</Tabs.Trigger>
+          <Tabs.Trigger value="🐻">🐻</Tabs.Trigger>
+        </Container.Row>
+      </Tabs>
+      <Tabs.Content value="🐻‍❄️">🐻‍❄️</Tabs.Content>
+      <Tabs.Content value="🐻">🐻</Tabs.Content>
+    </Tabs.Root>
+  ),
+};
+export const DefaultOpen: Story = {
+  render: ({ ...args }) => (
+    <Tabs.Root>
+      <Tabs defaultOpen="🐻">
+        <Container.Row spacing="large">
+          <Tabs.Trigger value="🐻‍❄️">🐻‍❄️</Tabs.Trigger>
+          <Tabs.Trigger value="🐻">🐻</Tabs.Trigger>
+        </Container.Row>
+      </Tabs>
+      <Tabs.Content value="🐻‍❄️">🐻‍❄️</Tabs.Content>
+      <Tabs.Content value="🐻">🐻</Tabs.Content>
+    </Tabs.Root>
   ),
 };

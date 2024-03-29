@@ -66,7 +66,7 @@ AccordionRoot.displayName = "Accordion.Root";
  * - Ensure that the focus is properly managed when the trigger is activated.
  *
  * @param {IAccordionTriggerProperties} props - The props for the Accordion.Trigger component.
- * @param {string} props.value - The value used to bind the Accordion.Trigger and Accordion.Trigger components.
+ * @param {string} props.value - The value used to bind the Accordion.Trigger and Accordion.Content components.
  * @param {ReactNode} props.children - The content to be rendered inside the accordion trigger.
  * @returns {ReactElement} The Accordion.Trigger component.
  */

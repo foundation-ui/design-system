@@ -32,7 +32,7 @@ export interface ISwitchThumbProperties
  *
  * **Best practices:**
  *
- * - Use a clear and descriptive label for each checkbox.
+ * - Use a clear and descriptive label for each switch.
  * - The interaction must have predictable behavior.
  *
  * @param {ISwitchProperties} props - The props for the Switch component.
