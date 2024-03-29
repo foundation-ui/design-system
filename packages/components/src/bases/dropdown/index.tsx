@@ -160,6 +160,7 @@ const DropdownMenuContent = (props: IDropdownContentProperties) => {
 };
 DropdownMenuContent.displayName = "DropdownMenu.Content";
 DropdownMenuContent.defaultProps = {
+  raw: false,
   side: "left",
 };
 
@@ -218,6 +219,10 @@ const DropdownMenuItem = (props: IDropdownItemProperties) => {
   );
 };
 DropdownMenuItem.displayName = "DropdownMenu.Item";
+DropdownMenuItem.defaultProps = {
+  raw: false,
+  radio: false,
+};
 
 DropdownMenu.Root = DropdownMenuRoot;
 DropdownMenu.Trigger = DropdownMenuTrigger;
