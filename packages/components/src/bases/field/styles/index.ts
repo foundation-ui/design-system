@@ -19,6 +19,7 @@ const FieldDefaultStyles = css`
   backdrop-filter: blur(var(--measurement-small-10));
   color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
   width: fit-content;
+  height: fit-content;
 
   transition: all ease-in-out 0.2s;
 
