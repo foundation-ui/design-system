@@ -1,30 +1,43 @@
 import React from "react";
-import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { DropdownMenu } from ".";
-import { Portal } from "../../";
+import { Container } from "../../";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
-const Wrapper = styled.div``;
+// Duplicated doc: The JSDoc content isn't rendering on Storybook.
+
+/**
+ * Dropdown are used to expand and collapse list of actions.
+ *
+ * **Best practices:**
+ *
+ * - Use semantic HTML elements to structure the dropdown menu content.
+ * - Ensure that the dropdown menu can be opened and closed using the keyboard.
+ * - Ensure that the dropdown menu is visibly focused when opened using the keyboard.
+ * - Ensure that the dropdown menu is dismissed when the user clicks outside of it or presses the Esc key.
+ *
+ */
 const meta = {
   title: "Components/Bases/DropdownMenu",
   component: DropdownMenu,
-  parameters: {
-    layout: "fullscreen",
-  },
+  tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ margin: "var(--measurement-medium-30)" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof DropdownMenu>;
-
 export default meta;
 
-export const Default = {
+type Story = StoryObj<typeof meta>;
+export const Default: Story = {
   args: {
     raw: false,
-    variant: ComponentVariantEnum.Mono,
-    sizing: ComponentSizeEnum.Medium,
-    container: "portal",
+    container: "",
     defaultOpen: false,
-    side: "left",
     radio: false,
     disabled: false,
   },
@@ -48,53 +61,43 @@ export const Default = {
       ],
       control: { type: "radio" },
     },
+    side: {
+      options: ["left", "right"],
+      control: { type: "radio" },
+    },
   },
   render: ({ ...args }) => (
-    <Wrapper>
-      <DropdownMenu.Root>
-        <DropdownMenu.Trigger
-          onClick={() => console.log("Click")}
-          raw={args.raw}
-          variant={args.variant}
-          sizing={args.sizing}
-        >
-          Default Dropdown
-        </DropdownMenu.Trigger>
-
-        <Portal container={args.container}>
-          <DropdownMenu>
-            <DropdownMenu.Content
-              defaultOpen={args.defaultOpen}
-              side={args.side}
-              raw={args.raw}
-            >
-              <DropdownMenu.Item
-                raw={args.raw}
-                radio={args.radio}
-                disabled={args.disabled}
-                onClick={() => console.log("Click static")}
-              >
-                Item sample
-              </DropdownMenu.Item>
-              {Array.from("🐥🥚🐣🐥🥚🐣🐥🥚🐣🐥").map(
-                (item: string, key: number) => (
-                  <DropdownMenu.Item
-                    radio
-                    key={item}
-                    raw={args.raw}
-                    disabled={key === 1}
-                    onClick={() => console.log(`${item} clicked`)}
-                  >
-                    Static Item sample&nbsp;{item}
-                  </DropdownMenu.Item>
-                )
-              )}
-            </DropdownMenu.Content>
-          </DropdownMenu>
-        </Portal>
-      </DropdownMenu.Root>
-
-      <div id="portal" />
-    </Wrapper>
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger>🐻‍❄️</DropdownMenu.Trigger>
+      <DropdownMenu>
+        <DropdownMenu.Content>
+          <DropdownMenu.Item>🐻🐻‍❄️🦊🐱🐶</DropdownMenu.Item>
+        </DropdownMenu.Content>
+      </DropdownMenu>
+    </DropdownMenu.Root>
+  ),
+};
+export const DefaultOpen: Story = {
+  render: ({ ...args }) => (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger>🐻‍❄️</DropdownMenu.Trigger>
+      <DropdownMenu>
+        <DropdownMenu.Content defaultOpen>
+          <DropdownMenu.Item>🐻🐻‍❄️🦊🐱🐶</DropdownMenu.Item>
+        </DropdownMenu.Content>
+      </DropdownMenu>
+    </DropdownMenu.Root>
+  ),
+};
+export const RadioItem: Story = {
+  render: ({ ...args }) => (
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger>🐻‍❄️</DropdownMenu.Trigger>
+      <DropdownMenu>
+        <DropdownMenu.Content>
+          <DropdownMenu.Item radio>🐻🐻‍❄️🦊🐱🐶</DropdownMenu.Item>
+        </DropdownMenu.Content>
+      </DropdownMenu>
+    </DropdownMenu.Root>
   ),
 };

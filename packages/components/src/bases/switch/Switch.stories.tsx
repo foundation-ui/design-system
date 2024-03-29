@@ -84,9 +84,12 @@ export const Variants: Story = {
     <Container.Row spacing="large">
       {["primary", "ghost"].map((item) => (
         <Switch.Root key={item}>
-          <Switch variant={item}>
+          <Switch name={item} variant={item}>
             <Switch.Thumb />
           </Switch>
+          <label htmlFor={item}>
+            <small>{item}</small>
+          </label>
         </Switch.Root>
       ))}
     </Container.Row>
