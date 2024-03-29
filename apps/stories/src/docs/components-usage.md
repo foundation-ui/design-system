@@ -2,6 +2,10 @@
 
 Foundation Design System comes with a set of components located in the `@foundation/components`. They are low-level components with a focus on accessibility, customization and developer experience. `@foundation/components` components are styled using CSS in JS with [styled-components](https://styled-components.com/). While CSS in JS would be preferable, you can still use `className` and combine it with common CSS styles or any css framework to style your components.
 
+### Accessibility
+
+Foundation Design System Components are tested using [Axe](https://www.deque.com/axe/), [jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/). They follow the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/) to provide robust, accessibile components with predictable behaviors.
+
 ### Components API
 
 `@foundation/components` are using the [Compound Component Pattern](https://www.patterns.dev/react/compound-pattern), the components manage their own internal state and share them among the other compound components within the same `Root`.
@@ -12,7 +16,7 @@ Foundation Design System comes with a set of components located in the `@foundat
 
 ### Components Hierarchy
 
-`@foundation/components` is made of low-level components that handles common interactions you'll need to build User Interfaces. They can be used as is or combined with other components to handle more complex interactions such as pages shortcuts, collapsible list of actions.
+`@foundation/components` is made of low-level components that handles common interactions you'll need to build User Interfaces. They follows the [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/) and can be used as is or combined with other components to handle more complex interactions such as pages shortcuts, collapsible list of actions.
 
 > Components are classified in three categories, based on their usage on a User Interface: `Bases`, `Layers` and `Layouts`.
 
@@ -45,7 +49,3 @@ the `proximity`, `global` and `spacing` properties are transmited by the `Contai
 | `spacing`   | The spacing definition used by the component.               | `string`  | `small` `medium` `large`                                 | -       |
 
 Read the Component's Story file on [github](https://github.com/foundation-ui/design-system/tree/main/packages/components/src) to know more about the implementation.
-
-### Accessibility
-
-Foundation Design System Components are tested using [Axe](https://www.deque.com/axe/), [jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/). They follow the [Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/) to provide accessibile components with predictable behaviors.
