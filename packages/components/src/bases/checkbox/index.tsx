@@ -16,14 +16,8 @@ export interface ICheckboxProperties
     IComponentVariant,
     React.ComponentProps<"input"> {}
 
-const CheckboxRoot = (props: IReactChildren) => {
-  const { children, ...restProps } = props;
-  return <CheckboxProvider {...restProps}>{children}</CheckboxProvider>;
-};
-CheckboxRoot.displayName = "Checkbox.Root";
-
 /**
- * Checkbox is a component that allows users to select one or more options from a set.
+ * Checkbox are used to select one or more options from a set.
  *
  * **Best practices:**
  *
@@ -32,7 +26,7 @@ CheckboxRoot.displayName = "Checkbox.Root";
  * @param {ICheckboxProperties} props - The props for the Checkbox component.
  * @param {boolean} props.raw - Whether the checkbox is styled or not. Defaults to `false`.
  * @param {ComponentSizeEnum} props.sizing - The size of the checkbox. Defaults to `medium`.
- * @param {ComponentVariantEnum} props.variant - The variant of the checkbox. Defaults to `tertiary`.
+ * @param {ComponentVariantEnum} props.variant - The styles used by the checkbox. Defaults to `tertiary`.
  * @param {boolean} props.defaultChecked - The initial checked state of the checkbox..
  * @param {ReactNode} props.children - The content to be rendered inside the checkbox.
  * @returns {ReactElement} The Checkbox component.
@@ -68,11 +62,11 @@ const Checkbox = (props: ICheckboxProperties) => {
     <CheckboxWrapper
       role="checkbox"
       aria-hidden="true"
-      data-state={defaultValue}
+      data-state={value || defaultValue}
       data-disabled={disabled}
       data-raw={Boolean(raw)}
-      data-size={sizing || ComponentSizeEnum.Medium}
-      data-variant={variant || ComponentVariantEnum.Tertiary}
+      data-size={sizing}
+      data-variant={variant}
       aria-label={props["aria-label"] || `${name}-checkbox`}
     >
       <NativeInput
@@ -97,6 +91,17 @@ const Checkbox = (props: ICheckboxProperties) => {
   );
 };
 Checkbox.displayName = "Checkbox";
+Checkbox.defaultProps = {
+  raw: false,
+  variant: ComponentVariantEnum.Tertiary,
+  sizing: ComponentSizeEnum.Medium,
+};
+
+const CheckboxRoot = (props: IReactChildren) => {
+  const { children, ...restProps } = props;
+  return <CheckboxProvider {...restProps}>{children}</CheckboxProvider>;
+};
+CheckboxRoot.displayName = "Checkbox.Root";
 
 const CheckboxIndicator = (props: React.ComponentProps<"span">) => {
   const { states } = useCheckbox();

@@ -23,9 +23,9 @@ export interface IButtonProperties
  * - Button label must be short and understandable.
  *
  * @param {IButtonProperties} props - The props for the Button component.
- * @param {boolean} props.raw - Whether the button is styled or not.
- * @param {ComponentSizeEnum} props.sizing - The size of the button. Defaults to ComponentSizeEnum.Medium.
- * @param {string} props.variant - The style definition used by the avatar.
+ * @param {boolean} props.raw - Define whether the button is styled or not.
+ * @param {ComponentSizeEnum} props.sizing - The size of the button. Defaults to `medium`.
+ * @param {string} props.variant - The style definition used by the button.
  * @param {ReactNode} props.children - The content to be rendered inside the button.
  * @returns {ReactElement} The Button component.
  */
