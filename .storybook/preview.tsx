@@ -43,6 +43,7 @@ const preview: Preview = {
           "Theming",
           "Styling",
           "Components",
+          ["Usage"],
           "Sandbox",
         ],
       },
