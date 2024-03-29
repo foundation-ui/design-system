@@ -8,7 +8,7 @@ import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div``;
 const meta = {
-  title: "Components/Bases/Dialog",
+  title: "Components/Layers/Dialog",
   component: Dialog,
   parameters: {
     layout: "fullscreen",
