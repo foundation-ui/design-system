@@ -1,28 +1,39 @@
 import React from "react";
-import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Switch } from ".";
+import { Container } from "../../";
 import { ComponentSizeEnum, ComponentVariantEnum } from "../../../../../types";
 
-const Wrapper = styled.div``;
+// Duplicated doc: The JSDoc content isn't rendering on Storybook.
+
+/**
+ * Switch are toggle components that allows the user to turn a setting on or off.
+ *
+ * **Best practices:**
+ *
+ * - Use a clear and descriptive label for each checkbox.
+ * - The interaction must have predictable behavior.
+ */
 const meta = {
   title: "Components/Bases/Switch",
   component: Switch,
-  parameters: {
-    layout: "fullscreen",
-  },
+  tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div style={{ margin: "var(--measurement-medium-30)" }}>
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Switch>;
-
 export default meta;
-export const Default = {
+
+type Story = StoryObj<typeof meta>;
+export const Default: Story = {
   args: {
-    // raw: false,
-    variant: ComponentVariantEnum.Primary,
-    sizing: ComponentSizeEnum.Medium,
+    raw: false,
     defaultChecked: false,
-    disabled: false,
-    onClick: () => console.log("clicked"),
   },
   argTypes: {
     variant: {
@@ -39,24 +50,45 @@ export const Default = {
     },
   },
   render: ({ ...args }) => (
-    <Wrapper>
-      <Switch.Root>
-        <label id="label" htmlFor="switch-demo">
-          Default Switch&nbsp;
-        </label>
-        <Switch
-          raw={args.raw}
-          sizing={args.sizing}
-          variant={args.variant}
-          id="switch-demo"
-          defaultChecked={args.defaultChecked}
-          disabled={args.disabled}
-          onClick={args.onClick}
-          aria-labelledby="label"
-        >
-          <Switch.Thumb raw={args.raw} />
-        </Switch>
-      </Switch.Root>
-    </Wrapper>
+    <Switch.Root>
+      <Switch>
+        <Switch.Thumb />
+      </Switch>
+    </Switch.Root>
+  ),
+};
+export const DefaultChecked: Story = {
+  render: ({ ...args }) => (
+    <Switch.Root>
+      <Switch defaultChecked>
+        <Switch.Thumb />
+      </Switch>
+    </Switch.Root>
+  ),
+};
+export const Sizes: Story = {
+  render: ({ ...args }) => (
+    <Container.Row spacing="large">
+      {["large", "medium", "small"].map((item) => (
+        <Switch.Root key={item}>
+          <Switch sizing={item}>
+            <Switch.Thumb />
+          </Switch>
+        </Switch.Root>
+      ))}
+    </Container.Row>
+  ),
+};
+export const Variants: Story = {
+  render: ({ ...args }) => (
+    <Container.Row spacing="large">
+      {["primary", "ghost"].map((item) => (
+        <Switch.Root key={item}>
+          <Switch variant={item}>
+            <Switch.Thumb />
+          </Switch>
+        </Switch.Root>
+      ))}
+    </Container.Row>
   ),
 };

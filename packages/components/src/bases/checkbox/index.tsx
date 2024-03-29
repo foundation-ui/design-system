@@ -10,6 +10,11 @@ import {
   IComponentVariant,
 } from "../../../../../types";
 
+export interface ICheckboxComposition {
+  Root: typeof CheckboxRoot;
+  Indicator: typeof CheckboxIndicator;
+}
+
 export interface ICheckboxProperties
   extends IComponentStyling,
     IComponentSize,

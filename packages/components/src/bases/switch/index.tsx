@@ -10,6 +10,11 @@ import {
   IComponentVariant,
 } from "../../../../../types";
 
+export interface ISwitchComposition {
+  Root: typeof SwitchRoot;
+  Thumb: typeof SwitchThumb;
+}
+
 export interface ISwitchProperties
   extends React.ComponentProps<"button">,
     IComponentSize,
@@ -22,10 +27,22 @@ export interface ISwitchThumbProperties
     IComponentSize,
     IComponentStyling {}
 
-const SwitchRoot = ({ children }: IReactChildren) => {
-  return <SwitchProvider>{children}</SwitchProvider>;
-};
-
+/**
+ * Switch are toggle components that allows the user to turn a setting on or off.
+ *
+ * **Best practices:**
+ *
+ * - Use a clear and descriptive label for each checkbox.
+ * - The interaction must have predictable behavior.
+ *
+ * @param {ISwitchProperties} props - The props for the Switch component.
+ * @param {boolean} props.raw - Whether the switch should be rendered without any styles.
+ * @param {ComponentSizeEnum} props.sizing - The size of the switch.
+ * @param {ComponentVariantEnum} props.variant - The variant of the switch.
+ * @param {boolean} props.defaultChecked - The initial state of the switch.
+ * @param {ReactNode} props.children - The content to be rendered inside the switch.
+ * @returns {ReactElement} The Switch component.
+ */
 const Switch = (props: ISwitchProperties) => {
   const {
     raw,
@@ -60,8 +77,8 @@ const Switch = (props: ISwitchProperties) => {
       aria-label={`${id}-switch-trigger`}
       aria-checked={Boolean(states.checked)}
       data-disabled={String(disabled || false)}
-      data-variant={variant || ComponentVariantEnum.Primary}
-      data-size={sizing || ComponentSizeEnum.Medium}
+      data-variant={variant}
+      data-size={sizing}
       data-raw={Boolean(raw)}
       {...restProps}
     >
@@ -70,6 +87,17 @@ const Switch = (props: ISwitchProperties) => {
     </TriggerWrapper>
   );
 };
+Switch.displayName = "Switch";
+Switch.defaultProps = {
+  raw: false,
+  variant: ComponentVariantEnum.Primary,
+  sizing: ComponentSizeEnum.Medium,
+};
+
+const SwitchRoot = ({ children }: IReactChildren) => {
+  return <SwitchProvider>{children}</SwitchProvider>;
+};
+SwitchRoot.displayName = "Switch.Root";
 
 const SwitchThumb = (props: ISwitchThumbProperties) => {
   const { raw, sizing } = props;
@@ -89,6 +117,7 @@ const SwitchThumb = (props: ISwitchThumbProperties) => {
     />
   );
 };
+SwitchThumb.displayName = "Switch.Thumb";
 
 Switch.Root = SwitchRoot;
 Switch.Thumb = SwitchThumb;

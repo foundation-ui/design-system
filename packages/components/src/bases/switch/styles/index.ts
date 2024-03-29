@@ -17,7 +17,8 @@ const SwitchDefaultStyles = css`
 const SwitchVariantsStyles = css`
   &[data-variant="primary"] {
     &[aria-checked="true"] {
-      background-color: ${({ theme }) => theme.colors.primary.base};
+      background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+      border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     }
     &[aria-checked="false"] {
       background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
@@ -26,10 +27,10 @@ const SwitchVariantsStyles = css`
 
   &[data-variant="ghost"] {
     &[aria-checked="true"] {
-      background-color: ${({ theme }) => theme.colors.text.base};
+      border-color: ${({ theme }) => theme.colors.text.base};
     }
     &[aria-checked="false"] {
-      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
   }
 `;
