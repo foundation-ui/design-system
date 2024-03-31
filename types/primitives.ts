@@ -18,6 +18,10 @@ export enum ComponentVariantEnum {
   Mono = "mono",
   Ghost = "ghost",
 }
+export enum ComponentHeightEnum {
+  Fullscreen = "fullscreen",
+  Auto = "auto",
+}
 export enum KeyBindingEnum {
   Ctrl = "ctrlKey",
   Meta = "metaKey",

@@ -3,7 +3,11 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Toolbar } from ".";
 import { Container } from "../..";
-import { ComponentSizeEnum, ComponentSideEnum } from "../../../../../types";
+import {
+  ComponentSizeEnum,
+  ComponentSideEnum,
+  ComponentHeightEnum,
+} from "../../../../../types";
 
 const meta = {
   title: "Components/Layouts/Toolbar",
@@ -16,12 +20,10 @@ type Story = StoryObj<typeof meta>;
 export const Default = {
   args: {
     raw: false,
-    side: ComponentSideEnum.Left,
-    defaultOpen: true,
-    fixed: false,
-    showoncollapse: true,
-    showfirstchild: true,
-    shortcut: true,
+    defaultOpen: false,
+    showoncollapse: false,
+    showfirstchild: false,
+    shortcut: false,
     hotkey: ":",
     bindkey: null,
   },
@@ -41,6 +43,10 @@ export const Default = {
         ComponentSizeEnum.Medium,
         ComponentSizeEnum.Large,
       ],
+      control: { type: "radio" },
+    },
+    height: {
+      options: [ComponentHeightEnum.Fullscreen, ComponentHeightEnum.Auto],
       control: { type: "radio" },
     },
   },
@@ -82,7 +88,7 @@ export const Shortcut: Story = {
     </Toolbar.Root>
   ),
 };
-export const Horizontal: Story = {
+export const Sides: Story = {
   render: ({ ...args }) => (
     <Container.Row alignmode="space-between">
       {["left", "right"].map((item) => (
@@ -97,35 +103,5 @@ export const Horizontal: Story = {
         </Toolbar.Root>
       ))}
     </Container.Row>
-  ),
-};
-export const Vertical: Story = {
-  render: ({ ...args }) => (
-    <Container.Col alignmode="space-between">
-      {["top", "bottom"].map((item) => (
-        <Toolbar.Root key={item}>
-          <Toolbar side={item}>
-            <Toolbar.Section>
-              <Toolbar.Item>🐻‍❄️</Toolbar.Item>
-            </Toolbar.Section>
-
-            <Toolbar.Trigger>&hArr;</Toolbar.Trigger>
-          </Toolbar>
-        </Toolbar.Root>
-      ))}
-    </Container.Col>
-  ),
-};
-export const Height: Story = {
-  render: ({ ...args }) => (
-    <Toolbar.Root>
-      <Toolbar defaultOpen>
-        <Toolbar.Section>
-          <Toolbar.Item>🐻‍❄️</Toolbar.Item>
-        </Toolbar.Section>
-
-        <Toolbar.Trigger>&hArr;</Toolbar.Trigger>
-      </Toolbar>
-    </Toolbar.Root>
   ),
 };

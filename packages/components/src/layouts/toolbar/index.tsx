@@ -7,6 +7,7 @@ import { Button, IButtonProperties } from "../..";
 import {
   IComponentStyling,
   ComponentSizeEnum,
+  ComponentHeightEnum,
   ComponentVariantEnum,
   IComponentSize,
   IReactChildren,
@@ -22,6 +23,7 @@ export interface IToolbarBodyProperties
     React.ComponentProps<"aside"> {
   defaultOpen?: boolean;
   side?: ComponentSideEnum;
+  height?: ComponentHeightEnum;
 }
 export interface IToolbarSectionProperties
   extends React.ComponentProps<"section"> {
@@ -54,6 +56,7 @@ export interface IToolbaromposition {
  * @param {string} props.hotkey - The key to use in the key combination for the keyboard shortcuts.
  * @param {KeyBindingEnum} props.bindkey - The modifier key to use in the key combination.
  * @param {ComponentSizeEnum} props.sizing - The size of the toolbar.
+ * @param {ComponentHeightEnum} props.height - The height definition of the toolbar.
  * @param {ComponentSideEnum} props.side - The side of the toolbar.
  * @param {boolean} props.defaultOpen - Whether the toolbar should be open by default.
  * @param {ReactNode} props.children - The content to be rendered inside the toolbar.
@@ -67,6 +70,7 @@ const Toolbar = (props: IToolbarBodyProperties) => {
     raw,
     sizing,
     side,
+    height,
     defaultOpen,
     children,
     ...restProps
@@ -98,6 +102,7 @@ const Toolbar = (props: IToolbarBodyProperties) => {
       aria-orientation={orientation}
       data-raw={Boolean(raw)}
       data-size={sizing}
+      data-height={height}
       data-side={side}
       {...restProps}
     >
@@ -110,6 +115,7 @@ Toolbar.defaultProps = {
   side: ComponentSideEnum.Left,
   sizing: ComponentSizeEnum.Medium,
   bindkey: KeyBindingEnum.Ctrl,
+  height: ComponentHeightEnum.Fullscreen,
 };
 
 const ToolbarRoot = ({ children }: IReactChildren) => {

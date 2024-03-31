@@ -22,7 +22,13 @@ export interface IPageToolsProperties
     IToolbarSectionProperties {
   trigger?: React.ReactNode | string;
   triggerProps?: IComponentStyling & IComponentSize & IComponentVariant;
+  fixed?: boolean;
 }
+
+const Page = (props: any) => {
+  const { children } = props;
+  return <Container.Row {...props}>{children}</Container.Row>;
+};
 
 const PageNavigation = (props: any) => {
   const { children } = props;
@@ -146,11 +152,6 @@ const PagePanel = (props: IPageToolsProperties) => {
 const PageMenu = (props: any) => {
   const { children } = props;
   return <PageMenuWrapper {...props}>{children}</PageMenuWrapper>;
-};
-
-const Page = (props: any) => {
-  const { children } = props;
-  return <Container.Row {...props}>{children}</Container.Row>;
 };
 
 Page.Navigation = PageNavigation;

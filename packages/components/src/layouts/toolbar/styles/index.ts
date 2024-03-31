@@ -2,13 +2,13 @@ import styled, { css } from "styled-components";
 
 export const ToolbarDefaultStyles = css`
   margin: 0;
-  height: 100dvh;
   display: grid;
   grid-template-rows: min-content;
   background-color: ${({ theme }) => theme.colors.body.contrast};
   border: var(--measurement-small-10) solid transparent;
   padding: var(--measurement-medium-30);
   min-width: var(--measurement-large-20);
+  min-height: fit-content;
 
   &[aria-expanded="true"] {
     width: 100%;
@@ -72,11 +72,20 @@ export const ToolbarSideStyles = css`
     border-right-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
   }
 `;
+export const ToolbarHeightStyles = css`
+  &[data-height="fullscreen"] {
+    height: 100dvh;
+  }
+  &[data-side="auto"] {
+    height: auto;
+  }
+`;
 
 export const ToolbarWrapper = styled.menu`
   &[data-raw="false"] {
     ${ToolbarDefaultStyles}
     ${ToolbarSizeStyles}
+    ${ToolbarHeightStyles}
     ${ToolbarSideStyles}
   }
 `;

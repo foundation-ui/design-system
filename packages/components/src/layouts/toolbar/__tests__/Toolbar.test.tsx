@@ -18,7 +18,6 @@ const onClickCallback = jest.fn();
 const ToolbarDefault = (args: {
   showoncollapse?: boolean;
   defaultOpen?: boolean;
-  fixed?: boolean;
   shortcut?: boolean;
   side?: ComponentSideEnum;
   sizing?: ComponentSizeEnum;
@@ -32,7 +31,6 @@ const ToolbarDefault = (args: {
           sizing={args.sizing}
           defaultOpen={args.defaultOpen}
           shortcut={args.shortcut}
-          fixed={args.fixed}
           hotkey={args.hotkey}
         >
           <Toolbar.Section showoncollapse={args.showoncollapse}>
@@ -40,9 +38,7 @@ const ToolbarDefault = (args: {
             <Toolbar.Item aria-label="test-item-2">item2</Toolbar.Item>
           </Toolbar.Section>
 
-          {!args.fixed && (
-            <Toolbar.Trigger onClick={onClickCallback}>&hArr;</Toolbar.Trigger>
-          )}
+          <Toolbar.Trigger onClick={onClickCallback}>&hArr;</Toolbar.Trigger>
         </Toolbar>
       </Toolbar.Root>
     </SystemThemeProvider>
