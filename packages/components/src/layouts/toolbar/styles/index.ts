@@ -8,6 +8,7 @@ export const ToolbarDefaultStyles = css`
   background-color: ${({ theme }) => theme.colors.body.contrast};
   border: var(--measurement-small-10) solid transparent;
   padding: var(--measurement-medium-30);
+  min-width: var(--measurement-large-20);
 
   &[aria-expanded="true"] {
     width: 100%;

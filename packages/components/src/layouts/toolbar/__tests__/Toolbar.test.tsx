@@ -8,7 +8,7 @@ import {
 } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
-import { Toolbar } from "../";
+import { Toolbar } from "..";
 import { SystemThemeProvider } from "@foundation/core";
 import { ComponentSizeEnum, ComponentSideEnum } from "../../../../../../types";
 
