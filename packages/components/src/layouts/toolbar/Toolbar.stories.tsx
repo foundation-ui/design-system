@@ -65,7 +65,7 @@ export const Default = {
 export const DefaultOpen: Story = {
   render: ({ ...args }) => (
     <Toolbar.Root>
-      <Toolbar defaultOpen>
+      <Toolbar defaultOpen height="auto">
         <Toolbar.Section>
           <Toolbar.Item>🐻‍❄️</Toolbar.Item>
         </Toolbar.Section>
@@ -78,7 +78,7 @@ export const DefaultOpen: Story = {
 export const Shortcut: Story = {
   render: ({ ...args }) => (
     <Toolbar.Root>
-      <Toolbar>
+      <Toolbar height="auto">
         <Toolbar.Section>
           <Toolbar.Item>🐻‍❄️</Toolbar.Item>
         </Toolbar.Section>
@@ -91,17 +91,37 @@ export const Shortcut: Story = {
 export const Sides: Story = {
   render: ({ ...args }) => (
     <Container.Row alignmode="space-between">
-      {["left", "right"].map((item) => (
-        <Toolbar.Root key={item}>
-          <Toolbar side={item}>
-            <Toolbar.Section>
-              <Toolbar.Item>🐻‍❄️</Toolbar.Item>
-            </Toolbar.Section>
+      <Toolbar.Root>
+        <Toolbar side="left" height="auto">
+          <Toolbar.Section>
+            <Toolbar.Item>🐻‍❄️</Toolbar.Item>
+          </Toolbar.Section>
 
-            <Toolbar.Trigger>&hArr;</Toolbar.Trigger>
-          </Toolbar>
-        </Toolbar.Root>
-      ))}
+          <Toolbar.Trigger>&hArr;</Toolbar.Trigger>
+        </Toolbar>
+      </Toolbar.Root>
+      <Container.Col>
+        {["top", "bottom"].map((item) => (
+          <Toolbar.Root key={item}>
+            <Toolbar side={item}>
+              <Toolbar.Section>
+                <Toolbar.Item>🐻‍❄️</Toolbar.Item>
+              </Toolbar.Section>
+
+              <Toolbar.Trigger>&hArr;</Toolbar.Trigger>
+            </Toolbar>
+          </Toolbar.Root>
+        ))}
+      </Container.Col>
+      <Toolbar.Root>
+        <Toolbar side="right" height="auto">
+          <Toolbar.Section>
+            <Toolbar.Item>🐻‍❄️</Toolbar.Item>
+          </Toolbar.Section>
+
+          <Toolbar.Trigger>&hArr;</Toolbar.Trigger>
+        </Toolbar>
+      </Toolbar.Root>
     </Container.Row>
   ),
 };
