@@ -30,49 +30,15 @@ export interface IContainerProperties
     IContainerAlignMode,
     React.ComponentProps<"div"> {}
 
-const ContainerRow = (props: IContainerProperties) => {
-  const { raw, spacing, alignmode, children } = props;
-  return (
-    <ContainerRowWrapper
-      tabIndex={-1}
-      data-orientation="horizontal"
-      data-raw={Boolean(raw)}
-      data-align={alignmode || ContainerAlignModeEnum.Start}
-      data-spacing={spacing || ComponentSizeEnum.None}
-      {...props}
-    >
-      {children}
-    </ContainerRowWrapper>
-  );
-};
-const ContainerCol = (props: IContainerProperties) => {
-  const { raw, spacing, alignmode, children } = props;
-  return (
-    <ContainerColWrapper
-      tabIndex={-1}
-      data-orientation="vertical"
-      data-raw={Boolean(raw)}
-      data-align={alignmode || ContainerAlignModeEnum.Start}
-      data-spacing={spacing || ComponentSizeEnum.None}
-      {...props}
-    >
-      {children}
-    </ContainerColWrapper>
-  );
-};
-const ContainerTitle = (props: IContainerProperties) => {
-  const { raw, spacing, alignmode, children } = props;
-  return (
-    <ContainerTitleWrapper
-      data-raw={Boolean(raw)}
-      data-align={alignmode || ContainerAlignModeEnum.Start}
-      data-spacing={spacing || ComponentSizeEnum.Small}
-      {...props}
-    >
-      {children}
-    </ContainerTitleWrapper>
-  );
-};
+/**
+ * Containers are used to wrap child components in a container with inner spacings.
+ *
+ * @param {IProximityProperties & IComponentSpacing & React.ComponentProps<"div">} props - The props for the Container component.
+ * @param {ComponentSpacingEnum} props.spacing - The amount of spacing between the container and its child elements.
+ * @param {boolean} props.proximity - Whether the first child have spacing or not.
+ * @param {boolean} props.global - Whether all child have spacing or not.
+ * @returns {ReactElement} The Container component.
+ */
 const Container = (
   props: IProximityProperties & IComponentSpacing & React.ComponentProps<"div">
 ) => {
@@ -80,7 +46,7 @@ const Container = (
 
   return (
     <ContainerWrapper
-      data-spacing={spacing || ComponentSizeEnum.Small}
+      data-spacing={spacing}
       data-proximity={Boolean(proximity)}
       data-global={Boolean(global)}
       {...props}
@@ -89,9 +55,58 @@ const Container = (
     </ContainerWrapper>
   );
 };
+Container.displayName = "Container";
+Container.defaultProps = {
+  proximity: false,
+  global: false,
+  spacing: ComponentSizeEnum.Small,
+};
+
+const ContainerRow = (props: IContainerProperties) => {
+  const { raw, spacing, alignmode, children } = props;
+  return (
+    <ContainerRowWrapper
+      tabIndex={-1}
+      data-orientation="horizontal"
+      data-raw={Boolean(raw)}
+      data-align={alignmode}
+      data-spacing={spacing}
+      {...props}
+    >
+      {children}
+    </ContainerRowWrapper>
+  );
+};
+ContainerRow.displayName = "Container.Row";
+ContainerRow.defaultProps = {
+  raw: false,
+  alignmode: ContainerAlignModeEnum.Start,
+  spacing: ComponentSizeEnum.None,
+};
+
+const ContainerCol = (props: IContainerProperties) => {
+  const { raw, spacing, alignmode, children } = props;
+  return (
+    <ContainerColWrapper
+      tabIndex={-1}
+      data-orientation="vertical"
+      data-raw={Boolean(raw)}
+      data-align={alignmode}
+      data-spacing={spacing}
+      {...props}
+    >
+      {children}
+    </ContainerColWrapper>
+  );
+};
+ContainerCol.displayName = "Container.Col";
+ContainerRow.defaultProps = {
+  raw: false,
+  alignmode: ContainerAlignModeEnum.Start,
+  spacing: ComponentSizeEnum.None,
+};
 
 Container.Row = ContainerRow;
 Container.Col = ContainerCol;
-Container.Title = ContainerTitle;
 
-export { Container, ContainerRow, ContainerCol, ContainerTitle };
+export { Container, ContainerRow, ContainerCol };

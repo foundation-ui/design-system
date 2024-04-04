@@ -138,9 +138,7 @@ export const Default = {
             </Page.Menu>
 
             <Page.Content>
-              <Container.Title>
-                <Button>Sample button</Button>
-              </Container.Title>
+              <Button>Sample button</Button>
             </Page.Content>
 
             <Page.Panel

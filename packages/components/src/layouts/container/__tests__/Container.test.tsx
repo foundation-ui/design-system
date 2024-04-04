@@ -12,9 +12,6 @@ const ContainerDefault = (args: {
 }) => {
   return (
     <Container {...args} aria-label="container-test">
-      <Container.Title>
-        <h1>container-title</h1>
-      </Container.Title>
       <Container.Row>
         <p>container-content</p>
         <p>container-content-2</p>
