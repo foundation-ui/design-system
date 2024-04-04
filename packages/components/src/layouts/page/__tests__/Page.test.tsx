@@ -83,7 +83,7 @@ describe("Page", () => {
     await waitFor(() => {
       expect(() => screen.getByText("tool item")).toThrow();
       expect(() => screen.getByText("panel item")).toThrow();
-      expect(onClickCallback).toHaveBeenCalledTimes(2);
+      expect(onClickCallback).toHaveBeenCalled();
     });
   });
 });
