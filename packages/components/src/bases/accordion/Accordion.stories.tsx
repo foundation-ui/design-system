@@ -1,8 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Accordion } from ".";
-import { Container } from "../../";
+import { Accordion, Container } from "../../";
 import { ComponentSizeEnum, ComponentVariantEnum } from "../../../../../types";
 
 const meta = {

@@ -1,8 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Tabs } from ".";
-import { Container } from "../../";
+import { Tabs, Container } from "../../";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.

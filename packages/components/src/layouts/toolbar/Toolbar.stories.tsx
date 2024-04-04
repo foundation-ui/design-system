@@ -1,8 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Toolbar } from ".";
-import { Container } from "../..";
+import { Toolbar, Container } from "../../";
 import {
   ComponentSizeEnum,
   ComponentSideEnum,

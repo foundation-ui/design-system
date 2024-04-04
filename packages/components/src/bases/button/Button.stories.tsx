@@ -1,9 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { Button } from ".";
-import { Container } from "../../";
-import { ComponentSizeEnum, ComponentVariantEnum } from "../../../../../types";
+import { Button, Container } from "../../";
 
 const meta = {
   title: "Components/Bases/Button",

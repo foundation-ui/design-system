@@ -1,23 +1,16 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Page } from ".";
 import {
+  Page,
   Container,
   ContainerAlignModeEnum,
   Portal,
   Avatar,
-  AvataStatusEnum,
-  Accordion,
   Button,
   Toolbar,
 } from "../../";
-
-import {
-  ComponentSizeEnum,
-  ComponentVariantEnum,
-  ComponentSideEnum,
-} from "../../../../../types";
+import { ComponentSizeEnum, ComponentSideEnum } from "../../../../../types";
 
 const meta = {
   title: "Components/Layouts/Page",

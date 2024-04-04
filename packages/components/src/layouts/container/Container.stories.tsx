@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Container } from ".";
+import { Container } from "../../";
 import { ComponentSizeEnum } from "../../../../../types";
 
 const Wrapper = styled.div``;

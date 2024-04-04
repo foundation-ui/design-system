@@ -1,8 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Field, IFieldLabel } from ".";
-import { Container } from "../../";
+import { Field, Container } from "../../";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../../types";
 
 const meta = {
@@ -20,8 +19,7 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-type LabelStory = StoryObj<IFieldLabel>;
-export const Default: Story | LabelStory = {
+export const Default: Story = {
   args: {
     raw: false,
     optional: false,
