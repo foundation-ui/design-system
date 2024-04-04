@@ -25,16 +25,52 @@ export interface IPageToolsProperties
   fixed?: boolean;
 }
 
-const Page = (props: any) => {
+/**
+ * Pages are structured components used to build User Interface layouts.
+ *
+ * @param {React.ComponentProps<"div">} props - The props for the Page component.
+ * @returns {ReactElement} The Page component.
+ */
+const Page = (props: React.ComponentProps<"div">) => {
   const { children } = props;
   return <Container.Row {...props}>{children}</Container.Row>;
 };
+Page.displayName = "Page";
 
-const PageNavigation = (props: any) => {
+/**
+ * Navigations are used to hold links and actions.
+ *
+ * @param {React.ComponentProps<"div">} props - The props for the Page.Navigation component.
+ * @returns {ReactElement} The Page.Navigation component.
+ */
+const PageNavigation = (props: React.ComponentProps<"nav">) => {
   const { children } = props;
   return <PageNavWrapper {...props}>{children}</PageNavWrapper>;
 };
+PageNavigation.displayName = "Page.Navigation";
 
+/**
+ * Toolbar are container component that provides a set of tools or actions for the user.
+ *
+ * **Best practices:**
+ *
+ * - Use semantic HTML elements to structure the content of the Page.Toolbar.
+ * - Ensure that the Page.Toolbar is visible and accessible to all users, including those using assistive technologies.
+ * - Use keyboard shortcuts to provide an alternative way of interacting with the Page.Toolbar.
+ * - Ensure that the Page.Toolbar is responsive and adapts to different screen sizes and orientations.
+ *
+ * @param {IPageToolsProperties} props - The props for the Page.Toolbar component.
+ * @param {boolean} props.raw - Define whether the component is styled or not.
+ * @param {string} props.shortcut - The key combination used as keyboard shortcuts to trigger the Page.Toolbar.
+ * @param {string} props.hotkey - The key to use in the key combination for the keyboard shortcuts.
+ * @param {KeyBindingEnum} props.bindkey - The modifier key to use in the key combination.
+ * @param {ComponentSizeEnum} props.sizing - The size of the Page.Toolbar.
+ * @param {ComponentHeightEnum} props.height - The height definition of the Page.Toolbar.
+ * @param {ComponentSideEnum} props.side - The side of the Page.Toolbar.
+ * @param {boolean} props.defaultOpen - Whether the Page.Toolbar should be open by default.
+ * @param {ReactNode} props.children - The content to be rendered inside the Page.Toolbar.
+ * @returns {ReactElement} The Page.Toolbar component.
+ */
 const PageTools = (props: IPageToolsProperties) => {
   const {
     shortcut,
@@ -87,12 +123,36 @@ const PageTools = (props: IPageToolsProperties) => {
     </Toolbar.Root>
   );
 };
+PageTools.displayName = "Page.Tools";
 
-const PageContent = (props: any) => {
+const PageContent = (props: React.ComponentProps<"div">) => {
   const { children } = props;
   return <PageSectionWrapper {...props}>{children}</PageSectionWrapper>;
 };
+PageContent.displayName = "Page.Content";
 
+/**
+ * Panel are container component that provides a set of tools or actions for the user.
+ *
+ * **Best practices:**
+ *
+ * - Use semantic HTML elements to structure the content of the Page.Panel.
+ * - Ensure that the Page.Panel is visible and accessible to all users, including those using assistive technologies.
+ * - Use keyboard shortcuts to provide an alternative way of interacting with the Page.Panel.
+ * - Ensure that the Page.Panel is responsive and adapts to different screen sizes and orientations.
+ *
+ * @param {IPageToolsProperties} props - The props for the Page.Panel component.
+ * @param {boolean} props.raw - Define whether the component is styled or not.
+ * @param {string} props.shortcut - The key combination used as keyboard shortcuts to trigger the Page.Panel.
+ * @param {string} props.hotkey - The key to use in the key combination for the keyboard shortcuts.
+ * @param {KeyBindingEnum} props.bindkey - The modifier key to use in the key combination.
+ * @param {ComponentSizeEnum} props.sizing - The size of the Page.Panel.
+ * @param {ComponentHeightEnum} props.height - The height definition of the Page.Panel.
+ * @param {ComponentSideEnum} props.side - The side of the Page.Panel.
+ * @param {boolean} props.defaultOpen - Whether the Page.Panel should be open by default.
+ * @param {ReactNode} props.children - The content to be rendered inside the Page.Panel.
+ * @returns {ReactElement} The Page.Panel component.
+ */
 const PagePanel = (props: IPageToolsProperties) => {
   const {
     shortcut,
@@ -148,11 +208,19 @@ const PagePanel = (props: IPageToolsProperties) => {
     </Toolbar.Root>
   );
 };
+PagePanel.displayName = "Page.Panel";
 
-const PageMenu = (props: any) => {
+/**
+ * Menus are used to hold links and actions.
+ *
+ * @param {React.ComponentProps<"menu">} props - The props for the Page.Menu component.
+ * @returns {ReactElement} The Page.Menu component.
+ */
+const PageMenu = (props: React.ComponentProps<"menu">) => {
   const { children } = props;
   return <PageMenuWrapper {...props}>{children}</PageMenuWrapper>;
 };
+PageMenu.displayName = "Page.Menu";
 
 Page.Navigation = PageNavigation;
 Page.Tools = PageTools;
