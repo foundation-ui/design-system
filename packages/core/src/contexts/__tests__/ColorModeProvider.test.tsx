@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { ColorModeProvider, useColorMode } from "../ColorModeProvider";
 import { ColorModesEnum } from "../../../../../types";
 
@@ -10,7 +10,7 @@ const Component = () => {
     <React.Fragment>
       <button
         data-testid="set-color-mode"
-        onClick={() => setColorMode(ColorModesEnum.Dark)}
+        onClick={() => setColorMode(ColorModesEnum.Light)}
       >
         {colorMode}
       </button>
@@ -29,7 +29,7 @@ describe("ColorModeContext", () => {
     });
   });
 
-  afterAll(() => {
+  afterEach(() => {
     jest.clearAllMocks();
   });
 
@@ -41,19 +41,19 @@ describe("ColorModeContext", () => {
     );
 
     const colorMode = screen.getByTestId("set-color-mode");
-    expect(colorMode.textContent).toBe(ColorModesEnum.Light);
+    expect(colorMode.textContent).toBe(ColorModesEnum.Dark);
   });
-  it("Change color mode", () => {
+  it("Change color mode", async () => {
     render(
       <ColorModeProvider>
         <Component />
       </ColorModeProvider>
     );
     const colorMode = screen.getByTestId("set-color-mode");
-    expect(colorMode.textContent).toBe(ColorModesEnum.Light);
+    expect(colorMode.textContent).toBe(ColorModesEnum.Dark);
 
     fireEvent.click(colorMode);
-    expect(colorMode.textContent).toBe(ColorModesEnum.Dark);
+    expect(localStorage.getItem("color-mode")).toEqual(ColorModesEnum.Light);
   });
   it("Persist color mode in local storage", () => {
     Storage.prototype.setItem = jest.fn();
@@ -69,18 +69,18 @@ describe("ColorModeContext", () => {
     fireEvent.click(colorMode);
     expect(localStorage.setItem).toHaveBeenCalledWith(
       "color-mode",
-      ColorModesEnum.Dark
+      ColorModesEnum.Light
     );
   });
   it("Loads the defined color mode by default", () => {
     render(
-      <ColorModeProvider colorMode="dark">
+      <ColorModeProvider colorMode="light">
         <Component />
       </ColorModeProvider>
     );
 
     const colorMode = screen.getByTestId("set-color-mode");
-    expect(colorMode.textContent).toBe(ColorModesEnum.Dark);
-    expect(localStorage.getItem("color-mode")).toEqual(ColorModesEnum.Dark);
+    expect(colorMode.textContent).toBe(ColorModesEnum.Light);
+    expect(localStorage.getItem("color-mode")).toEqual(ColorModesEnum.Light);
   });
 });

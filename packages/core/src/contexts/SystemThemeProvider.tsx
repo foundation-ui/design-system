@@ -14,12 +14,15 @@ export const SystemThemeProvider = ({
   children,
 }: ISystemThemeProvider) => {
   const UISysPrefs = React.useContext(ColorModeContext);
-  const themeDefinition =
-    UISysPrefs && UISysPrefs.colorMode === ColorModesEnum.Dark
-      ? design_system_themes.dark_mono
-      : design_system_themes.light_mono;
+
+  const defaultTheme = () => {
+    const mode = UISysPrefs && UISysPrefs.colorMode;
+
+    if (mode === ColorModesEnum.Dark) return design_system_themes.dark_mono;
+    if (mode === ColorModesEnum.Light) return design_system_themes.light_mono;
+  };
 
   return (
-    <ThemeProvider theme={theme || themeDefinition}>{children}</ThemeProvider>
+    <ThemeProvider theme={theme || defaultTheme()}>{children}</ThemeProvider>
   );
 };

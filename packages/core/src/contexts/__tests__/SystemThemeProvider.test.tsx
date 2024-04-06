@@ -35,7 +35,7 @@ describe("SystemThemeProvider", () => {
 
     const containerComponent = screen.getByTestId("color-mode");
     expect(containerComponent).toHaveStyle(
-      "background-color: rgb(241, 241, 241);"
+      "background-color: rgb(33, 33, 33);"
     );
   });
   it("Initialize with a cutom theme", () => {

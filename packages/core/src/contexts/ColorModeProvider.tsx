@@ -29,5 +29,5 @@ export const GetInitialColorMode = () => {
   if (hasMediaQueryPreference && mediaQueryList.matches)
     return ColorModesEnum.System;
 
-  return ColorModesEnum.Light;
+  return ColorModesEnum.Dark;
 };
