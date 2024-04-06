@@ -24,8 +24,6 @@ export const Default: Story = {
     variant: {
       options: [
         ComponentVariantEnum.Primary,
-        ComponentVariantEnum.Secondary,
-        ComponentVariantEnum.Tertiary,
         ComponentVariantEnum.Mono,
         ComponentVariantEnum.Border,
         ComponentVariantEnum.Ghost,
@@ -87,18 +85,16 @@ export const Sizes: Story = {
 export const Variants: Story = {
   render: ({ ...args }) => (
     <Container.Row spacing="large">
-      {["primary", "secondary", "tertiary", "mono", "border", "ghost"].map(
-        (item: string) => (
-          <Checkbox.Root>
-            <Checkbox name={item} variant={item}>
-              <Checkbox.Indicator />
-            </Checkbox>
-            <label id={`${item}-label`} htmlFor={item}>
-              <small>{item}</small>
-            </label>
-          </Checkbox.Root>
-        )
-      )}
+      {["primary", "mono", "border", "ghost"].map((item: string) => (
+        <Checkbox.Root>
+          <Checkbox name={item} variant={item}>
+            <Checkbox.Indicator />
+          </Checkbox>
+          <label id={`${item}-label`} htmlFor={item}>
+            <small>{item}</small>
+          </label>
+        </Checkbox.Root>
+      ))}
     </Container.Row>
   ),
 };

@@ -18,19 +18,18 @@ export const ContentWrapper = styled.ul`
   }
 
   &[data-raw="false"] {
-    width: 100%;
-    overflow-y: scroll;
-
     top: var(--measurement-small-30);
-
+    width: 100%;
     max-width: var(--measurement-large-80);
     max-height: var(--measurement-large-90);
     padding: var(--measurement-medium-30);
 
-    background-color: ${({ theme }) => theme.colors.body.contrast};
+    background-color: ${({ theme }) => theme.colors.body.base};
     border: var(--measurement-small-10) solid
       ${({ theme }) => theme.colors.text.alpha[0].rgb};
-    border-radius: var(--measurement-medium-30);
+    border-radius: var(--measurement-medium-60);
+    box-shadow: 0 var(--measurement-medium-30) var(--measurement-medium-30)
+      var(--alpha-mono-darkest-10);
   }
 `;
 

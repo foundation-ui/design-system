@@ -70,7 +70,9 @@ export const Default: Story = {
       <DropdownMenu.Trigger>🐻‍❄️</DropdownMenu.Trigger>
       <DropdownMenu>
         <DropdownMenu.Content>
-          <DropdownMenu.Item>🐻🐻‍❄️🦊🐱🐶</DropdownMenu.Item>
+          {["🐻", "🐻‍❄️", "🦊", "🐱", "🐶"].map((item) => (
+            <DropdownMenu.Item key={item}>{item}</DropdownMenu.Item>
+          ))}
         </DropdownMenu.Content>
       </DropdownMenu>
     </DropdownMenu.Root>

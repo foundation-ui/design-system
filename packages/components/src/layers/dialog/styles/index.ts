@@ -3,13 +3,15 @@ import styled, { css } from "styled-components";
 const DialogDefaultStyles = css`
   position: fixed;
   top: var(--measurement-large-60);
+  padding: var(--measurement-medium-60);
   width: 100%;
 
-  background-color: ${({ theme }) => theme.colors.body.contrast};
+  background-color: ${({ theme }) => theme.colors.body.base};
   border: var(--measurement-small-10) solid
     ${({ theme }) => theme.colors.text.alpha[0].rgb};
-  border-radius: var(--measurement-medium-30);
-  padding: var(--measurement-medium-60);
+  border-radius: var(--measurement-medium-60);
+  box-shadow: 0 var(--measurement-medium-30) var(--measurement-medium-30)
+    var(--alpha-mono-darkest-10);
 `;
 const DialogSizeStyles = css`
   &[data-size="small"] {

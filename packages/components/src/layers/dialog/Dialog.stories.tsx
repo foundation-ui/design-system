@@ -58,3 +58,16 @@ export const DefaultOpen = {
     </Dialog.Root>
   ),
 };
+export const NoOverlay = {
+  render: ({ ...args }) => (
+    <Dialog.Root>
+      <Dialog.Trigger>🐻‍❄️</Dialog.Trigger>
+      <Dialog open>
+        🐻🐻‍❄️🦊🐱🐶
+        <Dialog.Menu>
+          <Dialog.Control>🐻</Dialog.Control>
+        </Dialog.Menu>
+      </Dialog>
+    </Dialog.Root>
+  ),
+};

@@ -57,6 +57,31 @@ const ButtonVariantsStyles = css`
   }
   &[data-variant="secondary"] {
     color: ${({ theme }) => theme.colors.primary.alpha[6].rgb};
+    background-color: ${({ theme }) => theme.colors.body.contrast};
+    border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+
+    &:hover,
+    &:focus {
+      color: ${({ theme }) => theme.colors.primary.base};
+      border-color: ${({ theme }) => theme.colors.primary.alpha[2].rgb};
+    }
+    &:active {
+      border-color: ${({ theme }) => theme.colors.primary.alpha[2].rgb};
+    }
+  }
+  &[data-variant="tertiary"] {
+    color: ${({ theme }) => theme.colors.primary.alpha[6].rgb};
+    background-color: ${({ theme }) => theme.colors.body.contrast};
+    border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: ${({ theme }) => theme.colors.primary.base};
+    }
+  }
+  &[data-variant="mono"] {
+    color: ${({ theme }) => theme.colors.primary.alpha[6].rgb};
     background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
 
@@ -67,33 +92,6 @@ const ButtonVariantsStyles = css`
     }
     &:active {
       background-color: ${({ theme }) => theme.colors.primary.alpha[2].rgb};
-    }
-  }
-  &[data-variant="tertiary"] {
-    color: ${({ theme }) => theme.colors.primary.alpha[6].rgb};
-    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-
-    &:hover,
-    &:focus {
-      color: ${({ theme }) => theme.colors.primary.base};
-      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-    }
-    &:active {
-      border-color: ${({ theme }) => theme.colors.text.alpha[2].rgb};
-    }
-  }
-
-  &[data-variant="mono"] {
-    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
-    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-
-    &:hover,
-    &:focus {
-      color: ${({ theme }) => theme.colors.text.base};
-      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-    }
-    &:active {
-      border-color: ${({ theme }) => theme.colors.text.alpha[2].rgb};
     }
   }
   &[data-variant="border"] {

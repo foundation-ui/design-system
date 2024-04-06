@@ -98,7 +98,7 @@ const Checkbox = (props: ICheckboxProperties) => {
 Checkbox.displayName = "Checkbox";
 Checkbox.defaultProps = {
   raw: false,
-  variant: ComponentVariantEnum.Tertiary,
+  variant: ComponentVariantEnum.Mono,
   sizing: ComponentSizeEnum.Medium,
 };
 

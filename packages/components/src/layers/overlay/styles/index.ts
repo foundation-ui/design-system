@@ -8,7 +8,7 @@ export const OverlayWrapper = styled.div`
   height: 100%;
 
   &[data-raw="false"] {
-    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-    backdrop-filter: blur(var(--measurement-small-30));
+    background-color: ${({ theme }) => theme.colors.body.alpha[0].rgb};
+    backdrop-filter: blur(var(--measurement-medium-30));
   }
 `;
