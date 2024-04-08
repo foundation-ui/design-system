@@ -9,7 +9,7 @@ import {
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Toolbar } from "..";
-import { SystemThemeProvider } from "@foundation/core";
+import { SystemThemeProvider } from "@foundation-ui/core";
 import { ComponentSizeEnum, ComponentSideEnum } from "../../../../../../types";
 
 import "@testing-library/jest-dom";

@@ -1,4 +1,4 @@
-# @foundation/components
+# @foundation-ui/components
 
 ## 0.1.1
 

@@ -1,12 +1,12 @@
 # Theming
 
-Foundation Design System comes with built-in themes definitions using [styled-components ThemeProvider](https://styled-components.com/docs/advanced#theming). Coupled with `@foundation/core` and `@foundation/tokens`, you'll be able to create your custom theme using values from your custom Design Tokens library.
+Foundation Design System comes with built-in themes definitions using [styled-components ThemeProvider](https://styled-components.com/docs/advanced#theming). Coupled with `@foundation-ui/core` and `@foundation-ui/tokens`, you'll be able to create your custom theme using values from your custom Design Tokens library.
 
-`@foundation/design-system` provide a set of method to help you define your theme, however, you can do it using the technology you want! The `SystemThemeProvider` component used at to root level of your application is optional and can be replaced by your prefered method.
+`@foundation-ui/design-system` provide a set of method to help you define your theme, however, you can do it using the technology you want! The `SystemThemeProvider` component used at to root level of your application is optional and can be replaced by your prefered method.
 
 ### Setup
 
-If you plan to use the `@foundation/design-system` set of methods to generate your theme definition, you'll need to have `@foundation/core` and `@foundation/tokens` dependencies installed to fetch and use Design Tokens from you library in your application. You can use you own implementation if you want since the helpers provided by Foundation Design System are only here to help you quickly define you theme.
+If you plan to use the `@foundation-ui/design-system` set of methods to generate your theme definition, you'll need to have `@foundation-ui/core` and `@foundation-ui/tokens` dependencies installed to fetch and use Design Tokens from you library in your application. You can use you own implementation if you want since the helpers provided by Foundation Design System are only here to help you quickly define you theme.
 
 - Define your theme values
 
@@ -15,7 +15,7 @@ import {
   json_design_tokens,
   GetColorTokenBase,
   GetTokenFromSource,
-} from "@foundation/tokens";
+} from "@foundation-ui/tokens";
 
 export const custom_color_theme = {
   primary: {
@@ -48,7 +48,7 @@ import * as ReactDOM from "react-dom";
 import {
   SystemThemeProvider,
   DesignTokensProvider,
-} from "@foundation/design-system";
+} from "@foundation-ui/design-system";
 
 import { custom_dt_library } from "./yourpath";
 import { custom_color_theme } from "./yourpath";
@@ -73,7 +73,7 @@ Once the setup complete and if you've followed the Foundation Design System guid
 
 ```tsx
 import styled from "styled-components";
-import { Button } from "@foundation/design-system";
+import { Button } from "@foundation-ui/design-system";
 
 const CustomButton = styled(Button)`
     color: ${({ theme }) => theme.colors.primary.contrast};

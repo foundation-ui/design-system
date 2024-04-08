@@ -18,5 +18,5 @@ jobs:
           cache: "pnpm"
 
       - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter @foundation/components build && pnpm --filter @foundation/core build && @foundation/tokens build
-      - run: pnpm --filter @foundation/components test && pnpm --filter @foundation/core test && @foundation/tokens test
+      - run: pnpm -r build
+      - run: pnpm -r test

@@ -10,14 +10,14 @@ import {
   generateTokensFromTemplate,
   generateTokensLibrary,
   generateCSSVariables,
-} from "@foundation/core";
-import { json_design_tokens_template } from "@foundation/tokens";
+} from "@foundation-ui/core";
+import { json_design_tokens_template } from "@foundation-ui/tokens";
 import {
   Page,
   Container,
   ContainerAlignModeEnum,
   Button,
-} from "@foundation/components";
+} from "@foundation-ui/components";
 import {
   ComponentSideEnum,
   ComponentSizeEnum,
@@ -157,7 +157,7 @@ export const Generators = {
             <Container.Col spacing="large">
               <Container>
                 <h4>Design Tokens Generators</h4>
-                <small data-emphasis-level="low">@foundation/core</small>
+                <small data-emphasis-level="low">@foundation-ui/core</small>
               </Container>
 
               <Container.Row

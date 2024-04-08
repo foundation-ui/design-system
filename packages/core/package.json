@@ -1,5 +1,5 @@
 {
-  "name": "@foundation/core",
+  "name": "@foundation-ui/core",
   "version": "0.1.1",
   "description": "",
   "main": "dist/index.js",
@@ -31,6 +31,6 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
-    "@foundation/tokens": "workspace:^"
+    "@foundation-ui/tokens": "workspace:^"
   }
 }

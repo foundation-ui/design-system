@@ -1,4 +1,4 @@
-# @foundation/tokens
+# @foundation-ui/tokens
 
 ## 0.1.1
 

@@ -99,13 +99,13 @@ importers:
 
   apps/stories:
     devDependencies:
-      '@foundation/components':
+      '@foundation-ui/components':
         specifier: workspace:^
         version: link:../../packages/components
-      '@foundation/core':
+      '@foundation-ui/core':
         specifier: workspace:^
         version: link:../../packages/core
-      '@foundation/tokens':
+      '@foundation-ui/tokens':
         specifier: workspace:^
         version: link:../../packages/tokens
       '@types/react':
@@ -132,10 +132,10 @@ importers:
 
   packages/components:
     devDependencies:
-      '@foundation/core':
+      '@foundation-ui/core':
         specifier: workspace:^
         version: link:../core
-      '@foundation/tokens':
+      '@foundation-ui/tokens':
         specifier: workspace:^
         version: link:../tokens
       '@types/react':
@@ -162,7 +162,7 @@ importers:
 
   packages/core:
     dependencies:
-      '@foundation/tokens':
+      '@foundation-ui/tokens':
         specifier: workspace:^
         version: link:../tokens
       '@types/react-dom':

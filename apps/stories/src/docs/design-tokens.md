@@ -24,7 +24,7 @@ Go to the [Generators documentation](?path=/docs/generators--documentation) to r
 ```tsx
 import { StrictMode } from "react";
 import * as ReactDOM from "react-dom";
-import { DesignTokensProvider } from "@foundation/design-system";
+import { DesignTokensProvider } from "@foundation-ui/design-system";
 
 const custom_design_tokens = {
   /**/
@@ -49,7 +49,7 @@ Foundation Design System is styled using CSS in JS with [styled-components](http
 
 ```tsx
 import { createGlobalStyle } from "styled-components";
-import { generateCSSVariables } from "@foundation/design-system";
+import { generateCSSVariables } from "@foundation-ui/design-system";
 
 const custom_design_tokens = {
   /**/

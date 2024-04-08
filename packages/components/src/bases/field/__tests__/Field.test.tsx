@@ -3,7 +3,7 @@ import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Field } from "../";
-import { SystemThemeProvider } from "@foundation/core";
+import { SystemThemeProvider } from "@foundation-ui/core";
 
 const onClickCallback = jest.fn();
 const onChangeCallback = jest.fn();

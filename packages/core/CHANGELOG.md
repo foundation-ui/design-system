@@ -1,4 +1,4 @@
-# @foundation/core
+# @foundation-ui/core
 
 ## 0.1.1
 
@@ -6,4 +6,4 @@
 
 - Create foundation/components,core,tokens packages
 - Updated dependencies
-  - @foundation/tokens@0.1.1
+  - @foundation-ui/tokens@0.1.1

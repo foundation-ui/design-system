@@ -1,5 +1,5 @@
 {
-  "name": "@foundation/stories",
+  "name": "@foundation-ui/stories",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
@@ -13,9 +13,9 @@
   "author": "Nicolas Nunes",
   "license": "ISC",
   "devDependencies": {
-    "@foundation/components": "workspace:^",
-    "@foundation/core": "workspace:^",
-    "@foundation/tokens": "workspace:^",
+    "@foundation-ui/components": "workspace:^",
+    "@foundation-ui/core": "workspace:^",
+    "@foundation-ui/tokens": "workspace:^",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
     "@types/styled-components": "^5.1.34",
