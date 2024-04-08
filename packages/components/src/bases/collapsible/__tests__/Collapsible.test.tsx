@@ -3,7 +3,7 @@ import { screen, render, fireEvent, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Collapsible } from "../";
-import { SystemThemeProvider } from "@foundation/core";
+import { SystemThemeProvider } from "@foundation-ui/core";
 
 const onClickCallback = jest.fn();
 const CollapsibleDefault = (args: {

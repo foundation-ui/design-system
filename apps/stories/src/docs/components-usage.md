@@ -1,6 +1,6 @@
 # Foundation Components
 
-Foundation Design System comes with a set of components located in the `@foundation/components`. They are low-level components with a focus on accessibility, customization and developer experience. `@foundation/components` components are styled using CSS in JS with [styled-components](https://styled-components.com/). While CSS in JS would be preferable, you can still use `className` and combine it with common CSS styles or any css framework to style your components.
+Foundation Design System comes with a set of components located in the `@foundation-ui/components`. They are low-level components with a focus on accessibility, customization and developer experience. `@foundation-ui/components` components are styled using CSS in JS with [styled-components](https://styled-components.com/). While CSS in JS would be preferable, you can still use `className` and combine it with common CSS styles or any css framework to style your components.
 
 ### Accessibility
 
@@ -8,15 +8,15 @@ Foundation Design System Components are tested using [Axe](https://www.deque.com
 
 ### Components API
 
-`@foundation/components` are using the [Compound Component Pattern](https://www.patterns.dev/react/compound-pattern), the components manage their own internal state and share them among the other compound components within the same `Root`.
+`@foundation-ui/components` are using the [Compound Component Pattern](https://www.patterns.dev/react/compound-pattern), the components manage their own internal state and share them among the other compound components within the same `Root`.
 
 > `Root` components always refers to the internal [Context API](https://react.dev/reference/react/useContext) used to share internal states.
 
-`@foundation/components` is made of small UI units that handles common interactions you'll need to build User Interfaces. They can be used as is or combined with other components to handle more complex interactions such as pages shortcuts, collapsible list of actions.. Each Compound Component handle a specific part of
+`@foundation-ui/components` is made of small UI units that handles common interactions you'll need to build User Interfaces. They can be used as is or combined with other components to handle more complex interactions such as pages shortcuts, collapsible list of actions.. Each Compound Component handle a specific part of
 
 ### Components Hierarchy
 
-`@foundation/components` is made of low-level components that handles common interactions you'll need to build User Interfaces. They follows the [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/) and can be used as is or combined with other components to handle more complex interactions such as pages shortcuts, collapsible list of actions.
+`@foundation-ui/components` is made of low-level components that handles common interactions you'll need to build User Interfaces. They follows the [Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/) and can be used as is or combined with other components to handle more complex interactions such as pages shortcuts, collapsible list of actions.
 
 > Components are classified in three categories, based on their usage on a User Interface: `Bases`, `Layers` and `Layouts`.
 
@@ -34,7 +34,7 @@ Foundation Design System Components are tested using [Axe](https://www.deque.com
 
 ### Common Properties
 
-Most `@foundation/components` components are using the same properties to define their styles variants and spacing definitions.
+Most `@foundation-ui/components` components are using the same properties to define their styles variants and spacing definitions.
 When the component has a style definition, the `raw` property is available and enable you to deactivate it if set to `true`.
 The `variant` and `sizing` properties are available for most of `Bases` components.
 the `proximity`, `global` and `spacing` properties are transmited by the `Container` components.

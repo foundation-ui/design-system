@@ -3,7 +3,7 @@ import { render, fireEvent, screen, act } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Button } from "../";
-import { SystemThemeProvider } from "@foundation/core";
+import { SystemThemeProvider } from "@foundation-ui/core";
 import { ComponentVariantEnum } from "../../../../../../types";
 import "@testing-library/jest-dom";
 

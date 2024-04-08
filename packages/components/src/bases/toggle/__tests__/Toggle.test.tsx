@@ -9,7 +9,7 @@ import {
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Toggle } from "../";
-import { SystemThemeProvider } from "@foundation/core";
+import { SystemThemeProvider } from "@foundation-ui/core";
 import "@testing-library/jest-dom";
 
 const onClickCallback = jest.fn();

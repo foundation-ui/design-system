@@ -1,13 +1,13 @@
 # Assets
 
-The assets provided by Foundation Design System are generated using the function described in the [Generators documentation](?path=/docs/generators--documentation). Those are the Design Tokens used by `@foundation/components` when the components are used with the `raw` property set to `false`.
+The assets provided by Foundation Design System are generated using the function described in the [Generators documentation](?path=/docs/generators--documentation). Those are the Design Tokens used by `@foundation-ui/components` when the components are used with the `raw` property set to `false`.
 
 #### Color Design Tokens
 
 ##### Light
 
 ```tsx
-import { colors_light_design_tokens } from '@foundation/design-system': //'@foundation/tokens'
+import { colors_light_design_tokens } from '@foundation-ui/design-system': //'@foundation-ui/tokens'
 ```
 
 <details>
@@ -181,7 +181,7 @@ import { colors_light_design_tokens } from '@foundation/design-system': //'@foun
 ##### Dark
 
 ```tsx
-import { colors_dark_design_tokens } from '@foundation/design-system': //'@foundation/tokens'
+import { colors_dark_design_tokens } from '@foundation-ui/design-system': //'@foundation-ui/tokens'
 ```
 
 <details>
@@ -416,7 +416,7 @@ import { colors_dark_design_tokens } from '@foundation/design-system': //'@found
 ##### System
 
 ```tsx
-import { colors_system_design_tokens } from '@foundation/design-system': //'@foundation/tokens'
+import { colors_system_design_tokens } from '@foundation-ui/design-system': //'@foundation-ui/tokens'
 ```
 
 <details>
@@ -1604,7 +1604,7 @@ import { colors_system_design_tokens } from '@foundation/design-system': //'@fou
 ##### Standard
 
 ```tsx
-import { fontsize_standard_design_tokens } from '@foundation/design-system': //'@foundation/tokens'
+import { fontsize_standard_design_tokens } from '@foundation-ui/design-system': //'@foundation-ui/tokens'
 ```
 
 <details>
@@ -1781,7 +1781,7 @@ import { fontsize_standard_design_tokens } from '@foundation/design-system': //'
 ##### Standard
 
 ```tsx
-import { measurement_standard_design_tokens } from '@foundation/design-system': //'@foundation/tokens'
+import { measurement_standard_design_tokens } from '@foundation-ui/design-system': //'@foundation-ui/tokens'
 ```
 
 <details>
@@ -1938,7 +1938,7 @@ import { measurement_standard_design_tokens } from '@foundation/design-system': 
 ##### Standard
 
 ```tsx
-import { opacity_standard_design_tokens } from '@foundation/design-system': //'@foundation/tokens'
+import { opacity_standard_design_tokens } from '@foundation-ui/design-system': //'@foundation-ui/tokens'
 ```
 
 <details>
@@ -2012,7 +2012,7 @@ import { opacity_standard_design_tokens } from '@foundation/design-system': //'@
 ##### Extended
 
 ```tsx
-import { opacity_extended_design_tokens } from '@foundation/design-system': //'@foundation/tokens'
+import { opacity_extended_design_tokens } from '@foundation-ui/design-system': //'@foundation-ui/tokens'
 ```
 
 <details>
@@ -2088,7 +2088,7 @@ import { opacity_extended_design_tokens } from '@foundation/design-system': //'@
 ##### Standard
 
 ```tsx
-import { depth_standard_design_tokens } from '@foundation/design-system': //'@foundation/tokens'
+import { depth_standard_design_tokens } from '@foundation-ui/design-system': //'@foundation-ui/tokens'
 ```
 
 <details>
@@ -2162,7 +2162,7 @@ import { depth_standard_design_tokens } from '@foundation/design-system': //'@fo
 ##### Extended
 
 ```tsx
-import { depth_extended_design_tokens } from '@foundation/design-system': //'@foundation/tokens'
+import { depth_extended_design_tokens } from '@foundation-ui/design-system': //'@foundation-ui/tokens'
 ```
 
 <details>

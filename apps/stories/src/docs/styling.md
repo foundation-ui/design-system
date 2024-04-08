@@ -1,6 +1,6 @@
 # Styling components
 
-Foundation Design System are styled using CSS in JS with [styled-components](https://styled-components.com/). You can use your prefered styling technique coupled with `@foundation/components` but we recommand you to use it as well to make it easier to access both CSS variables and theme values.
+Foundation Design System are styled using CSS in JS with [styled-components](https://styled-components.com/). You can use your prefered styling technique coupled with `@foundation-ui/components` but we recommand you to use it as well to make it easier to access both CSS variables and theme values.
 
 _Each component comes with styled by default; if you want to use the unstyled version, pass the `raw` property as described by the component doc._
 
@@ -10,7 +10,7 @@ Once the setup complete and if you've followed the Foundation Design System guid
 
 ```tsx
 import { css } from "styled-components";
-import { Button } from "@foundation/design-system";
+import { Button } from "@foundation-ui/design-system";
 
 export const PaddedFlexBox = css`
   display: flex;

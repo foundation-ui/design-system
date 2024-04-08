@@ -1,5 +1,5 @@
 {
-  "name": "@foundation/components",
+  "name": "@foundation-ui/components",
   "version": "0.1.1",
   "description": "",
   "main": "dist/index.js",
@@ -23,8 +23,8 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@foundation/core": "workspace:^",
-    "@foundation/tokens": "workspace:^",
+    "@foundation-ui/core": "workspace:^",
+    "@foundation-ui/tokens": "workspace:^",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
     "@types/styled-components": "^5.1.34",

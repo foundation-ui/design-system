@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { js_design_tokens } from "@foundation/tokens";
+import { js_design_tokens } from "@foundation-ui/tokens";
 import { generateCSSVariables } from "../generators/css-variables";
 
 const cssVariables = generateCSSVariables(js_design_tokens);

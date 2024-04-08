@@ -1,9 +1,9 @@
 # Generators
 
-Foundation Design System comes with a set of methods located in the `@foundation/core` package. These methods are built to generate a stuctured Design Tokens based on a few parameters. Each design token come with a key-value and a set of annotations that you can use in your application.
+Foundation Design System comes with a set of methods located in the `@foundation-ui/core` package. These methods are built to generate a stuctured Design Tokens based on a few parameters. Each design token come with a key-value and a set of annotations that you can use in your application.
 
 Foundation Design System provides a set of ratio to generate your Measurement Design Tokens. It is based on this [documentation](https://www.modularscale.com/) from [Scott Kellum](https://scottkellum.com/) and [Tim Brown](https://twitter.com/nicewebtype).
-Here is the set of ratio, you can import it using `import { RatioEnum } from "@foundation/design-system"` in your code.
+Here is the set of ratio, you can import it using `import { RatioEnum } from "@foundation-ui/design-system"` in your code.
 
 ```ts
 enum RatioEnum {
@@ -53,7 +53,7 @@ interface ITemplateValues {
 Here is an integration sample:
 
 ```ts
-import { generateTokensLibrary } from "@foundation/design-system";
+import { generateTokensLibrary } from "@foundation-ui/design-system";
 
 const design_tokens_library = generateTokensLibrary(
   "custom-design-tokens-library",
@@ -117,7 +117,7 @@ interface ITemplateValues {
 Here is an integration sample:
 
 ```ts
-import { generateTokensFromTemplate } from "@foundation/design-system";
+import { generateTokensFromTemplate } from "@foundation-ui/design-system";
 
 const design_tokens_set = generateTokensFromTemplate({
   type: "measurement",
@@ -152,7 +152,7 @@ interface IColorVariationsParams {
 Here is an integration sample:
 
 ```ts
-import { generateColorTokens } from "@foundation/design-system";
+import { generateColorTokens } from "@foundation-ui/design-system";
 
 const color_design_tokens_set = generateColorTokens("red", "FF0000", {
   alpha: true,
@@ -184,7 +184,7 @@ interface IMeasurementParams {
 Here is an integration sample:
 
 ```ts
-import { generateColorTokens } from "@foundation/design-system";
+import { generateColorTokens } from "@foundation-ui/design-system";
 
 const spacing_design_tokens_set = generateMeasurementTokens(
   "spacing-base", // name
@@ -217,7 +217,7 @@ interface ISequenceParams {
 Here is an integration sample:
 
 ```ts
-import { generateSequenceTokens } from "@foundation/design-system";
+import { generateSequenceTokens } from "@foundation-ui/design-system";
 
 const depth_design_tokens_set = generateSequenceTokens(
   "depth-base", // name

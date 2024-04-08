@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { design_system_themes } from "@foundation/tokens";
+import { design_system_themes } from "@foundation-ui/tokens";
 import { ColorModeContext } from "./ColorModeProvider";
 
 import { ColorModesEnum, IReactChildren } from "../../../../types";
@@ -20,6 +20,8 @@ export const SystemThemeProvider = ({
 
     if (mode === ColorModesEnum.Dark) return design_system_themes.dark_mono;
     if (mode === ColorModesEnum.Light) return design_system_themes.light_mono;
+
+    return design_system_themes.dark;
   };
 
   return (
