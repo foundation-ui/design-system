@@ -1,0 +1,35 @@
+name: "Release Workflow"
+on:
+  # No auto run
+  workflow_dispatch:
+
+permissions:
+  contents: write # Checkout and tags
+  pull-requests: write # Comments
+  packages: write # Publish
+
+jobs:
+  test-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.SECRET_TOKEN }}
+      - uses: actions/setup-node@v2
+        with:
+          node-version: lts/*
+      - name: Install package
+        run: pnpm
+      - name: Build package
+        run: pnpm --filter @foundation/components build && pnpm --filter @foundation/core build && @foundation/tokens build
+      - name: Run Unit Test
+        run: pnpm --filter @foundation/components build && pnpm --filter @foundation/core build && @foundation/tokens build
+      - name: Bumb versions and publish with changeset
+        run: |
+          # Bump versions
+          pnpm changeset version
+          git status
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          YOUR_REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
