@@ -1,5 +1,5 @@
 import React from "react";
-import { useKeyPress } from "../../../../core";
+import { useKeyPress } from "@foundation-ui/core";
 
 import { ToolbarProvider, useToolbar } from "./hooks";
 import { ToolbarWrapper, ToolbarTriggerWrapper } from "./styles";
