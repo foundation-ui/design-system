@@ -1,6 +1,6 @@
 {
   "name": "@foundation/design-system",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "",
   "scripts": {
     "storybook": "storybook dev -p 6006",
@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.24.0",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
+    "@changesets/cli": "^2.27.1",
     "@storybook/addon-essentials": "^7.6.17",
     "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
