@@ -5,7 +5,9 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "release": "pnpm changeset version && git status"
+    "release": "pnpm changeset version && git status",
+    "test:all": "pnpm exec nx run-many -t test",
+    "build:all": "pnpm exec nx run-many -t affected:build"
   },
   "keywords": [],
   "author": "Nicolas Nunes",
@@ -38,6 +40,7 @@
     "jest": "^29.7.0",
     "jest-axe": "^8.0.0",
     "jest-environment-jsdom": "^29.7.0",
+    "nx": "^18.2.4",
     "storybook": "^7.6.17",
     "styled-components": "^6.1.8",
     "tsup": "^8.0.2",
