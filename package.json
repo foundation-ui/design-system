@@ -2,6 +2,13 @@
   "name": "@foundation-ui/design-system",
   "version": "0.0.0",
   "description": "",
+  "keywords": [],
+  "author": "Nicolas Nunes",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:foundation-ui/design-system.git"
+  },
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -9,9 +16,6 @@
     "test:all": "pnpm exec nx run-many -t test",
     "build:all": "pnpm exec nx run-many -t build"
   },
-  "keywords": [],
-  "author": "Nicolas Nunes",
-  "license": "ISC",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
