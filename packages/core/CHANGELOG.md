@@ -1,5 +1,13 @@
 # @foundation-ui/core
 
+## 0.2.1
+
+### Patch Changes
+
+- 3494bd0: Update release script
+- Updated dependencies [3494bd0]
+  - @foundation-ui/tokens@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes
