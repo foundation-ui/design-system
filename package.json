@@ -5,7 +5,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "release": "pnpm changeset version && pnpm changeset publish && git status"
+    "release": "pnpm changeset version && git status"
   },
   "keywords": [],
   "author": "Nicolas Nunes",
