@@ -192,3 +192,6 @@ storybook-static/
 
 # and uncomment the following lines
 # .pnp.*
+
+# Nx
+.nx/cache
