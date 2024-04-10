@@ -7,7 +7,7 @@
     "build-storybook": "storybook build",
     "release": "pnpm changeset version && git status",
     "test:all": "pnpm exec nx run-many -t test",
-    "build:all": "pnpm exec nx run-many -t affected:build"
+    "build:all": "pnpm exec nx run-many -t build"
   },
   "keywords": [],
   "author": "Nicolas Nunes",
