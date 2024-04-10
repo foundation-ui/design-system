@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 0.2.1
+
+### Patch Changes
+
+- 3494bd0: Update release script
+
 ## 0.2.0
 
 ### Minor Changes
