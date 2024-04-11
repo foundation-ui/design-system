@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 0.2.2
+
+### Patch Changes
+
+- d27b930: Update CI/CD actions
+
 ## 0.2.1
 
 ### Patch Changes
