@@ -1,9 +1,8 @@
 name: Prepare CD
 on:
-  workflow_run:
-    workflows: [CI]
+  push:
+  pull_request:
     branches: [version]
-    types: [completed]
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
