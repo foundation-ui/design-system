@@ -1,5 +1,13 @@
 # @foundation-ui/core
 
+## 0.2.2
+
+### Patch Changes
+
+- d27b930: Update CI/CD actions
+- Updated dependencies [d27b930]
+  - @foundation-ui/tokens@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
