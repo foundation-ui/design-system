@@ -1,0 +1,8 @@
+# name: CD
+# on:
+#   push:
+#   pull_request:
+#     branches: ["main"]
+#   workflow_run:
+#     workflows: [Prepare CD]
+#     types: [completed]
