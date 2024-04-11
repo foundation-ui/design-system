@@ -31,12 +31,6 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Create Version
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          publish: pnpm ci:version
-
       - name: Publish Packages
         run: ci:publish
 
