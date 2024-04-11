@@ -18,6 +18,7 @@
     "test:all": "pnpm exec nx run-many -t test",
     "build:all": "pnpm exec nx run-many -t build",
     "release": "pnpm build:all && changeset version && changeset publish",
+    "ci:version": "changeset version",
     "ci:publish": "pnpm publish -r"
   },
   "dependencies": {
