@@ -9,12 +9,15 @@
     "type": "git",
     "url": "git@github.com:foundation-ui/design-system.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@foundation-ui"
+  },
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "release": "pnpm changeset version && changeset publish",
     "test:all": "pnpm exec nx run-many -t test",
-    "build:all": "pnpm exec nx run-many -t build"
+    "build:all": "pnpm exec nx run-many -t build",
+    "release": "pnpm build:all && changeset version && changeset publish"
   },
   "dependencies": {
     "react": "^18.2.0",
