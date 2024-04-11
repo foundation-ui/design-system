@@ -2,45 +2,27 @@
 
 Open Source Design System providing low-level components and foundations to help you build high-quality, accessible applications.
 
----
-
 ### Technologies
 
-<ul>
-    <li>
-        <a href='https://react.dev/'>React</a>
-    </li>
-    <li>
-        <a href='https://www.typescriptlang.org/'>Typescript</a>
-    </li>
-    <li>
-        <a href=''>pnpm Workspace</a>
-    </li>
-    <li>
-        <a href='https://testing-library.com/docs'>React Testing Library</a>
-    </li>
-    <li>
-        <a href='https://www.deque.com/axe/'>Axe</a>
-    </li>
-    <li>
-        <a href='https://storybook.js.org/'>Storybook</a>
-    </li>
-    <li>
-        <a href='https://www.chromatic.com/'>Chromatic</a>
-    </li>
-    <li>
-        <a href='https://github.com/features/actions'>GitHub Actions</a>
-    </li>
-</ul>
+- [React]('https://react.dev/')
+- [Typescript]('https://www.typescriptlang.org/')
+- [React Testing Library]('https://testing-library.com/docs')
+- [Axe]('https://www.deque.com/axe/')
+- [Storybook]('https://react.dev/')
+- [pnpm Workspace]('https://pnpm.io/')
+- [Changesets]('https://github.com/changesets/changesets')
+- [GitHub Actions]('https://react.dev/')
 
----
+### CI/CD
 
-### Licenses
+<!--
+#### Adding new changesets
 
-All files on the [Foundation Design System](https://github.com/foundation-ui/design-system) GitHub repository are subject to the MIT license. Please read the License file at the root of the project.
+To generate a new changeset, run pnpm changeset in the root of the repository. The generated markdown files in the .changeset directory should be committed to the repository.
 
----
+##### Releasing changes
 
-### Changelog
-
-You can view the complete list of additions, fixes, and changes in the CHANGELOG.md file for each package.
+Run pnpm changeset version. This will bump the versions of the packages previously specified with pnpm changeset (and any dependents of those) and update the changelog files.
+Run pnpm install. This will update the lockfile and rebuild packages.
+Commit the changes.
+Run pnpm publish -r. This command will publish all packages that have bumped versions not yet present in the registry. -->
