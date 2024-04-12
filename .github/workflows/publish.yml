@@ -1,12 +1,13 @@
 name: Publish Packages
 on:
+  push:
+    tags:
+      - "v*"
+
   workflow_run:
     workflows: [CI]
     branches: [main]
     types: [completed]
-  push:
-    tags:
-      - "v*"
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -16,7 +17,7 @@ permissions:
   packages: write
 
 jobs:
-  publish:
+  release:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
@@ -38,7 +39,10 @@ jobs:
         run: pnpm ci:version
 
       - name: Publish Packages
-        run: pnpm -r publish --no-git-checks
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm -r publish --no-git-checks
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
