@@ -31,8 +31,11 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Prepare Version
+        run: pnpm ci:version
+
       - name: Publish Packages
-        run: pnpm ci:publish
+        run: pnpm -r publish --no-git-checks
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -17,7 +17,7 @@
     "build-storybook": "storybook build",
     "ci:test": "pnpm exec nx run-many -t test",
     "ci:build": "pnpm exec nx run-many -t build",
-    "ci:publish": "pnpm changeset version && pnpm -r publish"
+    "ci:version": "pnpm changeset version"
   },
   "dependencies": {
     "react": "^18.2.0",
