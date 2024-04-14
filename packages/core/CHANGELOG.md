@@ -1,5 +1,26 @@
 # @foundation-ui/core
 
+## 0.3.0
+
+### Minor Changes
+
+- e3dc43e: Deploy Foundation UI Packages
+- aba3555: Publish Foundation UI Packages
+- c46fcc4: Deploy Foundation UI Packages
+
+### Patch Changes
+
+- 53f8b62: Edit CI/CD scripts
+- d152bc6: Deploy Foundation UI Packages
+- ec063de: Edit actions
+- Updated dependencies [53f8b62]
+- Updated dependencies [e3dc43e]
+- Updated dependencies [d152bc6]
+- Updated dependencies [aba3555]
+- Updated dependencies [c46fcc4]
+- Updated dependencies [ec063de]
+  - @foundation-ui/tokens@0.3.0
+
 ## 0.2.2
 
 ### Patch Changes
