@@ -4,6 +4,9 @@ on:
     workflows: [CI]
     branches: [main]
     types: [completed]
+  push:
+    tags:
+      - "v*"
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
