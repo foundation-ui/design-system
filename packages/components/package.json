@@ -1,6 +1,6 @@
 {
   "name": "@foundation-ui/components",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -17,6 +17,9 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:foundation-ui/design-system.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@foundation-ui"
   },
   "peerDependencies": {
     "@types/react": "*",
