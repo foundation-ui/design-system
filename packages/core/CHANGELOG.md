@@ -1,5 +1,13 @@
 # @foundation-ui/core
 
+## 0.3.3
+
+### Patch Changes
+
+- 7ce56bd: Edit docs and pipelines
+- Updated dependencies [7ce56bd]
+  - @foundation-ui/tokens@0.3.3
+
 ## 0.3.2
 
 ### Patch Changes
