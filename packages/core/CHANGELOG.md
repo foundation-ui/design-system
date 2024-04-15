@@ -1,5 +1,13 @@
 # @foundation-ui/core
 
+## 0.3.4
+
+### Patch Changes
+
+- ee1f4a0: Edit docs
+- Updated dependencies [ee1f4a0]
+  - @foundation-ui/tokens@0.3.4
+
 ## 0.3.3
 
 ### Patch Changes

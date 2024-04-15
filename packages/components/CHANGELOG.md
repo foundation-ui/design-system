@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 0.3.4
+
+### Patch Changes
+
+- ee1f4a0: Edit docs
+
 ## 0.3.3
 
 ### Patch Changes
