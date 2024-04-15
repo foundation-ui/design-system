@@ -1,5 +1,13 @@
 # @foundation-ui/core
 
+## 0.3.5
+
+### Patch Changes
+
+- Update CI
+- Updated dependencies
+  - @foundation-ui/tokens@0.3.5
+
 ## 0.3.4
 
 ### Patch Changes
