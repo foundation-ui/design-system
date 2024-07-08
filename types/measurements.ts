@@ -24,15 +24,9 @@ export enum RatioEnum {
   GoldenRatio = 1.618 / 1,
 }
 
-export type TSize =
-  | SizesEnum.XSmall
-  | SizesEnum.Small
-  | SizesEnum.Medium
-  | SizesEnum.Large
-  | SizesEnum.XLarge;
-export type TScaleVariant =
-  | MeasureVariantEnum.FontSize
-  | MeasureVariantEnum.Measurement;
+export type TSize = "xsmall" | "small" | "medium" | "large" | "xlarge";
+export type TScaleVariant = "fontsize" | "measurement";
+export type TScaleFormat = "px" | "rem" | "pt";
 
 export interface IScaleVariation {
   px: number;

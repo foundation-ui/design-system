@@ -29,7 +29,6 @@ export const generateColorTokens = (
   }
 ) => {
   const HEXRegExp = new RegExp("^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
-
   if (!HEXRegExp.test(hex)) return;
   return {
     name: name,
@@ -54,7 +53,7 @@ export const generateMeasurementTokens = (
   base: number,
   units: number,
   ratio: number,
-  variant: MeasureVariantEnum
+  _variant?: MeasureVariantEnum
 ) => {
   return {
     name: name,

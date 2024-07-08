@@ -1,6 +1,6 @@
 import React from "react";
 import { IDesignTokensLibrary } from "../../../../types";
-import { js_design_tokens } from "..";
+import { js_design_tokens } from "../";
 
 export const DesignTokensContext = React.createContext<null | any>({});
 export const useDesignTokens = () => React.useContext(DesignTokensContext);

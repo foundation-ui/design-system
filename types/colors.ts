@@ -29,25 +29,20 @@ export enum LuminanceFactorsEnum {
   Lum100 = 1,
 }
 
-export type TColorMode =
-  | ColorModesEnum.Dark
-  | ColorModesEnum.Light
-  | ColorModesEnum.System;
+export type TColorMode = "dark" | "light" | "system";
 export type THex = string;
 export type TTone = number;
-export type TMode = ColorModesEnum.Darken | ColorModesEnum.Lighten;
+export type TMode = "darken" | "lighten";
 export type TLuminance = LuminanceFactorsEnum | undefined;
-export type TColorVariant =
-  | ColorVariantEnum.Alpha
-  | ColorVariantEnum.Tint
-  | ColorVariantEnum.Shade;
+export type TColorVariant = "alpha" | "tint" | "shade";
+export type TColorFormat = "hex" | "rgb" | "hsl";
 
 export interface IContrastScore {
   light: string;
   dark: string;
 }
 export interface IColorVariation {
-  hex?: THex;
+  hex?: string;
   rgb?: string;
   hsl?: string;
   contrast_score?: IContrastScore;

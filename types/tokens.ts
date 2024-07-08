@@ -1,10 +1,10 @@
 import {
-  ColorFormatEnum,
+  TColorFormat,
   TScaleVariant,
   IColorVariation,
   IScaleVariation,
   ISequenceVariation,
-  MeasurementFormatEnum,
+  TScaleFormat,
 } from "./";
 
 export enum TokenTypesEnum {
@@ -13,13 +13,13 @@ export enum TokenTypesEnum {
   Color = "color",
 }
 
-export type TDesignTokensVariant = TokenTypesEnum.Color | TScaleVariant;
+export type TDesignTokensVariant = "color" | TScaleVariant;
 
 export interface IQueryProperties {
   source: IDesignTokensLibrary;
   token_category: "color" | "measurement" | "fontsize" | "depth" | "opacity";
   query: string;
-  unit?: ColorFormatEnum | MeasurementFormatEnum;
+  unit?: TColorFormat | TScaleFormat;
 }
 export interface IComposedLibraryItem {
   name?: string;

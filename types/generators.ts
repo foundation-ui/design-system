@@ -1,5 +1,3 @@
-import { TokenTypesEnum, MeasureVariantEnum, SequenceVariantEnum } from ".";
-
 export type TModularScalesOptions = {
   base: number;
   ratio: [number];

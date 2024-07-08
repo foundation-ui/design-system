@@ -7,5 +7,10 @@
     "resolveJsonModule": true,
     "strict": false
   },
-  "include": ["./src"]
+  "include": [
+    "./src",
+    "../tokens/src/contexts/__tests__/ColorModeProvider.test.tsx",
+    "../tokens/src/contexts/__tests__/DesignTokensProvider.test.tsx",
+    "../tokens/src/contexts/__tests__/SystemThemeProvider.test.tsx"
+  ]
 }

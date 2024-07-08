@@ -30,20 +30,9 @@ export enum KeyBindingEnum {
 }
 
 export type TComponentAPI = boolean | string | number | null;
-export type TComponentSize =
-  | ComponentSizeEnum.Small
-  | ComponentSizeEnum.Medium
-  | ComponentSizeEnum.Large;
-export type TComponentVariant =
-  | ComponentVariantEnum.Primary
-  | ComponentVariantEnum.Secondary
-  | ComponentVariantEnum.Tertiary
-  | ComponentVariantEnum.Ghost;
-export type TKeyBinding =
-  | KeyBindingEnum.Ctrl
-  | KeyBindingEnum.Meta
-  | KeyBindingEnum.Alt
-  | KeyBindingEnum.Shift;
+export type TComponentSize = "small" | "medium" | "large";
+export type TComponentVariant = "primary" | "secondary" | "tertiary" | "ghost";
+export type TKeyBinding = "ctrlKey" | "metaKey" | "altKey" | "shiftKey";
 
 export interface IComponentAPI {
   id: string;
@@ -54,16 +43,16 @@ export interface IComponentStyling {
   raw?: boolean;
 }
 export interface IComponentSize {
-  sizing?: ComponentSizeEnum;
+  sizing?: TComponentSize;
 }
 export interface IComponentVariant {
-  variant?: ComponentVariantEnum;
+  variant?: TComponentVariant;
 }
 export interface IComponentControlProperties {
   shortcut?: boolean;
   hotkey?: string;
-  bindkey?: KeyBindingEnum;
+  bindkey?: TKeyBinding;
 }
 export interface IComponentSpacing {
-  spacing?: ComponentSizeEnum;
+  spacing?: TComponentSize;
 }
