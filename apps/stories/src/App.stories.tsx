@@ -1,23 +1,25 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import type { Meta } from "@storybook/react";
 
 import {
-  ColorModeContext,
   generateColorTokens,
   generateMeasurementTokens,
   generateSequenceTokens,
   generateTokensFromTemplate,
   generateTokensLibrary,
   generateCSSVariables,
+  generateSizeClasses,
+  generateLayoutClasses,
 } from "@foundation-ui/core";
-import { json_design_tokens_template } from "@foundation-ui/tokens";
 import {
-  Page,
-  Container,
-  ContainerAlignModeEnum,
-  Button,
-} from "@foundation-ui/components";
+  ColorModeContext,
+  json_design_tokens_template,
+  js_design_tokens,
+  GetColorTokenBase,
+  GetTokenFromSource,
+} from "@foundation-ui/tokens";
+import { Page, Button } from "@foundation-ui/components";
 import {
   ComponentSideEnum,
   ComponentSizeEnum,
@@ -26,7 +28,7 @@ import {
 } from "../../../types";
 
 const meta = {
-  title: "Sandbox/Design Tokens Generators",
+  title: "Sandbox/Token Engine",
   component: Page,
 } satisfies Meta<typeof Page>;
 export default meta;
@@ -36,7 +38,7 @@ const GENERATORS = [
     label: "color",
     desc: "Generate a color Design token definition with variations",
     args: "generateColorTokens",
-    fn: generateColorTokens("black", "212121", {
+    fn: generateColorTokens("black", "ED4A35", {
       alpha: true,
       tint: true,
       shade: true,
@@ -126,118 +128,93 @@ export const Generators = {
     const updateColorMode = () =>
       darkMode ? setColorMode("light") : setColorMode("dark");
 
+    console.log(
+      generateSizeClasses(js_design_tokens.design_tokens.measurement)
+    );
+
+    console.log(generateLayoutClasses());
     return (
       <Page>
-        <Container.Col style={{ height: "100dvh" }}>
+        <section style={{ height: "100dvh", width: "100%" }}>
           <Page.Navigation>
-            <Container.Row
-              spacing={ComponentSizeEnum.Small}
-              alignmode={ContainerAlignModeEnum.SpaceBetween}
-              style={{ alignItems: "center" }}
+            <Button
+              variant="ghost"
+              sizing="small"
+              onClick={updateColorMode}
+              title={darkMode ? "Light" : "Dark"}
             >
-              <svg height="24" viewBox="0 0 16 36" fill="none">
-                <path
-                  d="M12.3494 0H6.75716V2.14559H4.50505V4.37077H2.33008V6.51656H0V9.37749H2.33008V13.1126V15.4173H0V18.2782H2.33008V26.5431V29.404V31.629V33.1392H0.077474V36.0001H2.87359V33.6158H5.04852V31.629H7.22328V29.404H9.55338V26.5431H7.22328V18.2782H7.2233V15.9736H9.55338V13.7483H11.7283V10.8874H7.22328V9.37749H7.2233V6.51656H7.22328V5.00652H8.77653V7.2317H10.9515V9.37749H13.7476V7.2317H15.9998V4.37077H13.8254V2.14559H12.3494V0Z"
-                  fill={darkMode ? "white" : "black"}
-                />
-              </svg>
-
-              <Button
-                variant="ghost"
-                sizing={ComponentSizeEnum.Small}
-                onClick={updateColorMode}
-                title={darkMode ? "Light" : "Dark"}
-              >
-                {darkMode ? "🌝" : "🌚"}
-              </Button>
-            </Container.Row>
+              {darkMode ? "🌝" : "🌚"}
+            </Button>
           </Page.Navigation>
 
           <Page.Content>
-            <Container.Col spacing="large">
-              <Container>
-                <h4>Design Tokens Generators</h4>
-                <small data-emphasis-level="low">@foundation-ui/core</small>
-              </Container>
+            <hgroup>
+              <h4 className="p-b-small-60">Token Engine</h4>
+              <small data-emphasis-level="low">@foundation-ui/core</small>
+            </hgroup>
 
-              <Container.Row
-                spacing={ComponentSizeEnum.Medium}
-                style={{
-                  flexWrap: "wrap",
-                  marginBottom: "var(--measurement-large-90)",
-                }}
-              >
-                {GENERATORS.map((item) => (
-                  <Card key={item.label}>
-                    <Container.Row
-                      alignmode="space-between"
-                      style={{ alignItems: "center" }}
-                    >
-                      <p style={{ textTransform: "capitalize" }}>
-                        {item.label}
-                        <br />
-                        <small data-emphasis-level="low">{item.args}</small>
-                      </p>
-                      <Button
-                        variant="secondary"
-                        sizing={ComponentSizeEnum.Small}
-                        onClick={() => setGenerated(JSON.stringify(item.fn))}
-                      >
-                        ↗
-                      </Button>
-                    </Container.Row>
+            {GENERATORS.map((item) => (
+              <Card key={item.label}>
+                <p style={{ textTransform: "capitalize" }}>
+                  {item.label}
+                  <br />
+                  <small data-emphasis-level="low">{item.args}</small>
+                </p>
+                <Button
+                  variant="secondary"
+                  sizing="small"
+                  onClick={() => setGenerated(JSON.stringify(item.fn))}
+                >
+                  ↗
+                </Button>
 
-                    <p data-emphasis-level="low">{item.desc}</p>
-                  </Card>
-                ))}
-              </Container.Row>
-            </Container.Col>
+                <p data-emphasis-level="low">{item.desc}</p>
+              </Card>
+            ))}
           </Page.Content>
 
           <Page.Panel
             shortcut
             hotkey=","
             side={ComponentSideEnum.Bottom}
-            sizing={ComponentSizeEnum.Large}
+            sizing="large"
             fixed
             defaultOpen
           >
-            <Container proximity spacing="medium">
-              <Container.Row spacing="medium">
-                <Button
-                  onClick={() =>
-                    navigator.clipboard
-                      .writeText(generated)
-                      .then(() => alert("Output copied!"))
-                  }
-                  disabled={generated === ""}
-                  sizing={ComponentSizeEnum.Small}
-                >
-                  Output
-                </Button>
-                <Button
-                  onClick={() => {
-                    setGenerated("");
-                  }}
-                  disabled={generated === ""}
-                  sizing={ComponentSizeEnum.Small}
-                >
-                  Clear
-                </Button>
-              </Container.Row>
-
-              <code
-                data-emphasis-level="low"
-                style={{
-                  fontSize: "66%",
-                  opacity: 0.8,
-                }}
+            <div className="flex justify-start align-center g-medium-10">
+              <Button
+                onClick={() =>
+                  navigator.clipboard
+                    .writeText(generated)
+                    .then(() => alert("Output copied!"))
+                }
+                disabled={generated === ""}
+                sizing="small"
               >
-                {generated}
-              </code>
-            </Container>
+                Output
+              </Button>
+              <Button
+                onClick={() => {
+                  setGenerated("");
+                }}
+                disabled={generated === ""}
+                sizing="small"
+              >
+                Clear
+              </Button>
+            </div>
+
+            <code
+              data-emphasis-level="low"
+              style={{
+                fontSize: "66%",
+                opacity: 0.8,
+              }}
+            >
+              {generated}
+            </code>
           </Page.Panel>
-        </Container.Col>
+        </section>
       </Page>
     );
   },

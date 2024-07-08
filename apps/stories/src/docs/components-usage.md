@@ -37,15 +37,11 @@ Foundation Design System Components are tested using [Axe](https://www.deque.com
 Most `@foundation-ui/components` components are using the same properties to define their styles variants and spacing definitions.
 When the component has a style definition, the `raw` property is available and enable you to deactivate it if set to `true`.
 The `variant` and `sizing` properties are available for most of `Bases` components.
-the `proximity`, `global` and `spacing` properties are transmited by the `Container` components.
 
-| Name        | Description                                                 | Type      | Enum                                                     | Default |
-| ----------- | ----------------------------------------------------------- | --------- | -------------------------------------------------------- | ------- |
-| `raw`       | Define whether the component is styled or not.              | `boolean` | -                                                        | `false` |
-| `variant`   | The style definition used by the component.                 | `string`  | `primary` `secondary` `tertiary` `border` `mono` `ghost` | -       |
-| `sizing`    | The size definition used by the component.                  | `string`  | `small` `medium` `large`                                 | -       |
-| `proximity` | Define if the inner components has spacing.                 | `boolean` | -                                                        | -       |
-| `global`    | Define if the inner spacings are applied to every children. | `boolean` | -                                                        | -       |
-| `spacing`   | The spacing definition used by the component.               | `string`  | `small` `medium` `large`                                 | -       |
+| Name      | Description                                    | Type      | Enum                                                     | Default |
+| --------- | ---------------------------------------------- | --------- | -------------------------------------------------------- | ------- |
+| `raw`     | Define whether the component is styled or not. | `boolean` | -                                                        | `false` |
+| `variant` | The style definition used by the component.    | `string`  | `primary` `secondary` `tertiary` `border` `mono` `ghost` | -       |
+| `sizing`  | The size definition used by the component.     | `string`  | `small` `medium` `large`                                 | -       |
 
 Read the Component's Story file on [github](https://github.com/foundation-ui/design-system/tree/main/packages/components/src) to know more about the implementation.

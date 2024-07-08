@@ -5,14 +5,13 @@ import theme from "./theme";
 import { Preview } from "@storybook/react";
 import DocumentationTemplate from "./DocumentationTemplate.mdx";
 import { DesignTokensProvider } from "../packages/tokens";
+import { ColorModeProvider, SystemThemeProvider } from "../packages/tokens";
 import {
   CSSRoot,
   ResetStyles,
   TypographyColors,
   TypographySizing,
-  ColorModeProvider,
-  SystemThemeProvider,
-} from "../packages/core";
+} from "../packages/styles";
 
 const StoriesWrapepr = styled.div`
   position: absolute;

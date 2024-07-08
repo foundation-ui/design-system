@@ -1,0 +1,36 @@
+{
+  "name": "@foundation-ui/styles",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
+  "keywords": [],
+  "author": "Nicolas Nunes",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:foundation-ui/design-system.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@foundation-ui"
+  },
+  "peerDependencies": {
+    "@types/styled-components": "*",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.34",
+    "polished": "^4.3.1",
+    "styled-components": "^6.1.11",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@foundation-ui/tokens": "workspace:^",
+    "@foundation-ui/core": "workspace:^"
+  }
+}

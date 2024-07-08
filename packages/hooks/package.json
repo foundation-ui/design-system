@@ -1,0 +1,36 @@
+{
+  "name": "@foundation-ui/hooks",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --coverage",
+    "test:coverage": "open coverage/lcov-report/index.html",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "tsc"
+  },
+  "keywords": [],
+  "author": "Nicolas Nunes",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:foundation-ui/design-system.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@foundation-ui"
+  },
+  "peerDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "react": "^18.3.1",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {}
+}
