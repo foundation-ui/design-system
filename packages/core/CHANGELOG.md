@@ -1,5 +1,11 @@
 # @foundation-ui/core
 
+## 0.4.0
+
+### Minor Changes
+
+- Update components, monorepo structure, add css classes generators
+
 ## 0.3.5
 
 ### Patch Changes
