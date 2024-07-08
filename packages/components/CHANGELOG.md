@@ -1,5 +1,12 @@
 # @foundation-ui/components
 
+## 0.5.0
+
+### Minor Changes
+
+- 7ee55c3: GH actions update
+- Update Publish GH Actions
+
 ## 0.4.0
 
 ### Minor Changes

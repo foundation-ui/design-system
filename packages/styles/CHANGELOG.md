@@ -1,5 +1,19 @@
 # @foundation-ui/styles
 
+## 0.2.0
+
+### Minor Changes
+
+- 7ee55c3: GH actions update
+- Update Publish GH Actions
+
+### Patch Changes
+
+- Updated dependencies [7ee55c3]
+- Updated dependencies
+  - @foundation-ui/core@0.5.0
+  - @foundation-ui/tokens@0.5.0
+
 ## 0.1.0
 
 ### Minor Changes
