@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 0.6.0
+
+### Minor Changes
+
+- Components maintenance, Add User Behavior Analytics Hooks
+
 ## 0.5.0
 
 ### Minor Changes

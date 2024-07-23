@@ -1,5 +1,16 @@
 # @foundation-ui/core
 
+## 0.6.0
+
+### Minor Changes
+
+- Components maintenance, Add User Behavior Analytics Hooks
+
+### Patch Changes
+
+- Updated dependencies
+  - @foundation-ui/hooks@0.3.0
+
 ## 0.5.0
 
 ### Minor Changes

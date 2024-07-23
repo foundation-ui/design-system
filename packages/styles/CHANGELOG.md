@@ -1,5 +1,17 @@
 # @foundation-ui/styles
 
+## 0.3.0
+
+### Minor Changes
+
+- Components maintenance, Add User Behavior Analytics Hooks
+
+### Patch Changes
+
+- Updated dependencies
+  - @foundation-ui/core@0.6.0
+  - @foundation-ui/tokens@0.6.0
+
 ## 0.2.0
 
 ### Minor Changes
