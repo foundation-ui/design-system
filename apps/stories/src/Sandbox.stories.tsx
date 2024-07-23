@@ -2,7 +2,10 @@ import React from "react";
 import styled, { css } from "styled-components";
 import type { Meta } from "@storybook/react";
 
-// import { BehaviorProvider, useBehavior } from "@foundation-ui/core";
+import { ColorModeContext } from "@foundation-ui/tokens";
+import { useBehaviorAnalytics, useABTesting } from "@foundation-ui/core";
+import { useSaveOnUnload } from "@foundation-ui/hooks";
+
 import { Page, Button } from "@foundation-ui/components";
 
 const meta = {
@@ -11,166 +14,180 @@ const meta = {
 } satisfies Meta<typeof Page>;
 export default meta;
 
-interface IAnalyticsProperties {
-  type: string;
-  origin: string;
-  funnel: string;
-  recurrence: number;
-  description?: string;
-  occured_at?: string;
-}
-interface IPageAnalyticsProperties {
-  path: string;
-  previous?: string;
-  visited_at: string;
-  timespan: string;
-  time_before_interact: string;
-}
-interface IBehaviorProperties {
-  session_start: string;
-  session_stop: string;
-  browser: string;
-  device: string;
-  interactions: IAnalyticsProperties[] | [];
-  history: IPageAnalyticsProperties[] | [];
-  errors: IAnalyticsProperties[] | [];
-  updateInteractionsTracker: Function;
-  updateHistoryTracker: Function;
-  updateErrorsTracker: Function;
-  updateSessionData: Function;
-}
+const TRACKED_ITEMS = [
+  "primary-funnel-trigger",
+  "secondary-funnel-trigger",
+  "tertiary-funnel-trigger",
+];
 
-const BehaviorContext = React.createContext<IBehaviorProperties>({
-  session_start: "",
-  session_stop: "",
-  browser: "",
-  device: "",
-  interactions: [],
-  history: [],
-  errors: [],
-  updateInteractionsTracker: () => null,
-  updateHistoryTracker: () => null,
-  updateErrorsTracker: () => null,
-  updateSessionData: () => null,
-});
+const AB_CONFIG = {
+  enabled: true,
+  randomize: {
+    defaultVersion: 0,
+    targetVersion: 2,
 
-export const BehaviorProvider = ({
-  children,
-}: React.PropsWithChildren): JSX.Element => {
-  const context = useBehaviorProvider();
-
-  return (
-    <BehaviorContext.Provider value={context}>
-      {children}
-    </BehaviorContext.Provider>
-  );
+    triggerKey: 1,
+    threshold: 2,
+  },
+  variations: [
+    {
+      theme: "dark",
+      components: {
+        buttonsSize: "medium",
+        buttonsVariant: "secondary",
+      },
+      translations: {
+        pageDescription:
+          "User Behavior Analytics (UBA) is the process of collecting and analyzing data on the behavior of users within a digital environment, such as a website, application, or network.",
+      },
+    },
+    {
+      theme: "dark",
+      components: {
+        buttonsSize: "large",
+        buttonsVariant: "tertiary",
+      },
+      translations: {
+        pageDescription:
+          "With the application of user behavior analytics software and tools, you will help your company in the process of identifying and responding to security threats and other risks more quickly and effectively.",
+      },
+    },
+    {
+      theme: "light",
+      components: {
+        buttonsSize: "small",
+        buttonsVariant: "primary",
+      },
+      translations: {
+        pageDescription:
+          "By monitoring and analyzing user behavior, UBA systems can detect abnormal patterns of activity, such as unauthorized access attempts, unusual login times, and suspicious data transfers.",
+      },
+    },
+  ],
 };
 
-function useTimer() {
-  const [second, setSecond] = React.useState(0);
-  const [minute, setMinute] = React.useState(0);
-  const [isActive, setIsActive] = React.useState(false);
-  const [counter, setCounter] = React.useState(1);
+const Component = () => {
+  const hasMounted = React.useRef(false);
+  const colorMode = React.useContext(ColorModeContext);
+
+  const uba = useBehaviorAnalytics(TRACKED_ITEMS);
+  const ab = useABTesting(AB_CONFIG);
 
   React.useEffect(() => {
-    let intervalId;
+    hasMounted.current = true;
 
-    if (isActive) {
-      intervalId = setInterval(() => {
-        setSecond(counter % 60);
-        setMinute(Math.floor(counter / 60));
-        setCounter((counter) => counter + 1);
-      }, 1000);
-    }
+    return () => {
+      hasMounted.current = false;
+    };
+  }, []);
 
-    return () => clearInterval(intervalId);
-  }, [isActive, counter]);
+  React.useEffect(() => {
+    if (hasMounted && AB_CONFIG.enabled)
+      colorMode.setColorMode(ab?.variant?.theme);
+  }, [ab]);
 
-  return {
-    second,
-    minute,
-    isActive,
-    setIsActive,
-  };
-}
-
-export const useBehavior = () => React.useContext(BehaviorContext);
-function useBehaviorProvider(): IBehaviorProperties {
-  const { second, minute, isActive, setIsActive } = useTimer();
-  const [interactionsData, setInteractionsData] = React.useState([]);
-  const [historyData, setHistoryData] = React.useState([]);
-  const [errorsData, setErrorsData] = React.useState([]);
-  const [sessionData, setSessionData] = React.useState({
-    session_start: "",
-    session_stop: "",
-    browser: navigator,
-    device: "",
+  useSaveOnUnload({
+    url: "api.foundation/sandbox",
+    payload: { ...uba },
   });
 
-  const updateInteractionsTracker = () => {
-    setInteractionsData([]);
-  };
-  const updateHistoryTracker = () => {
-    setHistoryData([]);
-  };
-  const updateErrorsTracker = () => {
-    setErrorsData([]);
-  };
-  const updateSessionData = ({
-    key,
-    value,
-    payload,
-  }: {
-    key?: "started_at" | "ended_at" | "browser" | "device";
-    value?: string;
-    payload?: typeof sessionData;
-  }) => {
-    if (key && value)
-      return setSessionData((prevItems) => ({
-        ...prevItems,
-        [key]: value,
-      }));
-    if (!key && !value && payload) return setSessionData(payload);
-    if (!key && !value && !payload)
-      throw new Error("Define either `key` + `value` or `payload`");
-  };
+  return (
+    <section style={{ height: "100dvh", width: "100%" }}>
+      <Page.Content>
+        <hgroup className="m-b-medium-80" style={{ width: 768 }}>
+          <h2>User Behavior Analytics</h2>
+          <p className="m-b-medium-60">
+            <small>
+              AB version:&nbsp;
+              <b>{AB_CONFIG.enabled ? ab.version : "disabled"}</b>
+            </small>
+          </p>
 
-  console.log(sessionData);
+          <div style={{ opacity: 0.6 }}>
+            <p className="m-b-medium-30">
+              {(AB_CONFIG.enabled &&
+                ab.variant?.translations?.pageDescription) || (
+                <>
+                  With the application of user behavior analytics software and
+                  tools, you will help your company in the process of
+                  identifying and responding to security threats and other risks
+                  more quickly and effectively.
+                </>
+              )}
+            </p>
+          </div>
+        </hgroup>
 
-  return {
-    ...sessionData,
-    interactions: interactionsData,
-    history: historyData,
-    errors: errorsData,
-    updateInteractionsTracker,
-    updateHistoryTracker,
-    updateErrorsTracker,
-    updateSessionData,
-  };
-}
+        <p className="m-b-medium-60">
+          <b>Time before interaction:</b>&nbsp;{uba.time_before_interact}
+        </p>
 
-const AnalyticsComponent = ({ children }: React.PropsWithChildren) => {
-  const analytics = useBehavior();
+        <div className="flex g-medium-10 m-b-medium-60">
+          {TRACKED_ITEMS.map((item: string, key: number) => (
+            <Button
+              id={item}
+              key={`${item}${key}`}
+              variant={
+                (AB_CONFIG.enabled && ab.variant?.components?.buttonsVariant) ||
+                "mono"
+              }
+              sizing={
+                (AB_CONFIG.enabled && ab.variant?.components?.buttonsSize) ||
+                "medium"
+              }
+            >
+              {item}&nbsp;
+              {uba.interactions.find(
+                (interaction: any) => interaction.origin === item
+              )?.frequency || 0}
+            </Button>
+          ))}
+        </div>
 
-  console.log(analytics);
-  return <p>analytics</p>;
+        <div className="flex g-medium-10">
+          <Button
+            variant="tertiary"
+            sizing="small"
+            onClick={() => ab.forceABVersion(1)}
+          >
+            Force AB version
+          </Button>
+          <Button
+            variant="tertiary"
+            sizing="small"
+            onClick={() =>
+              console.log({
+                ...uba,
+                ab,
+              })
+            }
+          >
+            Log output
+          </Button>
+        </div>
+      </Page.Content>
+
+      <Page.Panel side="bottom" sizing="medium" fixed defaultOpen>
+        <code
+          data-emphasis-level="low"
+          style={{
+            fontSize: "66%",
+            opacity: 0.8,
+          }}
+        >
+          {JSON.stringify({ ...uba })}
+        </code>
+      </Page.Panel>
+    </section>
+  );
 };
 
 export const Sandbox = {
   render: () => {
     return (
-      <BehaviorProvider>
-        <Page style={{ height: "100dvh", width: "100%" }}>
-          <Page.Content>
-            <hgroup>
-              <h4 className="p-b-small-60">Token Engine</h4>
-              <small data-emphasis-level="low">@foundation-ui/core</small>
-            </hgroup>
-
-            <AnalyticsComponent />
-          </Page.Content>
-        </Page>
-      </BehaviorProvider>
+      <Page>
+        <Component />
+      </Page>
     );
   },
 };

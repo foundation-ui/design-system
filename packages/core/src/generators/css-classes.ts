@@ -12,14 +12,21 @@ export const generateSizeClasses = (sizes: Size[]) => {
       const directions = ["", "x", "y", "t", "r", "b", "l"];
       const properties = ["padding", "margin", "gap"];
 
-      return properties.flatMap((propertyType) => {
-        let propertiesDefinitions = "";
+      let classStrings: string[] = [];
 
+      properties.forEach((propertyType) => {
         if (propertyType === "gap") {
-          propertiesDefinitions += `gap: ${cssValue};`;
+          const className = `g-${name}-${(index + 1) * 10}`;
+          const classString = `
+            .${className} {
+              gap: ${cssValue};
+            }
+          `;
+          classStrings.push(classString);
         } else {
           directions.flatMap((direction) => {
             let property = propertyType;
+            let propertiesDefinitions = "";
             switch (direction) {
               case "x":
                 propertiesDefinitions += `
@@ -33,50 +40,40 @@ export const generateSizeClasses = (sizes: Size[]) => {
                 break;
               case "t":
                 property += "-top";
+                propertiesDefinitions = `${property}: ${cssValue};`;
                 break;
               case "r":
                 property += "-right";
+                propertiesDefinitions = `${property}: ${cssValue};`;
                 break;
               case "b":
                 property += "-bottom";
+                propertiesDefinitions = `${property}: ${cssValue};`;
                 break;
               case "l":
                 property += "-left";
+                propertiesDefinitions = `${property}: ${cssValue};`;
                 break;
               default:
+                propertiesDefinitions = `${property}: ${cssValue};`;
                 break;
             }
 
-            const classNameWithAxis = `${propertyType.charAt(0)}${
+            const classNameWithAxis = `${property.charAt(0)}${
               direction ? `-${direction}` : ""
             }-${name}-${(index + 1) * 10}`;
 
-            return [
-              `
+            const classString = `
               .${classNameWithAxis} {
-                ${
-                  propertiesDefinitions
-                    ? propertiesDefinitions
-                    : `${property}: ${cssValue};`
-                }
+                ${propertiesDefinitions}
               }
-            `,
-            ];
+            `;
+            classStrings.push(classString);
           });
         }
-
-        const className = `${propertyType.charAt(0)}-${name}-${
-          (index + 1) * 10
-        }`;
-
-        return [
-          `
-          .${className} {
-            ${propertiesDefinitions}
-          }
-        `,
-        ];
       });
+
+      return classStrings;
     });
   });
 

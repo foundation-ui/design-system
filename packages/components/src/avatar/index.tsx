@@ -18,7 +18,7 @@ export interface IAvatarProperties
     React.HTMLAttributes<HTMLDivElement> {
   src?: string;
   alt?: string;
-  status?: AvataStatusEnum;
+  status?: "online" | "away" | "busy" | "offline";
 }
 
 /**

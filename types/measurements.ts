@@ -1,3 +1,4 @@
+export type TMeasureVariant = "fontsize" | "measurement";
 export enum MeasureVariantEnum {
   FontSize = "fontsize",
   Measurement = "measurement",

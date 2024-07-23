@@ -8,10 +8,12 @@ import {
   IComponentStyling,
   ComponentSizeEnum,
   ComponentHeightEnum,
+  TComponentHeight,
   ComponentVariantEnum,
   IComponentSize,
   IReactChildren,
   ComponentSideEnum,
+  TComponentSide,
   IComponentControlProperties,
   KeyBindingEnum,
 } from "../../../../types";
@@ -22,8 +24,8 @@ export interface IToolbarBodyProperties
     IComponentControlProperties,
     React.ComponentProps<"aside"> {
   defaultOpen?: boolean;
-  side?: ComponentSideEnum;
-  height?: ComponentHeightEnum;
+  side?: TComponentSide;
+  height?: TComponentHeight;
 }
 export interface IToolbarSectionProperties
   extends React.ComponentProps<"section"> {
@@ -55,7 +57,7 @@ export interface IToolbaromposition {
  * @param {string} props.shortcut - The key combination used as keyboard shortcuts to trigger the toolbar.
  * @param {string} props.hotkey - The key to use in the key combination for the keyboard shortcuts.
  * @param {KeyBindingEnum} props.bindkey - The modifier key to use in the key combination.
- * @param {ComponentSizeEnum} props.sizing - The size of the toolbar.
+ * @param {TComponentSide} props.sizing - The size of the toolbar.
  * @param {ComponentHeightEnum} props.height - The height definition of the toolbar.
  * @param {ComponentSideEnum} props.side - The side of the toolbar.
  * @param {boolean} props.defaultOpen - Whether the toolbar should be open by default.
@@ -80,9 +82,7 @@ const Toolbar = (props: IToolbarBodyProperties) => {
 
   const shortcutControls = useKeyPress(String(hotkey), true, bindkey);
   const orientation =
-    side && [ComponentSideEnum.Left, ComponentSideEnum.Right].includes(side)
-      ? "vertical"
-      : "horizontal";
+    side && ["left", "right"].includes(side) ? "vertical" : "horizontal";
 
   React.useEffect(() => {
     if (defaultOpen && toggleToolbar) return toggleToolbar(true);

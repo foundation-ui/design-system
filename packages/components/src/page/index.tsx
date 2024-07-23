@@ -65,7 +65,7 @@ PageNavigation.displayName = "Page.Navigation";
  * @param {KeyBindingEnum} props.bindkey - The modifier key to use in the key combination.
  * @param {ComponentSizeEnum} props.sizing - The size of the Page.Toolbar.
  * @param {ComponentHeightEnum} props.height - The height definition of the Page.Toolbar.
- * @param {ComponentSideEnum} props.side - The side of the Page.Toolbar.
+ * @param {TComponentSide} props.side - The side of the Page.Toolbar.
  * @param {boolean} props.defaultOpen - Whether the Page.Toolbar should be open by default.
  * @param {ReactNode} props.children - The content to be rendered inside the Page.Toolbar.
  * @returns {ReactElement} The Page.Toolbar component.
@@ -147,7 +147,7 @@ PageContent.displayName = "Page.Content";
  * @param {KeyBindingEnum} props.bindkey - The modifier key to use in the key combination.
  * @param {ComponentSizeEnum} props.sizing - The size of the Page.Panel.
  * @param {ComponentHeightEnum} props.height - The height definition of the Page.Panel.
- * @param {ComponentSideEnum} props.side - The side of the Page.Panel.
+ * @param {TComponentSide} props.side - The side of the Page.Panel.
  * @param {boolean} props.defaultOpen - Whether the Page.Panel should be open by default.
  * @param {ReactNode} props.children - The content to be rendered inside the Page.Panel.
  * @returns {ReactElement} The Page.Panel component.

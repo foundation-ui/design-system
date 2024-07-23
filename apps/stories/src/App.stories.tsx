@@ -28,7 +28,7 @@ import {
 } from "../../../types";
 
 const meta = {
-  title: "Sandbox/Token Engine",
+  title: "Sandbox/Engine",
   component: Page,
 } satisfies Meta<typeof Page>;
 export default meta;
@@ -119,7 +119,7 @@ const Card = styled.article`
   width: 100%;
 `;
 
-export const Generators = {
+export const Engine = {
   render: () => {
     const { colorMode, setColorMode } = React.useContext(ColorModeContext);
     const [generated, setGenerated] = React.useState<string>("");
@@ -128,11 +128,6 @@ export const Generators = {
     const updateColorMode = () =>
       darkMode ? setColorMode("light") : setColorMode("dark");
 
-    console.log(
-      generateSizeClasses(js_design_tokens.design_tokens.measurement)
-    );
-
-    console.log(generateLayoutClasses());
     return (
       <Page>
         <section style={{ height: "100dvh", width: "100%" }}>

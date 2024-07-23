@@ -29,9 +29,17 @@ export enum KeyBindingEnum {
   Shift = "shiftKey",
 }
 
+export type TComponentHeight = "fullscreen" | "auto";
 export type TComponentAPI = boolean | string | number | null;
 export type TComponentSize = "small" | "medium" | "large";
-export type TComponentVariant = "primary" | "secondary" | "tertiary" | "ghost";
+export type TComponentSide = "top" | "right" | "bottom" | "left";
+export type TComponentVariant =
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "mono"
+  | "border"
+  | "ghost";
 export type TKeyBinding = "ctrlKey" | "metaKey" | "altKey" | "shiftKey";
 
 export interface IComponentAPI {

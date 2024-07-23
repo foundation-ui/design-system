@@ -9,11 +9,11 @@ import {
   generateVariation,
   generateModularScales,
   generateSequences,
-} from "../";
+} from "..";
 import {
   IDesignTokensLibrary,
   ColorModesEnum,
-  MeasureVariantEnum,
+  TMeasureVariant,
   SequenceVariantEnum,
   TokenTypesEnum,
   ITemplatePayload,
@@ -53,7 +53,7 @@ export const generateMeasurementTokens = (
   base: number,
   units: number,
   ratio: number,
-  _variant?: MeasureVariantEnum
+  _variant?: TMeasureVariant
 ) => {
   return {
     name: name,
@@ -145,10 +145,9 @@ export const generateTokensFromTemplate = (payload) => {
   return payload.values.map((value) => {
     const isColorType = payload.type === TokenTypesEnum.Color;
 
-    const isMeasurementType = [
-      MeasureVariantEnum.Measurement,
-      MeasureVariantEnum.FontSize,
-    ].includes(payload.type);
+    const isMeasurementType = ["measurement", "fontsize"].includes(
+      payload.type
+    );
 
     const isSequenceType = [
       SequenceVariantEnum.Depth,

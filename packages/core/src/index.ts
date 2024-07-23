@@ -6,4 +6,8 @@ export * from "./generators/tokens";
 export * from "./generators/score";
 export * from "./generators/formats";
 
-export * from "./contexts/BehavioralAnalyticsProvider";
+export * from "./hooks/useTimeBeforeInteraction";
+export * from "./hooks/useComponentsInteractions";
+export * from "./hooks/useA11YTracking";
+export * from "./hooks/useABTesting";
+export * from "./hooks/useBehaviorAnalytics";

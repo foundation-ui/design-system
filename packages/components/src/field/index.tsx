@@ -17,10 +17,7 @@ export enum MetaVariantEnum {
   Error = "error",
 }
 
-export type TMetaVariant =
-  | MetaVariantEnum.Hint
-  | MetaVariantEnum.Emphasis
-  | MetaVariantEnum.Error;
+export type TMetaVariant = "default" | "hint" | "emphasis" | "error";
 
 export interface IField
   extends React.ComponentProps<"input">,
@@ -144,7 +141,7 @@ FieldLabel.displayName = "Field.Label";
  *
  * @param {IFieldMeta} props - The props for the Field.Meta component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
- * @param {string} props.variant - The style definition used by the component.
+ * @param {TMetaVariant} props.variant - The style definition used by the component.
  * @param {string} props.children - The meta text.
  * @returns {ReactElement} The Field.Meta component.
  */
