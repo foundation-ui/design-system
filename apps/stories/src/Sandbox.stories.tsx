@@ -1,12 +1,18 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import type { Meta } from "@storybook/react";
 
 import { ColorModeContext } from "@foundation-ui/tokens";
-import { useBehaviorAnalytics, useABTesting } from "@foundation-ui/core";
+import {
+  useBehaviorAnalytics,
+  useABTesting,
+  useIndexedDB,
+} from "@foundation-ui/core";
 import { useSaveOnUnload } from "@foundation-ui/hooks";
 
 import { Page, Button } from "@foundation-ui/components";
+import appconfig from "./config/app.config.json";
+import abvariantsmock from "./mocks/abvariants.json";
 
 const meta = {
   title: "Sandbox/Sandbox",
@@ -14,83 +20,122 @@ const meta = {
 } satisfies Meta<typeof Page>;
 export default meta;
 
-const TRACKED_ITEMS = [
-  "primary-funnel-trigger",
-  "secondary-funnel-trigger",
-  "tertiary-funnel-trigger",
-];
+/* HTML: <div class="loader"></div> */
+const LoaderAnimation = keyframes`
+  100% {height:40%}
+`;
+const Loader3D = styled.div`
+  --size: 12px;
+  --dimension: calc(0.353 * var(--size));
 
-const AB_CONFIG = {
-  enabled: true,
-  randomize: {
-    defaultVersion: 0,
-    targetVersion: 2,
+  height: calc(var(--size) + var(--dimension));
+  aspect-ratio: 1;
+  display: grid;
 
-    triggerKey: 1,
-    threshold: 2,
-  },
-  variations: [
-    {
-      theme: "dark",
-      components: {
-        buttonsSize: "medium",
-        buttonsVariant: "secondary",
-      },
-      translations: {
-        pageDescription:
-          "User Behavior Analytics (UBA) is the process of collecting and analyzing data on the behavior of users within a digital environment, such as a website, application, or network.",
-      },
-    },
-    {
-      theme: "dark",
-      components: {
-        buttonsSize: "large",
-        buttonsVariant: "tertiary",
-      },
-      translations: {
-        pageDescription:
-          "With the application of user behavior analytics software and tools, you will help your company in the process of identifying and responding to security threats and other risks more quickly and effectively.",
-      },
-    },
-    {
-      theme: "light",
-      components: {
-        buttonsSize: "small",
-        buttonsVariant: "primary",
-      },
-      translations: {
-        pageDescription:
-          "By monitoring and analyzing user behavior, UBA systems can detect abnormal patterns of activity, such as unauthorized access attempts, unusual login times, and suspicious data transfers.",
-      },
-    },
-  ],
+  &::before {
+    content: "";
+    height: 100%;
+    margin: auto 0;
+    clip-path: polygon(
+      var(--dimension) 0,
+      100% 0,
+      100% calc(100% - var(--dimension)),
+      calc(100% - var(--dimension)) 100%,
+      0 100%,
+      0 var(--dimension)
+    );
+    background: conic-gradient(
+      from -90deg at var(--size) var(--dimension),
+      ${({ theme }) => theme.colors.text.alpha[8].rgb} 135deg,
+      ${({ theme }) => theme.colors.text.alpha[5].rgb} 0 270deg,
+      ${({ theme }) => theme.colors.text.alpha[3].rgb} 0
+    );
+
+    animation: ${LoaderAnimation} 0.8s infinite alternate;
+  }
+`;
+
+const Loader = () => {
+  return (
+    <section
+      className="flex justify-center align-center"
+      style={{
+        height: "100dvh",
+        width: "100%",
+      }}
+    >
+      <Loader3D />
+    </section>
+  );
 };
 
 const Component = () => {
-  const hasMounted = React.useRef(false);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [indexedABValues, setIndexedABValues] = React.useState<
+    typeof abvariantsmock | []
+  >([]);
+  const abconfig = React.useMemo(() => {
+    return {
+      ...appconfig.ab,
+      variations: indexedABValues,
+    };
+  }, [indexedABValues]);
+
   const colorMode = React.useContext(ColorModeContext);
+  const hasMounted = React.useRef(false);
 
-  const uba = useBehaviorAnalytics(TRACKED_ITEMS);
-  const ab = useABTesting(AB_CONFIG);
+  const idb = useIndexedDB(appconfig.idb);
+  const uba = useBehaviorAnalytics(appconfig.uba_funnels);
+  const ab = useABTesting(abconfig);
 
+  // Fetch app config from IDB or from api responses mocks
+  React.useEffect(() => {
+    if (idb.db) {
+      idb
+        .getDataFromIDB("ab", "variants") // Fetch from IDB
+        .then((res) => {
+          if (res) {
+            setIndexedABValues(res.value);
+            console.log("[getDataFromIDB] use values from IndexedDB");
+          } else {
+            idb.setDataInIDB("ab", "variants", abvariantsmock); // Set values to IDB if not defined
+            setIndexedABValues(abvariantsmock);
+            console.log("[getDataFromIDB] use mocked values");
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching data from IndexedDB:", error);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  }, [idb.db]);
+
+  // Update Mounted ref when the component is mounted
   React.useEffect(() => {
     hasMounted.current = true;
-
     return () => {
       hasMounted.current = false;
     };
   }, []);
 
+  // Init AB when the component is mounted and the app config is set
   React.useEffect(() => {
-    if (hasMounted && AB_CONFIG.enabled)
+    if (hasMounted.current && appconfig.ab.enabled && !isLoading) {
       colorMode.setColorMode(ab?.variant?.theme);
-  }, [ab]);
+    }
+  }, [ab, indexedABValues, colorMode]);
 
   useSaveOnUnload({
     url: "api.foundation/sandbox",
-    payload: { ...uba },
+    payload: {
+      ...uba,
+      ab,
+    },
   });
 
+  if (isLoading) return <Loader />;
   return (
     <section style={{ height: "100dvh", width: "100%" }}>
       <Page.Content>
@@ -99,13 +144,13 @@ const Component = () => {
           <p className="m-b-medium-60">
             <small>
               AB version:&nbsp;
-              <b>{AB_CONFIG.enabled ? ab.version : "disabled"}</b>
+              <b>{appconfig.ab.enabled ? ab.version : "disabled"}</b>
             </small>
           </p>
 
           <div style={{ opacity: 0.6 }}>
             <p className="m-b-medium-30">
-              {(AB_CONFIG.enabled &&
+              {(appconfig.ab.enabled &&
                 ab.variant?.translations?.pageDescription) || (
                 <>
                   With the application of user behavior analytics software and
@@ -123,28 +168,35 @@ const Component = () => {
         </p>
 
         <div className="flex g-medium-10 m-b-medium-60">
-          {TRACKED_ITEMS.map((item: string, key: number) => (
+          {appconfig.uba_funnels.map((item: string, key: number) => (
             <Button
               id={item}
               key={`${item}${key}`}
               variant={
-                (AB_CONFIG.enabled && ab.variant?.components?.buttonsVariant) ||
+                (appconfig.ab.enabled &&
+                  ab.variant?.components?.buttonsVariant) ||
                 "mono"
               }
               sizing={
-                (AB_CONFIG.enabled && ab.variant?.components?.buttonsSize) ||
+                (appconfig.ab.enabled && ab.variant?.components?.buttonsSize) ||
                 "medium"
               }
             >
-              {item}&nbsp;
-              {uba.interactions.find(
-                (interaction: any) => interaction.origin === item
-              )?.frequency || 0}
+              {item}
             </Button>
           ))}
         </div>
 
         <div className="flex g-medium-10">
+          <Button
+            variant="tertiary"
+            sizing="small"
+            onClick={() => {
+              idb.flushDBStore("ab");
+            }}
+          >
+            Flush IndexedDB store
+          </Button>
           <Button
             variant="tertiary"
             sizing="small"
@@ -166,7 +218,6 @@ const Component = () => {
           </Button>
         </div>
       </Page.Content>
-
       <Page.Panel side="bottom" sizing="medium" fixed defaultOpen>
         <code
           data-emphasis-level="low"

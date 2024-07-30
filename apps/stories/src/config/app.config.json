@@ -1,0 +1,21 @@
+{
+  "idb": {
+    "name": "sandbox",
+    "stores": ["theme", "translations", "ab", "feature_flags"],
+    "version": 1
+  },
+  "uba_funnels": [
+    "primary-funnel-trigger",
+    "secondary-funnel-trigger",
+    "tertiary-funnel-trigger"
+  ],
+  "ab": {
+    "enabled": true,
+    "randomize": {
+      "defaultVersion": 0,
+      "targetVersion": 2,
+      "triggerKey": 1,
+      "threshold": 2
+    }
+  }
+}
