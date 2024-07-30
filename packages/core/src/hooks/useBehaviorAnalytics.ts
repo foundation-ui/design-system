@@ -1,6 +1,9 @@
 import React from "react";
 import { useTimeBeforeInteraction } from "./useTimeBeforeInteraction";
-import { useA11YTracking, IA11YProperties } from "./useA11YTracking";
+import {
+  usePerformanceMetrics,
+  IPerfomanceMetricsProperties,
+} from "./usePerformanceMetrics";
 import {
   useComponentsInteractions,
   IComponentUsage,
@@ -11,6 +14,7 @@ interface IBehaviorAnalyticsProperties {
     path: string;
     user_agent: string;
     device_os: string;
+    performances: IPerfomanceMetricsProperties | null;
     viewport: {
       width: number;
       height: number;
@@ -27,7 +31,6 @@ interface IBehaviorAnalyticsProperties {
   };
   time_before_interact: string | null;
   interactions: IComponentUsage[] | [];
-  a11y: IA11YProperties;
 }
 
 const getDeviceOs = (): string | undefined => {
@@ -81,9 +84,9 @@ const getDeviceOs = (): string | undefined => {
 export const useBehaviorAnalytics = (
   references: string[]
 ): IBehaviorAnalyticsProperties => {
+  const { metrics } = usePerformanceMetrics();
   const { time_before_interact } = useTimeBeforeInteraction();
   const { interactions } = useComponentsInteractions(references);
-  const { a11y } = useA11YTracking(references);
 
   const { innerWidth, innerHeight, screen, location } = window;
 
@@ -97,6 +100,9 @@ export const useBehaviorAnalytics = (
           width: innerWidth,
           height: innerHeight,
         },
+        performances: {
+          ...metrics,
+        },
         screen: {
           width: screen.availWidth,
           height: screen.availHeight,
@@ -108,14 +114,13 @@ export const useBehaviorAnalytics = (
         },
       },
     };
-  }, [innerWidth, innerHeight, location]);
+  }, [innerWidth, innerHeight, location, metrics]);
 
   return {
     time_before_interact: time_before_interact
       ? `${time_before_interact}s`
       : null,
     interactions,
-    a11y,
     ...sessionData,
   };
 };
