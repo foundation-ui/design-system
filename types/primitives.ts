@@ -22,6 +22,7 @@ export enum ComponentHeightEnum {
   Fullscreen = "fullscreen",
   Auto = "auto",
 }
+
 export enum KeyBindingEnum {
   Ctrl = "ctrlKey",
   Meta = "metaKey",
@@ -29,6 +30,13 @@ export enum KeyBindingEnum {
   Shift = "shiftKey",
 }
 
+export type TKeyboardLayout =
+  | "QWERTY"
+  | "AZERTY"
+  | "BÉPO"
+  | "JCUKEN"
+  | "QGMLWY"
+  | "HCESAR";
 export type TComponentHeight = "fullscreen" | "auto";
 export type TComponentAPI = boolean | string | number | null;
 export type TComponentSize = "small" | "medium" | "large";
@@ -41,7 +49,7 @@ export type TComponentVariant =
   | "border"
   | "ghost";
 export type TKeyBinding = "ctrlKey" | "metaKey" | "altKey" | "shiftKey";
-
+export type TFrequencyLabels = "greater-than" | "less-than" | "equals-to";
 export interface IComponentAPI {
   id: string;
   states: Record<string, TComponentAPI | Record<string, TComponentAPI>>;

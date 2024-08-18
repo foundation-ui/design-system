@@ -10,6 +10,7 @@ import {
 } from "./useComponentsInteractions";
 
 interface IBehaviorAnalyticsProperties {
+  silent?: boolean;
   env: {
     path: string;
     user_agent: string;
@@ -81,12 +82,18 @@ const getDeviceOs = (): string | undefined => {
   return undefined;
 };
 
-export const useBehaviorAnalytics = (
-  references: string[]
-): IBehaviorAnalyticsProperties => {
+export const useBehaviorAnalytics = ({
+  silent,
+  flags,
+}: {
+  silent?: boolean;
+  flags: string[];
+}): IBehaviorAnalyticsProperties | void => {
+  if (silent) return;
+
   const { metrics } = usePerformanceMetrics();
   const { time_before_interact } = useTimeBeforeInteraction();
-  const { interactions } = useComponentsInteractions(references);
+  const { interactions } = useComponentsInteractions(flags);
 
   const { innerWidth, innerHeight, screen, location } = window;
 
