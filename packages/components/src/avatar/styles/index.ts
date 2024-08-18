@@ -4,16 +4,22 @@ const AvatarSizesStyles = css`
   &[data-size="small"] {
     width: var(--measurement-large-10);
     height: var(--measurement-large-10);
+    min-width: var(--measurement-large-10);
+    min-height: var(--measurement-large-10);
   }
 
   &[data-size="medium"] {
     width: var(--measurement-medium-90);
     height: var(--measurement-medium-90);
+    min-width: var(--measurement-medium-90);
+    min-height: var(--measurement-medium-90);
   }
 
   &[data-size="large"] {
     width: var(--measurement-large-20);
     height: var(--measurement-large-20);
+    min-width: var(--measurement-large-20);
+    min-height: var(--measurement-large-20);
   }
 `;
 const AvatarStatusesStyles = css`
@@ -50,6 +56,9 @@ export const AvatarWrapper = styled.div`
 
     img {
       width: inherit;
+      height: inherit;
+      min-width: inherit;
+      min-height: inherit;
       border-radius: 100%;
     }
 
