@@ -19,11 +19,9 @@ const DialogDefaultStyles = css`
   width: 100%;
 
   border: var(--measurement-small-10) solid
-    ${({ theme }) => theme.colors.body.base};
+    ${({ theme }) => theme.colors.text.alpha[0].rgb};
   background-color: ${({ theme }) => theme.colors.body.contrast};
   border-radius: var(--measurement-medium-30);
-  box-shadow: 0 var(--measurement-medium-30) var(--measurement-medium-30)
-    var(--alpha-mono-darkest-10);
 
   overflow-y: scroll;
   transition: all ease-in-out 0.2s;

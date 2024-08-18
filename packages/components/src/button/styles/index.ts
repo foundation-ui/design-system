@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 const ButtonDefaultStyles = css`
   cursor: pointer;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,6 +20,12 @@ const ButtonDefaultStyles = css`
 
   width: fit-content;
   transition: all ease-in-out 0.2s;
+
+  svg {
+    width: var(--fontsize-medium-20);
+    height: var(--fontsize-medium-20);
+    fill: currentColor;
+  }
 
   svg,
   span,
@@ -54,6 +61,10 @@ const ButtonVariantsStyles = css`
     &:active {
       border-color: ${({ theme }) => theme.colors.primary.alpha[1].rgb};
     }
+
+    svg {
+      fill: ${({ theme }) => theme.colors.primary.contrast};
+    }
   }
   &[data-variant="secondary"] {
     color: ${({ theme }) => theme.colors.primary.alpha[6].rgb};
@@ -83,7 +94,6 @@ const ButtonVariantsStyles = css`
   &[data-variant="mono"] {
     color: ${({ theme }) => theme.colors.primary.alpha[6].rgb};
     background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
-    border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
 
     &:hover,
     &:focus {
@@ -134,6 +144,11 @@ const ButtonSizeStyles = css`
     padding: var(--measurement-medium-10) var(--measurement-medium-30);
     min-width: var(--measurement-medium-60);
     min-height: var(--measurement-medium-60);
+
+    svg {
+      width: var(--fontsize-medium-10);
+      height: var(--fontsize-medium-10);
+    }
   }
   &[data-size="medium"] {
     border-radius: var(--measurement-medium-30);

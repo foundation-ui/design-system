@@ -1,4 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const HiddenScrollbar = css`
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  &::-moz-scrollbar {
+    display: none;
+  }
+`;
 
 export const RootWrapper = styled.div`
   position: relative;
@@ -18,18 +31,21 @@ export const ContentWrapper = styled.ul`
   }
 
   &[data-raw="false"] {
-    top: var(--measurement-small-30);
-    width: 100%;
-    max-width: var(--measurement-large-80);
+    width: var(--measurement-large-80);
+    min-width: var(--measurement-large-70);
     max-height: var(--measurement-large-90);
-    padding: var(--measurement-medium-30);
 
-    background-color: ${({ theme }) => theme.colors.body.base};
+    padding: var(--measurement-medium-30);
+    margin: var(--measurement-medium-10) 0;
+
+    background-color: ${({ theme }) => theme.colors.body.contrast};
     border: var(--measurement-small-10) solid
       ${({ theme }) => theme.colors.text.alpha[0].rgb};
-    border-radius: var(--measurement-medium-60);
-    box-shadow: 0 var(--measurement-medium-30) var(--measurement-medium-30)
-      var(--alpha-mono-darkest-10);
+    border-radius: var(--measurement-medium-30);
+
+    z-index: var(--depth-default-100);
+    overflow-y: scroll;
+    ${HiddenScrollbar}
   }
 `;
 
@@ -40,9 +56,9 @@ export const ItemWrapper = styled.li`
   user-select: none;
 
   &[data-raw="false"] {
-    font-size: var(--fontsize-medium-20);
+    font-size: var(--fontsize-medium-10);
     padding: var(--measurement-medium-30);
-    border-radius: var(--measurement-medium-30);
+    border-radius: var(--measurement-medium-20);
     color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
     outline: none;
     transition: all ease-in-out 0.2s;
@@ -51,6 +67,7 @@ export const ItemWrapper = styled.li`
     &:hover,
     &:focus,
     &:active {
+      color: ${({ theme }) => theme.colors.text.base};
       background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
     }
   }

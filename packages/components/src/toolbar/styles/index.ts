@@ -7,7 +7,7 @@ export const ToolbarDefaultStyles = css`
   background-color: ${({ theme }) => theme.colors.body.contrast};
   border: var(--measurement-small-10) solid transparent;
   padding: var(--measurement-medium-30);
-  min-width: var(--measurement-large-20);
+  min-width: var(--measurement-large-30);
   min-height: fit-content;
 
   &[aria-expanded="true"] {
@@ -16,6 +16,10 @@ export const ToolbarDefaultStyles = css`
     &[aria-orientation="horizontal"] {
       height: 100%;
       width: 100%;
+    }
+
+    menu {
+      display: flex;
     }
   }
 
@@ -64,12 +68,30 @@ export const ToolbarSideStyles = css`
   }
   &[data-side="right"] {
     border-left-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+
+    &[aria-expanded="true"] {
+      menu {
+        justify-content: flex-end;
+      }
+    }
+    &[aria-expanded="false"] {
+      justify-items: end;
+    }
   }
   &[data-side="bottom"] {
     border-top-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
   }
   &[data-side="left"] {
     border-right-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+
+    &[aria-expanded="true"] {
+      menu {
+        justify-content: flex-start;
+      }
+    }
+    &[aria-expanded="false"] {
+      justify-items: start;
+    }
   }
 `;
 export const ToolbarHeightStyles = css`
