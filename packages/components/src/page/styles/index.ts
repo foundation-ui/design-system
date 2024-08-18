@@ -52,11 +52,12 @@ export const PageSectionWrapper = styled.div`
 `;
 export const PageBodyWrapper = styled.div<IPageWrapperProperties>`
   --menus-height: calc(
-    var(--measurement-large-30) * ${({ menus }) => (menus ? Number(menus) : 0)}
+    var(--measurement-large-30) *
+      ${({ $menus }) => ($menus ? Number($menus) : 0)}
   );
   --navs-height: calc(
     var(--measurement-large-20) *
-      ${({ navigations }) => (navigations ? Number(navigations) : 0)}
+      ${({ $navigations }) => ($navigations ? Number($navigations) : 0)}
   );
   --page-height: calc(100dvh - (var(--menus-height) + var(--navs-height)));
 

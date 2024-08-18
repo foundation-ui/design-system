@@ -22,8 +22,8 @@ export interface IPageToolsProperties
   fixed?: boolean;
 }
 export interface IPageWrapperProperties {
-  menus?: number;
-  navigations?: number;
+  $menus?: number;
+  $navigations?: number;
 }
 
 /**
