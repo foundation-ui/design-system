@@ -1,0 +1,16 @@
+[
+  {
+    "theme": "dark",
+    "components": {
+      "buttonsSize": "medium",
+      "buttonsVariant": "border"
+    }
+  },
+  {
+    "theme": "dark",
+    "components": {
+      "buttonsSize": "small",
+      "buttonsVariant": "ghost"
+    }
+  }
+]

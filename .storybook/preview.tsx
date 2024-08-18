@@ -66,6 +66,7 @@ const preview: Preview = {
               <TypographyColors />
               <TypographySizing />
               <StoriesWrapepr>
+                <div id="dialog-portal" />
                 <Story />
               </StoriesWrapepr>
             </SystemThemeProvider>

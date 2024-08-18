@@ -1,0 +1,100 @@
+{
+  "idb": {
+    "name": "uui",
+    "stores": ["themes", "translations", "properties"],
+    "version": 1
+  },
+  "uba_flags": [
+    "useless-trigger",
+    "settings-funnel-trigger",
+    "app-settings-trigger"
+  ],
+  "ab": {
+    "randomize": {
+      "defaultVersion": 0,
+      "targetVersion": 1,
+      "triggerKey": 1,
+      "threshold": 2
+    }
+  },
+  "app_properties": {
+    "options": {
+      "analytics": true,
+      "ab": true
+    },
+    "layout": {
+      "menus": {
+        "primary": {
+          "enabled": true,
+          "size": "small"
+        },
+        "secondary": {
+          "enabled": true,
+          "size": "small"
+        }
+      },
+      "navigations": {
+        "primary": {
+          "enabled": true,
+          "size": "small"
+        }
+      },
+      "tools": {
+        "primary": {
+          "enabled": true,
+          "fixed": false,
+          "size": "large"
+        },
+        "secondary": {
+          "enabled": true,
+          "fixed": false,
+          "size": "medium"
+        }
+      },
+      "options": {
+        "primary": {
+          "enabled": true,
+          "fixed": false,
+          "size": "large"
+        }
+      },
+      "drawers": {
+        "primary": {
+          "enabled": true,
+          "fixed": false,
+          "size": "large"
+        }
+      }
+    },
+    "shortcuts": {
+      "open_settings": {
+        "enabled": true,
+        "shortcut": {
+          "hotkey": "s",
+          "bindkey": "ctrlKey"
+        }
+      },
+      "toggle_tools": {
+        "enabled": true,
+        "shortcut": {
+          "hotkey": "",
+          "bindkey": "shiftKey"
+        }
+      },
+      "toggle_navigation": {
+        "enabled": true,
+        "shortcut": {
+          "hotkey": "",
+          "bindkey": "shiftKey"
+        }
+      },
+      "toggle_options": {
+        "enabled": true,
+        "shortcut": {
+          "hotkey": "",
+          "bindkey": "shiftKey"
+        }
+      }
+    }
+  }
+}
