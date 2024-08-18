@@ -101,6 +101,18 @@ export const generateLayoutClasses = () => {
     "revert",
   ] as const;
 
+  const wrap_option = ["flex-wrap"] as const;
+  const wrap_values = [
+    "wrap",
+    "wrap-reverse",
+    "nowrap",
+    "revert",
+    "revert-layer",
+    "unset",
+    "inherit",
+    "initial",
+  ];
+
   const cssClasses = displays.flatMap((display) => {
     const displayClass = `
       .${display} {
@@ -119,7 +131,18 @@ export const generateLayoutClasses = () => {
       });
     });
 
-    return [displayClass, ...optionClasses];
+    const wrapClasses = wrap_option.flatMap((option) => {
+      return wrap_values.map((value) => {
+        const className = `.${option.split("-").at(0)}-${value
+          .split("-")
+          .at(-1)}`;
+        const cssProperty = `${option}: ${value};`;
+
+        return `${className} { ${cssProperty} }`;
+      });
+    });
+
+    return [displayClass, ...optionClasses, ...wrapClasses];
   });
 
   return css`
