@@ -1,6 +1,7 @@
 import React, { Children } from "react";
 import { TabsProvider, useTabs } from "./hooks";
 import { Button, IButtonProperties } from "../button";
+import { TabWrapper } from "./styles";
 import { IReactChildren, ComponentVariantEnum } from "../../../../types";
 
 export interface ITabsProperties extends React.ComponentProps<"div"> {
@@ -48,9 +49,9 @@ const Tabs = (props: ITabsProperties) => {
   }, []);
 
   return (
-    <div role="tablist" {...restProps}>
+    <TabWrapper role="tablist" {...restProps}>
       {children}
-    </div>
+    </TabWrapper>
   );
 };
 Tabs.displayName = "Tabs";

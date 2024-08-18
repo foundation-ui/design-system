@@ -17,6 +17,15 @@ const SwitchDefaultStyles = css`
 const SwitchVariantsStyles = css`
   &[data-variant="primary"] {
     &[aria-checked="true"] {
+      background-color: var(--color-green);
+      border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+    }
+    &[aria-checked="false"] {
+      background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+    }
+  }
+  &[data-variant="secondary"] {
+    &[aria-checked="true"] {
       background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
       border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
     }
@@ -96,8 +105,12 @@ export const Thumb = styled.span`
     all: unset;
     display: block;
 
-    background: var(--color-mono-white);
+    background: ${({ theme }) => theme.colors.text.alpha[5].rgb};
     border-radius: 100%;
-    transition: all 0.1s ease-in-out 0s;
+    transition: all 0.1s ease-in-out 0.2s;
+
+    &[data-checked="true"] {
+      background: ${({ theme }) => theme.colors.text.base};
+    }
   }
 `;

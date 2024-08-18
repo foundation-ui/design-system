@@ -1,10 +1,12 @@
 import React from "react";
 import { Toolbar, IToolbarBodyProperties, IToolbarSectionProperties } from "..";
 import {
+  PageRootWrapper,
   PageNavWrapper,
   PageMenuWrapper,
   PagePanelWrapper,
   PageSectionWrapper,
+  PageBodyWrapper,
 } from "./styles";
 import {
   IComponentStyling,
@@ -19,6 +21,10 @@ export interface IPageToolsProperties
   triggerProps?: IComponentStyling & IComponentSize & IComponentVariant;
   fixed?: boolean;
 }
+export interface IPageWrapperProperties {
+  menus?: number;
+  navigations?: number;
+}
 
 /**
  * Pages are structured components used to build User Interface layouts.
@@ -29,9 +35,9 @@ export interface IPageToolsProperties
 const Page = (props: React.ComponentProps<"div">) => {
   const { children } = props;
   return (
-    <div className="flex" {...props}>
+    <PageRootWrapper className="flex" {...props}>
       {children}
-    </div>
+    </PageRootWrapper>
   );
 };
 Page.displayName = "Page";
@@ -130,6 +136,14 @@ const PageContent = (props: React.ComponentProps<"div">) => {
 };
 PageContent.displayName = "Page.Content";
 
+const PageWrapper = (
+  props: IPageWrapperProperties & React.ComponentProps<"div">
+) => {
+  const { children } = props;
+  return <PageBodyWrapper {...props}>{children}</PageBodyWrapper>;
+};
+PageWrapper.displayName = "Page.Wrapper";
+
 /**
  * Panel are component that provides a set of tools or actions for the user.
  *
@@ -223,8 +237,17 @@ PageMenu.displayName = "Page.Menu";
 
 Page.Navigation = PageNavigation;
 Page.Tools = PageTools;
+Page.Wrapper = PageWrapper;
 Page.Content = PageContent;
 Page.Panel = PagePanel;
 Page.Menu = PageMenu;
 
-export { Page, PageNavigation, PageTools, PagePanel, PageContent, PageMenu };
+export {
+  Page,
+  PageNavigation,
+  PageTools,
+  PagePanel,
+  PageWrapper,
+  PageContent,
+  PageMenu,
+};

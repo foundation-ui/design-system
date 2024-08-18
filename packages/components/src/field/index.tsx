@@ -104,8 +104,11 @@ const FieldRoot = ({ children }: IReactChildren) => {
 };
 FieldRoot.displayName = "Field.Root";
 
-const FieldWrapper = ({ children }: IReactChildren) => {
-  return <Fieldset>{children}</Fieldset>;
+const FieldWrapper = ({
+  children,
+  ...restProps
+}: IReactChildren & React.ComponentProps<"fieldset">) => {
+  return <Fieldset {...restProps}>{children}</Fieldset>;
 };
 FieldWrapper.displayName = "Field.Wrapper";
 

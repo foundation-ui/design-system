@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { IPageWrapperProperties } from "../";
 
 export const ScrollbarReset = css`
   scrollbar-width: none;
@@ -10,6 +11,10 @@ export const ScrollbarReset = css`
   }
 `;
 
+export const PageRootWrapper = styled.div`
+  height: 100dvh;
+  width: 100%;
+`;
 export const PageNavWrapper = styled.nav`
   background-color: ${({ theme }) => theme.colors.body.contrast};
   border: var(--measurement-small-10) solid transparent;
@@ -41,8 +46,38 @@ export const PageSectionWrapper = styled.div`
   width: 100%;
   height: 100%;
   max-height: calc(100dvh - (var(--measurement-large-20)));
-  padding: var(--measurement-medium-60) var(--measurement-medium-30);
+  overflow-y: scroll;
+
+  ${ScrollbarReset}
+`;
+export const PageBodyWrapper = styled.div<IPageWrapperProperties>`
+  --menus-height: calc(
+    var(--measurement-large-30) * ${({ menus }) => (menus ? Number(menus) : 0)}
+  );
+  --navs-height: calc(
+    var(--measurement-large-20) *
+      ${({ navigations }) => (navigations ? Number(navigations) : 0)}
+  );
+  --page-height: calc(100dvh - (var(--menus-height) + var(--navs-height)));
 
   overflow-y: scroll;
-  ${ScrollbarReset}
+  outline: none;
+  display: inline-block;
+
+  height: var(--page-height);
+  max-height: var(--page-height);
+
+  width: 100%;
+
+  scrollbar-width: none;
+  white-space: nowrap;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  &::-moz-scrollbar {
+    display: none;
+  }
 `;
