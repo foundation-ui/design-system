@@ -6,14 +6,6 @@ import {
   useAppConfiguration,
   useBehaviorAnalytics,
   useABTesting,
-  generateColorTokens,
-  generateMeasurementTokens,
-  generateSequenceTokens,
-  generateTokensFromTemplate,
-  generateTokensLibrary,
-  generateCSSVariables,
-  generateSizeClasses,
-  generateLayoutClasses,
 } from "@foundation-ui/core";
 import { ColorModeContext } from "@foundation-ui/tokens";
 import {
@@ -28,14 +20,12 @@ import {
   Button,
   Dialog,
   Avatar,
+  DropdownMenu,
+  Divider,
 } from "@foundation-ui/components";
 import { AppSettings } from "./components/settings";
 import { Loader3D, CardBody } from "./styles";
-import {
-  RatioEnum,
-  MeasureVariantEnum,
-  TComponentVariant,
-} from "../../../types";
+import { TComponentVariant } from "../../../types";
 
 import settings from "./mocks/settings.json";
 import ab_variations from "./mocks/ab_testing.json";
@@ -135,6 +125,7 @@ const Layout = ({ children }: any) => {
     },
   });
 
+  const triggerRef = React.useRef(null);
   if (!app_config) return <Loader />;
   return (
     <Dialog.Root>
@@ -154,7 +145,7 @@ const Layout = ({ children }: any) => {
               </span>
             </small>
 
-            <ul className="flex g-medium-60 align-center">
+            <ul className="flex g-medium-30 align-center">
               <Button variant="ghost" sizing="small">
                 Documentation
               </Button>
@@ -165,7 +156,7 @@ const Layout = ({ children }: any) => {
                 Assistance
               </Button>
               <Button
-                variant="ghost"
+                variant="border"
                 sizing="small"
                 onClick={() =>
                   setColorMode(colorMode === "dark" ? "light" : "dark")
@@ -175,12 +166,10 @@ const Layout = ({ children }: any) => {
                   focusable="false"
                   aria-hidden="true"
                   viewBox="0 0 24 24"
-                  height={16}
-                  width={16}
                   fill="currentColor"
                 >
                   {colorMode === "dark" ? (
-                    <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5M2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1m18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1M11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1m0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1M5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0z" />
+                    <path d="m6.76 4.84-1.8-1.79-1.41 1.41 1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zm-3.21 13.7 1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6m-1 16.95h2V19.5h-2zm-7.45-3.91 1.41 1.41 1.79-1.8-1.41-1.41z" />
                   ) : (
                     <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1" />
                   )}
@@ -190,34 +179,75 @@ const Layout = ({ children }: any) => {
           </Page.Navigation>
 
           <Page.Menu className="flex justify-between align-center">
-            <Avatar
-              alt="gh-logo"
-              src="https://avatars.githubusercontent.com/u/59123840?v=4"
-              sizing="small"
-            />
+            <div className="flex align-center g-medium-30">
+              <Avatar
+                alt="gh-logo"
+                src="https://avatars.githubusercontent.com/u/59123840?v=4"
+                sizing="small"
+              />
+              <DropdownMenu.Root>
+                <DropdownMenu>
+                  <DropdownMenu.Trigger variant="border" sizing="small">
+                    <b>⋮</b>
+                  </DropdownMenu.Trigger>
+                  <DropdownMenu.Content>
+                    <DropdownMenu.Item className="flex align-center justify-between">
+                      Open profile
+                      <code>
+                        <small>SHIFT&nbsp;+&nbsp;P</small>
+                      </code>
+                    </DropdownMenu.Item>
+                    <Divider />
+                    <DropdownMenu.Item>Teams</DropdownMenu.Item>
+                    <DropdownMenu.Item>Members</DropdownMenu.Item>
+                    <Divider />
+                    <DropdownMenu.Item className="flex align-center justify-between">
+                      Try Pro
+                      <span>✨</span>
+                    </DropdownMenu.Item>
+                    <DropdownMenu.Item>Features roadmap</DropdownMenu.Item>
+                    <Divider />
+                    <DropdownMenu.Item className="flex align-center justify-between">
+                      Sign out
+                      <code>↳</code>
+                    </DropdownMenu.Item>
+                  </DropdownMenu.Content>
+                </DropdownMenu>
+              </DropdownMenu.Root>
+            </div>
 
-            <ul
-              className={`flex align-center ${
-                ab_testing.version === settings.ab.randomize.defaultVersion
-                  ? "g-medium-30"
-                  : "g-medium-60"
-              }`}
-            >
-              <Button
-                id="useless-trigger"
-                variant={
-                  (settings.app_properties.options.ab &&
-                    ab_testing.variant?.components?.buttonsVariant) ||
-                  deferredVariant
-                }
-                sizing={
-                  (settings.app_properties.options.ab &&
-                    ab_testing.variant?.components?.buttonsSize) ||
-                  "medium"
-                }
-              >
-                Workspaces
-              </Button>
+            <ul className="flex align-center g-medium-30">
+              <DropdownMenu.Root>
+                <DropdownMenu>
+                  <DropdownMenu.Trigger
+                    variant={
+                      (settings.app_properties.options.ab &&
+                        ab_testing.variant?.components?.buttonsVariant) ||
+                      deferredVariant
+                    }
+                    sizing={
+                      (settings.app_properties.options.ab &&
+                        ab_testing.variant?.components?.buttonsSize) ||
+                      "medium"
+                    }
+                  >
+                    Workspaces
+                  </DropdownMenu.Trigger>
+                  <DropdownMenu.Content side="right">
+                    <DropdownMenu.Item className="flex align-center justify-between">
+                      New Workspace
+                      <code>
+                        <small>SHIFT&nbsp;+&nbsp;N</small>
+                      </code>
+                    </DropdownMenu.Item>
+                    <Divider />
+                    <DropdownMenu.Item>All workspaces</DropdownMenu.Item>
+                    <DropdownMenu.Item>Team workspaces</DropdownMenu.Item>
+                    <DropdownMenu.Item>Personal workspaces</DropdownMenu.Item>
+                  </DropdownMenu.Content>
+                </DropdownMenu>
+              </DropdownMenu.Root>
+
               <Button
                 id="useless-trigger"
                 variant={
@@ -242,7 +272,14 @@ const Layout = ({ children }: any) => {
                   "medium"
                 }
               >
-                Settings
+                <svg
+                  focusable="false"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M3 17v2h6v-2zM3 5v2h10V5zm10 16v-2h8v-2h-8v-2h-2v6zM7 9v2H3v2h4v2h2V9zm14 4v-2H11v2zm-6-4h2V7h4V5h-4V3h-2z"></path>
+                </svg>
               </Dialog.Trigger>
             </ul>
           </Page.Menu>
@@ -366,22 +403,47 @@ const Layout = ({ children }: any) => {
                     <Toolbar.Item>Shift+A</Toolbar.Item>
                   </Toolbar.Section>
 
-                  <Toolbar.Trigger variant="ghost" sizing="small">
+                  <Toolbar.Trigger variant="border" sizing="small">
                     <svg
                       focusable="false"
                       aria-hidden="true"
                       viewBox="0 0 24 24"
-                      height={16}
-                      width={16}
                       fill="currentColor"
                     >
-                      <path d="M21 11V3h-8l3.29 3.29-10 10L3 13v8h8l-3.29-3.29 10-10z" />
+                      <path d="m20.5 3-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5M15 19l-6-2.11V5l6 2.11z" />
                     </svg>
                   </Toolbar.Trigger>
                 </Toolbar>
               </Toolbar.Root>
 
-              <Page.Wrapper menus={2} navigations={2}>
+              <Page.Wrapper $menus={2} $navigations={2}>
+                <Toolbar.Root>
+                  <Toolbar
+                    side="top"
+                    sizing="large"
+                    height="auto"
+                    shortcut
+                    hotkey="W"
+                    bindkey="shiftKey"
+                  >
+                    <Toolbar.Trigger variant="border" sizing="small">
+                      <svg
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M3 13h2v-2H3zm0 4h2v-2H3zm0-8h2V7H3zm4 4h14v-2H7zm0 4h14v-2H7zM7 7v2h14V7z" />
+                      </svg>
+                      <small>Options</small>
+                    </Toolbar.Trigger>
+
+                    <Toolbar.Section
+                      style={{ overflow: "hidden" }}
+                    ></Toolbar.Section>
+                  </Toolbar>
+                </Toolbar.Root>
+
                 {children}
               </Page.Wrapper>
 
@@ -398,16 +460,14 @@ const Layout = ({ children }: any) => {
                     <Toolbar.Item>Shift+D</Toolbar.Item>
                   </Toolbar.Section>
 
-                  <Toolbar.Trigger variant="ghost" sizing="small">
+                  <Toolbar.Trigger variant="border" sizing="small">
                     <svg
                       focusable="false"
                       aria-hidden="true"
                       viewBox="0 0 24 24"
-                      height={16}
-                      width={16}
                       fill="currentColor"
                     >
-                      <path d="M21 11V3h-8l3.29 3.29-10 10L3 13v8h8l-3.29-3.29 10-10z" />
+                      <path d="m16.24 11.51 1.57-1.57-3.75-3.75-1.57 1.57-4.14-4.13c-.78-.78-2.05-.78-2.83 0l-1.9 1.9c-.78.78-.78 2.05 0 2.83l4.13 4.13L3 17.25V21h3.75l4.76-4.76 4.13 4.13c.95.95 2.23.6 2.83 0l1.9-1.9c.78-.78.78-2.05 0-2.83zm-7.06-.44L5.04 6.94l1.89-1.9L8.2 6.31 7.02 7.5l1.41 1.41 1.19-1.19 1.45 1.45zm7.88 7.89-4.13-4.13 1.9-1.9 1.45 1.45-1.19 1.19 1.41 1.41 1.19-1.19 1.27 1.27zm3.65-11.92c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.47-.47-1.12-.29-1.41 0l-1.83 1.83 3.75 3.75z" />
                     </svg>
                   </Toolbar.Trigger>
                 </Toolbar>
@@ -421,7 +481,19 @@ const Layout = ({ children }: any) => {
             shortcut
             hotkey="S"
             bindkey="shiftKey"
-            trigger="Shift+S"
+            trigger={
+              <React.Fragment>
+                <svg
+                  focusable="false"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M14.06 9.94 12 9l2.06-.94L15 6l.94 2.06L18 9l-2.06.94L15 12zM4 14l.94-2.06L7 11l-2.06-.94L4 8l-.94 2.06L1 11l2.06.94zm4.5-5 1.09-2.41L12 5.5 9.59 4.41 8.5 2 7.41 4.41 5 5.5l2.41 1.09zm-4 11.5 6-6.01 4 4L23 8.93l-1.41-1.41-7.09 7.97-4-4L3 19z" />
+                </svg>
+                <small>Analytics</small>
+              </React.Fragment>
+            }
             triggerProps={{
               sizing: "small",
               variant: "border",
@@ -447,23 +519,6 @@ export const Playground = {
   render: () => {
     return (
       <Layout>
-        <Toolbar.Root>
-          <Toolbar
-            side="top"
-            sizing="large"
-            height="auto"
-            shortcut
-            hotkey="W"
-            bindkey="shiftKey"
-          >
-            <Toolbar.Trigger variant="border" sizing="small">
-              Shift+W
-            </Toolbar.Trigger>
-
-            <Toolbar.Section style={{ overflow: "hidden" }}></Toolbar.Section>
-          </Toolbar>
-        </Toolbar.Root>
-
         <hgroup className="p-medium-30 m-b-medium-60">
           <h3>Page content</h3>
         </hgroup>

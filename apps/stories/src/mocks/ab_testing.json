@@ -2,7 +2,7 @@
   {
     "theme": "dark",
     "components": {
-      "buttonsSize": "medium",
+      "buttonsSize": "small",
       "buttonsVariant": "border"
     }
   },

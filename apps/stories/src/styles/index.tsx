@@ -15,7 +15,7 @@ export const BorderedBox = styled(Field.Wrapper)`
 export const CardBody = styled.article`
   box-sizing: border-box;
   border-radius: var(--measurement-medium-30);
-  border: 1px solid ${({ theme }) => theme.colors.text.alpha[0].rgb};
+  border: var(--border);
   background: ${({ theme }) => theme.colors.body.alpha[0].rgb};
 
   display: flex;

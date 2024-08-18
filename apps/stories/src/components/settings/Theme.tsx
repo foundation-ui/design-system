@@ -12,7 +12,7 @@ export const ThemeSettings = () => {
     {
       label: "dark",
       Icon: ThemeIcon,
-      contrast: "var(--color-mono-white)",
+      contrast: "var(--color-mono-whitest)",
       body: "var(--color-mono-darkest)",
     },
     {
@@ -49,9 +49,8 @@ export const ThemeSettings = () => {
                 <Icon
                   contrast={contrast}
                   body={body}
-                  width="auto"
-                  height={128}
                   radius={3}
+                  style={{ opacity: 1, height: 128, width: "auto" }}
                 />
               </Toggle>
               <p>
