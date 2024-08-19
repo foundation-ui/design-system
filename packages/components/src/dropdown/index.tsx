@@ -7,9 +7,7 @@ import { applyDataState } from "../utils";
 import {
   IReactChildren,
   IComponentStyling,
-  ComponentSizeEnum,
   IComponentSize,
-  ComponentVariantEnum,
 } from "../../../../types";
 
 export interface IDropdownContentProperties
@@ -84,7 +82,7 @@ DropdownMenuRoot.displayName = "DropdownMenu.Root";
  * @returns {ReactElement} The DropdownMenu.Trigger component.
  */
 const DropdownMenuTrigger = (props: IButtonProperties) => {
-  const { onClick, children, ...restProps } = props;
+  const { variant = "ghost", onClick, children, ...restProps } = props;
   const { id, states, methods } = useDropdownMenu();
   const { toggleOpen } = methods;
 
@@ -99,7 +97,7 @@ const DropdownMenuTrigger = (props: IButtonProperties) => {
       onClick={handleClick}
       aria-haspopup="menu"
       data-state={applyDataState(Boolean(states.open))}
-      variant={props.variant || ComponentVariantEnum.Ghost}
+      variant={variant}
       {...restProps}
     >
       {children}
@@ -127,7 +125,7 @@ DropdownMenuTrigger.displayName = "DropdownMenu.Trigger";
 const DropdownMenuContent = (props: IDropdownContentProperties) => {
   const {
     raw,
-    sizing,
+    sizing = "medium",
     defaultOpen,
     side = "left",
     children,
@@ -150,7 +148,7 @@ const DropdownMenuContent = (props: IDropdownContentProperties) => {
           aria-orientation="vertical"
           aria-labelledby={id.split("|").at(0)}
           data-state={applyDataState(Boolean(states.open))}
-          data-sizing={sizing || ComponentSizeEnum.Medium}
+          data-sizing={sizing}
           data-side={side}
           data-align={side}
           data-raw={Boolean(raw)}

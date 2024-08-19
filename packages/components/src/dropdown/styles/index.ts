@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-
+import { IDropdownContentProperties } from "../";
 const HiddenScrollbar = css`
   scrollbar-width: none;
 
@@ -16,24 +16,58 @@ const HiddenScrollbar = css`
 export const RootWrapper = styled.div`
   position: relative;
 `;
+const ContentWrapperSizes = css`
+  --small: var(--measurement-large-60);
+  --medium: var(--measurement-large-80);
+  --large: var(--measurement-large-90);
 
-export const ContentWrapper = styled.ul`
-  position: absolute;
-  margin: 0;
+  max-height: var(--measurement-large-90);
 
-  &[data-side="left"] {
-    transform-origin: top left;
-    left: 0;
+  &[data-sizing="small"] {
+    width: var(--small);
+    max-width: var(--small);
+
+    &[data-side="left"] {
+      inset: auto;
+    }
+    &[data-side="right"] {
+      transform: translateX(calc((var(--small) / 1.5) * -1));
+    }
   }
-  &[data-side="right"] {
-    transform-origin: top right;
-    right: 0;
+
+  &[data-sizing="medium"] {
+    width: var(--medium);
+    max-width: var(--medium);
+
+    &[data-side="left"] {
+      inset: auto;
+    }
+    &[data-side="right"] {
+      transform: translateX(calc((var(--medium) / 1.5) * -1));
+    }
   }
+
+  &[data-sizing="large"] {
+    width: var(--large);
+    max-width: var(--large);
+
+    &[data-side="left"] {
+      inset: auto;
+    }
+    &[data-side="right"] {
+      transform: translateX(calc((var(--large) / 1.5) * -1));
+    }
+  }
+`;
+
+export const ContentWrapper = styled.ul<IDropdownContentProperties>`
+  --small: var(--measurement-large-60);
+  --medium: var(--measurement-large-80);
+  --large: var(--measurement-large-90);
 
   &[data-raw="false"] {
-    width: var(--measurement-large-80);
-    min-width: var(--measurement-large-70);
-    max-height: var(--measurement-large-90);
+    position: fixed;
+    margin: 0;
 
     padding: var(--measurement-medium-30);
     margin: var(--measurement-medium-10) 0;
@@ -45,6 +79,8 @@ export const ContentWrapper = styled.ul`
 
     z-index: var(--depth-default-100);
     overflow-y: scroll;
+
+    ${ContentWrapperSizes}
     ${HiddenScrollbar}
   }
 `;
@@ -59,6 +95,7 @@ export const ItemWrapper = styled.li`
     font-size: var(--fontsize-medium-10);
     padding: var(--measurement-medium-30);
     border-radius: var(--measurement-medium-20);
+    text-align: left;
     color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
     outline: none;
     transition: all ease-in-out 0.2s;
