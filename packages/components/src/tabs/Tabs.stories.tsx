@@ -22,7 +22,7 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div style={{ margin: "var(--measurement-medium-30)" }}>
+      <div className="m-medium-30">
         <Story />
       </div>
     ),
