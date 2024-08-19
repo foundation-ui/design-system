@@ -14,3 +14,10 @@ export interface ISequenceVariation {
   contrast_score?: IContrastScore;
   stack_order?: IStackOrder;
 }
+export interface ISequenceProperties {
+  base: number;
+  units: number;
+  steps: number;
+  name: string;
+  values: ISequenceVariation[];
+}

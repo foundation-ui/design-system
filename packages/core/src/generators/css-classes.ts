@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { IScaleProperties } from "../../../../types";
+import { IScaleProperties, ISequenceProperties } from "../../../../types";
 
 interface Size extends IScaleProperties {
   name: string;
@@ -73,6 +73,51 @@ export const generateSizeClasses = (sizes: Size[]) => {
         }
       });
 
+      return classStrings;
+    });
+  });
+
+  return css`
+    ${cssClasses.join("")}
+  `;
+};
+
+export const generateFontSizesClasses = (fs: Size[]) => {
+  const cssClasses = fs.flatMap(({ name, values }) => {
+    return values.flatMap((value, index) => {
+      const cssValue = `${value.px}px`;
+      let classStrings: string[] = [];
+
+      const className = `fs-${name}-${(index + 1) * 10}`;
+      const classString = `
+            .${className} {
+              font-size: ${cssValue};
+            }
+          `;
+
+      classStrings.push(classString);
+      return classStrings;
+    });
+  });
+
+  return css`
+    ${cssClasses.join("")}
+  `;
+};
+
+export const generateOpacityClasses = (opacity: ISequenceProperties[]) => {
+  const cssClasses = opacity.flatMap(({ name, values }) => {
+    return values.flatMap((value, index) => {
+      let classStrings: string[] = [];
+
+      const className = `opacity-${name}-${(index + 1) * 10}`;
+      const classString = `
+            .${className} {
+              opacity: ${value.value};
+            }
+          `;
+
+      classStrings.push(classString);
       return classStrings;
     });
   });
