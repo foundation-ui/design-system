@@ -18,7 +18,10 @@ export interface IPageToolsProperties
   extends IToolbarBodyProperties,
     IToolbarSectionProperties {
   trigger?: React.ReactNode | string;
-  triggerProps?: IComponentStyling & IComponentSize & IComponentVariant;
+  triggerProps?: IComponentStyling &
+    IComponentSize &
+    IComponentVariant &
+    React.ComponentProps<"button">;
   fixed?: boolean;
 }
 export interface IPageWrapperProperties {

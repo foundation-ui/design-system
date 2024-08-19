@@ -6,8 +6,17 @@
   },
   "uba_flags": [
     "useless-trigger",
+    "theme-trigger",
     "settings-funnel-trigger",
-    "app-settings-trigger"
+    "workspace-funnel-trigger",
+    "collections-funnel-trigger",
+    "templates-funnel-trigger",
+    "upload-funnel-trigger",
+    "download-funnel-trigger",
+    "save-funnel-trigger",
+    "automations-funnel-trigger",
+    "tools-funnel-trigger",
+    "nav-funnel-trigger"
   ],
   "ab": {
     "randomize": {

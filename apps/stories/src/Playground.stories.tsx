@@ -6,12 +6,10 @@ import {
   useAppConfiguration,
   useBehaviorAnalytics,
   useABTesting,
+  generateOpacityClasses,
 } from "@foundation-ui/core";
 import { ColorModeContext } from "@foundation-ui/tokens";
-import {
-  design_system_themes,
-  json_design_tokens_template,
-} from "@foundation-ui/tokens";
+import { design_system_themes, js_design_tokens } from "@foundation-ui/tokens";
 import { useSaveOnUnload } from "@foundation-ui/hooks";
 
 import {
@@ -22,9 +20,14 @@ import {
   Avatar,
   DropdownMenu,
   Divider,
+  Checkbox,
+  Field,
 } from "@foundation-ui/components";
+
 import { AppSettings } from "./components/settings";
-import { Loader3D, CardBody } from "./styles";
+import { Table } from "./components/table";
+
+import { Loader3D, ChipBody } from "./styles";
 import { TComponentVariant } from "../../../types";
 
 import settings from "./mocks/settings.json";
@@ -73,6 +76,41 @@ const Layout = ({ children }: any) => {
     enabled: Boolean(settings.app_properties.options?.ab),
     variations: ab_variations,
   });
+
+  const interaction_data = user_behavior_analytics?.interactions?.flatMap(
+    (interaction) => {
+      let interaction_types: unknown[] = [];
+      let interactions_count: Record<
+        string | "click" | "dblclick" | "hover",
+        number
+      > = {
+        click: 0,
+        dblclick: 0,
+        hover: 0,
+      };
+
+      interaction.events.forEach((event) => {
+        if (!interaction_types.includes(event.type))
+          interaction_types.push(event.type);
+        else {
+          if (event.type === "click") interactions_count.click!++;
+          if (event.type === "dblclick") interactions_count.dblclick!++;
+          if (event.type === "mouseover") interactions_count.hover!++;
+        }
+      });
+
+      return {
+        origin: interaction.origin,
+        frequency: `${interaction.events.length}`,
+        types: interaction_types,
+        most_frequent_interaction: Object.keys(interactions_count).reduce(
+          (a, b) => (interactions_count[a]! > interactions_count[b]! ? a : b)
+        ),
+        last_interaction_time: interaction.events.at(0)?.occured_at,
+      };
+    }
+  );
+  const deferred_interaction_data = React.useDeferredValue(interaction_data);
 
   React.useEffect(() => {
     if (indexed_db.db) {
@@ -125,7 +163,6 @@ const Layout = ({ children }: any) => {
     },
   });
 
-  const triggerRef = React.useRef(null);
   if (!app_config) return <Loader />;
   return (
     <Dialog.Root>
@@ -146,16 +183,17 @@ const Layout = ({ children }: any) => {
             </small>
 
             <ul className="flex g-medium-30 align-center">
-              <Button variant="ghost" sizing="small">
+              <Button id="useless-trigger" variant="ghost" sizing="small">
                 Documentation
               </Button>
-              <Button variant="ghost" sizing="small">
+              <Button id="useless-trigger" variant="ghost" sizing="small">
                 Feedback
               </Button>
-              <Button variant="ghost" sizing="small">
+              <Button id="useless-trigger" variant="ghost" sizing="small">
                 Assistance
               </Button>
               <Button
+                id="theme-trigger"
                 variant="border"
                 sizing="small"
                 onClick={() =>
@@ -191,6 +229,13 @@ const Layout = ({ children }: any) => {
                     <b>⋮</b>
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content>
+                    <li className="grid p-medium-30">
+                      <b>Niki#1234</b>
+                      <small className="opacity-default-60">
+                        mail@example.com
+                      </small>
+                    </li>
+                    <Divider />
                     <DropdownMenu.Item className="flex align-center justify-between">
                       Open profile
                       <code>
@@ -200,12 +245,6 @@ const Layout = ({ children }: any) => {
                     <Divider />
                     <DropdownMenu.Item>Teams</DropdownMenu.Item>
                     <DropdownMenu.Item>Members</DropdownMenu.Item>
-                    <Divider />
-                    <DropdownMenu.Item className="flex align-center justify-between">
-                      Try Pro
-                      <span>✨</span>
-                    </DropdownMenu.Item>
-                    <DropdownMenu.Item>Features roadmap</DropdownMenu.Item>
                     <Divider />
                     <DropdownMenu.Item className="flex align-center justify-between">
                       Sign out
@@ -220,6 +259,7 @@ const Layout = ({ children }: any) => {
               <DropdownMenu.Root>
                 <DropdownMenu>
                   <DropdownMenu.Trigger
+                    id="workspace-funnel-trigger"
                     variant={
                       (settings.app_properties.options.ab &&
                         ab_testing.variant?.components?.buttonsVariant) ||
@@ -249,7 +289,7 @@ const Layout = ({ children }: any) => {
               </DropdownMenu.Root>
 
               <Button
-                id="useless-trigger"
+                id="collections-funnel-trigger"
                 variant={
                   (settings.app_properties.options.ab &&
                     ab_testing.variant?.components?.buttonsVariant) ||
@@ -263,6 +303,7 @@ const Layout = ({ children }: any) => {
               >
                 Collections
               </Button>
+
               <Dialog.Trigger
                 id="settings-funnel-trigger"
                 variant={deferredVariant}
@@ -294,7 +335,7 @@ const Layout = ({ children }: any) => {
               </small>
               <ul className="flex g-medium-30 align-center">
                 <Button
-                  id="useless-trigger"
+                  id="templates-funnel-trigger"
                   name="templates"
                   title="get-templates"
                   variant="border"
@@ -314,7 +355,7 @@ const Layout = ({ children }: any) => {
                   </svg>
                 </Button>
                 <Button
-                  id="useless-trigger"
+                  id="upload-funnel-trigger"
                   name="import"
                   title="import-payload"
                   variant="border"
@@ -332,7 +373,7 @@ const Layout = ({ children }: any) => {
                   </svg>
                 </Button>
                 <Button
-                  id="useless-trigger"
+                  id="download-funnel-trigger"
                   name="download"
                   title="download-collections"
                   variant="border"
@@ -350,7 +391,7 @@ const Layout = ({ children }: any) => {
                   </svg>
                 </Button>
                 <Button
-                  id="useless-trigger"
+                  id="save-funnel-trigger"
                   name="sync"
                   title="sync-collections"
                   variant="border"
@@ -368,7 +409,7 @@ const Layout = ({ children }: any) => {
                   </svg>
                 </Button>
                 <Button
-                  id="useless-trigger"
+                  id="automations-funnel-trigger"
                   name="automations"
                   title="automations-collections"
                   variant="border"
@@ -400,10 +441,14 @@ const Layout = ({ children }: any) => {
                   bindkey="shiftKey"
                 >
                   <Toolbar.Section>
-                    <Toolbar.Item>Shift+A</Toolbar.Item>
+                    {/* <Toolbar.Item>Shift+A</Toolbar.Item> */}
                   </Toolbar.Section>
 
-                  <Toolbar.Trigger variant="border" sizing="small">
+                  <Toolbar.Trigger
+                    id="nav-funnel-trigger"
+                    variant="border"
+                    sizing="small"
+                  >
                     <svg
                       focusable="false"
                       aria-hidden="true"
@@ -427,15 +472,7 @@ const Layout = ({ children }: any) => {
                     bindkey="shiftKey"
                   >
                     <Toolbar.Trigger variant="border" sizing="small">
-                      <svg
-                        focusable="false"
-                        aria-hidden="true"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d="M3 13h2v-2H3zm0 4h2v-2H3zm0-8h2V7H3zm4 4h14v-2H7zm0 4h14v-2H7zM7 7v2h14V7z" />
-                      </svg>
-                      <small>Options</small>
+                      Options
                     </Toolbar.Trigger>
 
                     <Toolbar.Section
@@ -443,7 +480,6 @@ const Layout = ({ children }: any) => {
                     ></Toolbar.Section>
                   </Toolbar>
                 </Toolbar.Root>
-
                 {children}
               </Page.Wrapper>
 
@@ -457,10 +493,14 @@ const Layout = ({ children }: any) => {
                   bindkey="shiftKey"
                 >
                   <Toolbar.Section>
-                    <Toolbar.Item>Shift+D</Toolbar.Item>
+                    {/* <Toolbar.Item>Shift+D</Toolbar.Item> */}
                   </Toolbar.Section>
 
-                  <Toolbar.Trigger variant="border" sizing="small">
+                  <Toolbar.Trigger
+                    id="tools-funnel-trigger"
+                    variant="border"
+                    sizing="small"
+                  >
                     <svg
                       focusable="false"
                       aria-hidden="true"
@@ -478,7 +518,10 @@ const Layout = ({ children }: any) => {
           <Page.Panel
             side="bottom"
             sizing="large"
-            shortcut
+            shortcut={
+              deferred_interaction_data &&
+              deferred_interaction_data.length !== 0
+            }
             hotkey="S"
             bindkey="shiftKey"
             trigger={
@@ -491,23 +534,253 @@ const Layout = ({ children }: any) => {
                 >
                   <path d="M14.06 9.94 12 9l2.06-.94L15 6l.94 2.06L18 9l-2.06.94L15 12zM4 14l.94-2.06L7 11l-2.06-.94L4 8l-.94 2.06L1 11l2.06.94zm4.5-5 1.09-2.41L12 5.5 9.59 4.41 8.5 2 7.41 4.41 5 5.5l2.41 1.09zm-4 11.5 6-6.01 4 4L23 8.93l-1.41-1.41-7.09 7.97-4-4L3 19z" />
                 </svg>
-                <small>Analytics</small>
               </React.Fragment>
             }
             triggerProps={{
               sizing: "small",
               variant: "border",
+              disabled:
+                !deferred_interaction_data ||
+                deferred_interaction_data.length === 0,
             }}
           >
-            <pre
-              style={{
-                all: "unset",
-                fontSize: "66%",
-                opacity: 0.8,
-              }}
-            >
-              <code>{JSON.stringify({ ...user_behavior_analytics })}</code>
-            </pre>
+            {deferred_interaction_data &&
+              deferred_interaction_data.length !== 0 && (
+                <div className="m-y-medium-60">
+                  <hgroup className="m-b-medium-30 flex align-center g-medium-30">
+                    <Field.Root>
+                      <Field.Wrapper>
+                        <Field
+                          name="search-uba"
+                          variant="secondary"
+                          sizing="medium"
+                          placeholder="Search.."
+                          onChange={() => null}
+                        />
+                      </Field.Wrapper>
+                    </Field.Root>
+
+                    <DropdownMenu.Root>
+                      <DropdownMenu>
+                        <DropdownMenu.Trigger variant="border" sizing="medium">
+                          Columns
+                          <svg
+                            focusable="false"
+                            aria-hidden="true"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path d="M3 9h14V7H3zm0 4h14v-2H3zm0 4h14v-2H3zm16 0h2v-2h-2zm0-10v2h2V7zm0 6h2v-2h-2z" />
+                          </svg>
+                        </DropdownMenu.Trigger>
+                        <DropdownMenu.Content side="left" sizing="medium">
+                          <DropdownMenu.Item className="flex align-center justify-between">
+                            Frequency<b>✓</b>
+                          </DropdownMenu.Item>
+                          <DropdownMenu.Item className="flex align-center justify-between">
+                            Last interaction<b>✓</b>
+                          </DropdownMenu.Item>
+                        </DropdownMenu.Content>
+                      </DropdownMenu>
+                    </DropdownMenu.Root>
+                    <DropdownMenu.Root>
+                      <DropdownMenu>
+                        <DropdownMenu.Trigger variant="border" sizing="medium">
+                          Filter by
+                          <svg
+                            focusable="false"
+                            aria-hidden="true"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path d="M7 6h10l-5.01 6.3zm-2.75-.39C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39c.51-.66.04-1.61-.79-1.61H5.04c-.83 0-1.3.95-.79 1.61" />
+                          </svg>
+                        </DropdownMenu.Trigger>
+                        <DropdownMenu.Content side="left" sizing="small">
+                          <DropdownMenu.Item className="flex align-center justify-between">
+                            Click<b>◭</b>
+                          </DropdownMenu.Item>
+                          <DropdownMenu.Item className="flex align-center justify-between">
+                            Dbl Click<b>◭◭</b>
+                          </DropdownMenu.Item>
+                          <DropdownMenu.Item className="flex align-center justify-between">
+                            Hover<b>❏</b>
+                          </DropdownMenu.Item>
+                        </DropdownMenu.Content>
+                      </DropdownMenu>
+                    </DropdownMenu.Root>
+                    <DropdownMenu.Root>
+                      <DropdownMenu>
+                        <DropdownMenu.Trigger variant="border" sizing="medium">
+                          Sort by
+                          <svg
+                            focusable="false"
+                            aria-hidden="true"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99zM9 3 5 6.99h3V14h2V6.99h3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99zM9 3 5 6.99h3V14h2V6.99h3z"></path>
+                          </svg>
+                        </DropdownMenu.Trigger>
+                        <DropdownMenu.Content side="left" sizing="small">
+                          <DropdownMenu.Item className="flex align-center justify-between">
+                            Asc<b>↑</b>
+                          </DropdownMenu.Item>
+                          <DropdownMenu.Item className="flex align-center justify-between">
+                            Desc<b>↓</b>
+                          </DropdownMenu.Item>
+                        </DropdownMenu.Content>
+                      </DropdownMenu>
+                    </DropdownMenu.Root>
+                  </hgroup>
+
+                  <Table.Root>
+                    <Table>
+                      <Table.Head>
+                        <Table.Row>
+                          <Table.HeadCell>
+                            <Checkbox.Root>
+                              <Checkbox onChange={() => null}>
+                                <Checkbox.Indicator />
+                              </Checkbox>
+                            </Checkbox.Root>
+                          </Table.HeadCell>
+
+                          <Table.HeadCell>Origin</Table.HeadCell>
+                          <Table.HeadCell>Frequency</Table.HeadCell>
+                          <Table.HeadCell>Types</Table.HeadCell>
+                          <Table.HeadCell>
+                            <DropdownMenu.Root>
+                              <DropdownMenu>
+                                <DropdownMenu.Trigger
+                                  variant="ghost"
+                                  sizing="small"
+                                >
+                                  Most frequent<b>⋮</b>
+                                </DropdownMenu.Trigger>
+                                <DropdownMenu.Content
+                                  side="left"
+                                  sizing="small"
+                                >
+                                  <DropdownMenu.Item className="flex align-center justify-between">
+                                    Click<b>◭</b>
+                                  </DropdownMenu.Item>
+                                  <DropdownMenu.Item className="flex align-center justify-between">
+                                    Dbl Click<b>◭◭</b>
+                                  </DropdownMenu.Item>
+                                  <DropdownMenu.Item className="flex align-center justify-between">
+                                    Hover<b>❏</b>
+                                  </DropdownMenu.Item>
+                                  <Divider />
+                                  <DropdownMenu.Item className="flex align-center justify-between">
+                                    Hide<b>✗</b>
+                                  </DropdownMenu.Item>
+                                </DropdownMenu.Content>
+                              </DropdownMenu>
+                            </DropdownMenu.Root>
+                          </Table.HeadCell>
+
+                          <Table.HeadCell>
+                            <DropdownMenu.Root>
+                              <DropdownMenu>
+                                <DropdownMenu.Trigger
+                                  variant="ghost"
+                                  sizing="small"
+                                >
+                                  Last interaction<b>⋮</b>
+                                </DropdownMenu.Trigger>
+                                <DropdownMenu.Content
+                                  side="left"
+                                  sizing="small"
+                                >
+                                  <DropdownMenu.Item className="flex align-center justify-between">
+                                    Asc<b>↑</b>
+                                  </DropdownMenu.Item>
+                                  <DropdownMenu.Item className="flex align-center justify-between">
+                                    Desc<b>↓</b>
+                                  </DropdownMenu.Item>
+                                  <Divider />
+                                  <DropdownMenu.Item className="flex align-center justify-between">
+                                    Hide<b>✗</b>
+                                  </DropdownMenu.Item>
+                                </DropdownMenu.Content>
+                              </DropdownMenu>
+                            </DropdownMenu.Root>
+                          </Table.HeadCell>
+
+                          <Table.HeadCell />
+                        </Table.Row>
+                      </Table.Head>
+
+                      <Table.Body>
+                        {deferred_interaction_data?.map(
+                          (interaction: any, parent_key) => (
+                            <Table.Row key={parent_key}>
+                              <Table.Cell>
+                                <Checkbox.Root>
+                                  <Checkbox onChange={() => null}>
+                                    <Checkbox.Indicator />
+                                  </Checkbox>
+                                </Checkbox.Root>
+                              </Table.Cell>
+                              {Object.keys(interaction).map((obj_key, key) => (
+                                <Table.Cell key={`${obj_key}_${key}`}>
+                                  <div className="flex align-center g-medium-10">
+                                    {typeof interaction[obj_key] === typeof ""
+                                      ? interaction[obj_key]
+                                      : interaction[obj_key]?.map(
+                                          (item: string) => (
+                                            <ChipBody
+                                              key={item}
+                                              className="fs-medium-10 p-y-medium-10 p-x-medium-30"
+                                            >
+                                              <code>{item}</code>
+                                            </ChipBody>
+                                          )
+                                        )}
+                                  </div>
+                                </Table.Cell>
+                              ))}
+                              <Table.Cell>
+                                <Button sizing="small" variant="border">
+                                  Delete
+                                  <svg
+                                    focusable="false"
+                                    aria-hidden="true"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m0 16H7.07L2.4 12l4.66-7H22zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z" />
+                                  </svg>
+                                </Button>
+                              </Table.Cell>
+                            </Table.Row>
+                          )
+                        )}
+                      </Table.Body>
+
+                      {/* <Table.Footer>
+                <p>COUNT of TOAL_LENGTH row(s) selected.</p>
+
+                <div>
+                  <Button variant="border" sizing="small">
+                    ITEMS_PER_PAGE(Dropdown)
+                  </Button>
+                  <p>Page INDEX of TOAL_LENGTH / ITEMS_PER_PAGE</p>
+
+                  <div>
+                    <Button variant="border" sizing="small">
+                      Go to previous page
+                    </Button>
+                    <Button variant="border" sizing="small">
+                      Go to next page
+                    </Button>
+                  </div>
+                </div>
+              </Table.Footer> */}
+                    </Table>
+                  </Table.Root>
+                </div>
+              )}
           </Page.Panel>
         </Page.Content>
       </Page>
@@ -519,9 +792,11 @@ export const Playground = {
   render: () => {
     return (
       <Layout>
-        <hgroup className="p-medium-30 m-b-medium-60">
-          <h3>Page content</h3>
-        </hgroup>
+        <section className="p-x-medium-30 p-y-medium-80">
+          <hgroup className="m-b-medium-60">
+            <h3>Playground</h3>
+          </hgroup>
+        </section>
       </Layout>
     );
   },

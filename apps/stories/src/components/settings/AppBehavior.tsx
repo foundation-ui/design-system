@@ -43,7 +43,7 @@ export const AppBehaviorSettings = () => {
     <form className="grid g-medium-60">
       <hgroup className="grid g-medium-30">
         <h4>Application Behavior</h4>
-        <p style={{ opacity: 0.6 }}>
+        <p className="opacity-default-60">
           Adapt apps interfaces based on User behavior Analytics.
         </p>
       </hgroup>
@@ -61,7 +61,7 @@ export const AppBehaviorSettings = () => {
 
                 <div className="grid g-medium-10">
                   <Field.Label optional>{option.label}</Field.Label>
-                  <Field.Meta style={{ opacity: 0.6 }}>
+                  <Field.Meta className="opacity-default-60">
                     {option.meta}
                   </Field.Meta>
                   <Accordion>

@@ -28,6 +28,11 @@ export const CardBody = styled.article`
   aspect-ratio: 2.1;
   width: 100%;
 `;
+export const ChipBody = styled.span`
+  color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
+  background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+  border-radius: var(--measurement-medium-10);
+`;
 export const Loader3D = styled.div`
   --size: 12px;
   --dimension: calc(0.353 * var(--size));

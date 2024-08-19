@@ -100,7 +100,7 @@ export const AppSettings = () => {
 
             {/* <Switch.Root>
               <div className="flex align-center g-medium-30">
-                <Field.Meta style={{ opacity: 0.6 }}>
+                <Field.Meta className="opacity-default-60">
                   Sync with Unified Properties
                 </Field.Meta>
                 <Switch

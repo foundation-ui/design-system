@@ -81,7 +81,7 @@ export const ShortcutsSettings = () => {
 
                   <div className="grid g-medium-10">
                     <Field.Label optional>{option.label}</Field.Label>
-                    <Field.Meta style={{ opacity: 0.6 }}>
+                    <Field.Meta className="opacity-default-60">
                       {option.meta}
                     </Field.Meta>
                     <Accordion>
@@ -143,7 +143,7 @@ export const ShortcutsSettings = () => {
 
                   <div className="grid g-medium-10">
                     <Field.Label optional>{option.label}</Field.Label>
-                    <Field.Meta style={{ opacity: 0.6 }}>
+                    <Field.Meta className="opacity-default-60">
                       {option.meta}
                     </Field.Meta>
                     <Accordion>

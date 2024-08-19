@@ -74,7 +74,9 @@ export const LayoutOptionsSettings = () => {
               </Checkbox.Root>
               <div className="grid g-medium-10">
                 <Field.Label optional>{option.label}</Field.Label>
-                <Field.Meta style={{ opacity: 0.6 }}>{option.meta}</Field.Meta>
+                <Field.Meta className="opacity-default-60">
+                  {option.meta}
+                </Field.Meta>
                 <Accordion>
                   <Accordion.Trigger
                     value={option.id}
@@ -108,7 +110,7 @@ export const LayoutOptionsSettings = () => {
                           </Switch.Root>
                         </Field.Meta>
 
-                        <Field.Meta style={{ opacity: 0.6 }}>
+                        <Field.Meta className="opacity-default-60">
                           Disabling the collapse mode cancels the shortcuts
                           usage.
                         </Field.Meta>
