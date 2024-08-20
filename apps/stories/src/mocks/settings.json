@@ -19,11 +19,13 @@
     "nav-funnel-trigger"
   ],
   "ab": {
+    "versions": {
+      "default": 0,
+      "alternative": 1
+    },
     "randomize": {
-      "defaultVersion": 0,
-      "targetVersion": 1,
-      "triggerKey": 1,
-      "threshold": 2
+      "gamble": 1,
+      "odds": 2
     }
   },
   "app_properties": {

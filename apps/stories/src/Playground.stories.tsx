@@ -22,16 +22,36 @@ import {
   Divider,
   Checkbox,
   Field,
+  Accordion,
+  Table,
 } from "@foundation-ui/components";
 
 import { AppSettings } from "./components/settings";
-import { Table } from "./components/table";
 
 import { Loader3D, ChipBody } from "./styles";
 import { TComponentVariant } from "../../../types";
 
 import settings from "./mocks/settings.json";
 import ab_variations from "./mocks/ab_testing.json";
+
+{
+  /* <TODO>Update ab-config: threshold = odds</TODO> */
+  /* <TODO>Extract logic from Layout to a Component API</TODO> */
+  /* ———————————————————————————————————————————————— */
+  /* <TODO>Add ScrollArea component (https://www.radix-ui.com/primitives/docs/components/scroll-area)</TODO> */
+  /* <TODO>Add AspectRatio component (https://ui.shadcn.com/docs/components/aspect-ratio)</TODO> */
+  /* <TODO>Add Sheet component (https://ui.shadcn.com/docs/components/sheet)</TODO> */
+  /* <TODO>Add Drawer component (https://ui.shadcn.com/docs/components/drawer, https://vaul.emilkowal.ski/)</TODO> */
+  /* <TODO>Add Badge component (https://ui.shadcn.com/docs/components/badge)</TODO> */
+  /* <TODO>Add Breadcrumb component (https://ui.shadcn.com/docs/components/breadcrumb)</TODO> */
+  /* <TODO>Enhance Fields: Number, OTP(?), Range</TODO> */
+  /* ———————————————————————————————————————————————— */
+  /* <TODO>Add Tooltip component (https://ui.shadcn.com/docs/components/tooltip)</TODO> */
+  /* <TODO>Enhance Dropdown: Auto position</TODO> */
+  /* <TODO>Add Toast component (https://ui.shadcn.com/docs/components/toast, https://sonner.emilkowal.ski/)</TODO> */
+  /* <TODO>Add Island component (https://emilkowal.ski/ui/dynamic-island)</TODO> */
+  /* <TODO>Add Resizable component (https://ui.shadcn.com/docs/components/resizable)</TODO> */
+}
 
 const meta = {
   title: "Modules/Playground",
@@ -76,17 +96,23 @@ const Layout = ({ children }: any) => {
     enabled: Boolean(settings.app_properties.options?.ab),
     variations: ab_variations,
   });
+  const [custom_ab, setCustomAb] = React.useState({
+    default: 0,
+    alternative: 1,
+    gamble: 1,
+    odds: 2,
+  });
 
   const interaction_data = user_behavior_analytics?.interactions?.flatMap(
     (interaction) => {
       let interaction_types: unknown[] = [];
       let interactions_count: Record<
-        string | "click" | "dblclick" | "hover",
+        string | "click" | "dblclick" | "mouseover",
         number
       > = {
         click: 0,
         dblclick: 0,
-        hover: 0,
+        mouseover: 0,
       };
 
       interaction.events.forEach((event) => {
@@ -95,17 +121,29 @@ const Layout = ({ children }: any) => {
         else {
           if (event.type === "click") interactions_count.click!++;
           if (event.type === "dblclick") interactions_count.dblclick!++;
-          if (event.type === "mouseover") interactions_count.hover!++;
+          if (event.type === "mouseover") interactions_count.mouseover!++;
         }
       });
 
+      const most_frequent = Object.keys(interactions_count).reduce((a, b) =>
+        interactions_count[a]! > interactions_count[b]! ? a : b
+      );
+      const description = `\n
+      ${interactions_count[most_frequent]}\n
+      out of ${interaction.events.length}\n
+      interactions on ${interaction.origin}\n
+      ${
+        Number(interactions_count[most_frequent]) > 1
+          ? `are ${most_frequent}s`
+          : `is a ${most_frequent}`
+      }`;
+
       return {
         origin: interaction.origin,
+        description: description,
         frequency: `${interaction.events.length}`,
         types: interaction_types,
-        most_frequent_interaction: Object.keys(interactions_count).reduce(
-          (a, b) => (interactions_count[a]! > interactions_count[b]! ? a : b)
-        ),
+        most_frequent_interaction: most_frequent,
         last_interaction_time: interaction.events.at(0)?.occured_at,
       };
     }
@@ -174,8 +212,8 @@ const Layout = ({ children }: any) => {
             <small>
               <code>UUI-Toolkit&nbsp;</code>
               <span style={{ opacity: 0.3 }}>
-                [&nbsp;
-                {ab_testing.version === settings.ab.randomize.defaultVersion
+                [&nbsp;v0.0.1&nbsp;-&nbsp;
+                {ab_testing.version === settings.ab.versions.default
                   ? "A"
                   : "B"}
                 &nbsp;]
@@ -465,19 +503,113 @@ const Layout = ({ children }: any) => {
                 <Toolbar.Root>
                   <Toolbar
                     side="top"
-                    sizing="large"
+                    sizing="medium"
                     height="auto"
                     shortcut
                     hotkey="W"
                     bindkey="shiftKey"
                   >
                     <Toolbar.Trigger variant="border" sizing="small">
-                      Options
+                      <svg viewBox="0 0 24 24">
+                        <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4z" />
+                        <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-5.99 13c-.59 0-1.05-.47-1.05-1.05 0-.59.47-1.04 1.05-1.04.59 0 1.04.45 1.04 1.04-.01.58-.45 1.05-1.04 1.05m2.5-6.17c-.63.93-1.23 1.21-1.56 1.81-.13.24-.18.4-.18 1.18h-1.52c0-.41-.06-1.08.26-1.65.41-.73 1.18-1.16 1.63-1.8.48-.68.21-1.94-1.14-1.94-.88 0-1.32.67-1.5 1.23l-1.37-.57C11.51 5.96 12.52 5 13.99 5c1.23 0 2.08.56 2.51 1.26.37.61.58 1.73.01 2.57" />
+                      </svg>
                     </Toolbar.Trigger>
 
-                    <Toolbar.Section
-                      style={{ overflow: "hidden" }}
-                    ></Toolbar.Section>
+                    <Toolbar.Section>
+                      <hgroup className="grid g-medium-10 m-y-medium-60">
+                        <p>Configure AB Testing</p>
+                        <p
+                          className="opacity-default-60 "
+                          style={{
+                            maxWidth: "var(--breakpoint-tablet-small)",
+                          }}
+                        >
+                          AB is a statistical comparison method used to compare
+                          different variations of a basic version of an element
+                          and is used in this Application.
+                        </p>
+                      </hgroup>
+
+                      <form className="flex g-medium-30">
+                        <Field.Root>
+                          <Field.Wrapper>
+                            <Field.Label optional>Default version</Field.Label>
+                            <Field
+                              type="number"
+                              name="default-ab-version"
+                              variant="secondary"
+                              sizing="medium"
+                              placeholder=""
+                              value={custom_ab.default}
+                              onChange={(event) =>
+                                setCustomAb((prevItems) => ({
+                                  ...prevItems,
+                                  default: Number(event.target.value),
+                                }))
+                              }
+                            />
+                          </Field.Wrapper>
+                        </Field.Root>
+                        <Field.Root>
+                          <Field.Wrapper>
+                            <Field.Label optional>Target version</Field.Label>
+                            <Field
+                              type="number"
+                              name="target-ab-version"
+                              variant="secondary"
+                              sizing="medium"
+                              placeholder=""
+                              value={custom_ab.alternative}
+                              onChange={(event) =>
+                                setCustomAb((prevItems) => ({
+                                  ...prevItems,
+                                  alternative: Number(event.target.value),
+                                }))
+                              }
+                            />
+                          </Field.Wrapper>
+                        </Field.Root>
+                        <Field.Root>
+                          <Field.Wrapper>
+                            <Field.Label optional>Trigger Key</Field.Label>
+                            <Field
+                              type="number"
+                              name="ab-trigger-key"
+                              variant="secondary"
+                              sizing="medium"
+                              placeholder=""
+                              value={custom_ab.gamble}
+                              onChange={(event) =>
+                                setCustomAb((prevItems) => ({
+                                  ...prevItems,
+                                  gamble: Number(event.target.value),
+                                }))
+                              }
+                            />
+                          </Field.Wrapper>
+                        </Field.Root>
+                        <Field.Root>
+                          <Field.Wrapper>
+                            <Field.Label optional>Threshold</Field.Label>
+                            <Field
+                              type="number"
+                              name="ab-treshold"
+                              variant="secondary"
+                              sizing="medium"
+                              placeholder=""
+                              value={custom_ab.odds}
+                              onChange={(event) =>
+                                setCustomAb((prevItems) => ({
+                                  ...prevItems,
+                                  threshold: Number(event.target.value),
+                                }))
+                              }
+                            />
+                          </Field.Wrapper>
+                        </Field.Root>
+                      </form>
+                    </Toolbar.Section>
                   </Toolbar>
                 </Toolbar.Root>
                 {children}
@@ -517,7 +649,7 @@ const Layout = ({ children }: any) => {
 
           <Page.Panel
             side="bottom"
-            sizing="large"
+            height="display"
             shortcut={
               deferred_interaction_data &&
               deferred_interaction_data.length !== 0
@@ -559,7 +691,6 @@ const Layout = ({ children }: any) => {
                         />
                       </Field.Wrapper>
                     </Field.Root>
-
                     <DropdownMenu.Root>
                       <DropdownMenu>
                         <DropdownMenu.Trigger variant="border" sizing="medium">
@@ -574,6 +705,12 @@ const Layout = ({ children }: any) => {
                           </svg>
                         </DropdownMenu.Trigger>
                         <DropdownMenu.Content side="left" sizing="medium">
+                          <DropdownMenu.Item className="flex align-center justify-between">
+                            Origin<b>✓</b>
+                          </DropdownMenu.Item>
+                          <DropdownMenu.Item className="flex align-center justify-between">
+                            Description<b>✓</b>
+                          </DropdownMenu.Item>
                           <DropdownMenu.Item className="flex align-center justify-between">
                             Frequency<b>✓</b>
                           </DropdownMenu.Item>
@@ -634,151 +771,122 @@ const Layout = ({ children }: any) => {
                     </DropdownMenu.Root>
                   </hgroup>
 
-                  <Table.Root>
-                    <Table>
-                      <Table.Head>
-                        <Table.Row>
-                          <Table.HeadCell>
-                            <Checkbox.Root>
-                              <Checkbox onChange={() => null}>
-                                <Checkbox.Indicator />
-                              </Checkbox>
-                            </Checkbox.Root>
-                          </Table.HeadCell>
+                  <Table>
+                    <Table.Head>
+                      <Table.Row>
+                        <Table.HeadCell>
+                          <Checkbox.Root>
+                            <Checkbox onChange={() => null}>
+                              <Checkbox.Indicator />
+                            </Checkbox>
+                          </Checkbox.Root>
+                        </Table.HeadCell>
+                        <Table.HeadCell>Origin</Table.HeadCell>
+                        <Table.HeadCell>Description</Table.HeadCell>
+                        <Table.HeadCell>Frequency</Table.HeadCell>
+                        <Table.HeadCell>Types</Table.HeadCell>
+                        <Table.HeadCell>
+                          <DropdownMenu.Root>
+                            <DropdownMenu>
+                              <DropdownMenu.Trigger
+                                variant="ghost"
+                                sizing="small"
+                              >
+                                Most frequent<b>⋮</b>
+                              </DropdownMenu.Trigger>
+                              <DropdownMenu.Content side="left" sizing="small">
+                                <DropdownMenu.Item className="flex align-center justify-between">
+                                  Click<b>◭</b>
+                                </DropdownMenu.Item>
+                                <DropdownMenu.Item className="flex align-center justify-between">
+                                  Dbl Click<b>◭◭</b>
+                                </DropdownMenu.Item>
+                                <DropdownMenu.Item className="flex align-center justify-between">
+                                  Hover<b>❏</b>
+                                </DropdownMenu.Item>
+                                <Divider />
+                                <DropdownMenu.Item className="flex align-center justify-between">
+                                  Hide<b>✗</b>
+                                </DropdownMenu.Item>
+                              </DropdownMenu.Content>
+                            </DropdownMenu>
+                          </DropdownMenu.Root>
+                        </Table.HeadCell>
+                        <Table.HeadCell>
+                          <DropdownMenu.Root>
+                            <DropdownMenu>
+                              <DropdownMenu.Trigger
+                                variant="ghost"
+                                sizing="small"
+                              >
+                                Last interaction<b>⋮</b>
+                              </DropdownMenu.Trigger>
+                              <DropdownMenu.Content side="left" sizing="small">
+                                <DropdownMenu.Item className="flex align-center justify-between">
+                                  Asc<b>↑</b>
+                                </DropdownMenu.Item>
+                                <DropdownMenu.Item className="flex align-center justify-between">
+                                  Desc<b>↓</b>
+                                </DropdownMenu.Item>
+                                <Divider />
+                                <DropdownMenu.Item className="flex align-center justify-between">
+                                  Hide<b>✗</b>
+                                </DropdownMenu.Item>
+                              </DropdownMenu.Content>
+                            </DropdownMenu>
+                          </DropdownMenu.Root>
+                        </Table.HeadCell>
 
-                          <Table.HeadCell>Origin</Table.HeadCell>
-                          <Table.HeadCell>Frequency</Table.HeadCell>
-                          <Table.HeadCell>Types</Table.HeadCell>
-                          <Table.HeadCell>
-                            <DropdownMenu.Root>
-                              <DropdownMenu>
-                                <DropdownMenu.Trigger
-                                  variant="ghost"
-                                  sizing="small"
-                                >
-                                  Most frequent<b>⋮</b>
-                                </DropdownMenu.Trigger>
-                                <DropdownMenu.Content
-                                  side="left"
-                                  sizing="small"
-                                >
-                                  <DropdownMenu.Item className="flex align-center justify-between">
-                                    Click<b>◭</b>
-                                  </DropdownMenu.Item>
-                                  <DropdownMenu.Item className="flex align-center justify-between">
-                                    Dbl Click<b>◭◭</b>
-                                  </DropdownMenu.Item>
-                                  <DropdownMenu.Item className="flex align-center justify-between">
-                                    Hover<b>❏</b>
-                                  </DropdownMenu.Item>
-                                  <Divider />
-                                  <DropdownMenu.Item className="flex align-center justify-between">
-                                    Hide<b>✗</b>
-                                  </DropdownMenu.Item>
-                                </DropdownMenu.Content>
-                              </DropdownMenu>
-                            </DropdownMenu.Root>
-                          </Table.HeadCell>
+                        <Table.HeadCell />
+                      </Table.Row>
+                    </Table.Head>
 
-                          <Table.HeadCell>
-                            <DropdownMenu.Root>
-                              <DropdownMenu>
-                                <DropdownMenu.Trigger
-                                  variant="ghost"
-                                  sizing="small"
-                                >
-                                  Last interaction<b>⋮</b>
-                                </DropdownMenu.Trigger>
-                                <DropdownMenu.Content
-                                  side="left"
-                                  sizing="small"
-                                >
-                                  <DropdownMenu.Item className="flex align-center justify-between">
-                                    Asc<b>↑</b>
-                                  </DropdownMenu.Item>
-                                  <DropdownMenu.Item className="flex align-center justify-between">
-                                    Desc<b>↓</b>
-                                  </DropdownMenu.Item>
-                                  <Divider />
-                                  <DropdownMenu.Item className="flex align-center justify-between">
-                                    Hide<b>✗</b>
-                                  </DropdownMenu.Item>
-                                </DropdownMenu.Content>
-                              </DropdownMenu>
-                            </DropdownMenu.Root>
-                          </Table.HeadCell>
-
-                          <Table.HeadCell />
-                        </Table.Row>
-                      </Table.Head>
-
-                      <Table.Body>
-                        {deferred_interaction_data?.map(
-                          (interaction: any, parent_key) => (
-                            <Table.Row key={parent_key}>
-                              <Table.Cell>
-                                <Checkbox.Root>
-                                  <Checkbox onChange={() => null}>
-                                    <Checkbox.Indicator />
-                                  </Checkbox>
-                                </Checkbox.Root>
+                    <Table.Body>
+                      {deferred_interaction_data.map(
+                        (interaction: any, parent_key) => (
+                          <Table.Row key={parent_key}>
+                            <Table.Cell>
+                              <Checkbox.Root>
+                                <Checkbox onChange={() => null}>
+                                  <Checkbox.Indicator />
+                                </Checkbox>
+                              </Checkbox.Root>
+                            </Table.Cell>
+                            {Object.keys(interaction).map((obj_key, key) => (
+                              <Table.Cell key={`${obj_key}_${key}`}>
+                                <div className="flex flex-wrap align-center g-medium-10">
+                                  {typeof interaction[obj_key] === typeof ""
+                                    ? interaction[obj_key]
+                                    : interaction[obj_key]?.map(
+                                        (item: string) => (
+                                          <ChipBody
+                                            key={item}
+                                            className="fs-medium-10 p-y-medium-10 p-x-medium-30"
+                                          >
+                                            <code>{item}</code>
+                                          </ChipBody>
+                                        )
+                                      )}
+                                </div>
                               </Table.Cell>
-                              {Object.keys(interaction).map((obj_key, key) => (
-                                <Table.Cell key={`${obj_key}_${key}`}>
-                                  <div className="flex align-center g-medium-10">
-                                    {typeof interaction[obj_key] === typeof ""
-                                      ? interaction[obj_key]
-                                      : interaction[obj_key]?.map(
-                                          (item: string) => (
-                                            <ChipBody
-                                              key={item}
-                                              className="fs-medium-10 p-y-medium-10 p-x-medium-30"
-                                            >
-                                              <code>{item}</code>
-                                            </ChipBody>
-                                          )
-                                        )}
-                                  </div>
-                                </Table.Cell>
-                              ))}
-                              <Table.Cell>
-                                <Button sizing="small" variant="border">
-                                  Delete
-                                  <svg
-                                    focusable="false"
-                                    aria-hidden="true"
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m0 16H7.07L2.4 12l4.66-7H22zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z" />
-                                  </svg>
-                                </Button>
-                              </Table.Cell>
-                            </Table.Row>
-                          )
-                        )}
-                      </Table.Body>
-
-                      {/* <Table.Footer>
-                <p>COUNT of TOAL_LENGTH row(s) selected.</p>
-
-                <div>
-                  <Button variant="border" sizing="small">
-                    ITEMS_PER_PAGE(Dropdown)
-                  </Button>
-                  <p>Page INDEX of TOAL_LENGTH / ITEMS_PER_PAGE</p>
-
-                  <div>
-                    <Button variant="border" sizing="small">
-                      Go to previous page
-                    </Button>
-                    <Button variant="border" sizing="small">
-                      Go to next page
-                    </Button>
-                  </div>
-                </div>
-              </Table.Footer> */}
-                    </Table>
-                  </Table.Root>
+                            ))}
+                            <Table.Cell>
+                              <Button sizing="small" variant="border">
+                                Delete
+                                <svg
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m0 16H7.07L2.4 12l4.66-7H22zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z" />
+                                </svg>
+                              </Button>
+                            </Table.Cell>
+                          </Table.Row>
+                        )
+                      )}
+                    </Table.Body>
+                  </Table>
                 </div>
               )}
           </Page.Panel>

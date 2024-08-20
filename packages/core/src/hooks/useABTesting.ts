@@ -13,11 +13,13 @@ interface IABVariant {
 }
 interface IuseABArgs {
   enabled: boolean;
+  versions: {
+    default: number;
+    alternative: number;
+  };
   randomize: {
-    threshold: number;
-    triggerKey: number;
-    defaultVersion: number;
-    targetVersion: number;
+    odds: number;
+    gamble: number;
   };
   variations: IABVariant[];
 }
@@ -28,17 +30,15 @@ interface IuseABProperties {
 }
 
 export const useABTesting = (config: IuseABArgs): IuseABProperties => {
-  const { enabled, randomize, variations } = config;
-  const [version, setVersion] = React.useState<number>(
-    randomize.defaultVersion || 0
-  );
+  const { enabled, randomize, versions, variations } = config;
+  const [version, setVersion] = React.useState<number>(versions.default || 0);
   const ticket = React.useMemo(() => {
-    return enabled ? Math.floor(Math.random() * randomize.threshold) : null;
+    return enabled ? Math.floor(Math.random() * randomize.odds) : null;
   }, []);
 
   React.useLayoutEffect(() => {
-    if (ticket === randomize.triggerKey) {
-      setVersion(randomize.targetVersion);
+    if (ticket === randomize.gamble) {
+      setVersion(versions.alternative);
     }
   }, []);
 
