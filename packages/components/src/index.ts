@@ -9,6 +9,7 @@ export * from "./field";
 export * from "./switch";
 export * from "./tabs";
 export * from "./toggle";
+export * from "./table";
 
 export * from "./dialog";
 export * from "./overlay";
