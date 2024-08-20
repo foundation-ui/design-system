@@ -20,6 +20,7 @@ export enum ComponentVariantEnum {
 }
 export enum ComponentHeightEnum {
   Fullscreen = "fullscreen",
+  Display = "display",
   Auto = "auto",
 }
 
@@ -37,7 +38,7 @@ export type TKeyboardLayout =
   | "JCUKEN"
   | "QGMLWY"
   | "HCESAR";
-export type TComponentHeight = "fullscreen" | "auto";
+export type TComponentHeight = "fullscreen" | "display" | "auto";
 export type TComponentAPI = boolean | string | number | null;
 export type TComponentSize = "small" | "medium" | "large";
 export type TComponentSide = "top" | "right" | "bottom" | "left";

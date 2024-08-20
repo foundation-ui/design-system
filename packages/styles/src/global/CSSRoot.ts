@@ -33,7 +33,7 @@ export const CSSRoot = createGlobalStyle`
 
 		--breakpoint-mobile: 375px;
 		--breakpoint-mobile-large: 425px;
-		--breakpoint-tablet-lmall: 672px;
+		--breakpoint-tablet-small: 672px;
 		--breakpoint-tablet: 768px;
 		--breakpoint-tablet-landscape: 1024px;
 		--breakpoint-desktop: 1440px;
