@@ -71,7 +71,6 @@ export const PageBodyWrapper = styled.div<IPageWrapperProperties>`
   width: 100%;
 
   scrollbar-width: none;
-  white-space: nowrap;
 
   &::-webkit-scrollbar {
     display: none;

@@ -61,6 +61,24 @@ export const ToolbarSizeStyles = css`
       max-height: var(--measurement-large-90);
     }
   }
+
+  &[data-height="display"] {
+    &[aria-orientation="vertical"] {
+      max-width: calc(var(--measurement-large-90) * 1.618);
+    }
+    &[aria-orientation="horizontal"] {
+      max-height: calc(var(--measurement-large-90) * 1.618);
+    }
+  }
+
+  &[data-height="fullscreen"] {
+    &[aria-orientation="vertical"] {
+      max-width: 100dvw;
+    }
+    &[aria-orientation="horizontal"] {
+      max-height: 100dvh;
+    }
+  }
 `;
 export const ToolbarSideStyles = css`
   &[data-side="top"] {
@@ -94,20 +112,12 @@ export const ToolbarSideStyles = css`
     }
   }
 `;
-export const ToolbarHeightStyles = css`
-  &[data-height="fullscreen"] {
-    height: 100dvh;
-  }
-  &[data-side="auto"] {
-    height: auto;
-  }
-`;
 
 export const ToolbarWrapper = styled.menu`
   &[data-raw="false"] {
     ${ToolbarDefaultStyles}
     ${ToolbarSizeStyles}
-    ${ToolbarHeightStyles}
+
     ${ToolbarSideStyles}
   }
 `;

@@ -176,6 +176,7 @@ const PagePanel = (props: IPageToolsProperties) => {
     bindkey,
     raw,
     sizing,
+    height = "auto",
     side,
     defaultOpen,
     fixed,
@@ -196,6 +197,7 @@ const PagePanel = (props: IPageToolsProperties) => {
         as={Toolbar}
         raw={raw}
         sizing={sizing}
+        height={height}
         side={side}
         shortcut={!fixed && shortcut}
         hotkey={hotkey}
