@@ -9,6 +9,18 @@ import {
   IComponentUsage,
 } from "./useComponentsInteractions";
 
+export type TUbaConfig = {
+  silent?: boolean;
+  flags: string[];
+};
+type TUsageData = {
+  origin: string;
+  description: string;
+  frequency: string;
+  types: unknown[];
+  most_frequent_interaction: string;
+  last_interaction_time: string;
+};
 interface IBehaviorAnalyticsProperties {
   silent?: boolean;
   env: {
@@ -32,6 +44,7 @@ interface IBehaviorAnalyticsProperties {
   };
   time_before_interact: string | null;
   interactions: IComponentUsage[] | [];
+  usage: TUsageData[] | [];
 }
 
 const getDeviceOs = (): string | undefined => {
@@ -85,10 +98,7 @@ const getDeviceOs = (): string | undefined => {
 export const useBehaviorAnalytics = ({
   silent,
   flags,
-}: {
-  silent?: boolean;
-  flags: string[];
-}): IBehaviorAnalyticsProperties | void => {
+}: TUbaConfig): IBehaviorAnalyticsProperties | void => {
   if (silent) return;
 
   const { metrics } = usePerformanceMetrics();
@@ -123,11 +133,56 @@ export const useBehaviorAnalytics = ({
     };
   }, [innerWidth, innerHeight, location, metrics]);
 
+  const usage = interactions?.flatMap((interaction) => {
+    let interaction_types: unknown[] = [];
+    let interactions_count: Record<
+      string | "click" | "dblclick" | "mouseover",
+      number
+    > = {
+      click: 0,
+      dblclick: 0,
+      mouseover: 0,
+    };
+
+    interaction.events.forEach((event) => {
+      if (!interaction_types.includes(event.type))
+        interaction_types.push(event.type);
+      else {
+        if (event.type === "click") interactions_count.click!++;
+        if (event.type === "dblclick") interactions_count.dblclick!++;
+        if (event.type === "mouseover") interactions_count.mouseover!++;
+      }
+    });
+
+    const most_frequent = Object.keys(interactions_count).reduce((a, b) =>
+      interactions_count[a]! > interactions_count[b]! ? a : b
+    );
+    const description = `\n
+      ${interactions_count[most_frequent]}\n
+      out of ${interaction.events.length}\n
+      interactions on ${interaction.origin}\n
+      ${
+        Number(interactions_count[most_frequent]) > 1
+          ? `are ${most_frequent}s`
+          : `is a ${most_frequent}`
+      }`;
+
+    return {
+      origin: interaction.origin,
+      description: description,
+      frequency: `${interaction.events.length}`,
+      types: interaction_types,
+      most_frequent_interaction: most_frequent,
+      last_interaction_time: interaction.events.at(0)?.occured_at,
+    };
+  });
+
   return {
     time_before_interact: time_before_interact
       ? `${time_before_interact}s`
       : null,
     interactions,
+    usage,
     ...sessionData,
   };
 };

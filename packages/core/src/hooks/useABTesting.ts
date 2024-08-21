@@ -1,6 +1,6 @@
 import React from "react";
 
-interface IABVariant {
+export type TABVariant = {
   sizes?: Record<string, string>;
   fonts?: Record<string, string>;
   theme?: string;
@@ -10,30 +10,34 @@ interface IABVariant {
   pages?: Record<string, string>;
   translations?: Record<string, string>;
   custom?: Record<string, string>;
-}
-interface IuseABArgs {
-  enabled: boolean;
+};
+export type TABConfig = {
+  silent?: boolean;
   versions: {
     default: number;
     alternative: number;
   };
   randomize: {
-    odds: number;
     gamble: number;
+    odds: number;
   };
-  variations: IABVariant[];
-}
-interface IuseABProperties {
+  variations: Record<string, unknown>[];
+};
+
+export interface IuseABProperties {
   version: number;
-  variant: IABVariant;
+  variant: TABVariant;
   forceABVersion: (version: number) => void;
 }
 
-export const useABTesting = (config: IuseABArgs): IuseABProperties => {
-  const { enabled, randomize, versions, variations } = config;
+export const useABTesting = (config: TABConfig): IuseABProperties => {
+  const { silent, randomize, versions, variations } = config;
+
+  if (silent) return;
+
   const [version, setVersion] = React.useState<number>(versions.default || 0);
   const ticket = React.useMemo(() => {
-    return enabled ? Math.floor(Math.random() * randomize.odds) : null;
+    return Math.floor(Math.random() * randomize.odds);
   }, []);
 
   React.useLayoutEffect(() => {

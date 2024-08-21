@@ -1,17 +1,22 @@
 import React from "react";
 
-export interface IndexedDBConfig {
+export type TIDBConfig = {
+  silent?: boolean;
   name: string;
   stores: string[];
   version: number;
-}
+};
 
 /**
  * Custom hook to interact with IndexedDB.
  * @param config - Configuration object containing the database name, store names, and version.
  * @returns An object containing the database instance and functions to get, set, and flush data in IndexedDB.
  */
-export const useIndexedDB = (config: IndexedDBConfig) => {
+export const useIndexedDB = (config: TIDBConfig) => {
+  const { silent, name, stores, version } = config;
+
+  if (silent) return;
+
   const [db, setDb] = React.useState<IDBDatabase | null>(null);
 
   /**
@@ -23,7 +28,7 @@ export const useIndexedDB = (config: IndexedDBConfig) => {
   const getDataFromIDB = (storeName: string, key: string) => {
     return new Promise<any>((resolve, reject) => {
       if (!db) {
-        reject(`[${config.name}-v${config.version}] Database not initialized`);
+        reject(`[${name}-v${version}] Database not initialized`);
         return;
       }
 
@@ -51,7 +56,7 @@ export const useIndexedDB = (config: IndexedDBConfig) => {
   const setDataInIDB = (storeName: string, key: string, value: any) => {
     return new Promise<void>((resolve, reject) => {
       if (!db) {
-        reject(`[${config.name}-v${config.version}] Database not initialized`);
+        reject(`[${name}-v${version}] Database not initialized`);
         return;
       }
 
@@ -77,7 +82,7 @@ export const useIndexedDB = (config: IndexedDBConfig) => {
   const flushDBStore = (storeName: string) => {
     return new Promise<void>((resolve, reject) => {
       if (!db) {
-        reject(`[${config.name}-v${config.version}] Database not initialized`);
+        reject(`[${name}-v${version}] Database not initialized`);
         return;
       }
 
@@ -96,11 +101,11 @@ export const useIndexedDB = (config: IndexedDBConfig) => {
   };
 
   React.useEffect(() => {
-    const openRequest = indexedDB.open(config.name, config.version);
+    const openRequest = indexedDB.open(name, version);
 
     openRequest.onupgradeneeded = (event: IDBVersionChangeEvent) => {
       const db = (event.target as IDBOpenDBRequest).result;
-      config.stores.forEach((storeName) => {
+      stores.forEach((storeName) => {
         if (!db.objectStoreNames.contains(storeName)) {
           db.createObjectStore(storeName, { keyPath: "id" });
         }
@@ -114,7 +119,7 @@ export const useIndexedDB = (config: IndexedDBConfig) => {
 
     openRequest.onerror = (event: Event) => {
       console.error(
-        `[${config.name}-v${config.version}] Error opening IndexedDB:`,
+        `[${name}-v${version}] Error opening IndexedDB:`,
         (event.target as IDBOpenDBRequest).error
       );
     };
