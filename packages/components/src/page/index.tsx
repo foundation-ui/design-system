@@ -1,5 +1,11 @@
 import React from "react";
-import { Toolbar, IToolbarBodyProperties, IToolbarSectionProperties } from "..";
+import {
+  Toolbar,
+  IToolbarBodyProperties,
+  IToolbarSectionProperties,
+  ScrollArea,
+  IScrollAreaProperties,
+} from "..";
 import {
   PageRootWrapper,
   PageNavWrapper,
@@ -133,9 +139,15 @@ const PageTools = (props: IPageToolsProperties) => {
 };
 PageTools.displayName = "Page.Tools";
 
-const PageContent = (props: React.ComponentProps<"div">) => {
+const PageContent = (
+  props: React.ComponentProps<"div"> & IScrollAreaProperties
+) => {
   const { children } = props;
-  return <PageSectionWrapper {...props}>{children}</PageSectionWrapper>;
+  return (
+    <ScrollArea as={PageSectionWrapper} {...props}>
+      {children}
+    </ScrollArea>
+  );
 };
 PageContent.displayName = "Page.Content";
 

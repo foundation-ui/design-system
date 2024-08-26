@@ -1,4 +1,5 @@
 import React from "react";
+import { ScrollArea, IScrollAreaProperties } from "../scrollarea";
 import {
   TableLayer,
   TableWrapper,
@@ -7,13 +8,16 @@ import {
   CellWrapper,
 } from "./styles";
 
-const Table = ({ children, ...restProps }: React.ComponentProps<"table">) => {
+const Table = ({
+  children,
+  ...restProps
+}: IScrollAreaProperties & React.ComponentProps<"table">) => {
   return (
-    <TableLayer role="presentation" tab-index="-1">
+    <ScrollArea as={TableLayer} role="presentation" tab-index="-1">
       <TableWrapper {...restProps} cellSpacing="0" cellPadding="0">
         {children}
       </TableWrapper>
-    </TableLayer>
+    </ScrollArea>
   );
 };
 Table.displayName = "Table";

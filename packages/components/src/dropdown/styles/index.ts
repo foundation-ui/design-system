@@ -1,21 +1,6 @@
 import styled, { css } from "styled-components";
 import { IDropdownContentProperties } from "../";
-const HiddenScrollbar = css`
-  scrollbar-width: none;
 
-  &::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-  &::-moz-scrollbar {
-    display: none;
-  }
-`;
-
-export const RootWrapper = styled.div`
-  position: relative;
-`;
 const ContentWrapperSizes = css`
   --small: var(--measurement-large-60);
   --medium: var(--measurement-large-80);
@@ -60,6 +45,10 @@ const ContentWrapperSizes = css`
   }
 `;
 
+export const RootWrapper = styled.div`
+  position: relative;
+`;
+
 export const ContentWrapper = styled.ul<IDropdownContentProperties>`
   --small: var(--measurement-large-60);
   --medium: var(--measurement-large-80);
@@ -78,10 +67,8 @@ export const ContentWrapper = styled.ul<IDropdownContentProperties>`
     border-radius: var(--measurement-medium-30);
 
     z-index: var(--depth-default-100);
-    overflow-y: scroll;
 
     ${ContentWrapperSizes}
-    ${HiddenScrollbar}
   }
 `;
 

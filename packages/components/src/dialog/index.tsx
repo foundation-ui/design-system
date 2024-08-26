@@ -1,6 +1,13 @@
 import React from "react";
 import { useDialog, DialogProvider } from "./hooks";
-import { Overlay, IOverlayProperties, Button, IButtonProperties } from "..";
+import {
+  Overlay,
+  IOverlayProperties,
+  Button,
+  IButtonProperties,
+  ScrollArea,
+  IScrollAreaProperties,
+} from "..";
 import { DialogWrapper, Menu } from "./styles";
 import { applyDataState } from "../utils";
 import {
@@ -12,6 +19,7 @@ import {
 export interface IDialogItemProperties
   extends IComponentStyling,
     IComponentSize,
+    IScrollAreaProperties,
     React.ComponentProps<"dialog"> {}
 
 /**
@@ -51,7 +59,8 @@ const Dialog = (props: IDialogItemProperties) => {
   return (
     <React.Fragment>
       {states.open && (
-        <DialogWrapper
+        <ScrollArea
+          as={DialogWrapper}
           role="dialog"
           tabIndex={-1}
           id={String(contentId)}
@@ -63,7 +72,7 @@ const Dialog = (props: IDialogItemProperties) => {
           {...restProps}
         >
           {children}
-        </DialogWrapper>
+        </ScrollArea>
       )}
     </React.Fragment>
   );

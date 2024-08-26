@@ -1,17 +1,5 @@
 import styled, { css } from "styled-components";
 
-const HiddenScrollbar = css`
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-  &::-moz-scrollbar {
-    display: none;
-  }
-`;
 const CellStyles = css`
   box-sizing: border-box;
   border: none;
@@ -27,9 +15,6 @@ export const TableLayer = styled.div`
   border-radius: var(--measurement-medium-30);
   border: var(--measurement-small-10) solid
     ${({ theme }) => theme.colors.text.alpha[0].rgb};
-
-  overflow-x: scroll;
-  ${HiddenScrollbar}
 `;
 export const TableWrapper = styled.table`
   border-collapse: collapse;

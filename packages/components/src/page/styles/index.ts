@@ -1,15 +1,6 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { HiddenScrollbar } from "../../scrollarea/styles";
 import { IPageWrapperProperties } from "../";
-
-export const ScrollbarReset = css`
-  scrollbar-width: none;
-  &::-webkit-scrollbar,
-  &::-webkit-scrollbar-thumb {
-    display: none;
-    height: 0;
-    width: 0;
-  }
-`;
 
 export const PageRootWrapper = styled.div`
   height: 100dvh;
@@ -38,17 +29,13 @@ export const PagePanelWrapper = styled.aside`
   position: absolute;
   bottom: 0;
   width: 100%;
-  overflow-y: scroll;
-  ${ScrollbarReset}
+  overflow: scroll;
+  ${HiddenScrollbar}
 `;
 export const PageSectionWrapper = styled.div`
   background: ${({ theme }) => theme.colors.body.contrast};
   width: 100%;
   height: 100%;
-  max-height: calc(100dvh - (var(--measurement-large-20)));
-  overflow-y: scroll;
-
-  ${ScrollbarReset}
 `;
 export const PageBodyWrapper = styled.div<IPageWrapperProperties>`
   --menus-height: calc(
@@ -61,7 +48,6 @@ export const PageBodyWrapper = styled.div<IPageWrapperProperties>`
   );
   --page-height: calc(100dvh - (var(--menus-height) + var(--navs-height)));
 
-  overflow-y: scroll;
   outline: none;
   display: inline-block;
 
@@ -69,15 +55,6 @@ export const PageBodyWrapper = styled.div<IPageWrapperProperties>`
   max-height: var(--page-height);
 
   width: 100%;
-
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-  &::-moz-scrollbar {
-    display: none;
-  }
+  overflow: scroll;
+  ${HiddenScrollbar}
 `;

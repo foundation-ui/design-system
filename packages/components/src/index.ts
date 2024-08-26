@@ -1,4 +1,5 @@
 export * from "./divider";
+export * from "./scrollarea";
 export * from "./accordion";
 export * from "./avatar";
 export * from "./button";

@@ -3,6 +3,7 @@ import { useClickOutside } from "@foundation-ui/hooks";
 import { DropdownMenuProvider, useDropdownMenu } from "./hooks";
 import { RootWrapper, ContentWrapper, ItemWrapper } from "./styles";
 import { Button, IButtonProperties } from "../button";
+import { ScrollArea, IScrollAreaProperties } from "../scrollarea";
 import { applyDataState } from "../utils";
 import {
   IReactChildren,
@@ -13,6 +14,7 @@ import {
 export interface IDropdownContentProperties
   extends IComponentStyling,
     IComponentSize,
+    IScrollAreaProperties,
     React.ComponentProps<"ul"> {
   defaultOpen?: boolean;
   side?: "left" | "right";
@@ -141,7 +143,8 @@ const DropdownMenuContent = (props: IDropdownContentProperties) => {
   return (
     <React.Fragment>
       {states.open && (
-        <ContentWrapper
+        <ScrollArea
+          as={ContentWrapper}
           id={id.split("|").at(-1)}
           role="menu"
           tabIndex={-1}
@@ -155,7 +158,7 @@ const DropdownMenuContent = (props: IDropdownContentProperties) => {
           {...restProps}
         >
           {children}
-        </ContentWrapper>
+        </ScrollArea>
       )}
     </React.Fragment>
   );

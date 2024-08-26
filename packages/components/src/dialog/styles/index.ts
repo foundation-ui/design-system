@@ -1,17 +1,5 @@
 import styled, { css } from "styled-components";
 
-const HiddenScrollbar = css`
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-  &::-moz-scrollbar {
-    display: none;
-  }
-`;
 const DialogDefaultStyles = css`
   position: fixed;
   top: 15dvh;
@@ -23,11 +11,8 @@ const DialogDefaultStyles = css`
   background-color: ${({ theme }) => theme.colors.body.contrast};
   border-radius: var(--measurement-medium-30);
 
-  overflow-y: scroll;
   transition: all ease-in-out 0.2s;
   z-index: var(--depth-default-100);
-
-  ${HiddenScrollbar}
 `;
 const DialogSizeStyles = css`
   --base-size: var(--measurement-medium-60);
