@@ -18,9 +18,7 @@ export const OverlayWrapper = styled.div`
   z-index: var(--depth-default-90);
 
   &[data-raw="false"] {
-    background-color: transparent;
-    backdrop-filter: blur(var(--measurement-medium-30));
-
+    background-color: var(--alpha-mono-darkest-60);
     animation-duration: 0.2s;
     animation-name: animate-fade;
     animation-fill-mode: backwards;
