@@ -13,6 +13,7 @@ export * from "./toggle";
 export * from "./table";
 
 export * from "./dialog";
+export * from "./sheet";
 export * from "./overlay";
 export * from "./portal";
 

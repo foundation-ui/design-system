@@ -66,7 +66,7 @@ export const AppLayout = ({ children }: any) => {
               <InternalLinksSheet />
 
               <Page.Wrapper $menus={2} $navigations={2}>
-                <OptionsSheet />
+                {/* <OptionsSheet /> */}
                 {children}
               </Page.Wrapper>
 
