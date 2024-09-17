@@ -4,3 +4,4 @@ export * from "./useKeyPress";
 
 export * from "./useTimer";
 export * from "./useSaveOnUnload";
+export * from "./useDisabledScroll";
