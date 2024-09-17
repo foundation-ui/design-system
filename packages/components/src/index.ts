@@ -1,3 +1,4 @@
+export * from "./badge";
 export * from "./divider";
 export * from "./scrollarea";
 export * from "./accordion";
