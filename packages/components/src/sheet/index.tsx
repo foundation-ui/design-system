@@ -6,18 +6,35 @@ import { SheetProvider, useSheet } from "./hooks";
 import { ScrollArea, Button, Overlay } from "../";
 import { SheetWrapper } from "./styles";
 
+import { IButtonProperties } from "../button";
 import {
   ComponentVariantEnum,
   ComponentSizeEnum,
   ComponentSideEnum,
+  IComponentStyling,
+  IComponentSize,
+  IComponentControlProperties,
+  IReactChildren,
 } from "../../../../types";
 
-const SheetRoot = ({ children }: any) => {
+export interface ISheetProperties
+  extends IComponentStyling,
+    IComponentSize,
+    IComponentControlProperties,
+    React.ComponentProps<"dialog"> {
+  side?: "left" | "right";
+  lock?: boolean;
+  overlay?: boolean;
+  closeOnInteract?: boolean;
+  open?: boolean;
+}
+
+const SheetRoot = ({ children }: IReactChildren) => {
   return <SheetProvider>{children}</SheetProvider>;
 };
 SheetRoot.displayName = SheetRoot;
 
-const Sheet = (props: any) => {
+const Sheet = (props: ISheetProperties) => {
   const {
     raw,
     sizing = ComponentSizeEnum.Medium,
@@ -25,7 +42,7 @@ const Sheet = (props: any) => {
     lock = true,
     overlay = true,
     closeOnInteract = true,
-    defaultOpen,
+    open,
     shortcut,
     bindkey,
     hotkey,
@@ -37,8 +54,8 @@ const Sheet = (props: any) => {
   const shortcutControls = useKeyPress(String(hotkey), true, bindkey);
 
   React.useEffect(() => {
-    if (defaultOpen && setOpen) return setOpen(true);
-  }, [defaultOpen]);
+    if (open && setOpen) return setOpen(true);
+  }, [open]);
 
   React.useEffect(() => {
     if (shortcut && shortcutControls && toggle)
@@ -81,7 +98,7 @@ const Sheet = (props: any) => {
 };
 Sheet.displayName = Sheet;
 
-const SheetTrigger = (props: any) => {
+const SheetTrigger = (props: IButtonProperties) => {
   const {
     raw,
     onClick,
