@@ -1,5 +1,6 @@
 import React from "react";
 import { useDialog, DialogProvider } from "./hooks";
+import { useDisabledScroll } from "@foundation-ui/hooks";
 import {
   Overlay,
   IOverlayProperties,
@@ -20,7 +21,9 @@ export interface IDialogItemProperties
   extends IComponentStyling,
     IComponentSize,
     IScrollAreaProperties,
-    React.ComponentProps<"dialog"> {}
+    React.ComponentProps<"dialog"> {
+  lock?: boolean;
+}
 
 /**
  * Dialog are used displays a modal window to the user on top of the current layer.
@@ -43,6 +46,7 @@ const Dialog = (props: IDialogItemProperties) => {
     raw,
     sizing = ComponentSizeEnum.Medium,
     open = false,
+    lock = true,
     children,
     ...restProps
   } = props;
@@ -55,6 +59,8 @@ const Dialog = (props: IDialogItemProperties) => {
   React.useEffect(() => {
     if (open && toggleDialog) toggleDialog();
   }, []);
+
+  if (lock) useDisabledScroll(Boolean(states.open));
 
   return (
     <React.Fragment>
