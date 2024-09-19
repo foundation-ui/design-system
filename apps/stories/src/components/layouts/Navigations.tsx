@@ -20,7 +20,6 @@ export const ExternalLinksNavigation = () => {
   const { colorMode, setColorMode } = React.useContext(ColorModeContext);
   const { ab_testing } = useUIProps();
 
-  console.log(ab_testing);
   return (
     <Page.Navigation className="flex justify-between align-center">
       <small className="flex g-medium-30 align-center">

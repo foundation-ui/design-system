@@ -1,5 +1,5 @@
 import React from "react";
-import { useClickOutside } from "@foundation-ui/hooks";
+import { useClickOutside, useDisabledScroll } from "@foundation-ui/hooks";
 import { DropdownMenuProvider, useDropdownMenu } from "./hooks";
 import { RootWrapper, ContentWrapper, ItemWrapper } from "./styles";
 import { Button, IButtonProperties } from "../button";
@@ -61,6 +61,8 @@ const DropdownMenu = ({ children }: React.ComponentProps<"div">) => {
   };
 
   useClickOutside(DropdownContentRef, handleClickOutside);
+  useDisabledScroll(Boolean(states.open));
+
   return <RootWrapper ref={DropdownContentRef}>{children}</RootWrapper>;
 };
 DropdownMenu.displayName = "DropdownMenu";
