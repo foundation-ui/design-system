@@ -2,8 +2,8 @@ import React from "react";
 import {
   TIDBConfig,
   useIndexedDB,
-  TUIPropsSrc,
-  useUI,
+  TAppPropsSrc,
+  useAppProperties,
   TUbaConfig,
   useBehaviorAnalytics,
   TABConfig,
@@ -13,7 +13,7 @@ import { IReactChildren } from "../../../../types";
 
 interface IAppPropsConfig {
   silent?: boolean;
-  source: TUIPropsSrc;
+  source: TAppPropsSrc;
 }
 interface IAppProviderProperties {
   idb: TIDBConfig;
@@ -22,13 +22,13 @@ interface IAppProviderProperties {
   ui: IAppPropsConfig;
 }
 
-const UIContext = React.createContext<null | any>({});
-const useUIProps = () => React.useContext(UIContext);
-const UIProvider = (
+const AppContext = React.createContext<null | any>({});
+const useApp = () => React.useContext(AppContext);
+const AppProvider = (
   props: IAppProviderProperties & IReactChildren
 ): JSX.Element => {
   const { idb, uba, ab, ui } = props;
-  const context = useUIProvider({
+  const context = useAppProvider({
     idb,
     uba,
     ab,
@@ -36,15 +36,15 @@ const UIProvider = (
   });
 
   return (
-    <UIContext.Provider value={context}>{props.children}</UIContext.Provider>
+    <AppContext.Provider value={context}>{props.children}</AppContext.Provider>
   );
 };
 
-function useUIProvider(props: IAppProviderProperties): any {
+function useAppProvider(props: IAppProviderProperties): any {
   const { idb, uba, ab, ui } = props;
 
   const indexed_db = useIndexedDB(idb);
-  const user_interface = useUI({
+  const app_properties = useAppProperties({
     ...ui,
     config: idb,
   });
@@ -54,10 +54,10 @@ function useUIProvider(props: IAppProviderProperties): any {
 
   return {
     indexed_db,
-    user_interface,
+    app_properties,
     user_behavior_analytics,
     ab_testing,
   };
 }
 
-export { useUIProps, UIProvider };
+export { useApp, AppProvider };

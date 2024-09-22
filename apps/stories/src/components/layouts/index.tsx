@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useUIProps } from "../../contexts/UIProvider";
+import { useApp } from "../../contexts/AppProvider";
 import { useSaveOnUnload } from "@foundation-ui/hooks";
 
 import { Page, Dialog } from "@foundation-ui/components";
@@ -12,7 +12,7 @@ import {
   InternalActionsNavigation,
 } from "./Navigations";
 import { QuickActionsMenu } from "./Menus";
-import { InternalLinksSheet, OptionsSheet, ToolsSheet } from "./Sheets";
+import { InternalLinksSheet, ToolsSheet } from "./Sheets";
 import { AnalyticsDrawer } from "./Drawers";
 
 const Loader = () => {
@@ -24,7 +24,7 @@ const Loader = () => {
 };
 
 export const AppLayout = ({ children }: any) => {
-  const { user_interface, user_behavior_analytics, ab_testing } = useUIProps();
+  const { app_properties, user_behavior_analytics, ab_testing } = useApp();
 
   // React.useEffect(() => {
   //   if (indexed_db.db) {
@@ -43,13 +43,19 @@ export const AppLayout = ({ children }: any) => {
   useSaveOnUnload({
     url: "api.uui/sandbox",
     payload: {
-      user_interface,
+      app_properties,
       user_behavior_analytics,
       ab_testing,
     },
   });
 
-  if (!user_interface) return <Loader />;
+  console.log({
+    app_properties,
+    user_behavior_analytics,
+    ab_testing,
+  });
+
+  if (!app_properties) return <Loader />;
   return (
     <Dialog.Root>
       <AppSettings />

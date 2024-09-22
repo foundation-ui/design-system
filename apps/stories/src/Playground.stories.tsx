@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta } from "@storybook/react";
 
-import { UIProvider } from "./contexts/UIProvider";
+import { AppProvider } from "./contexts/AppProvider";
 
 import { Page } from "@foundation-ui/components";
 import { AppLayout } from "./components/layouts";
@@ -21,7 +21,7 @@ export const Playground = {
   render: () => {
     const { idb, uba, ab, ui } = uiprops;
     return (
-      <UIProvider idb={idb} uba={uba} ab={ab} ui={ui}>
+      <AppProvider idb={idb} uba={uba} ab={ab} ui={ui}>
         <AppLayout>
           <section className="p-x-medium-30 p-y-medium-80">
             <hgroup className="grid g-medium-30 m-b-medium-60">
@@ -29,7 +29,7 @@ export const Playground = {
             </hgroup>
           </section>
         </AppLayout>
-      </UIProvider>
+      </AppProvider>
     );
   },
 };

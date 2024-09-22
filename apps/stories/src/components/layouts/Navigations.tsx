@@ -1,5 +1,5 @@
 import React from "react";
-import { useUIProps } from "../../contexts/UIProvider";
+import { useApp } from "../../contexts/AppProvider";
 import { ColorModeContext } from "@foundation-ui/tokens";
 import {
   Page,
@@ -18,7 +18,7 @@ import uiprops from "../../mocks/settings.json";
 
 export const ExternalLinksNavigation = () => {
   const { colorMode, setColorMode } = React.useContext(ColorModeContext);
-  const { ab_testing } = useUIProps();
+  const { ab_testing } = useApp();
 
   return (
     <Page.Navigation className="flex justify-between align-center">
@@ -114,7 +114,7 @@ export const ExternalLinksNavigation = () => {
   );
 };
 export const InternalActionsNavigation = () => {
-  const { ab_testing, user_behavior_analytics } = useUIProps();
+  const { ab_testing, user_behavior_analytics } = useApp();
 
   const [emphasisVariant, setEmphasisVariant] =
     React.useState<TComponentVariant>("border");

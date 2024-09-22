@@ -1,5 +1,5 @@
 import React from "react";
-import { useUIProps } from "../../contexts/UIProvider";
+import { useApp } from "../../contexts/AppProvider";
 
 import {
   Page,
@@ -13,7 +13,7 @@ import {
 import { ChipBody } from "../../styles";
 
 export const AnalyticsDrawer = () => {
-  const { user_behavior_analytics } = useUIProps();
+  const { user_behavior_analytics } = useApp();
   const deferred_interaction_data = React.useDeferredValue(
     user_behavior_analytics.usage
   );

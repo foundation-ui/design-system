@@ -1,10 +1,10 @@
 import React from "react";
 import { useIndexedDB, TIDBConfig } from "./useIndexedDB";
 
-export type TUIPropsSrc = {
+export type TAppPropsSrc = {
   store?: string;
   key?: string;
-  payload?: IUIProperties;
+  payload?: IAppProperties;
 };
 export type TFeatFlagConfig = {
   enabled?: boolean;
@@ -26,28 +26,28 @@ export type TSortcutsConfig = {
 export type TUIPropsConfig = {
   silent?: boolean;
   config?: TIDBConfig;
-  source: TUIPropsSrc;
+  source: TAppPropsSrc;
 };
-export interface IUIProperties {
+export interface IAppProperties {
   feature_flags?: Record<string, TFeatFlagConfig | unknown>;
   shortcuts?: Record<string, TSortcutsConfig | unknown>;
   miscs?: Record<string, unknown>;
 }
 
-export const useUI = (
+export const useAppProperties = (
   props: TUIPropsConfig
-): IUIProperties | Record<string, unknown> => {
+): IAppProperties | Record<string, unknown> => {
   const { silent, source, config } = props;
 
   if (silent) return;
 
   const idb = useIndexedDB(config);
   const [pending, setPending] = React.useState(true);
-  const [appConfig, setAppConfig] = React.useState(null);
+  const [appProps, setAppProps] = React.useState(null);
 
   React.useEffect(() => {
     const hasRequiredConfs = () => {
-      if (idb.db && !appConfig) {
+      if (idb.db && !appProps) {
         return source.key && source.store && source.payload;
       } else return false;
     };
@@ -58,14 +58,14 @@ export const useUI = (
         .then((response) => response)
         .then((data) => {
           if (data) {
-            setAppConfig(data.value);
+            setAppProps(data.value);
             setPending(false);
           } else {
             idb
               .setDataInIDB(source.store, source.key, source.payload)
               .then(() =>
                 idb.getDataFromIDB(source.store, source.key).then((data) => {
-                  setAppConfig(data.value);
+                  setAppProps(data.value);
                   setPending(false);
                 })
               );
@@ -74,5 +74,5 @@ export const useUI = (
     }
   }, [idb.db, pending]);
 
-  return appConfig;
+  return appProps;
 };
