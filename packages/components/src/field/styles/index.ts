@@ -17,7 +17,7 @@ const FieldDefaultStyles = css`
   border: var(--measurement-small-10) solid transparent;
   border-radius: var(--measurement-medium-30);
   backdrop-filter: blur(var(--measurement-small-10));
-  color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
+  color: var(--font-color-alpha-60);
   width: fit-content;
   height: fit-content;
 
@@ -32,7 +32,7 @@ const FieldDefaultStyles = css`
   &:hover,
   &:focus,
   &:active {
-    color: ${({ theme }) => theme.colors.text.base};
+    color: var(--font-color);
 
     svg,
     span,
@@ -41,7 +41,7 @@ const FieldDefaultStyles = css`
     }
   }
   &::placeholder {
-    color: ${({ theme }) => theme.colors.text.alpha[2].rgb};
+    color: var(--font-color-alpha-30);
   }
   &:disabled {
     cursor: not-allowed;
@@ -50,7 +50,7 @@ const FieldDefaultStyles = css`
 `;
 const FieldVariantsStyles = css`
   &[data-variant="primary"] {
-    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    background-color: var(--font-color-alpha-10);
 
     &[data-error="true"] {
       color: var(--color-red);
@@ -61,12 +61,12 @@ const FieldVariantsStyles = css`
 
   &[data-variant="secondary"] {
     background-color: transparent;
-    border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    border-color: var(--font-color-alpha-10);
 
     &:hover,
     &:focus,
     &:active {
-      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+      background-color: var(--font-color-alpha-10);
     }
 
     &[data-error="true"] {
@@ -87,12 +87,12 @@ const FieldVariantsStyles = css`
     background-color: transparent;
     min-width: fit-content;
     min-height: var(--measurement-medium-60);
-    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
+    color: var(--font-color-alpha-60);
 
     &:hover,
     &:focus,
     &:active {
-      color: ${({ theme }) => theme.colors.text.base};
+      color: var(--font-color);
     }
 
     &[data-error="true"] {
@@ -158,7 +158,7 @@ export const Def = styled.dfn`
     font-size: var(--fontsize-medium-10);
 
     &[data-variant="hint"] {
-      color: ${({ theme }) => theme.colors.text.alpha[2].rgb};
+      color: var(--font-color-alpha-30);
     }
     &[data-variant="error"] {
       color: var(--color-red);

@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 const SheetStyles = css`
   all: unset;
   position: fixed;
-  background-color: ${({ theme }) => theme.colors.body.contrast};
+  background-color: var(--body-color);
   border: var(--measurement-small-10) solid transparent;
   padding: var(--measurement-medium-60);
   height: 100%;
@@ -47,13 +47,13 @@ const SheetSizeStyles = css`
 const SheetSideStyles = css`
   &[data-side="right"] {
     right: 0;
-    border-left-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    border-left-color: var(--font-color-alpha-10);
     animation-name: slide-right;
   }
 
   &[data-side="left"] {
     left: 0;
-    border-right-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    border-right-color: var(--font-color-alpha-10);
     animation-name: slide-left;
   }
 `;

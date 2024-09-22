@@ -18,28 +18,28 @@ const SwitchVariantsStyles = css`
   &[data-variant="primary"] {
     &[aria-checked="true"] {
       background-color: var(--color-green);
-      border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+      border-color: var(--font-color-alpha-10);
     }
     &[aria-checked="false"] {
-      background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+      background-color: var(--body-color-alpha-10);
     }
   }
   &[data-variant="secondary"] {
     &[aria-checked="true"] {
-      background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
-      border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+      background-color: var(--body-color-alpha-10);
+      border-color: var(--body-color-alpha-10);
     }
     &[aria-checked="false"] {
-      background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+      background-color: var(--body-color-alpha-10);
     }
   }
 
   &[data-variant="ghost"] {
     &[aria-checked="true"] {
-      border-color: ${({ theme }) => theme.colors.text.base};
+      border-color: var(--font-color);
     }
     &[aria-checked="false"] {
-      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+      border-color: var(--font-color-alpha-10);
     }
   }
 `;
@@ -105,12 +105,12 @@ export const Thumb = styled.span`
     all: unset;
     display: block;
 
-    background: ${({ theme }) => theme.colors.text.alpha[5].rgb};
+    background: var(--font-color-alpha-60);
     border-radius: 100%;
     transition: all 0.1s ease-in-out 0.2s;
 
     &[data-checked="true"] {
-      background: ${({ theme }) => theme.colors.text.base};
+      background: var(--font-color);
     }
   }
 `;

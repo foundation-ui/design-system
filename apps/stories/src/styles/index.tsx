@@ -6,8 +6,7 @@ const LoaderAnimation = keyframes`
 `;
 
 export const BorderedBox = styled(Field.Wrapper)`
-  --border: var(--measurement-small-10) solid
-    ${({ theme }) => theme.colors.text.alpha[0].rgb};
+  --border: var(--measurement-small-10) solid var(--font-color-alpha-10);
 
   border-top: var(--border);
   border-bottom: var(--border);
@@ -16,7 +15,7 @@ export const CardBody = styled.article`
   box-sizing: border-box;
   border-radius: var(--measurement-medium-30);
   border: var(--border);
-  background: ${({ theme }) => theme.colors.body.alpha[0].rgb};
+  background: var(--font-color-alpha-10);
 
   display: flex;
   flex-direction: column;
@@ -29,8 +28,8 @@ export const CardBody = styled.article`
   width: 100%;
 `;
 export const ChipBody = styled.span`
-  color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
-  background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+  color: var(--font-color-alpha-60);
+  background-color: var(--font-color-alpha-10);
   border-radius: var(--measurement-medium-10);
 `;
 export const Loader3D = styled.div`
@@ -55,9 +54,9 @@ export const Loader3D = styled.div`
     );
     background: conic-gradient(
       from -90deg at var(--size) var(--dimension),
-      ${({ theme }) => theme.colors.text.alpha[8].rgb} 135deg,
-      ${({ theme }) => theme.colors.text.alpha[5].rgb} 0 270deg,
-      ${({ theme }) => theme.colors.text.alpha[3].rgb} 0
+      var(--font-color-alpha-90) 135deg,
+      var(--font-color-alpha-60) 0 270deg,
+      var(--font-color-alpha-30) 0
     );
 
     animation: ${LoaderAnimation} 0.8s infinite alternate;

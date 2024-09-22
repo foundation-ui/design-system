@@ -13,8 +13,7 @@ const CellStyles = css`
 
 export const TableLayer = styled.div`
   border-radius: var(--measurement-medium-30);
-  border: var(--measurement-small-10) solid
-    ${({ theme }) => theme.colors.text.alpha[0].rgb};
+  border: var(--measurement-small-10) solid var(--font-color-alpha-10);
 `;
 export const TableWrapper = styled.table`
   border-collapse: collapse;
@@ -28,13 +27,12 @@ export const TableWrapper = styled.table`
   }
 `;
 export const RowWrapper = styled.tr`
-  border-bottom: var(--measurement-small-10) solid
-    ${({ theme }) => theme.colors.text.alpha[0].rgb};
+  border-bottom: var(--measurement-small-10) solid var(--font-color-alpha-10);
 
   transition: background-color linear 0.1s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    background-color: var(--font-color-alpha-10);
   }
 `;
 export const HeadCellWrapper = styled.th`
@@ -42,7 +40,7 @@ export const HeadCellWrapper = styled.th`
   ${CellStyles}
 
   div {
-    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
+    color: var(--font-color-alpha-60);
   }
 `;
 export const CellWrapper = styled.td`

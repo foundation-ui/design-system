@@ -61,9 +61,8 @@ export const ContentWrapper = styled.ul<IDropdownContentProperties>`
     padding: var(--measurement-medium-30);
     margin: var(--measurement-medium-10) 0;
 
-    background-color: ${({ theme }) => theme.colors.body.contrast};
-    border: var(--measurement-small-10) solid
-      ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    background-color: var(--body-color);
+    border: var(--measurement-small-10) solid var(--font-color-alpha-10);
     border-radius: var(--measurement-medium-30);
 
     z-index: var(--depth-default-100);
@@ -83,7 +82,7 @@ export const ItemWrapper = styled.li`
     padding: var(--measurement-medium-30);
     border-radius: var(--measurement-medium-20);
     text-align: left;
-    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
+    color: var(--font-color-alpha-60);
     outline: none;
     transition: all ease-in-out 0.2s;
     cursor: pointer;
@@ -91,8 +90,8 @@ export const ItemWrapper = styled.li`
     &:hover,
     &:focus,
     &:active {
-      color: ${({ theme }) => theme.colors.text.base};
-      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+      color: var(--font-color);
+      background-color: var(--font-color-alpha-10);
     }
   }
 

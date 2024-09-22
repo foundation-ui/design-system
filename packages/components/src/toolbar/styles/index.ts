@@ -4,7 +4,7 @@ export const ToolbarDefaultStyles = css`
   margin: 0;
   display: grid;
   grid-template-rows: min-content;
-  background-color: ${({ theme }) => theme.colors.body.contrast};
+  background-color: var(--body-color);
   border: var(--measurement-small-10) solid transparent;
   padding: var(--measurement-medium-30);
   min-width: var(--measurement-large-30);
@@ -82,10 +82,10 @@ export const ToolbarSizeStyles = css`
 `;
 export const ToolbarSideStyles = css`
   &[data-side="top"] {
-    border-bottom-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    border-bottom-color: var(--font-color-alpha-10);
   }
   &[data-side="right"] {
-    border-left-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    border-left-color: var(--font-color-alpha-10);
 
     &[aria-expanded="true"] {
       menu {
@@ -97,10 +97,10 @@ export const ToolbarSideStyles = css`
     }
   }
   &[data-side="bottom"] {
-    border-top-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    border-top-color: var(--font-color-alpha-10);
   }
   &[data-side="left"] {
-    border-right-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    border-right-color: var(--font-color-alpha-10);
 
     &[aria-expanded="true"] {
       menu {

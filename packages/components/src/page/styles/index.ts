@@ -7,18 +7,18 @@ export const PageRootWrapper = styled.div`
   width: 100%;
 `;
 export const PageNavWrapper = styled.nav`
-  background-color: ${({ theme }) => theme.colors.body.contrast};
+  background-color: var(--body-color);
   border: var(--measurement-small-10) solid transparent;
-  border-bottom-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+  border-bottom-color: var(--font-color-alpha-10);
   width: 100%;
   height: 100%;
   max-height: var(--measurement-large-20);
   padding: var(--measurement-medium-30);
 `;
 export const PageMenuWrapper = styled.menu`
-  background-color: ${({ theme }) => theme.colors.body.contrast};
+  background-color: var(--body-color);
   border: var(--measurement-small-10) solid transparent;
-  border-bottom-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+  border-bottom-color: var(--font-color-alpha-10);
   width: 100%;
   height: 100%;
   max-height: var(--measurement-large-30);
@@ -33,7 +33,7 @@ export const PagePanelWrapper = styled.aside`
   ${HiddenScrollbar}
 `;
 export const PageSectionWrapper = styled.div`
-  background: ${({ theme }) => theme.colors.body.contrast};
+  background: var(--body-color);
   width: 100%;
   height: 100%;
 `;

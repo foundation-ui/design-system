@@ -50,73 +50,64 @@ const ButtonDefaultStyles = css`
 `;
 const ButtonVariantsStyles = css`
   &[data-variant="primary"] {
-    color: ${({ theme }) => theme.colors.primary.contrast};
-    background-color: ${({ theme }) => theme.colors.primary.base};
-
-    &:hover,
-    &:focus {
-      border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
-    }
-
-    &:active {
-      border-color: ${({ theme }) => theme.colors.primary.alpha[1].rgb};
-    }
-
-    svg {
-      fill: ${({ theme }) => theme.colors.primary.contrast};
-    }
-  }
-  &[data-variant="secondary"] {
-    color: ${({ theme }) => theme.colors.primary.alpha[6].rgb};
-    background-color: ${({ theme }) => theme.colors.body.contrast};
-    border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
-
-    &:hover,
-    &:focus {
-      color: ${({ theme }) => theme.colors.primary.base};
-      border-color: ${({ theme }) => theme.colors.primary.alpha[2].rgb};
-    }
-    &:active {
-      border-color: ${({ theme }) => theme.colors.primary.alpha[2].rgb};
-    }
-  }
-  &[data-variant="tertiary"] {
-    color: ${({ theme }) => theme.colors.primary.alpha[6].rgb};
-    background-color: ${({ theme }) => theme.colors.body.contrast};
-    border-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+    color: var(--body-color-alpha-80);
+    background-color: var(--font-color);
 
     &:hover,
     &:focus,
     &:active {
-      color: ${({ theme }) => theme.colors.primary.base};
+      color: var(--body-color);
+    }
+
+    svg {
+      fill: var(--body-color);
+    }
+  }
+  &[data-variant="secondary"] {
+    color: var(--body-color-alpha-60);
+    background-color: var(--body-color);
+    border-color: var(--text-color-alpha-10);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--body-color);
+      border-color: var(--text-color-alpha-30);
+    }
+  }
+  &[data-variant="tertiary"] {
+    color: var(--text-color-alpha-60);
+    background-color: var(--body-color);
+    border-color: var(--text-color-alpha-10);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--body-color);
     }
   }
   &[data-variant="mono"] {
-    color: ${({ theme }) => theme.colors.primary.alpha[6].rgb};
-    background-color: ${({ theme }) => theme.colors.primary.alpha[0].rgb};
+    color: var(--body-color-alpha-10);
+    background-color: var(--text-color-alpha-10);
 
     &:hover,
-    &:focus {
-      color: ${({ theme }) => theme.colors.primary.base};
-      background-color: ${({ theme }) => theme.colors.primary.alpha[1].rgb};
-    }
+    &:focus,
     &:active {
-      background-color: ${({ theme }) => theme.colors.primary.alpha[2].rgb};
+      color: var(--body-color);
+      border-color: var(--text-color-alpha-10);
     }
   }
   &[data-variant="border"] {
-    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
-    border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    color: var(--font-color-alpha-60);
+    border-color: var(--font-color-alpha-10);
     background-color: transparent;
 
     &:hover,
-    &:focus {
-      color: ${({ theme }) => theme.colors.text.base};
-      background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-      border-color: transparent;
-    }
+    &:focus,
     &:active {
-      border-color: ${({ theme }) => theme.colors.text.alpha[2].rgb};
+      color: var(--font-color);
+      background-color: var(--font-color-alpha-10);
+      border-color: transparent;
     }
   }
   &[data-variant="ghost"] {
@@ -125,14 +116,14 @@ const ButtonVariantsStyles = css`
     background-color: transparent;
     min-width: fit-content;
     min-height: var(--measurement-medium-60);
-    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
+    color: var(--font-color-alpha-60);
 
     &:hover,
     &:focus {
-      color: ${({ theme }) => theme.colors.text.alpha[8].rgb};
+      color: var(--font-color-alpha-90);
     }
     &:active {
-      color: ${({ theme }) => theme.colors.text.base};
+      color: var(--font-color);
     }
   }
 `;

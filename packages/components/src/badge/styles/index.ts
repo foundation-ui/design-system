@@ -21,32 +21,31 @@ const BadgeVariantStyles = css`
   border: var(--measurement-small-10) solid transparent;
 
   &[data-variant="primary"] {
-    background-color: ${({ theme }) => theme.colors.text.base};
-    color: ${({ theme }) => theme.colors.body.base};
+    background-color: var(--font-color);
+    color: var(--body-color);
 
     &:hover,
     &:focus {
-      border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+      border-color: var(--font-color-alpha-10);
     }
   }
   &[data-variant="secondary"] {
-    background-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-    color: ${({ theme }) => theme.colors.text.alpha[6].rgb};
+    background-color: var(--font-color-alpha-10);
+    color: var(--font-color-alpha-60);
 
     &:hover,
     &:focus {
-      background-color: ${({ theme }) => theme.colors.text.alpha[1].rgb};
-      color: ${({ theme }) => theme.colors.text.base};
+      color: var(--font-color);
     }
   }
   &[data-variant="border"] {
     background-color: transparent;
-    border-color: ${({ theme }) => theme.colors.text.alpha[0].rgb};
-    color: ${({ theme }) => theme.colors.text.alpha[5].rgb};
+    border-color: var(--font-color-alpha-10);
+    color: var(--font-color-alpha-60);
 
     &:hover,
     &:focus {
-      color: ${({ theme }) => theme.colors.text.base};
+      color: var(--font-color);
     }
   }
   &[data-variant="warning"] {

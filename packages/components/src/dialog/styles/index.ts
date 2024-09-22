@@ -6,9 +6,8 @@ const DialogDefaultStyles = css`
   padding: var(--measurement-medium-60);
   width: 100%;
 
-  border: var(--measurement-small-10) solid
-    ${({ theme }) => theme.colors.text.alpha[0].rgb};
-  background-color: ${({ theme }) => theme.colors.body.contrast};
+  border: var(--measurement-small-10) solid var(--font-color-alpha-10);
+  background-color: var(--body-color);
   border-radius: var(--measurement-medium-30);
 
   transition: all ease-in-out 0.2s;

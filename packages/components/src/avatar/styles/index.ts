@@ -39,8 +39,8 @@ const AvatarStatusesStyles = css`
   }
 
   &[data-status="offline"] {
-    fill: ${({ theme }) => theme.colors.body.base};
-    stroke: ${({ theme }) => theme.colors.text.alpha[0].rgb};
+    fill: var(--body-color);
+    stroke: var(--font-color-alpha-10);
   }
 `;
 
@@ -51,7 +51,7 @@ export const AvatarWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    background-color: ${({ theme }) => theme.colors.body.contrast};
+    background-color: var(--body-color);
     border-radius: 100%;
 
     img {
