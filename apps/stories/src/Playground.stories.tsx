@@ -10,7 +10,6 @@ import uiprops from "./mocks/settings.json";
 
 {
   /* <TODO>Enhance Dropdown: Auto ltr rtl</TODO> */
-  /* <TODO>Enhance color mode context</TODO> */
 }
 
 const meta = {

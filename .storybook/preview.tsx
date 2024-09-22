@@ -5,7 +5,7 @@ import theme from "./theme";
 import { Preview } from "@storybook/react";
 import DocumentationTemplate from "./DocumentationTemplate.mdx";
 import { DesignTokensProvider } from "../packages/tokens";
-import { ColorModeProvider, SystemThemeProvider } from "../packages/tokens";
+import { ColorModeProvider } from "../packages/tokens";
 import {
   CSSRoot,
   ResetStyles,
@@ -19,7 +19,6 @@ const StoriesWrapepr = styled.div`
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.body.base};
 `;
 
 const preview: Preview = {
@@ -60,16 +59,14 @@ const preview: Preview = {
       return (
         <DesignTokensProvider>
           <ColorModeProvider>
-            <SystemThemeProvider>
-              <CSSRoot />
-              <ResetStyles />
-              <TypographyColors />
-              <TypographySizing />
-              <StoriesWrapepr>
-                <div id="dialog-portal" />
-                <Story />
-              </StoriesWrapepr>
-            </SystemThemeProvider>
+            <ResetStyles />
+            <CSSRoot />
+            <TypographyColors />
+            <TypographySizing />
+            <StoriesWrapepr>
+              <div id="dialog-portal" />
+              <Story />
+            </StoriesWrapepr>
           </ColorModeProvider>
         </DesignTokensProvider>
       );
