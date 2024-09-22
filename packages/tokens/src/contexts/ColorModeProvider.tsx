@@ -8,7 +8,7 @@ const SYSTEM_QUERY = "(prefers-color-scheme: system)";
 const FONT_VAR = "--font-color";
 const BODY_VAR = "--body-color";
 const ERRLOG =
-  "[foundation-ui] - localStorage is disabled and color mode might not work as expected.";
+  "[foundation] localStorage is disabled and color mode might not work as expected.";
 
 const storage = {
   get: () => {

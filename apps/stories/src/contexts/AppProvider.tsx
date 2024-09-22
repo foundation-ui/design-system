@@ -19,7 +19,7 @@ interface IAppProviderProperties {
   idb: TIDBConfig;
   uba: TUbaConfig;
   ab: TABConfig;
-  ui: IAppPropsConfig;
+  app: IAppPropsConfig;
 }
 
 const AppContext = React.createContext<null | any>({});
@@ -27,12 +27,12 @@ const useApp = () => React.useContext(AppContext);
 const AppProvider = (
   props: IAppProviderProperties & IReactChildren
 ): JSX.Element => {
-  const { idb, uba, ab, ui } = props;
+  const { idb, uba, ab, app } = props;
   const context = useAppProvider({
     idb,
     uba,
     ab,
-    ui,
+    app,
   });
 
   return (
@@ -41,11 +41,11 @@ const AppProvider = (
 };
 
 function useAppProvider(props: IAppProviderProperties): any {
-  const { idb, uba, ab, ui } = props;
+  const { idb, uba, ab, app } = props;
 
   const indexed_db = useIndexedDB(idb);
   const app_properties = useAppProperties({
-    ...ui,
+    ...app,
     config: idb,
   });
 

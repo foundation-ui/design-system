@@ -49,12 +49,6 @@ export const AppLayout = ({ children }: any) => {
     },
   });
 
-  console.log({
-    app_properties,
-    user_behavior_analytics,
-    ab_testing,
-  });
-
   if (!app_properties) return <Loader />;
   return (
     <Dialog.Root>

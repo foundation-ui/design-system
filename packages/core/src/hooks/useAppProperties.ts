@@ -30,7 +30,7 @@ export type TUIPropsConfig = {
 };
 export interface IAppProperties {
   feature_flags?: Record<string, TFeatFlagConfig | unknown>;
-  shortcuts?: Record<string, TSortcutsConfig | unknown>;
+  translations?: Record<string, unknown>;
   miscs?: Record<string, unknown>;
 }
 

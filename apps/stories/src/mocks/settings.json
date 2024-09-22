@@ -49,7 +49,7 @@
       }
     ]
   },
-  "ui": {
+  "app": {
     "silent": false,
     "source": {
       "store": "properties",
@@ -59,7 +59,15 @@
           "uba_drawer": {
             "enabled": true,
             "version": 1,
-            "variant": "primary",
+            "sizing": "large",
+            "options": {
+              "fixed": false,
+              "open": false
+            }
+          },
+          "ab_sheet": {
+            "enabled": true,
+            "version": 1,
             "sizing": "large",
             "options": {
               "fixed": false,
@@ -67,37 +75,7 @@
             }
           }
         },
-        "shortcuts": {
-          "open_settings": {
-            "enabled": true,
-            "shortcut": {
-              "hotkey": "s",
-              "bindkey": "ctrlKey"
-            }
-          },
-          "toggle_tools": {
-            "enabled": true,
-            "shortcut": {
-              "hotkey": "",
-              "bindkey": "shiftKey"
-            }
-          },
-          "toggle_navigation": {
-            "enabled": true,
-            "shortcut": {
-              "hotkey": "",
-              "bindkey": "shiftKey"
-            }
-          },
-          "toggle_options": {
-            "enabled": true,
-            "shortcut": {
-              "hotkey": "",
-              "bindkey": "shiftKey"
-            }
-          }
-        },
-        "miscs": {}
+        "translations": {}
       }
     }
   }
