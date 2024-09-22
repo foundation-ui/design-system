@@ -3,24 +3,21 @@ import { screen, render, fireEvent, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Checkbox } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
 
 const onClickCallback = jest.fn();
 const onChangeCallback = jest.fn();
 const CheckboxDefault = () => {
   return (
-    <SystemThemeProvider>
-      <Checkbox.Root>
-        <Checkbox
-          checked={false}
-          onClick={onClickCallback}
-          onChange={onChangeCallback}
-          name="test"
-        >
-          <Checkbox.Indicator />
-        </Checkbox>
-      </Checkbox.Root>
-    </SystemThemeProvider>
+    <Checkbox.Root>
+      <Checkbox
+        checked={false}
+        onClick={onClickCallback}
+        onChange={onChangeCallback}
+        name="test"
+      >
+        <Checkbox.Indicator />
+      </Checkbox>
+    </Checkbox.Root>
   );
 };
 
@@ -74,18 +71,16 @@ describe("Checkbox", () => {
   });
   it("Renders as checked if defaultChecked is defined", async () => {
     render(
-      <SystemThemeProvider>
-        <Checkbox.Root>
-          <Checkbox
-            name="test"
-            defaultChecked
-            onClick={onClickCallback}
-            onChange={onChangeCallback}
-          >
-            <Checkbox.Indicator />
-          </Checkbox>
-        </Checkbox.Root>
-      </SystemThemeProvider>
+      <Checkbox.Root>
+        <Checkbox
+          name="test"
+          defaultChecked
+          onClick={onClickCallback}
+          onChange={onChangeCallback}
+        >
+          <Checkbox.Indicator />
+        </Checkbox>
+      </Checkbox.Root>
     );
     const CheckboxComponent = screen.getByLabelText("test-checkbox");
     const CheckboxNative = screen.getByLabelText("test-native-checkbox");

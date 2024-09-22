@@ -3,7 +3,6 @@ import { render, fireEvent, screen, act } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Button } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
 import { ComponentVariantEnum } from "../../../../../types";
 import "@testing-library/jest-dom";
 
@@ -12,11 +11,7 @@ const handleClick = jest.fn();
 
 describe("Button", () => {
   it("Renders with accessibility definition", async () => {
-    render(
-      <SystemThemeProvider>
-        <Button onClick={handleClick}>Test</Button>
-      </SystemThemeProvider>
-    );
+    render(<Button onClick={handleClick}>Test</Button>);
 
     const ButtonComponent = screen.getByRole("button");
 
@@ -43,7 +38,7 @@ describe("Button", () => {
     ];
 
     const { container } = render(
-      <SystemThemeProvider>
+      <React.Fragment>
         {ButtonsVariants.map((variant) => (
           <Button
             key={variant}
@@ -53,7 +48,7 @@ describe("Button", () => {
             {variant}
           </Button>
         ))}
-      </SystemThemeProvider>
+      </React.Fragment>
     );
 
     const ComponentContainer = await axe(container);
@@ -67,11 +62,9 @@ describe("Button", () => {
   });
   it("Renders without accessibility violation", async () => {
     const { container } = render(
-      <SystemThemeProvider>
-        <Button name="test" onClick={handleClick}>
-          Test
-        </Button>
-      </SystemThemeProvider>
+      <Button name="test" onClick={handleClick}>
+        Test
+      </Button>
     );
     const ComponentContainer = await axe(container);
     const ButtonComponent = screen.getByRole("button");

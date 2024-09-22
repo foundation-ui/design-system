@@ -3,7 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Avatar, AvataStatusEnum } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
 import { ComponentSizeEnum } from "../../../../../types";
 import "@testing-library/jest-dom";
 
@@ -11,24 +10,20 @@ expect.extend(toHaveNoViolations);
 describe("Avatar", () => {
   it("Renders without accessibility violation", async () => {
     const { container } = render(
-      <SystemThemeProvider>
-        <Avatar
-          sizing={ComponentSizeEnum.Small}
-          status={AvataStatusEnum.Online}
-        />
-      </SystemThemeProvider>
+      <Avatar
+        sizing={ComponentSizeEnum.Small}
+        status={AvataStatusEnum.Online}
+      />
     );
     const ComponentContainer = await axe(container);
     expect(ComponentContainer).toHaveNoViolations();
   });
   it("Renders with accessibility definition", async () => {
     render(
-      <SystemThemeProvider>
-        <Avatar
-          sizing={ComponentSizeEnum.Small}
-          status={AvataStatusEnum.Online}
-        />
-      </SystemThemeProvider>
+      <Avatar
+        sizing={ComponentSizeEnum.Small}
+        status={AvataStatusEnum.Online}
+      />
     );
 
     const avatarLabel = "small-user-avatar";
@@ -45,11 +40,7 @@ describe("Avatar", () => {
     expect(AvatarStatus).toHaveAttribute("data-status", "online");
   });
   it("Renders with Image as background", async () => {
-    render(
-      <SystemThemeProvider>
-        <Avatar src="http://www.bui/tests" />
-      </SystemThemeProvider>
-    );
+    render(<Avatar src="http://www.bui/tests" />);
 
     const avatarLabel = "medium-user-avatar";
     const AvatarWrapper = screen.getByLabelText(avatarLabel);
@@ -73,7 +64,7 @@ describe("Avatar", () => {
     ];
 
     const { container } = render(
-      <SystemThemeProvider>
+      <React.Fragment>
         {StatusVariants.map((variant, key) => (
           <Avatar
             key={variant}
@@ -81,7 +72,7 @@ describe("Avatar", () => {
             sizing={SizeVariants[key] || ComponentSizeEnum.Small}
           />
         ))}
-      </SystemThemeProvider>
+      </React.Fragment>
     );
 
     const ComponentContainer = await axe(container);

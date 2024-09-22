@@ -3,27 +3,24 @@ import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Field } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
 
 const onClickCallback = jest.fn();
 const onChangeCallback = jest.fn();
 const FieldDefault = (args: { error?: string; hint?: string }) => {
   return (
-    <SystemThemeProvider>
-      <Field.Root>
-        <Field.Wrapper>
-          <Field.Label>Test Input</Field.Label>
-          <Field
-            name="test"
-            value="test"
-            placeholder="test-placeholder"
-            onChange={onChangeCallback}
-            onClick={onClickCallback}
-            {...args}
-          />
-        </Field.Wrapper>
-      </Field.Root>
-    </SystemThemeProvider>
+    <Field.Root>
+      <Field.Wrapper>
+        <Field.Label>Test Input</Field.Label>
+        <Field
+          name="test"
+          value="test"
+          placeholder="test-placeholder"
+          onChange={onChangeCallback}
+          onClick={onClickCallback}
+          {...args}
+        />
+      </Field.Wrapper>
+    </Field.Root>
   );
 };
 

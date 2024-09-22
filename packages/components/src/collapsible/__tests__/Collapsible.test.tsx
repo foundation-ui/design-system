@@ -3,7 +3,6 @@ import { screen, render, fireEvent, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Collapsible } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
 
 const onClickCallback = jest.fn();
 const CollapsibleDefault = (args: {
@@ -11,23 +10,21 @@ const CollapsibleDefault = (args: {
   showFirstChild?: boolean;
 }) => {
   return (
-    <SystemThemeProvider>
-      <Collapsible.Root>
-        <Collapsible>
-          <Collapsible.Trigger onClick={onClickCallback}>
-            Trigger
-          </Collapsible.Trigger>
-          <Collapsible.Content
-            defaultOpen={args.defaultOpen}
-            showFirstChild={args.showFirstChild}
-            aria-label="test-content"
-          >
-            <p key={1}>Item 1</p>
-            <p key={2}>Item 2</p>
-          </Collapsible.Content>
-        </Collapsible>
-      </Collapsible.Root>
-    </SystemThemeProvider>
+    <Collapsible.Root>
+      <Collapsible>
+        <Collapsible.Trigger onClick={onClickCallback}>
+          Trigger
+        </Collapsible.Trigger>
+        <Collapsible.Content
+          defaultOpen={args.defaultOpen}
+          showFirstChild={args.showFirstChild}
+          aria-label="test-content"
+        >
+          <p key={1}>Item 1</p>
+          <p key={2}>Item 2</p>
+        </Collapsible.Content>
+      </Collapsible>
+    </Collapsible.Root>
   );
 };
 

@@ -1,15 +1,8 @@
 import React from "react";
-import {
-  render,
-  fireEvent,
-  screen,
-  act,
-  waitFor,
-} from "@testing-library/react";
+import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Overlay } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
 import "@testing-library/jest-dom";
 
 const onClickCallback = jest.fn();
@@ -18,16 +11,14 @@ const OverlayDefault = (args: {
   closeOnInteract?: boolean;
 }) => {
   return (
-    <SystemThemeProvider>
-      <Overlay
-        visible={args.visible}
-        closeOnInteract={Boolean(args.closeOnInteract)}
-        onClick={onClickCallback}
-        aria-label="test-overlay"
-      >
-        overlay
-      </Overlay>
-    </SystemThemeProvider>
+    <Overlay
+      visible={args.visible}
+      closeOnInteract={Boolean(args.closeOnInteract)}
+      onClick={onClickCallback}
+      aria-label="test-overlay"
+    >
+      overlay
+    </Overlay>
   );
 };
 

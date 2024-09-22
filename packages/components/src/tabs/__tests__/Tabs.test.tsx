@@ -3,28 +3,26 @@ import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Tabs } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
+
 import "@testing-library/jest-dom";
 
 const onClickCallback = jest.fn();
 const TabsDefault = () => {
   return (
-    <SystemThemeProvider>
-      <Tabs.Root>
-        <Tabs>
-          <Tabs.Trigger value="1">trigger 1</Tabs.Trigger>
-          <Tabs.Trigger onClick={onClickCallback} value="2">
-            trigger 2
-          </Tabs.Trigger>
-        </Tabs>
-        <Tabs.Content value="1">
-          <p>item 1</p>
-        </Tabs.Content>
-        <Tabs.Content value="2">
-          <p>item 2</p>
-        </Tabs.Content>
-      </Tabs.Root>
-    </SystemThemeProvider>
+    <Tabs.Root>
+      <Tabs>
+        <Tabs.Trigger value="1">trigger 1</Tabs.Trigger>
+        <Tabs.Trigger onClick={onClickCallback} value="2">
+          trigger 2
+        </Tabs.Trigger>
+      </Tabs>
+      <Tabs.Content value="1">
+        <p>item 1</p>
+      </Tabs.Content>
+      <Tabs.Content value="2">
+        <p>item 2</p>
+      </Tabs.Content>
+    </Tabs.Root>
   );
 };
 
@@ -85,22 +83,20 @@ describe("Tabs", () => {
   });
   it("Renders the desired section as open if defaultOpen is defined", async () => {
     render(
-      <SystemThemeProvider>
-        <Tabs.Root>
-          <Tabs defaultOpen="2">
-            <Tabs.Trigger value="1">trigger 1</Tabs.Trigger>
-            <Tabs.Trigger onClick={onClickCallback} value="2">
-              trigger 2
-            </Tabs.Trigger>
-          </Tabs>
-          <Tabs.Content value="1">
-            <p>item 1</p>
-          </Tabs.Content>
-          <Tabs.Content value="2">
-            <p>item 2</p>
-          </Tabs.Content>
-        </Tabs.Root>
-      </SystemThemeProvider>
+      <Tabs.Root>
+        <Tabs defaultOpen="2">
+          <Tabs.Trigger value="1">trigger 1</Tabs.Trigger>
+          <Tabs.Trigger onClick={onClickCallback} value="2">
+            trigger 2
+          </Tabs.Trigger>
+        </Tabs>
+        <Tabs.Content value="1">
+          <p>item 1</p>
+        </Tabs.Content>
+        <Tabs.Content value="2">
+          <p>item 2</p>
+        </Tabs.Content>
+      </Tabs.Root>
     );
     const Trigger = screen.getByTitle("1-tab");
     const Content = screen.getByTitle("1-tabpanel");

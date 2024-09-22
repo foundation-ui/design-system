@@ -9,17 +9,15 @@ import {
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Toggle } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
+
 import "@testing-library/jest-dom";
 
 const onClickCallback = jest.fn();
 const ToggleDefault = (args: { defaultChecked?: boolean }) => {
   return (
-    <SystemThemeProvider>
-      <Toggle defaultChecked={args.defaultChecked} onClick={onClickCallback}>
-        Test
-      </Toggle>
-    </SystemThemeProvider>
+    <Toggle defaultChecked={args.defaultChecked} onClick={onClickCallback}>
+      Test
+    </Toggle>
   );
 };
 

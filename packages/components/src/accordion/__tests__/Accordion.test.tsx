@@ -3,24 +3,19 @@ import { screen, render, fireEvent, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Accordion } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
 
 expect.extend(toHaveNoViolations);
 describe("Accordion", () => {
   it("Renders without accessibility violation", async () => {
     const { container } = render(
-      <SystemThemeProvider>
-        <SystemThemeProvider>
-          <Accordion.Root>
-            <Accordion>
-              <Accordion.Trigger value="1">1</Accordion.Trigger>
-              <Accordion.Content value="1" defaultOpen>
-                2
-              </Accordion.Content>
-            </Accordion>
-          </Accordion.Root>
-        </SystemThemeProvider>
-      </SystemThemeProvider>
+      <Accordion.Root>
+        <Accordion>
+          <Accordion.Trigger value="1">1</Accordion.Trigger>
+          <Accordion.Content value="1" defaultOpen>
+            2
+          </Accordion.Content>
+        </Accordion>
+      </Accordion.Root>
     );
 
     const ComponentContainer = await axe(container);
@@ -28,14 +23,12 @@ describe("Accordion", () => {
   });
   it("Renders with accessibility definition", async () => {
     render(
-      <SystemThemeProvider>
-        <Accordion.Root>
-          <Accordion>
-            <Accordion.Trigger value="1">1</Accordion.Trigger>
-            <Accordion.Content value="1">1</Accordion.Content>
-          </Accordion>
-        </Accordion.Root>
-      </SystemThemeProvider>
+      <Accordion.Root>
+        <Accordion>
+          <Accordion.Trigger value="1">1</Accordion.Trigger>
+          <Accordion.Content value="1">1</Accordion.Content>
+        </Accordion>
+      </Accordion.Root>
     );
     const Trigger = screen.getByLabelText("button-action");
 
@@ -55,26 +48,24 @@ describe("Accordion", () => {
   it("Fires the defined callback function and toggle the content when the trigger is clicked", async () => {
     const onClickCallback = jest.fn();
     render(
-      <SystemThemeProvider>
-        <Accordion.Root>
-          <Accordion>
-            <Accordion.Trigger
-              onClick={onClickCallback}
-              value="1"
-              name="trigger-1"
-            >
-              Trigger 1
-            </Accordion.Trigger>
-            <Accordion.Trigger value="2" name="trigger-2">
-              Trigger 2
-            </Accordion.Trigger>
-            <Accordion.Content value="1" defaultOpen>
-              Content 1
-            </Accordion.Content>
-            <Accordion.Content value="2">Content 2</Accordion.Content>
-          </Accordion>
-        </Accordion.Root>
-      </SystemThemeProvider>
+      <Accordion.Root>
+        <Accordion>
+          <Accordion.Trigger
+            onClick={onClickCallback}
+            value="1"
+            name="trigger-1"
+          >
+            Trigger 1
+          </Accordion.Trigger>
+          <Accordion.Trigger value="2" name="trigger-2">
+            Trigger 2
+          </Accordion.Trigger>
+          <Accordion.Content value="1" defaultOpen>
+            Content 1
+          </Accordion.Content>
+          <Accordion.Content value="2">Content 2</Accordion.Content>
+        </Accordion>
+      </Accordion.Root>
     );
 
     expect(screen.getByText("Content 1")).toBeDefined();

@@ -3,26 +3,23 @@ import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Switch } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
 
 const onClickCallback = jest.fn();
 const Switchefault = (args: { defaultChecked?: boolean }) => {
   return (
-    <SystemThemeProvider>
-      <Switch.Root>
-        <label id="label" htmlFor="switch-test">
-          test switch
-        </label>
-        <Switch
-          defaultChecked={args.defaultChecked}
-          onClick={onClickCallback}
-          aria-labelledby="label"
-          disabled={false}
-        >
-          <Switch.Thumb />
-        </Switch>
-      </Switch.Root>
-    </SystemThemeProvider>
+    <Switch.Root>
+      <label id="label" htmlFor="switch-test">
+        test switch
+      </label>
+      <Switch
+        defaultChecked={args.defaultChecked}
+        onClick={onClickCallback}
+        aria-labelledby="label"
+        disabled={false}
+      >
+        <Switch.Thumb />
+      </Switch>
+    </Switch.Root>
   );
 };
 

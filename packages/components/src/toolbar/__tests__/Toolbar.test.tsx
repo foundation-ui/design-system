@@ -9,7 +9,6 @@ import {
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Toolbar } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
 import { ComponentSizeEnum, ComponentSideEnum } from "../../../../../types";
 
 import "@testing-library/jest-dom";
@@ -24,24 +23,22 @@ const ToolbarDefault = (args: {
   hotkey?: string;
 }) => {
   return (
-    <SystemThemeProvider>
-      <Toolbar.Root>
-        <Toolbar
-          side={args.side}
-          sizing={args.sizing}
-          defaultOpen={args.defaultOpen}
-          shortcut={args.shortcut}
-          hotkey={args.hotkey}
-        >
-          <Toolbar.Section showoncollapse={args.showoncollapse}>
-            <Toolbar.Item aria-label="test-item">item</Toolbar.Item>
-            <Toolbar.Item aria-label="test-item-2">item2</Toolbar.Item>
-          </Toolbar.Section>
+    <Toolbar.Root>
+      <Toolbar
+        side={args.side}
+        sizing={args.sizing}
+        defaultOpen={args.defaultOpen}
+        shortcut={args.shortcut}
+        hotkey={args.hotkey}
+      >
+        <Toolbar.Section showoncollapse={args.showoncollapse}>
+          <Toolbar.Item aria-label="test-item">item</Toolbar.Item>
+          <Toolbar.Item aria-label="test-item-2">item2</Toolbar.Item>
+        </Toolbar.Section>
 
-          <Toolbar.Trigger onClick={onClickCallback}>&hArr;</Toolbar.Trigger>
-        </Toolbar>
-      </Toolbar.Root>
-    </SystemThemeProvider>
+        <Toolbar.Trigger onClick={onClickCallback}>&hArr;</Toolbar.Trigger>
+      </Toolbar>
+    </Toolbar.Root>
   );
 };
 
