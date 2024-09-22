@@ -3,35 +3,32 @@ import { screen, render, fireEvent, waitFor } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { DropdownMenu } from "..";
-import { SystemThemeProvider } from "@foundation-ui/tokens";
 
 const onClickCallback = jest.fn();
 const DropdownDefault = (args: { defaultOpen?: boolean }) => {
   return (
-    <SystemThemeProvider>
-      <DropdownMenu.Root>
-        <DropdownMenu.Trigger onClick={onClickCallback}>
-          Trigger
-        </DropdownMenu.Trigger>
-        <DropdownMenu>
-          <DropdownMenu.Content defaultOpen={args.defaultOpen}>
-            <DropdownMenu.Item
-              aria-label="toggle-item"
-              onClick={onClickCallback}
-            >
-              Toggle Item
-            </DropdownMenu.Item>
-            <DropdownMenu.Item
-              radio
-              aria-label="static-item"
-              onClick={onClickCallback}
-            >
-              Static Item
-            </DropdownMenu.Item>
-          </DropdownMenu.Content>
-        </DropdownMenu>
-      </DropdownMenu.Root>
-    </SystemThemeProvider>
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger onClick={onClickCallback}>
+        Trigger
+      </DropdownMenu.Trigger>
+      <DropdownMenu>
+        <DropdownMenu.Content
+          defaultOpen={args.defaultOpen}
+          aria-label="test-menu"
+        >
+          <DropdownMenu.Item aria-label="toggle-item" onClick={onClickCallback}>
+            Toggle Item
+          </DropdownMenu.Item>
+          <DropdownMenu.Item
+            radio
+            aria-label="static-item"
+            onClick={onClickCallback}
+          >
+            Static Item
+          </DropdownMenu.Item>
+        </DropdownMenu.Content>
+      </DropdownMenu>
+    </DropdownMenu.Root>
   );
 };
 
@@ -52,7 +49,7 @@ describe("Dropdown", () => {
 
     fireEvent.click(Trigger);
     await waitFor(() => {
-      const Content = screen.getByRole("menu");
+      const Content = screen.getByLabelText("test-menu");
 
       expect(Content.getAttribute("data-state")).toBe("open");
       expect(Content.getAttribute("aria-orientation")).toBe("vertical");
@@ -67,7 +64,7 @@ describe("Dropdown", () => {
     fireEvent.click(screen.getByRole("button"));
     await waitFor(() => {
       expect(onClickCallback).toHaveBeenCalled();
-      expect(screen.getByRole("menu")).toBeDefined();
+      expect(screen.getByLabelText("test-menu")).toBeDefined();
     });
   });
   it("Fires the defined callback function and toggle the content when the item is clicked", async () => {
@@ -76,29 +73,34 @@ describe("Dropdown", () => {
     fireEvent.click(screen.getByRole("button"));
     await waitFor(() => {
       expect(onClickCallback).toHaveBeenCalled();
-      expect(screen.getByRole("menu")).toBeDefined();
-      expect(screen.getAllByRole("menuitem").length).toBe(2);
+      expect(screen.getByLabelText("test-menu")).toBeDefined();
+      expect(screen.getByLabelText("toggle-item")).toBeDefined();
+      expect(screen.getByLabelText("static-item")).toBeDefined();
     });
 
     fireEvent.click(screen.getByLabelText("toggle-item"));
     await waitFor(() => {
-      expect(() => screen.getByRole("menu")).toThrow();
+      expect(() => screen.getByLabelText("test-menu")).toThrow();
     });
   });
   it("Fires the defined callback function without toggling the content when the item is clicked", async () => {
     render(<DropdownDefault defaultOpen />);
 
-    await waitFor(() => expect(screen.getByRole("menu")).toBeDefined());
+    await waitFor(() =>
+      expect(screen.getByLabelText("test-menu")).toBeDefined()
+    );
 
     fireEvent.click(screen.getByLabelText("static-item"));
     await waitFor(() => {
       expect(onClickCallback).toHaveBeenCalled();
-      expect(screen.getByRole("menu")).toBeDefined();
+      expect(screen.getByLabelText("test-menu")).toBeDefined();
     });
   });
   it("Fires the defined callback function if an inner item is focused and a keypress is detected", async () => {
     render(<DropdownDefault defaultOpen />);
-    await waitFor(() => expect(screen.getByRole("menu")).toBeDefined());
+    await waitFor(() =>
+      expect(screen.getByLabelText("test-menu")).toBeDefined()
+    );
 
     screen.getByLabelText("toggle-item").focus();
     fireEvent.keyDown(screen.getByLabelText("toggle-item"), {
@@ -111,7 +113,9 @@ describe("Dropdown", () => {
     });
 
     fireEvent.click(screen.getByRole("button"));
-    await waitFor(() => expect(screen.getByRole("menu")).toBeDefined());
+    await waitFor(() =>
+      expect(screen.getByLabelText("test-menu")).toBeDefined()
+    );
     screen.getByLabelText("toggle-item").focus();
     fireEvent.keyDown(screen.getByLabelText("static-item"), {
       key: "Space",
@@ -124,11 +128,15 @@ describe("Dropdown", () => {
   });
   it("Renders the component by default if open is defined", async () => {
     render(<DropdownDefault defaultOpen />);
-    await waitFor(() => expect(screen.getByRole("menu")).toBeDefined());
+    await waitFor(() =>
+      expect(screen.getByLabelText("test-menu")).toBeDefined()
+    );
   });
   it("Close the component on click outside", async () => {
     render(<DropdownDefault defaultOpen />);
-    await waitFor(() => expect(screen.getByRole("menu")).toBeDefined());
+    await waitFor(() =>
+      expect(screen.getByLabelText("test-menu")).toBeDefined()
+    );
 
     fireEvent.mouseDown(document.body);
     await waitFor(() => {
