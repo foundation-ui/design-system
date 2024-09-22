@@ -22,9 +22,9 @@ describe("ColorModeContext", () => {
   beforeAll(() => {
     Object.defineProperty(window, "matchMedia", {
       writable: true,
-      value: jest.fn().mockImplementation((query) => ({
-        matches: false,
-        media: query,
+      value: jest.fn().mockImplementation(() => ({
+        matches: true,
+        media: "dark",
       })),
     });
   });

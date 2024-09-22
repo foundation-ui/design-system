@@ -1,6 +1,5 @@
 import React from "react";
 import { TColorMode, ColorModesEnum } from "../../../../types";
-import { design_system_themes } from "../";
 
 const STORAGE_KEY = "color-mode";
 const DARK_QUERY = "(prefers-color-scheme: dark)";
