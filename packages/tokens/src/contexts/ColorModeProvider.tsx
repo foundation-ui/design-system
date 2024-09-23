@@ -43,52 +43,62 @@ export const useColorMode = () => React.useContext(ColorModeContext);
 
 export const ColorModeContext = React.createContext<null | any>(null);
 export const ColorModeProvider = ({ children }: any) => {
-  const root = document.documentElement;
   const locstore = window.localStorage;
-
   const fetchedMode = storage.get();
+
   const [colorMode, setColorMode] = React.useState<TFetchedColorMode>(
     fetchedMode || getPreferredColorScheme()
   );
 
   /**
-   * IIFE <https://developer.mozilla.org/en-US/docs/Glossary/IIFE> used to avoid polluting the global namespace
-   * and define color mode variables
+   * IIFE <https://developer.mozilla.org/en-US/docs/Glossary/IIFE> runs as soon as it is defined.
+   * Used to write CSS vars defined by the color mode as soon a every values are available.
    */
   (function () {
+    const head = document.head || document.getElementsByTagName("head")[0];
+    const style = document.createElement("style");
+    style.type = "text/css";
+    style.title = "color_mode_vars";
+
     const is_light = colorMode === ColorModesEnum.Light;
-    const vars_array = Array.from(
-      { length: 10 },
-      (_, key: number) => (key + 1) * 10
-    );
+    const vars_array = Array.from({ length: 10 }, (_, key) => (key + 1) * 10);
 
+    let css = "";
     if (colorMode) {
-      root.style.setProperty(
-        BODY_VAR,
-        is_light ? "var(--color-mono-light)" : "var(--color-mono-darker)"
-      );
-      vars_array.forEach((index) =>
-        root.style.setProperty(
-          `${BODY_VAR}-alpha-${index}`,
-          is_light
-            ? `var(--alpha-mono-light-${index})`
-            : `var(--alpha-mono-dark-${index})`
-        )
-      );
+      const bodyColor = is_light
+        ? "var(--color-mono-light)"
+        : "var(--color-mono-darker)";
+      const fontColor = is_light
+        ? "var(--color-mono-darkest)"
+        : "var(--color-mono-white)";
 
-      root.style.setProperty(
-        FONT_VAR,
-        is_light ? "var(--color-mono-darkest)" : "var(--color-mono-white)"
-      );
-      vars_array.forEach((index) =>
-        root.style.setProperty(
-          `${FONT_VAR}-alpha-${index}`,
-          is_light
-            ? `var(--alpha-mono-darkest-${index})`
-            : `var(--alpha-mono-white-${index})`
-        )
-      );
+      const generateAlphaVars = (
+        baseVar: string,
+        lightPrefix: string,
+        darkPrefix: string
+      ) =>
+        vars_array
+          .map(
+            (index) =>
+              `${baseVar}-alpha-${index}: var(${
+                is_light
+                  ? `--${lightPrefix}-${index}`
+                  : `--${darkPrefix}-${index}`
+              });`
+          )
+          .join("\n");
+
+      css = `:root {
+        ${BODY_VAR}: ${bodyColor};
+        ${generateAlphaVars(BODY_VAR, "alpha-mono-light", "alpha-mono-dark")}
+        ${FONT_VAR}: ${fontColor};
+        ${generateAlphaVars(FONT_VAR, "alpha-mono-darkest", "alpha-mono-white")}
+      }`.replace(/\s/g, ""); // minify string
     }
+
+    // Append style element to head
+    if (css) style.textContent = css;
+    head.appendChild(style);
   })();
 
   // Read the color mode from localStorage on render
