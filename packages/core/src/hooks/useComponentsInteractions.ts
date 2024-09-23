@@ -3,6 +3,7 @@ import React from "react";
 export interface IEventPayload {
   type: string;
   occured_at: string;
+  occured_at_epoch: number;
   position: {
     x: number;
     y: number;
@@ -40,7 +41,8 @@ export const useComponentsInteractions = (
         const usageRef = [...prevData];
         const eventData: IEventPayload = {
           type: event.type,
-          occured_at: new Date(Date.now()).toISOString(),
+          occured_at: new Date().toISOString(),
+          occured_at_epoch: Date.now(),
           position: {
             x: event.x,
             y: event.y,

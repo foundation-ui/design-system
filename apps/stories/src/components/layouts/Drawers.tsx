@@ -199,6 +199,7 @@ export const AnalyticsDrawer = () => {
                     </DropdownMenu>
                   </DropdownMenu.Root>
                 </Table.HeadCell>
+                <Table.HeadCell>Last interaction (Epoch)</Table.HeadCell>
 
                 <Table.HeadCell />
               </Table.Row>

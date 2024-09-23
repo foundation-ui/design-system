@@ -20,6 +20,7 @@ type TUsageData = {
   most_frequent_interaction: string;
   most_frequent_count: number;
   last_interaction_time: string;
+  last_interaction_epoch: number;
 };
 interface IBehaviorAnalyticsProperties {
   silent?: boolean;
@@ -165,6 +166,7 @@ export const useBehaviorAnalytics = ({
       most_frequent_interaction: most_frequent,
       most_frequent_count: Number(interactions_count[most_frequent]),
       last_interaction_time: interaction.events.at(0)?.occured_at,
+      last_interaction_epoch: interaction.events.at(0)?.occured_at_epoch,
     };
   });
 
