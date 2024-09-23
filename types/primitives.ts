@@ -39,7 +39,7 @@ export type TKeyboardLayout =
   | "QGMLWY"
   | "HCESAR";
 export type TComponentHeight = "fullscreen" | "display" | "auto";
-export type TComponentAPI = boolean | string | number | null;
+export type TComponentAPI = boolean | string | number | null | unknown;
 export type TComponentSize = "small" | "medium" | "large";
 export type TComponentSide = "top" | "right" | "bottom" | "left";
 export type TComponentVariant =
@@ -53,7 +53,7 @@ export type TKeyBinding = "ctrlKey" | "metaKey" | "altKey" | "shiftKey";
 export type TFrequencyLabels = "greater-than" | "less-than" | "equals-to";
 export interface IComponentAPI {
   id: string;
-  states: Record<string, TComponentAPI | Record<string, TComponentAPI>>;
+  states: Record<string, TComponentAPI | Record<string, TComponentAPI> | any>;
   methods: Record<string, (args?: TComponentAPI | any) => void>;
 }
 export interface IComponentStyling {

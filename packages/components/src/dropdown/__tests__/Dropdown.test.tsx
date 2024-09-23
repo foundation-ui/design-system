@@ -52,7 +52,6 @@ describe("Dropdown", () => {
       const Content = screen.getByLabelText("test-menu");
 
       expect(Content.getAttribute("data-state")).toBe("open");
-      expect(Content.getAttribute("aria-orientation")).toBe("vertical");
       expect(Content.getAttribute("data-side")).toBeDefined();
       expect(Content.getAttribute("data-align")).toBeDefined();
       expect(Content.getAttribute("aria-labelledby")).toBeDefined();

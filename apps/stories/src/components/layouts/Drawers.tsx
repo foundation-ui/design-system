@@ -73,7 +73,7 @@ export const AnalyticsDrawer = () => {
                     <path d="M3 9h14V7H3zm0 4h14v-2H3zm0 4h14v-2H3zm16 0h2v-2h-2zm0-10v2h2V7zm0 6h2v-2h-2z" />
                   </svg>
                 </DropdownMenu.Trigger>
-                <DropdownMenu.Content side="left" sizing="medium">
+                <DropdownMenu.Content sizing="medium">
                   <DropdownMenu.Item className="flex align-center justify-between">
                     Origin<b>✓</b>
                   </DropdownMenu.Item>
@@ -102,7 +102,7 @@ export const AnalyticsDrawer = () => {
                     <path d="M7 6h10l-5.01 6.3zm-2.75-.39C6.27 8.2 10 13 10 13v6c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-6s3.72-4.8 5.74-7.39c.51-.66.04-1.61-.79-1.61H5.04c-.83 0-1.3.95-.79 1.61" />
                   </svg>
                 </DropdownMenu.Trigger>
-                <DropdownMenu.Content side="left" sizing="small">
+                <DropdownMenu.Content sizing="small">
                   <DropdownMenu.Item className="flex align-center justify-between">
                     Click<b>◭</b>
                   </DropdownMenu.Item>
@@ -128,7 +128,7 @@ export const AnalyticsDrawer = () => {
                     <path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99zM9 3 5 6.99h3V14h2V6.99h3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99zM9 3 5 6.99h3V14h2V6.99h3z"></path>
                   </svg>
                 </DropdownMenu.Trigger>
-                <DropdownMenu.Content side="left" sizing="small">
+                <DropdownMenu.Content sizing="small">
                   <DropdownMenu.Item className="flex align-center justify-between">
                     Asc<b>↑</b>
                   </DropdownMenu.Item>
@@ -160,7 +160,7 @@ export const AnalyticsDrawer = () => {
                       <DropdownMenu.Trigger variant="ghost" sizing="small">
                         Most frequent<b>⋮</b>
                       </DropdownMenu.Trigger>
-                      <DropdownMenu.Content side="left" sizing="small">
+                      <DropdownMenu.Content sizing="small">
                         <DropdownMenu.Item className="flex align-center justify-between">
                           Click<b>◭</b>
                         </DropdownMenu.Item>
@@ -184,7 +184,7 @@ export const AnalyticsDrawer = () => {
                       <DropdownMenu.Trigger variant="ghost" sizing="small">
                         Last interaction<b>⋮</b>
                       </DropdownMenu.Trigger>
-                      <DropdownMenu.Content side="left" sizing="small">
+                      <DropdownMenu.Content sizing="small">
                         <DropdownMenu.Item className="flex align-center justify-between">
                           Asc<b>↑</b>
                         </DropdownMenu.Item>
@@ -237,7 +237,7 @@ export const AnalyticsDrawer = () => {
                           <DropdownMenu.Trigger variant="ghost" sizing="small">
                             Options<b>⋮</b>
                           </DropdownMenu.Trigger>
-                          <DropdownMenu.Content side="right" sizing="small">
+                          <DropdownMenu.Content sizing="small">
                             <DropdownMenu.Item className="flex align-center justify-between">
                               Details<b>↑</b>
                             </DropdownMenu.Item>

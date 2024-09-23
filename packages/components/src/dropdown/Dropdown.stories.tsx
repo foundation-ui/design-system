@@ -60,10 +60,6 @@ export const Default: Story = {
       ],
       control: { type: "radio" },
     },
-    side: {
-      options: ["left", "right"],
-      control: { type: "radio" },
-    },
   },
   render: ({ ...args }) => (
     <DropdownMenu.Root>

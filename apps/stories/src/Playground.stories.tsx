@@ -8,10 +8,6 @@ import { AppLayout } from "./components/layouts";
 
 import settings from "./mocks/settings.json";
 
-{
-  /* <TODO>Enhance Dropdown: Auto ltr rtl</TODO> */
-}
-
 const meta = {
   title: "Modules/Playground",
   component: Page,

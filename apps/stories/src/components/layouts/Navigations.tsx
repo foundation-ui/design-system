@@ -201,7 +201,7 @@ export const InternalActionsNavigation = () => {
             >
               Workspaces
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content side="right">
+            <DropdownMenu.Content>
               <DropdownMenu.Item className="flex align-center justify-between">
                 New Workspace
                 <code>

@@ -13,7 +13,7 @@ const Table = ({
   ...restProps
 }: IScrollAreaProperties & React.ComponentProps<"table">) => {
   return (
-    <ScrollArea as={TableLayer} role="presentation" tab-index="-1">
+    <ScrollArea as={TableLayer} role="presentation" tabIndex={-1}>
       <TableWrapper {...restProps} cellSpacing="0" cellPadding="0">
         {children}
       </TableWrapper>

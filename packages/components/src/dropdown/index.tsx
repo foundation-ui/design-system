@@ -3,21 +3,19 @@ import { useClickOutside, useDisabledScroll } from "@foundation-ui/hooks";
 import { DropdownMenuProvider, useDropdownMenu } from "./hooks";
 import { RootWrapper, ContentWrapper, ItemWrapper } from "./styles";
 import { Button, IButtonProperties } from "../button";
-import { ScrollArea, IScrollAreaProperties } from "../scrollarea";
 import { applyDataState } from "../utils";
 import {
   IReactChildren,
   IComponentStyling,
   IComponentSize,
+  ComponentSideEnum,
 } from "../../../../types";
 
 export interface IDropdownContentProperties
   extends IComponentStyling,
     IComponentSize,
-    IScrollAreaProperties,
-    React.ComponentProps<"ul"> {
+    React.ComponentPropsWithRef<"ul"> {
   defaultOpen?: boolean;
-  side?: "left" | "right";
 }
 export interface IDropdownItemProperties
   extends IComponentStyling,
@@ -62,7 +60,6 @@ const DropdownMenu = ({ children }: React.ComponentProps<"div">) => {
 
   useClickOutside(DropdownContentRef, handleClickOutside);
   useDisabledScroll(Boolean(states.open));
-
   return <RootWrapper ref={DropdownContentRef}>{children}</RootWrapper>;
 };
 DropdownMenu.displayName = "DropdownMenu";
@@ -86,17 +83,30 @@ DropdownMenuRoot.displayName = "DropdownMenu.Root";
  * @returns {ReactElement} The DropdownMenu.Trigger component.
  */
 const DropdownMenuTrigger = (props: IButtonProperties) => {
+  const triggerRef = React.useRef<HTMLButtonElement>(null);
+  const triggerRect = () => triggerRef.current?.getBoundingClientRect();
+
   const { variant = "ghost", onClick, children, ...restProps } = props;
   const { id, states, methods } = useDropdownMenu();
-  const { toggleOpen } = methods;
+  const { toggleOpen, setTriggerProps } = methods;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
     if (toggleOpen) toggleOpen();
+    if (setTriggerProps)
+      setTriggerProps({
+        top: Number(triggerRect()?.top),
+        right: Number(triggerRect()?.right),
+        bottom: Number(triggerRect()?.bottom),
+        left: Number(triggerRect()?.left),
+        width: Number(triggerRect()?.width),
+        height: Number(triggerRect()?.height),
+      });
   };
 
   return (
     <Button
+      ref={triggerRef}
       id={id.split("|").at(0)}
       onClick={handleClick}
       aria-haspopup="menu"
@@ -121,50 +131,111 @@ DropdownMenuTrigger.displayName = "DropdownMenu.Trigger";
  * @param {IDropdownContentProperties} props - The props for the DropdownMenu.Content component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {ComponentSizeEnum} props.sizing - The size of the component.
- * @param {"left" | "right"} props.side - The side on which the component's width will extend.
  * @param {boolean} props.defaultOpen - The initial open state of the dropdown menu. Defaults to false.
  * @param {ReactNode} props.children - The content to be rendered inside the dropdown menu.
  * @returns {ReactElement} The DropdownMenu.Content component.
  */
-const DropdownMenuContent = (props: IDropdownContentProperties) => {
-  const {
-    raw,
-    sizing = "medium",
-    defaultOpen,
-    side = "left",
-    children,
-    ...restProps
-  } = props;
-  const { id, states, methods } = useDropdownMenu();
-  const { toggleOpen } = methods;
+const DropdownMenuContent = React.forwardRef(
+  (props: IDropdownContentProperties, _) => {
+    const {
+      raw,
+      sizing = "medium",
+      defaultOpen,
+      children,
+      ...restProps
+    } = props;
+    const { id, states, methods } = useDropdownMenu();
+    const { toggleOpen, setContentProps } = methods;
 
-  React.useEffect(() => {
-    if (defaultOpen && toggleOpen) toggleOpen();
-  }, []);
+    const mounted = React.useRef(false);
+    const contentRef = React.useRef<HTMLDivElement>(null);
+    const contentRect = () => contentRef.current?.getBoundingClientRect();
+    const bodyRect = () => document.body.getBoundingClientRect();
 
-  return (
-    <React.Fragment>
-      {states.open && (
-        <ScrollArea
-          as={ContentWrapper}
-          id={id.split("|").at(-1)}
-          role="menu"
-          tabIndex={-1}
-          aria-orientation="vertical"
-          aria-labelledby={id.split("|").at(0)}
-          data-state={applyDataState(Boolean(states.open))}
-          data-sizing={sizing}
-          data-side={side}
-          data-align={side}
-          data-raw={Boolean(raw)}
-          {...restProps}
-        >
-          {children}
-        </ScrollArea>
-      )}
-    </React.Fragment>
-  );
-};
+    const positions = React.useMemo(() => {
+      return {
+        btt: `calc((${states?.triggerProps?.top}px - ${states?.contentProps?.height}px) - (var(--measurement-medium-10) * 2))`,
+        ttb: `calc((${states?.triggerProps?.top}px + ${states?.triggerProps?.height}px) + var(--measurement-medium-10))`,
+        ltr: `${states?.triggerProps?.left}px`,
+        rtl: `calc(${states?.triggerProps?.left}px - (${states?.contentProps?.width}px - ${states?.triggerProps?.width}px))`,
+      };
+    }, [states?.triggerProps, states?.contentProps]);
+    const dimensions = React.useMemo(() => {
+      return {
+        body_width: bodyRect()?.width,
+        body_height: bodyRect().height,
+        content_width: states.contentProps.width,
+        content_height: states.contentProps.height,
+        content_left: states.contentProps.left,
+        content_bottom: states.contentProps.bottom,
+      };
+    }, [states?.triggerProps, states?.contentProps]);
+
+    const hasEnoughHorizontalSpace =
+      dimensions.body_width - dimensions.content_left >
+      dimensions.content_width * 1.1;
+
+    const hasEnoughVerticalSpace =
+      dimensions.body_height - dimensions.content_bottom >
+      dimensions.content_height - dimensions.content_height * 0.9;
+
+    React.useEffect(() => {
+      if (defaultOpen && toggleOpen) toggleOpen();
+    }, []);
+
+    React.useEffect(() => {
+      mounted.current = true;
+
+      setContentProps &&
+        setContentProps({
+          top: Number(contentRect()?.top),
+          right: Number(contentRect()?.right),
+          bottom: Number(contentRect()?.bottom),
+          left: Number(contentRect()?.left),
+          width: Number(contentRect()?.width),
+          height: Number(contentRect()?.height),
+        });
+
+      return () => {
+        mounted.current = false;
+      };
+    }, [states.open]);
+
+    return (
+      <React.Fragment>
+        {states.open && (
+          <ContentWrapper
+            ref={contentRef}
+            id={id.split("|").at(-1)}
+            role="menu"
+            tabIndex={-1}
+            aria-labelledby={id.split("|").at(0)}
+            data-state={applyDataState(Boolean(states.open))}
+            data-sizing={sizing}
+            data-side={
+              hasEnoughHorizontalSpace
+                ? ComponentSideEnum.Left
+                : ComponentSideEnum.Right
+            }
+            data-align={
+              hasEnoughHorizontalSpace
+                ? ComponentSideEnum.Left
+                : ComponentSideEnum.Right
+            }
+            data-raw={Boolean(raw)}
+            style={{
+              top: hasEnoughVerticalSpace ? positions.ttb : positions.btt,
+              left: hasEnoughHorizontalSpace ? positions.ltr : positions.rtl,
+            }}
+            {...restProps}
+          >
+            {children}
+          </ContentWrapper>
+        )}
+      </React.Fragment>
+    );
+  }
+);
 DropdownMenuContent.displayName = "DropdownMenu.Content";
 
 /**

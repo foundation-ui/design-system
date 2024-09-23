@@ -12,7 +12,9 @@ export interface IButtonProperties
   extends IComponentStyling,
     IComponentSize,
     IComponentVariant,
-    React.ComponentPropsWithoutRef<"button"> {}
+    React.ComponentPropsWithRef<"button"> {
+  ref?: any;
+}
 
 /**
  * Buttons are used to initialize an action.
@@ -29,41 +31,44 @@ export interface IButtonProperties
  * @param {ReactNode} props.children - The content to be rendered inside the button.
  * @returns {ReactElement} The Button component.
  */
-export const Button = (props: IButtonProperties) => {
-  const {
-    name,
-    variant = ComponentVariantEnum.Mono,
-    sizing = ComponentSizeEnum.Medium,
-    raw,
-    children,
-    ...restProps
-  } = props;
+export const Button = React.forwardRef(
+  (props: IButtonProperties, forwardedRef): React.ReactElement => {
+    const {
+      name,
+      variant = ComponentVariantEnum.Mono,
+      sizing = ComponentSizeEnum.Medium,
+      raw,
+      children,
+      ...restProps
+    } = props;
 
-  const defaultName = "button";
-  const ariaLabel = `${name || defaultName}-action`;
-  const disabledState = props.disabled || false;
-  const buttonType = props.type || "button";
+    const defaultName = "button";
+    const ariaLabel = `${name || defaultName}-action`;
+    const disabledState = props.disabled || false;
+    const buttonType = props.type || "button";
 
-  const buttonDescription = `${ariaLabel}:${buttonType}`;
-  const buttonStateDescription = `disabled:${disabledState}`;
-  const ButtonFullDesc = `${buttonDescription}/${buttonStateDescription}`;
+    const buttonDescription = `${ariaLabel}:${buttonType}`;
+    const buttonStateDescription = `disabled:${disabledState}`;
+    const ButtonFullDesc = `${buttonDescription}/${buttonStateDescription}`;
 
-  return (
-    <ButtonWrapper
-      role="button"
-      type={buttonType}
-      name={name || defaultName}
-      aria-label={ariaLabel}
-      aria-description={ButtonFullDesc}
-      aria-disabled={disabledState}
-      data-variant={variant}
-      data-size={sizing}
-      data-raw={Boolean(raw)}
-      tabIndex={0}
-      {...restProps}
-    >
-      {children}
-    </ButtonWrapper>
-  );
-};
+    return (
+      <ButtonWrapper
+        ref={forwardedRef}
+        role="button"
+        type={buttonType}
+        name={name || defaultName}
+        aria-label={ariaLabel}
+        aria-description={ButtonFullDesc}
+        aria-disabled={disabledState}
+        data-variant={variant}
+        data-size={sizing}
+        data-raw={Boolean(raw)}
+        tabIndex={0}
+        {...restProps}
+      >
+        {children}
+      </ButtonWrapper>
+    );
+  }
+);
 Button.displayName = "Button";

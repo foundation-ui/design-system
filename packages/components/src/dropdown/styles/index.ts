@@ -1,6 +1,13 @@
-import styled, { css } from "styled-components";
-import { IDropdownContentProperties } from "../";
+import styled, { css, keyframes } from "styled-components";
 
+const FadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 const ContentWrapperSizes = css`
   --small: var(--measurement-large-60);
   --medium: var(--measurement-large-80);
@@ -11,45 +18,23 @@ const ContentWrapperSizes = css`
   &[data-sizing="small"] {
     width: var(--small);
     max-width: var(--small);
-
-    &[data-side="left"] {
-      inset: auto;
-    }
-    &[data-side="right"] {
-      transform: translateX(calc((var(--small) / 1.5) * -1));
-    }
   }
 
   &[data-sizing="medium"] {
     width: var(--medium);
     max-width: var(--medium);
-
-    &[data-side="left"] {
-      inset: auto;
-    }
-    &[data-side="right"] {
-      transform: translateX(calc((var(--medium) / 1.5) * -1));
-    }
   }
 
   &[data-sizing="large"] {
     width: var(--large);
     max-width: var(--large);
-
-    &[data-side="left"] {
-      inset: auto;
-    }
-    &[data-side="right"] {
-      transform: translateX(calc((var(--large) / 1.5) * -1));
-    }
   }
 `;
 
 export const RootWrapper = styled.div`
   position: relative;
 `;
-
-export const ContentWrapper = styled.ul<IDropdownContentProperties>`
+export const ContentWrapper = styled.ul<any>`
   --small: var(--measurement-large-60);
   --medium: var(--measurement-large-80);
   --large: var(--measurement-large-90);
@@ -66,6 +51,9 @@ export const ContentWrapper = styled.ul<IDropdownContentProperties>`
     border-radius: var(--measurement-medium-30);
 
     z-index: var(--depth-default-100);
+    animation-duration: 0.2s;
+    animation-name: ${FadeIn};
+    animation-fill-mode: backwards;
 
     ${ContentWrapperSizes}
   }
