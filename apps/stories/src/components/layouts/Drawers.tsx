@@ -3,14 +3,13 @@ import { useApp } from "../../contexts/AppProvider";
 
 import {
   Page,
-  Button,
+  Badge,
   DropdownMenu,
   Divider,
   Checkbox,
   Field,
   Table,
 } from "@foundation-ui/components";
-import { ChipBody } from "../../styles";
 
 export const AnalyticsDrawer = () => {
   const { user_behavior_analytics } = useApp();
@@ -78,7 +77,7 @@ export const AnalyticsDrawer = () => {
                     Origin<b>✓</b>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item className="flex align-center justify-between">
-                    Description<b>✓</b>
+                    Most Frequent Count<b>✓</b>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item className="flex align-center justify-between">
                     Frequency<b>✓</b>
@@ -151,7 +150,6 @@ export const AnalyticsDrawer = () => {
                   </Checkbox.Root>
                 </Table.HeadCell>
                 <Table.HeadCell>Origin</Table.HeadCell>
-                <Table.HeadCell>Description</Table.HeadCell>
                 <Table.HeadCell>Frequency</Table.HeadCell>
                 <Table.HeadCell>Types</Table.HeadCell>
                 <Table.HeadCell>
@@ -178,6 +176,8 @@ export const AnalyticsDrawer = () => {
                     </DropdownMenu>
                   </DropdownMenu.Root>
                 </Table.HeadCell>
+                <Table.HeadCell>Most Frequent Count</Table.HeadCell>
+
                 <Table.HeadCell>
                   <DropdownMenu.Root>
                     <DropdownMenu>
@@ -215,27 +215,28 @@ export const AnalyticsDrawer = () => {
                         </Checkbox>
                       </Checkbox.Root>
                     </Table.Cell>
-                    {Object.keys(interaction).map((obj_key, key) => (
-                      <Table.Cell key={`${obj_key}_${key}`}>
-                        <div className="flex flex-wrap align-center g-medium-10">
-                          {typeof interaction[obj_key] === typeof ""
-                            ? interaction[obj_key]
-                            : interaction[obj_key]?.map((item: string) => (
-                                <ChipBody
-                                  key={item}
-                                  className="fs-medium-10 p-y-medium-10 p-x-medium-30"
-                                >
-                                  {item}
-                                </ChipBody>
-                              ))}
-                        </div>
-                      </Table.Cell>
-                    ))}
+                    {Object.keys(interaction).map((obj_key, key) => {
+                      return (
+                        <Table.Cell key={`${obj_key}_${key}`}>
+                          <div className="flex flex-wrap align-center g-medium-10">
+                            {typeof interaction[obj_key] === typeof "" ||
+                            typeof interaction[obj_key] === typeof 1
+                              ? interaction[obj_key]
+                              : typeof interaction[obj_key] === typeof [] &&
+                                interaction[obj_key]?.map((item: string) => (
+                                  <Badge key={item} variant="border">
+                                    {item}
+                                  </Badge>
+                                ))}
+                          </div>
+                        </Table.Cell>
+                      );
+                    })}
                     <Table.Cell>
                       <DropdownMenu.Root>
                         <DropdownMenu>
-                          <DropdownMenu.Trigger variant="ghost" sizing="small">
-                            Options<b>⋮</b>
+                          <DropdownMenu.Trigger variant="border" sizing="small">
+                            <b>⋮</b>
                           </DropdownMenu.Trigger>
                           <DropdownMenu.Content sizing="small">
                             <DropdownMenu.Item className="flex align-center justify-between">

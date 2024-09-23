@@ -14,6 +14,16 @@ export interface IComponentUsage {
   events: IEventPayload[];
 }
 
+const EVENTS = [
+  "click",
+  "dblclick",
+  "mouseover",
+  "focusin",
+  "focusout",
+  "touchstart",
+  "touchend",
+];
+
 export const useComponentsInteractions = (
   references: string[]
 ): { interactions: IComponentUsage[] } => {
@@ -60,14 +70,14 @@ export const useComponentsInteractions = (
   };
 
   React.useEffect(() => {
-    document.addEventListener("click", handleInteraction);
-    document.addEventListener("dblclick", handleInteraction);
-    document.addEventListener("mouseover", handleInteraction);
+    EVENTS.forEach((eventType) =>
+      document.addEventListener(eventType, handleInteraction)
+    );
 
     return () => {
-      document.removeEventListener("click", handleInteraction);
-      document.removeEventListener("dblclick", handleInteraction);
-      document.removeEventListener("mouseover", handleInteraction);
+      EVENTS.forEach((eventType) =>
+        document.removeEventListener(eventType, handleInteraction)
+      );
     };
   }, [references]);
 

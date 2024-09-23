@@ -15,10 +15,10 @@ export type TUbaConfig = {
 };
 type TUsageData = {
   origin: string;
-  description: string;
-  frequency: string;
+  frequency: number;
   types: unknown[];
   most_frequent_interaction: string;
+  most_frequent_count: number;
   last_interaction_time: string;
 };
 interface IBehaviorAnalyticsProperties {
@@ -157,22 +157,13 @@ export const useBehaviorAnalytics = ({
     const most_frequent = Object.keys(interactions_count).reduce((a, b) =>
       interactions_count[a]! > interactions_count[b]! ? a : b
     );
-    const description = `\n
-      ${interactions_count[most_frequent]}\n
-      out of ${interaction.events.length}\n
-      interactions on ${interaction.origin}\n
-      ${
-        Number(interactions_count[most_frequent]) > 1
-          ? `are ${most_frequent}s`
-          : `is a ${most_frequent}`
-      }`;
 
     return {
       origin: interaction.origin,
-      description: description,
-      frequency: `${interaction.events.length}`,
+      frequency: interaction.events.length,
       types: interaction_types,
       most_frequent_interaction: most_frequent,
+      most_frequent_count: Number(interactions_count[most_frequent]),
       last_interaction_time: interaction.events.at(0)?.occured_at,
     };
   });
