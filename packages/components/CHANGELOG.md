@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 0.7.0
+
+### Minor Changes
+
+- Enhance Core, Components and utils
+
 ## 0.6.0
 
 ### Minor Changes

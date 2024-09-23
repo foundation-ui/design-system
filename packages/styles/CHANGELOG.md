@@ -1,5 +1,17 @@
 # @foundation-ui/styles
 
+## 0.4.0
+
+### Minor Changes
+
+- Enhance Core, Components and utils
+
+### Patch Changes
+
+- Updated dependencies
+  - @foundation-ui/core@0.7.0
+  - @foundation-ui/tokens@0.7.0
+
 ## 0.3.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @foundation-ui/hooks
 
+## 0.4.0
+
+### Minor Changes
+
+- Enhance Core, Components and utils
+
 ## 0.3.0
 
 ### Minor Changes
