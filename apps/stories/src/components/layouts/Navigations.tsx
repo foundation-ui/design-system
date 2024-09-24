@@ -4,6 +4,7 @@ import { ColorModeContext } from "@foundation-ui/tokens";
 import {
   Page,
   Button,
+  Badge,
   Dialog,
   Avatar,
   DropdownMenu,
@@ -17,7 +18,6 @@ import { TComponentVariant } from "../../../../../types";
 import uiprops from "../../mocks/settings.json";
 
 export const ExternalLinksNavigation = () => {
-  const { colorMode, setColorMode } = React.useContext(ColorModeContext);
   const { ab_testing } = useApp();
 
   return (
@@ -81,39 +81,22 @@ export const ExternalLinksNavigation = () => {
       </small>
 
       <ul className="flex g-medium-30 align-center">
-        <Button id="useless-trigger" variant="ghost" sizing="small">
+        <Button id="useless-trigger" variant="border" sizing="small">
           Documentation
         </Button>
-        <Button id="useless-trigger" variant="ghost" sizing="small">
+        <Button id="useless-trigger" variant="border" sizing="small">
           Feedback
         </Button>
-        <Button id="useless-trigger" variant="ghost" sizing="small">
+        <Button id="useless-trigger" variant="border" sizing="small">
           Assistance
-        </Button>
-        <Button
-          id="theme-trigger"
-          variant="border"
-          sizing="small"
-          onClick={() => setColorMode(colorMode === "dark" ? "light" : "dark")}
-        >
-          <svg
-            focusable="false"
-            aria-hidden="true"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            {colorMode === "dark" ? (
-              <path d="m6.76 4.84-1.8-1.79-1.41 1.41 1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zm-3.21 13.7 1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6m-1 16.95h2V19.5h-2zm-7.45-3.91 1.41 1.41 1.79-1.8-1.41-1.41z" />
-            ) : (
-              <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1" />
-            )}
-          </svg>
         </Button>
       </ul>
     </Page.Navigation>
   );
 };
+
 export const InternalActionsNavigation = () => {
+  const { colorMode, setColorMode } = React.useContext(ColorModeContext);
   const { ab_testing, user_behavior_analytics } = useApp();
 
   const [emphasisVariant, setEmphasisVariant] =
@@ -161,7 +144,7 @@ export const InternalActionsNavigation = () => {
         <DropdownMenu.Root>
           <DropdownMenu>
             <DropdownMenu.Trigger variant="border" sizing="small">
-              <b>⋮</b>
+              <small>⋮</small>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content>
               <li className="grid p-medium-30">
@@ -171,17 +154,36 @@ export const InternalActionsNavigation = () => {
               <Divider />
               <DropdownMenu.Item className="flex align-center justify-between">
                 Open profile
-                <code>
+                <Badge variant="secondary">
                   <small>SHIFT&nbsp;+&nbsp;P</small>
-                </code>
+                </Badge>
               </DropdownMenu.Item>
               <Divider />
               <DropdownMenu.Item>Teams</DropdownMenu.Item>
               <DropdownMenu.Item>Members</DropdownMenu.Item>
               <Divider />
-              <DropdownMenu.Item className="flex align-center justify-between">
-                Sign out
-                <code>↳</code>
+              <DropdownMenu.Item
+                radio
+                className="flex align-center justify-between"
+                onClick={() =>
+                  setColorMode(colorMode === "dark" ? "light" : "dark")
+                }
+              >
+                Mode
+                <svg
+                  focusable="false"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  width={12}
+                  height={12}
+                  fill="currentColor"
+                >
+                  {colorMode === "dark" ? (
+                    <path d="m6.76 4.84-1.8-1.79-1.41 1.41 1.79 1.79zM4 10.5H1v2h3zm9-9.95h-2V3.5h2zm7.45 3.91-1.41-1.41-1.79 1.79 1.41 1.41zm-3.21 13.7 1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5v2h3v-2zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6m-1 16.95h2V19.5h-2zm-7.45-3.91 1.41 1.41 1.79-1.8-1.41-1.41z" />
+                  ) : (
+                    <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1" />
+                  )}
+                </svg>
               </DropdownMenu.Item>
             </DropdownMenu.Content>
           </DropdownMenu>
@@ -204,14 +206,17 @@ export const InternalActionsNavigation = () => {
             <DropdownMenu.Content>
               <DropdownMenu.Item className="flex align-center justify-between">
                 New Workspace
-                <code>
+                <Badge variant="secondary">
                   <small>SHIFT&nbsp;+&nbsp;N</small>
-                </code>
+                </Badge>
               </DropdownMenu.Item>
               <Divider />
               <DropdownMenu.Item>All workspaces</DropdownMenu.Item>
               <DropdownMenu.Item>Team workspaces</DropdownMenu.Item>
               <DropdownMenu.Item>Personal workspaces</DropdownMenu.Item>
+              <Divider />
+              <DropdownMenu.Item>Drafts</DropdownMenu.Item>
+              <DropdownMenu.Item>History</DropdownMenu.Item>
             </DropdownMenu.Content>
           </DropdownMenu>
         </DropdownMenu.Root>

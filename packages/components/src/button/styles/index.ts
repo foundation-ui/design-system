@@ -111,7 +111,6 @@ const ButtonVariantsStyles = css`
     }
   }
   &[data-variant="ghost"] {
-    padding: 0;
     border: none;
     background-color: transparent;
     min-width: fit-content;
@@ -119,17 +118,15 @@ const ButtonVariantsStyles = css`
     color: var(--font-color-alpha-60);
 
     &:hover,
-    &:focus {
-      color: var(--font-color-alpha-90);
-    }
+    &:focus,
     &:active {
       color: var(--font-color);
+      background-color: var(--font-color-alpha-10);
     }
   }
 `;
 const ButtonSizeStyles = css`
   &[data-size="small"] {
-    font-size: var(--fontsize-medium-10);
     border-radius: var(--measurement-medium-20);
     gap: var(--measurement-medium-10);
     padding: var(--measurement-medium-10) var(--measurement-medium-30);

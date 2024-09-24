@@ -5,10 +5,8 @@ export const QuickActionsMenu = () => {
   return (
     <Page.Menu className="flex justify-between align-center">
       <small>
-        <code>
-          <span style={{ opacity: 0.3 }}>@team_name/</span>
-          path
-        </code>
+        <span className="opacity-default-30">@team_name/</span>
+        path
       </small>
       <ul className="flex g-medium-30 align-center">
         <Button

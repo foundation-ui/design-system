@@ -50,7 +50,7 @@ import {
   ColorModeProvider,
   CSSRoot,
   ResetStyles,
-  TypographyColors,
+  TypographyRoot,
   TypographySizing,
 } from "@foundation-ui/design-system";
 
@@ -60,14 +60,14 @@ ReactDOM.render(
     <DesignTokensProvider tokenLibrary={/**/}>
       <ColorModeProvider>
         <SystemThemeProvider theme={/**/}>
+          {/** GlobalStyles **/}
+          <ResetStyles />
+
           {/** Built-in Design Tokens as CSS Vars **/}
           <CSSRoot />
 
-          {/** GlobalStyles **/}
-          <ResetStyles />
-          <TypographyColors />
-          <TypographySizing />
-
+          {/** Typography **/}
+          <TypographyRoot />
           <App />
         </SystemThemeProvider>
       </ColorModeProvider>

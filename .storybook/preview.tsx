@@ -6,12 +6,7 @@ import { Preview } from "@storybook/react";
 import DocumentationTemplate from "./DocumentationTemplate.mdx";
 import { DesignTokensProvider } from "../packages/tokens";
 import { ColorModeProvider } from "../packages/tokens";
-import {
-  CSSRoot,
-  ResetStyles,
-  TypographyColors,
-  TypographySizing,
-} from "../packages/styles";
+import { ResetStyles, CSSRoot, TypographyRoot } from "../packages/styles";
 
 const StoriesWrapepr = styled.div`
   position: absolute;
@@ -61,8 +56,7 @@ const preview: Preview = {
           <ColorModeProvider>
             <ResetStyles />
             <CSSRoot />
-            <TypographyColors />
-            <TypographySizing />
+            <TypographyRoot />
             <StoriesWrapepr>
               <div id="dialog-portal" />
               <Story />
