@@ -154,9 +154,7 @@ export const InternalActionsNavigation = () => {
               <Divider />
               <DropdownMenu.Item className="flex align-center justify-between">
                 Open profile
-                <Badge variant="secondary">
-                  <small>SHIFT&nbsp;+&nbsp;P</small>
-                </Badge>
+                <Badge variant="border">Shift&nbsp;+&nbsp;P</Badge>
               </DropdownMenu.Item>
               <Divider />
               <DropdownMenu.Item>Teams</DropdownMenu.Item>
@@ -206,9 +204,7 @@ export const InternalActionsNavigation = () => {
             <DropdownMenu.Content>
               <DropdownMenu.Item className="flex align-center justify-between">
                 New Workspace
-                <Badge variant="secondary">
-                  <small>SHIFT&nbsp;+&nbsp;N</small>
-                </Badge>
+                <Badge variant="border">Shift&nbsp;+&nbsp;N</Badge>
               </DropdownMenu.Item>
               <Divider />
               <DropdownMenu.Item>All workspaces</DropdownMenu.Item>

@@ -5,26 +5,36 @@ import {
   IPerfomanceMetricsProperties,
 } from "./usePerformanceMetrics";
 import {
-  useComponentsInteractions,
+  TTrackedEvent,
+  TRACKED_EVENTS,
   IComponentUsage,
+  useComponentsInteractions,
+  IEventPayload,
 } from "./useComponentsInteractions";
 
 export type TUbaConfig = {
   silent?: boolean;
   flags: string[];
 };
-type TUsageData = {
+
+type TInteractionsData = {
   origin: string;
   frequency: number;
   types: unknown[];
-  most_frequent_interaction: string;
-  most_frequent_count: number;
-  last_interaction_time: string;
-  last_interaction_epoch: number;
+  events: IEventPayload[] | [];
 };
 interface IBehaviorAnalyticsProperties {
   silent?: boolean;
-  env: {
+  interactions: TInteractionsData[] | [];
+  session: {
+    html_snapshot: string;
+    entry_time: string;
+    entry_epoch: number;
+    last_interaction_time: string | null;
+    last_interaction_epoch: number | null;
+    time_before_interact: number | null;
+  };
+  system: {
     path: string;
     user_agent: string;
     device_os: string;
@@ -43,9 +53,6 @@ interface IBehaviorAnalyticsProperties {
       };
     };
   };
-  time_before_interact: string | null;
-  interactions: IComponentUsage[] | [];
-  usage: TUsageData[] | [];
 }
 
 const getDeviceOs = (): string | undefined => {
@@ -108,74 +115,94 @@ export const useBehaviorAnalytics = ({
 
   const { innerWidth, innerHeight, screen, location } = window;
 
-  const sessionData = React.useMemo(() => {
+  const getLastInteractionEpoch = (): number => {
+    const maxEpoch = Math.max(
+      ...interactions.flatMap(({ events }: IComponentUsage) =>
+        events.map(({ occured_at_epoch }: IEventPayload) => occured_at_epoch)
+      )
+    );
+    if (maxEpoch === -Infinity) return 0;
+    else return maxEpoch;
+  };
+
+  const system_data = React.useMemo(() => {
     return {
-      env: {
-        path: location.href,
-        user_agent: navigator.userAgent,
-        device_os: getDeviceOs(),
-        viewport: {
-          width: innerWidth,
-          height: innerHeight,
-        },
-        performances: {
-          ...metrics,
-        },
-        screen: {
-          width: screen.availWidth,
-          height: screen.availHeight,
-          pixel_depth: screen.pixelDepth,
-          orientation: {
-            angle: screen.orientation.angle,
-            type: screen.orientation.type,
-          },
+      path: location.href,
+      user_agent: navigator.userAgent,
+      device_os: getDeviceOs(),
+      viewport: {
+        width: innerWidth,
+        height: innerHeight,
+      },
+      performances: {
+        ...metrics,
+      },
+      screen: {
+        width: screen.availWidth,
+        height: screen.availHeight,
+        pixel_depth: screen.pixelDepth,
+        orientation: {
+          angle: screen.orientation.angle,
+          type: screen.orientation.type,
         },
       },
     };
   }, [innerWidth, innerHeight, location, metrics]);
 
-  const usage = interactions?.flatMap((interaction) => {
+  const page_snapshot = React.useMemo(
+    () => document.getElementsByTagName("html")[0]?.innerHTML,
+    [location]
+  );
+
+  const session_data = React.useMemo(() => {
+    const hasTrackedInteractions = getLastInteractionEpoch() !== 0;
+    return {
+      entry_time: new Date(Date.now()).toISOString(),
+      entry_epoch: Date.now(),
+      last_interaction_time: hasTrackedInteractions
+        ? new Date(getLastInteractionEpoch()).toISOString()
+        : null,
+      last_interaction_epoch: hasTrackedInteractions
+        ? getLastInteractionEpoch()
+        : null,
+      time_before_interact: time_before_interact || null,
+    };
+  }, [interactions, time_before_interact]);
+
+  const interactions_data = interactions?.flatMap((interaction) => {
     let interaction_types: unknown[] = [];
-    let interactions_count: Record<
-      string | "click" | "dblclick" | "mouseover",
-      number
-    > = {
+    let interactions_count: Record<string | TTrackedEvent, number> = {
       click: 0,
       dblclick: 0,
       mouseover: 0,
+      focusin: 0,
+      focusout: 0,
+      touchstart: 0,
+      touchend: 0,
     };
 
     interaction.events.forEach((event) => {
       if (!interaction_types.includes(event.type))
         interaction_types.push(event.type);
-      else {
-        if (event.type === "click") interactions_count.click!++;
-        if (event.type === "dblclick") interactions_count.dblclick!++;
-        if (event.type === "mouseover") interactions_count.mouseover!++;
-      }
+      else
+        TRACKED_EVENTS.forEach((eventType: TTrackedEvent) => {
+          if (event.type === eventType) interactions_count[eventType]++;
+        });
     });
 
-    const most_frequent = Object.keys(interactions_count).reduce((a, b) =>
-      interactions_count[a]! > interactions_count[b]! ? a : b
-    );
-
     return {
-      origin: interaction.origin,
+      ...interaction,
       frequency: interaction.events.length,
       types: interaction_types,
-      most_frequent_interaction: most_frequent,
-      most_frequent_count: Number(interactions_count[most_frequent]),
-      last_interaction_time: interaction.events.at(0)?.occured_at,
-      last_interaction_epoch: interaction.events.at(0)?.occured_at_epoch,
     };
   });
 
   return {
-    time_before_interact: time_before_interact
-      ? `${time_before_interact}s`
-      : null,
-    interactions,
-    usage,
-    ...sessionData,
+    session: {
+      ...session_data,
+      html_snapshot: page_snapshot,
+    },
+    interactions: interactions_data,
+    system: system_data,
   };
 };

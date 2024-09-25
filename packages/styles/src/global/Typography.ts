@@ -34,7 +34,7 @@ export const TypographyRoot = createGlobalStyle`
         line-height: var(--fontsize-medium-30);
         letter-spacing: -0.05rem;
     }
-    p, b, strong, i, li, blockquote {
+    p, li, blockquote {
         line-height: var(--fontsize-medium-40);
         font-size: var(--fontsize-small-90);
         font-weight: 400;

@@ -13,8 +13,15 @@ import {
 
 export const AnalyticsDrawer = () => {
   const { user_behavior_analytics } = useApp();
+
   const deferred_interaction_data = React.useDeferredValue(
-    user_behavior_analytics.usage
+    user_behavior_analytics.interactions.map((item: any) => ({
+      origin: item.origin,
+      frequency: item.frequency,
+      element: item.element,
+      content: item.content,
+      types: item.types,
+    }))
   );
 
   return (
@@ -150,56 +157,30 @@ export const AnalyticsDrawer = () => {
                   </Checkbox.Root>
                 </Table.HeadCell>
                 <Table.HeadCell>Origin</Table.HeadCell>
-                <Table.HeadCell>Frequency</Table.HeadCell>
+                <Table.HeadCell>
+                  <DropdownMenu.Root>
+                    <DropdownMenu>
+                      <DropdownMenu.Trigger variant="ghost" sizing="small">
+                        Frequency<b>⋮</b>
+                      </DropdownMenu.Trigger>
+                      <DropdownMenu.Content sizing="medium">
+                        <DropdownMenu.Item className="flex align-center justify-between">
+                          Ascending
+                        </DropdownMenu.Item>
+                        <DropdownMenu.Item className="flex align-center justify-between">
+                          Descending
+                        </DropdownMenu.Item>
+                        <Divider />
+                        <DropdownMenu.Item className="flex align-center justify-between">
+                          Hide<b>✗</b>
+                        </DropdownMenu.Item>
+                      </DropdownMenu.Content>
+                    </DropdownMenu>
+                  </DropdownMenu.Root>
+                </Table.HeadCell>
+                <Table.HeadCell>Element</Table.HeadCell>
+                <Table.HeadCell>Content</Table.HeadCell>
                 <Table.HeadCell>Types</Table.HeadCell>
-                <Table.HeadCell>
-                  <DropdownMenu.Root>
-                    <DropdownMenu>
-                      <DropdownMenu.Trigger variant="ghost" sizing="small">
-                        Most frequent<b>⋮</b>
-                      </DropdownMenu.Trigger>
-                      <DropdownMenu.Content sizing="small">
-                        <DropdownMenu.Item className="flex align-center justify-between">
-                          Click<b>◭</b>
-                        </DropdownMenu.Item>
-                        <DropdownMenu.Item className="flex align-center justify-between">
-                          Dbl Click<b>◭◭</b>
-                        </DropdownMenu.Item>
-                        <DropdownMenu.Item className="flex align-center justify-between">
-                          Hover<b>❏</b>
-                        </DropdownMenu.Item>
-                        <Divider />
-                        <DropdownMenu.Item className="flex align-center justify-between">
-                          Hide<b>✗</b>
-                        </DropdownMenu.Item>
-                      </DropdownMenu.Content>
-                    </DropdownMenu>
-                  </DropdownMenu.Root>
-                </Table.HeadCell>
-                <Table.HeadCell>Most Frequent Count</Table.HeadCell>
-
-                <Table.HeadCell>
-                  <DropdownMenu.Root>
-                    <DropdownMenu>
-                      <DropdownMenu.Trigger variant="ghost" sizing="small">
-                        Last interaction<b>⋮</b>
-                      </DropdownMenu.Trigger>
-                      <DropdownMenu.Content sizing="small">
-                        <DropdownMenu.Item className="flex align-center justify-between">
-                          Asc<b>↑</b>
-                        </DropdownMenu.Item>
-                        <DropdownMenu.Item className="flex align-center justify-between">
-                          Desc<b>↓</b>
-                        </DropdownMenu.Item>
-                        <Divider />
-                        <DropdownMenu.Item className="flex align-center justify-between">
-                          Hide<b>✗</b>
-                        </DropdownMenu.Item>
-                      </DropdownMenu.Content>
-                    </DropdownMenu>
-                  </DropdownMenu.Root>
-                </Table.HeadCell>
-                <Table.HeadCell>Last interaction (Epoch)</Table.HeadCell>
 
                 <Table.HeadCell />
               </Table.Row>

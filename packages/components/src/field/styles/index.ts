@@ -7,7 +7,7 @@ const FieldDefaultStyles = css`
   align-items: center;
   justify-content: center;
 
-  font-size: var(--fontsize-medium-20);
+  font-size: var(--fontsize-small-80);
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: calc(
@@ -144,7 +144,6 @@ export const Input = styled.input`
 `;
 export const Label = styled.label`
   &[data-raw="false"] {
-    font-size: var(--fontsize-medium-20);
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: calc(

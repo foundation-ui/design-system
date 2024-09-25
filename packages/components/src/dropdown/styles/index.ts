@@ -66,7 +66,7 @@ export const ItemWrapper = styled.li`
   user-select: none;
 
   &[data-raw="false"] {
-    font-size: var(--fontsize-medium-10);
+    font-size: var(--fontsize-small-80);
     padding: var(--measurement-medium-30);
     border-radius: var(--measurement-medium-20);
     text-align: left;

@@ -7,7 +7,7 @@ const ButtonDefaultStyles = css`
   align-items: center;
   justify-content: center;
   gap: var(--measurement-medium-30);
-  font-size: var(--fontsize-medium-20);
+  font-size: var(--fontsize-small-80);
   height: fit-content;
   font-weight: 500;
   line-height: 1;
