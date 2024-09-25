@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 0.8.0
+
+### Minor Changes
+
+- Update UBA Hooks, components stylings, Root stylings
+
 ## 0.7.0
 
 ### Minor Changes
