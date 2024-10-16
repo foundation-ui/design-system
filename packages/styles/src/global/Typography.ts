@@ -15,27 +15,17 @@ export const TypographyRoot = createGlobalStyle`
     }
     h1 {
         font-size: var(--fontsize-large-30);
-        line-height: var(--fontsize-large-30);
-        letter-spacing: -0.1rem;
-        font-weight: 700;
     }
     h2 {
         font-size: var(--fontsize-large-10);
-        line-height: var(--fontsize-large-10);
-        letter-spacing: -0.066rem;
     }
     h3 {
         font-size: var(--fontsize-medium-40);
-        line-height: var(--fontsize-medium-40);
-        letter-spacing: -0.066rem;
     }
     h4, h5, h6 {
         font-size: var(--fontsize-medium-30);
-        line-height: var(--fontsize-medium-30);
-        letter-spacing: -0.05rem;
     }
     p, li, blockquote {
-        line-height: var(--fontsize-medium-40);
         font-size: var(--fontsize-small-90);
         font-weight: 400;
     }
