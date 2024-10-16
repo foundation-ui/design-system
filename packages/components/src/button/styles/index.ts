@@ -66,19 +66,19 @@ const ButtonVariantsStyles = css`
   &[data-variant="secondary"] {
     color: var(--body-color-alpha-60);
     background-color: var(--body-color);
-    border-color: var(--text-color-alpha-10);
+    border-color: var(--font-color-alpha-10);
 
     &:hover,
     &:focus,
     &:active {
       color: var(--body-color);
-      border-color: var(--text-color-alpha-30);
+      border-color: var(--font-color-alpha-30);
     }
   }
   &[data-variant="tertiary"] {
-    color: var(--text-color-alpha-60);
+    color: var(--font-color-alpha-60);
     background-color: var(--body-color);
-    border-color: var(--text-color-alpha-10);
+    border-color: var(--font-color-alpha-10);
 
     &:hover,
     &:focus,
@@ -87,14 +87,14 @@ const ButtonVariantsStyles = css`
     }
   }
   &[data-variant="mono"] {
-    color: var(--body-color-alpha-10);
-    background-color: var(--text-color-alpha-10);
+    color: var(--font-color-alpha-80);
+    background-color: var(--font-color-alpha-10);
 
     &:hover,
     &:focus,
     &:active {
-      color: var(--body-color);
-      border-color: var(--text-color-alpha-10);
+      color: var(--font-color);
+      border-color: var(--font-color-alpha-10);
     }
   }
   &[data-variant="border"] {
@@ -112,6 +112,7 @@ const ButtonVariantsStyles = css`
   }
   &[data-variant="ghost"] {
     border: none;
+    padding: 0;
     background-color: transparent;
     min-width: fit-content;
     min-height: var(--measurement-medium-60);
@@ -121,7 +122,6 @@ const ButtonVariantsStyles = css`
     &:focus,
     &:active {
       color: var(--font-color);
-      background-color: var(--font-color-alpha-10);
     }
   }
 `;
