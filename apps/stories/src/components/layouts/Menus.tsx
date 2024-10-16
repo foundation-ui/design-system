@@ -8,7 +8,7 @@ export const QuickActionsMenu = () => {
         <span className="opacity-default-30">@team_name/</span>
         path
       </small>
-      <ul className="flex g-medium-30 align-center">
+      <div className="flex g-medium-30 align-center">
         <Button
           id="templates-funnel-trigger"
           name="templates"
@@ -102,7 +102,7 @@ export const QuickActionsMenu = () => {
             <path d="M12 21c-3.11 0-5.85-1.59-7.46-4H7v-2H1v6h2v-2.7c1.99 2.84 5.27 4.7 9 4.7 4.87 0 9-3.17 10.44-7.56l-1.96-.45C19.25 18.48 15.92 21 12 21" />
           </svg>
         </Button>
-      </ul>
+      </div>
     </Page.Menu>
   );
 };
