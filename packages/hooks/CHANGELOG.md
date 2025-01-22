@@ -1,5 +1,11 @@
 # @foundation-ui/hooks
 
+## 1.0.0
+
+### Major Changes
+
+- Prepare Foundation's 1.0.0 release
+
 ## 0.5.0
 
 ### Minor Changes

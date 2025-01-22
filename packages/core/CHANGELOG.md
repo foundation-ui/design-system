@@ -1,5 +1,16 @@
 # @foundation-ui/core
 
+## 1.0.0
+
+### Major Changes
+
+- Prepare Foundation's 1.0.0 release
+
+### Patch Changes
+
+- Updated dependencies
+  - @foundation-ui/hooks@1.0.0
+
 ## 0.8.0
 
 ### Minor Changes

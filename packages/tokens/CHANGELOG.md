@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.0.0
+
+### Major Changes
+
+- Prepare Foundation's 1.0.0 release
+
 ## 0.8.0
 
 ### Minor Changes
