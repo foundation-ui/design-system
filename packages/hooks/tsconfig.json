@@ -1,9 +1,15 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "jsx": "react",
     "baseUrl": "./src",
     "outDir": "./dist",
+    "jsx": "react",
+    "target": "es2022",
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
     "resolveJsonModule": true,
     "strict": false
   },
