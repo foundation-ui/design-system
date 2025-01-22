@@ -1,5 +1,11 @@
 # @foundation-ui/styles
 
+## 1.2.0
+
+### Minor Changes
+
+- Add Support for Width/Height CSS classes
+
 ## 1.1.0
 
 ### Minor Changes
