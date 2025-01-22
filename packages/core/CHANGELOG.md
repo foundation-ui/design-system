@@ -1,5 +1,16 @@
 # @foundation-ui/core
 
+## 1.2.0
+
+### Minor Changes
+
+- 7903c2a: Republish packages
+
+### Patch Changes
+
+- Updated dependencies [7903c2a]
+  - @foundation-ui/hooks@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes

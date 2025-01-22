@@ -1,5 +1,11 @@
 # @foundation-ui/hooks
 
+## 1.2.0
+
+### Minor Changes
+
+- 7903c2a: Republish packages
+
 ## 1.1.0
 
 ### Minor Changes
