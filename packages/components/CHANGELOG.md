@@ -1,5 +1,12 @@
 # @foundation-ui/components
 
+## 1.2.0
+
+### Minor Changes
+
+- 7903c2a: Republish packages
+- Update packages versions
+
 ## 1.1.0
 
 ### Minor Changes
