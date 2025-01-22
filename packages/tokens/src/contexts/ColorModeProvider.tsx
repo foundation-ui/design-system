@@ -13,14 +13,14 @@ const ERRLOG =
 const storage = {
   get: () => {
     try {
-      return window.localStorage.getItem(STORAGE_KEY);
+      return window?.localStorage.getItem(STORAGE_KEY);
     } catch (error) {
       console.warn(ERRLOG, error);
     }
   },
   set: (value: string) => {
     try {
-      window.localStorage.setItem(STORAGE_KEY, value);
+      window?.localStorage.setItem(STORAGE_KEY, value);
     } catch (error) {
       console.warn(ERRLOG, error);
     }
@@ -29,10 +29,10 @@ const storage = {
 
 type TFetchedColorMode = string | undefined | null;
 export const getPreferredColorScheme = (): TColorMode | null => {
-  if (typeof window !== "undefined" && window.matchMedia) {
-    if (window.matchMedia(DARK_QUERY).matches) return "dark";
-    if (window.matchMedia(LIGHT_QUERY).matches) return "light";
-    if (window.matchMedia(SYSTEM_QUERY).matches) return "system";
+  if (typeof window !== "undefined" && window?.matchMedia) {
+    if (window?.matchMedia(DARK_QUERY).matches) return "dark";
+    if (window?.matchMedia(LIGHT_QUERY).matches) return "light";
+    if (window?.matchMedia(SYSTEM_QUERY).matches) return "system";
   }
   return null;
 };
@@ -43,7 +43,7 @@ export const useColorMode = () => React.useContext(ColorModeContext);
 
 export const ColorModeContext = React.createContext<null | any>(null);
 export const ColorModeProvider = ({ children }: any) => {
-  const locstore = window.localStorage;
+  const locstore = window?.localStorage;
   const fetchedMode = storage.get();
 
   const [colorMode, setColorMode] = React.useState<TFetchedColorMode>(
@@ -111,7 +111,7 @@ export const ColorModeProvider = ({ children }: any) => {
   // Save mode in localStorage when it is updated
   React.useEffect(() => {
     if (locstore && colorMode) storage.set(colorMode);
-  }, [colorMode, window.localStorage]);
+  }, [colorMode, window?.localStorage]);
 
   return (
     <ColorModeContext.Provider value={{ colorMode, setColorMode }}>

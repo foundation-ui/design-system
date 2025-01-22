@@ -15,8 +15,8 @@
   "devDependencies": {
     "@foundation-ui/components": "workspace:^",
     "@foundation-ui/core": "workspace:^",
-    "@foundation-ui/tokens": "workspace:^",
     "@foundation-ui/hooks": "workspace:^",
+    "@foundation-ui/tokens": "workspace:^",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.21",
     "@types/styled-components": "^5.1.34",

@@ -1,4 +1,3 @@
-import { css } from "styled-components";
 import { IScaleProperties, ISequenceProperties } from "../../../../types";
 
 interface Size extends IScaleProperties {
@@ -77,7 +76,7 @@ export const generateSizeClasses = (sizes: Size[]) => {
     });
   });
 
-  return css`
+  return `
     ${cssClasses.join("")}
   `;
 };
@@ -100,7 +99,7 @@ export const generateFontSizesClasses = (fs: Size[]) => {
     });
   });
 
-  return css`
+  return `
     ${cssClasses.join("")}
   `;
 };
@@ -122,7 +121,7 @@ export const generateOpacityClasses = (opacity: ISequenceProperties[]) => {
     });
   });
 
-  return css`
+  return `
     ${cssClasses.join("")}
   `;
 };
@@ -190,7 +189,7 @@ export const generateLayoutClasses = () => {
     return [displayClass, ...optionClasses, ...wrapClasses];
   });
 
-  return css`
+  return `
     ${cssClasses.join("")}
   `;
 };

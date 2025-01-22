@@ -1,8 +1,5 @@
 import React from "react";
 
-import ThemeIcon from "../../assets/svg/theme_icon";
-import SystemThemeIcon from "../../assets/svg/system_theme_icon";
-
 import { Toggle } from "@foundation-ui/components";
 
 export const ThemeSettings = () => {
@@ -11,19 +8,19 @@ export const ThemeSettings = () => {
   const THEME_OPTIONS = [
     {
       label: "dark",
-      Icon: ThemeIcon,
+      Icon: <></>,
       contrast: "var(--color-mono-whitest)",
       body: "var(--color-mono-darkest)",
     },
     {
       label: "light",
-      Icon: ThemeIcon,
+      Icon: <></>,
       contrast: "var(--color-mono-dark)",
       body: "var(--color-mono-light)",
     },
     {
       label: "auto",
-      Icon: SystemThemeIcon,
+      Icon: <></>,
       contrast: "var(--color-mono-dark)",
       body: "var(--color-mono-light)",
     },
@@ -46,12 +43,7 @@ export const ThemeSettings = () => {
                 sizing="small"
                 onClick={() => setPreferedTheme(label)}
               >
-                <Icon
-                  contrast={contrast}
-                  body={body}
-                  radius={3}
-                  style={{ opacity: 1, height: 128, width: "auto" }}
-                />
+                {Icon}
               </Toggle>
               <p>
                 {preferedTheme === label && <b>&rarr;&nbsp;</b>}

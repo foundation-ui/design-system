@@ -1,4 +1,3 @@
-import { css } from "styled-components";
 import {
   IDesignTokensLibrary,
   TColorVariant,
@@ -9,22 +8,22 @@ import {
   SequenceVariantEnum,
 } from "../../../../types";
 
-export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
-  const DEFAULT_COLOR_TOKENS_VARIANT = "color";
-  const COLOR_TOKENS_VARIANT: TColorVariant[] = [
-    ColorVariantEnum.Alpha,
-    ColorVariantEnum.Tint,
-    ColorVariantEnum.Shade,
-  ];
-  const SCALE_TOKENS_VARIANT: TScaleVariant[] = [
-    MeasureVariantEnum.FontSize,
-    MeasureVariantEnum.Measurement,
-  ];
-  const SEQUENCE_TOKENS_VARIANT: SequenceVariantEnum[] = [
-    SequenceVariantEnum.Depth,
-    SequenceVariantEnum.Opacity,
-  ];
+const DEFAULT_COLOR_TOKENS_VARIANT = "color";
+const COLOR_TOKENS_VARIANT: TColorVariant[] = [
+  ColorVariantEnum.Alpha,
+  ColorVariantEnum.Tint,
+  ColorVariantEnum.Shade,
+];
+const SCALE_TOKENS_VARIANT: TScaleVariant[] = [
+  MeasureVariantEnum.FontSize,
+  MeasureVariantEnum.Measurement,
+];
+const SEQUENCE_TOKENS_VARIANT: SequenceVariantEnum[] = [
+  SequenceVariantEnum.Depth,
+  SequenceVariantEnum.Opacity,
+];
 
+export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
   const variantName = (variant: string, name: string) =>
     `--${variant}-${name}-`;
   const variantIndex = (key: number) => (key + 1) * 10;
@@ -35,7 +34,7 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
     color: (library: IComposedLibraryItem[], variant?: TColorVariant) => {
       if (!variant) {
         return library.map(
-          (token) => css`
+          (token) => `
             ${`--${DEFAULT_COLOR_TOKENS_VARIANT}-${token.name}: ${token.base["hex"]};`}
           `
         );
@@ -43,7 +42,7 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
 
       return library.map((token) => {
         return token[variant].map(
-          (item, key) => css`
+          (item, key) => `
             ${`${variableName(variant, token.name, key)}: ${item.rgb};`}
           `
         );
@@ -52,7 +51,7 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
     scale: (library: IComposedLibraryItem[], variant: TScaleVariant) => {
       return library.map((token) =>
         token.values.map(
-          (value, key) => css`
+          (value, key) => `
             ${`${variableName(variant, token.name, key)}: ${value.rem}rem;`}
           `
         )
@@ -64,7 +63,7 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
     ) => {
       return library.map((token) =>
         token.values.map(
-          (value, key) => css`
+          (value, key) => `
             ${`${variableName(variant, token.name, key)}: ${value.value};`}
           `
         )
@@ -85,7 +84,7 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
     ),
   ];
 
-  return Object.freeze({
+  return {
     color,
     alpha,
     tint,
@@ -94,5 +93,5 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
     measurement,
     depth,
     opacity,
-  });
+  };
 };
