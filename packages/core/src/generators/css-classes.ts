@@ -208,6 +208,7 @@ export const generateDimensionClasses = () => {
     "50%",
     "33%",
     "25%",
+    "10%",
     "auto",
     "fit-content",
     "max-content",
