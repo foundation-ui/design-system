@@ -193,3 +193,38 @@ export const generateLayoutClasses = () => {
     ${cssClasses.join("")}
   `;
 };
+
+export const generateDimensionClasses = () => {
+  const directions = ["width", "height"] as const;
+  const options = [
+    "100%",
+    "95%",
+    "90%",
+    "85%",
+    "80%",
+    "75%",
+    "70%",
+    "66%",
+    "50%",
+    "33%",
+    "25%",
+    "auto",
+    "fit-content",
+    "max-content",
+  ] as const;
+
+  const cssClasses = directions.flatMap((dir) => {
+    const dimensionClasses = options.flatMap((option) => {
+      const className = `.${dir.split("").at(0)}-${option.replaceAll("%", "")}`;
+      const cssProperty = `${dir}: ${option};`;
+
+      return `${className} { ${cssProperty} }`;
+    });
+
+    return dimensionClasses;
+  });
+
+  return `
+    ${cssClasses.join("")}
+  `;
+};

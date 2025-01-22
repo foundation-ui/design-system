@@ -6,10 +6,13 @@ import {
   generateFontSizesClasses,
   generateLayoutClasses,
   generateOpacityClasses,
+  generateDimensionClasses,
 } from "@foundation-ui/core";
 
 const cssVariables = generateCSSVariables(js_design_tokens);
 const cssLayoutClasses = generateLayoutClasses();
+const cssWidthHeightClasses = generateDimensionClasses();
+
 const cssSizeClasses = generateSizeClasses(
   js_design_tokens.design_tokens.measurement
 );
@@ -43,5 +46,6 @@ export const CSSRoot = createGlobalStyle`
 		${cssFSClasses}
 		${cssOpacityClasses}
 		${cssLayoutClasses}
+		${cssWidthHeightClasses}
 	}
 `;
