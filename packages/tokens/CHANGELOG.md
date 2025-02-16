@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.3.0
+
+### Minor Changes
+
+- Enhance ColorModeProvider with config support for color tokens
+
 ## 1.2.0
 
 ### Minor Changes
