@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.3.2
+
+### Patch Changes
+
+- Update ColorModeProvide to prevent mismatch between vars
+
 ## 1.3.1
 
 ### Patch Changes

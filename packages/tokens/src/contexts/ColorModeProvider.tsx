@@ -97,10 +97,10 @@ export const ColorModeProvider = ({
     if (colorMode) {
       const fontColor = is_light
         ? config?.font?.light || "var(--color-mono-darkest)"
-        : config?.font?.dark || "var(--color-mono-whitest)";
+        : config?.font?.dark || "var(--color-mono-white)";
 
       const bodyColor = is_light
-        ? config?.body?.light || "var(--color-mono-whitest)"
+        ? config?.body?.light || "var(--color-mono-white)"
         : config?.body?.dark || "var(--color-mono-darker)";
 
       const contrastColor = is_light
@@ -124,21 +124,25 @@ export const ColorModeProvider = ({
           .join("\n");
 
       css = `:root {
+        ${FONT_VAR}: ${fontColor};
+        ${generateAlphaVars(
+          FONT_VAR,
+          config?.font?.light || "alpha-mono-darkest",
+          config?.font?.dark || "alpha-mono-white"
+        )}
+
         ${BODY_VAR}: ${bodyColor};
         ${generateAlphaVars(
           BODY_VAR,
-          "alpha-mono-whitest",
-          "alpha-mono-darker"
+          config?.body?.light || "alpha-mono-white",
+          config?.body?.dark || "alpha-mono-darker"
         )}
-
-        ${FONT_VAR}: ${fontColor};
-        ${generateAlphaVars(FONT_VAR, "alpha-mono-darkest", "alpha-mono-white")}
 
         ${CONTRAST_VAR}: ${contrastColor};
         ${generateAlphaVars(
           CONTRAST_VAR,
-          "alpha-mono-light",
-          "alpha-mono-dark"
+          config?.contrast?.light || "alpha-mono-light",
+          config?.contrast?.dark || "alpha-mono-dark"
         )}
       }`.replace(/\s/g, ""); // minify string
     }
