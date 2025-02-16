@@ -96,16 +96,16 @@ export const ColorModeProvider = ({
     console.log(config);
     if (colorMode) {
       const fontColor = is_light
-        ? config?.font.light || "var(--color-mono-darkest)"
-        : config?.font.dark || "var(--color-mono-whitest)";
+        ? config?.font?.light || "var(--color-mono-darkest)"
+        : config?.font?.dark || "var(--color-mono-whitest)";
 
       const bodyColor = is_light
-        ? config?.body.light || "var(--color-mono-whitest)"
-        : config?.body.dark || "var(--color-mono-darker)";
+        ? config?.body?.light || "var(--color-mono-whitest)"
+        : config?.body?.dark || "var(--color-mono-darker)";
 
       const contrastColor = is_light
-        ? config?.contrast.light || "var(--color-mono-light)"
-        : config?.contrast.dark || "var(--color-mono-dark)";
+        ? config?.contrast?.light || "var(--color-mono-light)"
+        : config?.contrast?.dark || "var(--color-mono-dark)";
 
       const generateAlphaVars = (
         baseVar: string,
