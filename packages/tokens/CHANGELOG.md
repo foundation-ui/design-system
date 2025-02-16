@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.3.3
+
+### Patch Changes
+
+- Update Button properties to support Icon styles updates
+
 ## 1.3.2
 
 ### Patch Changes

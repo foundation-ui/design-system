@@ -21,13 +21,6 @@ const ButtonDefaultStyles = css`
   width: fit-content;
   transition: all ease-in-out 0.2s;
 
-  svg {
-    width: var(--fontsize-medium-20);
-    height: var(--fontsize-medium-20);
-    fill: currentColor;
-  }
-
-  svg,
   span,
   img {
     opacity: 0.6;
@@ -36,7 +29,6 @@ const ButtonDefaultStyles = css`
   &:hover,
   &:focus,
   &:active {
-    svg,
     span,
     img {
       opacity: 1;
@@ -46,6 +38,25 @@ const ButtonDefaultStyles = css`
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
+  }
+`;
+const ButtonIconStyles = css`
+  svg {
+    width: var(--fontsize-medium-20);
+    height: var(--fontsize-medium-20);
+    fill: currentColor;
+  }
+
+  svg {
+    opacity: 0.6;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    svg {
+      opacity: 1;
+    }
   }
 `;
 const ButtonVariantsStyles = css`
@@ -157,5 +168,9 @@ export const ButtonWrapper = styled.button`
     ${ButtonDefaultStyles}
     ${ButtonSizeStyles}
     ${ButtonVariantsStyles}
+
+      &[data-rawIcon="false"] {
+      ${ButtonIconStyles}
+    }
   }
 `;

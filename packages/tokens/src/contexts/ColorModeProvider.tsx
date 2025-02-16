@@ -93,7 +93,6 @@ export const ColorModeProvider = ({
      * This should be enhanced to handle default preferences in a better way.
      */
 
-    console.log(config);
     if (colorMode) {
       const fontColor = is_light
         ? config?.font?.light || "var(--color-mono-darkest)"

@@ -14,6 +14,7 @@ export interface IButtonProperties
     IComponentVariant,
     React.ComponentPropsWithRef<"button"> {
   ref?: any;
+  rawIcon?: boolean;
 }
 
 /**
@@ -26,6 +27,7 @@ export interface IButtonProperties
  *
  * @param {IButtonProperties} props - The props for the Button component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
+ * @param {boolean} props.rawIcon - Define whether the component is styles its svg children.
  * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to `medium`.
  * @param {string} props.variant - The style definition used by the component.
  * @param {ReactNode} props.children - The content to be rendered inside the button.
@@ -38,6 +40,7 @@ export const Button = React.forwardRef(
       variant = ComponentVariantEnum.Mono,
       sizing = ComponentSizeEnum.Medium,
       raw,
+      rawIcon,
       children,
       ...restProps
     } = props;
@@ -63,6 +66,7 @@ export const Button = React.forwardRef(
         data-variant={variant}
         data-size={sizing}
         data-raw={Boolean(raw)}
+        data-rawIcon={Boolean(rawIcon)}
         tabIndex={0}
         {...restProps}
       >
