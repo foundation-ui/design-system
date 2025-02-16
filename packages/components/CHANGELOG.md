@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.3.1
+
+### Patch Changes
+
+- Patch Button props to prevent error in strictly typed projects
+
 ## 1.3.0
 
 ### Minor Changes
