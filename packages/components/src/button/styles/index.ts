@@ -58,6 +58,12 @@ const ButtonIconStyles = css`
       opacity: 1;
     }
   }
+
+  &[data-variant="primary"] {
+    svg {
+      fill: var(--body-color);
+    }
+  }
 `;
 const ButtonVariantsStyles = css`
   &[data-variant="primary"] {
@@ -68,10 +74,6 @@ const ButtonVariantsStyles = css`
     &:focus,
     &:active {
       color: var(--body-color);
-    }
-
-    svg {
-      fill: var(--body-color);
     }
   }
   &[data-variant="secondary"] {

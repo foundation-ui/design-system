@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.3.2
+
+### Patch Changes
+
+- Fix Button's svg styles on primary variant
+
 ## 1.3.1
 
 ### Patch Changes
