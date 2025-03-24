@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.3.4
+
+### Patch Changes
+
+- Update dependencies and styles types
+
 ## 1.3.3
 
 ### Patch Changes

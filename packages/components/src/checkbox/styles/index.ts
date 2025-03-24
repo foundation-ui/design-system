@@ -116,7 +116,7 @@ export const CheckboxWrapper = styled.div`
     }
   }
 `;
-export const NativeInput = styled.input`
+export const NativeInput = styled.input<any>`
   &[data-raw="false"] {
     appearance: none;
     background: none;
@@ -133,7 +133,7 @@ export const NativeInput = styled.input`
     }
   }
 `;
-export const Indicator = styled.span`
+export const Indicator = styled.span<any>`
   line-height: 0;
   pointer-events: none;
 `;

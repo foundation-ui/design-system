@@ -113,7 +113,7 @@ export const ToolbarSideStyles = css`
   }
 `;
 
-export const ToolbarWrapper = styled.menu`
+export const ToolbarWrapper = styled.menu<any>`
   &[data-raw="false"] {
     ${ToolbarDefaultStyles}
     ${ToolbarSizeStyles}
@@ -121,7 +121,7 @@ export const ToolbarWrapper = styled.menu`
     ${ToolbarSideStyles}
   }
 `;
-export const ToolbarTriggerWrapper = styled.menu`
+export const ToolbarTriggerWrapper = styled.menu<any>`
   &[data-raw="false"] {
     all: unset;
     align-self: flex-end;

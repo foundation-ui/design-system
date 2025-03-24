@@ -13,7 +13,7 @@ export const HiddenScrollbar = css`
   }
 `;
 
-export const ScrollAreaWrapper = styled.div`
+export const ScrollAreaWrapper = styled.div<any>`
   overflow: scroll;
 
   &[data-scrollbar="false"] {

@@ -1,5 +1,11 @@
 # @foundation-ui/hooks
 
+## 1.2.2
+
+### Patch Changes
+
+- Update dependencies and styles types
+
 ## 1.2.1
 
 ### Patch Changes

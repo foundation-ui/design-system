@@ -93,14 +93,14 @@ const SwitchSizeStyles = css`
   }
 `;
 
-export const TriggerWrapper = styled.button`
+export const TriggerWrapper = styled.button<any>`
   &[data-raw="false"] {
     ${SwitchDefaultStyles}
     ${SwitchVariantsStyles}
     ${SwitchSizeStyles}
   }
 `;
-export const Thumb = styled.span`
+export const Thumb = styled.span<any>`
   &[data-raw="false"] {
     all: unset;
     display: block;

@@ -3,12 +3,11 @@ import { BadgeWrapper } from "./styles";
 
 import { IComponentStyling } from "../../../../types";
 
-interface IBadgeProperties
-  extends IComponentStyling,
-    React.ComponentProps<"div"> {
+type IBadgeProperties = {
   variant?: "primary" | "secondary" | "border" | "warning" | "meta";
   shape?: "square" | "smooth" | "round";
-}
+} & IComponentStyling &
+  React.ComponentProps<"div">;
 
 export const Badge = (props: IBadgeProperties) => {
   const {

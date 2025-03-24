@@ -58,7 +58,7 @@ const SheetSideStyles = css`
   }
 `;
 
-export const SheetWrapper = styled.dialog`
+export const SheetWrapper = styled.dialog<any>`
   &[data-raw="false"] {
     ${SheetStyles}
     ${SheetSideStyles}

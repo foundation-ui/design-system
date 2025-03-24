@@ -80,7 +80,7 @@ const BadgeShapeStyles = css`
     border-radius: var(--measurement-large-90);
   }
 `;
-export const BadgeWrapper = styled.div`
+export const BadgeWrapper = styled.div<any>`
   &[data-raw="false"] {
     ${BadgeBaseStyles}
     ${BadgeVariantStyles}

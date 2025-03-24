@@ -121,7 +121,7 @@ const FieldSizeStyles = css`
   }
 `;
 
-export const Fieldset = styled.fieldset`
+export const Fieldset = styled.fieldset<any>`
   all: unset;
   display: grid;
   gap: var(--measurement-medium-10);
@@ -129,7 +129,7 @@ export const Fieldset = styled.fieldset`
 export const Sup = styled.sup`
   color: var(--color-red);
 `;
-export const Input = styled.input`
+export const Input = styled.input<any>`
   &[data-raw="false"] {
     ${FieldDefaultStyles}
     ${FieldVariantsStyles}
@@ -142,7 +142,7 @@ export const Input = styled.input`
     }
   }
 `;
-export const Label = styled.label`
+export const Label = styled.label<any>`
   &[data-raw="false"] {
     font-weight: 500;
     line-height: 1.1;
@@ -151,7 +151,7 @@ export const Label = styled.label`
     );
   }
 `;
-export const Def = styled.dfn`
+export const Def = styled.dfn<any>`
   &[data-raw="false"] {
     font-style: normal;
     font-size: var(--fontsize-medium-10);

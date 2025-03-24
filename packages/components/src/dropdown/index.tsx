@@ -149,8 +149,8 @@ const DropdownMenuContent = React.forwardRef(
 
     const mounted = React.useRef(false);
     const contentRef = React.useRef<HTMLDivElement>(null);
-    const contentRect = () => contentRef.current?.getBoundingClientRect();
-    const bodyRect = () => document.body.getBoundingClientRect();
+    const contentRect = () => contentRef?.current?.getBoundingClientRect();
+    const bodyRect = () => document?.body?.getBoundingClientRect();
 
     const positions = React.useMemo(() => {
       return {
@@ -163,7 +163,7 @@ const DropdownMenuContent = React.forwardRef(
     const dimensions = React.useMemo(() => {
       return {
         body_width: bodyRect()?.width,
-        body_height: bodyRect().height,
+        body_height: bodyRect()?.height,
         content_width: states.contentProps.width,
         content_height: states.contentProps.height,
         content_left: states.contentProps.left,

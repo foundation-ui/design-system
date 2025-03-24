@@ -59,7 +59,7 @@ export const ContentWrapper = styled.ul<any>`
   }
 `;
 
-export const ItemWrapper = styled.li`
+export const ItemWrapper = styled.li<any>`
   list-style: none;
   padding: 0;
   margin: 0;

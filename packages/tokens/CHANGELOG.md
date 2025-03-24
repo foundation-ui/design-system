@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.4.4
+
+### Patch Changes
+
+- Update dependencies and styles types
+
 ## 1.4.3
 
 ### Patch Changes

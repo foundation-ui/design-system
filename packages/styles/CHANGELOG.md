@@ -1,5 +1,11 @@
 # @foundation-ui/styles
 
+## 1.3.2
+
+### Patch Changes
+
+- Update dependencies and styles types
+
 ## 1.3.1
 
 ### Patch Changes

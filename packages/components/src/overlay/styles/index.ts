@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const OverlayWrapper = styled.div`
+export const OverlayWrapper = styled.div<any>`
   @keyframes animate-fade {
     0% {
       opacity: 0;

@@ -15,7 +15,7 @@ export const TableLayer = styled.div`
   border-radius: var(--measurement-medium-30);
   border: var(--measurement-small-10) solid var(--font-color-alpha-10);
 `;
-export const TableWrapper = styled.table`
+export const TableWrapper = styled.table<any>`
   border-collapse: collapse;
 
   tbody {
@@ -26,7 +26,7 @@ export const TableWrapper = styled.table`
     }
   }
 `;
-export const RowWrapper = styled.tr`
+export const RowWrapper = styled.tr<any>`
   border-bottom: var(--measurement-small-10) solid var(--font-color-alpha-10);
 
   transition: background-color linear 0.1s;
@@ -35,7 +35,7 @@ export const RowWrapper = styled.tr`
     background-color: var(--font-color-alpha-10);
   }
 `;
-export const HeadCellWrapper = styled.th`
+export const HeadCellWrapper = styled.th<any>`
   font-size: var(--fontsize-medium-10);
   ${CellStyles}
 
@@ -43,6 +43,6 @@ export const HeadCellWrapper = styled.th`
     color: var(--font-color-alpha-60);
   }
 `;
-export const CellWrapper = styled.td`
+export const CellWrapper = styled.td<any>`
   ${CellStyles}
 `;

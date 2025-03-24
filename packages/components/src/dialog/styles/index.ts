@@ -35,7 +35,7 @@ const DialogSizeStyles = css`
   }
 `;
 
-export const Menu = styled.menu`
+export const Menu = styled.menu<any>`
   margin: 0;
   padding: 0;
 
@@ -45,7 +45,7 @@ export const Menu = styled.menu`
     gap: var(--measurement-medium-30);
   }
 `;
-export const DialogWrapper = styled.dialog`
+export const DialogWrapper = styled.dialog<any>`
   @keyframes slide-in {
     0% {
       opacity: 0;
