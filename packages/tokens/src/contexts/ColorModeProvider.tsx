@@ -10,7 +10,7 @@ const FONT_VAR = "--font-color";
 const BODY_VAR = "--body-color";
 
 const ERRLOG =
-  "[foundation] localStorage is disabled and color mode might not work as expected.";
+  "localStorage is disabled. Color Mode might not work as expected.";
 
 type FetchedColorModeType = string | undefined | null;
 
@@ -27,23 +27,15 @@ type ColorModeConfig = {
 
 const storage = {
   get: () => {
-    try {
-      return window?.localStorage.getItem(STORAGE_KEY);
-    } catch (error) {
-      console.warn(ERRLOG, error);
-    }
+    if (window) return window?.localStorage?.getItem(STORAGE_KEY);
   },
   set: (value: string) => {
-    try {
-      window?.localStorage.setItem(STORAGE_KEY, value);
-    } catch (error) {
-      console.warn(ERRLOG, error);
-    }
+    if (window) return window?.localStorage?.setItem(STORAGE_KEY, value);
   },
 };
 
 export const getPreferredColorScheme = (): TColorMode | null => {
-  if (window?.matchMedia) {
+  if (window && window?.matchMedia) {
     if (window?.matchMedia(DARK_QUERY).matches) return "dark";
     if (window?.matchMedia(LIGHT_QUERY).matches) return "light";
     if (window?.matchMedia(SYSTEM_QUERY).matches) return "system";
@@ -62,11 +54,10 @@ export const ColorModeProvider = ({
   config,
   children,
 }: {
-  config: ColorModeConfig;
+  config?: ColorModeConfig;
   children: React.ReactNode;
 }) => {
-  const locstore = window?.localStorage;
-  const fetchedMode = storage?.get();
+  const fetchedMode = storage.get();
 
   const [colorMode, setColorMode] = React.useState<FetchedColorModeType>(
     fetchedMode || getPreferredColorScheme()
@@ -77,13 +68,15 @@ export const ColorModeProvider = ({
    * Used to write CSS vars defined by the color mode as soon a every values are available.
    */
   (function () {
-    const head = document?.head || document?.getElementsByTagName("head")[0];
+    if (!window || !document) return;
+
+    const head = document.head || document?.getElementsByTagName("head")[0];
     const current = head.querySelector('style[title="color_mode_vars"]');
 
     // Remove existing value if defined to prevent duplication
     if (current) head.removeChild(current);
 
-    const style = document?.createElement("style");
+    const style = document.createElement("style");
     style.type = "text/css";
     style.title = "color_mode_vars";
 
@@ -168,8 +161,8 @@ export const ColorModeProvider = ({
 
   // Save mode in localStorage when it is updated
   React.useEffect(() => {
-    if (locstore && colorMode) storage?.set(colorMode);
-  }, [colorMode, locstore]);
+    if (colorMode) storage.set(colorMode);
+  }, [colorMode]);
 
   return (
     <ColorModeContext.Provider value={{ colorMode, setColorMode }}>

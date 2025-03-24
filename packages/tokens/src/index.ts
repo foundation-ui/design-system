@@ -1,7 +1,6 @@
 /** Contexts */
 export * from "./contexts/DesignTokensProvider";
 export * from "./contexts/ColorModeProvider";
-export * from "./contexts/SystemThemeProvider";
 
 /** Services */
 export * from "./services/get-token";

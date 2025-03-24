@@ -31,14 +31,14 @@ const updatedTokenLibrary: IDesignTokensLibrary = {
   },
 };
 const Component = () => {
-  const { color, setDesignTokensLibrary } = useDesignTokens();
+  const dt = useDesignTokens();
 
   return (
     <button
       aria-label="test-trigger"
-      onClick={() => setDesignTokensLibrary(updatedTokenLibrary)}
+      onClick={() => dt?.setDesignTokensLibrary(updatedTokenLibrary)}
     >
-      {color.length}
+      {dt?.designTokens?.color.length}
     </button>
   );
 };

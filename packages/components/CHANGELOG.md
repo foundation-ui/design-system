@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.3.3
+
+### Patch Changes
+
+- Dependencies updates, Update window definition in ColorMode, remove obselete provider
+
 ## 1.3.2
 
 ### Patch Changes

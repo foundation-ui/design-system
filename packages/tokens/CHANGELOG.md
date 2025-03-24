@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.4.2
+
+### Patch Changes
+
+- Dependencies updates, Update window definition in ColorMode, remove obselete provider
+
 ## 1.4.1
 
 ### Patch Changes

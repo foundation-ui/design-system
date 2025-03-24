@@ -1,6 +1,6 @@
 {
   "name": "@foundation-ui/core",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -25,18 +25,18 @@
     "@types/react": "*",
     "@types/react-dom": "*",
     "@types/styled-components": "*",
-    "react": "^16.8 || ^17.0 || ^18.0",
-    "react-dom": "^16.8 || ^17.0 || ^18.0",
+    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
     "@types/react": "*",
     "@types/react-dom": "*",
     "@types/styled-components": "*",
-    "react": "^16.8 || ^17.0 || ^18.0",
-    "react-dom": "^16.8 || ^17.0 || ^18.0",
+    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0",
     "styled-components": "^5.0.0",
-    "typescript": "^5.5.3"
+    "typescript": "^5.8.2"
   },
   "dependencies": {
     "@foundation-ui/hooks": "workspace:^"

@@ -1,8 +1,13 @@
 import React from "react";
-import { IDesignTokensLibrary } from "../../../../types";
+import { IDesignTokensLibrary, IDesignTokensSet } from "../../../../types";
 import { js_design_tokens } from "../";
 
-export const DesignTokensContext = React.createContext<null | unknown>({});
+export const DesignTokensContext = React.createContext<null | {
+  designTokens: IDesignTokensSet;
+  setDesignTokensLibrary: React.Dispatch<
+    React.SetStateAction<IDesignTokensLibrary>
+  >;
+}>(null);
 export const useDesignTokens = () => React.useContext(DesignTokensContext);
 export const DesignTokensProvider = ({
   tokenLibrary,
@@ -17,7 +22,7 @@ export const DesignTokensProvider = ({
   return (
     <DesignTokensContext.Provider
       value={{
-        ...designTokensLibrary.design_tokens,
+        designTokens: { ...designTokensLibrary.design_tokens },
         setDesignTokensLibrary,
       }}
     >

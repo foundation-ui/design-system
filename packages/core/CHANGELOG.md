@@ -1,5 +1,13 @@
 # @foundation-ui/core
 
+## 1.2.1
+
+### Patch Changes
+
+- Dependencies updates, Update window definition in ColorMode, remove obselete provider
+- Updated dependencies
+  - @foundation-ui/hooks@1.2.1
+
 ## 1.2.0
 
 ### Minor Changes
