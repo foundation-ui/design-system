@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.4.0
+
+### Minor Changes
+
+- Fix styles duplication and types definitions in ColorMode
+
 ## 1.3.3
 
 ### Patch Changes

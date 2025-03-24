@@ -43,7 +43,7 @@ const storage = {
 };
 
 export const getPreferredColorScheme = (): TColorMode | null => {
-  if (typeof window !== "undefined" && window?.matchMedia) {
+  if (window?.matchMedia) {
     if (window?.matchMedia(DARK_QUERY).matches) return "dark";
     if (window?.matchMedia(LIGHT_QUERY).matches) return "light";
     if (window?.matchMedia(SYSTEM_QUERY).matches) return "system";
@@ -52,16 +52,19 @@ export const getPreferredColorScheme = (): TColorMode | null => {
   return null;
 };
 
-export const useClientsideEffect =
-  typeof window === "undefined" ? () => {} : React.useLayoutEffect;
-
 export const useColorMode = () => React.useContext(ColorModeContext);
 
-export const ColorModeContext = React.createContext<null | any>(null);
+export const ColorModeContext = React.createContext<null | {
+  colorMode: FetchedColorModeType;
+  setColorMode: React.Dispatch<React.SetStateAction<FetchedColorModeType>>;
+}>(null);
 export const ColorModeProvider = ({
   config,
   children,
-}: ColorModeConfig & any) => {
+}: {
+  config: ColorModeConfig;
+  children: React.ReactNode;
+}) => {
   const locstore = window?.localStorage;
   const fetchedMode = storage.get();
 
@@ -74,8 +77,10 @@ export const ColorModeProvider = ({
    * Used to write CSS vars defined by the color mode as soon a every values are available.
    */
   (function () {
-    const head = document.head || document.getElementsByTagName("head")[0];
-    const style = document.createElement("style");
+    const head = document?.head || document?.getElementsByTagName("head")[0];
+    if (head.querySelector('style[title="color_mode_vars"]')) return;
+
+    const style = document?.createElement("style");
     style.type = "text/css";
     style.title = "color_mode_vars";
 
@@ -152,7 +157,7 @@ export const ColorModeProvider = ({
   })();
 
   // Read the color mode from localStorage on render
-  useClientsideEffect(() => {
+  React.useEffect(() => {
     const canWriteMode =
       fetchedMode !== ColorModesEnum.System && fetchedMode !== colorMode;
     if (fetchedMode && canWriteMode) setColorMode(fetchedMode);
