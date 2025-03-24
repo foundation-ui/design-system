@@ -50,17 +50,13 @@ export const getPreferredColorScheme = (): TColorMode | null => {
 };
 
 export const useColorMode = () => React.useContext(ColorModeContext);
-
-export const ColorModeContext = React.createContext<null | {
-  colorMode: FetchedColorModeType;
-  setColorMode: React.Dispatch<React.SetStateAction<FetchedColorModeType>>;
-}>(null);
+export const ColorModeContext = React.createContext<null | any>(null);
 export const ColorModeProvider = ({
   config,
   children,
 }: {
   config?: ColorModeConfig;
-  children: React.ReactNode;
+  children: any;
 }) => {
   const fetchedMode = storage.get();
 

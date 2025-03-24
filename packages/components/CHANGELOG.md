@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.3.5
+
+### Patch Changes
+
+- Fix Dropdown types to prevent SSR rendering to break, update ColorMode types definitions
+
 ## 1.3.4
 
 ### Patch Changes

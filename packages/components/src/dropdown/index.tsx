@@ -149,27 +149,28 @@ const DropdownMenuContent = React.forwardRef(
 
     const mounted = React.useRef(false);
     const contentRef = React.useRef<HTMLDivElement>(null);
-    const contentRect = () => contentRef?.current?.getBoundingClientRect();
-    const bodyRect = () => document?.body?.getBoundingClientRect();
 
-    const positions = React.useMemo(() => {
-      return {
-        btt: `calc((${states?.triggerProps?.top}px - ${states?.contentProps?.height}px) - (var(--measurement-medium-10) * 2))`,
-        ttb: `calc((${states?.triggerProps?.top}px + ${states?.triggerProps?.height}px) + var(--measurement-medium-10))`,
-        ltr: `${states?.triggerProps?.left}px`,
-        rtl: `calc(${states?.triggerProps?.left}px - (${states?.contentProps?.width}px - ${states?.triggerProps?.width}px))`,
-      };
-    }, [states?.triggerProps, states?.contentProps]);
-    const dimensions = React.useMemo(() => {
-      return {
-        body_width: bodyRect()?.width,
-        body_height: bodyRect()?.height,
-        content_width: states.contentProps.width,
-        content_height: states.contentProps.height,
-        content_left: states.contentProps.left,
-        content_bottom: states.contentProps.bottom,
-      };
-    }, [states?.triggerProps, states?.contentProps]);
+    const contentRect = () => contentRef?.current?.getBoundingClientRect();
+    const bodyRect = (): any => {
+      if (typeof document !== "undefined") {
+        return document?.body?.getBoundingClientRect();
+      }
+    };
+
+    const positions = {
+      btt: `calc((${states?.triggerProps?.top}px - ${states?.contentProps?.height}px) - (var(--measurement-medium-10) * 2))`,
+      ttb: `calc((${states?.triggerProps?.top}px + ${states?.triggerProps?.height}px) + var(--measurement-medium-10))`,
+      ltr: `${states?.triggerProps?.left}px`,
+      rtl: `calc(${states?.triggerProps?.left}px - (${states?.contentProps?.width}px - ${states?.triggerProps?.width}px))`,
+    };
+    const dimensions = {
+      body_width: bodyRect()?.width,
+      body_height: bodyRect()?.height,
+      content_width: states.contentProps.width,
+      content_height: states.contentProps.height,
+      content_left: states.contentProps.left,
+      content_bottom: states.contentProps.bottom,
+    };
 
     const hasEnoughHorizontalSpace =
       dimensions.body_width - dimensions.content_left >

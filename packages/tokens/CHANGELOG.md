@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.4.5
+
+### Patch Changes
+
+- Fix Dropdown types to prevent SSR rendering to break, update ColorMode types definitions
+
 ## 1.4.4
 
 ### Patch Changes
