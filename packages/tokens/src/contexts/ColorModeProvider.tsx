@@ -27,18 +27,23 @@ type ColorModeConfig = {
 
 const storage = {
   get: () => {
-    if (window) return window?.localStorage?.getItem(STORAGE_KEY);
+    if (typeof window !== "undefined") {
+      return window.localStorage?.getItem(STORAGE_KEY);
+    }
+    return null;
   },
   set: (value: string) => {
-    if (window) return window?.localStorage?.setItem(STORAGE_KEY, value);
+    if (typeof window !== "undefined") {
+      return window.localStorage?.setItem(STORAGE_KEY, value);
+    }
   },
 };
 
 export const getPreferredColorScheme = (): TColorMode | null => {
-  if (window && window?.matchMedia) {
-    if (window?.matchMedia(DARK_QUERY).matches) return "dark";
-    if (window?.matchMedia(LIGHT_QUERY).matches) return "light";
-    if (window?.matchMedia(SYSTEM_QUERY).matches) return "system";
+  if (typeof window !== "undefined" && window.matchMedia) {
+    if (window.matchMedia(DARK_QUERY).matches) return "dark";
+    if (window.matchMedia(LIGHT_QUERY).matches) return "light";
+    if (window.matchMedia(SYSTEM_QUERY).matches) return "system";
   }
 
   return null;
@@ -68,7 +73,10 @@ export const ColorModeProvider = ({
    * Used to write CSS vars defined by the color mode as soon a every values are available.
    */
   (function () {
-    if (!window || !document) return;
+    // Ensure safe usage of window and document
+    if (typeof window === "undefined" || typeof document === "undefined") {
+      return;
+    }
 
     const head = document.head || document?.getElementsByTagName("head")[0];
     const current = head.querySelector('style[title="color_mode_vars"]');

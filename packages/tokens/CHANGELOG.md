@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.4.3
+
+### Patch Changes
+
+- Prevent SSR error on ColorModeProvider usage
+
 ## 1.4.2
 
 ### Patch Changes
