@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.4.1
+
+### Patch Changes
+
+- Fix color_mode_vars behavior in ColorModeContext
+
 ## 1.4.0
 
 ### Minor Changes

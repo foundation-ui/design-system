@@ -66,7 +66,7 @@ export const ColorModeProvider = ({
   children: React.ReactNode;
 }) => {
   const locstore = window?.localStorage;
-  const fetchedMode = storage.get();
+  const fetchedMode = storage?.get();
 
   const [colorMode, setColorMode] = React.useState<FetchedColorModeType>(
     fetchedMode || getPreferredColorScheme()
@@ -78,7 +78,10 @@ export const ColorModeProvider = ({
    */
   (function () {
     const head = document?.head || document?.getElementsByTagName("head")[0];
-    if (head.querySelector('style[title="color_mode_vars"]')) return;
+    const current = head.querySelector('style[title="color_mode_vars"]');
+
+    // Remove existing value if defined to prevent duplication
+    if (current) head.removeChild(current);
 
     const style = document?.createElement("style");
     style.type = "text/css";
@@ -165,8 +168,8 @@ export const ColorModeProvider = ({
 
   // Save mode in localStorage when it is updated
   React.useEffect(() => {
-    if (locstore && colorMode) storage.set(colorMode);
-  }, [colorMode, window?.localStorage]);
+    if (locstore && colorMode) storage?.set(colorMode);
+  }, [colorMode, locstore]);
 
   return (
     <ColorModeContext.Provider value={{ colorMode, setColorMode }}>
