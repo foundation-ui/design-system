@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.4.6
+
+### Patch Changes
+
+- Enhance ColorMode: prevent SSR breaks, enhance test coverage, prevent flickering
+
 ## 1.4.5
 
 ### Patch Changes
