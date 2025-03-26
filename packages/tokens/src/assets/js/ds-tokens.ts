@@ -1,5 +1,5 @@
 export default {
-  name: "foundation-ui",
+  name: "testamento-ui",
   design_tokens: {
     color: [
       {

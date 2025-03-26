@@ -1,12 +1,12 @@
 {
   "name": "@foundation-ui/hooks",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "vitest run --coverage --logHeapUsage",
     "test:coverage": "open coverage/lcov-report/index.html",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc"

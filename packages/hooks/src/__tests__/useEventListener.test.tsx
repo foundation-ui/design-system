@@ -1,25 +1,32 @@
-import React, { useRef } from "react";
-import { render, screen, fireEvent, act } from "@testing-library/react";
+import React from "react";
+
+import { test, vi, afterEach, describe, expect } from "vitest";
+import { screen, render, cleanup, fireEvent } from "@testing-library/react";
+
 import useEventListener from "../useEventListener";
 
-const handler = jest.fn();
-describe("useEventListener", () => {
-  afterEach(() => jest.clearAllMocks());
+afterEach(async () => {
+  vi.clearAllMocks();
+  vi.resetModules();
+  cleanup();
+});
 
-  it("Call the handler function when the event is triggered on the window", () => {
+const handler = vi.fn();
+describe("useEventListener", () => {
+  test("Call the handler function when the event is triggered on the window", () => {
     const Component = () => {
       useEventListener("resize", handler);
       return <div>Test Component</div>;
     };
 
     render(<Component />);
-    act(() => window.dispatchEvent(new Event("resize")));
+    window.dispatchEvent(new Event("resize"));
 
     expect(handler).toHaveBeenCalledTimes(1);
   });
-  it("Call the handler function when the event is triggered on the element", () => {
+  test("Call the handler function when the event is triggered on the element", () => {
     const Component = () => {
-      const ref = useRef<HTMLDivElement>(null);
+      const ref = React.useRef<HTMLDivElement>(null);
       useEventListener("click", handler, ref);
       return <div ref={ref}>Test Component</div>;
     };
@@ -29,9 +36,9 @@ describe("useEventListener", () => {
 
     expect(handler).toHaveBeenCalledTimes(1);
   });
-  it("Do not call the handler function when the event is triggered on a different element", () => {
+  test("Do not call the handler function when the event is triggered on a different element", () => {
     const Component = () => {
-      const ref = useRef<HTMLDivElement>(null);
+      const ref = React.useRef<HTMLDivElement>(null);
       useEventListener("click", handler, ref);
       return (
         <React.Fragment>
@@ -46,17 +53,17 @@ describe("useEventListener", () => {
 
     expect(handler).not.toHaveBeenCalled();
   });
-  it("Clean up the event listener when the component unmounts", () => {
+  test("Clean up the event listener when the component unmounts", () => {
     const Component = () => {
       useEventListener("resize", handler);
       return <div>Test Component</div>;
     };
 
     const { unmount } = render(<Component />);
-    act(() => window.dispatchEvent(new Event("resize")));
+    window.dispatchEvent(new Event("resize"));
 
     unmount();
-    act(() => window.dispatchEvent(new Event("resize")));
+    window.dispatchEvent(new Event("resize"));
 
     expect(handler).toHaveBeenCalledTimes(1);
   });

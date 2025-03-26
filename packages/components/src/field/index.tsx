@@ -86,12 +86,12 @@ const Field: React.FC<IField> & IFieldComposition = (props: IField) => {
         data-raw={Boolean(raw)}
         {...restProps}
       />
-      {(error || hint) && (
+      {(error ?? hint) && (
         <FieldMeta
           raw={raw}
           data-variant={error ? MetaVariantEnum.Error : MetaVariantEnum.Hint}
         >
-          {error || hint}
+          {error ?? hint}
         </FieldMeta>
       )}
     </React.Fragment>

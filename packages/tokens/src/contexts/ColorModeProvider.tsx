@@ -51,7 +51,7 @@ export const writeColorModeStyles = (
     return;
   }
 
-  const head = document.head || document?.getElementsByTagName("head")[0];
+  const head = document.head ?? document?.getElementsByTagName("head")[0];
   const current = head.querySelector('style[title="color_mode_vars"]');
 
   // Remove existing value if defined to prevent duplication

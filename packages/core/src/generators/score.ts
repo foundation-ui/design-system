@@ -51,7 +51,7 @@ export const getSequenceUsages = (
   contrastScore: any | null,
   stackOrder?: any
 ) => {
-  const contrastScoreRef = JSON.stringify(Object.values(contrastScore || ""));
+  const contrastScoreRef = JSON.stringify(Object.values(contrastScore ?? ""));
   const scores = {
     depth: {
       low: stackOrder?.label === "low",

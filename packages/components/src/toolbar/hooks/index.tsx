@@ -29,7 +29,7 @@ function useToolbarProvider(): IComponentAPI {
       expanded,
     },
     methods: {
-      toggleToolbar: (state: boolean) => setExpanded(state || !expanded),
+      toggleToolbar: (state: boolean) => setExpanded(state ?? !expanded),
     },
   };
 }

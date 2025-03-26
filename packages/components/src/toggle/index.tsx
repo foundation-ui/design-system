@@ -21,7 +21,7 @@ export interface IToggleProperties extends IButtonProperties {
 export const Toggle = (props: IToggleProperties) => {
   const { defaultChecked, onClick, disabled, children, ...restProps } = props;
   const [checked, setChecked] = React.useState<boolean>(
-    defaultChecked || false
+    defaultChecked ?? false
   );
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {

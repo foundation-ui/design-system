@@ -102,7 +102,7 @@ const TabsTrigger = (props: IButtonProperties) => {
       aria-selected={hasSameValueAsContext}
       data-controls={IdHandler.content}
       data-state={hasSameValueAsContext ? "active" : "inactive"}
-      variant={props.variant || ComponentVariantEnum.Ghost}
+      variant={props.variant ?? ComponentVariantEnum.Ghost}
       {...restProps}
     >
       {children}
@@ -143,7 +143,7 @@ const TabsContent = (props: ITabsProperties) => {
       id={String(IdHandler.content)}
       data-value={value}
       data-state={hasSameValueAsContext ? "active" : "inactive"}
-      aria-labelledby={IdHandler.trigger || restProps["aria-labelledby"]}
+      aria-labelledby={IdHandler.trigger ?? restProps["aria-labelledby"]}
       {...restProps}
     >
       {hasSameValueAsContext && children}

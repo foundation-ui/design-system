@@ -82,7 +82,7 @@ export const useComponentsInteractions = (
           usageRef[index] = {
             origin: target.id,
             element: target.nodeName.toLowerCase(),
-            content: target.textContent || target.firstChild.nodeName,
+            content: target.textContent ?? target.firstChild.nodeName,
             frequency: usageRef[index]!.frequency + 1,
             events: [...usageRef[index]!.events, eventData],
           };

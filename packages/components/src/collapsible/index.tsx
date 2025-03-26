@@ -74,7 +74,7 @@ const CollapsibleTrigger = (props: IButtonProperties) => {
       data-state={applyDataState(Boolean(states.expanded))}
       data-expanded={states.expanded}
       onClick={handleClick}
-      variant={props.variant || ComponentVariantEnum.Ghost}
+      variant={props.variant ?? ComponentVariantEnum.Ghost}
       {...restProps}
     >
       {children}
@@ -103,7 +103,7 @@ const CollapsibleContent = (props: ICollapsibleProperties) => {
   const { applyDefaultOpen } = methods;
 
   const childArray = React.Children.toArray(children);
-  const displayChildren = states.expanded || states.defaultOpen;
+  const displayChildren = states.expanded ?? states.defaultOpen;
 
   const displayFirstChild =
     showFirstChild && childArray.length > 1 && !states.expanded;

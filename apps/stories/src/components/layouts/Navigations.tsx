@@ -1,6 +1,6 @@
 import React from "react";
 import { useApp } from "../../contexts/AppProvider";
-import { ColorModeContext } from "@foundation-ui/tokens";
+import { useColorMode } from "@foundation-ui/tokens";
 import {
   Page,
   Button,
@@ -96,7 +96,7 @@ export const ExternalLinksNavigation = () => {
 };
 
 export const InternalActionsNavigation = () => {
-  const { colorMode, setColorMode } = React.useContext(ColorModeContext);
+  const { colorMode, setColorMode } = useColorMode();
   const { ab_testing, user_behavior_analytics } = useApp();
 
   const [emphasisVariant, setEmphasisVariant] =

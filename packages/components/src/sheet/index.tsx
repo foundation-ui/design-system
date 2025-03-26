@@ -73,7 +73,7 @@ const Sheet = (props: ISheetProperties) => {
             role="dialog"
             tabIndex={-1}
             id={String(id.containerId)}
-            aria-label={props["aria-label"] || `${id.containerId}-sheet`}
+            aria-label={props["aria-label"] ?? `${id.containerId}-sheet`}
             aria-labelledby={String(id.containerId)}
             open={Boolean(states.open)}
             data-expanded={Boolean(states.open)}

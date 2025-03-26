@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.3.6
+
+### Patch Changes
+
+- Update dependencies, Migrate to Vitest, cleanup packagesfrom duplicated/unused code, enhance code reliability
+
 ## 1.3.5
 
 ### Patch Changes

@@ -35,7 +35,7 @@ export const useABTesting = (config: TABConfig): IuseABProperties => {
 
   if (silent) return;
 
-  const [version, setVersion] = React.useState<number>(versions.default || 0);
+  const [version, setVersion] = React.useState<number>(versions.default ?? 0);
   const ticket = React.useMemo(() => {
     return Math.floor(Math.random() * randomize.odds);
   }, []);

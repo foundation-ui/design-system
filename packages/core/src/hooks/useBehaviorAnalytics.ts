@@ -165,7 +165,7 @@ export const useBehaviorAnalytics = ({
       last_interaction_epoch: hasTrackedInteractions
         ? getLastInteractionEpoch()
         : null,
-      time_before_interact: time_before_interact || null,
+      time_before_interact: time_before_interact ?? null,
     };
   }, [interactions, time_before_interact]);
 

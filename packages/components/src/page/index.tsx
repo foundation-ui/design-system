@@ -125,12 +125,12 @@ const PageTools = (props: IPageToolsProperties) => {
         {!fixed && (
           <Toolbar.Trigger
             title={
-              shortcut ? `${bindkey || "ctrl"} + ${hotkey}` : "toolbar-trigger"
+              shortcut ? `${bindkey ?? "ctrl"} + ${hotkey}` : "toolbar-trigger"
             }
             onClick={handleClick}
             {...triggerProps}
           >
-            {trigger || <span>&harr;</span>}
+            {trigger ?? <span>&harr;</span>}
           </Toolbar.Trigger>
         )}
       </Toolbar>
@@ -220,12 +220,12 @@ const PagePanel = (props: IPageToolsProperties) => {
         {!fixed && (
           <Toolbar.Trigger
             title={
-              shortcut ? `${bindkey || "ctrl"} + ${hotkey}` : "toolbar-trigger"
+              shortcut ? `${bindkey ?? "ctrl"} + ${hotkey}` : "toolbar-trigger"
             }
             onClick={handleClick}
             {...triggerProps}
           >
-            {trigger || (
+            {trigger ?? (
               <span style={{ transform: "rotate(90deg)" }}>&harr;</span>
             )}
           </Toolbar.Trigger>

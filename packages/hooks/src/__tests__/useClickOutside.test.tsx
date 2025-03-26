@@ -1,8 +1,17 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import { useClickOutside } from "../useClickOutside";
 
-const handler = jest.fn();
+import { test, vi, afterEach, describe, expect } from "vitest";
+import { screen, render, cleanup, fireEvent } from "@testing-library/react";
+
+import { useClickOutside } from "../";
+
+afterEach(async () => {
+  vi.clearAllMocks();
+  vi.resetModules();
+  cleanup();
+});
+
+const handler = vi.fn();
 const Component = () => {
   const ref = React.useRef<HTMLDivElement>(null);
   useClickOutside<HTMLDivElement>(ref, handler);
@@ -11,15 +20,13 @@ const Component = () => {
 };
 
 describe("useClickOutside", () => {
-  afterEach(() => jest.clearAllMocks());
-
-  it("Call the handler function when clicking outside the element", () => {
+  test("Call the handler function when clicking outside the element", () => {
     const { container } = render(<Component />);
     fireEvent.mouseDown(container, { clientX: 0, clientY: 0 });
 
     expect(handler).toHaveBeenCalledTimes(1);
   });
-  it("Do not call the handler function when clicking inside the element", () => {
+  test("Do not call the handler function when clicking inside the element", () => {
     render(<Component />);
 
     fireEvent.mouseDown(screen.getByText("Test Component"), {

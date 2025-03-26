@@ -76,7 +76,7 @@ const Switch = (props: ISwitchProperties) => {
       value={String(states.checked)}
       aria-label={`${id}-switch-trigger`}
       aria-checked={Boolean(states.checked)}
-      data-disabled={String(disabled || false)}
+      data-disabled={String(disabled ?? false)}
       data-variant={variant}
       data-size={sizing}
       data-raw={Boolean(raw)}
@@ -107,7 +107,7 @@ const SwitchThumb = (props: ISwitchThumbProperties) => {
       aria-label={`${id}-switch-thumb`}
       data-checked={states.checked}
       data-raw={Boolean(raw)}
-      data-size={sizing || ComponentSizeEnum.Medium}
+      data-size={sizing ?? ComponentSizeEnum.Medium}
       {...props}
     />
   );

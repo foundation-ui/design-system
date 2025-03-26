@@ -67,18 +67,18 @@ const Checkbox = (props: ICheckboxProperties) => {
     <CheckboxWrapper
       role="checkbox"
       aria-hidden="true"
-      data-state={value || defaultValue}
+      data-state={value ?? defaultValue}
       data-disabled={disabled}
       data-raw={Boolean(raw)}
       data-size={sizing}
       data-variant={variant}
-      aria-label={props["aria-label"] || `${name}-checkbox`}
+      aria-label={props["aria-label"] ?? `${name}-checkbox`}
     >
       <NativeInput
         type="checkbox"
         tabIndex={0}
         name={name}
-        value={value || defaultValue}
+        value={value ?? defaultValue}
         defaultChecked={Boolean(states.checked)}
         required={required}
         disabled={disabled}
@@ -88,7 +88,7 @@ const Checkbox = (props: ICheckboxProperties) => {
         aria-disabled={Boolean(disabled)}
         aria-required={Boolean(required)}
         aria-checked={Boolean(states.checked)}
-        aria-label={props["aria-label"] || `${name}-native-checkbox`}
+        aria-label={props["aria-label"] ?? `${name}-native-checkbox`}
         {...restProps}
       />
       {children}
@@ -111,7 +111,7 @@ const CheckboxIndicator = (props: React.ComponentProps<"span">) => {
     <React.Fragment>
       {states.checked && (
         <Indicator {...restProps}>
-          {children || (
+          {children ?? (
             <svg
               tabIndex={-1}
               aria-hidden="true"

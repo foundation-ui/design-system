@@ -1,7 +1,15 @@
 import React from "react";
-import { render, screen, fireEvent, act } from "@testing-library/react";
+
+import { test, vi, afterEach, describe, expect } from "vitest";
+import { screen, render, cleanup, fireEvent } from "@testing-library/react";
+
 import { useKeyPress } from "../useKeyPress";
-import "@testing-library/jest-dom";
+
+afterEach(async () => {
+  vi.clearAllMocks();
+  vi.resetModules();
+  cleanup();
+});
 
 const Single = () => {
   const keyPressed = useKeyPress("a");
@@ -15,49 +23,48 @@ const Bindkey = () => {
   const keyPressed = useKeyPress("a", true, "ctrlKey");
   return <div>{keyPressed ? "Key pressed" : "Key not pressed"}</div>;
 };
-describe("useKeyPress", () => {
-  afterEach(() => jest.clearAllMocks());
 
-  it("Return false if the target key is not pressed", () => {
+describe("useKeyPress", () => {
+  test("Return false if the target key is not pressed", () => {
     render(<Single />);
 
-    expect(screen.getByText("Key not pressed")).toBeInTheDocument();
+    expect(screen.getByText("Key not pressed")).toBeDefined();
   });
-  it("Return true if the target key is pressed", () => {
+  test("Return true if the target key is pressed", () => {
     render(<Single />);
 
     fireEvent.keyDown(window, { key: "a" });
-    expect(screen.getByText("Key pressed")).toBeInTheDocument();
+    expect(screen.getByText("Key pressed")).toBeDefined();
   });
-  it("Return false if the target key is released", () => {
+  test("Return false if the target key is released", () => {
     render(<Single />);
 
     fireEvent.keyDown(window, { key: "a" });
     fireEvent.keyUp(window, { key: "a" });
-    expect(screen.getByText("Key not pressed")).toBeInTheDocument();
+    expect(screen.getByText("Key not pressed")).toBeDefined();
   });
-  it("Return true if the target key is pressed with a hotkey", () => {
+  test("Return true if the target key is pressed with a hotkey", () => {
     render(<Hotkey />);
 
     fireEvent.keyDown(window, { key: "a", metaKey: true });
-    expect(screen.getByText("Key pressed")).toBeInTheDocument();
+    expect(screen.getByText("Key pressed")).toBeDefined();
   });
-  it("Return false if the target key is pressed without a hotkey", () => {
+  test("Return false if the target key is pressed without a hotkey", () => {
     render(<Hotkey />);
 
     fireEvent.keyDown(window, { key: "a" });
-    expect(screen.getByText("Key not pressed")).toBeInTheDocument();
+    expect(screen.getByText("Key not pressed")).toBeDefined();
   });
-  it("Return true if the target key is pressed with a custom hotkey", () => {
+  test("Return true if the target key is pressed with a custom hotkey", () => {
     render(<Bindkey />);
 
     fireEvent.keyDown(window, { key: "a", ctrlKey: true });
-    expect(screen.getByText("Key pressed")).toBeInTheDocument();
+    expect(screen.getByText("Key pressed")).toBeDefined();
   });
-  it("Return false if the target key is pressed without a custom hotkey", () => {
+  test("Return false if the target key is pressed without a custom hotkey", () => {
     render(<Bindkey />);
 
     fireEvent.keyDown(window, { key: "a" });
-    expect(screen.getByText("Key not pressed")).toBeInTheDocument();
+    expect(screen.getByText("Key not pressed")).toBeDefined();
   });
 });

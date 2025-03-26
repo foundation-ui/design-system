@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.4.7
+
+### Patch Changes
+
+- Update dependencies, Migrate to Vitest, cleanup packagesfrom duplicated/unused code, enhance code reliability
+
 ## 1.4.6
 
 ### Patch Changes

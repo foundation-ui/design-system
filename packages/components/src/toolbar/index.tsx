@@ -96,7 +96,7 @@ const Toolbar = (props: IToolbarBodyProperties) => {
     <ToolbarWrapper
       id={id}
       role="toolbar"
-      aria-label={props["aria-label"] || `${id}-toolbar`}
+      aria-label={props["aria-label"] ?? `${id}-toolbar`}
       aria-controls={`${id}-trigger`}
       aria-expanded={Boolean(states.expanded)}
       aria-orientation={orientation}

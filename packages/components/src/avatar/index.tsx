@@ -49,20 +49,20 @@ export const Avatar = (props: IAvatarProperties) => {
     children,
     ...restProps
   } = props;
-  const sizeLabel = sizing || ComponentSizeEnum.Medium;
+  const sizeLabel = sizing ?? ComponentSizeEnum.Medium;
 
   return (
     <AvatarWrapper
       data-raw={Boolean(raw)}
       data-size={sizing}
       data-status={status}
-      aria-label={props["aria-label"] || `${sizeLabel}-user-avatar`}
+      aria-label={props["aria-label"] ?? `${sizeLabel}-user-avatar`}
       {...restProps}
     >
       {!children && src && (
         <img
           aria-label={`${sizeLabel}-user-avatar-image`}
-          alt={alt || `${sizeLabel}-user-avatar-image`}
+          alt={alt ?? `${sizeLabel}-user-avatar-image`}
           src={src}
         />
       )}

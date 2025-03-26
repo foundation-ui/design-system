@@ -12,7 +12,7 @@ export function applyColorLuminance(hex: THex, luminance: TLuminance): string {
   if (hex.length < 6) return;
 
   const RGBA_PATTERN = /[^0-9a-f]/gi;
-  luminance = luminance || 0;
+  luminance = luminance ?? 0;
   hex = String(hex).replace(RGBA_PATTERN, "");
 
   let RGBHex = "#";
@@ -50,7 +50,7 @@ export const generateAlpha = (Hex: string, amount?: number) => {
   const parsedHEXtoRGB = HEXToRGB(Hex, true);
   const parsedHEXtoHSL = HEXToHSL(Hex, true);
 
-  while (colorValuesArray.length < (amount || 10)) {
+  while (colorValuesArray.length < (amount ?? 10)) {
     const hexAlphaIndex = (colorValuesArray.length + 1) * 10;
     const parsedHex = `#${Hex}${hexAlphaIndex}`;
     const parsedRGBA = `rgba(${parsedHEXtoRGB[0]}, ${parsedHEXtoRGB[1]}, ${
@@ -85,7 +85,7 @@ export const generateVariation = (
 ) => {
   const variationValuesArray: IColorVariation[] = [];
 
-  while (variationValuesArray.length < (amount || 10)) {
+  while (variationValuesArray.length < (amount ?? 10)) {
     const variationHHEXValue = applyColorLuminance(
       Hex,
       setLuminanceTone(luminanceAmountFormatter(variationValuesArray), mode)

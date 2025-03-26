@@ -97,12 +97,12 @@ const AccordionTrigger = (props: IAccordionTriggerProperties) => {
     <Button
       id={String(IdHandler.trigger)}
       value={value}
-      disabled={disabled || false}
+      disabled={disabled ?? false}
       onClick={handleClick}
       aria-expanded={hasSameValueAsContext}
       aria-controls={String(IdHandler.content)}
       data-state={hasSameValueAsContext ? "expanded" : "collapsed"}
-      variant={props.variant || ComponentVariantEnum.Ghost}
+      variant={props.variant ?? ComponentVariantEnum.Ghost}
       {...restProps}
     >
       {children}
@@ -146,7 +146,7 @@ const AccordionContent = (props: IAccordionContentProperties) => {
     <React.Fragment>
       {hasSameValueAsContext && (
         <div
-          role="region"
+          role="article"
           id={String(IdHandler.content)}
           aria-labelledby={String(IdHandler.trigger)}
           aria-expanded={hasSameValueAsContext}

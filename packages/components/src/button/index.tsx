@@ -46,9 +46,9 @@ export const Button = React.forwardRef(
     } = props;
 
     const defaultName = "button";
-    const ariaLabel = `${name || defaultName}-action`;
-    const disabledState = props.disabled || false;
-    const buttonType = props.type || "button";
+    const ariaLabel = `${name ?? defaultName}-action`;
+    const disabledState = props.disabled ?? false;
+    const buttonType = props.type ?? "button";
 
     const buttonDescription = `${ariaLabel}:${buttonType}`;
     const buttonStateDescription = `disabled:${disabledState}`;
@@ -59,7 +59,7 @@ export const Button = React.forwardRef(
         ref={forwardedRef}
         role="button"
         type={buttonType}
-        name={name || defaultName}
+        name={name ?? defaultName}
         aria-label={ariaLabel}
         aria-description={ButtonFullDesc}
         aria-disabled={disabledState}

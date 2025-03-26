@@ -1,5 +1,13 @@
 # @foundation-ui/core
 
+## 1.2.3
+
+### Patch Changes
+
+- Update dependencies, Migrate to Vitest, cleanup packagesfrom duplicated/unused code, enhance code reliability
+- Updated dependencies
+  - @foundation-ui/hooks@1.2.3
+
 ## 1.2.2
 
 ### Patch Changes

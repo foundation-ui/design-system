@@ -12,7 +12,7 @@ export const useSaveOnUnload = ({
   const unloadCallback = async () => {
     const blob = new Blob(
       [JSON.stringify(payload)],
-      options || {
+      options ?? {
         type: "application/json",
       }
     );
@@ -25,7 +25,7 @@ export const useSaveOnUnload = ({
       const xhr = new XMLHttpRequest();
 
       xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-Type", options?.type || "application/json");
+      xhr.setRequestHeader("Content-Type", options?.type ?? "application/json");
       xhr.send(JSON.stringify(payload));
     }
   };

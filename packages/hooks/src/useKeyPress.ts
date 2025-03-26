@@ -15,7 +15,7 @@ export function useKeyPress(
       }
       if (
         hotkey &&
-        event[bindKey || KeyBindingEnum.Meta] &&
+        event[bindKey ?? KeyBindingEnum.Meta] &&
         event.key === targetKey
       ) {
         return setKeyPressed(state);

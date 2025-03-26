@@ -124,7 +124,7 @@ export const generateSequenceTokens = (
       ? generateSequenceVariation({ contrast: value })
       : generateSequenceVariation({
           sequence: sequenceValues,
-          index: key || 0,
+          index: key ?? 0,
         });
 
     return {

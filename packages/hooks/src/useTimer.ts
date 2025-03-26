@@ -6,7 +6,7 @@ export const useTimer = ({ startOnLoad }: { startOnLoad: boolean }) => {
   const [sec, setSecond] = React.useState(0);
 
   React.useEffect(() => {
-    let intervalId: number | undefined;
+    let intervalId: string | number | any;
 
     if (timer) {
       intervalId = setInterval(() => {
