@@ -8,7 +8,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "ci:test": "pnpm exec nx run-many -t test",
+    "ci:test": "pnpm exec nx run-many -t test --coverage.enabled true",
     "ci:build": "pnpm exec nx run-many -t build",
     "ci:release": "pnpm ci:build && pnpm changeset publish"
   },

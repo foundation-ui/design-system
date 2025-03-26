@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.3.7
+
+### Patch Changes
+
+- Fix configs
+
 ## 1.3.6
 
 ### Patch Changes

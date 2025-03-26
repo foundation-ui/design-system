@@ -1,5 +1,11 @@
 # @foundation-ui/hooks
 
+## 1.2.4
+
+### Patch Changes
+
+- Fix configs
+
 ## 1.2.3
 
 ### Patch Changes

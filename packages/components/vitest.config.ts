@@ -5,11 +5,12 @@ export default defineConfig({
     environment: "jsdom",
     coverage: {
       all: true,
+      enabled: true,
       provider: "istanbul",
-      reporter: ["lcov", "html"],
+      reporter: ["lcov", "html", "text", "json-summary", "json"],
       reportOnFailure: true,
       allowExternal: true,
-      exclude: [...coverageConfigDefaults.exclude, "**/*.stories.*"],
+      exclude: [...coverageConfigDefaults.exclude],
     },
   },
 });

@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.4.8
+
+### Patch Changes
+
+- Fix configs
+
 ## 1.4.7
 
 ### Patch Changes
