@@ -3,16 +3,10 @@ import React from "react";
 import { ContentBox, ContentWrapper } from "./styles";
 
 import { applyDataState } from "../utils";
-import {
-  ComponentSideEnum,
-  ComponentSizeEnum,
-  IComponentSize,
-  IComponentStyling,
-} from "../../../../types";
+import { ComponentSideEnum, IComponentStyling } from "../../../../types";
 
 interface ITooltipProperties
   extends IComponentStyling,
-    IComponentSize,
     React.ComponentProps<"span"> {
   delay?: number;
   content: string;
@@ -28,7 +22,6 @@ interface ITooltipProperties
  *
  * @param {ITooltipProperties} props - The props for the Tooltip component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
- * @param {ComponentSizeEnum} props.sizing - The size of the component.
  * @param {number} props.delay - The delay in ms awaited until the Tooltip is displayed. Default to 200ms.
  * @param {string} props.content - The additional content to be rendered inside the Tooltip.
  * @param {ReactNode} props.children - The content to be rendered as Tooltip children.
@@ -160,7 +153,6 @@ const Tooltip = ({
           style={tooltipStyle}
           data-state={applyDataState(visible)}
           data-raw={Boolean(restProps.raw)}
-          data-sizing={restProps.sizing ?? ComponentSizeEnum.Small}
           data-side={
             hasEnoughHorizontalSpace
               ? ComponentSideEnum.Left

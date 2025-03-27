@@ -34,19 +34,9 @@ export const Default: Story = {
     raw: false,
     content: "",
     delay: 200,
-    sizing: "small",
     children: "",
   },
-  argTypes: {
-    sizing: {
-      options: [
-        ComponentSizeEnum.Small,
-        ComponentSizeEnum.Medium,
-        ComponentSizeEnum.Large,
-      ],
-      control: { type: "radio" },
-    },
-  },
+  argTypes: {},
   render: ({ ...args }) => (
     <div className="h-100 w-100 grid justify-center align-center">
       <p className="fs-medium-20 p-large-30">

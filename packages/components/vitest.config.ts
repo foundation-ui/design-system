@@ -10,7 +10,7 @@ export default defineConfig({
       reporter: ["lcov", "html", "text", "json-summary", "json"],
       reportOnFailure: true,
       allowExternal: true,
-      exclude: [...coverageConfigDefaults.exclude],
+      exclude: [...coverageConfigDefaults.exclude, "**/*.stories.*"],
     },
   },
 });
