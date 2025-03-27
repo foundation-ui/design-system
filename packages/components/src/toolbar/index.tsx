@@ -35,7 +35,7 @@ export interface IToolbarItemProperties extends React.ComponentProps<"div"> {
   showfirstchild?: boolean;
 }
 
-export interface IToolbaromposition {
+export interface IToolbarComposition {
   Root: typeof ToolbarRoot;
   Trigger: typeof ToolbarTrigger;
   Item: typeof ToolbarItem;
@@ -118,7 +118,7 @@ const ToolbarRoot = ({ children }: IReactChildren) => {
 ToolbarRoot.displayName = "Toolbar.Root";
 
 /**
- * Accordion.Trigger are used to triggers the expansion and collapse of the associated Toolbar component.
+ * Toolbar.Trigger are used to triggers the expansion and collapse of the associated Toolbar component.
  *
  * **Best practices:**
  *

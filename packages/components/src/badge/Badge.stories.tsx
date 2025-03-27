@@ -2,6 +2,18 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Badge } from "./";
 
+// Duplicated doc: The JSDoc content isn't rendering on Storybook.
+
+/**
+ * Badges are used to convey data or states to the users.
+ *
+ * **Best practices:**
+ *
+ * - Define the hierarchy of badges with different variants.
+ * - Badge label must convey short and understandable information.
+ *
+ */
+
 const meta = {
   title: "Components/Badge",
   component: Badge,
@@ -38,8 +50,10 @@ export const Variants: Story = {
         <Badge variant="primary">Primary</Badge>
         <Badge variant="secondary">Secondary</Badge>
         <Badge variant="border">Border</Badge>
-        <Badge variant="warning">Warning</Badge>
         <Badge variant="meta">Meta</Badge>
+        <Badge variant="success">Success</Badge>
+        <Badge variant="warning">Warning</Badge>
+        <Badge variant="error">Error</Badge>
       </div>
     );
   },

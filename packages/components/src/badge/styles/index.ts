@@ -48,7 +48,7 @@ const BadgeVariantStyles = css`
       color: var(--font-color);
     }
   }
-  &[data-variant="warning"] {
+  &[data-variant="error"] {
     background-color: var(--alpha-red-10);
     color: var(--alpha-red-80);
 
@@ -56,6 +56,26 @@ const BadgeVariantStyles = css`
     &:focus {
       background-color: var(--alpha-red-10);
       color: var(--color-red);
+    }
+  }
+  &[data-variant="warning"] {
+    background-color: var(--alpha-orange-10);
+    color: var(--alpha-orange-80);
+
+    &:hover,
+    &:focus {
+      background-color: var(--alpha-orange-10);
+      color: var(--color-orange);
+    }
+  }
+  &[data-variant="success"] {
+    background-color: var(--alpha-green-10);
+    color: var(--alpha-green-80);
+
+    &:hover,
+    &:focus {
+      background-color: var(--alpha-green-10);
+      color: var(--color-green);
     }
   }
   &[data-variant="meta"] {

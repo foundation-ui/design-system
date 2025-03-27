@@ -45,6 +45,8 @@ const SheetSizeStyles = css`
   }
 `;
 const SheetSideStyles = css`
+  top: 0;
+
   &[data-side="right"] {
     right: 0;
     border-left-color: var(--font-color-alpha-10);
