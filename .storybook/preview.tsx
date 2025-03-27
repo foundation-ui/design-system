@@ -3,10 +3,11 @@ import styled from "styled-components";
 import theme from "./theme";
 
 import { Preview } from "@storybook/react";
-import DocumentationTemplate from "./DocumentationTemplate.mdx";
-import { DesignTokensProvider } from "../packages/tokens";
+
 import { ColorModeProvider } from "../packages/tokens";
 import { ResetStyles, CSSRoot, TypographyRoot } from "../packages/styles";
+
+import DocumentationTemplate from "./DocumentationTemplate.mdx";
 
 const StoriesWrapepr = styled.div`
   position: absolute;
@@ -52,17 +53,15 @@ const preview: Preview = {
   decorators: [
     (Story) => {
       return (
-        <DesignTokensProvider>
-          <ColorModeProvider>
-            <ResetStyles />
-            <CSSRoot />
-            <TypographyRoot />
-            <StoriesWrapepr>
-              <div id="dialog-portal" />
-              <Story />
-            </StoriesWrapepr>
-          </ColorModeProvider>
-        </DesignTokensProvider>
+        <ColorModeProvider>
+          <ResetStyles />
+          <CSSRoot />
+          <TypographyRoot />
+          <StoriesWrapepr>
+            <div id="dialog-portal" />
+            <Story />
+          </StoriesWrapepr>
+        </ColorModeProvider>
       );
     },
   ],
