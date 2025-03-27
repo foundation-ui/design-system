@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.4.0
+
+### Minor Changes
+
+- Cleanup codebase, ship Tooltip, Fix Sheet shortcuts
+
 ## 1.3.7
 
 ### Patch Changes

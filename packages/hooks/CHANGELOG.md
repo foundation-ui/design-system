@@ -1,5 +1,11 @@
 # @foundation-ui/hooks
 
+## 1.3.0
+
+### Minor Changes
+
+- Cleanup codebase, ship Tooltip, Fix Sheet shortcuts
+
 ## 1.2.4
 
 ### Patch Changes

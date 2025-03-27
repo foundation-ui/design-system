@@ -1,5 +1,16 @@
 # @foundation-ui/core
 
+## 1.3.0
+
+### Minor Changes
+
+- Cleanup codebase, ship Tooltip, Fix Sheet shortcuts
+
+### Patch Changes
+
+- Updated dependencies
+  - @foundation-ui/hooks@1.3.0
+
 ## 1.2.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.5.0
+
+### Minor Changes
+
+- Cleanup codebase, ship Tooltip, Fix Sheet shortcuts
+
 ## 1.4.8
 
 ### Patch Changes
