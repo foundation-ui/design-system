@@ -71,17 +71,6 @@ afterEach(async () => {
 });
 
 describe("ColorModeContext", () => {
-  test("Initialize with system preferred mode", () => {
-    render(
-      <ColorModeProvider>
-        <TestComponent />
-      </ColorModeProvider>
-    );
-
-    expect(screen.getByTestId("set-color-mode").textContent).toBe(
-      ColorModesEnum.Dark
-    );
-  });
   test("Switch and persist color mode", () => {
     render(
       <ColorModeProvider>
@@ -140,5 +129,56 @@ describe("ColorModeContext", () => {
     expect(document.documentElement.getAttribute("data-theme")).toBe(
       ColorModesEnum.Light
     );
+  });
+  test("Empty localStorage and Undefined prefers-color-scheme", () => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: vi.fn().mockImplementation(() => ({
+        matches: false,
+        media: "",
+        onchange: null,
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })),
+    });
+
+    render(
+      <ColorModeProvider>
+        <TestComponent />
+      </ColorModeProvider>
+    );
+
+    // Since no color scheme is preferred and localStorage is empty, it should default to system
+    expect(screen.getByTestId("set-color-mode").textContent).toBe("system");
+  });
+  test("Should not break if config is empty and no preference are defined", () => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: vi.fn().mockImplementation(() => ({
+        matches: false,
+        media: "",
+        onchange: null,
+        addListener: vi.fn(),
+        removeListener: vi.fn(),
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })),
+    });
+
+    render(
+      <ColorModeProvider config={{}}>
+        <TestComponent />
+      </ColorModeProvider>
+    );
+
+    const button = screen.getByTestId("set-color-mode");
+    expect(button.textContent).toBe(ColorModesEnum.System);
+  });
+  test("Breaks without ColorModeProvider", () => {
+    expect(() => render(<TestComponent />)).toThrow();
   });
 });

@@ -1,5 +1,4 @@
 /** Contexts */
-export * from "./contexts/DesignTokensProvider";
 export * from "./contexts/ColorModeProvider";
 
 /** Services */

@@ -5,7 +5,7 @@ import {
   calculateContrastScore,
   calculateStackOrder,
   getSequenceUsages,
-} from "../../src/generators/score";
+} from "../";
 
 afterEach(async () => {
   vi.clearAllMocks();

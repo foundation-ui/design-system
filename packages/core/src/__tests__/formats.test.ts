@@ -1,13 +1,6 @@
 import { test, vi, afterEach, describe, expect } from "vitest";
 
-import {
-  PXToREM,
-  PXToPT,
-  HEXToRGB,
-  RGBAToHEX,
-  RGBToHSL,
-  HEXToHSL,
-} from "../../src/generators/formats";
+import { PXToREM, PXToPT, HEXToRGB, RGBAToHEX, RGBToHSL, HEXToHSL } from "../";
 
 afterEach(async () => {
   vi.clearAllMocks();

@@ -7,7 +7,7 @@ import {
   getRelativeLuminance,
   generateAlpha,
   generateVariation,
-} from "../../src/generators/colors";
+} from "../";
 
 afterEach(async () => {
   vi.clearAllMocks();

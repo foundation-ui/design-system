@@ -7,8 +7,8 @@ import {
   generateSequenceTokens,
   generateTokensFromTemplate,
   generateTokensLibrary,
-} from "../../src/generators/tokens";
-import { generateSequences } from "../../src/generators/modular-sequence";
+  generateSequences,
+} from "../";
 
 afterEach(async () => {
   vi.clearAllMocks();

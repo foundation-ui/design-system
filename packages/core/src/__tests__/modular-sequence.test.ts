@@ -1,8 +1,5 @@
 import { test, vi, afterEach, describe, expect } from "vitest";
-import {
-  generateModularScales,
-  generateSequences,
-} from "../../src/generators/modular-sequence";
+import { generateModularScales, generateSequences } from "../";
 
 afterEach(async () => {
   vi.clearAllMocks();
