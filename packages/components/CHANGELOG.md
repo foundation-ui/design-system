@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.4.4
+
+### Patch Changes
+
+- Update Portal fix
+
 ## 1.4.3
 
 ### Patch Changes

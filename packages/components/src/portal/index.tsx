@@ -15,17 +15,16 @@ export interface IPortalProperties {
  * @returns {ReactElement} The Portal component.
  */
 export const Portal = (props: IPortalProperties) => {
+  if (typeof document === "undefined") return null;
+
   const { container, children } = props;
 
   const [hasMounted, setHasMounted] = React.useState<boolean>(false);
   const PortalRoot = document.querySelector(`#${container}`);
 
-  if (typeof document === "undefined") return null;
-
   React.useEffect(() => setHasMounted(true), []);
 
   if (!hasMounted || !PortalRoot) return null;
-
   return ReactDOM.createPortal(children, PortalRoot);
 };
 Portal.displayName = "Portal";
