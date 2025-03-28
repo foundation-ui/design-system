@@ -18,11 +18,11 @@ export const Portal = (props: IPortalProperties) => {
   const { container, children } = props;
 
   const [hasMounted, setHasMounted] = React.useState<boolean>(false);
-  const PortalRoot = document.querySelector(`#${container}`)!;
+  const PortalRoot = document?.querySelector(`#${container}`) ?? null;
 
   React.useEffect(() => setHasMounted(true), []);
 
-  if (!hasMounted) return null;
+  if (!hasMounted || !PortalRoot) return null;
   return ReactDOM.createPortal(children, PortalRoot);
 };
 Portal.displayName = "Portal";

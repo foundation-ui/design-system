@@ -18,7 +18,7 @@ export const OverlayWrapper = styled.div<any>`
   z-index: var(--depth-default-90);
 
   &[data-raw="false"] {
-    background-color: var(--alpha-mono-darkest-60);
+    background-color: rgba(0, 0, 0, 0.6); // Always forced to black
     animation-duration: 0.2s;
     animation-name: animate-fade;
     animation-fill-mode: backwards;

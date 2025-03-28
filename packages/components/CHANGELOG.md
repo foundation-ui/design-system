@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.4.2
+
+### Patch Changes
+
+- Prevent Overlay to break on SSR rendering
+
 ## 1.4.1
 
 ### Patch Changes
