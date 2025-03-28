@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useDialog, DialogProvider } from "./hooks";
 import { useDisabledScroll } from "@foundation-ui/hooks";

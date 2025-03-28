@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Children } from "react";
 import { TabsProvider, useTabs } from "./hooks";
 import { Button, IButtonProperties } from "../button";

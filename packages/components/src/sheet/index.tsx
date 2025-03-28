@@ -1,9 +1,11 @@
+"use client";
+
 import React from "react";
 
 import { useKeyPress, useDisabledScroll } from "@foundation-ui/hooks";
 import { SheetProvider, useSheet } from "./hooks";
 
-import { ScrollArea, Button, Overlay } from "../";
+import { Button, Overlay } from "../";
 import { SheetWrapper } from "./styles";
 
 import { applyDataState } from "../utils";

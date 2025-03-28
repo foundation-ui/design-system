@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { ScrollArea, IScrollAreaProperties } from "../scrollarea";
 import {

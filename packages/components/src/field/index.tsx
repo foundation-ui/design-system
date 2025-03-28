@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { FieldProvider, useField } from "./hooks";
 import { Fieldset, Sup, Input, Label, Def } from "./styles";

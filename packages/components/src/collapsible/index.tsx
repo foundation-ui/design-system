@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+
 import { CollapsibleProvider, useCollapsible } from "./hooks";
 import { Button, IButtonProperties } from "..";
 import { applyDataState } from "../utils";

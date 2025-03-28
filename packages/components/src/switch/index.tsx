@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { SwitchProvider, useSwitch } from "./hooks";
 import { TriggerWrapper, Thumb } from "./styles";

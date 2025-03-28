@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { AccordionProvider, useAccordion } from "./hooks";
 import { Button, IButtonProperties } from "../button";

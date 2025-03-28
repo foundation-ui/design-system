@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { CheckboxProvider, useCheckbox } from "./hooks";
 import { CheckboxWrapper, NativeInput, Indicator } from "./styles";

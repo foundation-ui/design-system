@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { useClickOutside, useDisabledScroll } from "@foundation-ui/hooks";
 import { DropdownMenuProvider, useDropdownMenu } from "./hooks";

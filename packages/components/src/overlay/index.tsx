@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { OverlayWrapper } from "./styles";
 import { IComponentStyling } from "../../../../types";

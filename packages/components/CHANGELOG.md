@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.4.5
+
+### Patch Changes
+
+- Update components to always render on client
+
 ## 1.4.4
 
 ### Patch Changes
