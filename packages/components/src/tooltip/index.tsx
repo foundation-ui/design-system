@@ -51,9 +51,40 @@ const Tooltip = ({
     height: number;
   } | null>(null);
 
+  const mounted = React.useRef(false);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const contentRef = React.useRef<HTMLDivElement>(null);
   const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const contentRect = () => contentRef?.current?.getBoundingClientRect();
+  const bodyRect = React.useCallback(() => {
+    if (typeof document !== "undefined") {
+      return document.body.getBoundingClientRect();
+    }
+  }, []);
+
+  const positions = {
+    btt: `calc((${triggerProps?.top}px - ${contentProps?.height}px) - (var(--measurement-medium-10)))`,
+    ttb: `calc((${triggerProps?.top}px + ${triggerProps?.height}px) + var(--measurement-medium-10))`,
+    ltr: `${triggerProps?.left}px`,
+    rtl: `calc(${triggerProps?.left}px - (${contentProps?.width}px - ${triggerProps?.width}px))`,
+  };
+  const dimensions = {
+    body_width: bodyRect()?.width,
+    body_height: bodyRect()?.height,
+    content_width: contentProps?.width,
+    content_height: contentProps?.height,
+    content_left: contentProps?.left,
+    content_bottom: contentProps?.bottom,
+  };
+
+  const hasEnoughHorizontalSpace =
+    Number(dimensions.body_width) - Number(dimensions.content_left) >
+    Number(dimensions.content_width) * 1.1;
+
+  const hasEnoughVerticalSpace =
+    Number(dimensions.body_height) - Number(dimensions.content_bottom) >
+    Number(dimensions.content_height) * 0.9;
 
   const showTooltip = React.useCallback(() => {
     timeoutRef.current = setTimeout(() => setVisible(true), delay);
@@ -85,58 +116,22 @@ const Tooltip = ({
   );
 
   React.useEffect(() => {
-    if (visible) {
-      const rect = contentRef.current?.getBoundingClientRect();
-      if (rect) {
-        setContentProps({
-          top: rect.top,
-          right: rect.right,
-          bottom: rect.bottom,
-          left: rect.left,
-          width: rect.width,
-          height: rect.height,
-        });
-      }
-    }
+    mounted.current = true;
+
+    setContentProps &&
+      setContentProps({
+        top: Number(contentRect()?.top),
+        right: Number(contentRect()?.right),
+        bottom: Number(contentRect()?.bottom),
+        left: Number(contentRect()?.left),
+        width: Number(contentRect()?.width),
+        height: Number(contentRect()?.height),
+      });
+
+    return () => {
+      mounted.current = false;
+    };
   }, [visible]);
-
-  const bodyRect = React.useCallback(() => {
-    if (typeof document !== "undefined") {
-      return document.body.getBoundingClientRect();
-    }
-    return null;
-  }, []);
-
-  const positions = {
-    btt: `calc((${triggerProps?.top}px - ${contentProps?.height}px) - (var(--measurement-medium-10)))`,
-    ttb: `calc((${triggerProps?.top}px + ${triggerProps?.height}px) + var(--measurement-medium-10))`,
-    ltr: `${triggerProps?.left}px`,
-    rtl: `calc(${triggerProps?.left}px - (${contentProps?.width}px - ${triggerProps?.width}px))`,
-  };
-
-  const dimensions = {
-    body_width: bodyRect()?.width,
-    body_height: bodyRect()?.height,
-    content_width: contentProps?.width,
-    content_height: contentProps?.height,
-    content_left: contentProps?.left,
-    content_bottom: contentProps?.bottom,
-    content_top: contentProps?.top,
-  };
-
-  const hasEnoughHorizontalSpace =
-    Number(dimensions.body_width) - Number(dimensions.content_left) >
-    Number(dimensions.content_width) * 2.1;
-
-  const hasEnoughVerticalSpace =
-    Number(dimensions.body_height) - Number(dimensions.content_bottom) >
-    Number(dimensions.content_height) - Number(dimensions.content_height) * 1.9;
-
-  const tooltipStyle = {
-    top: hasEnoughVerticalSpace ? positions.ttb : positions.btt,
-    left: hasEnoughHorizontalSpace ? positions.ltr : positions.rtl,
-    position: "fixed",
-  };
 
   return (
     <ContentBox
@@ -150,7 +145,11 @@ const Tooltip = ({
       {visible && (
         <ContentWrapper
           ref={contentRef}
-          style={tooltipStyle}
+          style={{
+            top: hasEnoughVerticalSpace ? positions.ttb : positions.btt,
+            left: hasEnoughHorizontalSpace ? positions.ltr : positions.rtl,
+            position: "fixed",
+          }}
           data-state={applyDataState(visible)}
           data-raw={Boolean(restProps.raw)}
           data-side={

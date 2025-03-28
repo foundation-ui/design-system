@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.4.1
+
+### Patch Changes
+
+- Fix Tooltip's positioning behavior
+
 ## 1.4.0
 
 ### Minor Changes
