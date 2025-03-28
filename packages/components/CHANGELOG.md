@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.4.3
+
+### Patch Changes
+
+- Prevent Portal to Break during SSR
+
 ## 1.4.2
 
 ### Patch Changes
