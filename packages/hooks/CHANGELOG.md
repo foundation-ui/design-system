@@ -1,5 +1,11 @@
 # @foundation-ui/hooks
 
+## 1.3.1
+
+### Patch Changes
+
+- Add @fui/icon, @fui/analytics; Update name in License
+
 ## 1.3.0
 
 ### Minor Changes
