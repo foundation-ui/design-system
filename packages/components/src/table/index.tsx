@@ -10,6 +10,12 @@ import {
   CellWrapper,
 } from "./styles";
 
+/**
+ * Table component that provides a scrollable table with styled elements
+ *
+ * @param {IScrollAreaProperties & React.ComponentProps<"table">} props - The props for the Table component
+ * @returns {React.ReactElement} The Table component
+ */
 const Table = ({
   children,
   ...restProps
@@ -24,6 +30,12 @@ const Table = ({
 };
 Table.displayName = "Table";
 
+/**
+ * Table head component
+ *
+ * @param {React.ComponentProps<"thead">} props - The props for the TableHead component
+ * @returns {React.ReactElement} The TableHead component
+ */
 const TableHead = ({
   children,
   ...restProps
@@ -32,6 +44,12 @@ const TableHead = ({
 };
 TableHead.displayName = "Table.Head";
 
+/**
+ * Table body component
+ *
+ * @param {React.ComponentProps<"tbody">} props - The props for the TableBody component
+ * @returns {React.ReactElement} The TableBody component
+ */
 const TableBody = ({
   children,
   ...restProps
@@ -40,6 +58,12 @@ const TableBody = ({
 };
 TableBody.displayName = "Table.Body";
 
+/**
+ * Table head cell component
+ *
+ * @param {React.ComponentProps<"th">} props - The props for the TableHeadCell component
+ * @returns {React.ReactElement} The TableHeadCell component
+ */
 const TableHeadCell = ({
   children,
   ...restProps
@@ -52,6 +76,12 @@ const TableHeadCell = ({
 };
 TableHeadCell.displayName = "Table.HeadCell";
 
+/**
+ * Table row component
+ *
+ * @param {React.ComponentProps<"tr">} props - The props for the TableRow component
+ * @returns {React.ReactElement} The TableRow component
+ */
 const TableRow = ({ children, ...restProps }: React.ComponentProps<"tr">) => {
   return (
     <RowWrapper className="p-medium-30" {...restProps}>
@@ -61,6 +91,12 @@ const TableRow = ({ children, ...restProps }: React.ComponentProps<"tr">) => {
 };
 TableRow.displayName = "Table.Row";
 
+/**
+ * Table cell component
+ *
+ * @param {React.ComponentProps<"td">} props - The props for the TableCell component
+ * @returns {React.ReactElement} The TableCell component
+ */
 const TableCell = ({ children, ...restProps }: React.ComponentProps<"td">) => {
   return (
     <CellWrapper {...restProps}>
@@ -70,6 +106,12 @@ const TableCell = ({ children, ...restProps }: React.ComponentProps<"td">) => {
 };
 TableCell.displayName = "Table.Cell";
 
+/**
+ * Table footer component
+ *
+ * @param {React.ComponentProps<"tfoot">} props - The props for the TableFooter component
+ * @returns {React.ReactElement} The TableFooter component
+ */
 const TableFooter = ({
   children,
   ...restProps

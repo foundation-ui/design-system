@@ -63,6 +63,7 @@ const Checkbox = (props: ICheckboxProperties) => {
 
   React.useEffect(() => {
     if (defaultChecked && applyChecked) applyChecked(defaultChecked);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -110,7 +111,7 @@ const CheckboxIndicator = (props: React.ComponentProps<"span">) => {
   const { children, ...restProps } = props;
 
   return (
-    <React.Fragment>
+    <>
       {states.checked && (
         <Indicator {...restProps}>
           {children ?? (
@@ -135,7 +136,7 @@ const CheckboxIndicator = (props: React.ComponentProps<"span">) => {
           )}
         </Indicator>
       )}
-    </React.Fragment>
+    </>
   );
 };
 CheckboxIndicator.displayName = "Checkbox.Indicator";

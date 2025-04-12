@@ -15,7 +15,6 @@ export interface IButtonProperties
     IComponentSize,
     IComponentVariant,
     React.ComponentPropsWithRef<"button"> {
-  ref?: any;
   rawicon?: boolean;
 }
 
@@ -35,8 +34,8 @@ export interface IButtonProperties
  * @param {ReactNode} props.children - The content to be rendered inside the button.
  * @returns {ReactElement} The Button component.
  */
-export const Button = React.forwardRef(
-  (props: IButtonProperties, forwardedRef): React.ReactElement => {
+export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
+  (props, forwardedRef): React.ReactElement => {
     const {
       name,
       variant = ComponentVariantEnum.Mono,

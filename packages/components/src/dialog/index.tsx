@@ -60,12 +60,13 @@ const Dialog = (props: IDialogItemProperties) => {
 
   React.useEffect(() => {
     if (open && toggleDialog) toggleDialog();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (lock) useDisabledScroll(Boolean(states.open));
 
   return (
-    <React.Fragment>
+    <>
       {states.open && (
         <ScrollArea
           as={DialogWrapper}
@@ -82,7 +83,7 @@ const Dialog = (props: IDialogItemProperties) => {
           {children}
         </ScrollArea>
       )}
-    </React.Fragment>
+    </>
   );
 };
 Dialog.displayName = "Dialog";

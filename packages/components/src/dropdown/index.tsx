@@ -137,108 +137,106 @@ DropdownMenuTrigger.displayName = "DropdownMenu.Trigger";
  * @param {ReactNode} props.children - The content to be rendered inside the dropdown menu.
  * @returns {ReactElement} The DropdownMenu.Content component.
  */
-const DropdownMenuContent = React.forwardRef(
-  (props: IDropdownContentProperties, _) => {
-    const {
-      raw,
-      sizing = "medium",
-      defaultOpen,
-      children,
-      ...restProps
-    } = props;
-    const { id, states, methods } = useDropdownMenu();
-    const { toggleOpen, setContentProps } = methods;
+const DropdownMenuContent = React.forwardRef<
+  HTMLUListElement,
+  IDropdownContentProperties
+>((props, _) => {
+  const { raw, sizing = "medium", defaultOpen, children, ...restProps } = props;
+  const { id, states, methods } = useDropdownMenu();
+  const { toggleOpen, setContentProps } = methods;
 
-    const mounted = React.useRef(false);
-    const contentRef = React.useRef<HTMLDivElement>(null);
+  const mounted = React.useRef(false);
+  const contentRef = React.useRef<HTMLDivElement>(null);
 
-    const contentRect = () => contentRef?.current?.getBoundingClientRect();
-    const bodyRect = (): any => {
-      if (typeof document !== "undefined") {
-        return document?.body?.getBoundingClientRect();
-      }
+  const contentRect = () => contentRef?.current?.getBoundingClientRect();
+  const bodyRect = (): DOMRect | undefined => {
+    if (typeof document !== "undefined") {
+      return document?.body?.getBoundingClientRect();
+    }
+    return undefined;
+  };
+
+  const positions = {
+    btt: `calc((${states?.triggerProps?.top}px - ${states?.contentProps?.height}px) - (var(--measurement-medium-10) * 2))`,
+    ttb: `calc((${states?.triggerProps?.top}px + ${states?.triggerProps?.height}px) + var(--measurement-medium-10))`,
+    ltr: `${states?.triggerProps?.left}px`,
+    rtl: `calc(${states?.triggerProps?.left}px - (${states?.contentProps?.width}px - ${states?.triggerProps?.width}px))`,
+  };
+  const dimensions = {
+    body_width: bodyRect()?.width ?? 0,
+    body_height: bodyRect()?.height ?? 0,
+    content_width: states.contentProps.width,
+    content_height: states.contentProps.height,
+    content_left: states.contentProps.left,
+    content_bottom: states.contentProps.bottom,
+  };
+
+  const hasEnoughHorizontalSpace =
+    dimensions.body_width - dimensions.content_left >
+    dimensions.content_width * 1.1;
+
+  const hasEnoughVerticalSpace =
+    dimensions.body_height - dimensions.content_bottom >
+    dimensions.content_height - dimensions.content_height * 0.9;
+
+  React.useEffect(() => {
+    if (defaultOpen && toggleOpen) toggleOpen();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  React.useEffect(() => {
+    mounted.current = true;
+
+    setContentProps &&
+      setContentProps({
+        top: Number(contentRect()?.top),
+        right: Number(contentRect()?.right),
+        bottom: Number(contentRect()?.bottom),
+        left: Number(contentRect()?.left),
+        width: Number(contentRect()?.width),
+        height: Number(contentRect()?.height),
+      });
+
+    return () => {
+      mounted.current = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [states.open]);
 
-    const positions = {
-      btt: `calc((${states?.triggerProps?.top}px - ${states?.contentProps?.height}px) - (var(--measurement-medium-10) * 2))`,
-      ttb: `calc((${states?.triggerProps?.top}px + ${states?.triggerProps?.height}px) + var(--measurement-medium-10))`,
-      ltr: `${states?.triggerProps?.left}px`,
-      rtl: `calc(${states?.triggerProps?.left}px - (${states?.contentProps?.width}px - ${states?.triggerProps?.width}px))`,
-    };
-    const dimensions = {
-      body_width: bodyRect()?.width,
-      body_height: bodyRect()?.height,
-      content_width: states.contentProps.width,
-      content_height: states.contentProps.height,
-      content_left: states.contentProps.left,
-      content_bottom: states.contentProps.bottom,
-    };
-
-    const hasEnoughHorizontalSpace =
-      dimensions.body_width - dimensions.content_left >
-      dimensions.content_width * 1.1;
-
-    const hasEnoughVerticalSpace =
-      dimensions.body_height - dimensions.content_bottom >
-      dimensions.content_height - dimensions.content_height * 0.9;
-
-    React.useEffect(() => {
-      if (defaultOpen && toggleOpen) toggleOpen();
-    }, []);
-
-    React.useEffect(() => {
-      mounted.current = true;
-
-      setContentProps &&
-        setContentProps({
-          top: Number(contentRect()?.top),
-          right: Number(contentRect()?.right),
-          bottom: Number(contentRect()?.bottom),
-          left: Number(contentRect()?.left),
-          width: Number(contentRect()?.width),
-          height: Number(contentRect()?.height),
-        });
-
-      return () => {
-        mounted.current = false;
-      };
-    }, [states.open]);
-
-    return (
-      <React.Fragment>
-        {states.open && (
-          <ContentWrapper
-            ref={contentRef}
-            id={id.split("|").at(-1)}
-            role="menu"
-            tabIndex={-1}
-            aria-labelledby={id.split("|").at(0)}
-            data-state={applyDataState(Boolean(states.open))}
-            data-sizing={sizing}
-            data-side={
-              hasEnoughHorizontalSpace
-                ? ComponentSideEnum.Left
-                : ComponentSideEnum.Right
-            }
-            data-align={
-              hasEnoughHorizontalSpace
-                ? ComponentSideEnum.Left
-                : ComponentSideEnum.Right
-            }
-            data-raw={Boolean(raw)}
-            style={{
-              top: hasEnoughVerticalSpace ? positions.ttb : positions.btt,
-              left: hasEnoughHorizontalSpace ? positions.ltr : positions.rtl,
-            }}
-            {...restProps}
-          >
-            {children}
-          </ContentWrapper>
-        )}
-      </React.Fragment>
-    );
-  }
-);
+  return (
+    <>
+      {states.open && (
+        <ContentWrapper
+          ref={contentRef}
+          id={id.split("|").at(-1)}
+          role="menu"
+          tabIndex={-1}
+          aria-labelledby={id.split("|").at(0)}
+          data-state={applyDataState(Boolean(states.open))}
+          data-sizing={sizing}
+          data-side={
+            hasEnoughHorizontalSpace
+              ? ComponentSideEnum.Left
+              : ComponentSideEnum.Right
+          }
+          data-align={
+            hasEnoughHorizontalSpace
+              ? ComponentSideEnum.Left
+              : ComponentSideEnum.Right
+          }
+          data-raw={Boolean(raw)}
+          style={{
+            top: hasEnoughVerticalSpace ? positions.ttb : positions.btt,
+            left: hasEnoughHorizontalSpace ? positions.ltr : positions.rtl,
+          }}
+          {...restProps}
+        >
+          {children}
+        </ContentWrapper>
+      )}
+    </>
+  );
+});
 DropdownMenuContent.displayName = "DropdownMenu.Content";
 
 /**

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button, IButtonProperties } from "..//button";
+import { Button, IButtonProperties } from "../button";
 
 export interface IToggleProperties extends IButtonProperties {
   defaultChecked?: boolean;
@@ -28,11 +28,13 @@ export const Toggle = (props: IToggleProperties) => {
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
-    if (!disabled) setChecked(!checked);
+    if (!disabled) setChecked((prevChecked) => !prevChecked);
   };
 
   React.useEffect(() => {
-    if (defaultChecked) setChecked(true);
+    if (defaultChecked !== undefined) {
+      setChecked(Boolean(defaultChecked));
+    }
   }, [defaultChecked]);
 
   return (
@@ -43,6 +45,7 @@ export const Toggle = (props: IToggleProperties) => {
       aria-checked={checked}
       data-checked={Boolean(checked)}
       data-disabled={Boolean(disabled)}
+      disabled={disabled}
       {...restProps}
     >
       {children}

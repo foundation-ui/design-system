@@ -113,6 +113,7 @@ const CollapsibleContent = (props: ICollapsibleProperties) => {
 
   React.useEffect(() => {
     if (defaultOpen && applyDefaultOpen) applyDefaultOpen();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

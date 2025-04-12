@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import ReactDOM from "react-dom";
+import { createPortal } from "react-dom";
 
 export interface IPortalProperties {
   container: string;
@@ -17,16 +17,20 @@ export interface IPortalProperties {
  * @returns {ReactElement} The Portal component.
  */
 export const Portal = (props: IPortalProperties) => {
+  // Handle SSR in Next.js and Electron's renderer process
   if (typeof document === "undefined") return null;
 
   const { container, children } = props;
 
   const [hasMounted, setHasMounted] = React.useState<boolean>(false);
-  const PortalRoot = document.querySelector(`#${container}`);
+  const [portalRoot, setPortalRoot] = React.useState<Element | null>(null);
 
-  React.useEffect(() => setHasMounted(true), []);
+  React.useEffect(() => {
+    setHasMounted(true);
+    setPortalRoot(document.querySelector(`#${container}`));
+  }, [container]);
 
-  if (!hasMounted || !PortalRoot) return null;
-  return ReactDOM.createPortal(children, PortalRoot);
+  if (!hasMounted || !portalRoot) return null;
+  return createPortal(children, portalRoot);
 };
 Portal.displayName = "Portal";

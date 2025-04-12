@@ -7,6 +7,7 @@ import {
   IToolbarSectionProperties,
   ScrollArea,
   IScrollAreaProperties,
+  IButtonProperties,
 } from "..";
 import {
   PageRootWrapper,
@@ -16,20 +17,12 @@ import {
   PageSectionWrapper,
   PageBodyWrapper,
 } from "./styles";
-import {
-  IComponentStyling,
-  IComponentSize,
-  IComponentVariant,
-} from "../../../../types";
 
 export interface IPageToolsProperties
   extends IToolbarBodyProperties,
     IToolbarSectionProperties {
   trigger?: React.ReactNode | string;
-  triggerProps?: IComponentStyling &
-    IComponentSize &
-    IComponentVariant &
-    React.ComponentProps<"button">;
+  triggerProps?: IButtonProperties;
   fixed?: boolean;
 }
 export interface IPageWrapperProperties {

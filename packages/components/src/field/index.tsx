@@ -62,7 +62,7 @@ export interface IFieldComposition {
  * @param {string} props.hint - The hint message to display.
  * @returns {ReactElement} The Field component.
  */
-const Field: React.FC<IField> & IFieldComposition = (props: IField) => {
+const Field = (props: IField) => {
   const {
     raw,
     sizing = ComponentSizeEnum.Medium,
@@ -76,7 +76,7 @@ const Field: React.FC<IField> & IFieldComposition = (props: IField) => {
   const { id } = useField();
 
   return (
-    <React.Fragment>
+    <>
       <Input
         id={id}
         aria-invalid={!!error}
@@ -96,7 +96,7 @@ const Field: React.FC<IField> & IFieldComposition = (props: IField) => {
           {error ?? hint}
         </FieldMeta>
       )}
-    </React.Fragment>
+    </>
   );
 };
 Field.displayName = "Field";

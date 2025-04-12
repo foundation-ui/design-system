@@ -54,3 +54,5 @@ export const Badge = (props: IBadgeProperties) => {
     </BadgeWrapper>
   );
 };
+
+Badge.displayName = "Badge";

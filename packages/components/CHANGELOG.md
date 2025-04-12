@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.4.6
+
+### Patch Changes
+
+- Components maintenance
+
 ## 1.4.5
 
 ### Patch Changes

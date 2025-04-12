@@ -152,6 +152,7 @@ const Tooltip = ({
             left: hasEnoughHorizontalSpace ? positions.ltr : positions.rtl,
             position: "fixed",
           }}
+          role="tooltip"
           data-state={applyDataState(visible)}
           data-raw={Boolean(restProps.raw)}
           data-side={

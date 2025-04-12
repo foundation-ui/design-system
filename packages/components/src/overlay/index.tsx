@@ -42,7 +42,7 @@ export const Overlay = (props: IOverlayProperties) => {
   }, [visible]);
 
   return (
-    <React.Fragment>
+    <>
       {mounted && (
         <OverlayWrapper
           tabIndex={-1}
@@ -52,7 +52,7 @@ export const Overlay = (props: IOverlayProperties) => {
           {...restProps}
         />
       )}
-    </React.Fragment>
+    </>
   );
 };
-Overlay.displayName = "Button";
+Overlay.displayName = "Overlay";
