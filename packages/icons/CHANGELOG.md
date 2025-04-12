@@ -1,5 +1,11 @@
 # @foundation-ui/icons
 
+## 1.1.1
+
+### Patch Changes
+
+- Patch PixelIcon exports and -path declarations
+
 ## 1.1.0
 
 ### Minor Changes
