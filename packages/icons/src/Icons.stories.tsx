@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import type { Meta } from "@storybook/react";
 
-import { PixelIcon, WebIcon } from "./";
+import { Icon, PixelIcon, SocialIcon, WebIcon } from "./";
 
 const meta = {
   title: "Icon/Library",
@@ -242,6 +242,17 @@ export const PixelIcons = {
           <PixelIcon>{icon}</PixelIcon>
         </Box>
       ))}
+    </GridLayout>
+  ),
+};
+export const SocialIcons = {
+  render: () => (
+    <GridLayout>
+      <Box>
+        <Icon width={24} height={24}>
+          <SocialIcon.Foundation />
+        </Icon>
+      </Box>
     </GridLayout>
   ),
 };

@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.4.7
+
+### Patch Changes
+
+- Fix Button Styles, Update FUI SocialIcon
+
 ## 1.4.6
 
 ### Patch Changes

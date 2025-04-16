@@ -1,5 +1,11 @@
 # @foundation-ui/icons
 
+## 1.1.2
+
+### Patch Changes
+
+- Fix Button Styles, Update FUI SocialIcon
+
 ## 1.1.1
 
 ### Patch Changes
