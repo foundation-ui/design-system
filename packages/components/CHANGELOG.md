@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.4.8
+
+### Patch Changes
+
+- Export component hooks
+
 ## 1.4.7
 
 ### Patch Changes

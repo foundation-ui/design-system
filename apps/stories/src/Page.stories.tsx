@@ -40,7 +40,12 @@ const Navbar = () => {
           src="https://avatars.githubusercontent.com/u/59123840?v=4"
           sizing="small"
         />
-        <Badge variant="border">V.1.0.0</Badge>
+        <Badge variant="border" className="flex g-medium-30">
+          <Badge variant="secondary">
+            <small>&beta;</small>
+          </Badge>
+          Public Beta
+        </Badge>
         <Button variant="ghost" sizing="small">
           Docs
         </Button>

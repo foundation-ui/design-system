@@ -16,7 +16,7 @@ interface ITooltipProperties
 }
 
 /**
- * Toolpire are used to convey additional information while hovering a component.
+ * Tooltips are used to convey additional information while hovering a component.
  *
  * **Best practices:**
  *

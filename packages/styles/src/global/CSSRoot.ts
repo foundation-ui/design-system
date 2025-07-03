@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { js_design_tokens } from "@foundation-ui/tokens";
 import {
   generateCSSVariables,

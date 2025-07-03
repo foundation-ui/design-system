@@ -21,13 +21,14 @@ const SwitchVariantsStyles = css`
       border-color: var(--font-color-alpha-10);
     }
     &[aria-checked="false"] {
-      background-color: var(--body-color-alpha-10);
+      background-color: var(--font-color-alpha-10);
+      border-color: var(--font-color-alpha-10);
     }
   }
   &[data-variant="secondary"] {
     &[aria-checked="true"] {
-      background-color: var(--body-color-alpha-10);
-      border-color: var(--body-color-alpha-10);
+      background-color: var(--font-color-alpha-10);
+      border-color: var(--font-color-alpha-10);
     }
     &[aria-checked="false"] {
       background-color: var(--body-color-alpha-10);
@@ -36,7 +37,8 @@ const SwitchVariantsStyles = css`
 
   &[data-variant="ghost"] {
     &[aria-checked="true"] {
-      border-color: var(--font-color);
+      border-color: var(--font-color-alpha-10);
+      background-color: var(--body-color-alpha-10);
     }
     &[aria-checked="false"] {
       border-color: var(--font-color-alpha-10);

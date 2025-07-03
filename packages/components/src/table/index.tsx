@@ -11,7 +11,7 @@ import {
 } from "./styles";
 
 /**
- * Table component that provides a scrollable table with styled elements
+ * Table component that provides a scrollable table with styled elements.
  *
  * @param {IScrollAreaProperties & React.ComponentProps<"table">} props - The props for the Table component
  * @returns {React.ReactElement} The Table component
