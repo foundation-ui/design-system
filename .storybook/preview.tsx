@@ -7,7 +7,7 @@ import { Preview } from "@storybook/react";
 import { ColorModeProvider } from "../packages/tokens";
 import { ResetStyles, CSSRoot, TypographyRoot } from "../packages/styles";
 
-import DocumentationTemplate from "./DocumentationTemplate.mdx";
+// import DocumentationTemplate from "./DocumentationTemplate.mdx";
 
 const StoriesWrapepr = styled.div`
   position: absolute;
@@ -19,29 +19,29 @@ const StoriesWrapepr = styled.div`
 
 const preview: Preview = {
   parameters: {
-    docs: {
-      theme: theme,
-      page: DocumentationTemplate,
-      canvas: {
-        sourceState: "shown",
-      },
-    },
-    options: {
-      storySort: {
-        order: [
-          "Introduction",
-          "Getting Started",
-          "Design Tokens",
-          "Assets",
-          "Generators",
-          "Theming",
-          "Styling",
-          "Components",
-          ["Usage"],
-          "Sandbox",
-        ],
-      },
-    },
+    // docs: {
+    //   theme: theme,
+    //   page: DocumentationTemplate,
+    //   canvas: {
+    //     sourceState: "shown",
+    //   },
+    // },
+    // options: {
+    //   storySort: {
+    //     order: [
+    //       "Introduction",
+    //       "Getting Started",
+    //       "Design Tokens",
+    //       "Assets",
+    //       "Generators",
+    //       "Theming",
+    //       "Styling",
+    //       "Components",
+    //       ["Usage"],
+    //       "Sandbox",
+    //     ],
+    //   },
+    // },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
