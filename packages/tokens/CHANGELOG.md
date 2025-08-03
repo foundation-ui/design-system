@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.5.1
+
+### Patch Changes
+
+- Update dependencies, remove outdated docs, add otp-field to /components
+
 ## 1.5.0
 
 ### Minor Changes

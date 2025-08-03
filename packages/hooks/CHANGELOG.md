@@ -1,5 +1,11 @@
 # @foundation-ui/hooks
 
+## 1.3.2
+
+### Patch Changes
+
+- Update dependencies, remove outdated docs, add otp-field to /components
+
 ## 1.3.1
 
 ### Patch Changes

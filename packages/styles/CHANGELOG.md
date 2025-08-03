@@ -1,5 +1,11 @@
 # @foundation-ui/styles
 
+## 1.4.2
+
+### Patch Changes
+
+- Update dependencies, remove outdated docs, add otp-field to /components
+
 ## 1.4.1
 
 ### Patch Changes

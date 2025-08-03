@@ -1,5 +1,11 @@
 # @foundation-ui/icons
 
+## 1.1.3
+
+### Patch Changes
+
+- Update dependencies, remove outdated docs, add otp-field to /components
+
 ## 1.1.2
 
 ### Patch Changes

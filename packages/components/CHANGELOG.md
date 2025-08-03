@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.5.0
+
+### Minor Changes
+
+- Update dependencies, remove outdated docs, add otp-field to /components
+
 ## 1.4.8
 
 ### Patch Changes
