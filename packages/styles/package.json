@@ -28,7 +28,7 @@
     "@foundation-ui/tokens": "workspace:^",
     "@types/styled-components": "^5.1.34",
     "polished": "^4.3.1",
-    "styled-components": "^5.1.34",
-    "typescript": "^5.8.2"
+    "styled-components": "^5.3.11",
+    "typescript": "^5.9.2"
   }
 }
