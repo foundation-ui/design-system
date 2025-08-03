@@ -8,6 +8,7 @@ export * from "./dialog";
 export * from "./divider";
 export * from "./dropdown";
 export * from "./field";
+export * from "./otp-field";
 export * from "./overlay";
 export * from "./page";
 export * from "./portal";
