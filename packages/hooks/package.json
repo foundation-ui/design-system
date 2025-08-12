@@ -1,7 +1,7 @@
 {
-  "name": "@foundation-ui/hooks",
-  "version": "1.3.2",
-  "description": "",
+  "name": "@usefui/hooks",
+  "version": "1.3.3",
+  "description": "Open Source Collection of React Hooks",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -11,16 +11,13 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "typescript",
+    "reactjs"
+  ],
   "author": "Nicolas Nunes",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:foundation-ui/design-system.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@foundation-ui"
-  },
+  "license": "MIT",
   "peerDependencies": {
     "@types/react": "^16.8 || ^17.0 || ^18.0 || ^19.0",
     "@types/react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0",

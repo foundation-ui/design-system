@@ -1,10 +1,25 @@
 {
-  "name": "@foundation-ui/design-system",
+  "name": "@usefui/design-system",
   "version": "0.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "Open source Headless Design System for Modern Product Teams",
+  "keywords": [
+    "react",
+    "typescript",
+    "accessibility",
+    "reactjs",
+    "nextjs",
+    "ui",
+    "components",
+    "ui-components",
+    "design-tokens",
+    "css-engine"
+  ],
   "author": "Nicolas Nunes",
-  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/foundation-ui/design-system/issues"
+  },
+  "homepage": "https://github.com/foundation-ui/design-system#readme",
+  "license": "MIT",
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",

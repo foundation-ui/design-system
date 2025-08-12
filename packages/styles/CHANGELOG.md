@@ -1,5 +1,11 @@
 # @foundation-ui/styles
 
+## 1.4.3
+
+### Patch Changes
+
+- Prepare public deployment
+
 ## 1.4.2
 
 ### Patch Changes

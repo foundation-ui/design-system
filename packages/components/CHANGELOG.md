@@ -1,5 +1,11 @@
 # @foundation-ui/components
 
+## 1.5.1
+
+### Patch Changes
+
+- Prepare public deployment
+
 ## 1.5.0
 
 ### Minor Changes

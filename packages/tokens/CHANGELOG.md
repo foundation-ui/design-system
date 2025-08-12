@@ -1,5 +1,11 @@
 # @foundation-ui/tokens
 
+## 1.5.2
+
+### Patch Changes
+
+- Prepare public deployment
+
 ## 1.5.1
 
 ### Patch Changes

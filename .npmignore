@@ -1,0 +1,27 @@
+# Source files
+src/
+tsconfig*.json
+.changeset/
+scripts/
+examples/
+docs/
+
+# Development files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__/
+.github/
+.vscode/
+.idea/
+
+# Logs and temp
+*.log
+tmp/
+temp/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db

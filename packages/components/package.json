@@ -1,7 +1,7 @@
 {
-  "name": "@foundation-ui/components",
-  "version": "1.5.0",
-  "description": "",
+  "name": "@usefui/components",
+  "version": "1.5.1",
+  "description": "Open Source React components library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -11,16 +11,16 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "typescript",
+    "accessibility",
+    "ui",
+    "components",
+    "ui-components"
+  ],
   "author": "Nicolas Nunes",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:foundation-ui/design-system.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@foundation-ui"
-  },
+  "license": "MIT",
   "peerDependencies": {
     "@types/react": "*",
     "@types/react-dom": "*",

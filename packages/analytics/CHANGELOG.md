@@ -1,5 +1,11 @@
 # @foundation-ui/analytics
 
+## 1.0.3
+
+### Patch Changes
+
+- Prepare public deployment
+
 ## 1.0.2
 
 ### Patch Changes

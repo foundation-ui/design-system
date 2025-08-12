@@ -1,7 +1,7 @@
 {
-  "name": "@foundation-ui/analytics",
-  "version": "1.0.2",
-  "description": "",
+  "name": "@usefui/analytics",
+  "version": "1.0.3",
+  "description": "React Hook to use User Behavior Analytics programmatically",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -9,16 +9,19 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "typescript",
+    "analytics",
+    "user-behavior",
+    "hooks"
+  ],
   "author": "Nicolas Nunes",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:foundation-ui/design-system.git"
+  "bugs": {
+    "url": "https://github.com/foundation-ui/design-system/issues"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@foundation-ui"
-  },
+  "homepage": "https://github.com/foundation-ui/design-system#readme",
+  "license": "MIT",
   "peerDependencies": {
     "@types/react": "^16.8 || ^17.0 || ^18.0 || ^19.0",
     "@types/react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0",

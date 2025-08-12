@@ -1,6 +1,6 @@
 {
-  "name": "@foundation-ui/styles",
-  "version": "1.4.2",
+  "name": "@usefui/styles",
+  "version": "1.4.3",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -9,16 +9,15 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "typescript",
+    "reactjs",
+    "nextjs",
+    "css-engine"
+  ],
   "author": "Nicolas Nunes",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:foundation-ui/design-system.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@foundation-ui"
-  },
+  "license": "MIT",
   "peerDependencies": {
     "@types/styled-components": "*",
     "styled-components": "^5.1.34"

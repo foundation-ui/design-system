@@ -1,5 +1,11 @@
 # @foundation-ui/core
 
+## 1.3.3
+
+### Patch Changes
+
+- Prepare public deployment
+
 ## 1.3.2
 
 ### Patch Changes
