@@ -1,4 +1,4 @@
-# @foundation-ui/components
+# @usefui/components
 
 ## 1.5.1
 

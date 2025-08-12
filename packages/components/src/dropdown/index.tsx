@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useClickOutside, useDisabledScroll } from "@foundation-ui/hooks";
+import { useClickOutside, useDisabledScroll } from "@usefui/hooks";
 import { DropdownMenuProvider, useDropdownMenu } from "./hooks";
 import { RootWrapper, ContentWrapper, ItemWrapper } from "./styles";
 import { Button, IButtonProperties } from "../button";

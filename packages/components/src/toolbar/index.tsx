@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useKeyPress } from "@foundation-ui/hooks";
+import { useKeyPress } from "@usefui/hooks";
 
 import { ToolbarProvider, useToolbar } from "./hooks";
 import { ToolbarWrapper, ToolbarTriggerWrapper } from "./styles";

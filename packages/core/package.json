@@ -37,6 +37,6 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@foundation-ui/hooks": "workspace:^"
+    "@usefui/hooks": "workspace:^"
   }
 }

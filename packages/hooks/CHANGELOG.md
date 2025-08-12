@@ -1,4 +1,4 @@
-# @foundation-ui/hooks
+# @usefui/hooks
 
 ## 1.3.3
 

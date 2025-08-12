@@ -1,4 +1,4 @@
-# @foundation-ui/styles
+# usefui/styles
 
 ## 1.4.3
 
@@ -70,8 +70,8 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @foundation-ui/core@0.8.0
-  - @foundation-ui/tokens@0.8.0
+  - usefui/core@0.8.0
+  - usefui/tokens@0.8.0
 
 ## 0.4.0
 
@@ -82,8 +82,8 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @foundation-ui/core@0.7.0
-  - @foundation-ui/tokens@0.7.0
+  - usefui/core@0.7.0
+  - usefui/tokens@0.7.0
 
 ## 0.3.0
 
@@ -94,8 +94,8 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @foundation-ui/core@0.6.0
-  - @foundation-ui/tokens@0.6.0
+  - usefui/core@0.6.0
+  - usefui/tokens@0.6.0
 
 ## 0.2.0
 
@@ -108,8 +108,8 @@
 
 - Updated dependencies [7ee55c3]
 - Updated dependencies
-  - @foundation-ui/core@0.5.0
-  - @foundation-ui/tokens@0.5.0
+  - usefui/core@0.5.0
+  - usefui/tokens@0.5.0
 
 ## 0.1.0
 
@@ -120,5 +120,5 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @foundation-ui/tokens@0.4.0
-  - @foundation-ui/core@0.4.0
+  - usefui/tokens@0.4.0
+  - usefui/core@0.4.0

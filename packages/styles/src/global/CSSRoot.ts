@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { js_design_tokens } from "@foundation-ui/tokens";
+import { js_design_tokens } from "@usefui/tokens";
 import {
   generateCSSVariables,
   generateSizeClasses,
@@ -7,7 +7,7 @@ import {
   generateLayoutClasses,
   generateOpacityClasses,
   generateDimensionClasses,
-} from "@foundation-ui/core";
+} from "@usefui/core";
 
 const cssVariables = generateCSSVariables(js_design_tokens);
 const cssLayoutClasses = generateLayoutClasses();

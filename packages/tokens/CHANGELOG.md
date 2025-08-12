@@ -1,4 +1,4 @@
-# @foundation-ui/tokens
+# @usefui/tokens
 
 ## 1.5.2
 

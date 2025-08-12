@@ -17,7 +17,7 @@ Open Source Design System providing low-level components and foundations to help
 
 #### Strategy
 
-`@foundation-ui/design-system` is using Unified Versioning. all packages within the monorepo share the same version number, regardless of which packages have changed. This approach simplifies dependency management and versioning, as consumers of the packages only need to keep track of a single version number.
+`@@usefui/design-system` is using Unified Versioning. all packages within the monorepo share the same version number, regardless of which packages have changed. This approach simplifies dependency management and versioning, as consumers of the packages only need to keep track of a single version number.
 
 Every push and/or Pull Request to the `main` branch will first trigger the `CI` Github Action. It will build and test every packages before moving on to the next step. If the `CI` Action is completed with success, the `Publish` Github Action is triggered. It will tag and release each packages as [Private Github Registries](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry).
 

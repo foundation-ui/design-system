@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { useKeyPress, useDisabledScroll } from "@foundation-ui/hooks";
+import { useKeyPress, useDisabledScroll } from "@usefui/hooks";
 import { SheetProvider, useSheet } from "./hooks";
 
 import { Button, Overlay } from "../";

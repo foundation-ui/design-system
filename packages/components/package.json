@@ -30,9 +30,9 @@
     "styled-components": "^5.1.34"
   },
   "devDependencies": {
-    "@foundation-ui/core": "workspace:^",
-    "@foundation-ui/hooks": "workspace:^",
-    "@foundation-ui/tokens": "workspace:^",
+    "@usefui/core": "workspace:^",
+    "@usefui/hooks": "workspace:^",
+    "@usefui/tokens": "workspace:^",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "@types/styled-components": "^5.1.34",

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useDialog, DialogProvider } from "./hooks";
-import { useDisabledScroll } from "@foundation-ui/hooks";
+import { useDisabledScroll } from "@usefui/hooks";
 import {
   Overlay,
   IOverlayProperties,

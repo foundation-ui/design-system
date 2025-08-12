@@ -1,4 +1,4 @@
-# @foundation-ui/icons
+# @usefui/icons
 
 ## 1.1.4
 

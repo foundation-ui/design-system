@@ -1,4 +1,4 @@
-# @foundation-ui/analytics
+# @@usefui/analytics
 
 ## 1.0.3
 
