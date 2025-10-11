@@ -53,3 +53,4 @@ export const PrivacyField = ({
     </Wrapper>
   );
 };
+PrivacyField.displayName = "PrivacyField";
