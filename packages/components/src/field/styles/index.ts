@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const FieldDefaultStyles = css`
+export const FieldDefaultStyles = css`
   outline: none;
   cursor: pointer;
   display: flex;
@@ -48,7 +48,7 @@ const FieldDefaultStyles = css`
     opacity: 0.6;
   }
 `;
-const FieldVariantsStyles = css`
+export const FieldVariantsStyles = css`
   &[data-variant="primary"] {
     background-color: var(--font-color-alpha-10);
 
@@ -100,7 +100,7 @@ const FieldVariantsStyles = css`
     }
   }
 `;
-const FieldSizeStyles = css`
+export const FieldSizeStyles = css`
   &[data-size="small"] {
     gap: var(--measurement-medium-10);
     padding: 0 var(--measurement-medium-30);
