@@ -17,6 +17,7 @@ export * from "./privacy-field";
 export * from "./resizable";
 export * from "./sheet";
 export * from "./scrollarea";
+export * from "./spinner";
 export * from "./switch";
 export * from "./table";
 export * from "./tabs";
