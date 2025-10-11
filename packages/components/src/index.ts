@@ -4,6 +4,7 @@ export * from "./badge";
 export * from "./button";
 export * from "./checkbox";
 export * from "./collapsible";
+export * from "./copy-button";
 export * from "./dialog";
 export * from "./divider";
 export * from "./dropdown";
