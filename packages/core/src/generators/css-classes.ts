@@ -1,6 +1,13 @@
-import { IScaleProperties, ISequenceProperties } from "../../../../types";
+import type {
+  IColorProperties,
+  IScaleProperties,
+  ISequenceProperties,
+} from "../../../../types";
 
 interface Size extends IScaleProperties {
+  name: string;
+}
+interface Color extends IColorProperties {
   name: string;
 }
 
@@ -126,10 +133,43 @@ export const generateOpacityClasses = (opacity: ISequenceProperties[]) => {
   `;
 };
 
+export const generateColorClasses = (color: Color[]) => {
+  const generateClasses = (
+    items: Color[],
+    mode: "background" | "color"
+  ): string[] => {
+    const classNamePrefix = mode === "background" ? "bg" : "color";
+    const cssAttribute = mode === "background" ? "background-color" : "color";
+
+    const cssColorClasses = items.flatMap(({ name }) => {
+      let bgClassStrings: string[] = [];
+
+      const classString = `
+         .${classNamePrefix}-${name} {
+            ${cssAttribute}: var(--color-${name}) !important;
+         }`;
+
+      bgClassStrings.push(classString);
+      return bgClassStrings;
+    });
+
+    return cssColorClasses;
+  };
+
+  const cssColorClasses = generateClasses(color, "color");
+  const cssBgClasses = generateClasses(color, "background");
+
+  return `
+    ${cssColorClasses.join("")}
+    ${cssBgClasses.join("")}
+  `;
+};
+
 export const generateLayoutClasses = () => {
-  const displays = ["flex", "grid"] as const;
-  const options = ["justify-content", "align-items"] as const;
-  const values = [
+  const displays = ["flex", "grid"];
+
+  const align_options = ["justify-content", "align-items"];
+  const align_values = [
     "flex-start",
     "flex-end",
     "center",
@@ -143,13 +183,26 @@ export const generateLayoutClasses = () => {
     "right",
     "baseline",
     "revert",
-  ] as const;
+  ];
 
-  const wrap_option = ["flex-wrap"] as const;
+  const wrap_option = ["flex-wrap"];
   const wrap_values = [
     "wrap",
     "wrap-reverse",
     "nowrap",
+    "revert",
+    "revert-layer",
+    "unset",
+    "inherit",
+    "initial",
+  ];
+
+  const direction_option = ["flex-direction"];
+  const direction_values = [
+    "column",
+    "column-reverse",
+    "row",
+    "row-reverse",
     "revert",
     "revert-layer",
     "unset",
@@ -164,29 +217,32 @@ export const generateLayoutClasses = () => {
       }
     `;
 
-    const optionClasses = options.flatMap((option) => {
-      return values.map((value) => {
-        const className = `.${option.split("-").at(0)}-${value
-          .split("-")
-          .at(-1)}`;
-        const cssProperty = `${option}: ${value};`;
+    const generateCSSClasses = (options: string[], values: string[]) => {
+      return options.flatMap((option) => {
+        return values.map((value) => {
+          const className = `.${option.split("-").at(0)}-${value
+            .split("-")
+            .at(-1)}`;
+          const cssProperty = `${option}: ${value};`;
 
-        return `${className} { ${cssProperty} }`;
+          return `${className} { ${cssProperty} }`;
+        });
       });
-    });
+    };
 
-    const wrapClasses = wrap_option.flatMap((option) => {
-      return wrap_values.map((value) => {
-        const className = `.${option.split("-").at(0)}-${value
-          .split("-")
-          .at(-1)}`;
-        const cssProperty = `${option}: ${value};`;
+    const optionClasses = generateCSSClasses(align_options, align_values);
+    const wrapClasses = generateCSSClasses(wrap_option, wrap_values);
+    const directionClasses = generateCSSClasses(
+      direction_option,
+      direction_values
+    );
 
-        return `${className} { ${cssProperty} }`;
-      });
-    });
-
-    return [displayClass, ...optionClasses, ...wrapClasses];
+    return [
+      displayClass,
+      ...optionClasses,
+      ...wrapClasses,
+      ...directionClasses,
+    ];
   });
 
   return `

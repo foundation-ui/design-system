@@ -7,6 +7,7 @@ import {
   generateLayoutClasses,
   generateOpacityClasses,
   generateDimensionClasses,
+  generateColorClasses,
 } from "@usefui/core";
 
 const cssVariables = generateCSSVariables(js_design_tokens);
@@ -21,6 +22,9 @@ const cssFSClasses = generateFontSizesClasses(
 );
 const cssOpacityClasses = generateOpacityClasses(
   js_design_tokens.design_tokens.opacity
+);
+const cssColorClasses = generateColorClasses(
+  js_design_tokens.design_tokens.color
 );
 
 export const CSSRoot = createGlobalStyle`
@@ -46,6 +50,7 @@ export const CSSRoot = createGlobalStyle`
 		${cssFSClasses}
 		${cssOpacityClasses}
 		${cssLayoutClasses}
+		${cssColorClasses}
 		${cssWidthHeightClasses}
 	}
 `;
