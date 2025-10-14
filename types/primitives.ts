@@ -42,6 +42,7 @@ export type TComponentHeight = "fullscreen" | "display" | "auto";
 export type TComponentAPI = boolean | string | number | null | unknown;
 export type TComponentSize = "small" | "medium" | "large";
 export type TComponentSide = "top" | "right" | "bottom" | "left";
+export type TComponentShape = "square" | "smooth" | "round";
 export type TComponentVariant =
   | "primary"
   | "secondary"

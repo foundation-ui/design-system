@@ -3,7 +3,7 @@
 import React from "react";
 import { BadgeWrapper } from "./styles";
 
-import { IComponentStyling } from "../../../../types";
+import type { IComponentStyling, TComponentShape } from "../../../../types";
 
 interface IBadgeProperties
   extends IComponentStyling,
@@ -16,7 +16,7 @@ interface IBadgeProperties
     | "warning"
     | "success"
     | "meta";
-  shape?: "square" | "smooth" | "round";
+  shape?: TComponentShape;
 }
 
 /**

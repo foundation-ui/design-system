@@ -1,6 +1,6 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "..";
+import { Button, Page } from "..";
 
 const meta = {
   title: "Components/Button",
@@ -31,17 +31,34 @@ export const Sizes: Story = {
     );
   },
 };
-export const Variants: Story = {
+export const Shapes: Story = {
   render: ({ ...args }) => {
     return (
       <div className="flex g-medium-30">
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="tertiary">Tertiary</Button>
-        <Button variant="mono">Mono</Button>
-        <Button variant="border">Border</Button>
-        <Button variant="ghost">Ghost</Button>
+        <Button shape="square">Square</Button>
+        <Button shape="smooth">Smooth</Button>
+        <Button shape="round">Round</Button>
       </div>
+    );
+  },
+};
+export const Variants: Story = {
+  render: ({ ...args }) => {
+    return (
+      <Page>
+        <Page.Content className="flex align-center justify-center">
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button variant="primary">Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="tertiary">Tertiary</Button>
+            <Button variant="danger">Danger</Button>
+            <Button variant="warning">Warning</Button>
+            <Button variant="mono">Mono</Button>
+            <Button variant="border">Border</Button>
+            <Button variant="ghost">Ghost</Button>
+          </div>
+        </Page.Content>
+      </Page>
     );
   },
 };

@@ -7,15 +7,17 @@ import {
   ComponentSizeEnum,
   IComponentSize,
   ComponentVariantEnum,
-  IComponentVariant,
+  TComponentVariant,
+  TComponentShape,
 } from "../../../../types";
 
 export interface IButtonProperties
   extends IComponentStyling,
     IComponentSize,
-    IComponentVariant,
     React.ComponentPropsWithRef<"button"> {
   rawicon?: boolean;
+  variant?: TComponentVariant | "danger" | "warning";
+  shape?: TComponentShape;
 }
 
 /**
@@ -29,7 +31,8 @@ export interface IButtonProperties
  * @param {IButtonProperties} props - The props for the Button component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {boolean} props.rawicon - Define whether the component is styles its svg children.
- * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to `medium`.
+ * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to `primary`.
+ * @param {ComponentSizeEnum} props.shape - The size of the component. Defaults to `primary`.
  * @param {string} props.variant - The style definition used by the component.
  * @param {ReactNode} props.children - The content to be rendered inside the button.
  * @returns {ReactElement} The Button component.
@@ -38,8 +41,9 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
   (props, forwardedRef): React.ReactElement => {
     const {
       name,
-      variant = ComponentVariantEnum.Mono,
+      variant = ComponentVariantEnum.Primary,
       sizing = ComponentSizeEnum.Medium,
+      shape = "smooth",
       raw,
       rawicon,
       children,
@@ -66,6 +70,7 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
         aria-disabled={disabledState}
         data-variant={variant}
         data-size={sizing}
+        data-shape={shape}
         data-raw={Boolean(raw)}
         data-rawicon={Boolean(rawicon)}
         tabIndex={0}
