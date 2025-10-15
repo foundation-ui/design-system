@@ -32,7 +32,7 @@ export interface IButtonProperties
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {boolean} props.rawicon - Define whether the component is styles its svg children.
  * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to `primary`.
- * @param {ComponentSizeEnum} props.shape - The size of the component. Defaults to `primary`.
+ * @param {ComponentSizeEnum} props.shape - The size of the component. Defaults to `smooth`.
  * @param {string} props.variant - The style definition used by the component.
  * @param {ReactNode} props.children - The content to be rendered inside the button.
  * @returns {ReactElement} The Button component.
