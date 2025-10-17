@@ -1,5 +1,14 @@
 import styled, { css } from "styled-components";
 
+interface OverlayProps {
+  $isHovering: boolean;
+}
+
+interface MaskProps {
+  $mouseX: number;
+  $mouseY: number;
+}
+
 const ButtonDefaultStyles = css`
   cursor: pointer;
   position: relative;
@@ -24,6 +33,11 @@ const ButtonDefaultStyles = css`
   span,
   img {
     opacity: 0.6;
+  }
+
+  svg,
+  span {
+    transition: all 0.2s ease-in-out;
   }
 
   &:hover,
@@ -205,4 +219,34 @@ export const ButtonWrapper = styled.button`
       ${ButtonIconStyles}
     }
   }
+`;
+export const ButtonOverlay = styled.div<OverlayProps>`
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  opacity: ${(props) => (props.$isHovering ? 1 : 0)};
+  background: transparent;
+  transition: opacity 0.2s ease-in-out;
+
+  ${ButtonShapeStyles}
+`;
+export const ButtonMaskElement = styled.div<MaskProps>`
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: var(--measurement-small-10) solid var(--font-color-alpha-20);
+  clip-path: inset(0 round var(--measurement-medium-30));
+
+  mask-image: radial-gradient(
+    circle at ${(props) => props.$mouseX}% ${(props) => props.$mouseY}%,
+    var(--body-color),
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at ${(props) => props.$mouseX}% ${(props) => props.$mouseY}%,
+    var(--body-color),
+    transparent 100%
+  );
+
+  ${ButtonShapeStyles}
 `;

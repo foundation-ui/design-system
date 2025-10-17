@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { ButtonWrapper } from "./styles";
+
+import { ButtonWrapper, ButtonMaskElement, ButtonOverlay } from "./styles";
 import {
   IComponentStyling,
   ComponentSizeEnum,
@@ -18,6 +19,7 @@ export interface IButtonProperties
   rawicon?: boolean;
   variant?: TComponentVariant | "danger" | "warning";
   shape?: TComponentShape;
+  animation?: "reflective";
 }
 
 /**
@@ -31,9 +33,10 @@ export interface IButtonProperties
  * @param {IButtonProperties} props - The props for the Button component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {boolean} props.rawicon - Define whether the component is styles its svg children.
- * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to `primary`.
- * @param {ComponentSizeEnum} props.shape - The size of the component. Defaults to `smooth`.
+ * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to "medium".
+ * @param {TComponentShape} props.shape - The size of the component. Defaults to `smooth`.
  * @param {string} props.variant - The style definition used by the component.
+ * @param {string} props.animation - The animation that comes with the variant.
  * @param {ReactNode} props.children - The content to be rendered inside the button.
  * @returns {ReactElement} The Button component.
  */
@@ -44,8 +47,12 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
       variant = ComponentVariantEnum.Primary,
       sizing = ComponentSizeEnum.Medium,
       shape = "smooth",
+      animation,
       raw,
       rawicon,
+      onMouseMove,
+      onMouseEnter,
+      onMouseLeave,
       children,
       ...restProps
     } = props;
@@ -59,6 +66,43 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
     const buttonStateDescription = `disabled:${disabledState}`;
     const ButtonFullDesc = `${buttonDescription}/${buttonStateDescription}`;
 
+    const isReflective = animation === "reflective" && variant !== "ghost";
+
+    const [position, setPosition] = React.useState({ x: 0, y: 0 });
+    const [isHovering, setIsHovering] = React.useState(false);
+
+    const handleMouseMove = React.useCallback(
+      (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (onMouseMove) onMouseMove(e);
+        if (!isReflective) return;
+
+        const rect = e.currentTarget.getBoundingClientRect();
+        setPosition({
+          x: ((e.clientX - rect.left) / rect.width) * 100,
+          y: ((e.clientY - rect.top) / rect.height) * 100,
+        });
+      },
+      []
+    );
+    const handleMouseEnter = React.useCallback(
+      (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (onMouseEnter) onMouseEnter(e);
+        if (!isReflective) return;
+
+        setIsHovering(true);
+      },
+      []
+    );
+    const handleMouseLeave = React.useCallback(
+      (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (onMouseLeave) onMouseLeave(e);
+        if (!isReflective) return;
+
+        setIsHovering(false);
+      },
+      []
+    );
+
     return (
       <ButtonWrapper
         ref={forwardedRef}
@@ -71,11 +115,24 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
         data-variant={variant}
         data-size={sizing}
         data-shape={shape}
+        data-animation={animation}
         data-raw={Boolean(raw)}
         data-rawicon={Boolean(rawicon)}
         tabIndex={0}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         {...restProps}
       >
+        {isReflective && (
+          <ButtonOverlay $isHovering={isHovering} data-shape={shape}>
+            <ButtonMaskElement
+              $mouseX={position.x}
+              $mouseY={position.y}
+              data-shape={shape}
+            />
+          </ButtonOverlay>
+        )}
         {children}
       </ButtonWrapper>
     );

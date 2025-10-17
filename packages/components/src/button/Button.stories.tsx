@@ -62,3 +62,58 @@ export const Variants: Story = {
     );
   },
 };
+export const Animations: Story = {
+  render: ({ ...args }) => {
+    return (
+      <Page>
+        <Page.Content className="flex flex-column g-medium-30 align-center justify-center">
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button animation="reflective" variant="primary">
+              Primary
+            </Button>
+            <Button animation="reflective" variant="secondary">
+              Secondary
+            </Button>
+            <Button animation="reflective" variant="tertiary">
+              Tertiary
+            </Button>
+            <Button animation="reflective" variant="danger">
+              Danger
+            </Button>
+            <Button animation="reflective" variant="warning">
+              Warning
+            </Button>
+            <Button animation="reflective" variant="mono">
+              Mono
+            </Button>
+            <Button animation="reflective" variant="border">
+              Border
+            </Button>
+          </div>
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button animation="reflective" variant="border" sizing="small">
+              Small
+            </Button>
+            <Button animation="reflective" variant="border" sizing="medium">
+              Medium
+            </Button>
+            <Button animation="reflective" variant="border" sizing="large">
+              Large
+            </Button>
+          </div>
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button animation="reflective" variant="border" shape="square">
+              Square
+            </Button>
+            <Button animation="reflective" variant="border" shape="smooth">
+              Smooth
+            </Button>
+            <Button animation="reflective" variant="border" shape="round">
+              Round
+            </Button>
+          </div>
+        </Page.Content>
+      </Page>
+    );
+  },
+};
