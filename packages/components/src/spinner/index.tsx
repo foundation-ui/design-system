@@ -8,7 +8,7 @@ import type { IComponentSize } from "../../../../types";
 interface SpinnerProperties extends IComponentSize {}
 
 /**
- * Spinners are used to convey a pending state.
+ * Spinners are used to convoy a loading state information.
  *
  * @param {TextareaProps} props - The props for the Spinner component.
  * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to `medium`.

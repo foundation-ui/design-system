@@ -85,10 +85,12 @@ export const CopyButton = ({
   return (
     <Tooltip content={copied ? tooltipLabels.copied : tooltipLabels.copy}>
       <Button
-        variant={restProps?.variant ?? "ghost"}
-        aria-label="Copy code"
-        onClick={copyToClipboard}
+        data-testId="copy-code"
+        aria-label="copy-code"
         disabled={value == null}
+        aria-disabled={value == null}
+        variant={restProps?.variant ?? "ghost"}
+        onClick={copyToClipboard}
         {...restProps}
       >
         {children}

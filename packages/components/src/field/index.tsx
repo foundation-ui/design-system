@@ -60,7 +60,7 @@ export interface IFieldComposition {
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to `medium`.
  * @param {string} props.variant - The style definition used by the component.
- * @param {ComponentSizeEnum} props.shape - The size of the component. Defaults to `smooth`.
+ * @param {TComponentShape} props.shape - The size of the component. Defaults to `smooth`.
  * @param {string} props.error - The error message to display.
  * @param {string} props.hint - The hint message to display.
  * @returns {ReactElement} The Field component.

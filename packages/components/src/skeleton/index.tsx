@@ -15,6 +15,14 @@ export interface SkeletonProperties
   shape?: TComponentShape;
 }
 
+/**
+ * Skeletons are used to convoy a loading state information.
+ *
+ * @param {IButtonProperties} props - The props for the Skeleton component.
+ * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to `medium`.
+ * @param {TComponentShape} props.shape - The size of the component. Defaults to `smooth`.
+ * @returns {ReactElement} The Skeleton component.
+ */
 export const Skeleton = (props: SkeletonProperties): React.ReactElement => {
   const {
     sizing = ComponentSizeEnum.Medium,
@@ -31,3 +39,5 @@ export const Skeleton = (props: SkeletonProperties): React.ReactElement => {
     />
   );
 };
+
+Skeleton.displayName = "Skeleton";

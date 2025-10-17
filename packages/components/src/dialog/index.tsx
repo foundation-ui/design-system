@@ -38,7 +38,7 @@ export interface IDialogItemProperties
  *
  * @param {IDialogItemProperties} props - The props for the Dialog component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
- * @param {ComponentSizeEnum} props.sizing - The size of the component.
+ * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to "medium".
  * @param {boolean} props.open - Whether the dialog is open or not.
  * @param {ReactNode} props.children - The content to be rendered inside the dialog.
  * @returns {ReactElement} The Dialog component.
