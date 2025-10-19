@@ -1,5 +1,11 @@
 # usefui/styles
 
+## 1.4.4
+
+### Patch Changes
+
+- New components, new CSS generator options
+
 ## 1.4.3
 
 ### Patch Changes
