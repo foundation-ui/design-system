@@ -10,6 +10,7 @@ import {
   IComponentSize,
   ComponentVariantEnum,
   IComponentVariant,
+  TComponentShape,
 } from "../../../../types";
 
 export enum MetaVariantEnum {
@@ -26,6 +27,7 @@ export interface IField
     IComponentSize,
     IComponentVariant,
     IComponentStyling {
+  shape?: TComponentShape;
   hint?: string;
   error?: string;
 }
@@ -58,6 +60,7 @@ export interface IFieldComposition {
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to `medium`.
  * @param {string} props.variant - The style definition used by the component.
+ * @param {TComponentShape} props.shape - The size of the component. Defaults to `smooth`.
  * @param {string} props.error - The error message to display.
  * @param {string} props.hint - The hint message to display.
  * @returns {ReactElement} The Field component.
@@ -67,6 +70,7 @@ const Field = (props: IField) => {
     raw,
     sizing = ComponentSizeEnum.Medium,
     variant = ComponentVariantEnum.Primary,
+    shape = "smooth",
     error,
     hint,
     ...restProps
@@ -85,6 +89,7 @@ const Field = (props: IField) => {
         data-error={Boolean(error)}
         data-variant={variant}
         data-size={sizing}
+        data-shape={shape}
         data-raw={Boolean(raw)}
         {...restProps}
       />

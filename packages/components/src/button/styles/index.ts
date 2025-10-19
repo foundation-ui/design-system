@@ -1,5 +1,14 @@
 import styled, { css } from "styled-components";
 
+interface OverlayProps {
+  $isHovering: boolean;
+}
+
+interface MaskProps {
+  $mouseX: number;
+  $mouseY: number;
+}
+
 const ButtonDefaultStyles = css`
   cursor: pointer;
   position: relative;
@@ -24,6 +33,11 @@ const ButtonDefaultStyles = css`
   span,
   img {
     opacity: 0.6;
+  }
+
+  svg,
+  span {
+    transition: all 0.2s ease-in-out;
   }
 
   &:hover,
@@ -78,20 +92,8 @@ const ButtonVariantsStyles = css`
   }
   &[data-variant="secondary"] {
     color: var(--font-color-alpha-60);
-    background-color: var(--body-color);
-    border-color: var(--font-color-alpha-10);
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--font-color);
-      border-color: var(--font-color-alpha-30);
-    }
-  }
-  &[data-variant="tertiary"] {
-    color: var(--font-color-alpha-60);
-    border-color: var(--font-color-alpha-10);
     background-color: transparent;
+    border-color: var(--font-color-alpha-10);
 
     &:hover,
     &:focus,
@@ -99,6 +101,17 @@ const ButtonVariantsStyles = css`
       color: var(--font-color);
       background-color: var(--font-color-alpha-10);
       border-color: transparent;
+    }
+  }
+  &[data-variant="tertiary"] {
+    color: var(--font-color-alpha-80);
+    background-color: transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--font-color);
+      background-color: var(--font-color-alpha-10);
     }
   }
   &[data-variant="border"] {
@@ -110,6 +123,27 @@ const ButtonVariantsStyles = css`
     &:focus,
     &:active {
       color: var(--font-color);
+      border-color: var(--font-color-alpha-20);
+    }
+  }
+  &[data-variant="danger"] {
+    color: var(--color-mono-white);
+    background-color: var(--color-red);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--shade-red-10);
+    }
+  }
+  &[data-variant="warning"] {
+    color: var(--color-mono-dark);
+    background-color: var(--color-orange);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--shade-orange-10);
     }
   }
   &[data-variant="mono"] {
@@ -140,8 +174,7 @@ const ButtonVariantsStyles = css`
 `;
 const ButtonSizeStyles = css`
   &[data-size="small"] {
-    border-radius: var(--measurement-medium-20);
-    font-size: var(--fontsize-medium-10);
+    font-size: var(--fontsize-small-60);
 
     gap: var(--measurement-medium-10);
     padding: var(--measurement-medium-10) var(--measurement-medium-30);
@@ -154,16 +187,25 @@ const ButtonSizeStyles = css`
     }
   }
   &[data-size="medium"] {
-    border-radius: var(--measurement-medium-30);
     padding: var(--measurement-medium-10) var(--measurement-medium-60);
     min-width: var(--measurement-medium-90);
     min-height: var(--measurement-medium-80);
   }
   &[data-size="large"] {
-    border-radius: var(--measurement-medium-30);
     padding: var(--measurement-medium-10) var(--measurement-medium-60);
     min-width: var(--measurement-medium-90);
     min-height: var(--measurement-medium-90);
+  }
+`;
+const ButtonShapeStyles = css`
+  &[data-shape="square"] {
+    border-radius: 0;
+  }
+  &[data-shape="smooth"] {
+    border-radius: var(--measurement-medium-20);
+  }
+  &[data-shape="round"] {
+    border-radius: var(--measurement-large-90);
   }
 `;
 
@@ -171,10 +213,40 @@ export const ButtonWrapper = styled.button`
   &[data-raw="false"] {
     ${ButtonDefaultStyles}
     ${ButtonSizeStyles}
+    ${ButtonShapeStyles}
     ${ButtonVariantsStyles}
-
       &[data-rawIcon="false"] {
       ${ButtonIconStyles}
     }
   }
+`;
+export const ButtonOverlay = styled.div<OverlayProps>`
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  opacity: ${(props) => (props.$isHovering ? 1 : 0)};
+  background: transparent;
+  transition: opacity 0.2s ease-in-out;
+
+  ${ButtonShapeStyles}
+`;
+export const ButtonMaskElement = styled.div<MaskProps>`
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  border: var(--measurement-small-10) solid var(--font-color-alpha-20);
+  clip-path: inset(0 round var(--measurement-medium-30));
+
+  mask-image: radial-gradient(
+    circle at ${(props) => props.$mouseX}% ${(props) => props.$mouseY}%,
+    var(--body-color),
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at ${(props) => props.$mouseX}% ${(props) => props.$mouseY}%,
+    var(--body-color),
+    transparent 100%
+  );
+
+  ${ButtonShapeStyles}
 `;

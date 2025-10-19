@@ -73,7 +73,7 @@ PageNavigation.displayName = "Page.Navigation";
  * @param {string} props.shortcut - The key combination used as keyboard shortcuts to trigger the Page.Toolbar.
  * @param {string} props.hotkey - The key to use in the key combination for the keyboard shortcuts.
  * @param {KeyBindingEnum} props.bindkey - The modifier key to use in the key combination.
- * @param {ComponentSizeEnum} props.sizing - The size of the Page.Toolbar.
+ * @param {ComponentSizeEnum} props.sizing - The size of the Page.Toolbar. Defaults to "medium".
  * @param {ComponentHeightEnum} props.height - The height definition of the Page.Toolbar.
  * @param {TComponentSide} props.side - The side of the Page.Toolbar.
  * @param {boolean} props.defaultOpen - Whether the Page.Toolbar should be open by default.

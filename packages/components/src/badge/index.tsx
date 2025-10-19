@@ -3,7 +3,7 @@
 import React from "react";
 import { BadgeWrapper } from "./styles";
 
-import { IComponentStyling } from "../../../../types";
+import type { IComponentStyling, TComponentShape } from "../../../../types";
 
 interface IBadgeProperties
   extends IComponentStyling,
@@ -16,7 +16,7 @@ interface IBadgeProperties
     | "warning"
     | "success"
     | "meta";
-  shape?: "square" | "smooth" | "round";
+  shape?: TComponentShape;
 }
 
 /**
@@ -29,7 +29,7 @@ interface IBadgeProperties
  *
  * @param {IBadgeProperties} props - The props for the Badge component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
- * @param {ComponentSizeEnum} props.shape - The shape of the component. Defaults to `smooth`.
+ * @param {TComponentShape} props.shape - The shape of the component. Defaults to `smooth`.
  * @param {string} props.variant - The style definition used by the component.
  * @param {ReactNode} props.children - The content to be rendered inside the Badge.
  * @returns {ReactElement} The Badge component.

@@ -1,5 +1,11 @@
 # @@usefui/analytics
 
+## 1.0.4
+
+### Patch Changes
+
+- New components, new CSS generator options
+
 ## 1.0.3
 
 ### Patch Changes

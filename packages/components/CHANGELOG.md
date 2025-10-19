@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.5.2
+
+### Patch Changes
+
+- New components, new CSS generator options
+
 ## 1.5.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @usefui/hooks
 
+## 1.3.4
+
+### Patch Changes
+
+- New components, new CSS generator options
+
 ## 1.3.3
 
 ### Patch Changes

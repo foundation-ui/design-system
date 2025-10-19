@@ -1,6 +1,6 @@
 {
   "name": "@usefui/analytics",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React Hook to use User Behavior Analytics programmatically",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -29,10 +29,10 @@
     "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.23",
+    "@types/react": "^18.3.26",
     "@types/react-dom": "^18.3.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   }
 }

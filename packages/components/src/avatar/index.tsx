@@ -34,7 +34,7 @@ export interface IAvatarProperties
  *
  * @param {IAvatarProperties} props - The props for the Avatar component.
  * @param {boolean} props.raw - Whether the avatar is styled or not.
- * @param {ComponentSizeEnum} props.sizing - The size of the avatar. Defaults to ComponentSizeEnum.Medium.
+ * @param {ComponentSizeEnum} props.sizing - The size of the avatar. Defaults to "medium".
  * @param {string} props.status - The status of the user represented by the avatar.
  * @param {string} props.src - The source URL of the image to be displayed in the avatar.
  * @param {string} props.alt - The alternative text for the image in the avatar.

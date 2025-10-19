@@ -1,5 +1,11 @@
 # @usefui/icons
 
+## 1.1.5
+
+### Patch Changes
+
+- New components, new CSS generator options
+
 ## 1.1.4
 
 ### Patch Changes

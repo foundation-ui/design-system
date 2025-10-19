@@ -132,7 +132,7 @@ DropdownMenuTrigger.displayName = "DropdownMenu.Trigger";
  *
  * @param {IDropdownContentProperties} props - The props for the DropdownMenu.Content component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
- * @param {ComponentSizeEnum} props.sizing - The size of the component.
+ * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to "medium".
  * @param {boolean} props.defaultOpen - The initial open state of the dropdown menu. Defaults to false.
  * @param {ReactNode} props.children - The content to be rendered inside the dropdown menu.
  * @returns {ReactElement} The DropdownMenu.Content component.

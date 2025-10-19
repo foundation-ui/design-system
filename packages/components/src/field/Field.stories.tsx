@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Field } from "..";
+import { Field, Page } from "..";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../types";
 
 const meta = {
@@ -131,16 +131,47 @@ export const Sizes = {
     );
   },
 };
+export const Shapes = {
+  render: ({ ...args }) => {
+    return (
+      <Page>
+        <Page.Content>
+          <div className="flex align-center justify-center flex-wrap h-100 g-medium-30">
+            {["square", "smooth", "round"].map((item) => (
+              <Field.Root key={item}>
+                <Field
+                  shape={item}
+                  sizing="medium"
+                  placeholder={item}
+                  variant="secondary"
+                />
+              </Field.Root>
+            ))}
+          </div>
+        </Page.Content>
+      </Page>
+    );
+  },
+};
 export const Variants = {
   render: ({ ...args }) => {
     return (
-      <div className="flex g-medium-30">
-        {["primary", "secondary", "ghost"].map((item) => (
-          <Field.Root key={item}>
-            <Field placeholder={item} variant={item} />
-          </Field.Root>
-        ))}
-      </div>
+      <Page>
+        <Page.Content>
+          <div className="flex align-center justify-center flex-wrap h-100 g-medium-30">
+            {["primary", "secondary", "ghost"].map((item) => (
+              <Field.Root key={item}>
+                <Field
+                  shape="smooth"
+                  sizing="medium"
+                  placeholder={item}
+                  variant={item}
+                />
+              </Field.Root>
+            ))}
+          </div>
+        </Page.Content>
+      </Page>
     );
   },
 };
