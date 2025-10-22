@@ -1,7 +1,11 @@
 "use client";
 
 import styled, { css } from "styled-components";
-import { FieldDefaultStyles, FieldVariantsStyles } from "../../field/styles";
+import {
+  FieldShapeStyles,
+  FieldDefaultStyles,
+  FieldVariantsStyles,
+} from "../../field/styles";
 
 import type { ScrollContainerProps } from "text-area";
 
@@ -42,81 +46,37 @@ const CustomScrollbar = css<ScrollContainerProps>`
       $trackColor ?? "transparent"
     }`};
 `;
+const TextareaSizeStyles = css`
+  padding: var(--measurement-medium-30);
+  max-height: var(--measurement-large-60);
+
+  &[data-size="small"] {
+    min-height: var(--measurement-large-30);
+  }
+  &[data-size="medium"] {
+    min-height: var(--measurement-large-50);
+  }
+  &[data-size="large"] {
+    min-height: var(--measurement-large-60);
+    max-height: var(--measurement-large-80);
+  }
+`;
+const TextareaResizableStyles = css`
+  &[data-resizable="true"] {
+    resize: vertical;
+  }
+  &[data-resizable="false"] {
+    resize: none;
+  }
+`;
 
 export const TextAreaContainer = styled.textarea<ScrollContainerProps>`
   &[data-raw="false"] {
-    resize: vertical;
-    max-height: var(--measurement-large-60);
-    min-height: auto;
-    width: 100%;
+    ${FieldDefaultStyles}
+    ${FieldShapeStyles}
 
-    overflow-y: auto;
-
-    outline: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: var(--fontsize-small-80);
-    padding: var(--measurement-medium-30) var(--measurement-medium-30)
-      var(--measurement-large-10) var(--measurement-medium-30);
-
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: calc(
-      var(--fontsize-small-10) - ((var(--fontsize-small-10) * 1.066))
-    );
-
-    border: var(--measurement-small-10) solid transparent;
-    border-radius: var(--measurement-medium-30);
-    backdrop-filter: blur(var(--measurement-small-10));
-    color: var(--font-color-alpha-60);
-
-    transition: all ease-in-out 0.2s;
-
-    svg,
-    span,
-    img {
-      opacity: 0.6;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--font-color);
-
-      svg,
-      span,
-      img {
-        opacity: 1;
-      }
-    }
-    &::placeholder {
-      color: var(--font-color-alpha-30);
-    }
-    &:disabled {
-      cursor: not-allowed;
-      opacity: 0.6;
-    }
-
-    &::placeholder {
-      color: var(--font-color-alpha-30);
-    }
-
-    &:focus-visible {
-      outline: none;
-    }
-
-    &:disabled {
-      cursor: not-allowed;
-    }
-
-    &[data-error="true"] {
-      &::placeholder {
-        color: var(--alpha-red-30);
-      }
-    }
+    ${TextareaSizeStyles}
+    ${TextareaResizableStyles}
 
     ${CustomScrollbar}
     ${FieldVariantsStyles}
