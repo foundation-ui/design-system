@@ -59,11 +59,12 @@ const Tooltip = ({
   const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const contentRect = () => contentRef?.current?.getBoundingClientRect();
-  const bodyRect = React.useCallback(() => {
+  const bodyRect = (): DOMRect | undefined => {
     if (typeof document !== "undefined") {
-      return document.body.getBoundingClientRect();
+      return document?.body?.getBoundingClientRect();
     }
-  }, []);
+    return undefined;
+  };
 
   const positions = {
     btt: `calc((${triggerProps?.top}px - ${contentProps?.height}px) - (var(--measurement-medium-10)))`,
