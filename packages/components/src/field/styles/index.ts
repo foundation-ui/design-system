@@ -6,6 +6,7 @@ export const FieldDefaultStyles = css`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 
   font-size: var(--fontsize-medium-20);
 

@@ -19,7 +19,7 @@ describe("GetColorTokenBase", () => {
         token_category: "color",
         query: "mono-dark",
       })
-    ).toEqual("#212121");
+    ).toEqual("#1d1b15");
   });
   test("Return a specific format", () => {
     expect(
@@ -29,7 +29,7 @@ describe("GetColorTokenBase", () => {
         query: "mono-dark",
         unit: "rgb",
       })
-    ).toEqual("rgb(33, 33, 33)");
+    ).toEqual("rgb(29, 27, 21)");
   });
 });
 describe("GetTokenFromSource", () => {
@@ -43,70 +43,70 @@ describe("GetTokenFromSource", () => {
     ).toEqual({
       name: "mono-dark",
       base: {
-        hex: "#212121",
-        rgb: "rgb(33, 33, 33)",
-        hsl: "rgb(33, 33, 33)",
+        hex: "#1d1b15",
+        rgb: "rgb(29, 27, 21)",
+        hsl: "hsl(45deg 16% 10%)",
         contrast_score: { light: "AAA", dark: "F" },
       },
       alpha: [
         {
-          hex: "#21212110",
-          rgb: "rgba(33, 33, 33, 0.1)",
-          hsl: "hsl(0deg 0% 13% / 10%)",
+          hex: "#1d1b1510",
+          rgb: "rgba(29, 27, 21, 0.1)",
+          hsl: "hsl(45deg 16% 10% / 10%)",
           contrast_score: { light: "F", dark: "F" },
         },
         {
-          hex: "#21212120",
-          rgb: "rgba(33, 33, 33, 0.2)",
-          hsl: "hsl(0deg 0% 13% / 20%)",
+          hex: "#1d1b1520",
+          rgb: "rgba(29, 27, 21, 0.2)",
+          hsl: "hsl(45deg 16% 10% / 20%)",
           contrast_score: { light: "F", dark: "F" },
         },
         {
-          hex: "#21212130",
-          rgb: "rgba(33, 33, 33, 0.3)",
-          hsl: "hsl(0deg 0% 13% / 30%)",
+          hex: "#1d1b1530",
+          rgb: "rgba(29, 27, 21, 0.3)",
+          hsl: "hsl(45deg 16% 10% / 30%)",
           contrast_score: { light: "F", dark: "F" },
         },
         {
-          hex: "#21212140",
-          rgb: "rgba(33, 33, 33, 0.4)",
-          hsl: "hsl(0deg 0% 13% / 40%)",
+          hex: "#1d1b1540",
+          rgb: "rgba(29, 27, 21, 0.4)",
+          hsl: "hsl(45deg 16% 10% / 40%)",
           contrast_score: { light: "F", dark: "F" },
         },
         {
-          hex: "#21212150",
-          rgb: "rgba(33, 33, 33, 0.5)",
-          hsl: "hsl(0deg 0% 13% / 50%)",
+          hex: "#1d1b1550",
+          rgb: "rgba(29, 27, 21, 0.5)",
+          hsl: "hsl(45deg 16% 10% / 50%)",
           contrast_score: { light: "F", dark: "F" },
         },
         {
-          hex: "#21212160",
-          rgb: "rgba(33, 33, 33, 0.6)",
-          hsl: "hsl(0deg 0% 13% / 60%)",
-          contrast_score: { light: "F", dark: "F" },
-        },
-        {
-          hex: "#21212170",
-          rgb: "rgba(33, 33, 33, 0.7)",
-          hsl: "hsl(0deg 0% 13% / 70%)",
+          hex: "#1d1b1560",
+          rgb: "rgba(29, 27, 21, 0.6)",
+          hsl: "hsl(45deg 16% 10% / 60%)",
           contrast_score: { light: "AA", dark: "F" },
         },
         {
-          hex: "#21212180",
-          rgb: "rgba(33, 33, 33, 0.8)",
-          hsl: "hsl(0deg 0% 13% / 80%)",
+          hex: "#1d1b1570",
+          rgb: "rgba(29, 27, 21, 0.7)",
+          hsl: "hsl(45deg 16% 10% / 70%)",
+          contrast_score: { light: "AA", dark: "F" },
+        },
+        {
+          hex: "#1d1b1580",
+          rgb: "rgba(29, 27, 21, 0.8)",
+          hsl: "hsl(45deg 16% 10% / 80%)",
           contrast_score: { light: "AAA", dark: "F" },
         },
         {
-          hex: "#21212190",
-          rgb: "rgba(33, 33, 33, 0.9)",
-          hsl: "hsl(0deg 0% 13% / 90%)",
+          hex: "#1d1b1590",
+          rgb: "rgba(29, 27, 21, 0.9)",
+          hsl: "hsl(45deg 16% 10% / 90%)",
           contrast_score: { light: "AAA", dark: "F" },
         },
         {
-          hex: "#212121",
-          rgb: "rgba(33, 33, 33, 1)",
-          hsl: "hsl(0deg 0% 13% / 100%)",
+          hex: "#1d1b15",
+          rgb: "rgba(29, 27, 21, 1)",
+          hsl: "hsl(45deg 16% 10% / 100%)",
           contrast_score: { light: "AAA", dark: "F" },
         },
       ],
