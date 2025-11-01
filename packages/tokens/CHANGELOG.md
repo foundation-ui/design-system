@@ -1,5 +1,11 @@
 # @usefui/tokens
 
+## 1.5.4
+
+### Patch Changes
+
+- Update components and design tokens
+
 ## 1.5.3
 
 ### Patch Changes
