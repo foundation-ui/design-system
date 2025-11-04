@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Icon from "./Icon";
+import { Icon } from "./Icon";
 
 export const SocialIcon = ({
   children,

@@ -1,5 +1,11 @@
 # @usefui/icons
 
+## 1.2.0
+
+### Minor Changes
+
+- Add default icons library
+
 ## 1.1.5
 
 ### Patch Changes
