@@ -1,5 +1,11 @@
 # @usefui/icons
 
+## 1.2.1
+
+### Patch Changes
+
+- Remove hardcoded stroke values from icons
+
 ## 1.2.0
 
 ### Minor Changes
