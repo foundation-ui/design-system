@@ -8429,6 +8429,36 @@ export const Zoom = () => (
 );
 Zoom.displayName = "Icon.Zoom";
 
+export const Sun = () => (
+  <React.Fragment>
+    <path
+      fill="none"
+      d="M12 2V2.00995M22 12V12.0099M2 12V12.0099M19 5V5.00995M19 19V19.0099M5 19V19.0099M5 5V5.00995M12 22V22.0099M18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12Z"
+      stroke="currentColor"
+      stroke-width="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </React.Fragment>
+);
+Sun.displayName = "Icon.Sun";
+
+export const Moon = () => (
+  <React.Fragment>
+    <path
+      fill="none"
+      d="M20.9504 12.9504C20.6381 12.9832 20.321 13 20 13C15.0294 13 11 8.97054 11 3.99997C11 3.67897 11.0168 3.36188 11.0496 3.04956C6.52579 3.52435 3 7.35042 3 12C3 16.9705 7.02944 21 12 21C16.6496 21 20.4756 17.4742 20.9504 12.9504Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </React.Fragment>
+);
+Moon.displayName = "Icon.Moon";
+
+Icon.Sun = Sun;
+Icon.Moon = Moon;
 Icon.Activity = Activity;
 Icon.Add = Add;
 Icon.Adjustment3LineHorizontal = Adjustment3LineHorizontal;

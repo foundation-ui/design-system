@@ -182,6 +182,8 @@ export const IconList = [
   <WebIcon.Check />,
 ];
 export const DefaultIconList: { name: string; icon: React.ReactNode }[] = [
+  { name: "Sun", icon: <Icon.Sun /> },
+  { name: "Moon", icon: <Icon.Moon /> },
   { name: "Activity", icon: <Icon.Activity /> },
   { name: "Add", icon: <Icon.Add /> },
   {

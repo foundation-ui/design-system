@@ -1,5 +1,11 @@
 # @usefui/icons
 
+## 1.2.3
+
+### Patch Changes
+
+- Add sun and moon icons
+
 ## 1.2.2
 
 ### Patch Changes
