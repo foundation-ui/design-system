@@ -50,7 +50,7 @@ export const Default = {
       {DefaultIconList.map(
         (defaultIcon: { name: string; icon: React.ReactNode }, key: number) => (
           <Box key={key}>
-            <Icon fill="none" stroke="currentColor" height={24} width={24}>
+            <Icon height={24} width={24}>
               {defaultIcon.icon}
             </Icon>
 

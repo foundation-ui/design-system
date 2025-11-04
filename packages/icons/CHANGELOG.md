@@ -1,5 +1,11 @@
 # @usefui/icons
 
+## 1.2.2
+
+### Patch Changes
+
+- Force stroke color on previously hardcoded values
+
 ## 1.2.1
 
 ### Patch Changes
