@@ -30,7 +30,7 @@ jobs:
           cache: "pnpm"
           registry-url: "https://registry.npmjs.org/"
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.FUI_NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install Dependencies
         run: pnpm install
@@ -43,4 +43,5 @@ jobs:
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.FUI_NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
