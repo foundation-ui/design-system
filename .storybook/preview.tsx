@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import theme from "./theme";
 
-import { Preview } from "@storybook/react";
+import { Preview } from "@storybook/react-vite";
 
 import { ColorModeProvider } from "../packages/tokens";
 import { ResetStyles, CSSRoot, TypographyRoot } from "../packages/styles";

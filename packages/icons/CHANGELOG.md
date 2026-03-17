@@ -1,5 +1,11 @@
 # @usefui/icons
 
+## 1.3.0
+
+### Minor Changes
+
+- Update dependencies, migrate to React 19, add new components (shimmer,tree,message bubble)
+
 ## 1.2.3
 
 ### Patch Changes

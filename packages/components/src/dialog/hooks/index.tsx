@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, createContext, useContext } from "react";
 import { IReactChildren, IComponentAPI } from "../../../../../types";
 
@@ -9,7 +11,9 @@ const defaultComponentAPI = {
 const DialogContext = createContext<IComponentAPI>(defaultComponentAPI);
 export const useDialog = () => useContext(DialogContext);
 
-export const DialogProvider = ({ children }: IReactChildren): JSX.Element => {
+export const DialogProvider = ({
+  children,
+}: IReactChildren): React.JSX.Element => {
   const context = useDialogProvider();
 
   return (

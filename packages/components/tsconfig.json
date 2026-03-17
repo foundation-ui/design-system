@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "outDir": "./dist",
     "jsx": "react",
-    "target": "es2022",
+    "target": "ES2022",
     "module": "CommonJS",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { IReactChildren } from "../../../../../types";
 
@@ -15,7 +17,9 @@ const SheetContext = React.createContext<IContextProperties>({
 });
 export const useSheet = () => React.useContext(SheetContext);
 
-export const SheetProvider = ({ children }: IReactChildren): JSX.Element => {
+export const SheetProvider = ({
+  children,
+}: IReactChildren): React.JSX.Element => {
   const context = useSheetProvider();
 
   return (

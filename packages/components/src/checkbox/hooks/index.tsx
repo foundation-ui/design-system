@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, createContext, useContext } from "react";
 import {
   IReactChildren,
@@ -13,7 +15,9 @@ const defaultComponentAPI = {
 const CheckboxContext = createContext<IComponentAPI>(defaultComponentAPI);
 export const useCheckbox = () => useContext(CheckboxContext);
 
-export const CheckboxProvider = ({ children }: IReactChildren): JSX.Element => {
+export const CheckboxProvider = ({
+  children,
+}: IReactChildren): React.JSX.Element => {
   const context = useCheckboxProvider();
 
   return (

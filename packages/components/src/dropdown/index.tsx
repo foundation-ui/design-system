@@ -14,18 +14,15 @@ import {
 } from "../../../../types";
 
 export interface IDropdownContentProperties
-  extends IComponentStyling,
-    IComponentSize,
-    React.ComponentPropsWithRef<"ul"> {
+  extends IComponentStyling, IComponentSize, React.ComponentPropsWithRef<"ul"> {
   defaultOpen?: boolean;
 }
 export interface IDropdownItemProperties
-  extends IComponentStyling,
-    React.ComponentProps<"li"> {
+  extends IComponentStyling, React.ComponentProps<"li"> {
   radio?: boolean;
   disabled?: boolean;
   onClick?: (
-    event: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>
+    event: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>,
   ) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLLIElement>) => void;
 }
@@ -52,7 +49,7 @@ export interface IDropdownComposition {
  * @returns {ReactElement} The DropdownMenu component.
  */
 const DropdownMenu = ({ children }: React.ComponentProps<"div">) => {
-  const DropdownContentRef = React.useRef(null);
+  const DropdownContentRef = React.useRef<HTMLDivElement | null>(null);
   const { states, methods } = useDropdownMenu();
   const { toggleOpen } = methods;
 
@@ -60,7 +57,10 @@ const DropdownMenu = ({ children }: React.ComponentProps<"div">) => {
     if (states.open && toggleOpen) toggleOpen();
   };
 
-  useClickOutside(DropdownContentRef, handleClickOutside);
+  useClickOutside(
+    DropdownContentRef as React.RefObject<HTMLElement>,
+    handleClickOutside,
+  );
   useDisabledScroll(Boolean(states.open));
   return <RootWrapper ref={DropdownContentRef}>{children}</RootWrapper>;
 };
@@ -266,7 +266,7 @@ const DropdownMenuItem = (props: IDropdownItemProperties) => {
     click: (
       event:
         | React.MouseEvent<HTMLLIElement>
-        | React.KeyboardEvent<HTMLLIElement>
+        | React.KeyboardEvent<HTMLLIElement>,
     ) => {
       if (onClick) onClick(event);
     },

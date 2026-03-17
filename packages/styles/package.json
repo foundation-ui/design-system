@@ -1,6 +1,6 @@
 {
   "name": "@usefui/styles",
-  "version": "1.4.4",
+  "version": "1.5.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -20,10 +20,10 @@
   "license": "MIT",
   "peerDependencies": {
     "@types/styled-components": "*",
-    "styled-components": "^5.1.34"
+    "styled-components": ">=5.1.34"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.34",
+    "@types/styled-components": "^5.1.36",
     "@usefui/core": "workspace:^",
     "@usefui/tokens": "workspace:^",
     "polished": "^4.3.1",

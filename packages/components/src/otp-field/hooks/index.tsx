@@ -1,9 +1,11 @@
+"use client";
+
 import React from "react";
 
 import type { OTPFieldContextType } from "../types";
 
 export const OTPFieldContext = React.createContext<OTPFieldContextType | null>(
-  null
+  null,
 );
 export const useOTPField = () => {
   const context = React.useContext(OTPFieldContext);

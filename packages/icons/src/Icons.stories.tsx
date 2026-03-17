@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-vite";
 
 import { Icon, PixelIcon, SocialIcon, WebIcon } from "./";
 import { PixelIconList, DefaultIconList, IconList } from "./mocks";
