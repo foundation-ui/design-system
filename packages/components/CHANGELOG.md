@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.6.0
+
+### Minor Changes
+
+- Update dependencies, migrate to React 19, add new components (shimmer,tree,message bubble)
+
 ## 1.5.3
 
 ### Patch Changes

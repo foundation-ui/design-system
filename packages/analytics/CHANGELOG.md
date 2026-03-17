@@ -1,5 +1,11 @@
 # @@usefui/analytics
 
+## 1.1.0
+
+### Minor Changes
+
+- Update dependencies, migrate to React 19, add new components (shimmer,tree,message bubble)
+
 ## 1.0.4
 
 ### Patch Changes

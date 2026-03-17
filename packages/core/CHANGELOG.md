@@ -1,5 +1,16 @@
 # @usefui/core
 
+## 1.4.0
+
+### Minor Changes
+
+- Update dependencies, migrate to React 19, add new components (shimmer,tree,message bubble)
+
+### Patch Changes
+
+- Updated dependencies
+  - @usefui/hooks@1.4.0
+
 ## 1.3.4
 
 ### Patch Changes
