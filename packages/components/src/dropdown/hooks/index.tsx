@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { IReactChildren, IComponentAPI } from "../../../../../types";
 
@@ -22,7 +24,7 @@ export const useDropdownMenu = () => React.useContext(DropdownMenuContext);
 
 export const DropdownMenuProvider = ({
   children,
-}: IReactChildren): JSX.Element => {
+}: IReactChildren): React.JSX.Element => {
   const context = useDropdownMenuProvider();
 
   return (

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useContext } from "react";
 import { IReactChildren, IComponentAPI } from "../../../../../types";
 
@@ -9,7 +11,9 @@ const defaultComponentAPI = {
 const FieldContext = createContext<IComponentAPI>(defaultComponentAPI);
 export const useField = () => useContext(FieldContext);
 
-export const FieldProvider = ({ children }: IReactChildren): JSX.Element => {
+export const FieldProvider = ({
+  children,
+}: IReactChildren): React.JSX.Element => {
   const context = useFieldProvider();
 
   return (

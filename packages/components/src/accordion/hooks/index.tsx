@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, createContext, useContext } from "react";
 import { IReactChildren, IComponentAPI } from "../../../../../types";
 
@@ -11,7 +13,7 @@ export const useAccordion = () => useContext(AccordionContext);
 
 export const AccordionProvider = ({
   children,
-}: IReactChildren): JSX.Element => {
+}: IReactChildren): React.JSX.Element => {
   const context = useAccordionProvider();
 
   return (

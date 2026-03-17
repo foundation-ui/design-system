@@ -26,7 +26,7 @@ const OTPField = ({ children, length, onComplete }: OTPFieldProps) => {
 
   const inputRefs = React.useRef<(HTMLInputElement | null)[]>([]);
   const [otp, setOtp] = React.useState<string[]>(
-    Array.from({ length: defaultLength }, () => "")
+    Array.from({ length: defaultLength }, () => ""),
   );
   const [activeIndex, setActiveIndex] = React.useState<number>(0);
 
@@ -121,7 +121,7 @@ const OTPField = ({ children, length, onComplete }: OTPFieldProps) => {
      */
     const timeout = setTimeout(
       () => inputRefs.current[targetIndex]?.select(),
-      0
+      0,
     );
 
     return () => clearTimeout(timeout);
@@ -209,7 +209,9 @@ const OTPFieldSlot = ({
 
   return (
     <OTPCell
-      ref={(el) => (inputRefs.current[index] = el)}
+      ref={(el) => {
+        inputRefs.current[index] = el;
+      }}
       type="text"
       data-testid="otp-field-slot"
       data-active={activeIndex === index}

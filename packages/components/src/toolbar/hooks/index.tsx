@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, createContext, useContext } from "react";
 import { IReactChildren, IComponentAPI } from "../../../../../types";
 
@@ -9,7 +11,9 @@ const defaultComponentAPI = {
 const ToolbarContext = createContext<IComponentAPI>(defaultComponentAPI);
 export const useToolbar = () => useContext(ToolbarContext);
 
-export const ToolbarProvider = ({ children }: IReactChildren): JSX.Element => {
+export const ToolbarProvider = ({
+  children,
+}: IReactChildren): React.JSX.Element => {
   const context = useToolbarProvider();
 
   return (

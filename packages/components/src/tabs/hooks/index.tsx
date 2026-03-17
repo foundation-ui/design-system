@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useContext, useState } from "react";
 import { IReactChildren, IComponentAPI } from "../../../../../types";
 
@@ -9,7 +11,9 @@ const defaultComponentAPI = {
 const TabsContext = createContext<IComponentAPI>(defaultComponentAPI);
 export const useTabs = () => useContext(TabsContext);
 
-export const TabsProvider = ({ children }: IReactChildren): JSX.Element => {
+export const TabsProvider = ({
+  children,
+}: IReactChildren): React.JSX.Element => {
   const context = useTabsProvider();
 
   return (

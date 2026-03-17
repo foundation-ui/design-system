@@ -5,9 +5,8 @@ import { BadgeWrapper } from "./styles";
 
 import type { IComponentStyling, TComponentShape } from "../../../../types";
 
-interface IBadgeProperties
-  extends IComponentStyling,
-    React.ComponentProps<"div"> {
+export interface IBadgeProperties
+  extends IComponentStyling, React.ComponentProps<"div"> {
   variant?:
     | "primary"
     | "secondary"
