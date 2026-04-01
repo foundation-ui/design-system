@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Collapsible } from "..";
+import { Collapsible, Page } from "..";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../types";
 
 const meta = {
@@ -10,9 +10,11 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+      <Page>
+        <Page.Content className="p-medium-30">
+          <Story />
+        </Page.Content>
+      </Page>
     ),
   ],
 } satisfies Meta<typeof Collapsible>;

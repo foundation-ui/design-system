@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Checkbox } from "..";
+import { Checkbox, Field, Page } from "..";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../types";
 
 const meta = {
@@ -10,9 +10,13 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+      <Page>
+        <Page.Content className="p-medium-30">
+          <div className="flex flex-column align-center justify-center h-100 g-medium-30">
+            <Story />
+          </div>
+        </Page.Content>
+      </Page>
     ),
   ],
 } satisfies Meta<typeof Checkbox>;
@@ -41,7 +45,7 @@ export const Default: Story = {
   },
   render: ({ ...args }) => (
     <Checkbox.Root>
-      <Checkbox>
+      <Checkbox variant="primary">
         <Checkbox.Indicator />
       </Checkbox>
     </Checkbox.Root>
@@ -56,43 +60,78 @@ export const DefaultChecked: Story = {
     </Checkbox.Root>
   ),
 };
-export const Group: Story = {
-  render: ({ ...args }) => (
-    <div className="flex g-medium-30">
-      {[false, false, true].map((item: boolean, key: number) => (
-        <Checkbox.Root key={`${item}-${key}`}>
-          <Checkbox defaultChecked={item} onChange={() => null}>
-            <Checkbox.Indicator />
-          </Checkbox>
-        </Checkbox.Root>
-      ))}
-    </div>
-  ),
-};
+
 export const Sizes: Story = {
   render: ({ ...args }) => (
     <div className="flex g-medium-30">
-      {["large", "medium", "small"].map((item: string) => (
-        <Checkbox.Root key={item}>
-          <Checkbox sizing={item} onChange={() => null}>
-            <Checkbox.Indicator />
-          </Checkbox>
-        </Checkbox.Root>
-      ))}
+      <div className="flex flex-column g-medium-30">
+        {["small", "medium", "large"].map((item: string) => (
+          <Checkbox.Root key={item}>
+            <Field.Label
+              id={`${item}-label`}
+              htmlFor={item}
+              className="flex align-center g-medium-30"
+              optional
+            >
+              <Checkbox
+                defaultChecked
+                id={item}
+                name={item}
+                sizing={item as "small"}
+              >
+                <Checkbox.Indicator />
+              </Checkbox>
+
+              <div className="flex flex-column">
+                <Field.Meta variant="emphasis">{item}</Field.Meta>
+                <Field.Meta variant="hint" className="fs-small-60">
+                  The {item} Checkbox variant
+                </Field.Meta>
+              </div>
+            </Field.Label>
+          </Checkbox.Root>
+        ))}
+      </div>
     </div>
   ),
 };
 export const Variants: Story = {
   render: ({ ...args }) => (
-    <div className="flex g-medium-30">
-      {["primary", "mono", "border", "ghost"].map((item: string) => (
+    <div className="flex flex-column g-medium-30">
+      {[
+        "accent",
+        "primary",
+        "secondary",
+        "tertiary",
+        "hint",
+        "meta",
+        "success",
+        "danger",
+        "warning",
+      ].map((item: string) => (
         <Checkbox.Root key={item}>
-          <Checkbox name={item} variant={item}>
-            <Checkbox.Indicator />
-          </Checkbox>
-          <label id={`${item}-label`} htmlFor={item}>
-            <small>{item}</small>
-          </label>
+          <Field.Label
+            id={`${item}-label`}
+            htmlFor={item}
+            className="flex align-center g-medium-30"
+            optional
+          >
+            <Checkbox
+              defaultChecked
+              id={item}
+              name={item}
+              variant={item as "primary"}
+            >
+              <Checkbox.Indicator />
+            </Checkbox>
+
+            <div className="flex flex-column">
+              <Field.Meta variant="emphasis">{item}</Field.Meta>
+              <Field.Meta variant="hint" className="fs-small-60">
+                The {item} Checkbox variant
+              </Field.Meta>
+            </div>
+          </Field.Label>
         </Checkbox.Root>
       ))}
     </div>

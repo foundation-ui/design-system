@@ -17,17 +17,14 @@ export interface ISwitchComposition {
   Thumb: typeof SwitchThumb;
 }
 
+type SwitchVariants = "primary" | "accent";
 export interface ISwitchProperties
-  extends React.ComponentProps<"button">,
-    IComponentSize,
-    IComponentVariant,
-    IComponentStyling {
+  extends React.ComponentProps<"button">, IComponentSize, IComponentStyling {
   defaultChecked?: boolean;
+  variant?: SwitchVariants;
 }
 export interface ISwitchThumbProperties
-  extends React.ComponentProps<"span">,
-    IComponentSize,
-    IComponentStyling {}
+  extends React.ComponentProps<"span">, IComponentSize, IComponentStyling {}
 
 /**
  * Switch are toggle components that allows the user to turn a setting on or off.
@@ -40,7 +37,7 @@ export interface ISwitchThumbProperties
  * @param {ISwitchProperties} props - The props for the Switch component.
  * @param {boolean} props.raw - Whether the switch should be rendered without any styles.
  * @param {ComponentSizeEnum} props.sizing - The size of the switch.
- * @param {ComponentVariantEnum} props.variant - The variant of the switch.
+ * @param {SwitchVariants} props.variant - The variant of the switch.
  * @param {boolean} props.defaultChecked - The initial state of the switch.
  * @param {ReactNode} props.children - The content to be rendered inside the switch.
  * @returns {ReactElement} The Switch component.

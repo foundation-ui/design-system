@@ -19,6 +19,7 @@ export const OverlayWrapper = styled.div<any>`
 
   &[data-raw="false"] {
     background-color: rgba(0, 0, 0, 0.6); // Always forced to black
+
     animation-duration: 0.2s;
     animation-name: animate-fade;
     animation-fill-mode: backwards;

@@ -1,6 +1,4 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-
 import { Field, OTPField, Page } from "..";
 
 const meta = {
@@ -8,13 +6,17 @@ const meta = {
   component: OTPField,
   tags: ["autodocs"],
   decorators: [
-    (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+    (Story: any) => (
+      <Page>
+        <Page.Content className="p-medium-30">
+          <div className="flex flex-column align-center justify-center h-100">
+            <Story />
+          </div>
+        </Page.Content>
+      </Page>
     ),
   ],
-} satisfies Meta<typeof OTPField>;
+};
 export default meta;
 
 export const Default = {
@@ -27,24 +29,20 @@ export const Default = {
       setValue(value.trim());
     }, []);
     return (
-      <Page>
-        <Page.Content>
-          <form aria-label="story-form">
-            <Field.Wrapper className="w-100">
-              <Field.Label>Confirmation code</Field.Label>
-              <OTPField length={6} onComplete={handleComplete}>
-                <OTPField.Group>
-                  {Array.from({ length: 6 }).map((_, index) => (
-                    <OTPField.Slot key={index} index={index} />
-                  ))}
-                </OTPField.Group>
-              </OTPField>
+      <form aria-label="story-form" style={{ width: 325 }}>
+        <Field.Wrapper className="w-100">
+          <Field.Label>Confirmation code</Field.Label>
+          <OTPField length={6} onComplete={handleComplete}>
+            <OTPField.Group>
+              {Array.from({ length: 6 }).map((_, index) => (
+                <OTPField.Slot key={index} index={index} />
+              ))}
+            </OTPField.Group>
+          </OTPField>
 
-              {value}
-            </Field.Wrapper>
-          </form>
-        </Page.Content>
-      </Page>
+          {value}
+        </Field.Wrapper>
+      </form>
     );
   },
 };

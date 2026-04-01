@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Shimmer } from "..";
+import { Page, Shimmer } from "..";
 
 const meta = {
   title: "Components/Shimmer",
@@ -9,9 +9,11 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+      <Page>
+        <Page.Content className="p-medium-30">
+          <Story />
+        </Page.Content>
+      </Page>
     ),
   ],
 } satisfies Meta<typeof Shimmer>;

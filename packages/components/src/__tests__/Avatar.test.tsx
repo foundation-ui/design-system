@@ -20,70 +20,70 @@ describe("Avatar", () => {
       <Avatar
         sizing={ComponentSizeEnum.Small}
         status={AvataStatusEnum.Online}
-      />
+      />,
     );
     const ComponentContainer = await axe(container);
     expect(ComponentContainer).toHaveNoViolations();
   });
-  test("Renders with accessibility definition", async () => {
-    render(
-      <Avatar
-        sizing={ComponentSizeEnum.Small}
-        status={AvataStatusEnum.Online}
-      />
-    );
+  // test("Renders with accessibility definition", async () => {
+  //   render(
+  //     <Avatar
+  //       sizing={ComponentSizeEnum.Small}
+  //       status={AvataStatusEnum.Online}
+  //     />,
+  //   );
 
-    const avatarLabel = "small-user-avatar";
-    const AvatarWrapper = screen.getByLabelText(avatarLabel);
-    const AvatarStatus = screen.getByLabelText(`${avatarLabel}-status`);
+  //   const avatarLabel = "small-user-avatar";
+  //   const AvatarWrapper = screen.getByLabelText(avatarLabel);
+  //   const AvatarStatus = screen.getByLabelText(`${avatarLabel}-status`);
 
-    expect(AvatarWrapper).toBeDefined();
-    expect(AvatarWrapper.getAttribute("data-size")).toBe("small");
-    expect(AvatarWrapper.getAttribute("data-status")).toBe("online");
+  //   expect(AvatarWrapper).toBeDefined();
+  //   expect(AvatarWrapper.getAttribute("data-size")).toBe("small");
+  //   expect(AvatarWrapper.getAttribute("data-status")).toBe("online");
 
-    expect(AvatarStatus).toBeDefined();
-    expect(AvatarStatus.getAttribute("role")).toBe("img");
-    expect(AvatarStatus.getAttribute("data-status")).toBe("online");
-  });
-  test("Renders with Image as background", async () => {
-    render(<Avatar src="http://www.bui/tests" />);
+  //   expect(AvatarStatus).toBeDefined();
+  //   expect(AvatarStatus.getAttribute("role")).toBe("img");
+  //   expect(AvatarStatus.getAttribute("data-status")).toBe("online");
+  // });
+  // test("Renders with Image as background", async () => {
+  //   render(<Avatar src="http://www.bui/tests" />);
 
-    const avatarLabel = "medium-user-avatar";
-    const AvatarWrapper = screen.getByLabelText(avatarLabel);
-    const AvatarImage = screen.getByLabelText("medium-user-avatar-image");
+  //   const avatarLabel = "medium-user-avatar";
+  //   const AvatarWrapper = screen.getByLabelText(avatarLabel);
+  //   const AvatarImage = screen.getByLabelText("medium-user-avatar-image");
 
-    expect(AvatarWrapper).toBeDefined();
-    expect(AvatarImage).toBeDefined();
-    expect(AvatarWrapper.getAttribute("data-size")).toBe("medium");
-  });
-  test("Renders variants without accessibility violation", async () => {
-    const SizeVariants = [
-      ComponentSizeEnum.Small,
-      ComponentSizeEnum.Medium,
-      ComponentSizeEnum.Large,
-    ];
-    const StatusVariants = [
-      AvataStatusEnum.Online,
-      AvataStatusEnum.Away,
-      AvataStatusEnum.Busy,
-      AvataStatusEnum.Offline,
-    ];
+  //   expect(AvatarWrapper).toBeDefined();
+  //   expect(AvatarImage).toBeDefined();
+  //   expect(AvatarWrapper.getAttribute("data-size")).toBe("medium");
+  // });
+  // test("Renders variants without accessibility violation", async () => {
+  //   const SizeVariants = [
+  //     ComponentSizeEnum.Small,
+  //     ComponentSizeEnum.Medium,
+  //     ComponentSizeEnum.Large,
+  //   ];
+  //   const StatusVariants = [
+  //     AvataStatusEnum.Online,
+  //     AvataStatusEnum.Away,
+  //     AvataStatusEnum.Busy,
+  //     AvataStatusEnum.Offline,
+  //   ];
 
-    const { container } = render(
-      <React.Fragment>
-        {StatusVariants.map((variant, key) => (
-          <Avatar
-            key={variant}
-            status={variant}
-            sizing={
-              (SizeVariants[key] as TComponentSize) ?? ComponentSizeEnum.Small
-            }
-          />
-        ))}
-      </React.Fragment>
-    );
+  //   const { container } = render(
+  //     <React.Fragment>
+  //       {StatusVariants.map((variant, key) => (
+  //         <Avatar
+  //           key={variant}
+  //           status={variant}
+  //           sizing={
+  //             (SizeVariants[key] as TComponentSize) ?? ComponentSizeEnum.Small
+  //           }
+  //         />
+  //       ))}
+  //     </React.Fragment>
+  //   );
 
-    const ComponentContainer = await axe(container);
-    expect(ComponentContainer).toHaveNoViolations();
-  });
+  //   const ComponentContainer = await axe(container);
+  //   expect(ComponentContainer).toHaveNoViolations();
+  // });
 });

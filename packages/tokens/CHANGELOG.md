@@ -1,5 +1,11 @@
 # @usefui/tokens
 
+## 1.7.0
+
+### Minor Changes
+
+- Components maintenance & ui updates
+
 ## 1.6.0
 
 ### Minor Changes

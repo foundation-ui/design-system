@@ -8,74 +8,294 @@ const CheckboxDefaultStyles = css`
   backdrop-filter: blur(var(--measurement-small-10));
   transition: all ease-in-out 0.2s;
 `;
+const CheckboxBeforeDefaultStyles = css`
+  content: "";
+  inset: 0;
+
+  border-radius: inherit;
+  border: var(--measurement-small-10) solid transparent;
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  mask-composite: intersect;
+
+  transition: all ease-in-out 0.2s;
+`;
 const CheckboxVariantsStyles = css`
-  &[data-variant="primary"] {
-    background-color: var(--font-color-alpha-10);
-    border: var(--measurement-small-10) solid transparent;
+  &[data-variant="accent"] {
+    background-color: var(--alpha-accent-30);
+
+    ::before {
+      ${CheckboxBeforeDefaultStyles}
+      border-color: var(--alpha-accent-30);
+      mask-image: linear-gradient(var(--alpha-accent-30), transparent);
+    }
 
     &:hover,
-    &:focus {
-      border-color: var(--font-color-alpha-10);
-    }
-
+    &:focus,
     &:active,
     &[data-state="checked"] {
-      background-color: var(--font-color);
+      color: var(--font-color);
+
+      ::before {
+        border-color: var(--color-accent);
+      }
+
+      svg {
+        stroke: var(--color-accent);
+      }
+    }
+  }
+  &[data-variant="primary"] {
+    background-color: var(--font-color);
+    background: linear-gradient(
+      180deg,
+      var(--font-color) 50%,
+      var(--font-color-alpha-60) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${CheckboxBeforeDefaultStyles}
+      border-color: var(--body-color-alpha-20);
+      mask-image: linear-gradient(var(--body-color-alpha-90), transparent);
     }
 
+    &:hover,
+    &:focus,
+    &:active,
     &[data-state="checked"] {
+      background-position: 0% 25%;
+
+      ::before {
+        border-color: var(--body-color-alpha-10);
+      }
+
       svg {
         stroke: var(--body-color);
       }
     }
   }
+  &[data-variant="secondary"] {
+    background-color: var(--contrast-color);
 
-  &[data-variant="border"] {
+    ::before {
+      ${CheckboxBeforeDefaultStyles}
+      border-color: var(--font-color-alpha-30);
+      mask-image: linear-gradient(var(--font-color-alpha-30), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &[data-state="checked"] {
+      color: var(--font-color);
+
+      ::before {
+        border-color: var(--font-color-alpha-60);
+      }
+
+      svg {
+        stroke: var(--font-color);
+      }
+    }
+  }
+  &[data-variant="tertiary"] {
+    border-color: var(--font-color-alpha-10);
+
     background-color: var(--body-color);
-    border: var(--measurement-small-10) solid var(--font-color-alpha-10);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      var(--contrast-color) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${CheckboxBeforeDefaultStyles}
+      border-color: var(--font-color-alpha-10);
+      mask-image: linear-gradient(var(--font-color-alpha-30), transparent);
+    }
 
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
       background-color: var(--font-color-alpha-10);
+      background-position: 0% 75%;
       border-color: transparent;
-    }
 
-    &[data-state="checked"] {
       svg {
         stroke: var(--font-color);
       }
     }
   }
-  &[data-variant="mono"] {
-    background-color: var(--font-color-alpha-10);
-    border: var(--measurement-small-10) solid transparent;
+  &[data-variant="success"] {
+    background-color: var(--alpha-green-30);
+
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      var(--alpha-green-30) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${CheckboxBeforeDefaultStyles}
+      border-color: var(--alpha-green-30);
+      mask-image: linear-gradient(var(--alpha-green-30), transparent);
+    }
 
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
-      border-color: var(--font-color-alpha-10);
-    }
+      color: var(--font-color);
 
-    &[data-state="checked"] {
+      ::before {
+        border-color: var(--color-green);
+        background-color: var(--alpha-green-60);
+      }
+
       svg {
-        stroke: var(--font-color);
+        stroke: var(--color-green);
       }
     }
   }
-  &[data-variant="ghost"] {
-    border: var(--measurement-small-10) solid transparent;
+  &[data-variant="meta"] {
+    background-color: var(--alpha-blue-30);
+
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      var(--alpha-blue-30) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${CheckboxBeforeDefaultStyles}
+      border-color: var(--alpha-blue-30);
+      mask-image: linear-gradient(var(--alpha-blue-30), transparent);
+    }
 
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
-      border-color: var(--font-color-alpha-10);
+      color: var(--font-color);
+
+      ::before {
+        border-color: var(--color-blue);
+        background-color: var(--alpha-blue-60);
+      }
 
       svg {
-        stroke: var(--font-color);
+        stroke: var(--color-blue);
+      }
+    }
+  }
+  &[data-variant="hint"] {
+    background-color: var(--alpha-purple-30);
+
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      var(--alpha-purple-30) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${CheckboxBeforeDefaultStyles}
+      border-color: var(--alpha-purple-30);
+      mask-image: linear-gradient(var(--alpha-purple-30), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &[data-state="checked"] {
+      color: var(--font-color);
+
+      ::before {
+        border-color: var(--color-purple);
+        background-color: var(--alpha-purple-60);
+      }
+
+      svg {
+        stroke: var(--color-purple);
+      }
+    }
+  }
+  &[data-variant="danger"] {
+    background-color: var(--alpha-red-30);
+
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      var(--alpha-red-30) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${CheckboxBeforeDefaultStyles}
+      border-color: var(--alpha-red-30);
+      mask-image: linear-gradient(var(--alpha-red-30), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &[data-state="checked"] {
+      color: var(--font-color);
+
+      ::before {
+        border-color: var(--color-red);
+        background-color: var(--alpha-red-60);
+      }
+
+      svg {
+        stroke: var(--color-red);
+      }
+    }
+  }
+  &[data-variant="warning"] {
+    background-color: var(--alpha-orange-30);
+
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      var(--alpha-orange-30) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${CheckboxBeforeDefaultStyles}
+      border-color: var(--alpha-orange-30);
+      mask-image: linear-gradient(var(--alpha-orange-30), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &[data-state="checked"] {
+      color: var(--font-color);
+
+      ::before {
+        border-color: var(--color-orange);
+        background-color: var(--alpha-orange-60);
+      }
+
+      svg {
+        stroke: var(--color-orange);
       }
     }
   }

@@ -1,6 +1,6 @@
 {
   "name": "@usefui/tokens",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Open Source collection of Design Tokens libraries",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

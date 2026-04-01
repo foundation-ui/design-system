@@ -1,5 +1,11 @@
 # @usefui/icons
 
+## 1.4.0
+
+### Minor Changes
+
+- Components maintenance & ui updates
+
 ## 1.3.0
 
 ### Minor Changes

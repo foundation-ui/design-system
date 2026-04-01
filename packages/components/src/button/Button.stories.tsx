@@ -8,9 +8,11 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+      <Page>
+        <Page.Content className="p-medium-30">
+          <Story />
+        </Page.Content>
+      </Page>
     ),
   ],
 } satisfies Meta<typeof Button>;
@@ -46,15 +48,28 @@ export const Variants: Story = {
   render: ({ ...args }) => {
     return (
       <Page>
-        <Page.Content className="flex align-center justify-center">
+        <Page.Content className="flex flex-column g-medium-30 align-center justify-center">
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button variant="accent">
+              <span className="color-mono-white">Accent</span>
+            </Button>
+          </div>
           <div className="flex align-center justify-center g-medium-30 flex-wrap">
             <Button variant="primary">Primary</Button>
             <Button variant="secondary">Secondary</Button>
             <Button variant="tertiary">Tertiary</Button>
-            <Button variant="danger">Danger</Button>
-            <Button variant="warning">Warning</Button>
             <Button variant="mono">Mono</Button>
             <Button variant="border">Border</Button>
+          </div>
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button variant="hint">Hint</Button>
+            <Button variant="meta">Meta</Button>
+            <Button variant="success">Success</Button>
+            <Button variant="danger">Danger</Button>
+            <Button variant="warning">Warning</Button>
+          </div>
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button variant="link">Link</Button>
             <Button variant="ghost">Ghost</Button>
           </div>
         </Page.Content>
@@ -68,6 +83,11 @@ export const Animations: Story = {
       <Page>
         <Page.Content className="flex flex-column g-medium-30 align-center justify-center">
           <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button animation="reflective" variant="accent">
+              <span className="color-mono-white">Accent</span>
+            </Button>
+          </div>
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
             <Button animation="reflective" variant="primary">
               Primary
             </Button>
@@ -77,12 +97,6 @@ export const Animations: Story = {
             <Button animation="reflective" variant="tertiary">
               Tertiary
             </Button>
-            <Button animation="reflective" variant="danger">
-              Danger
-            </Button>
-            <Button animation="reflective" variant="warning">
-              Warning
-            </Button>
             <Button animation="reflective" variant="mono">
               Mono
             </Button>
@@ -91,26 +105,25 @@ export const Animations: Story = {
             </Button>
           </div>
           <div className="flex align-center justify-center g-medium-30 flex-wrap">
-            <Button animation="reflective" variant="border" sizing="small">
-              Small
+            <Button animation="reflective" variant="hint">
+              Hint
             </Button>
-            <Button animation="reflective" variant="border" sizing="medium">
-              Medium
+            <Button animation="reflective" variant="meta">
+              Meta
             </Button>
-            <Button animation="reflective" variant="border" sizing="large">
-              Large
+            <Button animation="reflective" variant="success">
+              Success
+            </Button>
+            <Button animation="reflective" variant="danger">
+              Danger
+            </Button>
+            <Button animation="reflective" variant="warning">
+              Warning
             </Button>
           </div>
           <div className="flex align-center justify-center g-medium-30 flex-wrap">
-            <Button animation="reflective" variant="border" shape="square">
-              Square
-            </Button>
-            <Button animation="reflective" variant="border" shape="smooth">
-              Smooth
-            </Button>
-            <Button animation="reflective" variant="border" shape="round">
-              Round
-            </Button>
+            <Button variant="link">Link</Button>
+            <Button variant="ghost">Ghost</Button>
           </div>
         </Page.Content>
       </Page>

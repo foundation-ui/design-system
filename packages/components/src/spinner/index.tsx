@@ -2,18 +2,28 @@
 
 import React from "react";
 
-import { RotatingSpinner } from "./styles";
+import { AnimatedSpinner } from "./styles";
 import type { IComponentSize } from "../../../../types";
 
-interface SpinnerProperties extends IComponentSize {}
+type SpinnerVariant = "circle" | "circle-filled";
+
+interface SpinnerProperties extends IComponentSize {
+  variant?: SpinnerVariant;
+}
 
 /**
- * Spinners are used to convoy a loading state information.
+ * Spinners are used to convey a loading state information.
  *
- * @param {TextareaProps} props - The props for the Spinner component.
- * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to `medium`.
+ * @param {SpinnerProperties} props - The props for the Spinner component.
+ * @param {string} props.sizing - The size of the component. Defaults to `medium`.
+ * @param {SpinnerVariant} props.variant - The spinner animation variant. Defaults to `circle`.
  * @returns {ReactElement} The Spinner component.
  */
 export const Spinner = (props: SpinnerProperties) => {
-  return <RotatingSpinner data-size={props.sizing ?? "medium"} />;
+  return (
+    <AnimatedSpinner
+      data-variant={props?.variant ?? "circle"}
+      data-size={props?.sizing ?? "medium"}
+    />
+  );
 };

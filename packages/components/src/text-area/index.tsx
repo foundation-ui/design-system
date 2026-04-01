@@ -7,8 +7,10 @@ import {
   IComponentSize,
   IComponentStyling,
   IComponentVariant,
-  TComponentShape,
   ComponentSizeEnum,
+  ComponentShapeEnum,
+  ComponentVariantEnum,
+  IComponentShape,
 } from "../../../../types";
 
 export type ScrollContainerProps = {
@@ -20,12 +22,13 @@ export type ScrollContainerProps = {
 };
 
 export interface TextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  extends
+    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
     IComponentStyling,
     IComponentSize,
+    IComponentShape,
     IComponentVariant {
   resizable?: boolean;
-  shape?: "square" | "smooth";
 }
 
 /**
@@ -50,7 +53,7 @@ export const Textarea = (props: TextareaProps) => {
       textarea.style.height = "auto";
       textarea.style.height = `${Math.min(
         textarea.scrollHeight,
-        parseInt(getComputedStyle(textarea).maxHeight)
+        parseInt(getComputedStyle(textarea).maxHeight),
       )}px`;
     }
   };
@@ -66,8 +69,8 @@ export const Textarea = (props: TextareaProps) => {
     <TextAreaContainer
       ref={textareaRef}
       onChange={handleChange}
-      data-variant={variant ?? "secondary"}
-      data-shape={shape ?? "smooth"}
+      data-variant={variant ?? ComponentVariantEnum.Secondary}
+      data-shape={shape ?? ComponentShapeEnum.Smooth}
       data-size={sizing ?? ComponentSizeEnum.Medium}
       data-resizable={resizable}
       data-raw={String(Boolean(raw))}

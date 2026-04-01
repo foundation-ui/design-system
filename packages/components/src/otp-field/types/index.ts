@@ -1,3 +1,10 @@
+import {
+  IComponentSize,
+  IComponentVariant,
+  IComponentShape,
+  IComponentStyling,
+} from "../../../../../types";
+
 export interface OTPFieldContextType {
   otp: string[];
   inputRefs: React.MutableRefObject<(HTMLInputElement | null)[]>;
@@ -18,6 +25,7 @@ export interface OTPFieldProps {
   onComplete?: (value: string) => void;
 }
 
-export interface OTPFieldSlotProps {
+export interface OTPFieldSlotProps
+  extends IComponentVariant, IComponentStyling, IComponentShape {
   index: number;
 }

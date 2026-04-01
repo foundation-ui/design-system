@@ -2,17 +2,17 @@ import styled, { css } from "styled-components";
 
 const AvatarSizesStyles = css`
   &[data-size="small"] {
+    width: var(--measurement-medium-70);
+    height: var(--measurement-medium-70);
+    min-width: var(--measurement-medium-70);
+    min-height: var(--measurement-medium-70);
+  }
+
+  &[data-size="medium"] {
     width: var(--measurement-large-10);
     height: var(--measurement-large-10);
     min-width: var(--measurement-large-10);
     min-height: var(--measurement-large-10);
-  }
-
-  &[data-size="medium"] {
-    width: var(--measurement-medium-90);
-    height: var(--measurement-medium-90);
-    min-width: var(--measurement-medium-90);
-    min-height: var(--measurement-medium-90);
   }
 
   &[data-size="large"] {
@@ -20,6 +20,26 @@ const AvatarSizesStyles = css`
     height: var(--measurement-large-20);
     min-width: var(--measurement-large-20);
     min-height: var(--measurement-large-20);
+  }
+`;
+const AvatarShapesStyles = css`
+  &[data-shape="square"] {
+    border-radius: 0;
+    img {
+      border-radius: 0;
+    }
+  }
+  &[data-shape="smooth"] {
+    border-radius: var(--measurement-medium-30);
+    img {
+      border-radius: var(--measurement-medium-30);
+    }
+  }
+  &[data-shape="round"] {
+    border-radius: 100%;
+    img {
+      border-radius: 100%;
+    }
   }
 `;
 const AvatarStatusesStyles = css`
@@ -40,7 +60,7 @@ const AvatarStatusesStyles = css`
 
   &[data-status="offline"] {
     fill: var(--body-color);
-    stroke: var(--font-color-alpha-10);
+    stroke: var(--contrast-color);
   }
 `;
 
@@ -51,17 +71,18 @@ export const AvatarWrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    background-color: var(--body-color);
-    border-radius: 100%;
+    background-color: var(--font-color-alpha-10);
+    border: var(--measurement-small-10) solid var(--font-color-alpha-10);
 
     img {
       width: inherit;
       height: inherit;
       min-width: inherit;
       min-height: inherit;
-      border-radius: 100%;
+      border: var(--measurement-small-10) solid var(--font-color-alpha-10);
     }
 
+    ${AvatarShapesStyles}
     ${AvatarSizesStyles}
   }
 `;
@@ -71,9 +92,34 @@ export const StatusWrapper = styled.svg`
   );
 
   position: absolute;
-  stroke-width: var(--measurement-small-30);
+  stroke-width: var(--measurement-small-10);
   bottom: var(--status-position);
   right: var(--status-position);
 
   ${AvatarStatusesStyles}
+`;
+export const BadgeWrapper = styled.div`
+  --status-position: calc(
+    var(--measurement-medium-10) - (var(--measurement-medium-10) * 2)
+  );
+
+  position: absolute;
+
+  bottom: var(--status-position);
+  right: var(--status-position);
+
+  width: var(--measurement-medium-60);
+  height: var(--measurement-medium-60);
+
+  background-color: var(--font-color-alpha-10);
+  border-radius: 100%;
+
+  img {
+    width: inherit;
+    height: inherit;
+    min-width: inherit;
+    min-height: inherit;
+    border-radius: 100%;
+    border: var(--measurement-small-10) solid var(--font-color-alpha-10);
+  }
 `;

@@ -8,6 +8,17 @@ import { Page, Spinner } from "..";
 const meta = {
   title: "Components/Spinner",
   component: Spinner,
+  decorators: [
+    (Story) => (
+      <Page>
+        <Page.Content className="p-medium-30">
+          <div className="flex flex-column align-center justify-center h-100 g-medium-30">
+            <Story />
+          </div>
+        </Page.Content>
+      </Page>
+    ),
+  ],
   tags: ["autodocs"],
 } satisfies Meta<typeof Spinner>;
 export default meta;
@@ -16,12 +27,26 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {},
   render: ({ ...args }) => (
-    <Page>
-      <Page.Content className="g-medium-60 flex align-center justify-center h-100 w-100">
+    <React.Fragment>
+      <div className="flex align-center g-medium-30">
         <Spinner sizing="small" {...args} />
         <Spinner sizing="medium" {...args} />
         <Spinner sizing="large" {...args} />
-      </Page.Content>
-    </Page>
+      </div>
+    </React.Fragment>
+  ),
+};
+export const Variants: Story = {
+  args: {},
+  render: ({ ...args }) => (
+    <React.Fragment>
+      {["circle", "circle-filled"].map((variant) => (
+        <div className="flex align-center g-medium-30" key={variant}>
+          <Spinner sizing="small" variant={variant} />
+          <Spinner sizing="medium" variant={variant} />
+          <Spinner sizing="large" variant={variant} />
+        </div>
+      ))}
+    </React.Fragment>
   ),
 };

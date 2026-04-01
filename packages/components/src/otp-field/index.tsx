@@ -6,6 +6,11 @@ import { useOTPField, OTPFieldContext } from "./hooks";
 import { OTPCell } from "./styles";
 
 import type { OTPFieldProps, OTPFieldSlotProps } from "./types";
+import {
+  ComponentShapeEnum,
+  ComponentSizeEnum,
+  ComponentVariantEnum,
+} from "../../../../types";
 
 export interface IOTPFieldComposition {
   Slot: typeof OTPFieldSlot;
@@ -191,6 +196,8 @@ OTPFieldGroup.displayName = "OTPField.Group";
  */
 const OTPFieldSlot = ({
   index,
+  shape,
+  raw,
   ...props
 }: OTPFieldSlotProps & React.InputHTMLAttributes<HTMLInputElement>) => {
   const context = useOTPField();
@@ -215,6 +222,8 @@ const OTPFieldSlot = ({
       type="text"
       data-testid="otp-field-slot"
       data-active={activeIndex === index}
+      data-shape={shape ?? ComponentShapeEnum.Smooth}
+      data-raw={Boolean(raw)}
       autoComplete="one-time-code"
       maxLength={1}
       value={otp[index] || ""}

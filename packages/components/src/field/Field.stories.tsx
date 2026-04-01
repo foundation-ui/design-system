@@ -10,9 +10,11 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+      <Page>
+        <Page.Content className="p-medium-30">
+          <Story />
+        </Page.Content>
+      </Page>
     ),
   ],
 } satisfies Meta<typeof Field>;
@@ -121,13 +123,19 @@ export const ComposedError = {
 export const Sizes = {
   render: ({ ...args }) => {
     return (
-      <div className="flex g-medium-30">
-        {["large", "medium", "small"].map((item) => (
-          <Field.Root key={item}>
-            <Field placeholder={item} sizing={item} />
-          </Field.Root>
-        ))}
-      </div>
+      <Page>
+        <Page.Content>
+          <div className="flex flex-column align-center justify-center h-100 g-medium-30">
+            {["large", "medium", "small"].map((item) => (
+              <Field.Root key={item}>
+                <Field.Wrapper style={{ width: 325 }}>
+                  <Field sizing={item} placeholder={item} variant="secondary" />
+                </Field.Wrapper>
+              </Field.Root>
+            ))}
+          </div>
+        </Page.Content>
+      </Page>
     );
   },
 };
@@ -136,15 +144,17 @@ export const Shapes = {
     return (
       <Page>
         <Page.Content>
-          <div className="flex align-center justify-center flex-wrap h-100 g-medium-30">
+          <div className="flex flex-column align-center justify-center h-100 g-medium-30">
             {["square", "smooth", "round"].map((item) => (
               <Field.Root key={item}>
-                <Field
-                  shape={item}
-                  sizing="medium"
-                  placeholder={item}
-                  variant="secondary"
-                />
+                <Field.Wrapper style={{ width: 325 }}>
+                  <Field
+                    shape={item}
+                    sizing="medium"
+                    placeholder={item}
+                    variant="secondary"
+                  />
+                </Field.Wrapper>
               </Field.Root>
             ))}
           </div>
@@ -158,17 +168,166 @@ export const Variants = {
     return (
       <Page>
         <Page.Content>
-          <div className="flex align-center justify-center flex-wrap h-100 g-medium-30">
+          <div className="flex flex-column align-center justify-center h-100 g-medium-30">
             {["primary", "secondary", "ghost"].map((item) => (
               <Field.Root key={item}>
-                <Field
-                  shape="smooth"
-                  sizing="medium"
-                  placeholder={item}
-                  variant={item}
-                />
+                <Field.Wrapper style={{ width: 325 }}>
+                  <Field
+                    shape="smooth"
+                    sizing="medium"
+                    placeholder={item}
+                    variant={item}
+                  />
+                </Field.Wrapper>
               </Field.Root>
             ))}
+          </div>
+        </Page.Content>
+      </Page>
+    );
+  },
+};
+export const Text = {
+  render: ({ ...args }) => {
+    return (
+      <Page>
+        <Page.Content>
+          <div className="flex flex-column align-center justify-center flex-wrap h-100 w-100 g-medium-30">
+            <Field.Root>
+              <Field.Wrapper style={{ width: 325 }}>
+                <Field.Label>Text</Field.Label>
+                <Field variant="secondary" placeholder="Placeholder..." />
+                <Field.Meta variant="hint">
+                  This is a hint text to help user.
+                </Field.Meta>
+              </Field.Wrapper>
+            </Field.Root>
+          </div>
+        </Page.Content>
+      </Page>
+    );
+  },
+};
+export const Number = {
+  render: ({ ...args }) => {
+    return (
+      <Page>
+        <Page.Content>
+          <div className="flex flex-column align-center justify-center flex-wrap h-100 w-100 g-medium-30">
+            <Field.Root>
+              <Field.Wrapper style={{ width: 325 }}>
+                <Field.Label>Number</Field.Label>
+                <Field.Number placeholder="100" min={0} max={100} />
+                <Field.Meta variant="hint">
+                  This is a hint text to help user.
+                </Field.Meta>
+              </Field.Wrapper>
+            </Field.Root>
+          </div>
+        </Page.Content>
+      </Page>
+    );
+  },
+};
+
+export const Date = {
+  render: ({ ...args }) => {
+    return (
+      <Page>
+        <Page.Content>
+          <div className="flex flex-column align-center justify-center flex-wrap h-100 w-100 g-medium-30">
+            <Field.Root>
+              <Field.Wrapper style={{ width: 325 }}>
+                <Field.Label>Date</Field.Label>
+                <Field.Date
+                  variant="secondary"
+                  // defaultValue={new Date()}
+                  locale="en-US"
+                  withTime
+                />
+                <Field.Meta variant="hint">
+                  This is a hint text to help user.
+                </Field.Meta>
+              </Field.Wrapper>
+            </Field.Root>
+          </div>
+        </Page.Content>
+      </Page>
+    );
+  },
+};
+export const File = {
+  render: ({ ...args }) => {
+    return (
+      <Page>
+        <Page.Content>
+          <div className="flex flex-column align-center justify-center flex-wrap h-100 w-100 g-medium-30">
+            <Field.Root>
+              <Field.Wrapper style={{ width: 325 }}>
+                <Field.Label>Upload file</Field.Label>
+                <Field.File
+                  variant="secondary"
+                  sizing="medium"
+                  trigger={
+                    <span className="fs-small-50 flex align-center justify-center w-100 h-100">
+                      Upload
+                    </span>
+                  }
+                  onFileChange={(files) => console.log(files)}
+                  multiple
+                />
+                <Field.Meta variant="hint">
+                  SVG, PNG, JPG or GIF (max. 800x400px).
+                </Field.Meta>
+              </Field.Wrapper>
+            </Field.Root>
+          </div>
+        </Page.Content>
+      </Page>
+    );
+  },
+};
+export const Password = {
+  render: ({ ...args }) => {
+    return (
+      <Page>
+        <Page.Content>
+          <div className="flex flex-column align-center justify-center flex-wrap h-100 w-100 g-medium-30">
+            <Field.Root>
+              <Field.Wrapper style={{ width: 325 }}>
+                <Field.Label>Password</Field.Label>
+                <Field.Password variant="secondary" sizing="medium" />
+                <Field.Meta variant="hint">
+                  Must be at least 8 characters.
+                </Field.Meta>
+              </Field.Wrapper>
+            </Field.Root>
+          </div>
+        </Page.Content>
+      </Page>
+    );
+  },
+};
+export const Tag = {
+  render: ({ ...args }) => {
+    return (
+      <Page>
+        <Page.Content>
+          <div className="flex flex-column align-center justify-center flex-wrap h-100 w-100 g-medium-30">
+            <Field.Root>
+              <Field.Wrapper style={{ width: 325 }}>
+                <Field.Label>Tags</Field.Label>
+                <Field.Tag
+                  defaultValue={["Design", "Engineering"]}
+                  onChange={(tags) => console.log(tags)}
+                  placeholder="Type and press Enter…"
+                  allowed={["Design", "Engineering", "UI", "UX", "AI"]}
+                />
+                <Field.Meta variant="hint">
+                  This is a hint text to help user.
+                </Field.Meta>
+              </Field.Wrapper>
+            </Field.Root>
           </div>
         </Page.Content>
       </Page>

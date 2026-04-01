@@ -3,19 +3,24 @@
 import React from "react";
 import { BadgeWrapper } from "./styles";
 
-import type { IComponentStyling, TComponentShape } from "../../../../types";
+import {
+  ComponentShapeEnum,
+  ComponentSizeEnum,
+  ComponentVariantEnum,
+  IComponentSize,
+  TComponentVariant,
+  TComponentVariantExtended,
+  type IComponentShape,
+  type IComponentStyling,
+} from "../../../../types";
 
 export interface IBadgeProperties
-  extends IComponentStyling, React.ComponentProps<"div"> {
-  variant?:
-    | "primary"
-    | "secondary"
-    | "border"
-    | "error"
-    | "warning"
-    | "success"
-    | "meta";
-  shape?: TComponentShape;
+  extends
+    IComponentStyling,
+    IComponentShape,
+    IComponentSize,
+    React.ComponentProps<"div"> {
+  variant?: TComponentVariant | TComponentVariantExtended;
 }
 
 /**
@@ -29,6 +34,7 @@ export interface IBadgeProperties
  * @param {IBadgeProperties} props - The props for the Badge component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {TComponentShape} props.shape - The shape of the component. Defaults to `smooth`.
+ * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to "small".
  * @param {string} props.variant - The style definition used by the component.
  * @param {ReactNode} props.children - The content to be rendered inside the Badge.
  * @returns {ReactElement} The Badge component.
@@ -36,8 +42,9 @@ export interface IBadgeProperties
 export const Badge = (props: IBadgeProperties) => {
   const {
     raw = false,
-    variant = "primary",
-    shape = "smooth",
+    sizing = ComponentSizeEnum.Small,
+    variant = ComponentVariantEnum.Primary,
+    shape = ComponentShapeEnum.Smooth,
     children,
     ...restProps
   } = props;
@@ -47,6 +54,7 @@ export const Badge = (props: IBadgeProperties) => {
       data-raw={raw}
       data-variant={variant}
       data-shape={shape}
+      data-size={sizing}
       {...restProps}
     >
       {children}

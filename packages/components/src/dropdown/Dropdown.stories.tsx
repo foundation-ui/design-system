@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { DropdownMenu } from "..";
+import { Badge, Divider, DropdownMenu, Page } from "..";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../types";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.
@@ -23,15 +23,18 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+      <Page>
+        <Page.Content className="p-medium-30 flex align-center justify-center w-100 h-100">
+          <Story />
+        </Page.Content>
+      </Page>
     ),
   ],
 } satisfies Meta<typeof DropdownMenu>;
 export default meta;
 
 type Story = StoryObj<typeof meta>;
+
 export const Default: Story = {
   args: {
     raw: false,
@@ -63,24 +66,30 @@ export const Default: Story = {
   },
   render: ({ ...args }) => (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger>🐻‍❄️</DropdownMenu.Trigger>
       <DropdownMenu>
+        <DropdownMenu.Trigger variant="secondary">Actions</DropdownMenu.Trigger>
+
         <DropdownMenu.Content>
-          {["🐻", "🐻‍❄️", "🦊", "🐱", "🐶"].map((item) => (
-            <DropdownMenu.Item key={item}>{item}</DropdownMenu.Item>
-          ))}
-        </DropdownMenu.Content>
-      </DropdownMenu>
-    </DropdownMenu.Root>
-  ),
-};
-export const DefaultOpen: Story = {
-  render: ({ ...args }) => (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger>🐻‍❄️</DropdownMenu.Trigger>
-      <DropdownMenu>
-        <DropdownMenu.Content defaultOpen>
-          <DropdownMenu.Item>🐻🐻‍❄️🦊🐱🐶</DropdownMenu.Item>
+          <DropdownMenu.Item className="flex justify-between align-center">
+            Cut
+            <Badge variant="border">
+              <span className="fs-small-50">⌘X</span>
+            </Badge>
+          </DropdownMenu.Item>
+
+          <DropdownMenu.Item className="flex justify-between align-center">
+            Copy
+            <Badge variant="border">
+              <span className="fs-small-50">⌘C</span>
+            </Badge>
+          </DropdownMenu.Item>
+
+          <DropdownMenu.Item className="flex justify-between align-center">
+            Paste
+            <Badge variant="border">
+              <span className="fs-small-50">⌘V</span>
+            </Badge>
+          </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu>
     </DropdownMenu.Root>
@@ -89,10 +98,39 @@ export const DefaultOpen: Story = {
 export const RadioItem: Story = {
   render: ({ ...args }) => (
     <DropdownMenu.Root>
-      <DropdownMenu.Trigger>🐻‍❄️</DropdownMenu.Trigger>
       <DropdownMenu>
-        <DropdownMenu.Content>
-          <DropdownMenu.Item radio>🐻🐻‍❄️🦊🐱🐶</DropdownMenu.Item>
+        <DropdownMenu.Trigger variant="secondary">Actions</DropdownMenu.Trigger>
+
+        <DropdownMenu.Content className="flex flex-column g-small-60">
+          <DropdownMenu.Item
+            className="flex justify-between align-center"
+            radio
+          >
+            Cut
+            <Badge variant="border">
+              <span className="fs-small-50">⌘X</span>
+            </Badge>
+          </DropdownMenu.Item>
+
+          <DropdownMenu.Item
+            className="flex justify-between align-center"
+            radio
+          >
+            Copy
+            <Badge variant="border">
+              <span className="fs-small-50">⌘C</span>
+            </Badge>
+          </DropdownMenu.Item>
+
+          <DropdownMenu.Item
+            className="flex justify-between align-center"
+            radio
+          >
+            Paste
+            <Badge variant="border">
+              <span className="fs-small-50">⌘V</span>
+            </Badge>
+          </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu>
     </DropdownMenu.Root>

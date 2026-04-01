@@ -79,99 +79,6 @@ const ButtonIconStyles = css`
     }
   }
 `;
-const ButtonVariantsStyles = css`
-  &[data-variant="primary"] {
-    color: var(--body-color) !important;
-    background-color: var(--font-color);
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--body-color);
-    }
-  }
-  &[data-variant="secondary"] {
-    color: var(--font-color-alpha-60);
-    background-color: transparent;
-    border-color: var(--font-color-alpha-10);
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--font-color);
-      background-color: var(--font-color-alpha-10);
-      border-color: transparent;
-    }
-  }
-  &[data-variant="tertiary"] {
-    color: var(--font-color-alpha-80);
-    background-color: transparent;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--font-color);
-      background-color: var(--font-color-alpha-10);
-    }
-  }
-  &[data-variant="border"] {
-    color: var(--font-color-alpha-60);
-    background-color: transparent;
-    border-color: var(--font-color-alpha-10);
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--font-color);
-      border-color: var(--font-color-alpha-20);
-    }
-  }
-  &[data-variant="danger"] {
-    color: var(--color-mono-white);
-    background-color: var(--color-red);
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: var(--shade-red-10);
-    }
-  }
-  &[data-variant="warning"] {
-    color: var(--color-mono-dark);
-    background-color: var(--color-orange);
-
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: var(--shade-orange-10);
-    }
-  }
-  &[data-variant="mono"] {
-    color: var(--font-color-alpha-80);
-    background-color: var(--font-color-alpha-10);
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--font-color);
-      border-color: var(--font-color-alpha-10);
-    }
-  }
-  &[data-variant="ghost"] {
-    border: none;
-    padding: 0;
-    background-color: transparent;
-    min-width: fit-content;
-    min-height: var(--measurement-medium-60);
-    color: var(--font-color-alpha-60);
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--font-color);
-    }
-  }
-`;
 const ButtonSizeStyles = css`
   &[data-size="small"] {
     font-size: var(--fontsize-small-60);
@@ -188,12 +95,12 @@ const ButtonSizeStyles = css`
   }
   &[data-size="medium"] {
     padding: var(--measurement-medium-10) var(--measurement-medium-60);
-    min-width: var(--measurement-medium-90);
+    min-width: var(--measurement-medium-60);
     min-height: var(--measurement-medium-80);
   }
   &[data-size="large"] {
     padding: var(--measurement-medium-10) var(--measurement-medium-60);
-    min-width: var(--measurement-medium-90);
+    min-width: var(--measurement-medium-60);
     min-height: var(--measurement-medium-90);
   }
 `;
@@ -206,6 +113,360 @@ const ButtonShapeStyles = css`
   }
   &[data-shape="round"] {
     border-radius: var(--measurement-large-90);
+  }
+`;
+const ButtonBeforeDefaultStyles = css`
+  content: "";
+  inset: 0;
+
+  border-radius: inherit;
+  border: var(--measurement-small-10) solid transparent;
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  mask-composite: intersect;
+
+  transition: all ease-in-out 0.2s;
+`;
+const ButtonVariantsStyles = css`
+  &[data-variant="primary"] {
+    color: var(--body-color-alpha-80);
+    background-color: var(--font-color);
+    background: linear-gradient(
+      180deg,
+      var(--font-color) 50%,
+      var(--font-color-alpha-60) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${ButtonBeforeDefaultStyles}
+      border-color: var(--body-color-alpha-20);
+      mask-image: linear-gradient(var(--body-color-alpha-90), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--body-color);
+      background-position: 0% 25%;
+
+      ::before {
+        border-color: var(--body-color-alpha-10);
+      }
+    }
+  }
+  &[data-variant="secondary"] {
+    color: var(--font-color-alpha-60);
+    border-color: var(--font-color-alpha-10);
+
+    background-color: var(--body-color);
+    background: linear-gradient(
+      180deg,
+      transparent 50%,
+      var(--contrast-color) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${ButtonBeforeDefaultStyles}
+      border-color: var(--font-color-alpha-10);
+      mask-image: linear-gradient(var(--font-color-alpha-30), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--font-color);
+      background-color: var(--font-color-alpha-10);
+      background-position: 0% 75%;
+      border-color: transparent;
+    }
+  }
+  &[data-variant="tertiary"] {
+    color: var(--font-color-alpha-60);
+
+    background-color: transparent;
+    background: linear-gradient(
+      -180deg,
+      transparent 50%,
+      var(--font-color-alpha-10) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 10%;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--font-color);
+      background-color: var(--font-color-alpha-10);
+      background-position: 0% 75%;
+
+      ::before {
+        ${ButtonBeforeDefaultStyles}
+        border-color: var(--font-color-alpha-10);
+        mask-image: linear-gradient(var(--font-color-alpha-30), transparent);
+      }
+    }
+  }
+  &[data-variant="mono"] {
+    color: var(--font-color-alpha-80);
+    background-color: var(--contrast-color);
+
+    ::before {
+      ${ButtonBeforeDefaultStyles}
+      border-color: var(--font-color-alpha-10);
+      mask-image: linear-gradient(var(--font-color-alpha-30), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--font-color);
+
+      ::before {
+        border-color: var(--font-color-alpha-30);
+      }
+    }
+  }
+  &[data-variant="border"] {
+    color: var(--font-color-alpha-60);
+    background-color: transparent;
+    border-color: var(--font-color-alpha-10);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--font-color);
+      border-color: var(--font-color-alpha-20);
+    }
+
+    ::before {
+      ${ButtonBeforeDefaultStyles}
+      border-color: var(--font-color-alpha-10);
+      mask-image: linear-gradient(var(--font-color-alpha-20), transparent);
+    }
+  }
+
+  &[data-variant="accent"] {
+    background-color: var(--color-accent);
+    background: linear-gradient(
+      180deg,
+      var(--color-accent) 50%,
+      var(--shade-accent-30) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${ButtonBeforeDefaultStyles}
+      border-color: var(--shade-accent-10);
+      mask-image: linear-gradient(var(--shade-accent-10), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--tint-accent-10);
+
+      background-position: 0% 75%;
+    }
+  }
+
+  &[data-variant="meta"] {
+    color: var(--alpha-mono-white-80);
+    background-color: var(--color-blue);
+    background: linear-gradient(
+      180deg,
+      var(--tint-blue-10) 50%,
+      var(--alpha-blue-60) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${ButtonBeforeDefaultStyles}
+      border-color: var(--tint-blue-30);
+      mask-image: linear-gradient(var(--tint-blue-10), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--color-mono-white);
+      background-color: var(--shade-blue-10);
+
+      background-position: 0% 25%;
+
+      ::before {
+        border-color: var(--tint-blue-40);
+      }
+    }
+  }
+  &[data-variant="hint"] {
+    color: var(--alpha-mono-white-80);
+    background-color: var(--color-purple);
+    background: linear-gradient(
+      180deg,
+      var(--shade-purple-10) 50%,
+      var(--alpha-purple-60) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${ButtonBeforeDefaultStyles}
+      border-color: var(--shade-purple-20);
+      mask-image: linear-gradient(var(--shade-purple-10), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--color-mono-white);
+      background-color: var(--shade-purple-10);
+
+      background-position: 0% 25%;
+    }
+  }
+  &[data-variant="success"] {
+    color: var(--alpha-mono-white-90);
+    background-color: var(--shade-green-30);
+    background: linear-gradient(
+      180deg,
+      var(--shade-green-10) 50%,
+      var(--alpha-green-60) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${ButtonBeforeDefaultStyles}
+      border-color: var(--shade-green-20);
+      mask-image: linear-gradient(var(--shade-green-10), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--color-mono-white);
+      background-color: var(--shade-green-10);
+
+      background-position: 0% 75%;
+    }
+  }
+  &[data-variant="danger"] {
+    color: var(--alpha-mono-white-80);
+    background-color: var(--color-red);
+    background: linear-gradient(
+      180deg,
+      var(--tint-red-10) 50%,
+      var(--alpha-red-60) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${ButtonBeforeDefaultStyles}
+      border-color: var(--tint-red-60);
+      mask-image: linear-gradient(var(--tint-red-10), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--color-mono-white);
+      background-color: var(--shade-red-10);
+      background-position: 0% 25%;
+
+      ::before {
+        border-color: var(--tint-red-80);
+      }
+    }
+  }
+  &[data-variant="warning"] {
+    color: var(--alpha-mono-dark-80);
+    background-color: var(--color-orange);
+    background: linear-gradient(
+      180deg,
+      var(--tint-orange-10) 50%,
+      var(--alpha-orange-60) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
+    ::before {
+      ${ButtonBeforeDefaultStyles}
+      border-color: var(--tint-orange-30);
+      mask-image: linear-gradient(var(--tint-orange-10), transparent);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--color-mono-dark);
+      background-color: var(--shade-orange-10);
+
+      background-position: 0% 25%;
+
+      ::before {
+        border-color: var(--tint-orange-40);
+      }
+    }
+  }
+
+  &[data-variant="link"] {
+    position: relative;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    min-width: fit-content;
+    min-height: var(--measurement-medium-60);
+    color: currentColor;
+    opacity: 0.6;
+
+    ::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: var(--measurement-small-30);
+      background-color: transparent;
+      bottom: calc(var(--measurement-small-80) * -1);
+      left: var(--measurement-small-10);
+
+      transition: all ease-in-out 0.2s;
+      transform-origin: left left;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 1;
+
+      ::before {
+        width: calc(100% - var(--measurement-small-10));
+        background-color: currentColor;
+      }
+    }
+  }
+  &[data-variant="ghost"] {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    min-width: fit-content;
+    min-height: fit-content;
+    color: var(--font-color-alpha-60);
+    line-height: 0;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--font-color);
+    }
   }
 `;
 

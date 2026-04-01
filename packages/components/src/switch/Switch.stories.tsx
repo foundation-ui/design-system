@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Switch } from "..";
+import { Field, Page, Switch } from "..";
 import { ComponentSizeEnum, ComponentVariantEnum } from "../../../../types";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.
@@ -20,9 +20,13 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+      <Page>
+        <Page.Content className="p-medium-30">
+          <div className="flex flex-column align-center justify-center h-100 g-medium-30">
+            <Story />
+          </div>
+        </Page.Content>
+      </Page>
     ),
   ],
 } satisfies Meta<typeof Switch>;
@@ -67,12 +71,26 @@ export const DefaultChecked: Story = {
 };
 export const Sizes: Story = {
   render: ({ ...args }) => (
-    <div className="flex g-medium-30">
-      {["large", "medium", "small"].map((item) => (
+    <div className="flex flex-column g-medium-30">
+      {["small", "medium", "large"].map((item) => (
         <Switch.Root key={item}>
-          <Switch sizing={item}>
-            <Switch.Thumb />
-          </Switch>
+          <Field.Label
+            id={`${item}-label`}
+            htmlFor={item}
+            className="flex align-center g-medium-30"
+            optional
+          >
+            <Switch name={item} sizing={item}>
+              <Switch.Thumb />
+            </Switch>
+
+            <div className="flex flex-column">
+              <Field.Meta variant="emphasis">{item}</Field.Meta>
+              <Field.Meta variant="hint" className="fs-small-60">
+                The {item} Checkbox sizing
+              </Field.Meta>
+            </div>
+          </Field.Label>
         </Switch.Root>
       ))}
     </div>
@@ -80,15 +98,26 @@ export const Sizes: Story = {
 };
 export const Variants: Story = {
   render: ({ ...args }) => (
-    <div className="flex g-medium-30">
-      {["primary", "ghost"].map((item) => (
+    <div className="flex flex-column g-medium-30">
+      {["accent", "primary"].map((item) => (
         <Switch.Root key={item}>
-          <Switch name={item} variant={item}>
-            <Switch.Thumb />
-          </Switch>
-          <label htmlFor={item}>
-            <small>{item}</small>
-          </label>
+          <Field.Label
+            id={`${item}-label`}
+            htmlFor={item}
+            className="flex align-center g-medium-30"
+            optional
+          >
+            <Switch name={item} variant={item}>
+              <Switch.Thumb />
+            </Switch>
+
+            <div className="flex flex-column">
+              <Field.Meta variant="emphasis">{item}</Field.Meta>
+              <Field.Meta variant="hint" className="fs-small-60">
+                The {item} Checkbox variant
+              </Field.Meta>
+            </div>
+          </Field.Label>
         </Switch.Root>
       ))}
     </div>

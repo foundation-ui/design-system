@@ -16,8 +16,7 @@ export interface IAccordionComposition {
   Content: typeof AccordionContent;
 }
 export interface IAccordionProperties
-  extends IComponentSpacing,
-    React.ComponentProps<"div"> {}
+  extends IComponentSpacing, React.ComponentProps<"div"> {}
 export interface IAccordionTriggerProperties extends IButtonProperties {
   value: string;
 }

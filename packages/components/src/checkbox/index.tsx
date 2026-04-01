@@ -1,15 +1,18 @@
 "use client";
 
 import React from "react";
+
 import { CheckboxProvider, useCheckbox } from "./hooks";
 import { CheckboxWrapper, NativeInput, Indicator } from "./styles";
+
 import {
   IReactChildren,
   IComponentStyling,
   ComponentSizeEnum,
   IComponentSize,
   ComponentVariantEnum,
-  IComponentVariant,
+  TComponentVariant,
+  TComponentVariantExtended,
 } from "../../../../types";
 
 export interface ICheckboxComposition {
@@ -18,10 +21,9 @@ export interface ICheckboxComposition {
 }
 
 export interface ICheckboxProperties
-  extends IComponentStyling,
-    IComponentSize,
-    IComponentVariant,
-    React.ComponentProps<"input"> {}
+  extends IComponentStyling, IComponentSize, React.ComponentProps<"input"> {
+  variant?: TComponentVariant | TComponentVariantExtended | "accent";
+}
 
 /**
  * Checkbox are used to select one or more options from a set.
@@ -44,7 +46,7 @@ const Checkbox = (props: ICheckboxProperties) => {
   const {
     raw,
     sizing = ComponentSizeEnum.Medium,
-    variant = ComponentVariantEnum.Mono,
+    variant = ComponentVariantEnum.Secondary,
     name,
     disabled,
     required,

@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { MessageBubble } from "..";
+import { Avatar, Field, MessageBubble, Page, ScrollArea, Textarea } from "..";
 
 const meta = {
   title: "Components/MessageBubble",
@@ -9,9 +9,11 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+      <Page>
+        <Page.Content className="p-medium-30">
+          <Story />
+        </Page.Content>
+      </Page>
     ),
   ],
 } satisfies Meta<typeof MessageBubble>;
@@ -70,22 +72,67 @@ export const Right: Story = {
 
 export const Conversation: Story = {
   render: () => (
-    <React.Fragment>
+    <ScrollArea className="h-100 w-100 flex flex-column g-medium-30 " scrollbar>
       {(
         [
-          { side: "left", message: "Hey, how are you doing?" },
-          { side: "right", message: "All good! What about you?" },
-          { side: "left", message: "Pretty great, thanks for asking 🐻" },
-          { side: "right", message: "Glad to hear it! 🐻❄️" },
+          {
+            variant: "border",
+            side: "left",
+            message: "Hey, how are you doing?",
+          },
+          {
+            variant: "primary",
+            side: "right",
+            message: "All good! What about you?",
+          },
+          {
+            variant: "border",
+            side: "left",
+            message: "Pretty great, thanks for asking",
+          },
+          {
+            variant: "primary",
+            side: "right",
+            message:
+              "Hic dolorum esse magnam sint quibusdam porro reprehenderit, enim, repellendus ipsam, iste est! Deserunt ipsam ullam dolores expedita rem, magni iste eveniet.",
+          },
+          {
+            variant: "hint",
+            side: "right",
+            message: "Hic dolorum esse magnam sint quibusdam.",
+          },
+          {
+            variant: "meta",
+            side: "right",
+            message: "Ipsa nisi fugiat doloribus.",
+          },
         ] as const
-      ).map(({ side, message }, index) => (
+      ).map(({ variant, side, message }, index) => (
         <MessageBubble.Root key={index}>
           <MessageBubble side={side}>
-            <MessageBubble.Content>{message}</MessageBubble.Content>
+            {side === "left" && (
+              <Field.Meta variant="hint">
+                <Avatar
+                  sizing="small"
+                  alt="foundation-logo"
+                  src="https://www.untitledui.com/images/avatars/olivia-rhye?fm=webp&q=80"
+                  shape="smooth"
+                >
+                  <Avatar.Badge
+                    alt="foundation-logo"
+                    src="https://www.untitledui.com/logos/images/Layers.jpg"
+                  />
+                </Avatar>
+              </Field.Meta>
+            )}
+
+            <MessageBubble.Content variant={variant} className="fs-medium-20">
+              {message}
+            </MessageBubble.Content>
             <MessageBubble.Meta createdAt={MOCK_DATE} />
           </MessageBubble>
         </MessageBubble.Root>
       ))}
-    </React.Fragment>
+    </ScrollArea>
   ),
 };

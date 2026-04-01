@@ -7,7 +7,7 @@ import {
   FieldVariantsStyles,
 } from "../../field/styles";
 
-import type { ScrollContainerProps } from "text-area";
+import type { ScrollContainerProps } from "../";
 
 const CustomScrollbar = css<ScrollContainerProps>`
   height: ${({ $height }) => $height ?? "100%"};

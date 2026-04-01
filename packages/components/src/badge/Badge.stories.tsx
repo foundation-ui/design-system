@@ -1,6 +1,8 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Badge } from "./";
+import { Page } from "..";
+import { ComponentSizeEnum } from "../../../../types";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.
 
@@ -20,9 +22,11 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+      <Page>
+        <Page.Content className="p-medium-30">
+          <Story />
+        </Page.Content>
+      </Page>
     ),
   ],
 } satisfies Meta<typeof Badge>;
@@ -35,10 +39,27 @@ export const Default: Story = {
 export const Shapes: Story = {
   render: ({ ...args }) => {
     return (
-      <div className="flex g-medium-30">
+      <div className="flex flex column g-medium-30">
         <Badge shape="square">Square</Badge>
         <Badge shape="smooth">Smooth</Badge>
         <Badge shape="round">Round</Badge>
+      </div>
+    );
+  },
+};
+export const Sizes: Story = {
+  render: ({ ...args }) => {
+    return (
+      <div className="flex align-start g-medium-30">
+        <Badge variant="border" sizing="small">
+          Label
+        </Badge>
+        <Badge variant="border" sizing="medium">
+          Label
+        </Badge>
+        <Badge variant="border" sizing="large">
+          Label
+        </Badge>
       </div>
     );
   },
@@ -51,9 +72,10 @@ export const Variants: Story = {
         <Badge variant="secondary">Secondary</Badge>
         <Badge variant="border">Border</Badge>
         <Badge variant="meta">Meta</Badge>
+        <Badge variant="hint">Hint</Badge>
         <Badge variant="success">Success</Badge>
         <Badge variant="warning">Warning</Badge>
-        <Badge variant="error">Error</Badge>
+        <Badge variant="danger">Error</Badge>
       </div>
     );
   },

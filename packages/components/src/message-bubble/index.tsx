@@ -10,7 +10,17 @@ import {
   MessageBubbleMetaWrapper,
 } from "./styles";
 
-import { IComponentStyling, IReactChildren } from "../../../../types";
+import {
+  ComponentShapeEnum,
+  ComponentSizeEnum,
+  ComponentVariantEnum,
+  IComponentShape,
+  IComponentSize,
+  IComponentStyling,
+  IReactChildren,
+  TComponentVariant,
+  TComponentVariantExtended,
+} from "../../../../types";
 
 export type MessageBubbleSide = "left" | "right";
 
@@ -24,7 +34,12 @@ export interface IMessageBubbleProperties
 }
 
 export interface IMessageBubbleContentProperties
-  extends IComponentStyling, React.HTMLAttributes<HTMLDivElement> {
+  extends
+    IComponentStyling,
+    IComponentShape,
+    IComponentSize,
+    React.HTMLAttributes<HTMLDivElement> {
+  variant?: TComponentVariant | TComponentVariantExtended;
   children: string;
 }
 
@@ -88,14 +103,16 @@ MessageBubble.displayName = "MessageBubble";
  * @returns {ReactElement} The MessageBubble.Content component.
  */
 const MessageBubbleContent = (props: IMessageBubbleContentProperties) => {
-  const { children, raw, ...restProps } = props;
+  const { sizing, shape, variant, children, raw, ...restProps } = props;
   const { id, states } = useMessageBubble();
 
   return (
     <MessageBubbleBadge
-      variant="secondary"
       data-raw={Boolean(raw)}
       data-side={states?.side}
+      variant={variant ?? ComponentVariantEnum.Border}
+      shape={shape ?? ComponentShapeEnum.Smooth}
+      sizing={sizing ?? ComponentSizeEnum.Medium}
       aria-label={`message-bubble-content-${id}`}
       {...restProps}
     >
@@ -133,6 +150,7 @@ const MessageBubbleMeta = (props: IMessageBubbleMetaProperties) => {
       data-raw={Boolean(raw)}
       data-side={states?.side}
       aria-label={`message-bubble-meta-${states?.side}`}
+      className="fs-small-60 opacity-default-60"
       {...restProps}
     >
       {formattedDate}

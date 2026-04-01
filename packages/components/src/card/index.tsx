@@ -3,7 +3,7 @@
 import React from "react";
 import { CardContainer, CardWrapper, CardsGrid } from "./styles";
 
-import type { IComponentSize, TComponentShape } from "../../../../types";
+import type { IComponentShape, IComponentSize } from "../../../../types";
 
 export interface CardComposition {
   Body: typeof CardBody;
@@ -12,9 +12,7 @@ export interface CardComposition {
 }
 
 interface CardGridProps extends React.ComponentProps<"div">, IComponentSize {}
-interface CardProps extends React.ComponentProps<"div"> {
-  shape?: TComponentShape;
-}
+interface CardProps extends IComponentShape, React.ComponentProps<"div"> {}
 
 const CardGrid = (props: CardGridProps) => {
   const { sizing = "medium", children } = props;

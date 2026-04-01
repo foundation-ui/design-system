@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Tabs } from "..";
+import { Page, Tabs } from "..";
 import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../types";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.
@@ -22,9 +22,13 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story) => (
-      <div className="m-medium-30">
-        <Story />
-      </div>
+      <Page>
+        <Page.Content className="p-medium-30">
+          <div className="flex flex-column  g-medium-30">
+            <Story />
+          </div>
+        </Page.Content>
+      </Page>
     ),
   ],
 } satisfies Meta<typeof Tabs>;
@@ -61,27 +65,51 @@ export const Default: Story = {
   render: ({ ...args }) => (
     <Tabs.Root>
       <Tabs>
-        <div className="flex g-medium-30">
-          <Tabs.Trigger value="🐻‍❄️">🐻‍❄️</Tabs.Trigger>
-          <Tabs.Trigger value="🐻">🐻</Tabs.Trigger>
+        <div className="flex g-medium-30 p-b-medium-30">
+          <Tabs.Trigger value="eng" variant="link">
+            Engineering
+          </Tabs.Trigger>
+          <Tabs.Trigger value="design" variant="link">
+            Design
+          </Tabs.Trigger>
         </div>
+        <Tabs.Content value="eng">
+          Iste nam quasi quam. Ullam numquam reiciendis ratione rem consequatur
+          vero suscipit ut dicta, ducimus magni doloribus est, accusantium
+          explicabo quae fuga.
+        </Tabs.Content>
+        <Tabs.Content value="design">
+          Fuga aut reiciendis porro! Aspernatur autem voluptatibus, quis
+          assumenda consectetur, qui ipsam placeat cum harum animi
+          necessitatibus! Error nisi dolore numquam neque.
+        </Tabs.Content>
       </Tabs>
-      <Tabs.Content value="🐻‍❄️">🐻‍❄️</Tabs.Content>
-      <Tabs.Content value="🐻">🐻</Tabs.Content>
     </Tabs.Root>
   ),
 };
 export const DefaultOpen: Story = {
   render: ({ ...args }) => (
     <Tabs.Root>
-      <Tabs defaultOpen="🐻">
-        <div className="flex g-medium-30">
-          <Tabs.Trigger value="🐻‍❄️">🐻‍❄️</Tabs.Trigger>
-          <Tabs.Trigger value="🐻">🐻</Tabs.Trigger>
+      <Tabs defaultOpen="eng">
+        <div className="flex g-medium-30 p-b-medium-30">
+          <Tabs.Trigger value="eng" variant="link">
+            Engineering
+          </Tabs.Trigger>
+          <Tabs.Trigger value="design" variant="link">
+            Design
+          </Tabs.Trigger>
         </div>
+        <Tabs.Content value="eng">
+          Iste nam quasi quam. Ullam numquam reiciendis ratione rem consequatur
+          vero suscipit ut dicta, ducimus magni doloribus est, accusantium
+          explicabo quae fuga.
+        </Tabs.Content>
+        <Tabs.Content value="design">
+          Fuga aut reiciendis porro! Aspernatur autem voluptatibus, quis
+          assumenda consectetur, qui ipsam placeat cum harum animi
+          necessitatibus! Error nisi dolore numquam neque.
+        </Tabs.Content>
       </Tabs>
-      <Tabs.Content value="🐻‍❄️">🐻‍❄️</Tabs.Content>
-      <Tabs.Content value="🐻">🐻</Tabs.Content>
     </Tabs.Root>
   ),
 };

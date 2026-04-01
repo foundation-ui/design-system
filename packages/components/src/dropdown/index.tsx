@@ -203,38 +203,49 @@ const DropdownMenuContent = React.forwardRef<
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [states.open]);
 
+  React.useEffect(() => {
+    if (!states.open) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && methods.toggleOpen) {
+        methods.toggleOpen();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [states.open]);
+
+  if (!states.open) return null;
   return (
-    <>
-      {states.open && (
-        <ContentWrapper
-          ref={contentRef}
-          id={id.split("|").at(-1)}
-          role="menu"
-          tabIndex={-1}
-          aria-labelledby={id.split("|").at(0)}
-          data-state={applyDataState(Boolean(states.open))}
-          data-sizing={sizing}
-          data-side={
-            hasEnoughHorizontalSpace
-              ? ComponentSideEnum.Left
-              : ComponentSideEnum.Right
-          }
-          data-align={
-            hasEnoughHorizontalSpace
-              ? ComponentSideEnum.Left
-              : ComponentSideEnum.Right
-          }
-          data-raw={Boolean(raw)}
-          style={{
-            top: hasEnoughVerticalSpace ? positions.ttb : positions.btt,
-            left: hasEnoughHorizontalSpace ? positions.ltr : positions.rtl,
-          }}
-          {...restProps}
-        >
-          {children}
-        </ContentWrapper>
-      )}
-    </>
+    <ContentWrapper
+      ref={contentRef}
+      id={id.split("|").at(-1)}
+      role="menu"
+      tabIndex={-1}
+      aria-labelledby={id.split("|").at(0)}
+      data-state={applyDataState(Boolean(states.open))}
+      data-sizing={sizing}
+      data-side={
+        hasEnoughHorizontalSpace
+          ? ComponentSideEnum.Left
+          : ComponentSideEnum.Right
+      }
+      data-align={
+        hasEnoughHorizontalSpace
+          ? ComponentSideEnum.Left
+          : ComponentSideEnum.Right
+      }
+      data-raw={Boolean(raw)}
+      style={{
+        top: hasEnoughVerticalSpace ? positions.ttb : positions.btt,
+        left: hasEnoughHorizontalSpace ? positions.ltr : positions.rtl,
+      }}
+      {...restProps}
+    >
+      {children}
+    </ContentWrapper>
   );
 });
 DropdownMenuContent.displayName = "DropdownMenu.Content";

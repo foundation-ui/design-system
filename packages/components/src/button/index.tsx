@@ -9,16 +9,20 @@ import {
   IComponentSize,
   ComponentVariantEnum,
   TComponentVariant,
-  TComponentShape,
+  ComponentShapeEnum,
+  IComponentShape,
+  TComponentVariantExtended,
 } from "../../../../types";
 
 export interface IButtonProperties
-  extends IComponentStyling,
+  extends
+    IComponentStyling,
+    IComponentShape,
     IComponentSize,
     React.ComponentPropsWithRef<"button"> {
   rawicon?: boolean;
-  variant?: TComponentVariant | "danger" | "warning";
-  shape?: TComponentShape;
+  variant?: TComponentVariant | TComponentVariantExtended | "link" | "accent";
+
   animation?: "reflective";
 }
 
@@ -46,7 +50,7 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
       name,
       variant = ComponentVariantEnum.Primary,
       sizing = ComponentSizeEnum.Medium,
-      shape = "smooth",
+      shape = ComponentShapeEnum.Smooth,
       animation,
       raw,
       rawicon,
@@ -82,7 +86,7 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
           y: ((e.clientY - rect.top) / rect.height) * 100,
         });
       },
-      []
+      [],
     );
     const handleMouseEnter = React.useCallback(
       (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -91,7 +95,7 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
 
         setIsHovering(true);
       },
-      []
+      [],
     );
     const handleMouseLeave = React.useCallback(
       (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -100,7 +104,7 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
 
         setIsHovering(false);
       },
-      []
+      [],
     );
 
     return (
@@ -136,6 +140,6 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
         {children}
       </ButtonWrapper>
     );
-  }
+  },
 );
 Button.displayName = "Button";

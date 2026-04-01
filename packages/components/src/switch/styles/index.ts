@@ -15,6 +15,16 @@ const SwitchDefaultStyles = css`
   }
 `;
 const SwitchVariantsStyles = css`
+  &[data-variant="accent"] {
+    &[aria-checked="true"] {
+      background-color: var(--color-accent);
+      border-color: var(--alpha-accent-10);
+    }
+    &[aria-checked="false"] {
+      background-color: var(--font-color-alpha-10);
+      border-color: var(--font-color-alpha-10);
+    }
+  }
   &[data-variant="primary"] {
     &[aria-checked="true"] {
       background-color: var(--color-green);
@@ -25,71 +35,59 @@ const SwitchVariantsStyles = css`
       border-color: var(--font-color-alpha-10);
     }
   }
-  &[data-variant="secondary"] {
-    &[aria-checked="true"] {
-      background-color: var(--font-color-alpha-10);
-      border-color: var(--font-color-alpha-10);
-    }
-    &[aria-checked="false"] {
-      background-color: var(--body-color-alpha-10);
-    }
-  }
-
-  &[data-variant="ghost"] {
-    &[aria-checked="true"] {
-      border-color: var(--font-color-alpha-10);
-      background-color: var(--body-color-alpha-10);
-    }
-    &[aria-checked="false"] {
-      border-color: var(--font-color-alpha-10);
-    }
-  }
 `;
 const SwitchSizeStyles = css`
   &[data-size="small"] {
-    width: calc(var(--measurement-medium-60) * 1.33);
-    height: var(--measurement-medium-50);
+    --thumb-size: calc(
+      var(--measurement-medium-40) - var(--measurement-small-10)
+    );
+
+    padding: 0 var(--measurement-small-10);
+    width: calc(var(--thumb-size) * 2);
+    height: var(--measurement-medium-40);
 
     span {
-      width: var(--measurement-medium-40);
-      height: var(--measurement-medium-40);
+      width: var(--thumb-size);
+      height: var(--thumb-size);
+
       &[data-checked="true"] {
-        transform: translateX(var(--measurement-medium-40));
-      }
-      &[data-checked="false"] {
-        transform: translateX(var(--measurement-small-60));
+        transform: translateX(var(--thumb-size));
       }
     }
   }
-
   &[data-size="medium"] {
-    width: calc(var(--measurement-medium-60) * 1.66);
+    --thumb-size: calc(
+      var(--measurement-medium-60) - var(--measurement-small-10)
+    );
+
+    padding: 0 var(--measurement-small-10);
+    width: calc(var(--thumb-size) * 2);
     height: var(--measurement-medium-60);
 
     span {
-      width: var(--measurement-medium-50);
-      height: var(--measurement-medium-50);
+      width: var(--thumb-size);
+      height: var(--thumb-size);
+
       &[data-checked="true"] {
-        transform: translateX(var(--measurement-medium-50));
-      }
-      &[data-checked="false"] {
-        transform: translateX(var(--measurement-small-60));
+        transform: translateX(var(--thumb-size));
       }
     }
   }
-
   &[data-size="large"] {
-    width: calc(var(--measurement-medium-60) * 2.33);
+    --thumb-size: calc(
+      var(--measurement-medium-70) - var(--measurement-small-30)
+    );
+
+    padding: 0 var(--measurement-small-30);
+    width: calc(var(--thumb-size) * 2);
     height: var(--measurement-medium-70);
 
     span {
-      width: var(--measurement-medium-60);
-      height: var(--measurement-medium-60);
+      width: var(--thumb-size);
+      height: var(--thumb-size);
+
       &[data-checked="true"] {
-        transform: translateX(calc(var(--measurement-medium-60) * 1.133));
-      }
-      &[data-checked="false"] {
-        transform: translateX(var(--measurement-small-80));
+        transform: translateX(var(--thumb-size));
       }
     }
   }
@@ -107,12 +105,14 @@ export const Thumb = styled.span<any>`
     all: unset;
     display: block;
 
-    background: var(--font-color-alpha-60);
-    border-radius: 100%;
-    transition: all 0.1s ease-in-out 0.2s;
+    background: white;
+    border-radius: var(--measurement-large-90);
+    box-shadow:
+      0 var(--measurement-small-30) var(--measurement-small-80)
+        var(--alpha-mono-darkest-10),
+      0 var(--measurement-small-30) var(--measurement-small-60)
+        calc(var(--measurement-small-30) * -1) var(--alpha-mono-darkest-10);
 
-    &[data-checked="true"] {
-      background: var(--font-color);
-    }
+    transition: all 0.1s ease-in-out 0.2s;
   }
 `;

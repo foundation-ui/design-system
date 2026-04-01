@@ -56,7 +56,7 @@ export const Default = {
 
             <p className="fs-medium-10">{defaultIcon.name}</p>
           </Box>
-        )
+        ),
       )}
     </GridLayout>
   ),

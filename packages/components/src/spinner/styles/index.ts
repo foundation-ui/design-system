@@ -3,41 +3,60 @@
 import styled, { css, keyframes } from "styled-components";
 
 const Rotate = keyframes`
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 `;
 
-const FieldSizeStyles = css`
+const SpinnerSizeStyles = css`
   &[data-size="small"] {
-    width: var(--measurement-medium-40);
-    height: var(--measurement-medium-40);
+    width: 12px;
+    height: 12px;
   }
   &[data-size="medium"] {
-    width: var(--measurement-medium-50);
-    height: var(--measurement-medium-50);
+    width: 18px;
+    height: 18px;
   }
   &[data-size="large"] {
-    width: var(--measurement-medium-60);
-    height: var(--measurement-medium-60);
+    width: 24px;
+    height: 24px;
   }
 `;
-
-export const RotatingSpinner = styled.span`
-  padding: 0;
-  margin: 0;
-
-  display: inline-block;
-  box-sizing: border-box;
-
-  border: var(--measurement-small-60) solid var(--font-color-alpha-30);
+const CircleStyles = css`
+  border: var(--measurement-small-80) solid var(--font-color-alpha-10);
   border-bottom-color: transparent;
   border-radius: var(--measurement-large-90);
 
-  animation: ${Rotate} 1s linear infinite;
+  animation: ${Rotate} 0.8s linear infinite;
+`;
+const CircleFilledStyles = css`
+  border: var(--measurement-small-60) solid var(--font-color-alpha-30);
 
-  ${FieldSizeStyles}
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+
+  border-radius: var(--measurement-large-90);
+  background-color: var(--font-color-alpha-10);
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--body-color);
+    border-radius: var(--measurement-large-90);
+  }
+
+  animation: ${Rotate} 0.8s linear infinite;
+`;
+
+export const AnimatedSpinner = styled.div`
+  ${SpinnerSizeStyles}
+
+  &[data-variant="circle"] {
+    ${CircleStyles}
+  }
+  &[data-variant="circle-filled"] {
+    ${CircleFilledStyles}
+  }
 `;

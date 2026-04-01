@@ -4,16 +4,17 @@ import React from "react";
 import { SkeletonLoader } from "./styles";
 
 import {
+  ComponentShapeEnum,
   ComponentSizeEnum,
+  type IComponentShape,
   type IComponentSize,
-  type TComponentShape,
 } from "../../../../types";
 
 export interface SkeletonProperties
-  extends IComponentSize,
-    React.ComponentPropsWithRef<"span"> {
-  shape?: TComponentShape;
-}
+  extends
+    IComponentSize,
+    IComponentShape,
+    React.ComponentPropsWithRef<"span"> {}
 
 /**
  * Skeletons are used to convoy a loading state information.
@@ -26,7 +27,7 @@ export interface SkeletonProperties
 export const Skeleton = (props: SkeletonProperties): React.ReactElement => {
   const {
     sizing = ComponentSizeEnum.Medium,
-    shape = "smooth",
+    shape = ComponentShapeEnum.Smooth,
     ...restProps
   } = props;
 

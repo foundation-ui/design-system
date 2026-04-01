@@ -10,6 +10,11 @@ export enum ComponentSideEnum {
   Bottom = "bottom",
   Left = "left",
 }
+export enum ComponentShapeEnum {
+  Square = "square",
+  Smooth = "smooth",
+  Round = "round",
+}
 export enum ComponentVariantEnum {
   Primary = "primary",
   Secondary = "secondary",
@@ -17,6 +22,11 @@ export enum ComponentVariantEnum {
   Border = "border",
   Mono = "mono",
   Ghost = "ghost",
+  Danger = "danger",
+  Warning = "warning",
+  Meta = "meta",
+  Success = "success",
+  Hint = "hint",
 }
 export enum ComponentHeightEnum {
   Fullscreen = "fullscreen",
@@ -50,6 +60,12 @@ export type TComponentVariant =
   | "mono"
   | "border"
   | "ghost";
+export type TComponentVariantExtended =
+  | "danger"
+  | "warning"
+  | "meta"
+  | "success"
+  | "hint";
 export type TKeyBinding = "ctrlKey" | "metaKey" | "altKey" | "shiftKey";
 export type TFrequencyLabels = "greater-than" | "less-than" | "equals-to";
 export interface IComponentAPI {
@@ -62,6 +78,9 @@ export interface IComponentStyling {
 }
 export interface IComponentSize {
   sizing?: TComponentSize;
+}
+export interface IComponentShape {
+  shape?: TComponentShape;
 }
 export interface IComponentVariant {
   variant?: TComponentVariant;
