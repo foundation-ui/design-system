@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.7.1
+
+### Patch Changes
+
+- Fix dialog position
+
 ## 1.7.0
 
 ### Minor Changes

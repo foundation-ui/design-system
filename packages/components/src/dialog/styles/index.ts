@@ -4,8 +4,6 @@ const DialogDefaultStyles = css`
   position: fixed;
   top: 15dvh;
   bottom: auto;
-  left: auto;
-  right: auto;
 
   padding: var(--measurement-medium-30);
   width: 100%;
