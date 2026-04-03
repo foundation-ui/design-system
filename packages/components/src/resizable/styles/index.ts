@@ -9,7 +9,7 @@ export const Panel = styled.div<{
   width: number;
 }>`
   overflow: hidden;
-  width: ${(props) => props.width}dvw;
+  width: ${(props) => props.width}%;
 `;
 export const Divider = styled.div<{ $dragging: boolean }>`
   width: var(--measurement-medium-10);

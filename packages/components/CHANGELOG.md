@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.7.4
+
+### Patch Changes
+
+- Rollback dvh to % on resizable styles
+
 ## 1.7.3
 
 ### Patch Changes
