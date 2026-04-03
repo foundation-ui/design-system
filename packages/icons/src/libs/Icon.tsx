@@ -13,6 +13,8 @@ export const Icon = ({
       viewBox="0 0 24 24"
       width={16}
       height={16}
+      stroke="currentColor"
+      fill="currentColor"
       {...restProps}
     >
       {children}
@@ -26,7 +28,6 @@ export const Pet = () => (
     <path
       fill="none"
       d="M17 17.5C17 22.5376 13.866 22 10 22C6.13401 22 3 22.5376 3 17.5C3 14.4624 6.13401 11 10 11C13.866 11 17 14.4624 17 17.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -34,7 +35,6 @@ export const Pet = () => (
     <path
       fill="none"
       d="M6 7C6 8.10457 5.10457 9 4 9C2.89543 9 2 8.10457 2 7C2 5.89543 2.89543 5 4 5C5.10457 5 6 5.89543 6 7Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -42,7 +42,6 @@ export const Pet = () => (
     <path
       fill="none"
       d="M20 7.5C20 8.32843 19.3284 9 18.5 9C17.6716 9 17 8.32843 17 7.5C17 6.67157 17.6716 6 18.5 6C19.3284 6 20 6.67157 20 7.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -50,7 +49,6 @@ export const Pet = () => (
     <path
       fill="none"
       d="M22 13C22 13.5523 21.5523 14 21 14C20.4477 14 20 13.5523 20 13C20 12.4477 20.4477 12 21 12C21.5523 12 22 12.4477 22 13Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -58,7 +56,6 @@ export const Pet = () => (
     <path
       fill="none"
       d="M14 4.5C14 5.88071 12.8807 7 11.5 7C10.1193 7 9 5.88071 9 4.5C9 3.11929 10.1193 2 11.5 2C12.8807 2 14 3.11929 14 4.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -72,7 +69,6 @@ export const XTwitter = () => (
     <path
       fill="none"
       d="M21 3L14.5 9.5M10.5 13.5L3 21M22 21H16L3 3L9 3L22 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -86,7 +82,6 @@ export const Activity = () => (
     <path
       fill="none"
       d="M2 13H5.75046L9 5L16 19L18.2501 13H22"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -100,7 +95,6 @@ export const Add = () => (
     <path
       fill="none"
       d="M12 5L12 19M5 12L19 12"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -114,7 +108,6 @@ export const Adjustment3LineHorizontal = () => (
     <path
       fill="none"
       d="M3 5L17 5M17 5C17 6.10457 17.8954 7 19 7C20.1046 7 21 6.10457 21 5C21 3.89543 20.1046 3 19 3C17.8954 3 17 3.89543 17 5ZM7 12L21 12M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12ZM3 19L17 19M17 19C17 20.1046 17.8954 21 19 21C20.1046 21 21 20.1046 21 19C21 17.8954 20.1046 17 19 17C17.8954 17 17 17.8954 17 19Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -128,7 +121,6 @@ export const Adjustment3LineVertical = () => (
     <path
       fill="none"
       d="M5 21L5 7M5 7C6.10457 7 7 6.10457 7 5C7 3.89543 6.10457 3 5 3C3.89543 3 3 3.89543 3 5C3 6.10457 3.89543 7 5 7ZM12 17L12 3M12 17C13.1046 17 14 17.8954 14 19C14 20.1046 13.1046 21 12 21C10.8954 21 10 20.1046 10 19C10 17.8954 10.8954 17 12 17ZM19 21L19 7M19 7C20.1046 7 21 6.10457 21 5C21 3.89543 20.1046 3 19 3C17.8954 3 17 3.89543 17 5C17 6.10457 17.8954 7 19 7Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -142,7 +134,6 @@ export const AdjustmentFatHorizontal = () => (
     <path
       fill="none"
       d="M14 6.5C14 4.567 15.567 3 17.5 3C19.433 3 21 4.567 21 6.5C21 8.433 19.433 10 17.5 10C15.567 10 14 8.433 14 6.5ZM14 6.5C14 5.79221 14.2101 5.13348 14.5713 4.58279C14.3903 4.52893 14.1985 4.5 14 4.5H5C3.89543 4.5 3 5.39543 3 6.5C3 7.60457 3.89543 8.5 5 8.5H14C14.1985 8.5 14.3903 8.47107 14.5713 8.41721C14.2101 7.86652 14 7.20779 14 6.5ZM10 17.5C10 15.567 8.433 14 6.5 14C4.567 14 3 15.567 3 17.5C3 19.433 4.567 21 6.5 21C8.433 21 10 19.433 10 17.5ZM10 17.5C10 16.7922 9.7899 16.1335 9.42867 15.5828C9.6097 15.5289 9.80147 15.5 10 15.5H19C20.1046 15.5 21 16.3954 21 17.5C21 18.6046 20.1046 19.5 19 19.5H10C9.80147 19.5 9.6097 19.4711 9.42867 19.4172C9.7899 18.8665 10 18.2078 10 17.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -156,7 +147,6 @@ export const AdjustmentFatVertical = () => (
     <path
       fill="none"
       d="M6.5 10C4.567 10 3 8.433 3 6.5C3 4.567 4.567 3 6.5 3C8.433 3 10 4.567 10 6.5C10 8.433 8.433 10 6.5 10ZM6.5 10C5.79221 10 5.13348 9.7899 4.58279 9.42867C4.52893 9.6097 4.5 9.80147 4.5 10L4.5 19C4.5 20.1046 5.39543 21 6.5 21C7.60457 21 8.5 20.1046 8.5 19V10C8.5 9.80147 8.47107 9.6097 8.41721 9.42867C7.86652 9.7899 7.20779 10 6.5 10ZM17.5 14C15.567 14 14 15.567 14 17.5C14 19.433 15.567 21 17.5 21C19.433 21 21 19.433 21 17.5C21 15.567 19.433 14 17.5 14ZM17.5 14C16.7922 14 16.1335 14.2101 15.5828 14.5713C15.5289 14.3903 15.5 14.1985 15.5 14V5C15.5 3.89543 16.3954 3 17.5 3C18.6046 3 19.5 3.89543 19.5 5V14C19.5 14.1985 19.4711 14.3903 19.4172 14.5713C18.8665 14.2101 18.2078 14 17.5 14Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -170,7 +160,6 @@ export const AdjustmentFlatHorizontal = () => (
     <path
       fill="none"
       d="M3 5L21 5M11 12L21 12M3 12H7M3 19L21 19M21 3V7M21 17V21M11 10V14"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -184,7 +173,6 @@ export const AdjustmentFlatVertical = () => (
     <path
       fill="none"
       d="M19 3L19 21M12 3V7M5 3L5 21M12 11L12 21M21 21H17M7 21H3M14 11H10"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -198,7 +186,6 @@ export const AdjustmentHorizontal = () => (
     <path
       fill="none"
       d="M15 7C15 8.65685 16.3431 10 18 10C19.6569 10 21 8.65685 21 7C21 5.34315 19.6569 4 18 4C16.3431 4 15 5.34315 15 7ZM15 7H3M9 17C9 18.6569 7.65685 20 6 20C4.34315 20 3 18.6569 3 17C3 15.3431 4.34315 14 6 14C7.65685 14 9 15.3431 9 17ZM9 17H21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -212,7 +199,6 @@ export const AdjustmentVertical = () => (
     <path
       fill="none"
       d="M7 9C8.65685 9 10 7.65685 10 6C10 4.34315 8.65685 3 7 3C5.34315 3 4 4.34315 4 6C4 7.65685 5.34315 9 7 9ZM7 9L7 21M17 15C18.6569 15 20 16.3431 20 18C20 19.6569 18.6569 21 17 21C15.3431 21 14 19.6569 14 18C14 16.3431 15.3431 15 17 15ZM17 15V3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -226,7 +212,6 @@ export const AlignBottom = () => (
     <path
       fill="none"
       d="M21 21L3 21M4 14V6C4 5.06812 4 4.60217 4.15224 4.23463C4.35523 3.74458 4.74458 3.35523 5.23463 3.15224C5.60218 3 6.06812 3 7 3C7.93188 3 8.39782 3 8.76537 3.15224C9.25542 3.35523 9.64477 3.74458 9.84776 4.23463C10 4.60217 10 5.06812 10 6V14C10 14.9319 10 15.3978 9.84776 15.7654C9.64477 16.2554 9.25542 16.6448 8.76537 16.8478C8.39782 17 7.93188 17 7 17C6.06812 17 5.60218 17 5.23463 16.8478C4.74458 16.6448 4.35523 16.2554 4.15224 15.7654C4 15.3978 4 14.9319 4 14ZM14 14V12C14 11.0681 14 10.6022 14.1522 10.2346C14.3552 9.74458 14.7446 9.35523 15.2346 9.15224C15.6022 9 16.0681 9 17 9C17.9319 9 18.3978 9 18.7654 9.15224C19.2554 9.35523 19.6448 9.74458 19.8478 10.2346C20 10.6022 20 11.0681 20 12V14C20 14.9319 20 15.3978 19.8478 15.7654C19.6448 16.2554 19.2554 16.6448 18.7654 16.8478C18.3978 17 17.9319 17 17 17C16.0681 17 15.6022 17 15.2346 16.8478C14.7446 16.6448 14.3552 16.2554 14.1522 15.7654C14 15.3978 14 14.9319 14 14Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -240,7 +225,6 @@ export const AlignHorizontalCenter = () => (
     <path
       fill="none"
       d="M12 2V4M12.0078 10L12 14M12.0078 20L12 22M18 10H6C5.06812 10 4.60217 10 4.23463 9.84776C3.74458 9.64477 3.35523 9.25542 3.15224 8.76537C3 8.39782 3 7.93188 3 7C3 6.06812 3 5.60218 3.15224 5.23463C3.35523 4.74458 3.74458 4.35523 4.23463 4.15224C4.60217 4 5.06812 4 6 4H18C18.9319 4 19.3978 4 19.7654 4.15224C20.2554 4.35523 20.6448 4.74458 20.8478 5.23463C21 5.60218 21 6.06812 21 7C21 7.93188 21 8.39782 20.8478 8.76537C20.6448 9.25542 20.2554 9.64477 19.7654 9.84776C19.3978 10 18.9319 10 18 10ZM14 20H10C9.06812 20 8.60217 20 8.23463 19.8478C7.74458 19.6448 7.35523 19.2554 7.15224 18.7654C7 18.3978 7 17.9319 7 17C7 16.0681 7 15.6022 7.15224 15.2346C7.35523 14.7446 7.74458 14.3552 8.23463 14.1522C8.60217 14 9.06812 14 10 14H14C14.9319 14 15.3978 14 15.7654 14.1522C16.2554 14.3552 16.6448 14.7446 16.8478 15.2346C17 15.6022 17 16.0681 17 17C17 17.9319 17 18.3978 16.8478 18.7654C16.6448 19.2554 16.2554 19.6448 15.7654 19.8478C15.3978 20 14.9319 20 14 20Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -254,7 +238,6 @@ export const AlignLeft = () => (
     <path
       fill="none"
       d="M3 3L3 21M18 10H10C9.06812 10 8.60218 10 8.23463 9.84776C7.74458 9.64477 7.35523 9.25542 7.15224 8.76537C7 8.39782 7 7.93188 7 7C7 6.06812 7 5.60218 7.15224 5.23463C7.35523 4.74458 7.74458 4.35523 8.23463 4.15224C8.60218 4 9.06812 4 10 4H18C18.9319 4 19.3978 4 19.7654 4.15224C20.2554 4.35523 20.6448 4.74458 20.8478 5.23463C21 5.60218 21 6.06812 21 7C21 7.93188 21 8.39782 20.8478 8.76537C20.6448 9.25542 20.2554 9.64477 19.7654 9.84776C19.3978 10 18.9319 10 18 10ZM12 20H10C9.06812 20 8.60218 20 8.23463 19.8478C7.74458 19.6448 7.35523 19.2554 7.15224 18.7654C7 18.3978 7 17.9319 7 17C7 16.0681 7 15.6022 7.15224 15.2346C7.35523 14.7446 7.74458 14.3552 8.23463 14.1522C8.60218 14 9.06812 14 10 14H12C12.9319 14 13.3978 14 13.7654 14.1522C14.2554 14.3552 14.6448 14.7446 14.8478 15.2346C15 15.6022 15 16.0681 15 17C15 17.9319 15 18.3978 14.8478 18.7654C14.6448 19.2554 14.2554 19.6448 13.7654 19.8478C13.3978 20 12.9319 20 12 20Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -268,7 +251,6 @@ export const AlignRight = () => (
     <path
       fill="none"
       d="M21 3V21M14 10H6C5.06812 10 4.60218 10 4.23463 9.84776C3.74458 9.64477 3.35523 9.25542 3.15224 8.76537C3 8.39782 3 7.93188 3 7C3 6.06812 3 5.60218 3.15224 5.23463C3.35523 4.74458 3.74458 4.35523 4.23463 4.15224C4.60218 4 5.06812 4 6 4H14C14.9319 4 15.3978 4 15.7654 4.15224C16.2554 4.35523 16.6448 4.74458 16.8478 5.23463C17 5.60218 17 6.06812 17 7C17 7.93188 17 8.39782 16.8478 8.76537C16.6448 9.25542 16.2554 9.64477 15.7654 9.84776C15.3978 10 14.9319 10 14 10ZM8 20H6C5.06812 20 4.60218 20 4.23463 19.8478C3.74458 19.6448 3.35523 19.2554 3.15224 18.7654C3 18.3978 3 17.9319 3 17C3 16.0681 3 15.6022 3.15224 15.2346C3.35523 14.7446 3.74458 14.3552 4.23463 14.1522C4.60218 14 5.06812 14 6 14H8C8.93188 14 9.39782 14 9.76537 14.1522C10.2554 14.3552 10.6448 14.7446 10.8478 15.2346C11 15.6022 11 16.0681 11 17C11 17.9319 11 18.3978 10.8478 18.7654C10.6448 19.2554 10.2554 19.6448 9.76537 19.8478C9.39782 20 8.93188 20 8 20Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -282,7 +264,6 @@ export const AlignTop = () => (
     <path
       fill="none"
       d="M21 3L3 3M4 18V10C4 9.06812 4 8.60217 4.15224 8.23463C4.35523 7.74458 4.74458 7.35523 5.23463 7.15224C5.60218 7 6.06812 7 7 7C7.93188 7 8.39782 7 8.76537 7.15224C9.25542 7.35523 9.64477 7.74458 9.84776 8.23463C10 8.60217 10 9.06812 10 10V18C10 18.9319 10 19.3978 9.84776 19.7654C9.64477 20.2554 9.25542 20.6448 8.76537 20.8478C8.39782 21 7.93188 21 7 21C6.06812 21 5.60218 21 5.23463 20.8478C4.74458 20.6448 4.35523 20.2554 4.15224 19.7654C4 19.3978 4 18.9319 4 18ZM14 12V10C14 9.06812 14 8.60218 14.1522 8.23463C14.3552 7.74458 14.7446 7.35523 15.2346 7.15224C15.6022 7 16.0681 7 17 7C17.9319 7 18.3978 7 18.7654 7.15224C19.2554 7.35523 19.6448 7.74458 19.8478 8.23463C20 8.60218 20 9.06812 20 10V12C20 12.9319 20 13.3978 19.8478 13.7654C19.6448 14.2554 19.2554 14.6448 18.7654 14.8478C18.3978 15 17.9319 15 17 15C16.0681 15 15.6022 15 15.2346 14.8478C14.7446 14.6448 14.3552 14.2554 14.1522 13.7654C14 13.3978 14 12.9319 14 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -296,7 +277,6 @@ export const AlignVerticalCenter = () => (
     <path
       fill="none"
       d="M4 12H2M22 12H20M14 12H10M4 18V6C4 5.06812 4 4.60217 4.15224 4.23463C4.35523 3.74458 4.74458 3.35523 5.23463 3.15224C5.60218 3 6.06812 3 7 3C7.93188 3 8.39782 3 8.76537 3.15224C9.25542 3.35523 9.64477 3.74458 9.84776 4.23463C10 4.60217 10 5.06812 10 6V18C10 18.9319 10 19.3978 9.84776 19.7654C9.64477 20.2554 9.25542 20.6448 8.76537 20.8478C8.39782 21 7.93188 21 7 21C6.06812 21 5.60218 21 5.23463 20.8478C4.74458 20.6448 4.35523 20.2554 4.15224 19.7654C4 19.3978 4 18.9319 4 18ZM14 14V10C14 9.06812 14 8.60217 14.1522 8.23463C14.3552 7.74458 14.7446 7.35523 15.2346 7.15224C15.6022 7 16.0681 7 17 7C17.9319 7 18.3978 7 18.7654 7.15224C19.2554 7.35523 19.6448 7.74458 19.8478 8.23463C20 8.60217 20 9.06812 20 10V14C20 14.9319 20 15.3978 19.8478 15.7654C19.6448 16.2554 19.2554 16.6448 18.7654 16.8478C18.3978 17 17.9319 17 17 17C16.0681 17 15.6022 17 15.2346 16.8478C14.7446 16.6448 14.3552 16.2554 14.1522 15.7654C14 15.3978 14 14.9319 14 14Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -310,7 +290,6 @@ export const Annotation = () => (
     <path
       fill="none"
       d="M15.0113 18.9887C16.5439 18.959 17.4939 18.8504 18.27 18.455C19.2108 17.9757 19.9757 17.2108 20.455 16.27C21 15.2004 21 13.8003 21 11V10C21 7.19974 21 5.79961 20.455 4.73005C19.9757 3.78924 19.2108 3.02433 18.27 2.54497C17.2004 2 15.8003 2 13 2H11C8.19974 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V11C3 13.8003 3 15.2004 3.54497 16.27C4.02433 17.2108 4.78924 17.9757 5.73005 18.455C6.50608 18.8504 7.45613 18.959 8.98874 18.9887L12 22L15.0113 18.9887Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -324,7 +303,6 @@ export const AnnouncementLouder = () => (
     <path
       fill="none"
       d="M20 11H22M19.8 6.49998L21.5 5.49998M19.8 15.5L21.5 16.5M5.01047 15.5845L9.41047 17.3524C11.6176 18.2392 12.7211 18.6826 13.6072 18.4994C14.382 18.3393 15.0623 17.8795 15.4997 17.2203C16 16.4663 16 15.277 16 12.8985V9.10149C16 6.72291 16 5.53362 15.4997 4.7797C15.0623 4.12042 14.382 3.66066 13.6072 3.50052C12.7211 3.31738 11.6176 3.76077 9.41047 4.64755L5.01047 6.41541C3.92339 6.85219 3.37984 7.07057 2.98008 7.43462C2.62685 7.75629 2.35555 8.15768 2.18876 8.60537C2 9.11203 2 9.6978 2 10.8694V11.1306C2 12.3021 2 12.8879 2.18876 13.3946C2.35555 13.8423 2.62685 14.2437 2.98008 14.5653C3.37984 14.9294 3.92339 15.1478 5.01047 15.5845ZM5.01047 15.5845L8.89838 17.1466L9.18307 18.1432C9.59532 19.5862 8.53068 21.0289 7.03026 21.0604C5.87126 21.0848 4.87702 20.2389 4.71547 19.0909L4.17397 15.2431C4.41171 15.344 4.68703 15.4546 5.01047 15.5845Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -338,7 +316,6 @@ export const AnnouncementNarrow = () => (
     <path
       fill="none"
       d="M20 18.4268C19.4017 19.16 18.73 19.7999 18 20.3278M21.0007 3.00003C21.3836 3.63717 21.7189 4.32153 22 5.04488M18 9.50003C18 13.0899 16.6569 16 15 16C13.3431 16 12 13.0899 12 9.50003C12 5.91018 13.3431 3.00003 15 3.00003C16.6569 3.00003 18 5.91018 18 9.50003ZM4.2768 13.3516C4.09989 13.6945 4 14.0837 4 14.4961V18.4961C4 19.8769 5.11929 20.9961 6.5 20.9961C7.88071 20.9961 9 19.8769 9 18.4961V14.6128L5.41037 13.7844C5.00637 13.6912 4.62622 13.544 4.2768 13.3516ZM5.41037 13.7883L14.3623 15.8541C13.0118 15.2207 12 12.617 12 9.5013C12 6.3856 13.0118 3.78191 14.3623 3.14847L5.41037 5.21429C3.4141 5.67497 2 7.45256 2 9.5013C2 11.55 3.4141 13.3276 5.41037 13.7883Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -352,7 +329,6 @@ export const Announcement = () => (
     <path
       fill="none"
       d="M20 13.2245C20 15.5072 20 16.6486 19.5214 17.3909C19.1026 18.0406 18.4491 18.5035 17.6973 18.6831C16.8383 18.8885 15.7615 18.5099 13.608 17.7528L7.18397 15.4944C6.05229 15.0965 5.48645 14.8976 5.06622 14.5433C4.67583 14.2141 4.37592 13.7908 4.19488 13.3133C4 12.7994 4 12.1996 4 11C4 9.80042 4 9.20064 4.19488 8.68667C4.37592 8.20922 4.67583 7.78588 5.06622 7.45673C5.48645 7.10242 6.05229 6.90349 7.18397 6.50564L13.608 4.24718C15.7615 3.49009 16.8383 3.11154 17.6973 3.31685C18.4491 3.49653 19.1026 3.95943 19.5214 4.60908C20 5.35142 20 6.49278 20 8.77549V13.2245Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -360,7 +336,6 @@ export const Announcement = () => (
     <path
       fill="none"
       d="M10.7881 16.7586L7.18363 15.4914C6.77433 15.3475 6.43906 15.2296 6.15791 15.121L6.71713 19.0948C6.87868 20.2427 7.87292 21.0886 9.03192 21.0643C10.5323 21.0327 11.597 19.59 11.1847 18.147L10.7881 16.7586Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -376,7 +351,6 @@ export const Apple = () => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M18.7704 19.3393C19.2827 18.5206 19.5901 18.009 20 17.088C16.8236 15.8599 16.3112 11.3572 19.4877 9.71988C18.5655 8.49187 17.2334 7.87786 15.9014 7.87786C14.9792 7.87786 14.3644 8.08253 13.7496 8.2872C13.2373 8.49187 12.8274 8.5942 12.3151 8.5942C11.7003 8.5942 11.2904 8.38953 10.6756 8.18487C10.0608 7.9802 9.44604 7.77553 8.72878 7.77553C7.29426 7.77553 5.75727 8.5942 4.83508 10.1292C3.50303 12.1759 3.70796 16.1669 5.85974 19.4416C6.78193 20.6697 7.80658 22 9.13864 22C9.75343 22 10.0608 21.7953 10.4707 21.693C10.983 21.4883 11.4953 21.2837 12.3151 21.2837C13.2373 21.2837 13.6471 21.4883 14.1595 21.693C14.5693 21.8977 14.8767 22 15.4915 22C16.926 22 17.9507 20.465 18.7704 19.3393Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -384,7 +358,6 @@ export const Apple = () => (
     <path
       fill="none"
       d="M15.2717 2.03326C15.2717 2.03326 15.5758 3.53002 14.3593 4.72743C13.1427 5.92483 11.6221 5.62548 11.6221 5.62548C11.6221 5.62548 11.3179 4.12872 12.5345 2.93132C13.751 1.73391 15.2717 2.03326 15.2717 2.03326Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -398,7 +371,6 @@ export const Archive = () => (
     <path
       fill="none"
       d="M10 13H14M19 9H5C4.06812 9 3.60217 9 3.23463 8.84776C2.74458 8.64477 2.35523 8.25542 2.15224 7.76537C2 7.39782 2 6.93188 2 6C2 5.06812 2 4.60218 2.15224 4.23463C2.35523 3.74458 2.74458 3.35523 3.23463 3.15224C3.60217 3 4.06812 3 5 3L19 3C19.9319 3 20.3978 3 20.7654 3.15224C21.2554 3.35523 21.6448 3.74458 21.8478 4.23463C22 4.60218 22 5.06812 22 6C22 6.93188 22 7.39782 21.8478 7.76537C21.6448 8.25542 21.2554 8.64477 20.7654 8.84776C20.3978 9 19.9319 9 19 9ZM4.41868 14.0242L4 9H20L19.5813 14.0242C19.3941 16.2707 19.3005 17.394 18.8548 18.2692C18.3106 19.3376 17.4006 20.1749 16.2907 20.6285C15.3815 21 14.2543 21 12 21C9.74568 21 8.61852 21 7.70934 20.6285C6.59939 20.1749 5.68939 19.3376 5.14523 18.2692C4.6995 17.394 4.60589 16.2707 4.41868 14.0242Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -412,7 +384,6 @@ export const ArrowCircleDownLeft = () => (
     <path
       fill="none"
       d="M15 9L9 15M9 15V10.5M9 15H13.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -426,7 +397,6 @@ export const ArrowCircleDownRight = () => (
     <path
       fill="none"
       d="M9 9L15 15M15 15V10.5M15 15H10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -440,7 +410,6 @@ export const ArrowCircleLeft = () => (
     <path
       fill="none"
       d="M11 9L8 12M8 12L11 15M8 12H16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -454,7 +423,6 @@ export const ArrowCircleRight = () => (
     <path
       fill="none"
       d="M13 9L16 12M16 12L13 15M16 12H8M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -468,7 +436,6 @@ export const ArrowCircleUpLeft = () => (
     <path
       fill="none"
       d="M15 15L9 9M9 9V13.5001M9 9L13.5 9M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -482,7 +449,6 @@ export const ArrowCircleUpRight = () => (
     <path
       fill="none"
       d="M9 15L15 9M15 9V13.5M15 9H10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -496,7 +462,6 @@ export const ArrowCircleUp = () => (
     <path
       fill="none"
       d="M9 11L12 8M12 8L15 11M12 8V16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -510,7 +475,6 @@ export const ArrowCornerDownLeft = () => (
     <path
       fill="none"
       d="M8 11L4 15L8 19M4.21045 15H12C14.8003 15 16.2004 15 17.27 14.455C18.2108 13.9757 18.9757 13.2108 19.455 12.27C20 11.2004 20 9.80026 20 7V5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -524,7 +488,6 @@ export const ArrowCornerDownRight = () => (
     <path
       fill="none"
       d="M16 11L20 15L16 19M19.7896 15H12C9.19974 15 7.79961 15 6.73005 14.455C5.78924 13.9757 5.02433 13.2108 4.54497 12.27C4 11.2004 4 9.80026 4 7V5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -538,7 +501,6 @@ export const ArrowCornerLeftDown = () => (
     <path
       fill="none"
       d="M5 16L9 20L13 16M9 19.7896V12C9 9.19974 9 7.79961 9.54497 6.73005C10.0243 5.78924 10.7892 5.02433 11.73 4.54497C12.7996 4 14.1997 4 17 4L19 4"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -552,7 +514,6 @@ export const ArrowCornerLeftUp = () => (
     <path
       fill="none"
       d="M5 8L9 4L13 8M9 4.21045V12C9 14.8003 9 16.2004 9.54497 17.27C10.0243 18.2108 10.7892 18.9757 11.73 19.455C12.7996 20 14.1997 20 17 20H19"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -566,7 +527,6 @@ export const ArrowCornerRightDown = () => (
     <path
       fill="none"
       d="M11 16L15 20L19 16M15 19.7896L15 12C15 9.19974 15 7.79961 14.455 6.73005C13.9757 5.78924 13.2108 5.02433 12.27 4.54497C11.2004 4 9.80026 4 7 4L5 4"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -580,7 +540,6 @@ export const ArrowCornerRightUp = () => (
     <path
       fill="none"
       d="M11 8L15 4L19 8M15 4.21045L15 12C15 14.8003 15 16.2004 14.455 17.27C13.9757 18.2108 13.2108 18.9757 12.27 19.455C11.2004 20 9.80026 20 7 20L5 20"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -594,7 +553,6 @@ export const ArrowCornerUpLeft = () => (
     <path
       fill="none"
       d="M8 5L4 9L8 13M4.21045 9L12 9C14.8003 9 16.2004 9 17.27 9.54497C18.2108 10.0243 18.9757 10.7892 19.455 11.73C20 12.7996 20 14.1997 20 17V19"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -608,7 +566,6 @@ export const ArrowCornerUpRight = () => (
     <path
       fill="none"
       d="M16 5L20 9L16 13M19.7896 9L12 9C9.19974 9 7.79961 9 6.73005 9.54497C5.78924 10.0243 5.02433 10.7892 4.54497 11.73C4 12.7996 4 14.1997 4 17L4 19"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -622,7 +579,6 @@ export const ArrowDownEnd = () => (
     <path
       fill="none"
       d="M12 3V16M12 16L7 11M12 16L17 11M4 21H20"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -636,7 +592,6 @@ export const ArrowDownLeft = () => (
     <path
       fill="none"
       d="M18.0006 6.00299L6.00097 18.003M6 11V18H13"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -650,7 +605,6 @@ export const ArrowDownRight = () => (
     <path
       fill="none"
       d="M6 6L17.9996 18M17.9996 18L18 11M17.9996 18H11"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -664,7 +618,6 @@ export const ArrowDown = () => (
     <path
       fill="none"
       d="M12 4V20M12 20L7 15M12 20L17 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -678,7 +631,6 @@ export const ArrowFatDownLeft = () => (
     <path
       fill="none"
       d="M13.1192 15.1197L17.6565 10.5824C18.3154 9.92347 18.6449 9.594 18.7971 9.22646C19.0001 8.7364 19.0001 8.18578 18.7971 7.69572C18.6449 7.32818 18.3154 6.99871 17.6565 6.33977C16.9975 5.68083 16.6681 5.35136 16.3005 5.19912C15.8105 4.99613 15.2598 4.99613 14.7698 5.19912C14.4022 5.35136 14.0728 5.68083 13.4138 6.33977L8.87654 10.8771L6 8.00052V18.0005H16L13.1192 15.1197Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -692,7 +644,6 @@ export const ArrowFatDownRight = () => (
     <path
       fill="none"
       d="M11.8302 15.1192L7.29289 10.5819C6.63395 9.92298 6.30448 9.59351 6.15224 9.22597C5.94925 8.73591 5.94925 8.18529 6.15224 7.69523C6.30448 7.32769 6.63395 6.99822 7.29289 6.33928C7.95183 5.68034 8.2813 5.35087 8.64885 5.19863C9.1389 4.99564 9.68952 4.99564 10.1796 5.19863C10.5471 5.35087 10.8766 5.68034 11.5355 6.33928L16.0728 10.8766L18.9494 8.00003V18H8.94937L11.8302 15.1192Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -706,7 +657,6 @@ export const ArrowFatDown = () => (
     <path
       fill="none"
       d="M15 13V7C15 6.06812 15 5.60218 14.8478 5.23463C14.6448 4.74458 14.2554 4.35523 13.7654 4.15224C13.3978 4 12.9319 4 12 4C11.0681 4 10.6022 4 10.2346 4.15224C9.74458 4.35523 9.35523 4.74458 9.15224 5.23463C9 5.60218 9 6.06812 9 7V13H5L12 20L19 13H15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -720,7 +670,6 @@ export const ArrowFatLeft = () => (
     <path
       fill="none"
       d="M11 15H17C17.9319 15 18.3978 15 18.7654 14.8478C19.2554 14.6448 19.6448 14.2554 19.8478 13.7654C20 13.3978 20 12.9319 20 12C20 11.0681 20 10.6022 19.8478 10.2346C19.6448 9.74458 19.2554 9.35523 18.7654 9.15224C18.3978 9 17.9319 9 17 9L11 9L11 5L4 12L11 19L11 15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -734,7 +683,6 @@ export const ArrowFatRight = () => (
     <path
       fill="none"
       d="M13 9L7 9C6.06812 9 5.60218 9 5.23463 9.15224C4.74458 9.35523 4.35523 9.74458 4.15224 10.2346C4 10.6022 4 11.0681 4 12C4 12.9319 4 13.3978 4.15224 13.7654C4.35523 14.2554 4.74458 14.6448 5.23463 14.8478C5.60218 15 6.06812 15 7 15H13V19L20 12L13 5V9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -748,7 +696,6 @@ export const ArrowFatUpLeft = () => (
     <path
       fill="none"
       d="M13.1191 7.92769L17.6564 12.465C18.3153 13.1239 18.6448 13.4534 18.797 13.8209C19 14.311 19 14.8616 18.797 15.3517C18.6448 15.7192 18.3153 16.0487 17.6564 16.7076C16.9974 17.3666 16.6679 17.696 16.3004 17.8483C15.8103 18.0513 15.2597 18.0513 14.7697 17.8483C14.4021 17.696 14.0727 17.3666 13.4137 16.7076L8.87642 12.1703L5.99988 15.0469V5.04688H15.9999L13.1191 7.92769Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -762,7 +709,6 @@ export const ArrowFatUpRight = () => (
     <path
       fill="none"
       d="M11.8302 7.92721L7.29289 12.4645C6.63395 13.1234 6.30448 13.4529 6.15224 13.8205C5.94925 14.3105 5.94925 14.8611 6.15224 15.3512C6.30448 15.7187 6.63395 16.0482 7.29289 16.7071C7.95183 17.3661 8.2813 17.6956 8.64885 17.8478C9.1389 18.0508 9.68952 18.0508 10.1796 17.8478C10.5471 17.6956 10.8766 17.3661 11.5355 16.7071L16.0728 12.1698L18.9494 15.0464V5.04639H8.94937L11.8302 7.92721Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -776,7 +722,6 @@ export const ArrowFatUp = () => (
     <path
       fill="none"
       d="M15 11V17C15 17.9319 15 18.3978 14.8478 18.7654C14.6448 19.2554 14.2554 19.6448 13.7654 19.8478C13.3978 20 12.9319 20 12 20C11.0681 20 10.6022 20 10.2346 19.8478C9.74458 19.6448 9.35523 19.2554 9.15224 18.7654C9 18.3978 9 17.9319 9 17V11H5L12 4L19 11H15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -790,7 +735,6 @@ export const ArrowHalfDownLeft = () => (
     <path
       fill="none"
       d="M18 6L6 18V11"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -804,7 +748,6 @@ export const ArrowHalfDownRight = () => (
     <path
       fill="none"
       d="M6 6L18 18V11"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -818,7 +761,6 @@ export const ArrowHalfDown = () => (
     <path
       fill="none"
       d="M12 4V20L7 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -832,7 +774,6 @@ export const ArrowHalfLeft = () => (
     <path
       fill="none"
       d="M20 12L4 12L9 7"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -846,7 +787,6 @@ export const ArrowHalfRight = () => (
     <path
       fill="none"
       d="M4 12L20 12L15 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -860,7 +800,6 @@ export const ArrowHalfUpLeft = () => (
     <path
       fill="none"
       d="M18 18L6 6V13"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -874,7 +813,6 @@ export const ArrowHalfUpRight = () => (
     <path
       fill="none"
       d="M6 18L18 6V13"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -888,7 +826,6 @@ export const ArrowHalfUp = () => (
     <path
       fill="none"
       d="M12 20L12 4L17 9"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -902,7 +839,6 @@ export const ArrowLeftEnd = () => (
     <path
       fill="none"
       d="M21 12L8 12M8 12L13 7M8 12L13 17M3 4L3 20"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -916,7 +852,6 @@ export const ArrowLeft = () => (
     <path
       fill="none"
       d="M20 12L4 12M4 12L9 7M4 12L9 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -930,7 +865,6 @@ export const ArrowMoveDown = () => (
     <path
       fill="none"
       d="M12 8V21M12 21L7 16M12 21L17 16M4 3H20"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -944,7 +878,6 @@ export const ArrowMoveLeft = () => (
     <path
       fill="none"
       d="M16 12L3 12M3 12L8 7M3 12L8 17M21 4V20"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -958,7 +891,6 @@ export const ArrowMoveRight = () => (
     <path
       fill="none"
       d="M8 12L21 12M21 12L16 17M21 12L16 7M3 20L3 4"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -972,7 +904,6 @@ export const ArrowMoveUp = () => (
     <path
       fill="none"
       d="M12 16L12 3M12 3L17 8M12 3L7 8M20 21L4 21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -986,7 +917,6 @@ export const ArrowRightEnd = () => (
     <path
       fill="none"
       d="M3 12L16 12M16 12L11 17M16 12L11 7M21 20V4"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1000,7 +930,6 @@ export const ArrowRight = () => (
     <path
       fill="none"
       d="M4 12L20 12M20 12L15 17M20 12L15 7"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1014,7 +943,6 @@ export const ArrowSingleDown = () => (
     <path
       fill="none"
       d="M5 8.5L12 15.5L19 8.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1028,7 +956,6 @@ export const ArrowSingleLeft = () => (
     <path
       fill="none"
       d="M15.5 5L8.5 12L15.5 19"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1042,7 +969,6 @@ export const ArrowSingleRight = () => (
     <path
       fill="none"
       d="M8.5 5L15.5 12L8.5 19"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1056,7 +982,6 @@ export const ArrowSingleUp = () => (
     <path
       fill="none"
       d="M5 15.5L12 8.5L19 15.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1070,7 +995,6 @@ export const ArrowSquareDownLeft = () => (
     <path
       fill="none"
       d="M15 9L9 15M9 15V10.5M9 15H13.5M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1084,7 +1008,6 @@ export const ArrowSquareDownRight = () => (
     <path
       fill="none"
       d="M9 9L15 15M15 15V10.5M15 15H10.5M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1098,7 +1021,6 @@ export const ArrowSquareDown = () => (
     <path
       fill="none"
       d="M9 13L12 16M12 16L15 13M12 16V8M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1112,7 +1034,6 @@ export const ArrowSquareLeft = () => (
     <path
       fill="none"
       d="M11 9L8 12M8 12L11 15M8 12H16M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1126,7 +1047,6 @@ export const ArrowSquareRight = () => (
     <path
       fill="none"
       d="M13 9L16 12M16 12L13 15M16 12H8M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1140,7 +1060,6 @@ export const ArrowSquareUpLeft = () => (
     <path
       fill="none"
       d="M15 15L9 9M9 9V13.5001M9 9L13.5 9M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1154,7 +1073,6 @@ export const ArrowSquareUpRight = () => (
     <path
       fill="none"
       d="M9 15L15 9M15 9V13.5M15 9H10.5M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1168,7 +1086,6 @@ export const ArrowSquareUp = () => (
     <path
       fill="none"
       d="M9 11L12 8M12 8L15 11M12 8V16M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1182,7 +1099,6 @@ export const ArrowUpEnd = () => (
     <path
       fill="none"
       d="M12 21L12 8M12 8L17 13M12 8L7 13M20 3L4 3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1196,7 +1112,6 @@ export const ArrowUpLeft = () => (
     <path
       fill="none"
       d="M17.9996 18.0008L6 6.00076M6 6.00076V13M6 6.00076L13 6"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1210,7 +1125,6 @@ export const ArrowUpRight = () => (
     <path
       fill="none"
       d="M6 18L17.9996 6M17.9996 6L18 13M17.9996 6H11"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1224,7 +1138,6 @@ export const ArrowUp = () => (
     <path
       fill="none"
       d="M12 20L12 4M12 4L17 9M12 4L7 9"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1238,7 +1151,6 @@ export const Asterisk = () => (
     <path
       fill="none"
       d="M12 3L12 21M21 12L3 12M18.364 5.63604L5.63604 18.364M18.364 18.364L5.63604 5.63604"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1252,7 +1164,6 @@ export const AtSignSquare = () => (
     <path
       fill="none"
       d="M14 12V10.3333M14 12C14 13.1046 14.8954 14 16 14C17.1046 14 18 13.1046 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18C13.2334 18 14.3799 17.6278 15.3333 16.9896M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12ZM14 22H10C7.19974 22 5.79961 22 4.73005 21.455C3.78924 20.9757 3.02433 20.2108 2.54497 19.27C2 18.2004 2 16.8003 2 14L2 10C2 7.19974 2 5.7996 2.54497 4.73005C3.02433 3.78924 3.78924 3.02433 4.73005 2.54497C5.79961 2 7.19974 2 10 2L14 2C16.8003 2 18.2004 2 19.27 2.54497C20.2108 3.02433 20.9757 3.78924 21.455 4.73005C22 5.7996 22 7.19974 22 10V14C22 16.8003 22 18.2004 21.455 19.27C20.9757 20.2108 20.2108 20.9757 19.27 21.455C18.2004 22 16.8003 22 14 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1266,7 +1177,6 @@ export const AtSign = () => (
     <path
       fill="none"
       d="M16 8V13.5C16 14.8807 17.1193 16 18.5 16C19.8807 16 21 14.8807 21 13.5V12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C13.8501 21 15.5699 20.4417 17 19.4845M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1280,7 +1190,6 @@ export const Background = () => (
     <path
       fill="none"
       d="M13 21H11C8.19974 21 6.79961 21 5.73005 20.455M13 21C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13M13 21C14.2219 21 15.1772 21 15.9547 20.9547L9.5 14.5L4.46447 19.5355M21 13V11C21 8.19974 21 6.79961 20.455 5.73005M21 13C21 14.2219 21 15.1772 20.9547 15.9547L14.5 9.5L19.5355 4.46447M20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3L11 3C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11L3 13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455M20.455 5.73005C20.2153 5.25964 19.9043 4.83321 19.5355 4.46447M5.73005 20.455C5.25964 20.2153 4.83321 19.9043 4.46447 19.5355M4.46447 19.5355L19.5355 4.46447"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1294,7 +1203,6 @@ export const BackwardItem = () => (
     <path
       fill="none"
       d="M13 6.5C13 5.10217 13 4.40326 13.2284 3.85195C13.5328 3.11687 14.1169 2.53284 14.852 2.22836C15.4033 2 16.1022 2 17.5 2C18.8978 2 19.5967 2 20.1481 2.22836C20.8831 2.53284 21.4672 3.11687 21.7716 3.85195C22 4.40326 22 5.10217 22 6.5C22 7.89782 22 8.59674 21.7716 9.14805C21.4672 9.88313 20.8831 10.4672 20.1481 10.7716C19.5967 11 18.8978 11 17.5 11M13 6.5C13 7.89782 13 8.59674 13.2284 9.14805C13.5328 9.88313 14.1169 10.4672 14.8519 10.7716C15.4033 11 16.1022 11 17.5 11M13 6.5C13 6.32243 13 6.15614 13.0005 6H10.8C9.11984 6 8.27976 6 7.63803 6.32698C7.07354 6.6146 6.6146 7.07354 6.32698 7.63803C6 8.27976 6 9.11984 6 10.8V13.0005C6.15614 13 6.32243 13 6.5 13M17.5 11C17.6776 11 17.8439 11 18 10.9995V13.2C18 14.8802 18 15.7202 17.673 16.362C17.3854 16.9265 16.9265 17.3854 16.362 17.673C15.7202 18 14.8802 18 13.2 18H10.9995C11 17.8439 11 17.6776 11 17.5M6.5 13C7.89782 13 8.59674 13 9.14805 13.2284C9.88313 13.5328 10.4672 14.1169 10.7716 14.8519C11 15.4033 11 16.1022 11 17.5M6.5 13C5.10218 13 4.40326 13 3.85195 13.2284C3.11687 13.5328 2.53284 14.1169 2.22836 14.8519C2 15.4033 2 16.1022 2 17.5C2 18.8978 2 19.5967 2.22836 20.1481C2.53284 20.8831 3.11687 21.4672 3.85195 21.7716C4.40326 22 5.10218 22 6.5 22C7.89782 22 8.59674 22 9.14805 21.7716C9.88313 21.4672 10.4672 20.8831 10.7716 20.1481C11 19.5967 11 18.8978 11 17.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1308,7 +1216,6 @@ export const BarCodeScan = () => (
     <path
       fill="none"
       d="M21 8V7.95259C21 7.06768 21 6.62522 20.9441 6.25463C20.6171 4.08553 18.9145 2.38288 16.7454 2.05587C16.3748 2 15.9323 2 15.0474 2L8.92804 2C8.06596 2 7.63491 2 7.27369 2.05303C5.08925 2.37375 3.37375 4.08925 3.05303 6.27369C3 6.63491 3 7.06596 3 7.92804V8M21 16V16.0945C21 16.9356 21 17.3562 20.9495 17.7087C20.6347 19.9073 18.9073 21.6347 16.7087 21.9495C16.3562 22 15.9356 22 15.0945 22H8.79984C8.05694 22 7.68549 22 7.37346 21.9606C5.10885 21.6746 3.32544 19.8912 3.03941 17.6265C3 17.3145 3 16.9431 3 16.2002V16M2 12L22 12M14 12V7M14 18V16M17 12V7M17 18V16M7 16V18H11V16M11 12H7V7H11V12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1322,7 +1229,6 @@ export const BarCode = () => (
     <path
       fill="none"
       d="M2 21L2 3M14 21L14 3M18 17V3M22 21V3M10 17H6V3L10 3V17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1336,7 +1242,6 @@ export const Behance = () => (
     <path
       fill="none"
       d="M19.5 8L16.5 8M14 15C14 17.2091 15.7909 19 18 19C18.7286 19 19.4117 18.8052 20 18.4649M14 15C14 12.7909 15.7909 11 18 11C20.2091 11 22 12.7909 22 15H14ZM5.5 12H2H7.5C9.433 12 11 13.567 11 15.5C11 17.433 9.433 19 7.5 19H2L2 5L5.5 5C7.433 5 9 6.567 9 8.5C9 10.433 7.433 12 5.5 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1350,7 +1255,6 @@ export const BellOff = () => (
     <path
       fill="none"
       d="M12.3429 18L7.58223 18C5.47132 18 4.41587 18 3.86968 17.5664C3.39459 17.1892 3.11637 16.6167 3.1133 16.0101C3.10977 15.3127 3.76185 14.4828 5.06601 12.823L5.98997 11.647M3 3L21 21M14 22H10M13 2L11 2M6.29693 6.29712L17.9894 17.9896C19.0913 17.964 19.7382 17.875 20.127 17.5664C20.6021 17.1892 20.8803 16.6167 20.8834 16.0101C20.8869 15.3127 20.2348 14.4828 18.9307 12.823L17.9617 11.5897C17.9983 11.2343 17.9983 10.7815 17.9983 10V9C17.9983 8.07099 17.9983 7.60649 17.9368 7.21783C17.5979 5.07837 15.92 3.40042 13.7805 3.06156C13.3919 3 12.9273 3 11.9983 3C11.0693 3 10.6048 3 10.2162 3.06156C8.39477 3.35004 6.90786 4.60906 6.29693 6.29712Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1364,7 +1268,6 @@ export const BellRoundedOff = () => (
     <path
       fill="none"
       d="M5 10.657V12.4856C3.7492 13.1726 3 14.0474 3 15C3 17.2091 7.02944 19 12 19C12.442 19 12.8765 18.9858 13.3014 18.9585M13.3014 18.9585C12.8766 18.9858 12.4427 19.0006 12.0008 19.0006C10.9879 19.0006 10.0141 18.9262 9.10547 18.7891C9.45162 20.0635 10.6168 21.0008 12.0008 21.0008C12.9165 21.0008 13.7364 20.5905 14.2867 19.9438L13.3014 18.9585ZM3 3L21 21M19 10C19 6.13401 15.866 3 12 3C9.55548 3 7.40362 4.25304 6.15168 6.15187L17.9866 17.9868C19.8356 17.2542 21 16.1875 21 15C21 14.0474 20.2508 13.1726 19 12.4856V10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1378,7 +1281,6 @@ export const BellRounded = () => (
     <path
       fill="none"
       d="M19 10C19 6.13401 15.866 3 12 3C8.13401 3 5 6.13401 5 10V12.4856C3.7492 13.1726 3 14.0474 3 15C3 17.2091 7.02944 19 12 19C16.9706 19 21 17.2091 21 15C21 14.0474 20.2508 13.1726 19 12.4856V10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1386,7 +1288,6 @@ export const BellRounded = () => (
     <path
       fill="none"
       d="M9.10547 18.7891C9.45162 20.0635 10.6168 21.0008 12.0008 21.0008C13.3849 21.0008 14.55 20.0635 14.8962 18.7891C13.9876 18.9262 13.0137 19.0006 12.0008 19.0006C10.9879 19.0006 10.0141 18.9262 9.10547 18.7891Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1400,7 +1301,6 @@ export const Bell = () => (
     <path
       fill="none"
       d="M14.0001 22H10.0001M13.0001 2L11.0001 2M6.00005 9V10C6.00005 10.7815 6.00005 11.2343 6.03669 11.5897L5.06772 12.823C3.76356 14.4828 3.11148 15.3127 3.115 16.0101C3.11807 16.6167 3.3963 17.1892 3.87139 17.5664C4.41758 18 5.47303 18 7.58394 18L16.4162 18C18.5271 18 19.5825 18 20.1287 17.5664C20.6038 17.1892 20.882 16.6167 20.8851 16.0101C20.8886 15.3127 20.2365 14.4828 18.9324 12.823L17.9634 11.5897C18.0001 11.2343 18.0001 10.7815 18.0001 10V9C18.0001 8.07099 18.0001 7.60649 17.9385 7.21783C17.5996 5.07837 15.9217 3.40042 13.7822 3.06156C13.3936 3 12.9291 3 12.0001 3C11.071 3 10.6065 3 10.2179 3.06156C8.07842 3.40042 6.40047 5.07837 6.06161 7.21783C6.00005 7.60649 6.00005 8.07099 6.00005 9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1414,7 +1314,6 @@ export const BezierPenTool = () => (
     <path
       fill="none"
       d="M3.5 10C3.5 7.27367 6.20889 4.64952 9.875 4M14.125 4C17.7911 4.64952 20.5 7.27367 20.5 10M12 13V17M5 13H2L2 10H5V13ZM14 6H10V2L14 2V6ZM22 13H19V10H22V13ZM7.79662 15.6138L8.16293 15.1247C9.46331 13.3884 10.1135 12.5203 10.9107 12.2091C11.6116 11.9355 12.3897 11.9352 13.0908 12.2083C13.8881 12.519 14.5389 13.3867 15.8405 15.122L16.1999 15.6011C16.6288 16.1729 16.8432 16.4588 16.9775 16.7523C17.3404 17.5452 17.3403 18.4567 16.9773 19.2496C16.843 19.543 16.6285 19.8289 16.1995 20.4007C15.9069 20.7906 15.7606 20.9856 15.5945 21.1476C15.1483 21.5826 14.5777 21.8679 13.9619 21.9639C13.7326 21.9996 13.4889 21.9996 13.0014 21.9997L10.993 22C10.5092 22.0001 10.2672 22.0001 10.0397 21.965C9.4224 21.8698 8.85024 21.5843 8.403 21.1484C8.23811 20.9876 8.09266 20.7943 7.80176 20.4076C7.37451 19.8397 7.16089 19.5558 7.02659 19.2644C6.66021 18.4695 6.65922 17.5543 7.0239 16.7586C7.15758 16.467 7.37059 16.1826 7.79662 15.6138Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1428,7 +1327,6 @@ export const Bezier = () => (
     <path
       fill="none"
       d="M4 14.9999C4 11.2722 6.54955 8.14004 10 7.25195M14 7.25195C17.4505 8.14004 20 11.2722 20 14.9999M14 7H20M20 7C20 7.55228 20.4477 8 21 8C21.5523 8 22 7.55228 22 7C22 6.44772 21.5523 6 21 6C20.4477 6 20 6.44772 20 7ZM4 7L10 7M4 7C4 7.55228 3.55228 8 3 8C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6C3.55228 6 4 6.44772 4 7ZM6 19H2L2 15H6V19ZM14 9H10V5L14 5V9ZM22 19H18V15H22V19Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1442,7 +1340,6 @@ export const BlockOctagon = () => (
     <path
       fill="none"
       d="M18 6L6 18M21 9.59785V14.4022C21 14.8913 21 15.1359 20.9447 15.3661C20.8957 15.5702 20.8149 15.7653 20.7053 15.9442C20.5816 16.146 20.4086 16.319 20.0627 16.6649L16.6649 20.0627C16.319 20.4086 16.146 20.5816 15.9442 20.7053C15.7653 20.8149 15.5702 20.8957 15.3661 20.9447C15.1359 21 14.8913 21 14.4022 21H9.59785C9.10867 21 8.86407 21 8.6339 20.9447C8.42983 20.8957 8.23474 20.8149 8.05579 20.7053C7.85396 20.5816 7.68101 20.4086 7.33511 20.0627L3.93726 16.6649C3.59135 16.319 3.4184 16.146 3.29472 15.9442C3.18506 15.7653 3.10425 15.5702 3.05526 15.3661C3 15.1359 3 14.8913 3 14.4022V9.59785C3 9.10867 3 8.86407 3.05526 8.6339C3.10425 8.42983 3.18506 8.23474 3.29472 8.05579C3.4184 7.85396 3.59135 7.68101 3.93726 7.33511L7.3351 3.93726C7.68101 3.59135 7.85396 3.4184 8.05579 3.29472C8.23474 3.18506 8.42983 3.10425 8.6339 3.05526C8.86407 3 9.10867 3 9.59785 3H14.4022C14.8913 3 15.1359 3 15.3661 3.05526C15.5702 3.10425 15.7653 3.18506 15.9442 3.29472C16.146 3.4184 16.319 3.59135 16.6649 3.93726L20.0627 7.3351C20.4086 7.68101 20.5816 7.85396 20.7053 8.05579C20.8149 8.23474 20.8957 8.42983 20.9447 8.6339C21 8.86407 21 9.10867 21 9.59785Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1456,7 +1353,6 @@ export const Block = () => (
     <path
       fill="none"
       d="M18 6L6 18M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1470,7 +1366,6 @@ export const Blur = () => (
     <path
       fill="none"
       d="M12 22C16.4183 22 20 18.4183 20 14C20 7.58172 12 2 12 2M12 22C7.58172 22 4 18.4183 4 14C4 7.58172 12 2 12 2M12 22V2M16 14V14.0099M15 18V18.0099M15 10V10.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1484,7 +1379,6 @@ export const BookmarkAdd = () => (
     <path
       fill="none"
       d="M12 7L12 13M9 10L15 10M4 22L4 10C4 7.19974 4 5.79961 4.54497 4.73005C5.02433 3.78924 5.78924 3.02433 6.73005 2.54497C7.79961 2 9.19974 2 12 2C14.8003 2 16.2004 2 17.27 2.54497C18.2108 3.02433 18.9757 3.78924 19.455 4.73005C20 5.79961 20 7.19974 20 10V22L12 18L4 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1498,7 +1392,6 @@ export const BookmarkCheck = () => (
     <path
       fill="none"
       d="M9 10L11 12L15 8M4 22L4 10C4 7.19974 4 5.79961 4.54497 4.73005C5.02433 3.78924 5.78924 3.02433 6.73005 2.54497C7.79961 2 9.19974 2 12 2C14.8003 2 16.2004 2 17.27 2.54497C18.2108 3.02433 18.9757 3.78924 19.455 4.73005C20 5.79961 20 7.19974 20 10V22L12 18L4 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1512,7 +1405,6 @@ export const BookmarkDownload = () => (
     <path
       fill="none"
       d="M9.5 10.5L12 13M12 13L14.4999 10.5M12 13V7M4 22L4 10C4 7.19974 4 5.79961 4.54497 4.73005C5.02433 3.78924 5.78924 3.02433 6.73005 2.54497C7.79961 2 9.19974 2 12 2C14.8003 2 16.2004 2 17.27 2.54497C18.2108 3.02433 18.9757 3.78924 19.455 4.73005C20 5.79961 20 7.19974 20 10V22L12 18L4 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1526,7 +1418,6 @@ export const BookmarkEdit = () => (
     <path
       fill="none"
       d="M9.93726 10.0627L13 7C13.5523 6.44772 14.4477 6.44772 15 7C15.5523 7.55228 15.5523 8.44771 15 9L11.9373 12.0627C11.5914 12.4086 11.4184 12.5816 11.2166 12.7053C11.0376 12.8149 10.8425 12.8957 10.6385 12.9447C10.4083 13 10.1637 13 9.67452 13H9V12.3255C9 11.8363 9 11.5917 9.05526 11.3615C9.10425 11.1575 9.18506 10.9624 9.29472 10.7834C9.4184 10.5816 9.59136 10.4086 9.93726 10.0627Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1534,7 +1425,6 @@ export const BookmarkEdit = () => (
     <path
       fill="none"
       d="M4 10L4 22L12 18L20 22V10C20 7.19974 20 5.79961 19.455 4.73005C18.9757 3.78924 18.2108 3.02433 17.27 2.54497C16.2004 2 14.8003 2 12 2C9.19974 2 7.79961 2 6.73005 2.54497C5.78924 3.02433 5.02433 3.78924 4.54497 4.73005C4 5.79961 4 7.19974 4 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1548,7 +1438,6 @@ export const BookmarkFavorite = () => (
     <path
       fill="none"
       d="M12 7L13.0815 9.30438L15.5 9.67385L13.75 11.4675L14.163 14L12 12.804L9.837 14L10.25 11.4675L8.5 9.67385L10.9185 9.30438L12 7Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1556,7 +1445,6 @@ export const BookmarkFavorite = () => (
     <path
       fill="none"
       d="M4 10L4 22L12 18L20 22V10C20 7.19974 20 5.79961 19.455 4.73005C18.9757 3.78924 18.2108 3.02433 17.27 2.54497C16.2004 2 14.8003 2 12 2C9.19974 2 7.79961 2 6.73005 2.54497C5.78924 3.02433 5.02433 3.78924 4.54497 4.73005C4 5.79961 4 7.19974 4 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1570,7 +1458,6 @@ export const BookmarkMinus = () => (
     <path
       fill="none"
       d="M9 10L15 10M4 22L4 10C4 7.19974 4 5.79961 4.54497 4.73005C5.02433 3.78924 5.78924 3.02433 6.73005 2.54497C7.79961 2 9.19974 2 12 2C14.8003 2 16.2004 2 17.27 2.54497C18.2108 3.02433 18.9757 3.78924 19.455 4.73005C20 5.79961 20 7.19974 20 10V22L12 18L4 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1584,7 +1471,6 @@ export const BookmarkOff = () => (
     <path
       fill="none"
       d="M4.00004 9.65708C4 9.76901 4 9.88329 4 10V22L11.5956 17.2527M2 2L22 22M20 20.0002V10C20 7.19974 20 5.79961 19.455 4.73005C18.9757 3.78924 18.2108 3.02433 17.27 2.54497C16.2004 2 14.8003 2 12 2C9.19974 2 7.79961 2 6.73005 2.54497C5.82993 3.0036 5.09084 3.7236 4.60877 4.60895L20 20.0002Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1598,7 +1484,6 @@ export const BookmarkRemove = () => (
     <path
       fill="none"
       d="M10 8L14 12M14 8L10 12M4 22L4 10C4 7.19974 4 5.79961 4.54497 4.73005C5.02433 3.78924 5.78924 3.02433 6.73005 2.54497C7.79961 2 9.19974 2 12 2C14.8003 2 16.2004 2 17.27 2.54497C18.2108 3.02433 18.9757 3.78924 19.455 4.73005C20 5.79961 20 7.19974 20 10V22L12 18L4 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1612,7 +1497,6 @@ export const Bookmark = () => (
     <path
       fill="none"
       d="M4 10L4 22L12 18L20 22V10C20 7.19974 20 5.79961 19.455 4.73005C18.9757 3.78924 18.2108 3.02433 17.27 2.54497C16.2004 2 14.8003 2 12 2C9.19974 2 7.79961 2 6.73005 2.54497C5.78924 3.02433 5.02433 3.78924 4.54497 4.73005C4 5.79961 4 7.19974 4 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1626,7 +1510,6 @@ export const Brackets = () => (
     <path
       fill="none"
       d="M9 2L8.8 2C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V8.01178C4 8.74555 4 9.11243 3.91711 9.4577C3.84362 9.7638 3.72241 10.0564 3.55792 10.3249C3.3724 10.6276 3.11297 10.887 2.59411 11.4059L2 12L2.59411 12.5941C3.11297 13.113 3.3724 13.3724 3.55792 13.6751C3.72241 13.9436 3.84362 14.2362 3.91711 14.5423C4 14.8876 4 15.2545 4 15.9882V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H9M15 2L15.2 2C16.8802 2 17.7202 2 18.362 2.32698C18.9265 2.6146 19.3854 3.07354 19.673 3.63803C20 4.27976 20 5.11984 20 6.8V8.01178C20 8.74555 20 9.11243 20.0829 9.4577C20.1564 9.7638 20.2776 10.0564 20.4421 10.3249C20.6276 10.6276 20.887 10.887 21.4059 11.4059L22 12L21.4059 12.5941C20.887 13.113 20.6276 13.3724 20.4421 13.6751C20.2776 13.9436 20.1564 14.2362 20.0829 14.5423C20 14.8876 20 15.2545 20 15.9882V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22H15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1640,7 +1523,6 @@ export const Browser = () => (
     <path
       fill="none"
       d="M2 11L2 13C2 15.8003 2 17.2004 2.54497 18.27C3.02433 19.2108 3.78924 19.9757 4.73005 20.455C5.79961 21 7.19974 21 10 21H14C16.8003 21 18.2004 21 19.27 20.455C20.2108 19.9757 20.9757 19.2108 21.455 18.27C22 17.2004 22 15.8003 22 13V11M2 11C2 8.19974 2 6.79961 2.54497 5.73005C3.02433 4.78924 3.78924 4.02433 4.73005 3.54497C5.79961 3 7.19974 3 10 3L14 3C16.8003 3 18.2004 3 19.27 3.54497C20.2108 4.02433 20.9757 4.78924 21.455 5.73005C22 6.79961 22 8.19974 22 11M2 11L22 11M7 7V7.00995M11 7V7.00995"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1654,7 +1536,6 @@ export const BrushPaint = () => (
     <path
       fill="none"
       d="M13 2V5M17 2V7M13 16H11C8.19974 16 6.79961 16 5.73005 15.455C4.78924 14.9757 4.02433 14.2108 3.54497 13.27C3 12.2004 3 10.8003 3 8L3 2L21 2V8C21 10.8003 21 12.2004 20.455 13.27C19.9757 14.2108 19.2108 14.9757 18.27 15.455C17.2004 16 15.8003 16 13 16ZM9 19V16H15V19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1668,7 +1549,6 @@ export const Brush = () => (
     <path
       fill="none"
       d="M12.7946 14.9813C13.2806 14.7109 13.7058 14.3262 14.5561 13.5568L19.9227 8.70131C21.311 7.44521 21.365 5.28273 20.0412 3.95886C18.7173 2.63496 16.5548 2.68903 15.2987 4.07743L10.3732 9.52187C9.62915 10.3443 9.25712 10.7556 8.99175 11.2247M12.7946 14.9813C12.3637 15.2212 11.8988 15.3941 11.4159 15.4943C10.8713 15.6072 10.2981 15.5939 9.15173 15.5674L8.36068 15.5491L8.36078 14.7451C8.36092 13.636 8.36099 13.0814 8.47898 12.5555C8.58362 12.0891 8.7564 11.6407 8.99175 11.2247M12.7946 14.9813C13.2288 14.7397 13.6144 14.4065 14.2979 13.7898L10.2101 9.70183C9.57327 10.4066 9.23697 10.7912 8.99175 11.2247M8.36018 15.64C9.52753 16.8074 9.52747 18.7001 8.36024 19.8674C7.193 21.0346 3.00011 20.9999 3.00011 20.9999C3.00011 20.9999 2.96564 16.8072 4.13287 15.6399C5.30011 14.4727 7.19283 14.4726 8.36018 15.64Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1682,7 +1562,6 @@ export const BuildingBank = () => (
     <path
       fill="none"
       d="M22 21H2M12 7.49999V7.50993M20.5007 6.40025L13.1885 3.47537C12.7494 3.29975 12.5299 3.21194 12.3032 3.17717C12.1023 3.14635 11.8977 3.14635 11.6968 3.17717C11.4701 3.21194 11.2506 3.29975 10.8115 3.47537L3.49934 6.40025C3.26694 6.49322 3.15068 6.53972 3.04972 6.59423C2.47485 6.90465 2.08784 7.47629 2.01312 8.12533C2 8.23932 2 8.36448 2 8.61482C2 8.97263 2 9.15153 2.02283 9.30134C2.15468 10.1664 2.83359 10.8453 3.69864 10.9772C3.84846 11 4.02736 11 4.38516 11L19.6148 11C19.9726 11 20.1515 11 20.3014 10.9772C21.1664 10.8453 21.8453 10.1664 21.9772 9.30134C22 9.15153 22 8.97263 22 8.61482C22 8.36448 22 8.23931 21.9869 8.12533C21.9122 7.47628 21.5251 6.90465 20.9503 6.59423C20.8493 6.53971 20.7331 6.49323 20.5007 6.40025ZM9 21H4V11H9V21ZM20 21H15V11H20V21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1696,7 +1575,6 @@ export const BuildingChurch = () => (
     <path
       fill="none"
       d="M9 2V7M7 4L11 4M15 22H7.8C6.11984 22 5.27976 22 4.63803 21.673C4.07354 21.3854 3.6146 20.9265 3.32698 20.362C3 19.7202 3 18.8802 3 17.2L3 13.5689C3 12.6297 3 12.1601 3.12945 11.7338C3.24406 11.3564 3.43194 11.0054 3.68236 10.7007C3.96523 10.3565 4.35597 10.096 5.13744 9.57504L6.33744 8.77504C7.29971 8.13353 7.78085 7.81277 8.30088 7.68815C8.76046 7.57802 9.23954 7.57802 9.69912 7.68815C10.2192 7.81277 10.7003 8.13353 11.6626 8.77504L12.8626 9.57504C13.644 10.096 14.0348 10.3565 14.3176 10.7007C14.5681 11.0054 14.7559 11.3564 14.8705 11.7338C15 12.1601 15 12.6297 15 13.5689V22ZM15 22H17.8C18.9201 22 19.4802 22 19.908 21.782C20.2843 21.5903 20.5903 21.2843 20.782 20.908C21 20.4802 21 19.9201 21 18.8V17.2C21 16.0799 21 15.5198 20.782 15.092C20.5903 14.7157 20.2843 14.4097 19.908 14.218C19.4802 14 18.9201 14 17.8 14H15V22ZM9 13V13.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1710,7 +1588,6 @@ export const BuildingHospital = () => (
     <path
       fill="none"
       d="M10 7V11M8 9L12 9M17 22H7.8C6.11984 22 5.27976 22 4.63803 21.673C4.07354 21.3854 3.6146 20.9265 3.32698 20.362C3 19.7202 3 18.8802 3 17.2L3 6.8C3 5.11984 3 4.27976 3.32698 3.63803C3.6146 3.07354 4.07354 2.6146 4.63803 2.32698C5.27976 2 6.11984 2 7.8 2L12.2 2C13.8802 2 14.7202 2 15.362 2.32698C15.9265 2.6146 16.3854 3.07354 16.673 3.63803C17 4.27976 17 5.11984 17 6.8V22ZM17 22H17.8C18.9201 22 19.4802 22 19.908 21.782C20.2843 21.5903 20.5903 21.2843 20.782 20.908C21 20.4802 21 19.9201 21 18.8V16.2C21 15.0799 21 14.5198 20.782 14.092C20.5903 13.7157 20.2843 13.4097 19.908 13.218C19.4802 13 18.9201 13 17.8 13H17V22ZM12 22H8V18C8 16.8954 8.89543 16 10 16C11.1046 16 12 16.8954 12 18V22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1724,7 +1601,6 @@ export const BuildingOfficeSkew = () => (
     <path
       fill="none"
       d="M7 6V6.00995M11 6V6.00995M7 10V10.0099M11 10V10.0099M7 14V14.0099M11 14V14.0099M7 18V18.0099M11 18V18.0099M15 22H7.8C6.11984 22 5.27976 22 4.63803 21.673C4.07354 21.3854 3.6146 20.9265 3.32698 20.362C3 19.7202 3 18.8802 3 17.2L3 6.8C3 5.11984 3 4.27976 3.32698 3.63803C3.6146 3.07354 4.07354 2.6146 4.63803 2.32698C5.27976 2 6.11984 2 7.8 2L10.2 2C11.8802 2 12.7202 2 13.362 2.32698C13.9265 2.6146 14.3854 3.07354 14.673 3.63803C15 4.27976 15 5.11984 15 6.8V22ZM15 22H17.8C18.9201 22 19.4802 22 19.908 21.782C20.2843 21.5903 20.5903 21.2843 20.782 20.908C21 20.4802 21 19.9201 21 18.8V13.7126C21 13.0864 21 12.7734 20.9137 12.4892C20.8373 12.2376 20.712 12.0036 20.5451 11.8004C20.3565 11.571 20.096 11.3973 19.575 11.05L15 8V22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1738,7 +1614,6 @@ export const BuildingOffice = () => (
     <path
       fill="none"
       d="M7 6L10 6M7 10L10 10M7 14H10M14 22H7.8C6.11984 22 5.27976 22 4.63803 21.673C4.07354 21.3854 3.6146 20.9265 3.32698 20.362C3 19.7202 3 18.8802 3 17.2L3 6.8C3 5.11984 3 4.27976 3.32698 3.63803C3.6146 3.07354 4.07354 2.6146 4.63803 2.32698C5.27976 2 6.11984 2 7.8 2L9.2 2C10.8802 2 11.7202 2 12.362 2.32698C12.9265 2.6146 13.3854 3.07354 13.673 3.63803C14 4.27976 14 5.11984 14 6.8V22ZM14 22H17.8C18.9201 22 19.4802 22 19.908 21.782C20.2843 21.5903 20.5903 21.2843 20.782 20.908C21 20.4802 21 19.9201 21 18.8V11.2C21 10.0799 21 9.51984 20.782 9.09202C20.5903 8.71569 20.2843 8.40973 19.908 8.21799C19.4802 8 18.9201 8 17.8 8H14V22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1752,7 +1627,6 @@ export const BuildingStock = () => (
     <path
       fill="none"
       d="M22 6.99999L13.1885 3.47537C12.7494 3.29975 12.5299 3.21194 12.3032 3.17717C12.1023 3.14635 11.8977 3.14635 11.6968 3.17717C11.4701 3.21194 11.2506 3.29975 10.8115 3.47537L2 6.99999M9 18C9 17.0681 9 16.6022 8.84776 16.2346C8.64477 15.7446 8.25542 15.3552 7.76537 15.1522C7.39782 15 6.93188 15 6 15C5.06812 15 4.60218 15 4.23463 15.1522C3.74458 15.3552 3.35523 15.7446 3.15224 16.2346C3 16.6022 3 17.0681 3 18C3 18.9319 3 19.3978 3.15224 19.7654C3.35523 20.2554 3.74458 20.6448 4.23463 20.8477C4.60218 21 5.06812 21 6 21C6.93188 21 7.39782 21 7.76537 20.8477C8.25542 20.6448 8.64477 20.2554 8.84776 19.7654C9 19.3978 9 18.9319 9 18ZM9 18C9 17.0681 9 16.6022 9.15224 16.2346C9.35523 15.7446 9.74458 15.3552 10.2346 15.1522C10.6022 15 11.0681 15 12 15C12.9319 15 13.3978 15 13.7654 15.1522C14.2554 15.3552 14.6448 15.7446 14.8478 16.2346C15 16.6022 15 17.0681 15 18M9 18C9 18.9319 9 19.3978 9.15224 19.7654C9.35523 20.2554 9.74458 20.6448 10.2346 20.8477C10.6022 21 11.0681 21 12 21C12.9319 21 13.3978 21 13.7654 20.8477C14.2554 20.6448 14.6448 20.2554 14.8478 19.7654C15 19.3978 15 18.9319 15 18M15 18C15 17.0681 15 16.6022 15.1522 16.2346C15.3552 15.7446 15.7446 15.3552 16.2346 15.1522C16.6022 15 17.0681 15 18 15C18.9319 15 19.3978 15 19.7654 15.1522C20.2554 15.3552 20.6448 15.7446 20.8478 16.2346C21 16.6022 21 17.0681 21 18C21 18.9319 21 19.3978 20.8478 19.7654C20.6448 20.2554 20.2554 20.6448 19.7654 20.8477C19.3978 21 18.9319 21 18 21C17.0681 21 16.6022 21 16.2346 20.8477C15.7446 20.6448 15.3552 20.2554 15.1522 19.7654C15 19.3978 15 18.9319 15 18ZM12 12C12 11.0681 12 10.6022 11.8478 10.2346C11.6448 9.74456 11.2554 9.35522 10.7654 9.15223C10.3978 8.99999 9.93188 8.99999 9 8.99999C8.06812 8.99999 7.60218 8.99999 7.23463 9.15223C6.74458 9.35522 6.35523 9.74456 6.15224 10.2346C6 10.6022 6 11.0681 6 12C6 12.9319 6 13.3978 6.15224 13.7654C6.35523 14.2554 6.74458 14.6448 7.23463 14.8477C7.60218 15 8.06812 15 9 15C9.93188 15 10.3978 15 10.7654 14.8477C11.2554 14.6448 11.6448 14.2554 11.8478 13.7654C12 13.3978 12 12.9319 12 12ZM12 12C12 11.0681 12 10.6022 12.1522 10.2346C12.3552 9.74456 12.7446 9.35522 13.2346 9.15223C13.6022 8.99999 14.0681 8.99999 15 8.99999C15.9319 8.99999 16.3978 8.99999 16.7654 9.15223C17.2554 9.35522 17.6448 9.74456 17.8478 10.2346C18 10.6022 18 11.0681 18 12C18 12.9319 18 13.3978 17.8478 13.7654C17.6448 14.2554 17.2554 14.6448 16.7654 14.8477C16.3978 15 15.9319 15 15 15C14.0681 15 13.6022 15 13.2346 14.8477C12.7446 14.6448 12.3552 14.2554 12.1522 13.7654C12 13.3978 12 12.9319 12 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1766,7 +1640,6 @@ export const BuildingTree = () => (
     <path
       fill="none"
       d="M20 15V21M20 15C18.8954 15 18 14.1046 18 13C18 12.4878 18.1925 12.0206 18.5092 11.6668C18.5031 11.612 18.5 11.5564 18.5 11.5C18.5 10.6716 19.1716 10 20 10C20.8284 10 21.5 10.6716 21.5 11.5C21.5 11.5564 21.4969 11.612 21.4908 11.6668C21.8075 12.0206 22 12.4878 22 13C22 14.1046 21.1046 15 20 15ZM22 21H2M2 21H14V7.8C14 6.11984 14 5.27976 13.673 4.63803C13.3854 4.07354 12.9265 3.6146 12.362 3.32698C11.7202 3 10.8802 3 9.2 3L6.8 3C5.11984 3 4.27976 3 3.63803 3.32698C3.07354 3.6146 2.6146 4.07354 2.32698 4.63803C2 5.27976 2 6.11984 2 7.8L2 21ZM6 8V8.00995M10 8V8.00995M6 12V12.0099M10 12V12.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1780,7 +1653,6 @@ export const Cake = () => (
     <path
       fill="none"
       d="M7 14H17C17.93 14 18.395 14 18.7765 14.1022C19.8117 14.3796 20.6204 15.1883 20.8978 16.2235C21 16.605 21 17.07 21 18C21 18.93 21 19.395 20.8978 19.7765C20.6204 20.8117 19.8117 21.6204 18.7765 21.8978C18.395 22 17.93 22 17 22H7C6.07003 22 5.60504 22 5.22354 21.8978C4.18827 21.6204 3.37962 20.8117 3.10222 19.7765C3 19.395 3 18.93 3 18C3 17.07 3 16.605 3.10222 16.2235C3.37962 15.1883 4.18827 14.3796 5.22354 14.1022C5.60504 14 6.07003 14 7 14ZM7 14L7 18M11 14V16M5 14V13.8C5 12.1198 5 11.2798 5.32698 10.638C5.6146 10.0735 6.07354 9.6146 6.63803 9.32698C7.27976 9 8.11984 9 9.8 9H14.2C15.8802 9 16.7202 9 17.362 9.32698C17.9265 9.6146 18.3854 10.0735 18.673 10.638C19 11.2798 19 12.1198 19 13.8V14H5ZM10.5 4.5C10.5 3.67157 12 2 12 2C12 2 13.5 3.67157 13.5 4.5C13.5 5.32843 12.8284 6 12 6C11.1716 6 10.5 5.32843 10.5 4.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1794,7 +1666,6 @@ export const CallAdd = () => (
     <path
       fill="none"
       d="M18 3V9M15 6L21 6M7.51554 16.4845C4.66127 13.6302 3.11338 10.0781 3.0016 6.82273C2.97047 5.91596 3.39533 5.07055 4.03689 4.42899L4.51584 3.95004C5.78256 2.68332 7.83633 2.68332 9.10305 3.95004L9.29212 4.13911C10.3042 5.15121 10.4363 6.74668 9.60432 7.91139C9.14348 8.55657 8.93725 9.37158 9.2119 10.1154C9.58715 11.1315 10.2009 12.1089 11.046 12.954C11.8911 13.7991 12.8685 14.4129 13.8846 14.7881C14.6284 15.0628 15.4434 14.8565 16.0886 14.3957C17.2533 13.5637 18.8488 13.6958 19.8609 14.7079L20.05 14.897C21.3167 16.1637 21.3167 18.2174 20.05 19.4842L19.571 19.9631C18.9294 20.6047 18.084 21.0295 17.1773 20.9984C13.9219 20.8866 10.3698 19.3387 7.51554 16.4845Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1808,7 +1679,6 @@ export const CallEnd = () => (
     <path
       fill="none"
       d="M14.7449 14.9057C15.2199 14.8706 15.6871 14.6825 16.0886 14.3957C17.2533 13.5637 18.8488 13.6958 19.8609 14.7079L20.05 14.897C21.3167 16.1637 21.3167 18.2174 20.05 19.4842L19.571 19.9631C18.9294 20.6047 18.084 21.0295 17.1773 20.9984C15.0462 20.9252 12.788 20.2366 10.6817 18.969M7.51648 16.4854L7.51554 16.4845C4.66127 13.6302 3.11338 10.0781 3.0016 6.82273C2.97047 5.91596 3.39533 5.07055 4.03689 4.42899L4.51584 3.95004C5.78256 2.68332 7.83633 2.68332 9.10305 3.95004L9.29212 4.13911C10.3042 5.15121 10.4363 6.74668 9.60432 7.91139C9.14348 8.55657 8.93725 9.37158 9.2119 10.1154C9.58715 11.1315 10.2009 12.1089 11.046 12.954L11.047 12.9549M21 3L3 21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1822,7 +1692,6 @@ export const CallMinus = () => (
     <path
       fill="none"
       d="M15 8L21 8M7.51554 16.4845C4.66127 13.6302 3.11338 10.0781 3.0016 6.82273C2.97047 5.91596 3.39533 5.07055 4.03689 4.42899L4.51584 3.95004C5.78256 2.68332 7.83633 2.68332 9.10305 3.95004L9.29212 4.13911C10.3042 5.15121 10.4363 6.74668 9.60432 7.91139C9.14348 8.55657 8.93725 9.37158 9.2119 10.1154C9.58715 11.1315 10.2009 12.1089 11.046 12.954C11.8911 13.7991 12.8685 14.4129 13.8846 14.7881C14.6284 15.0628 15.4434 14.8565 16.0886 14.3957C17.2533 13.5637 18.8488 13.6958 19.8609 14.7079L20.05 14.897C21.3167 16.1637 21.3167 18.2174 20.05 19.4842L19.571 19.9631C18.9294 20.6047 18.084 21.0295 17.1773 20.9984C13.9219 20.8866 10.3698 19.3387 7.51554 16.4845Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1836,7 +1705,6 @@ export const CallPause = () => (
     <path
       fill="none"
       d="M17 3V8M21 3V8M7.51554 16.4845C4.66127 13.6302 3.11338 10.0781 3.0016 6.82273C2.97047 5.91596 3.39533 5.07055 4.03689 4.42899L4.51584 3.95004C5.78256 2.68332 7.83633 2.68332 9.10305 3.95004L9.29212 4.13911C10.3042 5.15121 10.4363 6.74668 9.60432 7.91139C9.14348 8.55657 8.93725 9.37158 9.2119 10.1154C9.58715 11.1315 10.2009 12.1089 11.046 12.954C11.8911 13.7991 12.8685 14.4129 13.8846 14.7881C14.6284 15.0628 15.4434 14.8565 16.0886 14.3957C17.2533 13.5637 18.8488 13.6958 19.8609 14.7079L20.05 14.897C21.3167 16.1637 21.3167 18.2174 20.05 19.4842L19.571 19.9631C18.9294 20.6047 18.084 21.0295 17.1773 20.9984C13.9219 20.8866 10.3698 19.3387 7.51554 16.4845Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1850,7 +1718,6 @@ export const Call = () => (
     <path
       fill="none"
       d="M15.5 3C18.5376 3 21 5.46243 21 8.5M15.5 7C16.3284 7 17 7.67157 17 8.5M7.51554 16.4845C4.66127 13.6302 3.11338 10.0781 3.0016 6.82273C2.97047 5.91596 3.39533 5.07055 4.03689 4.42899L4.51584 3.95004C5.78256 2.68332 7.83633 2.68332 9.10305 3.95004L9.29212 4.13911C10.3042 5.15121 10.4363 6.74668 9.60432 7.91139C9.14348 8.55657 8.93725 9.37158 9.2119 10.1154C9.58715 11.1315 10.2009 12.1089 11.046 12.954C11.8911 13.7991 12.8685 14.4129 13.8846 14.7881C14.6284 15.0628 15.4434 14.8565 16.0886 14.3957C17.2533 13.5637 18.8488 13.6958 19.8609 14.7079L20.05 14.897C21.3167 16.1637 21.3167 18.2174 20.05 19.4842L19.571 19.9631C18.9294 20.6047 18.084 21.0295 17.1773 20.9984C13.9219 20.8866 10.3698 19.3387 7.51554 16.4845Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1864,7 +1731,6 @@ export const CategoryAdd = () => (
     <path
       fill="none"
       d="M17.5 14V21M14 17.5L21 17.5M17.8 10H17.2C16.0799 10 15.5198 10 15.092 9.78201C14.7157 9.59027 14.4097 9.28431 14.218 8.90798C14 8.48016 14 7.9201 14 6.8V6.2C14 5.0799 14 4.51984 14.218 4.09202C14.4097 3.71569 14.7157 3.40973 15.092 3.21799C15.5198 3 16.0799 3 17.2 3L17.8 3C18.9201 3 19.4802 3 19.908 3.21799C20.2843 3.40973 20.5903 3.71569 20.782 4.09202C21 4.51984 21 5.0799 21 6.2V6.8C21 7.9201 21 8.48016 20.782 8.90798C20.5903 9.28431 20.2843 9.59027 19.908 9.78201C19.4802 10 18.9201 10 17.8 10ZM6.8 21H6.2C5.0799 21 4.51984 21 4.09202 20.782C3.71569 20.5903 3.40973 20.2843 3.21799 19.908C3 19.4802 3 18.9201 3 17.8L3 17.2C3 16.0799 3 15.5198 3.21799 15.092C3.40973 14.7157 3.71569 14.4097 4.09202 14.218C4.51984 14 5.0799 14 6.2 14H6.8C7.9201 14 8.48016 14 8.90798 14.218C9.28431 14.4097 9.59027 14.7157 9.78201 15.092C10 15.5198 10 16.0799 10 17.2V17.8C10 18.9201 10 19.4802 9.78201 19.908C9.59027 20.2843 9.28431 20.5903 8.90798 20.782C8.48016 21 7.9201 21 6.8 21ZM7.23999 9.35001C6.21791 9.98881 5.70686 10.3082 5.29498 10.3696C4.40021 10.5031 3.52729 10.0192 3.16621 9.18976C3 8.80794 3 8.20529 3 7C3 5.79471 3 5.19206 3.16621 4.81024C3.52729 3.98075 4.40021 3.49694 5.29498 3.63037C5.70686 3.69179 6.21791 4.01119 7.23999 4.64999C8.16111 5.22569 8.62167 5.51354 8.85198 5.83488C9.35122 6.53141 9.35122 7.46859 8.85198 8.16512C8.62167 8.48646 8.16111 8.77431 7.23999 9.35001Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1878,7 +1744,6 @@ export const CategoryCircleAdd = () => (
     <path
       fill="none"
       d="M17.5 14V21M14 17.5L21 17.5M21 6.5C21 8.433 19.433 10 17.5 10C15.567 10 14 8.433 14 6.5C14 4.567 15.567 3 17.5 3C19.433 3 21 4.567 21 6.5ZM10 17.5C10 19.433 8.433 21 6.5 21C4.567 21 3 19.433 3 17.5C3 15.567 4.567 14 6.5 14C8.433 14 10 15.567 10 17.5ZM10 6.5C10 8.433 8.433 10 6.5 10C4.567 10 3 8.433 3 6.5C3 4.567 4.567 3 6.5 3C8.433 3 10 4.567 10 6.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1892,7 +1757,6 @@ export const CategoryCircle = () => (
     <path
       fill="none"
       d="M21 17.5C21 19.433 19.433 21 17.5 21C15.567 21 14 19.433 14 17.5C14 15.567 15.567 14 17.5 14C19.433 14 21 15.567 21 17.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1900,7 +1764,6 @@ export const CategoryCircle = () => (
     <path
       fill="none"
       d="M21 6.5C21 8.433 19.433 10 17.5 10C15.567 10 14 8.433 14 6.5C14 4.567 15.567 3 17.5 3C19.433 3 21 4.567 21 6.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1908,7 +1771,6 @@ export const CategoryCircle = () => (
     <path
       fill="none"
       d="M10 17.5C10 19.433 8.433 21 6.5 21C4.567 21 3 19.433 3 17.5C3 15.567 4.567 14 6.5 14C8.433 14 10 15.567 10 17.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1916,7 +1778,6 @@ export const CategoryCircle = () => (
     <path
       fill="none"
       d="M10 6.5C10 8.433 8.433 10 6.5 10C4.567 10 3 8.433 3 6.5C3 4.567 4.567 3 6.5 3C8.433 3 10 4.567 10 6.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1930,7 +1791,6 @@ export const CategorySquareAdd = () => (
     <path
       fill="none"
       d="M17.5 14V21M14 17.5L21 17.5M17.8 10H17.2C16.0799 10 15.5198 10 15.092 9.78201C14.7157 9.59027 14.4097 9.28431 14.218 8.90798C14 8.48016 14 7.9201 14 6.8V6.2C14 5.0799 14 4.51984 14.218 4.09202C14.4097 3.71569 14.7157 3.40973 15.092 3.21799C15.5198 3 16.0799 3 17.2 3L17.8 3C18.9201 3 19.4802 3 19.908 3.21799C20.2843 3.40973 20.5903 3.71569 20.782 4.09202C21 4.51984 21 5.0799 21 6.2V6.8C21 7.9201 21 8.48016 20.782 8.90798C20.5903 9.28431 20.2843 9.59027 19.908 9.78201C19.4802 10 18.9201 10 17.8 10ZM6.8 21H6.2C5.0799 21 4.51984 21 4.09202 20.782C3.71569 20.5903 3.40973 20.2843 3.21799 19.908C3 19.4802 3 18.9201 3 17.8L3 17.2C3 16.0799 3 15.5198 3.21799 15.092C3.40973 14.7157 3.71569 14.4097 4.09202 14.218C4.51984 14 5.0799 14 6.2 14H6.8C7.9201 14 8.48016 14 8.90798 14.218C9.28431 14.4097 9.59027 14.7157 9.78201 15.092C10 15.5198 10 16.0799 10 17.2V17.8C10 18.9201 10 19.4802 9.78201 19.908C9.59027 20.2843 9.28431 20.5903 8.90798 20.782C8.48016 21 7.9201 21 6.8 21ZM6.8 10H6.2C5.0799 10 4.51984 10 4.09202 9.78201C3.71569 9.59027 3.40973 9.28431 3.21799 8.90798C3 8.48016 3 7.9201 3 6.8L3 6.2C3 5.0799 3 4.51984 3.21799 4.09202C3.40973 3.71569 3.71569 3.40973 4.09202 3.21799C4.51984 3 5.0799 3 6.2 3L6.8 3C7.9201 3 8.48016 3 8.90798 3.21799C9.28431 3.40973 9.59027 3.71569 9.78201 4.09202C10 4.51984 10 5.0799 10 6.2V6.8C10 7.9201 10 8.48016 9.78201 8.90798C9.59027 9.28431 9.28431 9.59027 8.90798 9.78201C8.48016 10 7.9201 10 6.8 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1944,7 +1804,6 @@ export const CategorySquare = () => (
     <path
       fill="none"
       d="M17.2 10H17.8C18.9201 10 19.4802 10 19.908 9.78201C20.2843 9.59027 20.5903 9.28431 20.782 8.90798C21 8.48016 21 7.9201 21 6.8V6.2C21 5.0799 21 4.51984 20.782 4.09202C20.5903 3.71569 20.2843 3.40973 19.908 3.21799C19.4802 3 18.9201 3 17.8 3L17.2 3C16.0799 3 15.5198 3 15.092 3.21799C14.7157 3.40973 14.4097 3.71569 14.218 4.09202C14 4.51984 14 5.0799 14 6.2V6.8C14 7.9201 14 8.48016 14.218 8.90798C14.4097 9.28431 14.7157 9.59027 15.092 9.78201C15.5198 10 16.0799 10 17.2 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1952,7 +1811,6 @@ export const CategorySquare = () => (
     <path
       fill="none"
       d="M17.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V17.2C21 16.0799 21 15.5198 20.782 15.092C20.5903 14.7157 20.2843 14.4097 19.908 14.218C19.4802 14 18.9201 14 17.8 14H17.2C16.0799 14 15.5198 14 15.092 14.218C14.7157 14.4097 14.4097 14.7157 14.218 15.092C14 15.5198 14 16.0799 14 17.2V17.8C14 18.9201 14 19.4802 14.218 19.908C14.4097 20.2843 14.7157 20.5903 15.092 20.782C15.5198 21 16.0799 21 17.2 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1960,7 +1818,6 @@ export const CategorySquare = () => (
     <path
       fill="none"
       d="M6.2 10H6.8C7.9201 10 8.48016 10 8.90798 9.78201C9.28431 9.59027 9.59027 9.28431 9.78201 8.90798C10 8.48016 10 7.9201 10 6.8V6.2C10 5.0799 10 4.51984 9.78201 4.09202C9.59027 3.71569 9.28431 3.40973 8.90798 3.21799C8.48016 3 7.9201 3 6.8 3L6.2 3C5.0799 3 4.51984 3 4.09202 3.21799C3.71569 3.40973 3.40973 3.71569 3.21799 4.09202C3 4.51984 3 5.0799 3 6.2L3 6.8C3 7.9201 3 8.48016 3.21799 8.90798C3.40973 9.28431 3.71569 9.59027 4.09202 9.78201C4.51984 10 5.0799 10 6.2 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1968,7 +1825,6 @@ export const CategorySquare = () => (
     <path
       fill="none"
       d="M6.2 21H6.8C7.9201 21 8.48016 21 8.90798 20.782C9.28431 20.5903 9.59027 20.2843 9.78201 19.908C10 19.4802 10 18.9201 10 17.8V17.2C10 16.0799 10 15.5198 9.78201 15.092C9.59027 14.7157 9.28431 14.4097 8.90798 14.218C8.48016 14 7.9201 14 6.8 14H6.2C5.0799 14 4.51984 14 4.09202 14.218C3.71569 14.4097 3.40973 14.7157 3.21799 15.092C3 15.5198 3 16.0799 3 17.2L3 17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.0799 21 6.2 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1982,7 +1838,6 @@ export const Category = () => (
     <path
       fill="none"
       d="M17.2 10H17.8C18.9201 10 19.4802 10 19.908 9.78201C20.2843 9.59027 20.5903 9.28431 20.782 8.90798C21 8.48016 21 7.9201 21 6.8V6.2C21 5.0799 21 4.51984 20.782 4.09202C20.5903 3.71569 20.2843 3.40973 19.908 3.21799C19.4802 3 18.9201 3 17.8 3L17.2 3C16.0799 3 15.5198 3 15.092 3.21799C14.7157 3.40973 14.4097 3.71569 14.218 4.09202C14 4.51984 14 5.0799 14 6.2V6.8C14 7.9201 14 8.48016 14.218 8.90798C14.4097 9.28431 14.7157 9.59027 15.092 9.78201C15.5198 10 16.0799 10 17.2 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1990,7 +1845,6 @@ export const Category = () => (
     <path
       fill="none"
       d="M6.2 21H6.8C7.9201 21 8.48016 21 8.90798 20.782C9.28431 20.5903 9.59027 20.2843 9.78201 19.908C10 19.4802 10 18.9201 10 17.8V17.2C10 16.0799 10 15.5198 9.78201 15.092C9.59027 14.7157 9.28431 14.4097 8.90798 14.218C8.48016 14 7.9201 14 6.8 14H6.2C5.0799 14 4.51984 14 4.09202 14.218C3.71569 14.4097 3.40973 14.7157 3.21799 15.092C3 15.5198 3 16.0799 3 17.2L3 17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.0799 21 6.2 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -1998,7 +1852,6 @@ export const Category = () => (
     <path
       fill="none"
       d="M21 17.5C21 19.433 19.433 21 17.5 21C15.567 21 14 19.433 14 17.5C14 15.567 15.567 14 17.5 14C19.433 14 21 15.567 21 17.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2006,7 +1859,6 @@ export const Category = () => (
     <path
       fill="none"
       d="M3 7C3 5.79471 3 5.19206 3.16621 4.81024C3.52729 3.98075 4.40021 3.49694 5.29498 3.63037C5.70686 3.69179 6.21791 4.01119 7.23999 4.64999C8.16111 5.22569 8.62167 5.51354 8.85198 5.83488C9.35122 6.53141 9.35122 7.46859 8.85198 8.16512C8.62167 8.48646 8.16111 8.77431 7.23999 9.35001C6.21791 9.98881 5.70686 10.3082 5.29498 10.3696C4.40021 10.5031 3.52729 10.0192 3.16621 9.18976C3 8.80794 3 8.20529 3 7Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2020,7 +1872,6 @@ export const CheckVerify = () => (
     <path
       fill="none"
       d="M15 10L11 14L9 12M7.93565 18.9486C7.09968 18.9486 6.68169 18.9486 6.34816 18.8251C5.80546 18.6241 5.37756 18.1962 5.17656 17.6535C5.05302 17.32 5.05303 16.9021 5.05303 16.0665C5.05303 15.7032 5.05303 15.5216 5.02228 15.349C4.97188 15.066 4.86059 14.7973 4.69612 14.5615C4.5958 14.4177 4.46753 14.2895 4.21097 14.0329C3.62452 13.4465 3.33129 13.1532 3.18304 12.8324C2.93899 12.3043 2.93899 11.6957 3.18304 11.1676C3.33129 10.8468 3.62452 10.5535 4.21097 9.96709C4.46753 9.71054 4.5958 9.58226 4.69612 9.43846C4.86059 9.20271 4.97188 8.93404 5.02228 8.65104C5.05303 8.47843 5.05303 8.29699 5.05303 7.93411C5.05303 7.10401 5.05303 6.68896 5.17522 6.35706C5.3761 5.81145 5.80616 5.38138 6.35178 5.1805C6.68368 5.05831 7.09866 5.05831 7.92864 5.05831C8.29173 5.05831 8.47327 5.05831 8.64601 5.02752C8.92883 4.97711 9.19734 4.86589 9.43297 4.70155C9.57688 4.60118 9.70539 4.47267 9.9624 4.21566C10.553 3.62507 10.8483 3.32978 11.1714 3.1813C11.6973 2.93957 12.3027 2.93957 12.8286 3.1813C13.1517 3.32978 13.4472 3.62525 14.0381 4.2162C14.2945 4.47261 14.4228 4.60082 14.5662 4.70097C14.8023 4.86583 15.0715 4.97731 15.355 5.0277C15.5272 5.05831 15.7083 5.05831 16.0703 5.05831C16.8979 5.05831 17.3117 5.05831 17.6427 5.17981C18.1898 5.38062 18.621 5.81181 18.8218 6.35895C18.9433 6.69 18.9433 7.10378 18.9433 7.93135C18.9433 8.2934 18.9433 8.47442 18.974 8.64667C19.0243 8.93019 19.1358 9.19934 19.3007 9.43545C19.4008 9.57889 19.529 9.70705 19.7853 9.96338C20.3749 10.553 20.6697 10.8478 20.8182 11.1702C21.0606 11.6968 21.0606 12.3032 20.8182 12.8298C20.6697 13.1522 20.3753 13.4467 19.7863 14.0356C19.5289 14.2931 19.4001 14.4218 19.2996 14.5661C19.1357 14.8013 19.0247 15.0692 18.9743 15.3514C18.9433 15.5246 18.9433 15.7066 18.9433 16.0707C18.9433 16.9028 18.9433 17.3189 18.8205 17.6516C18.6196 18.1958 18.1905 18.6249 17.6463 18.8258C17.3136 18.9486 16.8971 18.9486 16.064 18.9486C15.7015 18.9486 15.5202 18.9486 15.3479 18.9793C15.0645 19.0296 14.7954 19.1411 14.5594 19.3059C14.4159 19.4061 14.2878 19.5341 14.0317 19.7902C13.4464 20.3756 13.1537 20.6682 12.8336 20.8164C12.3048 21.0612 11.6952 21.0612 11.1664 20.8164C10.8463 20.6682 10.5536 20.3756 9.96826 19.7902C9.71218 19.5341 9.58414 19.4061 9.44065 19.3059C9.20459 19.1411 8.9355 19.0296 8.65206 18.9793C8.47975 18.9486 8.29839 18.9486 7.93565 18.9486Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2034,7 +1885,6 @@ export const Check = () => (
     <path
       fill="none"
       d="M20 6L9.71429 17L4 10.8889"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2048,7 +1898,6 @@ export const ChevCircleDown = () => (
     <path
       fill="none"
       d="M9 11L12 14L15 11M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2062,7 +1911,6 @@ export const ChevCircleLeft = () => (
     <path
       fill="none"
       d="M13 9L10 12L13 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2076,7 +1924,6 @@ export const ChevCircleRight = () => (
     <path
       fill="none"
       d="M11 9L14 12L11 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2090,7 +1937,6 @@ export const ChevCircleUp = () => (
     <path
       fill="none"
       d="M9 13L12 10L15 13M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2104,7 +1950,6 @@ export const ChevSquareDown = () => (
     <path
       fill="none"
       d="M9 11L12 14L15 11M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2118,7 +1963,6 @@ export const ChevSquareLeft = () => (
     <path
       fill="none"
       d="M13.5 9L10.5 12L13.5 15M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2132,7 +1976,6 @@ export const ChevSquareRight = () => (
     <path
       fill="none"
       d="M10.5 9L13.5 12L10.5 15M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2146,7 +1989,6 @@ export const ChevSquareUp = () => (
     <path
       fill="none"
       d="M9 13L12 10L15 13M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2160,7 +2002,6 @@ export const ChevronDownDouble = () => (
     <path
       fill="none"
       d="M7 13L12 18L17 13M7 6L12 11L17 6"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2174,7 +2015,6 @@ export const ChevronDown = () => (
     <path
       fill="none"
       d="M7 9.5L12 14.5L17 9.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2188,7 +2028,6 @@ export const ChevronLeftDouble = () => (
     <path
       fill="none"
       d="M11 7L6 12L11 17M18 7L13 12L18 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2202,7 +2041,6 @@ export const ChevronLeft = () => (
     <path
       fill="none"
       d="M14.5 7L9.5 12L14.5 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2216,7 +2054,6 @@ export const ChevronRightDouble = () => (
     <path
       fill="none"
       d="M13 7L18 12L13 17M6 7L11 12L6 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2230,7 +2067,6 @@ export const ChevronRight = () => (
     <path
       fill="none"
       d="M9.5 7L14.5 12L9.5 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2244,7 +2080,6 @@ export const ChevronSelectorHorizontal = () => (
     <path
       fill="none"
       d="M15 7L20 12L15 17M9 7L4 12L9 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2258,7 +2093,6 @@ export const ChevronSelectorVertical = () => (
     <path
       fill="none"
       d="M7 9L12 4L17 9M7 15L12 20L17 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2272,7 +2106,6 @@ export const ChevronUpDouble = () => (
     <path
       fill="none"
       d="M17 11L12 6L7 11M17 18L12 13L7 18"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2286,7 +2119,6 @@ export const ChevronUp = () => (
     <path
       fill="none"
       d="M7 14.5L12 9.5L17 14.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2301,7 +2133,6 @@ export const Circle = () => (
       cx="12"
       cy="12"
       r="9"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2315,7 +2146,6 @@ export const CodeBrackets = () => (
     <path
       fill="none"
       d="M9 2L8.8 2C7.11984 2 6.27976 2 5.63803 2.32698C5.07354 2.6146 4.6146 3.07354 4.32698 3.63803C4 4.27976 4 5.11984 4 6.8V8.01178C4 8.74555 4 9.11243 3.91711 9.4577C3.84362 9.7638 3.72241 10.0564 3.55792 10.3249C3.3724 10.6276 3.11297 10.887 2.59411 11.4059L2 12L2.59411 12.5941C3.11297 13.113 3.3724 13.3724 3.55792 13.6751C3.72241 13.9436 3.84362 14.2362 3.91711 14.5423C4 14.8876 4 15.2545 4 15.9882V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H9M15 2L15.2 2C16.8802 2 17.7202 2 18.362 2.32698C18.9265 2.6146 19.3854 3.07354 19.673 3.63803C20 4.27976 20 5.11984 20 6.8V8.01178C20 8.74555 20 9.11243 20.0829 9.4577C20.1564 9.7638 20.2776 10.0564 20.4421 10.3249C20.6276 10.6276 20.887 10.887 21.4059 11.4059L22 12L21.4059 12.5941C20.887 13.113 20.6276 13.3724 20.4421 13.6751C20.2776 13.9436 20.1564 14.2362 20.0829 14.5423C20 14.8876 20 15.2545 20 15.9882V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22H15M14 10L16 12L14 14M10 10L8 12L10 14"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2329,7 +2159,6 @@ export const CodeBrowser = () => (
     <path
       fill="none"
       d="M14 13L16 15L14 17M10 13L8 15L10 17M7 6V6.00995M11 6V6.00995M22 9L2 9M14 21H10C7.19974 21 5.79961 21 4.73005 20.455C3.78924 19.9757 3.02433 19.2108 2.54497 18.27C2 17.2004 2 15.8003 2 13L2 11C2 8.19974 2 6.79961 2.54497 5.73005C3.02433 4.78924 3.78924 4.02433 4.73005 3.54497C5.79961 3 7.19974 3 10 3L14 3C16.8003 3 18.2004 3 19.27 3.54497C20.2108 4.02433 20.9757 4.78924 21.455 5.73005C22 6.79961 22 8.19974 22 11V13C22 15.8003 22 17.2004 21.455 18.27C20.9757 19.2108 20.2108 19.9757 19.27 20.455C18.2004 21 16.8003 21 14 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2343,7 +2172,6 @@ export const CodeCircle = () => (
     <path
       fill="none"
       d="M14 9L17 12L14 15M10 9L7 12L10 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2357,7 +2185,6 @@ export const CodeFile = () => (
     <path
       fill="none"
       d="M14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196M14.5301 2.60263C14.1139 2.3774 13.6679 2.2124 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.6863 8.46375 20.4437 7.93638 20.1167 7.46196M14.5301 2.60263C14.3582 2.50959 14.1812 2.42683 14 2.35469V4.8C14 5.9201 14 6.48016 14.218 6.90798C14.4097 7.28431 14.7157 7.59027 15.092 7.78201C15.5198 8 16.0799 8 17.2 8H20.4398C20.3436 7.81438 20.2358 7.63466 20.1167 7.46196M14 12L16 14L14 16M10 12L8 14L10 16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2371,7 +2198,6 @@ export const CodeFolder = () => (
     <path
       fill="none"
       d="M14 13L16 15L14 17M10 13L8 15L10 17M17.7357 8.05443C17.3699 8 16.9332 8 16.0598 8H14.8628C13.2127 8 11.7214 7.01664 11.0714 5.5M17.7357 8.05443C19.9126 8.37828 21.6217 10.0874 21.9456 12.2643C22 12.6301 22 13.0668 22 13.9402V14.5C22 15.8945 22 16.5918 21.8618 17.1672C21.4229 18.9955 19.9955 20.4229 18.1672 20.8618C17.5918 21 16.8945 21 15.5 21H10C7.19974 21 5.79961 21 4.73005 20.455C3.78924 19.9757 3.02433 19.2108 2.54497 18.27C2 17.2004 2 15.8003 2 13V7.82103C2 5.15845 4.15845 3 6.82103 3H7.28008C8.93014 3 10.4214 3.98336 11.0714 5.5M17.7357 8.05443C18.5565 8.17654 19.3111 8.49559 19.9497 8.96239C19.8887 8.00163 19.7537 7.3162 19.455 6.73005C18.9757 5.78924 18.2108 5.02433 17.27 4.54497C16.2004 4 14.8003 4 12 4H9.97295C10.4395 4.40188 10.8189 4.91068 11.0714 5.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2385,7 +2211,6 @@ export const CodeFunction = () => (
     <path
       fill="none"
       d="M14 9H8M13 15H13.2878C13.914 15 14.227 15 14.5112 15.0863C14.7628 15.1627 14.9968 15.288 15.2 15.4549C15.4294 15.6435 15.6031 15.904 15.9504 16.425L18.0504 19.575C18.3977 20.096 18.5714 20.3565 18.8008 20.5451C19.004 20.712 19.238 20.8373 19.4896 20.9137C19.7738 21 20.0868 21 20.713 21H21.0004M21.0004 15H20.7126C20.0864 15 19.7734 15 19.4892 15.0863C19.2376 15.1627 19.0036 15.288 18.8004 15.4549C18.571 15.6435 18.3973 15.904 18.05 16.425L15.95 19.575C15.6027 20.096 15.429 20.3565 15.1996 20.5451C14.9964 20.712 14.7624 20.8373 14.5108 20.9137C14.2266 21 13.9136 21 13.2874 21H13M17.0004 6V4.81645C17.0004 3.53711 15.9633 2.5 14.684 2.5C13.6799 2.5 12.7902 3.14678 12.4805 4.10181L7.51945 19.3983C7.20974 20.3533 6.32012 21 5.31622 21C4.03701 21 3 19.963 3 18.6838V17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2399,7 +2224,6 @@ export const CodeLineCircle = () => (
     <path
       fill="none"
       d="M16 10L18 12L16 14M8 10L6 12L8 14M11 16.9998L13.0003 6.99964M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2413,7 +2237,6 @@ export const CodeLineSquare = () => (
     <path
       fill="none"
       d="M16 10L18 12L16 14M8 10L6 12L8 14M11 16.9998L13.0003 6.99964M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2427,7 +2250,6 @@ export const CodeLine = () => (
     <path
       fill="none"
       d="M17 6.99997L22 12L17 17M7 6.99997L2 12L7 17M10 21L13.9994 3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2441,7 +2263,6 @@ export const CodeSquare = () => (
     <path
       fill="none"
       d="M14 9L17 12L14 15M10 9L7 12L10 15M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2455,7 +2276,6 @@ export const Code = () => (
     <path
       fill="none"
       d="M16 7L21 12L16 17M8 7L3 12L8 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2469,7 +2289,6 @@ export const CollapseSimple = () => (
     <path
       fill="none"
       d="M8 3L8 8L3 8M8 21L8 16H3M16 3L16 8L21 8M16 21V16H21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2483,7 +2302,6 @@ export const Collapse = () => (
     <path
       fill="none"
       d="M8 4L8 8M8 8L4 8M8 8L3 3M8 20L8 16M8 16H4M8 16L3 21M16 4L16 8M16 8L20 8M16 8L21 3M16 20V16M16 16L20 16M16 16L21 21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2497,7 +2315,6 @@ export const ColorSwatch = () => (
     <path
       fill="none"
       d="M10 17.5V6.5C10 4.567 8.433 3 6.5 3C4.567 3 3 4.567 3 6.5L3 17.5C3 19.433 4.567 21 6.5 21M10 17.5C10 19.433 8.433 21 6.5 21M10 17.5C10 17.8992 9.93318 18.2827 9.81012 18.6401M10 17.5L10 8.5507L12.4142 6.13645C13.7811 4.76962 15.9972 4.76962 17.364 6.13645C18.7308 7.50329 18.7308 9.71937 17.364 11.0862L9.81012 18.6401M6.5 21H17.5C19.433 21 21 19.433 21 17.5C21 15.567 19.433 14 17.5 14H14.4502L9.81012 18.6401M6.5 21C8.03384 21 9.33724 20.0133 9.81012 18.6401"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2511,7 +2328,6 @@ export const ColorsBlen = () => (
     <path
       fill="none"
       d="M16.6787 7.32134C16.8876 8.01081 17 8.74228 17 9.5C17 13.6421 13.6421 17 9.5 17C8.74228 17 8.01081 16.8876 7.32134 16.6787M16.6787 7.32134C19.0688 8.04577 20.9542 9.9312 21.6787 12.3213C21.8876 13.0108 22 13.7423 22 14.5C22 18.6421 18.6421 22 14.5 22C13.7423 22 13.0108 21.8876 12.3213 21.6787C9.9312 20.9542 8.04577 19.0688 7.32134 16.6787M16.6787 7.32134C15.7453 4.24173 12.8844 2 9.5 2C5.35786 2 2 5.35786 2 9.5C2 12.8844 4.24173 15.7453 7.32134 16.6787M16.5003 13L18.0003 14.5M13.4996 16L14.9996 17.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2525,7 +2341,6 @@ export const ColorsPalette = () => (
     <path
       fill="none"
       d="M8 13V13.0099M11 17V17.0099M16 17V17.0099M13 22C7.47715 22 3 17.5228 3 12C3 6.47715 7.47715 2 13 2C16.6201 2 19.8421 4.46682 19.8421 8.31579C19.8421 9.96182 19.2124 11.4608 18.1808 12.5849C20.0873 12.2127 21.9474 13.7218 21.9474 15.6842C21.9474 19.8947 16.8226 22 13 22ZM15 8C15 9.10457 14.1046 10 13 10C11.8954 10 11 9.10457 11 8C11 6.89543 11.8954 6 13 6C14.1046 6 15 6.89543 15 8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2539,7 +2354,6 @@ export const Colors = () => (
     <path
       fill="none"
       d="M13.9906 14.6619C13.3677 14.8809 12.6978 15 12 15M13.9906 14.6619C13.9969 14.7738 14 14.8865 14 15M13.9906 14.6619C16.2246 13.8765 17.8535 11.8063 17.9906 9.33811C20.3259 10.1591 22 12.3841 22 15C22 18.3137 19.3137 21 16 21C14.4634 21 13.0616 20.4223 12.0001 19.4723C13.2276 18.3737 14 16.7769 14 15M12 15C8.79976 15 6.1847 12.4945 6.00937 9.33811C3.67409 10.1591 2 12.3841 2 15C2 18.3137 4.68629 21 8 21C11.3137 21 14 18.3137 14 15M12 15C15.3137 15 18 12.3137 18 9C18 5.68629 15.3137 3 12 3C8.68629 3 6 5.68629 6 9C6 12.3137 8.68629 15 12 15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2553,7 +2367,6 @@ export const CommandSquare = () => (
     <path
       fill="none"
       d="M10 10H14M10 10V14M10 10H8C6.9 10 6 9.1 6 8C6 6.9 6.9 6 8 6C9.1 6 10 6.9 10 8V10ZM14 10V14M14 10H16C17.1 10 18 9.1 18 8C18 6.9 17.1 6 16 6C14.9 6 14 6.9 14 8V10ZM14 14H10M14 14H16C17.1 14 18 14.9 18 16C18 17.1 17.1 18 16 18C14.9 18 14 17.1 14 16V14ZM10 14V16C10 17.1 9.1 18 8 18C6.9 18 6 17.1 6 16C6 14.9 6.9 14 8 14H10ZM14 22H10C7.19974 22 5.79961 22 4.73005 21.455C3.78924 20.9757 3.02433 20.2108 2.54497 19.27C2 18.2004 2 16.8003 2 14L2 10C2 7.19974 2 5.7996 2.54497 4.73005C3.02433 3.78924 3.78924 3.02433 4.73005 2.54497C5.79961 2 7.19974 2 10 2L14 2C16.8003 2 18.2004 2 19.27 2.54497C20.2108 3.02433 20.9757 3.78924 21.455 4.73005C22 5.7996 22 7.19974 22 10V14C22 16.8003 22 18.2004 21.455 19.27C20.9757 20.2108 20.2108 20.9757 19.27 21.455C18.2004 22 16.8003 22 14 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2567,7 +2380,6 @@ export const Command = () => (
     <path
       fill="none"
       d="M9 9H15M9 9V15M9 9H6C4.35 9 3 7.65 3 6C3 4.35 4.35 3 6 3C7.65 3 9 4.35 9 6V9ZM15 9V15M15 9H18C19.65 9 21 7.65 21 6C21 4.35 19.65 3 18 3C16.35 3 15 4.35 15 6V9ZM15 15H9M15 15H18C19.65 15 21 16.35 21 18C21 19.65 19.65 21 18 21C16.35 21 15 19.65 15 18V15ZM9 15V18C9 19.65 7.65 21 6 21C4.35 21 3 19.65 3 18C3 16.35 4.35 15 6 15H9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2581,7 +2393,6 @@ export const Community = () => (
     <path
       fill="none"
       d="M12 10C13.3807 10 14.5 8.88071 14.5 7.5C14.5 6.11929 13.3807 5 12 5C10.6193 5 9.5 6.11929 9.5 7.5C9.5 8.88071 10.6193 10 12 10ZM12 10C14.2091 10 16 11.7909 16 14V19M12 10C9.79086 10 8 11.7909 8 14V19M18.9827 10.033C20.6873 10.2682 22 11.7308 22 13.5V17M5.01726 10.033C3.31271 10.2682 2 11.7308 2 13.5V17M21 8.5C21 9.32843 20.3284 10 19.5 10C18.6716 10 18 9.32843 18 8.5C18 7.67157 18.6716 7 19.5 7C20.3284 7 21 7.67157 21 8.5ZM6 8.5C6 9.32843 5.32843 10 4.5 10C3.67157 10 3 9.32843 3 8.5C3 7.67157 3.67157 7 4.5 7C5.32843 7 6 7.67157 6 8.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2595,7 +2406,6 @@ export const Component = () => (
     <path
       fill="none"
       d="M12.0004 12L17.544 6.45641M12.0004 12L6.45641 6.45604M12.0004 12L17.544 17.5436M12.0004 12L6.45641 17.544M17.544 6.45641C15.6971 4.60957 14.7735 3.68596 13.7234 3.30383C12.6102 2.89872 11.3898 2.89872 10.2766 3.30383C9.22653 3.68595 8.30313 4.60932 6.45641 6.45604M17.544 6.45641C17.5439 6.45635 17.544 6.45647 17.544 6.45641ZM17.544 6.45641C19.3907 8.30313 20.3141 9.22652 20.6962 10.2766C21.1013 11.3898 21.1013 12.6102 20.6962 13.7234C20.3141 14.7735 19.3907 15.6969 17.544 17.5436M6.45641 6.45604C6.45635 6.4561 6.45647 6.45598 6.45641 6.45604ZM6.45641 6.45604C4.60957 8.30288 3.68596 9.22649 3.30383 10.2766C2.89872 11.3898 2.89872 12.6102 3.30383 13.7234C3.68596 14.7735 4.60957 15.6971 6.45641 17.544M17.544 17.5436C15.6971 19.3904 14.7735 20.314 13.7234 20.6962C12.6102 21.1013 11.3898 21.1013 10.2766 20.6962C9.22652 20.3141 8.30313 19.3907 6.45641 17.544M17.544 17.5436C17.544 17.5435 17.5439 17.5437 17.544 17.5436ZM6.45641 17.544C6.45647 17.544 6.45635 17.5439 6.45641 17.544Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2609,7 +2419,6 @@ export const CopyCheck = () => (
     <path
       fill="none"
       d="M13 12L9 16L7 14M10 7C11.8613 7 12.7919 7 13.5451 7.24472C15.0673 7.73931 16.2607 8.93272 16.7553 10.4549C17 11.2081 17 12.1387 17 14M10 7C8.13872 7 7.20808 7 6.45492 7.24472C4.93273 7.73931 3.73931 8.93272 3.24472 10.4549C3 11.2081 3 12.1387 3 14C3 15.8613 3 16.7919 3.24472 17.5451C3.73931 19.0673 4.93273 20.2607 6.45492 20.7553C7.20808 21 8.13872 21 10 21C11.8613 21 12.7919 21 13.5451 20.7553C15.0673 20.2607 16.2607 19.0673 16.7553 17.5451C17 16.7919 17 15.8613 17 14M10 7C8.6272 7 7.76013 7 7.09766 7.09819C7.13259 6.86246 7.17996 6.65258 7.24419 6.45492C7.73878 4.93272 8.9322 3.73931 10.4544 3.24472C11.2075 3 12.1382 3 13.9995 3C15.8608 3 16.7914 3 17.5446 3.24472C19.0667 3.73931 20.2602 4.93272 20.7548 6.45492C20.9995 7.20808 20.9995 8.13872 20.9995 10C20.9995 11.8613 20.9995 12.7919 20.7548 13.5451C20.2602 15.0673 19.0667 16.2607 17.5446 16.7553C17.3469 16.8195 17.137 16.8669 16.9013 16.9018C16.9995 16.2393 17 15.3728 17 14"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2623,7 +2432,6 @@ export const CopyDashed = () => (
     <path
       fill="none"
       d="M14 2L16.01 2M22 7.99V10M20 2C21.1046 2 22 2.89543 22 4M8 4C8 2.89543 8.89543 2 10 2M22 14C22 15.1046 21.1046 16 20 16M9 8C10.8613 8 11.7919 8 12.5451 8.24472C14.0673 8.73931 15.2607 9.93272 15.7553 11.4549C16 12.2081 16 13.1387 16 15C16 16.8613 16 17.7919 15.7553 18.5451C15.2607 20.0673 14.0673 21.2607 12.5451 21.7553C11.7919 22 10.8613 22 9 22C7.13872 22 6.20808 22 5.45492 21.7553C3.93273 21.2607 2.73931 20.0673 2.24472 18.5451C2 17.7919 2 16.8613 2 15C2 13.1387 2 12.2081 2.24472 11.4549C2.73931 9.93272 3.93273 8.73931 5.45492 8.24472C6.20808 8 7.13872 8 9 8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2637,7 +2445,6 @@ export const CopyLayers = () => (
     <path
       fill="none"
       d="M8 3L8.2 3C12.6804 3 14.9206 3 16.6319 3.87195C18.1372 4.63894 19.3611 5.86278 20.1281 7.36808C21 9.07937 21 11.3196 21 15.8V16M10 7C11.8613 7 12.7919 7 13.5451 7.24472C15.0673 7.73931 16.2607 8.93272 16.7553 10.4549C17 11.2081 17 12.1387 17 14C17 15.8613 17 16.7919 16.7553 17.5451C16.2607 19.0673 15.0673 20.2607 13.5451 20.7553C12.7919 21 11.8613 21 10 21C8.13872 21 7.20808 21 6.45492 20.7553C4.93273 20.2607 3.73931 19.0673 3.24472 17.5451C3 16.7919 3 15.8613 3 14C3 12.1387 3 11.2081 3.24472 10.4549C3.73931 8.93272 4.93273 7.73931 6.45492 7.24472C7.20808 7 8.13872 7 10 7Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2651,7 +2458,6 @@ export const Copy = () => (
     <path
       fill="none"
       d="M10 7C11.8613 7 12.7919 7 13.5451 7.24472C15.0673 7.73931 16.2607 8.93272 16.7553 10.4549C17 11.2081 17 12.1387 17 14M10 7C8.13872 7 7.20808 7 6.45492 7.24472C4.93273 7.73931 3.73931 8.93272 3.24472 10.4549C3 11.2081 3 12.1387 3 14C3 15.8613 3 16.7919 3.24472 17.5451C3.73931 19.0673 4.93273 20.2607 6.45492 20.7553C7.20808 21 8.13872 21 10 21C11.8613 21 12.7919 21 13.5451 20.7553C15.0673 20.2607 16.2607 19.0673 16.7553 17.5451C17 16.7919 17 15.8613 17 14M10 7C8.6272 7 7.76066 7 7.09819 7.09819C7.13312 6.86246 7.18049 6.65258 7.24472 6.45492C7.73931 4.93272 8.93273 3.73931 10.4549 3.24472C11.2081 3 12.1387 3 14 3C15.8613 3 16.7919 3 17.5451 3.24472C19.0673 3.73931 20.2607 4.93272 20.7553 6.45492C21 7.20808 21 8.13872 21 10C21 11.8613 21 12.7919 20.7553 13.5451C20.2607 15.0673 19.0673 16.2607 17.5451 16.7553C17.3474 16.8195 17.1375 16.8669 16.9018 16.9018C17 16.2393 17 15.3728 17 14"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2665,7 +2471,6 @@ export const Crop = () => (
     <path
       fill="none"
       d="M2 5H11C13.8003 5 15.2004 5 16.27 5.54497C17.2108 6.02433 17.9757 6.78924 18.455 7.73005C19 8.79961 19 10.1997 19 13V15M22 19H13C10.1997 19 8.79961 19 7.73005 18.455C6.78924 17.9757 6.02433 17.2108 5.54497 16.27C5 15.2004 5 13.8003 5 11V9M5 2L5 5M19 19V22"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2679,7 +2484,6 @@ export const Crown = () => (
     <path
       fill="none"
       d="M14 11H10M13.9729 22H10.0271C8.59526 22 7.87934 22 7.29685 21.7407C6.78333 21.5121 6.34437 21.1438 6.02999 20.6778C5.6734 20.1493 5.54898 19.4442 5.30015 18.0342L3 5L4.31462 5.58427C5.45948 6.0931 6.03191 6.34751 6.6035 6.37117C7.10821 6.39206 7.61002 6.28516 8.0624 6.0604C8.57473 5.80585 8.99378 5.34024 9.83189 4.40901L12 2L14.1681 4.40901C15.0062 5.34024 15.4253 5.80585 15.9376 6.0604C16.39 6.28516 16.8918 6.39206 17.3965 6.37117C17.9681 6.34751 18.5405 6.0931 19.6854 5.58427L21 5L18.6999 18.0342C18.451 19.4442 18.3266 20.1493 17.97 20.6778C17.6556 21.1438 17.2167 21.5121 16.7032 21.7407C16.1207 22 15.4047 22 13.9729 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2693,7 +2497,6 @@ export const Cube = () => (
     <path
       fill="none"
       d="M12 20.1453C12 20.5874 12.0972 21.0147 12.2758 21.4018C12.9492 21.3646 13.6167 21.1912 14.2361 20.8816L19.2361 18.3816C20.93 17.5346 22 15.8033 22 13.9094V10.0898C22 9.13819 21.7299 8.22764 21.2462 7.44969C21.045 7.50193 20.8479 7.57542 20.6584 7.67019L13.6584 11.1702C12.642 11.6784 12 12.7172 12 13.8535M12 20.1453V13.8535M12 20.1453C12 20.5874 11.9028 21.0147 11.7242 21.4018C11.0508 21.3646 10.3832 21.1912 9.76393 20.8816L4.76393 18.3816C3.07001 17.5346 2 15.8033 2 13.9094V10.0898C2 9.13816 2.27016 8.22758 2.75387 7.44962C2.95507 7.50185 3.15212 7.57535 3.34164 7.67011L10.3416 11.1701C11.358 11.6783 12 12.7172 12 13.8535M21.1247 7.26391C20.8995 7.4899 20.6363 7.68184 20.3416 7.82918L13.3416 11.3292C12.4971 11.7515 11.5029 11.7515 10.6584 11.3292L3.65836 7.82918C3.36364 7.68182 3.1004 7.48984 2.87516 7.2638C3.34608 6.57637 3.98983 6.00471 4.76384 5.61771L9.76384 3.11771C11.1715 2.41389 12.8283 2.41389 14.236 3.11771L19.236 5.61771C20.01 6.00473 20.6538 6.57643 21.1247 7.26391Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2707,7 +2510,6 @@ export const Cup = () => (
     <path
       fill="none"
       d="M6 2V3M10 2V3M14 2V3M17 22C17 22 14.5625 20 10.5 20C6.4375 20 4 22 4 22M3 13L3 7H17V13C17 16.866 13.866 20 10 20C6.13401 20 3 16.866 3 13ZM17 9H21V10C21 10.93 21 11.395 20.8978 11.7765C20.6204 12.8117 19.8117 13.6204 18.7765 13.8978C18.395 14 17.93 14 17 14V9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2721,7 +2523,6 @@ export const CursorClick = () => (
     <path
       fill="none"
       d="M2 10.0667H4.01184M4.35665 15.771L5.77902 14.3453M15.738 4.36236L14.3157 5.78814M4.35665 4.36236L5.77902 5.78814M10.0474 2V4.01667M9.08862 9.0578L11.1289 22L13.7818 16.9521L17.8851 21.0656C18.824 22.0069 20.3464 22.0069 21.2855 21.0658C22.2246 20.1245 22.2247 18.5984 21.2857 17.6571L17.2498 13.6112L22 11.1026L9.08862 9.0578Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2735,7 +2536,6 @@ export const CursorOnBox = () => (
     <path
       fill="none"
       d="M21 9V8.95626C21 8.06793 21 7.62377 20.9437 7.25178C20.6158 5.08497 18.915 3.38424 16.7482 3.0563C16.3762 3 15.9321 3 15.0437 3L11 3C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11L3 15C3 15.929 3 16.3935 3.06156 16.7822C3.40042 18.9216 5.07837 20.5996 7.21783 20.9384C7.60649 21 8.07099 21 9 21M14 21L11 11L21 14L16 16L14 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2749,7 +2549,6 @@ export const Cursor = () => (
     <path
       fill="none"
       d="M5.82556 21.0002L3 3.00018L20.8805 5.84409L14.3036 9.33223L19.8912 14.9578C20.1029 15.171 20.2088 15.2776 20.2905 15.375C21.2366 16.5031 21.2365 18.1536 20.2903 19.2815C20.2086 19.3789 20.1027 19.4855 19.891 19.6985C19.6793 19.9117 19.5734 20.0183 19.4766 20.1006C18.356 21.0529 16.7166 21.0528 15.5962 20.1003C15.4994 20.018 15.3935 19.9115 15.1818 19.6983L9.50023 13.9782L5.82556 21.0002Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2763,7 +2562,6 @@ export const Database3Packs = () => (
     <path
       fill="none"
       d="M18 9H6M18 9C19.6569 9 21 7.65685 21 6C21 4.34315 19.6569 3 18 3L6 3C4.34315 3 3 4.34315 3 6C3 7.65685 4.34315 9 6 9M18 9C19.6569 9 21 10.3431 21 12C21 13.6569 19.6569 15 18 15M6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15M18 15H6M18 15C19.6569 15 21 16.3431 21 18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18C3 16.3431 4.34315 15 6 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2777,7 +2575,6 @@ export const Database4Packs = () => (
     <path
       fill="none"
       d="M18.5 7H5.5M18.5 7C19.8807 7 21 5.88071 21 4.5C21 3.11929 19.8807 2 18.5 2L5.5 2C4.11929 2 3 3.11929 3 4.5C3 5.88071 4.11929 7 5.5 7M18.5 7C19.8807 7 21 8.11929 21 9.5C21 10.8807 19.8807 12 18.5 12M5.5 7C4.11929 7 3 8.11929 3 9.5C3 10.8807 4.11929 12 5.5 12M18.5 12H5.5M18.5 12C19.8807 12 21 13.1193 21 14.5C21 15.8807 19.8807 17 18.5 17M5.5 12C4.11929 12 3 13.1193 3 14.5C3 15.8807 4.11929 17 5.5 17M18.5 17H5.5M18.5 17C19.8807 17 21 18.1193 21 19.5C21 20.8807 19.8807 22 18.5 22H5.5C4.11929 22 3 20.8807 3 19.5C3 18.1193 4.11929 17 5.5 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2791,7 +2588,6 @@ export const DatabaseCloud = () => (
     <path
       fill="none"
       d="M3 19H10M10 19C10 20.1046 10.8954 21 12 21C13.1046 21 14 20.1046 14 19M10 19C10 17.8954 10.8954 17 12 17M14 19H21M14 19C14 17.8954 13.1046 17 12 17M12 17V11M17 11H7C4.79086 11 3 9.20914 3 7C3 4.79086 4.79086 3 7 3L17 3C19.2091 3 21 4.79086 21 7C21 9.20914 19.2091 11 17 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2805,7 +2601,6 @@ export const DeleteX = () => (
     <path
       fill="none"
       d="M12 10L16 14M16 10L12 14M14 20H12C10.5333 20 9.80001 20 9.12693 19.8078C8.53079 19.6375 7.97151 19.3579 7.47762 18.9831C6.92 18.56 6.48 17.9733 5.6 16.8L2 12L5.6 7.2C6.48 6.02667 6.92 5.44001 7.47762 5.01688C7.97151 4.64212 8.53079 4.36248 9.12693 4.19223C9.80001 4 10.5333 4 12 4L14 4C16.8003 4 18.2004 4 19.27 4.54497C20.2108 5.02433 20.9757 5.78924 21.455 6.73005C22 7.79961 22 9.19974 22 12C22 14.8003 22 16.2004 21.455 17.27C20.9757 18.2108 20.2108 18.9757 19.27 19.455C18.2004 20 16.8003 20 14 20Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2819,7 +2614,6 @@ export const Diamond = () => (
     <path
       fill="none"
       d="M2.93783 8.78815L3.86371 6.18917C4.27286 5.04069 4.47743 4.46646 4.84227 4.04268C5.16452 3.66837 5.5742 3.37942 6.03495 3.20147C6.55659 3 7.16618 3 8.38535 3L15.6144 3C16.8335 3 17.4431 3 17.9648 3.20147C18.4255 3.37942 18.8352 3.66837 19.1574 4.04268C19.5223 4.46646 19.7269 5.0407 20.136 6.18917L21.0619 8.78815M2.93783 8.78815C2.59627 9.74692 2.42549 10.2263 2.41311 10.7047C2.40217 11.128 2.48094 11.5488 2.64425 11.9394C2.82884 12.3809 3.16147 12.7661 3.82671 13.5364L8.3671 18.7937C9.61959 20.2439 10.2458 20.969 10.9899 21.235C11.6429 21.4686 12.3568 21.4686 13.0099 21.235C13.7539 20.969 14.3801 20.2439 15.6326 18.7937L20.173 13.5364C20.8382 12.7661 21.1709 12.3809 21.3555 11.9394C21.5188 11.5488 21.5975 11.128 21.5866 10.7047C21.5742 10.2263 21.4034 9.74692 21.0619 8.78815M2.93783 8.78815C2.65302 9.58762 2.48695 10.0538 2.43246 10.464C2.8109 10.6791 3.32334 10.8713 4.11446 11.168L8.18487 12.6944C8.48949 12.8086 8.6418 12.8657 8.79834 12.9059C8.9374 12.9416 9.07885 12.9672 9.22159 12.9826C9.38226 13 9.54493 13 9.87026 13H14.1294C14.4548 13 14.6175 13 14.7781 12.9826C14.9209 12.9672 15.0623 12.9416 15.2014 12.9059C15.3579 12.8657 15.5102 12.8086 15.8148 12.6944L19.8852 11.168C20.6764 10.8713 21.1888 10.6791 21.5672 10.464C21.5128 10.0538 21.3467 9.58761 21.0619 8.78815"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2833,7 +2627,6 @@ export const DistributeHorizontal = () => (
     <path
       fill="none"
       d="M4 22L4 2M20 22L20 2M9 17V7C9 6.06812 9 5.60218 9.15224 5.23464C9.35523 4.74458 9.74458 4.35523 10.2346 4.15224C10.6022 4 11.0681 4 12 4C12.9319 4 13.3978 4 13.7654 4.15224C14.2554 4.35523 14.6448 4.74458 14.8478 5.23464C15 5.60218 15 6.06812 15 7V17C15 17.9319 15 18.3978 14.8478 18.7654C14.6448 19.2554 14.2554 19.6448 13.7654 19.8478C13.3978 20 12.9319 20 12 20C11.0681 20 10.6022 20 10.2346 19.8478C9.74458 19.6448 9.35523 19.2554 9.15224 18.7654C9 18.3978 9 17.9319 9 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2847,7 +2640,6 @@ export const DistributeVertical = () => (
     <path
       fill="none"
       d="M22 20L2 20M22 4L2 4M17 15H7C6.06812 15 5.60217 15 5.23463 14.8478C4.74458 14.6448 4.35523 14.2554 4.15224 13.7654C4 13.3978 4 12.9319 4 12C4 11.0681 4 10.6022 4.15224 10.2346C4.35523 9.74458 4.74458 9.35523 5.23463 9.15224C5.60217 9 6.06812 9 7 9H17C17.9319 9 18.3978 9 18.7654 9.15224C19.2554 9.35523 19.6448 9.74458 19.8478 10.2346C20 10.6022 20 11.0681 20 12C20 12.9319 20 13.3978 19.8478 13.7654C19.6448 14.2554 19.2554 14.6448 18.7654 14.8478C18.3978 15 17.9319 15 17 15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2861,7 +2653,6 @@ export const DockBottom = () => (
     <path
       fill="none"
       d="M8 16H16M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2875,7 +2666,6 @@ export const DockLeft = () => (
     <path
       fill="none"
       d="M8 16L8 8M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2889,7 +2679,6 @@ export const DockRight = () => (
     <path
       fill="none"
       d="M16 16L16 8M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2903,7 +2692,6 @@ export const DockTop = () => (
     <path
       fill="none"
       d="M8 8H16M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2917,7 +2705,6 @@ export const DownloadCircle = () => (
     <path
       fill="none"
       d="M12 4L12 16M12 16L8 12M12 16L16 12M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2931,7 +2718,6 @@ export const DownloadCloud = () => (
     <path
       fill="none"
       d="M6.6582 17H6C3.79086 17 2 15.2091 2 13C2 11.5129 2.81149 10.2154 4.01579 9.52604C4.25949 5.88108 7.29329 3 11 3C14.5267 3 17.4442 5.60802 17.9292 9.00062C17.9528 9.00021 17.9764 9 18 9C20.2091 9 22 10.7909 22 13C22 14.1176 21.5417 15.1281 20.8027 15.8539M17 18.0001L14 21.0001M14 21.0001L11 18.0001M14 21.0001L14 13"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2945,7 +2731,6 @@ export const Download = () => (
     <path
       fill="none"
       d="M12 3V16M12 16L8.00001 12M12 16L16 12M20.989 15C20.9596 16.5403 20.8516 17.4936 20.455 18.2718C19.9757 19.2126 19.2108 19.9775 18.27 20.4569C17.2004 21.0019 15.8003 21.0019 13 21.0019H11C8.19974 21.0019 6.79961 21.0019 5.73005 20.4569C4.78924 19.9775 4.02434 19.2126 3.54497 18.2718C3.14844 17.4936 3.04043 16.5403 3.01102 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2959,7 +2744,6 @@ export const Dribbble = () => (
     <path
       fill="none"
       d="M18.1256 5.40627C16.5191 3.91314 14.3662 3 12 3C10.6722 3 9.41156 3.28754 8.27695 3.80375M18.1256 5.40627C19.8938 7.04966 21 9.39565 21 12C21 12.3106 20.9843 12.6175 20.9535 12.92M18.1256 5.40627C15.4381 9.57393 10.6496 11.9284 5.67 11.48L3.03175 11.2387M8.27695 3.80375L10.8099 6.95C12.9399 9.59 14.4499 12.66 15.2499 15.95L16.2201 19.9513M8.27695 3.80375C5.3833 5.12026 3.30938 7.92409 3.03175 11.2387M3.03175 11.2387C3.01072 11.4897 3 11.7436 3 12C3 14.6362 4.13343 17.0077 5.93955 18.6537M5.93955 18.6537C7.53886 20.1113 9.66565 21 12 21C13.525 21 14.9615 20.6207 16.2201 19.9513M5.93955 18.6537C8.63889 14.5485 13.3904 12.2353 18.33 12.68L20.9535 12.92M16.2201 19.9513C18.8075 18.5752 20.6435 15.9732 20.9535 12.92"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -2974,7 +2758,6 @@ export const Dropbox = () => (
     <path
       fill="none"
       d="M12 5L7.6 2L2 6L6.4 9L12 5ZM12 5L16.4 2L22 6L17.6 9L12 5ZM12 14L7.6 17L2 13L6.4 10L12 14ZM12 14L16.4 17L22 13L17.6 10L12 14ZM19 16V19.1059L12.4 21.9294C12.1 22.0235 11.8 22.0235 11.6 21.9294L5 19.1059V16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -2989,7 +2772,6 @@ export const Dropper = () => (
     <path
       fill="none"
       d="M16.125 3.83642L5.04712 14.9143C4.66146 15.3 4.46863 15.4928 4.31541 15.7125C4.17941 15.9075 4.06684 16.1178 3.98003 16.3392C3.88223 16.5885 3.82875 16.8559 3.72179 17.3907L3 21L6.60924 20.278C7.14395 20.1711 7.41132 20.1176 7.66063 20.0198C7.88193 19.933 8.09223 19.8204 8.28721 19.6844C8.50687 19.5312 8.69968 19.3385 9.08529 18.9529L20.1635 7.87521M16.125 3.83642C17.2402 2.72118 19.0483 2.7212 20.1636 3.83644C21.2788 4.95172 21.2788 6.75997 20.1635 7.87521M16.125 3.83642L11.5818 8.37966L15.6204 12.4182L20.1635 7.87521M9.0577 5.8556L18.1442 14.9422"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3003,7 +2785,6 @@ export const Duplicate = () => (
     <path
       fill="none"
       d="M14 7C15.8613 7 16.7919 7 17.5451 7.24472C19.0673 7.73931 20.2607 8.93272 20.7553 10.4549C21 11.2081 21 12.1387 21 14C21 15.8613 21 16.7919 20.7553 17.5451C20.2607 19.0673 19.0673 20.2607 17.5451 20.7553C16.7919 21 15.8613 21 14 21C12.1387 21 11.2081 21 10.4549 20.7553C8.93273 20.2607 7.73931 19.0673 7.24472 17.5451C7 16.7919 7 15.8613 7 14M14 7C12.1387 7 11.2081 7 10.4549 7.24472C8.93273 7.73931 7.73931 8.93272 7.24472 10.4549C7 11.2081 7 12.1387 7 14M14 7C15.3728 7 16.2393 7 16.9018 7.09819C16.8669 6.86246 16.8195 6.65258 16.7553 6.45492C16.2607 4.93272 15.0673 3.73931 13.5451 3.24472C12.7919 3 11.8613 3 10 3C8.13872 3 7.20808 3 6.45492 3.24472C4.93273 3.73931 3.73931 4.93272 3.24472 6.45492C3 7.20808 3 8.13872 3 10C3 11.8613 3 12.7919 3.24472 13.5451C3.73931 15.0673 4.93273 16.2607 6.45492 16.7553C6.65258 16.8195 6.86246 16.8669 7.09819 16.9018C7 16.2393 7 15.3728 7 14M14 12V16M12 14L16 14"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3017,7 +2798,6 @@ export const EditCircle = () => (
     <path
       fill="none"
       d="M10.3509 3.1494C6.16792 3.924 3 7.59138 3 11.9987C3 16.9692 7.02944 20.9987 12 20.9987C16.4059 20.9987 20.0723 17.8328 20.8485 13.6518M13.1077 6.58038L16.1856 3.50235C17.3761 2.31174 19.3065 2.31171 20.497 3.50229C21.6876 4.69285 21.6876 6.62314 20.497 7.81369L17.4588 10.8518C16.7833 11.5273 16.4455 11.865 16.0648 12.1262C15.4896 12.5207 14.8382 12.7906 14.1525 12.9184C13.6986 13.0029 13.2209 13.003 12.2656 13.003L10.9169 13.0031L10.9414 11.6771C10.959 10.7236 10.9678 10.2469 11.0607 9.79463C11.1948 9.14175 11.4581 8.52228 11.8351 7.97263C12.0963 7.59189 12.4334 7.25472 13.1077 6.58038ZM13.2824 6.40155L15.6899 3.99407L20.0013 8.30553L17.6543 10.6523C16.7896 11.5168 16.3573 11.9491 15.8528 12.2582C15.4055 12.5323 14.9178 12.7343 14.4078 12.8568C13.8324 12.9949 13.2211 12.9949 11.9983 12.995L10.9206 12.9951L10.9406 11.9107C10.9626 10.7188 10.9736 10.1229 11.1157 9.56292C11.2418 9.06637 11.4433 8.59214 11.7134 8.15683C12.018 7.6659 12.4395 7.24445 13.2824 6.40155Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3031,7 +2811,6 @@ export const EditLine = () => (
     <path
       fill="none"
       d="M14.036 20.9992H21M5.36228 13.5253L14.5326 4.06305C15.9063 2.64567 18.1334 2.64565 19.5071 4.06301C20.8808 5.48036 20.8808 7.77834 19.5071 9.19568L10.3974 18.5948M5.36228 13.5253C4.5238 14.3905 4.10455 14.8231 3.80154 15.327C3.53287 15.7738 3.33233 16.2605 3.20695 16.7702C3.06556 17.345 3.05459 17.9566 3.03264 19.18L3 21H4.76972C5.98637 21 6.59469 21 7.16717 20.8582C7.67472 20.7325 8.15993 20.5251 8.60499 20.2437C9.10697 19.9263 9.53713 19.4825 10.3974 18.5948M5.36228 13.5253L12.5437 6.11511L17.5182 11.2478L10.3974 18.5948"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3045,7 +2824,6 @@ export const EditNarrowCircle = () => (
     <path
       fill="none"
       d="M10.3487 3.14844C6.16681 3.92392 3 7.59078 3 11.9973C3 16.9678 7.02944 20.9973 12 20.9973C16.4066 20.9973 20.0736 17.8303 20.8489 13.6482M11.9341 8.11211L16.043 4.00231C16.5672 3.47805 16.8292 3.21592 17.1101 3.07233C17.6818 2.77996 18.3592 2.77992 18.931 3.07223C19.2118 3.2158 19.4739 3.4779 19.9981 4.0021C20.5223 4.52623 20.7843 4.7883 20.9279 5.06909C21.2202 5.64082 21.2202 6.31812 20.9279 6.88985C20.7844 7.17065 20.5223 7.43274 19.9982 7.95689L15.8889 12.0667C15.5422 12.4134 15.3689 12.5867 15.1666 12.7105C14.9872 12.8204 14.7917 12.9012 14.5872 12.9501C14.3565 13.0052 14.1113 13.0048 13.6211 13.0041L11.0014 13L10.9971 10.3799C10.9962 9.88971 10.9958 9.64459 11.0509 9.41389C11.0998 9.20936 11.1806 9.0138 11.2903 8.83444C11.4142 8.63213 11.5875 8.45879 11.9341 8.11211Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3059,7 +2837,6 @@ export const EditNarrowLine = () => (
     <path
       fill="none"
       d="M13 21H21M3.98479 16.1398L15.9029 4.16065C16.4403 3.62044 16.7091 3.35034 16.999 3.20596C17.5504 2.93135 18.1978 2.93135 18.7492 3.20595C19.0391 3.35032 19.3078 3.62042 19.8453 4.16062C20.3827 4.70082 20.6515 4.97091 20.7951 5.26229C21.0683 5.81651 21.0683 6.46718 20.7951 7.0214C20.6514 7.31278 20.3827 7.58287 19.8453 8.12307L7.95706 20.0716C7.61616 20.4142 7.4457 20.5856 7.24679 20.7081C7.07044 20.8167 6.87817 20.8967 6.67705 20.9453C6.4502 21 6.20915 21 5.72705 21H3L3.06196 18.3079C3.07276 17.8388 3.07816 17.6042 3.13456 17.3839C3.18457 17.1885 3.26397 17.002 3.37003 16.8307C3.48963 16.6375 3.65469 16.4716 3.98479 16.1398Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3073,7 +2850,6 @@ export const EditNarrowSquare = () => (
     <path
       fill="none"
       d="M10.5002 3.00004C8.02918 3.00197 6.73399 3.03335 5.73005 3.54489C4.78924 4.02425 4.02433 4.78916 3.54497 5.72997C3 6.79953 3 8.19966 3 10.9999V12.9999C3 15.8002 3 17.2003 3.54497 18.2699C4.02433 19.2107 4.78924 19.9756 5.73005 20.455C6.79961 20.9999 8.19974 20.9999 11 20.9999H13C15.8003 20.9999 17.2004 20.9999 18.27 20.455C19.2108 19.9756 19.9757 19.2107 20.455 18.2699C20.9665 17.266 20.9979 15.9709 20.9999 13.5003M11.9376 8.10934L16.0452 4.00068C16.5693 3.47639 16.8314 3.21425 17.1122 3.07064C17.684 2.77825 18.3613 2.77821 18.9332 3.07052C19.214 3.21408 19.4761 3.47619 20.0003 4.00041C20.5244 4.52453 20.7865 4.78659 20.93 5.06737C21.2223 5.63908 21.2224 6.31636 20.9301 6.8881C20.7866 7.1689 20.5246 7.43098 20.0005 7.95513L15.8925 12.0638C15.5466 12.4097 15.3737 12.5827 15.1719 12.7064C14.993 12.8161 14.7979 12.8969 14.5938 12.9459C14.3637 13.0012 14.1191 13.0012 13.6299 13.0013L11.0007 13.0016L11.0007 10.3718C11.0007 9.88271 11.0007 9.63816 11.0559 9.40802C11.1049 9.20398 11.1857 9.00892 11.2953 8.82999C11.4189 8.62818 11.5918 8.45523 11.9376 8.10934Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3087,7 +2863,6 @@ export const EditNarrow = () => (
     <path
       fill="none"
       d="M15.9029 4.16065L3.98479 16.1398C3.65469 16.4716 3.48963 16.6375 3.37003 16.8307C3.26397 17.002 3.18457 17.1885 3.13456 17.3839C3.07816 17.6042 3.07276 17.8388 3.06196 18.3079L3 21H5.72705C6.20915 21 6.4502 21 6.67705 20.9453C6.87817 20.8967 7.07044 20.8167 7.24679 20.7081C7.4457 20.5856 7.61616 20.4142 7.95706 20.0716L19.8453 8.12307C20.3827 7.58287 20.6514 7.31278 20.7951 7.0214C21.0683 6.46718 21.0683 5.81651 20.7951 5.26229C20.6515 4.97091 20.3827 4.70082 19.8453 4.16062C19.3078 3.62042 19.0391 3.35032 18.7492 3.20595C18.1978 2.93135 17.5504 2.93135 16.999 3.20596C16.7091 3.35034 16.4403 3.62044 15.9029 4.16065Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3101,7 +2876,6 @@ export const EditSquare = () => (
     <path
       fill="none"
       d="M10.4963 3.00211C8.02782 3.00406 6.73346 3.03568 5.73005 3.54695C4.78924 4.02631 4.02433 4.79122 3.54497 5.73203C3 6.80159 3 8.20172 3 11.002V13.002C3 15.8022 3 17.2024 3.54497 18.2719C4.02433 19.2127 4.78924 19.9776 5.73005 20.457C6.79961 21.002 8.19974 21.002 11 21.002H13C15.8003 21.002 17.2004 21.002 18.27 20.457C19.2108 19.9776 19.9757 19.2127 20.455 18.2719C20.9668 17.2675 20.998 15.9716 20.9999 13.4985M13.1095 6.58038L16.1874 3.50235C17.3779 2.31174 19.3082 2.31171 20.4988 3.50229C21.6894 4.69285 21.6894 6.62314 20.4988 7.81369L17.4606 10.8518C16.7851 11.5273 16.4473 11.865 16.0666 12.1262C15.4914 12.5207 14.84 12.7906 14.1543 12.9184C13.7004 13.0029 13.2227 13.003 12.2674 13.003L10.9187 13.0031L10.9431 11.6771C10.9608 10.7236 10.9696 10.2469 11.0625 9.79463C11.1966 9.14175 11.4599 8.52228 11.8369 7.97263C12.0981 7.59189 12.4352 7.25472 13.1095 6.58038ZM13.2811 6.40855L15.6885 4.00107L20 8.31253L17.6529 10.6593C16.7883 11.5238 16.356 11.9561 15.8515 12.2652C15.4042 12.5393 14.9165 12.7413 14.4064 12.8638C13.8311 13.0019 13.2197 13.002 11.997 13.002L10.9192 13.0021L10.9393 11.9177C10.9613 10.7258 10.9723 10.1299 11.1144 9.56993C11.2404 9.07338 11.442 8.59915 11.7121 8.16383C12.0167 7.6729 12.4382 7.25145 13.2811 6.40855Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3115,7 +2889,6 @@ export const Edit = () => (
     <path
       fill="none"
       d="M10.593 18.5941L19.9426 9.19538C21.3525 7.77811 21.3525 5.48024 19.9426 4.06296C18.5328 2.64567 16.2469 2.64568 14.8371 4.063L5.42525 13.5248C4.56468 14.3899 4.13439 14.8225 3.8234 15.3264C3.54765 15.7732 3.34183 16.2599 3.21315 16.7695C3.06803 17.3443 3.05677 17.9559 3.03425 19.1792M10.593 18.5941C9.71005 19.4817 9.26856 19.9255 8.75336 20.2429C8.29658 20.5243 7.79859 20.7316 7.27767 20.8573C6.69012 20.9991 6.06577 20.9991 4.81707 20.9991H3.00075L3.03425 19.1792M10.593 18.5941L17.9002 11.2479L12.7947 6.11544L5.42423 13.5257C4.56376 14.3908 4.13352 14.8234 3.82257 15.3272C3.54685 15.774 3.34105 16.2607 3.21239 16.7703C3.06729 17.3451 3.05677 17.956 3.03425 19.1792M10.593 18.5941C9.71004 19.4818 9.26783 19.9263 8.75261 20.2437C8.29582 20.5251 7.79781 20.7325 7.27687 20.8582C6.68929 21 6.06492 21 4.81616 21H3L3.03425 19.1792"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3129,7 +2902,6 @@ export const ElementHorizontal = () => (
     <path
       fill="none"
       d="M6.2 10H17.8C18.9201 10 19.4802 10 19.908 9.78201C20.2843 9.59027 20.5903 9.28431 20.782 8.90798C21 8.48016 21 7.9201 21 6.8V6.2C21 5.0799 21 4.51984 20.782 4.09202C20.5903 3.71569 20.2843 3.40973 19.908 3.21799C19.4802 3 18.9201 3 17.8 3L6.2 3C5.0799 3 4.51984 3 4.09202 3.21799C3.71569 3.40973 3.40973 3.71569 3.21799 4.09202C3 4.51984 3 5.0799 3 6.2L3 6.8C3 7.9201 3 8.48016 3.21799 8.90798C3.40973 9.28431 3.71569 9.59027 4.09202 9.78201C4.51984 10 5.0799 10 6.2 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3137,7 +2909,6 @@ export const ElementHorizontal = () => (
     <path
       fill="none"
       d="M16 16.5V18.5C16 18.9647 16 19.197 16.0384 19.3902C16.1962 20.1836 16.8164 20.8038 17.6098 20.9616C17.803 21 18.0353 21 18.5 21C18.9647 21 19.197 21 19.3902 20.9616C20.1836 20.8038 20.8038 20.1836 20.9616 19.3902C21 19.197 21 18.9647 21 18.5V16.5C21 16.0353 21 15.803 20.9616 15.6098C20.8038 14.8164 20.1836 14.1962 19.3902 14.0384C19.197 14 18.9647 14 18.5 14C18.0353 14 17.803 14 17.6098 14.0384C16.8164 14.1962 16.1962 14.8164 16.0384 15.6098C16 15.803 16 16.0353 16 16.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3145,7 +2916,6 @@ export const ElementHorizontal = () => (
     <path
       fill="none"
       d="M6.2 21H8.8C9.9201 21 10.4802 21 10.908 20.782C11.2843 20.5903 11.5903 20.2843 11.782 19.908C12 19.4802 12 18.9201 12 17.8V17.2C12 16.0799 12 15.5198 11.782 15.092C11.5903 14.7157 11.2843 14.4097 10.908 14.218C10.4802 14 9.9201 14 8.8 14H6.2C5.0799 14 4.51984 14 4.09202 14.218C3.71569 14.4097 3.40973 14.7157 3.21799 15.092C3 15.5198 3 16.0799 3 17.2L3 17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.0799 21 6.2 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3159,7 +2929,6 @@ export const ElementVertical = () => (
     <path
       fill="none"
       d="M6.2 21H6.8C7.9201 21 8.48016 21 8.90798 20.782C9.28431 20.5903 9.59027 20.2843 9.78201 19.908C10 19.4802 10 18.9201 10 17.8V6.2C10 5.07989 10 4.51984 9.78201 4.09202C9.59027 3.71569 9.28431 3.40973 8.90798 3.21799C8.48016 3 7.9201 3 6.8 3L6.2 3C5.0799 3 4.51984 3 4.09202 3.21799C3.71569 3.40973 3.40973 3.71569 3.21799 4.09202C3 4.51984 3 5.07989 3 6.2L3 17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.0799 21 6.2 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3167,7 +2936,6 @@ export const ElementVertical = () => (
     <path
       fill="none"
       d="M17.2 12H17.8C18.9201 12 19.4802 12 19.908 11.782C20.2843 11.5903 20.5903 11.2843 20.782 10.908C21 10.4802 21 9.92011 21 8.8V6.2C21 5.07989 21 4.51984 20.782 4.09202C20.5903 3.71569 20.2843 3.40973 19.908 3.21799C19.4802 3 18.9201 3 17.8 3L17.2 3C16.0799 3 15.5198 3 15.092 3.21799C14.7157 3.40973 14.4097 3.71569 14.218 4.09202C14 4.51984 14 5.07989 14 6.2V8.8C14 9.9201 14 10.4802 14.218 10.908C14.4097 11.2843 14.7157 11.5903 15.092 11.782C15.5198 12 16.0799 12 17.2 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3175,7 +2943,6 @@ export const ElementVertical = () => (
     <path
       fill="none"
       d="M16.5 21H18.5C18.9647 21 19.197 21 19.3902 20.9616C20.1836 20.8038 20.8038 20.1836 20.9616 19.3902C21 19.197 21 18.9647 21 18.5C21 18.0353 21 17.803 20.9616 17.6098C20.8038 16.8164 20.1836 16.1962 19.3902 16.0384C19.197 16 18.9647 16 18.5 16H16.5C16.0353 16 15.803 16 15.6098 16.0384C14.8164 16.1962 14.1962 16.8164 14.0384 17.6098C14 17.803 14 18.0353 14 18.5C14 18.9647 14 19.197 14.0384 19.3902C14.1962 20.1836 14.8164 20.8038 15.6098 20.9616C15.803 21 16.0353 21 16.5 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3189,7 +2956,6 @@ export const EmotionHappyCircle = () => (
     <path
       fill="none"
       d="M9 14C9 14 9.5 16 12 16C14.5 16 15 14 15 14M9 10V10.0099M15 10V10.0099M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3203,7 +2969,6 @@ export const EmotionHappySquare = () => (
     <path
       fill="none"
       d="M9 14C9 14 9.5 16 12 16C14.5 16 15 14 15 14M9 10V10.0099M15 10V10.0099M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3217,7 +2982,6 @@ export const EmotionNormalCircle = () => (
     <path
       fill="none"
       d="M9 15L15 15M9 10V10.0099M15 10V10.0099M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3231,7 +2995,6 @@ export const EmotionNormalSquare = () => (
     <path
       fill="none"
       d="M9 15L15 15M9 10V10.0099M15 10V10.0099M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3245,7 +3008,6 @@ export const EmotionPuzzledCircle = () => (
     <path
       fill="none"
       d="M9.14525 15.5363C10.2668 13.9063 13.4155 13.3246 15.0454 14.4462M9 10V10.0099M15 10V10.0099M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3259,7 +3021,6 @@ export const EmotionPuzzledSquare = () => (
     <path
       fill="none"
       d="M9.14525 15.5363C10.2668 13.9063 13.4155 13.3246 15.0454 14.4462M9 10V10.0099M15 10V10.0099M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3273,7 +3034,6 @@ export const EmotionSadCircle = () => (
     <path
       fill="none"
       d="M9 16C9 16 9.5 14 12 14C14.5 14 15 16 15 16M9 10V10.0099M15 10V10.0099M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3287,7 +3047,6 @@ export const EmotionSadSquare = () => (
     <path
       fill="none"
       d="M9 16C9 16 9.5 14 12 14C14.5 14 15 16 15 16M9 10V10.0099M15 10V10.0099M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3301,7 +3060,6 @@ export const EmotionSatisfiedCircle = () => (
     <path
       fill="none"
       d="M10 10C10 10 9.66667 9.5 9 9.5C8.33333 9.5 8 10 8 10M16 10C16 10 15.6667 9.5 15 9.5C14.3333 9.5 14 10 14 10M17 14C15 18 9 18 7 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3315,7 +3073,6 @@ export const EmotionSatisfiedSquare = () => (
     <path
       fill="none"
       d="M10 10C10 10 9.66667 9.5 9 9.5C8.33333 9.5 8 10 8 10M16 10C16 10 15.6667 9.5 15 9.5C14.3333 9.5 14 10 14 10M17 14C15 18 9 18 7 14M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3329,7 +3086,6 @@ export const Eraser = () => (
     <path
       fill="none"
       d="M22 21H2M11.8585 19.2129C10.946 20.1254 10.3839 20.6875 9.86184 21H7.06703C6.54498 20.6875 5.98289 20.1254 5.07032 19.2129M11.8585 19.2129L19.2125 11.859C20.4005 10.6709 20.9945 10.0769 21.2171 9.39189C21.4129 8.78936 21.4129 8.14032 21.2171 7.53779C20.9945 6.8528 20.4005 6.25878 19.2125 5.07073L18.9296 4.78789C17.7416 3.59983 17.1475 3.00581 16.4626 2.78324C15.86 2.58747 15.211 2.58747 14.6084 2.78324C13.9235 3.00581 13.3294 3.59983 12.1414 4.78789L4.78748 12.1418M11.8585 19.2129C10.9452 20.1262 10.383 20.6885 9.86063 21.0008H7.06835C6.54595 20.6885 5.98363 20.1262 5.07032 19.2129M11.8585 19.2129L15.5356 15.536L12 12.0004M4.78748 12.1418C3.59943 13.3298 3.0054 13.9239 2.78283 14.6089C2.58706 15.2114 2.58706 15.8604 2.78284 16.463C3.0054 17.1479 3.59943 17.742 4.78748 18.93M4.78748 12.1418L8.46447 8.46446L12 12.0004M4.78748 18.93L5.07032 19.2129M4.78748 18.93L4.92896 19.0715M5.07032 19.2129L4.92896 19.0715M12 12.0004L4.92896 19.0715"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3343,7 +3099,6 @@ export const ExpandSimple = () => (
     <path
       fill="none"
       d="M3 8V3H8M3 16V21H8M21 8V3H16M21 16V21H16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3357,7 +3112,6 @@ export const Expand = () => (
     <path
       fill="none"
       d="M3 7V3M3 3H7M3 3L8 8M3 17V21M3 21H7M3 21L8 16M21 7V3M21 3H17M21 3L16 8M21 17V21M21 21H17M21 21L16 16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3371,7 +3125,6 @@ export const EyeOff = () => (
     <path
       fill="none"
       d="M2.9997 3L20.9997 21M3.9052 9.56254C3.65494 9.8407 3.42612 10.109 3.22069 10.3593C2.84033 10.8229 2.65015 11.0547 2.53665 11.4572C2.45393 11.7506 2.45393 12.2494 2.53665 12.5428C2.65015 12.9453 2.84033 13.1771 3.22069 13.6407C4.91825 15.7096 8.21321 19 11.9997 19C12.416 19 12.8264 18.9602 13.2293 18.8867M17.1277 17.1282C18.6571 16.0415 19.9215 14.6854 20.7787 13.6407C21.1591 13.1771 21.3492 12.9453 21.4627 12.5428C21.5455 12.2494 21.5455 11.7506 21.4627 11.4572C21.3492 11.0547 21.1591 10.8229 20.7787 10.3593C19.0812 8.29038 15.7862 5 11.9997 5C10.1251 5 8.37095 5.80648 6.87148 6.87197L10.5854 10.5859C10.9473 10.2239 11.4474 10 11.9997 10C13.1043 10 13.9997 10.8954 13.9997 12C13.9997 12.5523 13.7758 13.0524 13.4138 13.4143L17.1277 17.1282Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3385,7 +3138,6 @@ export const Eye = () => (
     <path
       fill="none"
       d="M20.7787 10.3593C21.1591 10.8229 21.3492 11.0547 21.4627 11.4572C21.5455 11.7506 21.5455 12.2494 21.4627 12.5428C21.3492 12.9453 21.1591 13.1771 20.7787 13.6407C19.0811 15.7096 15.7862 19 11.9997 19C8.21321 19 4.91825 15.7096 3.22069 13.6407C2.84033 13.1771 2.65015 12.9453 2.53665 12.5428C2.45393 12.2494 2.45393 11.7506 2.53665 11.4572C2.65015 11.0547 2.84033 10.8229 3.22069 10.3593C4.91825 8.29038 8.21321 5 11.9997 5C15.7862 5 19.0811 8.29038 20.7787 10.3593Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3393,7 +3145,6 @@ export const Eye = () => (
     <path
       fill="none"
       d="M13.9997 12C13.9997 10.8954 13.1043 10 11.9997 10C10.8951 10 9.9997 10.8954 9.9997 12C9.9997 13.1046 10.8951 14 11.9997 14C13.1043 14 13.9997 13.1046 13.9997 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3407,7 +3158,6 @@ export const FaceId = () => (
     <path
       fill="none"
       d="M3 8V7.8C3 6.11984 3 5.27976 3.32698 4.63803C3.6146 4.07354 4.07354 3.6146 4.63803 3.32698C5.27976 3 6.11984 3 7.8 3H8M3 16V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21H8M21 8V7.8C21 6.11984 21 5.27976 20.673 4.63803C20.3854 4.07354 19.9265 3.6146 19.362 3.32698C18.7202 3 17.8802 3 16.2 3H16M21 16V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21H16M12 8V11C12 12.1046 11.1046 13 10 13M15 17C12 18.5 9 17 9 17M16 8V8.00995M8 8V8.00995"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3421,7 +3171,6 @@ export const Facebook = () => (
     <path
       fill="none"
       d="M8.97134 13.9091L9 22H13V13.9091H16L17 10H13V6H17V2H13.7713C12.0912 2 11.2511 2 10.6094 2.32698C10.0449 2.6146 9.58594 3.07354 9.29832 3.63803C8.97134 4.27976 8.97134 5.11984 8.97134 6.8V10H6V13.9091H8.97134Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3435,7 +3184,6 @@ export const Feather = () => (
     <path
       fill="none"
       d="M9.52599 13.972L17.0551 14.976M3 21C3.50188 19.494 7.01516 14.4741 15.047 9.95632M19.0634 12.9681L15.8172 16.2141C14.7978 17.2335 14.2881 17.7431 13.6873 18.0811C13.1552 18.3805 12.5729 18.5803 11.969 18.6707C11.2872 18.7727 10.572 18.6833 9.14153 18.5045L5.00757 17.9878L5.00757 14.287C5.00757 13.0592 5.00757 12.4453 5.14627 11.8676C5.26924 11.3554 5.47207 10.8658 5.74731 10.4166C6.05775 9.91006 6.49185 9.47597 7.36006 8.60781L11.0315 4.93653C11.4646 4.50349 11.6811 4.28696 11.8823 4.12354C13.7265 2.62549 16.3684 2.62549 18.2126 4.12354C18.4138 4.28696 18.6303 4.50349 19.0634 4.93654C19.4964 5.36959 19.713 5.58611 19.8764 5.78729C21.3745 7.63141 21.3745 10.2732 19.8764 12.1173C19.713 12.3185 19.4964 12.535 19.0634 12.9681Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3449,7 +3197,6 @@ export const Figma = () => (
     <path
       fill="none"
       d="M15.25 8.5C17.0449 8.5 18.5 7.04493 18.5 5.25C18.5 3.45507 17.0449 2 15.25 2H8.75C6.95507 2 5.5 3.45507 5.5 5.25C5.5 7.04493 6.95507 8.5 8.75 8.5M15.25 8.5C13.4551 8.5 12 9.95507 12 11.75C12 13.5449 13.4551 15 15.25 15C17.0449 15 18.5 13.5449 18.5 11.75C18.5 9.95507 17.0449 8.5 15.25 8.5ZM15.25 8.5H8.75M8.75 8.5C6.95507 8.5 5.5 9.95507 5.5 11.75C5.5 13.5449 6.95507 15 8.75 15M8.75 15H12M8.75 15C6.95507 15 5.5 16.4551 5.5 18.25C5.5 20.0449 6.95507 21.5 8.75 21.5C10.5449 21.5 12 20.0449 12 18.25V15M12 15L12 3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3463,7 +3210,6 @@ export const FilterAdd = () => (
     <path
       fill="none"
       d="M12.3542 3H6.4505C6.03209 3 5.82288 3 5.647 3.02084C4.26985 3.18402 3.18402 4.26985 3.02084 5.647C3 5.82288 3 6.03209 3 6.4505C3 6.64877 3 6.74791 3.00602 6.84282C3.05196 7.56655 3.35849 8.24914 3.86889 8.76429C3.93583 8.83185 4.00992 8.89771 4.15811 9.02943L7.38895 11.9013C7.98201 12.4284 8.27854 12.692 8.49131 13.0092C8.67987 13.2903 8.81951 13.6012 8.90431 13.9289C9 14.2986 9 14.6954 9 15.4888V18C9 19.6569 10.3431 21 12 21C13.6569 21 15 19.6569 15 18V15.4888C15 14.6954 15 14.2986 15.0957 13.9289C15.1805 13.6012 15.3201 13.2903 15.5087 13.0092C15.6299 12.8286 15.7782 12.6653 15.993 12.4608M15 6L21 6M18 3V9"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3477,7 +3223,6 @@ export const FilterLineAdd = () => (
     <path
       fill="none"
       d="M19 3V9M16 6L22 6M12 6H2M15 12H6M14 18H10"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3491,7 +3236,6 @@ export const FilterLine = () => (
     <path
       fill="none"
       d="M22 6L2 6M18 12L6 12M14 18H10"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3505,7 +3249,6 @@ export const FilterMinus = () => (
     <path
       fill="none"
       d="M12.3542 3H6.4505C6.03209 3 5.82288 3 5.647 3.02084C4.26985 3.18402 3.18402 4.26985 3.02084 5.647C3 5.82288 3 6.03209 3 6.4505C3 6.64877 3 6.74791 3.00602 6.84282C3.05196 7.56655 3.35849 8.24914 3.86889 8.76429C3.93583 8.83185 4.00992 8.89771 4.15811 9.02943L7.38895 11.9013C7.98201 12.4284 8.27854 12.692 8.49131 13.0092C8.67987 13.2903 8.81951 13.6012 8.90431 13.9289C9 14.2986 9 14.6954 9 15.4888V18C9 19.6569 10.3431 21 12 21C13.6569 21 15 19.6569 15 18V15.4888C15 14.6954 15 14.2986 15.0957 13.9289C15.1805 13.6012 15.3201 13.2903 15.5087 13.0092C15.7215 12.692 16.018 12.4284 16.6111 11.9013L18.75 10M15 6L21 6"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3519,7 +3262,6 @@ export const Filter = () => (
     <path
       fill="none"
       d="M19.8419 9.02943C19.9901 8.89771 20.0642 8.83185 20.1311 8.76429C20.6415 8.24914 20.948 7.56655 20.994 6.84282C21 6.74791 21 6.64877 21 6.4505C21 6.03209 21 5.82288 20.9792 5.647C20.816 4.26985 19.7302 3.18402 18.353 3.02084C18.1771 3 17.9679 3 17.5495 3H6.4505C6.03209 3 5.82288 3 5.647 3.02084C4.26985 3.18402 3.18402 4.26985 3.02084 5.647C3 5.82288 3 6.03209 3 6.4505C3 6.64877 3 6.74791 3.00602 6.84282C3.05196 7.56655 3.35849 8.24914 3.86889 8.76429C3.93583 8.83185 4.00992 8.89771 4.15811 9.02943L7.38895 11.9013C7.98201 12.4284 8.27854 12.692 8.49131 13.0092C8.67987 13.2903 8.81951 13.6012 8.90431 13.9289C9 14.2986 9 14.6954 9 15.4888V18C9 19.6569 10.3431 21 12 21C13.6569 21 15 19.6569 15 18V15.4888C15 14.6954 15 14.2986 15.0957 13.9289C15.1805 13.6012 15.3201 13.2903 15.5087 13.0092C15.7215 12.692 16.018 12.4284 16.6111 11.9013L19.8419 9.02943Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3533,7 +3275,6 @@ export const Fingerprint = () => (
     <path
       fill="none"
       d="M9.99999 22.0001C13 16.976 13 10.0386 13 10.0386M3 18.077C5 14.0578 5 9.82028 5 9.82028C5 5.01444 8.82355 2 12.8 2C13.8782 2 14.9746 2.22163 16 2.6405M20 18.077C20 18.077 21 14.6261 21 9.82028C21 7.797 20.2514 6.09124 19.0878 4.79425M15 20.0867C17 15.565 17 10.0385 17 10.0385C17 7.81877 15.2091 6.01929 13 6.01929C10.7908 6.01929 8.99998 7.81877 8.99998 10.0385C8.99998 10.0385 8.99998 11.2323 8.73567 13M5.99998 21.0915C6.79825 19.7546 7.38411 18.3466 7.81408 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3547,7 +3288,6 @@ export const FitHorizontal = () => (
     <path
       fill="none"
       d="M21 4V20M3 4L3 20M9 9L6 12L9 15M15 9L18 12L15 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3561,7 +3301,6 @@ export const FitVertical = () => (
     <path
       fill="none"
       d="M4 3H20M4 21H20M9 15L12 18L15 15M9 9L12 6L15 9"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3575,7 +3314,6 @@ export const Fitness = () => (
     <path
       fill="none"
       d="M16 12H8M3 12H2M22 12H21M3 14.5V9.5C3 8.11929 4.11929 7 5.5 7C6.88071 7 8 8.11929 8 9.5V14.5C8 15.8807 6.88071 17 5.5 17C4.11929 17 3 15.8807 3 14.5ZM16 14.5V9.5C16 8.11929 17.1193 7 18.5 7C19.8807 7 21 8.11929 21 9.5V14.5C21 15.8807 19.8807 17 18.5 17C17.1193 17 16 15.8807 16 14.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3589,7 +3327,6 @@ export const FlagFly = () => (
     <path
       fill="none"
       d="M4 2L4 22M4 4C4 4 5 2 8 2C11 2 13 6 16 6C19 6 20 4 20 4V14C20 14 19 16 16 16C13 16 11 12 8 12C5 12 4 14 4 14V4Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3603,7 +3340,6 @@ export const FlagRectangle = () => (
     <path
       fill="none"
       d="M4 2L4 22M4 3H16.8C17.9201 3 18.4802 3 18.908 3.21799C19.2843 3.40973 19.5903 3.71569 19.782 4.09202C20 4.51984 20 5.07989 20 6.2V9.8C20 10.9201 20 11.4802 19.782 11.908C19.5903 12.2843 19.2843 12.5903 18.908 12.782C18.4802 13 17.9201 13 16.8 13H4V3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3617,7 +3353,6 @@ export const FlagTriangle = () => (
     <path
       fill="none"
       d="M7 2L7 22M7 3L14.137 6.05873C16.2998 6.98564 17.3812 7.44909 17.7092 8.10072C17.994 8.66642 17.994 9.33358 17.7092 9.89928C17.3812 10.5509 16.2998 11.0144 14.1371 11.9413L7 15V3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3631,7 +3366,6 @@ export const Flag = () => (
     <path
       fill="none"
       d="M4 2L4 22M4 3H20L17.3333 8L20 13H4V3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3645,7 +3379,6 @@ export const FlowsHorizontalCenter = () => (
     <path
       fill="none"
       d="M17 4C14.2386 4 12 6.23858 12 9V16C12 18.2091 13.7909 20 16 20M16 12H7M21 6H17V2L21 2V6ZM7 14H3L3 10H7V14ZM21 14H17V10H21V14ZM21 22H17V18H21V22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3659,7 +3392,6 @@ export const FlowsHorizontal = () => (
     <path
       fill="none"
       d="M12 4V16C12 18.2091 13.7909 20 16 20M16 12H12M16 4H7M21 6H17V2L21 2V6ZM7 6H3L3 2L7 2V6ZM21 14H17V10H21V14ZM21 22H17V18H21V22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3673,7 +3405,6 @@ export const FlowsRounded = () => (
     <path
       fill="none"
       d="M6 5L16.5 5C18.433 5 20 6.567 20 8.5C20 10.433 18.433 12 16.5 12H14M18 19L7.5 19C5.567 19 4 17.433 4 15.5C4 13.567 5.567 12 7.5 12H10M18 21V17H22V21H18ZM2 7L2 3L6 3V7H2ZM10 14V10H14V14H10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3687,7 +3418,6 @@ export const FlowsVerticalCenter = () => (
     <path
       fill="none"
       d="M20 17C20 14.2386 17.7614 12 15 12L8 12C5.79086 12 4 13.7909 4 16M12 16L12 7M18 21V17H22V21H18ZM10 7L10 3L14 3L14 7H10ZM10 21L10 17H14L14 21H10ZM2 21L2 17H6V21H2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3701,7 +3431,6 @@ export const FlowsVertical = () => (
     <path
       fill="none"
       d="M4 12L16 12C18.2091 12 20 13.7909 20 16M12 16L12 12M4 16L4 7M18 21V17H22V21H18ZM2 7L2 3L6 3V7H2ZM10 21L10 17H14L14 21H10ZM2 21L2 17H6V21H2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3715,7 +3444,6 @@ export const Footer = () => (
     <path
       fill="none"
       d="M10 9L12 11L14 9M22 15H2M14 21H10C7.19974 21 5.79961 21 4.73005 20.455C3.78924 19.9757 3.02433 19.2108 2.54497 18.27C2 17.2004 2 15.8003 2 13L2 11C2 8.19974 2 6.79961 2.54497 5.73005C3.02433 4.78924 3.78924 4.02433 4.73005 3.54497C5.79961 3 7.19974 3 10 3L14 3C16.8003 3 18.2004 3 19.27 3.54497C20.2108 4.02433 20.9757 4.78924 21.455 5.73005C22 6.79961 22 8.19974 22 11V13C22 15.8003 22 17.2004 21.455 18.27C20.9757 19.2108 20.2108 19.9757 19.27 20.455C18.2004 21 16.8003 21 14 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3729,7 +3457,6 @@ export const ForwardItem = () => (
     <path
       fill="none"
       d="M10.8 18H13.2C14.8802 18 15.7202 18 16.362 17.673C16.9265 17.3854 17.3854 16.9265 17.673 16.362C18 15.7202 18 14.8802 18 13.2V10.8M10.8 18C9.11984 18 8.27976 18 7.63803 17.673C7.07354 17.3854 6.6146 16.9265 6.32698 16.362C6 15.7202 6 14.8802 6 13.2M10.8 18H10.9995C10.9963 19.073 10.971 19.6668 10.7716 20.1481C10.4672 20.8831 9.88313 21.4672 9.14805 21.7716C8.59674 22 7.89782 22 6.5 22C5.10218 22 4.40326 22 3.85195 21.7716C3.11687 21.4672 2.53284 20.8831 2.22836 20.1481C2 19.5967 2 18.8978 2 17.5C2 16.1022 2 15.4033 2.22836 14.8519C2.53284 14.1169 3.11687 13.5328 3.85195 13.2284C4.33323 13.029 4.92699 13.0037 6 13.0005V13.2M6 13.2V10.8C6 9.11984 6 8.27976 6.32698 7.63803C6.6146 7.07354 7.07354 6.6146 7.63803 6.32698C8.27976 6 9.11984 6 10.8 6H13.2M13.2 6C14.8802 6 15.7202 6 16.362 6.32698C16.9265 6.6146 17.3854 7.07354 17.673 7.63803C18 8.27976 18 9.11984 18 10.8M13.2 6H13.0005C13.0037 4.92699 13.029 4.33323 13.2284 3.85195C13.5328 3.11687 14.1169 2.53284 14.852 2.22836C15.4033 2 16.1022 2 17.5 2C18.8978 2 19.5967 2 20.1481 2.22836C20.8831 2.53284 21.4672 3.11687 21.7716 3.85195C22 4.40326 22 5.10217 22 6.5C22 7.89782 22 8.59674 21.7716 9.14805C21.4672 9.88313 20.8831 10.4672 20.1481 10.7716C19.6668 10.971 19.073 10.9963 18 10.9995V10.8"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3743,7 +3470,6 @@ export const Framer = () => (
     <path
       fill="none"
       d="M5 16H19L5 2H19V9H5V16ZM5 16L12 22V16H5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -3758,7 +3484,6 @@ export const Gemini = () => (
     <path
       fill="none"
       d="M12 3.51472C12 3.51472 13.1488 7.49186 14.8285 9.17157C16.5082 10.8513 20.4853 12 20.4853 12M12 3.51472C12 3.51472 10.8513 7.49186 9.17161 9.17157C7.4919 10.8513 3.51475 12 3.51475 12M12 3.51472V2M20.4853 12C20.4853 12 16.5082 13.1487 14.8285 14.8284C13.1488 16.5081 12 20.4853 12 20.4853M20.4853 12H22.0005M12 20.4853C12 20.4853 10.8513 16.5081 9.17161 14.8284C7.4919 13.1487 3.51475 12 3.51475 12M12 20.4853V22M3.51475 12H2.00049"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3772,7 +3497,6 @@ export const Gender = () => (
     <path
       fill="none"
       d="M9 17V22M9 17C6.23858 17 4 14.7614 4 12C4 9.58102 5.71776 7.56327 8 7.1M9 17C10.1256 17 11.1643 16.628 12 16.0003M7 20H11M20.4304 5.65644L19.6516 2.74866M19.6516 2.74866L16.7437 3.52773M19.6516 2.74866L17.2762 6.99989M12 16.0003C13.2144 15.0881 14 13.6358 14 12C14 10.3644 13.2147 8.91221 12.0005 7.99998M12 16.0003C10.7856 15.0881 10 13.6358 10 12C10 10.3641 10.786 8.91218 12.0005 7.99998M16 16.9C18.2822 16.4367 20 14.4189 20 12C20 9.23856 17.7614 6.99998 15 6.99998C13.8745 6.99998 12.8361 7.37235 12.0005 7.99998"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3786,7 +3510,6 @@ export const GitBranch = () => (
     <path
       fill="none"
       d="M18 8C18 10.2091 16.2091 12 14 12H10C7.79086 12 6 13.7909 6 16M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8ZM6 16L6 8M6 16C4.34315 16 3 17.3431 3 19C3 20.6569 4.34315 22 6 22C7.65685 22 9 20.6569 9 19C9 17.3431 7.65685 16 6 16ZM6 8C7.65685 8 9 6.65685 9 5C9 3.34315 7.65685 2 6 2C4.34315 2 3 3.34315 3 5C3 6.65685 4.34315 8 6 8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3800,7 +3523,6 @@ export const GitCommit = () => (
     <path
       fill="none"
       d="M2 12H7M7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12M7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12M17 12H22"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3814,7 +3536,6 @@ export const GitMerge = () => (
     <path
       fill="none"
       d="M15 13H11C8.23858 13 6 10.7614 6 8M15 13C15 14.6569 16.3431 16 18 16C19.6569 16 21 14.6569 21 13C21 11.3431 19.6569 10 18 10C16.3431 10 15 11.3431 15 13ZM6 8V16M6 8C7.65685 8 9 6.65685 9 5C9 3.34315 7.65685 2 6 2C4.34315 2 3 3.34315 3 5C3 6.65685 4.34315 8 6 8ZM6 16C4.34315 16 3 17.3431 3 19C3 20.6569 4.34315 22 6 22C7.65685 22 9 20.6569 9 19C9 17.3431 7.65685 16 6 16Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3828,7 +3549,6 @@ export const GitPull = () => (
     <path
       fill="none"
       d="M13 5H14.8C15.9201 5 16.4802 5 16.908 5.21799C17.2843 5.40973 17.5903 5.71569 17.782 6.09202C18 6.51984 18 7.0799 18 8.2V16M13 5L15 3M13 5L15 7M18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16ZM6 22L6 8M6 8C7.65686 8 9 6.65685 9 5C9 3.34315 7.65685 2 6 2C4.34315 2 3 3.34315 3 5C3 6.65685 4.34315 8 6 8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3842,7 +3562,6 @@ export const Gmail = () => (
     <path
       fill="none"
       d="M6 16L6 8L12.0001 11L18.0001 8V16M14 20H10C7.19974 20 5.79961 20 4.73005 19.455C3.78924 18.9757 3.02433 18.2108 2.54497 17.27C2 16.2004 2 14.8003 2 12C2 9.19974 2 7.79961 2.54497 6.73005C3.02433 5.78924 3.78924 5.02433 4.73005 4.54497C5.79961 4 7.19974 4 10 4L14 4C16.8003 4 18.2004 4 19.27 4.54497C20.2108 5.02433 20.9757 5.78924 21.455 6.73005C22 7.79961 22 9.19974 22 12C22 14.8003 22 16.2004 21.455 17.27C20.9757 18.2108 20.2108 18.9757 19.27 19.455C18.2004 20 16.8003 20 14 20Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3856,7 +3575,6 @@ export const Google = () => (
     <path
       fill="none"
       d="M12 3C14.1045 3 16.0403 3.72233 17.573 4.9326L14.5664 7.70798C13.8161 7.25843 12.9382 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C13.6358 17 15.0882 16.2144 16.0004 15H12V11H20.9451C20.9814 11.3283 21 11.662 21 12C21 13.0519 20.8195 14.0617 20.4879 15C19.2524 18.4956 15.9187 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3870,7 +3588,6 @@ export const Group = () => (
     <path
       fill="none"
       d="M8 10C9.65685 10 11 8.65685 11 7C11 5.34315 9.65685 4 8 4C6.34315 4 5 5.34315 5 7C5 8.65685 6.34315 10 8 10ZM8 10C8.92901 10 9.39351 10 9.78217 10.0616C11.9216 10.4004 13.5996 12.0784 13.9384 14.2178C14 14.6065 14 15.071 14 16V20M8 10C7.07099 10 6.60649 10 6.21783 10.0616C4.07837 10.4004 2.40042 12.0784 2.06156 14.2178C2 14.6065 2 15.071 2 16V20M18.5 11C19.8807 11 21 9.88071 21 8.5C21 7.11929 19.8807 6 18.5 6C17.1193 6 16 7.11929 16 8.5C16 9.88071 17.1193 11 18.5 11ZM18.5 11C18.3257 11 18.1544 11.0127 17.987 11.0373M18.5 11C20.433 11 22 12.567 22 14.5V20"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3884,7 +3601,6 @@ export const HandNarrow = () => (
     <path
       fill="none"
       d="M7.5 15.8947V11.25C7.5 10.2835 6.7165 9.5 5.75 9.5C4.7835 9.5 4 10.2835 4 11.25L4 15.75C4 16.9116 4 17.4925 4.09607 17.9755C4.49061 19.9589 6.0411 21.5094 8.02455 21.9039C8.50754 22 9.08836 22 10.25 22H13C14.8613 22 15.7919 22 16.5451 21.7553C18.0673 21.2607 19.2607 20.0673 19.7553 18.5451C20 17.7919 20 16.8613 20 15V9.75C20 8.7835 19.2165 8 18.25 8C17.2835 8 16.5 8.7835 16.5 9.75V12V6.5C16.5 5.67157 15.8284 5 15 5C14.1716 5 13.5 5.67157 13.5 6.5V12M7.5 12V5.5C7.5 4.67157 8.17157 4 9 4C9.82843 4 10.5 4.67157 10.5 5.5V12M10.5 11V3.5C10.5 2.67157 11.1716 2 12 2C12.8284 2 13.5 2.67157 13.5 3.5V11"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3898,7 +3614,6 @@ export const Hand = () => (
     <path
       fill="none"
       d="M6 14.8947V11.5C6 10.3954 5.10457 9.5 4 9.5C2.89543 9.5 2 10.3954 2 11.5L2 15.25C2 15.9466 2 16.2949 2.03466 16.5877C2.30638 18.8835 4.11654 20.6936 6.41231 20.9653C6.70513 21 7.05342 21 7.75 21H15C16.8613 21 17.7919 21 18.5451 20.7553C20.0673 20.2607 21.2607 19.0673 21.7553 17.5451C22 16.7919 22 15.8613 22 14V9C22 7.89543 21.1046 7 20 7C18.8954 7 18 7.89543 18 9V12.8947M6 13V6C6 4.89543 6.89543 4 8 4C9.10457 4 10 4.89543 10 6V13M10 12V5C10 3.89543 10.8954 3 12 3C13.1046 3 14 3.89543 14 5V12M14 13V6C14 4.89543 14.8954 4 16 4C17.1046 4 18 4.89543 18 6V13"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3912,7 +3627,6 @@ export const HashtagCircle = () => (
     <path
       fill="none"
       d="M11 7L9 17M15 7L13 17M17 10L7 10M17 14L7 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3926,7 +3640,6 @@ export const HashtagSquare = () => (
     <path
       fill="none"
       d="M11 7L9 17M15 7L13 17M17 10L7 10M17 14L7 14M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3940,7 +3653,6 @@ export const Hashtag = () => (
     <path
       fill="none"
       d="M9 3L7 21M17 3L15 21M21 8L3 8M21 16L3 16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3954,7 +3666,6 @@ export const Header = () => (
     <path
       fill="none"
       d="M14 15L12 13L10 15M22 9H2M14 21H10C7.19974 21 5.79961 21 4.73005 20.455C3.78924 19.9757 3.02433 19.2108 2.54497 18.27C2 17.2004 2 15.8003 2 13L2 11C2 8.19974 2 6.79961 2.54497 5.73005C3.02433 4.78924 3.78924 4.02433 4.73005 3.54497C5.79961 3 7.19974 3 10 3L14 3C16.8003 3 18.2004 3 19.27 3.54497C20.2108 4.02433 20.9757 4.78924 21.455 5.73005C22 6.79961 22 8.19974 22 11V13C22 15.8003 22 17.2004 21.455 18.27C20.9757 19.2108 20.2108 19.9757 19.27 20.455C18.2004 21 16.8003 21 14 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3968,7 +3679,6 @@ export const HeartOff = () => (
     <path
       fill="none"
       d="M2.99997 3L21 21M14.0988 19.7558C13.8469 19.9212 13.61 20.0711 13.3926 20.2049C12.9734 20.4629 12.7637 20.5919 12.4378 20.6651C12.1946 20.7196 11.8054 20.7196 11.5622 20.6651C11.2363 20.5919 11.0266 20.4629 10.6074 20.2049C7.85875 18.5133 2 14.2477 2 8.62126C2 8.31683 2.0239 8.01809 2.06991 7.72685M4.16701 4.1671C5.10592 3.43514 6.28277 3 7.56 3C9.38 3 10.99 3.88492 12 5.25253C13.01 3.88492 14.63 3 16.44 3C19.51 3 22 5.51398 22 8.62126C22 12.1492 19.6966 15.1421 17.3007 17.3009L4.16701 4.1671Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3982,7 +3692,6 @@ export const Heart = () => (
     <path
       fill="none"
       d="M13.3926 20.2049C12.9734 20.4629 12.7637 20.5919 12.4378 20.6651C12.1946 20.7196 11.8054 20.7196 11.5622 20.6651C11.2363 20.5919 11.0266 20.4629 10.6074 20.2049C7.85875 18.5133 2 14.2477 2 8.62126C2 5.51398 4.49 3 7.56 3C9.38 3 10.99 3.88492 12 5.25253C13.01 3.88492 14.63 3 16.44 3C19.51 3 22 5.51398 22 8.62126C22 14.2477 16.1412 18.5133 13.3926 20.2049Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -3996,7 +3705,6 @@ export const Height = () => (
     <path
       fill="none"
       d="M4 2H20M4 22H20M9 15L12 18L15 15M9 9L12 6L15 9M12 7L12 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4010,7 +3718,6 @@ export const Hexagon = () => (
     <path
       fill="none"
       d="M4.54307 5.87836L10.5431 2.39457C11.4491 1.86848 12.5509 1.86848 13.4569 2.39457L19.4569 5.87836C20.4093 6.43135 21 7.48052 21 8.6192V15.3808C21 16.5195 20.4093 17.5687 19.4569 18.1216L13.4569 21.6054C12.5509 22.1315 11.4491 22.1315 10.5431 21.6054L4.54307 18.1216C3.59068 17.5686 3 16.5195 3 15.3808V8.6192C3 7.48052 3.59068 6.43135 4.54307 5.87836Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4024,7 +3731,6 @@ export const HomeDoor = () => (
     <path
       fill="none"
       d="M9 17.0001V21.0001H15V17.0001C15 15.3433 13.6569 14.0001 12 14.0001C10.3431 14.0001 9 15.3433 9 17.0001Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4032,7 +3738,6 @@ export const HomeDoor = () => (
     <path
       fill="none"
       d="M11 21.0001H13C15.8003 21.0001 17.2004 21.0001 18.27 20.4551C19.2108 19.9758 19.9757 19.2109 20.455 18.2701C21 17.2005 21 15.8004 21 13.0001V12.2816C21 10.7162 21 9.93355 20.7842 9.2231C20.5932 8.59415 20.2801 8.00904 19.8627 7.50123C19.3913 6.92763 18.7401 6.49348 17.4376 5.62517L13.775 3.18347C13.1335 2.75579 12.8128 2.54195 12.4661 2.45887C12.1597 2.38545 11.8403 2.38545 11.5339 2.45887C11.1872 2.54195 10.8665 2.75579 10.225 3.18347L6.5624 5.62518C5.25994 6.49348 4.60872 6.92763 4.13727 7.50123C3.7199 8.00904 3.40676 8.59415 3.21575 9.2231C3 9.93355 3 10.7162 3 12.2816L3 13.0001C3 15.8004 3 17.2005 3.54497 18.2701C4.02433 19.2109 4.78924 19.9758 5.73005 20.4551C6.79961 21.0001 8.19974 21.0001 11 21.0001Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4046,7 +3751,6 @@ export const HomeHappy = () => (
     <path
       fill="none"
       d="M15 16.0001C15 16.0001 14 17.0001 12 17.0001C10 17.0001 9 16.0001 9 16.0001M13 21.0001H11C8.19974 21.0001 6.79961 21.0001 5.73005 20.4551C4.78924 19.9758 4.02433 19.2109 3.54497 18.2701C3 17.2005 3 15.8004 3 13.0001L3 12.2816C3 10.7162 3 9.93355 3.21575 9.2231C3.40676 8.59415 3.7199 8.00904 4.13727 7.50123C4.60872 6.92763 5.25994 6.49348 6.5624 5.62518L10.225 3.18347C10.8665 2.75579 11.1872 2.54195 11.5339 2.45887C11.8403 2.38545 12.1597 2.38545 12.4661 2.45887C12.8128 2.54195 13.1335 2.75579 13.775 3.18347L17.4376 5.62517C18.7401 6.49348 19.3913 6.92763 19.8627 7.50123C20.2801 8.00904 20.5932 8.59415 20.7842 9.2231C21 9.93355 21 10.7162 21 12.2816V13.0001C21 15.8004 21 17.2005 20.455 18.2701C19.9757 19.2109 19.2108 19.9758 18.27 20.4551C17.2004 21.0001 15.8003 21.0001 13 21.0001Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4060,7 +3764,6 @@ export const HomeRoof = () => (
     <path
       fill="none"
       d="M5 12V16.2C5 17.8801 5 18.7202 5.32698 19.3619C5.6146 19.9264 6.07354 20.3854 6.63803 20.673C7.27976 21 8.11984 21 9.8 21H14.2C15.8802 21 16.7202 21 17.362 20.673C17.9265 20.3854 18.3854 19.9264 18.673 19.3619C19 18.7202 19 17.8801 19 16.2V12M22 8.99996L14.4696 4.48171C13.5717 3.94297 13.1227 3.6736 12.6435 3.56836C12.2195 3.47526 11.7805 3.47526 11.3565 3.56836C10.8773 3.6736 10.4283 3.94297 9.53042 4.48171L2 8.99997"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4074,7 +3777,6 @@ export const HomeWindow = () => (
     <path
       fill="none"
       d="M16 13.0001H8M12 17.0001L12 9.00011M13 21.0001H11C8.19974 21.0001 6.79961 21.0001 5.73005 20.4551C4.78924 19.9758 4.02433 19.2109 3.54497 18.2701C3 17.2005 3 15.8004 3 13.0001L3 12.2816C3 10.7162 3 9.93355 3.21575 9.2231C3.40676 8.59415 3.7199 8.00904 4.13727 7.50123C4.60872 6.92763 5.25994 6.49348 6.5624 5.62518L10.225 3.18347C10.8665 2.75579 11.1872 2.54195 11.5339 2.45887C11.8403 2.38545 12.1597 2.38545 12.4661 2.45887C12.8128 2.54195 13.1335 2.75579 13.775 3.18347L17.4376 5.62517C18.7401 6.49348 19.3913 6.92763 19.8627 7.50123C20.2801 8.00904 20.5932 8.59415 20.7842 9.2231C21 9.93355 21 10.7162 21 12.2816V13.0001C21 15.8004 21 17.2005 20.455 18.2701C19.9757 19.2109 19.2108 19.9758 18.27 20.4551C17.2004 21.0001 15.8003 21.0001 13 21.0001ZM8 13.8001V12.2001C8 11.08 8 10.52 8.21799 10.0921C8.40973 9.7158 8.71569 9.40984 9.09202 9.2181C9.51984 9.00011 10.0799 9.00011 11.2 9.00011H12.8C13.9201 9.00011 14.4802 9.00011 14.908 9.2181C15.2843 9.40984 15.5903 9.7158 15.782 10.0921C16 10.52 16 11.08 16 12.2001V13.8001C16 14.9202 16 15.4803 15.782 15.9081C15.5903 16.2844 15.2843 16.5904 14.908 16.7821C14.4802 17.0001 13.9201 17.0001 12.8 17.0001H11.2C10.0799 17.0001 9.51984 17.0001 9.09202 16.7821C8.71569 16.5904 8.40973 16.2844 8.21799 15.9081C8 15.4803 8 14.9202 8 13.8001Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4088,7 +3790,6 @@ export const Home = () => (
     <path
       fill="none"
       d="M12 17.0001V17.0101M13 21.0001H11C8.19974 21.0001 6.79961 21.0001 5.73005 20.4551C4.78924 19.9758 4.02433 19.2109 3.54497 18.2701C3 17.2005 3 15.8004 3 13.0001L3 12.2816C3 10.7162 3 9.93355 3.21575 9.2231C3.40676 8.59415 3.7199 8.00904 4.13727 7.50123C4.60872 6.92763 5.25994 6.49348 6.5624 5.62518L10.225 3.18347C10.8665 2.75579 11.1872 2.54195 11.5339 2.45887C11.8403 2.38545 12.1597 2.38545 12.4661 2.45887C12.8128 2.54195 13.1335 2.75579 13.775 3.18347L17.4376 5.62517C18.7401 6.49348 19.3913 6.92763 19.8627 7.50123C20.2801 8.00904 20.5932 8.59415 20.7842 9.2231C21 9.93355 21 10.7162 21 12.2816V13.0001C21 15.8004 21 17.2005 20.455 18.2701C19.9757 19.2109 19.2108 19.9758 18.27 20.4551C17.2004 21.0001 15.8003 21.0001 13 21.0001Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4102,7 +3803,6 @@ export const InfinitySign = () => (
     <path
       fill="none"
       d="M9.5 15.4296C8.71193 16.1259 7.68341 16.55 6.54025 16.55C4.03025 16.55 1.99023 14.5101 1.99023 12.0001C1.99023 9.49006 4.03025 7.45007 6.54025 7.45007C8.23025 7.45007 9.80026 8.34004 10.6703 9.79004L12.0002 12.0001L13.3203 14.2101C14.1903 15.6601 15.7603 16.55 17.4503 16.55C19.9603 16.55 22.0002 14.5101 22.0002 12.0001C22.0002 9.49006 19.9603 7.45007 17.4503 7.45007C16.3293 7.45007 15.3144 7.86335 14.5267 8.54383"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4116,7 +3816,6 @@ export const InfoCircle = () => (
     <path
       fill="none"
       d="M12 16V12.0001M12 8.00995V8M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4130,7 +3829,6 @@ export const InfoOctagon = () => (
     <path
       fill="none"
       d="M12 16V12.0001M12 8.00995V8M21 9.59785V14.4022C21 14.8913 21 15.1359 20.9447 15.3661C20.8957 15.5702 20.8149 15.7653 20.7053 15.9442C20.5816 16.146 20.4086 16.319 20.0627 16.6649L16.6649 20.0627C16.319 20.4086 16.146 20.5816 15.9442 20.7053C15.7653 20.8149 15.5702 20.8957 15.3661 20.9447C15.1359 21 14.8913 21 14.4022 21H9.59785C9.10867 21 8.86407 21 8.6339 20.9447C8.42983 20.8957 8.23474 20.8149 8.05579 20.7053C7.85396 20.5816 7.68101 20.4086 7.33511 20.0627L3.93726 16.6649C3.59135 16.319 3.4184 16.146 3.29472 15.9442C3.18506 15.7653 3.10425 15.5702 3.05526 15.3661C3 15.1359 3 14.8913 3 14.4022V9.59785C3 9.10867 3 8.86407 3.05526 8.6339C3.10425 8.42983 3.18506 8.23474 3.29472 8.05579C3.4184 7.85396 3.59135 7.68101 3.93726 7.33511L7.3351 3.93726C7.68101 3.59135 7.85396 3.4184 8.05579 3.29472C8.23474 3.18506 8.42983 3.10425 8.6339 3.05526C8.86407 3 9.10867 3 9.59785 3H14.4022C14.8913 3 15.1359 3 15.3661 3.05526C15.5702 3.10425 15.7653 3.18506 15.9442 3.29472C16.146 3.4184 16.319 3.59135 16.6649 3.93726L20.0627 7.3351C20.4086 7.68101 20.5816 7.85396 20.7053 8.05579C20.8149 8.23474 20.8957 8.42983 20.9447 8.6339C21 8.86407 21 9.10867 21 9.59785Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4144,7 +3842,6 @@ export const InfoSquare = () => (
     <path
       fill="none"
       d="M12 16V12.0001M12 8.00995V8M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4158,7 +3855,6 @@ export const Instagram = () => (
     <path
       fill="none"
       d="M17 7V7.00995M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21ZM16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4172,7 +3868,6 @@ export const Instance = () => (
     <path
       fill="none"
       d="M10.2766 3.30383C9.22649 3.68596 8.30307 4.60938 6.45622 6.45622C4.60938 8.30307 3.68596 9.22649 3.30383 10.2766C2.89872 11.3898 2.89872 12.6102 3.30383 13.7234C3.68596 14.7735 4.60938 15.6969 6.45622 17.5438C8.30307 19.3906 9.22649 20.314 10.2766 20.6962C11.3898 21.1013 12.6102 21.1013 13.7234 20.6962C14.7735 20.314 15.6969 19.3906 17.5438 17.5438C19.3906 15.6969 20.314 14.7735 20.6962 13.7234C21.1013 12.6102 21.1013 11.3898 20.6962 10.2766C20.314 9.22649 19.3906 8.30307 17.5438 6.45622C15.6969 4.60938 14.7735 3.68596 13.7234 3.30383C12.6102 2.89872 11.3898 2.89872 10.2766 3.30383Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4186,7 +3881,6 @@ export const IntegrationPiece = () => (
     <path
       fill="none"
       d="M11 2C12.6569 2 14 3.34315 14 5H14.2C15.8802 5 16.7202 5 17.362 5.32698C17.9265 5.6146 18.3854 6.07354 18.673 6.63803C19 7.27976 19 8.11984 19 9.8V10C20.6569 10 22 11.3431 22 13C22 14.6569 20.6569 16 19 16V16.2C19 17.8802 19 18.7202 18.673 19.362C18.3854 19.9265 17.9265 20.3854 17.362 20.673C16.7202 21 15.8802 21 14.2 21H13.8293C13.4175 19.8348 12.3062 19 11 19C9.69378 19 8.58254 19.8348 8.17071 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2V15.8293C4.16519 15.4175 5 14.3062 5 13C5 11.6938 4.16519 10.5825 3 10.1707V9.8C3 8.11984 3 7.27976 3.32698 6.63803C3.6146 6.07354 4.07354 5.6146 4.63803 5.32698C5.27976 5 6.11984 5 7.8 5H8C8 3.34315 9.34315 2 11 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4200,7 +3894,6 @@ export const IntegrationPlug = () => (
     <path
       fill="none"
       d="M10.6054 10.7073L9.19121 12.1215M13.4345 13.5356L12.0203 14.9499M2.00293 21.9965L4.49963 19.5M22.0003 2L20.0003 4M4.9488 12.1214L5.45387 11.6163C5.64151 11.4287 5.73532 11.3349 5.82314 11.2649C6.55267 10.6831 7.58756 10.6831 8.3171 11.2649C8.40491 11.3349 8.49873 11.4287 8.68636 11.6163L12.5249 15.4549C12.7126 15.6426 12.8064 15.7364 12.8764 15.8242C13.4582 16.5537 13.4582 17.5886 12.8764 18.3181C12.8064 18.406 12.7126 18.4998 12.5249 18.6874L12.0199 19.1925C10.0672 21.1451 6.90142 21.1451 4.9488 19.1925C2.99618 17.2399 2.99618 14.074 4.9488 12.1214ZM19.4825 4.16943L19.9015 4.5884C21.7384 6.42531 21.7384 9.40349 19.9016 11.2405C19.1668 11.9753 17.9755 11.9753 17.2407 11.2405L12.8304 6.8303C12.0957 6.09557 12.0957 4.90435 12.8304 4.16958C14.6672 2.33255 17.6455 2.33248 19.4825 4.16943Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4214,7 +3907,6 @@ export const JsCode = () => (
     <path
       fill="none"
       d="M7 10L9 12L7 14M16 8H12M16 12H14M16 16H12M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4228,7 +3920,6 @@ export const Kanban = () => (
     <path
       fill="none"
       d="M10 3L3 3M21 3L14 3M6.8 21H6.2C5.0799 21 4.51984 21 4.09202 20.782C3.71569 20.5903 3.40973 20.2843 3.21799 19.908C3 19.4802 3 18.9201 3 17.8L3 10.2C3 9.0799 3 8.51984 3.21799 8.09202C3.40973 7.7157 3.71569 7.40974 4.09202 7.21799C4.51984 7 5.0799 7 6.2 7H6.8C7.9201 7 8.48016 7 8.90798 7.21799C9.28431 7.40974 9.59027 7.7157 9.78201 8.09202C10 8.51984 10 9.0799 10 10.2V17.8C10 18.9201 10 19.4802 9.78201 19.908C9.59027 20.2843 9.28431 20.5903 8.90798 20.782C8.48016 21 7.9201 21 6.8 21ZM17.8 14H17.2C16.0799 14 15.5198 14 15.092 13.782C14.7157 13.5903 14.4097 13.2843 14.218 12.908C14 12.4802 14 11.9201 14 10.8V10.2C14 9.0799 14 8.51984 14.218 8.09202C14.4097 7.7157 14.7157 7.40974 15.092 7.21799C15.5198 7 16.0799 7 17.2 7H17.8C18.9201 7 19.4802 7 19.908 7.21799C20.2843 7.40974 20.5903 7.7157 20.782 8.09202C21 8.51984 21 9.0799 21 10.2V10.8C21 11.9201 21 12.4802 20.782 12.908C20.5903 13.2843 20.2843 13.5903 19.908 13.782C19.4802 14 18.9201 14 17.8 14Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4242,7 +3933,6 @@ export const KeyVertical = () => (
     <path
       fill="none"
       d="M13 17H15M12 8V8.00995M18 8C18 10.2208 16.7934 12.1599 15 13.1973V18.9296C15 19.5983 14.6658 20.2228 14.1094 20.5937L12 22L9.8906 20.5937C9.3342 20.2228 9 19.5983 9 18.9296V13.1973C7.2066 12.1599 6 10.2208 6 8C6 4.68629 8.68629 2 12 2C15.3137 2 18 4.68629 18 8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4256,7 +3946,6 @@ export const Key = () => (
     <path
       fill="none"
       d="M8 17L9.5 18.5M17 9C17 10.1046 16.1046 11 15 11C13.8954 11 13 10.1046 13 9C13 7.89543 13.8954 7 15 7C16.1046 7 17 7.89543 17 9ZM21 9C21 12.3137 18.3137 15 15 15C14.3938 15 13.8086 14.9101 13.257 14.7429L7.58579 20.4142C7.21071 20.7893 6.70201 21 6.17157 21L3 21V17.8284C3 17.298 3.21071 16.7893 3.58579 16.4142L9.25705 10.7429C9.08987 10.1913 8.99998 9.60617 8.99998 9C8.99998 5.68629 11.6863 3 15 3C18.3137 3 21 5.68629 21 9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4270,7 +3959,6 @@ export const LayoutBottom = () => (
     <path
       fill="none"
       d="M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3L11 3C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11L3 13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4278,7 +3966,6 @@ export const LayoutBottom = () => (
     <path
       fill="none"
       d="M3 15L21 15V15.1709C21 15.941 21 16.326 20.9577 16.6493C20.6634 18.8956 18.8956 20.6634 16.6493 20.9577C16.326 21 15.941 21 15.1709 21L8.82909 21C8.059 21 7.67396 21 7.35068 20.9577C5.10435 20.6634 3.33655 18.8956 3.04234 16.6493C3 16.326 3 15.941 3 15.1709L3 15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4292,7 +3979,6 @@ export const LayoutLeft = () => (
     <path
       fill="none"
       d="M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3L11 3C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11L3 13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4300,7 +3986,6 @@ export const LayoutLeft = () => (
     <path
       fill="none"
       d="M9 3L9 21H8.82909C8.059 21 7.67396 21 7.35068 20.9577C5.10435 20.6634 3.33655 18.8956 3.04234 16.6493C3 16.326 3 15.941 3 15.1709L3 8.82909C3 8.059 3 7.67396 3.04234 7.35068C3.33655 5.10435 5.10435 3.33655 7.35068 3.04234C7.67396 3 8.059 3 8.82909 3L9 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4314,7 +3999,6 @@ export const LayoutRight = () => (
     <path
       fill="none"
       d="M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3L11 3C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11L3 13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4322,7 +4006,6 @@ export const LayoutRight = () => (
     <path
       fill="none"
       d="M15 3L15 21H15.1709C15.941 21 16.326 21 16.6493 20.9577C18.8956 20.6634 20.6634 18.8956 20.9577 16.6493C21 16.326 21 15.941 21 15.1709V8.82909C21 8.059 21 7.67396 20.9577 7.35068C20.6634 5.10435 18.8956 3.33655 16.6493 3.04234C16.326 3 15.941 3 15.1709 3L15 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4336,7 +4019,6 @@ export const LayoutTop = () => (
     <path
       fill="none"
       d="M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3L11 3C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11L3 13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4344,7 +4026,6 @@ export const LayoutTop = () => (
     <path
       fill="none"
       d="M3 9L21 9V8.82909C21 8.059 21 7.67396 20.9577 7.35068C20.6634 5.10435 18.8956 3.33655 16.6493 3.04234C16.326 3 15.941 3 15.1709 3L8.82909 3C8.059 3 7.67396 3 7.35068 3.04234C5.10435 3.33655 3.33655 5.10436 3.04234 7.35068C3 7.67396 3 8.059 3 8.82909L3 9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4358,7 +4039,6 @@ export const Like = () => (
     <path
       fill="none"
       d="M2 8.74317L2 16.9144C2 18.6067 3.37899 19.9786 5.08005 19.9786C6.78112 19.9786 8.1601 18.6067 8.1601 16.9144V8.74317C8.1601 7.05086 6.78112 5.67897 5.08005 5.67897C3.37899 5.67897 2 7.05086 2 8.74317Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4366,7 +4046,6 @@ export const Like = () => (
     <path
       fill="none"
       d="M11.2695 3.85497L9.24 6.37885C8.83975 6.87658 8.63963 7.12545 8.49732 7.40257C8.37106 7.64843 8.27878 7.91015 8.22299 8.1806C8.1601 8.48544 8.1601 8.80415 8.1601 9.44156V15.905C8.1601 16.6545 8.1601 17.0292 8.2452 17.3819C8.32065 17.6945 8.4451 17.9934 8.61398 18.2676C8.80445 18.5768 9.0708 18.8418 9.6035 19.3718L9.79675 19.564C10.3295 20.094 10.5958 20.359 10.9066 20.5485C11.1822 20.7165 11.4826 20.8403 11.7969 20.9153C12.1514 21 12.5281 21 13.2814 21H15.1415C16.3289 21 16.9226 21 17.4378 20.8113C17.8931 20.6445 18.3024 20.373 18.6323 20.0191C19.0055 19.6185 19.2339 19.0733 19.6905 17.9829L20.7172 15.5316C21.6679 13.2618 22.1432 12.1269 21.962 11.214C21.8037 10.4158 21.3327 9.71307 20.6531 9.26065C19.8757 8.74317 18.6398 8.74317 16.1682 8.74317H15.3469V5.27787C15.3469 4.29746 14.7163 3.42704 13.7814 3.11701C12.8714 2.81524 11.8688 3.1098 11.2695 3.85497Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4380,7 +4059,6 @@ export const LinkBroken = () => (
     <path
       fill="none"
       d="M22 17H20M17 22V20M4 7H2M7 2V4M19.5622 12.9019L20.3122 11.6029C20.5443 11.2008 20.6604 10.9997 20.745 10.8224C21.8038 8.60255 21.091 5.9423 19.0641 4.54924C18.9022 4.43797 18.7011 4.3219 18.299 4.08975C17.8969 3.8576 17.6959 3.74152 17.5186 3.65695C15.2987 2.59812 12.6384 3.31093 11.2454 5.33784C11.1341 5.49974 11.018 5.70079 10.7859 6.10289L9.1859 8.87417C7.99849 10.9308 8.70315 13.5607 10.7598 14.7481M4.43782 11.0981L3.68782 12.3971C3.45567 12.7992 3.3396 13.0003 3.25502 13.1776C2.1962 15.3974 2.90901 18.0577 4.93592 19.4508C5.09782 19.562 5.29887 19.6781 5.70096 19.9103C6.10306 20.1424 6.30411 20.2585 6.48142 20.3431C8.7013 21.4019 11.3616 20.6891 12.7546 18.6622C12.8659 18.5003 12.982 18.2992 13.2141 17.8971L14.8141 15.1258C16.0015 13.0692 15.2969 10.4393 13.2402 9.25192"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4394,7 +4072,6 @@ export const LinkExternal = () => (
     <path
       fill="none"
       d="M11.5 3.99997H11C8.19974 3.99997 6.79961 3.99997 5.73005 4.54494C4.78924 5.02431 4.02433 5.78921 3.54497 6.73002C3 7.79958 3 9.19971 3 12V13C3 15.8002 3 17.2004 3.54497 18.2699C4.02433 19.2107 4.78924 19.9756 5.73005 20.455C6.79961 21 8.19974 21 11 21H12C14.8003 21 16.2004 21 17.27 20.455C18.2108 19.9756 18.9757 19.2107 19.455 18.2699C20 17.2004 20 15.8002 20 13V12.5M17 3.00006L21.0001 3.00027M21.0001 3.00027L21.0007 7.00041M21.0001 3.00027L12.0007 11.9999"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4408,7 +4085,6 @@ export const LinkFlatBroken = () => (
     <path
       fill="none"
       d="M16.9497 12.7071L19.0711 10.5858C20.6332 9.02369 20.6332 6.49103 19.0711 4.92893C17.509 3.36684 14.9763 3.36684 13.4142 4.92893L11.2929 7.05025M12.7071 16.9497L10.5858 19.0711C9.02369 20.6332 6.49103 20.6332 4.92893 19.0711C3.36683 17.509 3.36683 14.9763 4.92893 13.4142L7.05025 11.2929M9.87868 14.1213L14.1213 9.87868M20.4141 20.4143L18.9998 19.0001M22 15H20M15 22V20M3.58594 3.58569L5.00015 4.99991M2 9H4M9 2V4"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4422,7 +4098,6 @@ export const LinkFlatHorizontal = () => (
     <path
       fill="none"
       d="M15 16H18C20.2091 16 22 14.2091 22 12C22 9.79086 20.2091 8 18 8L15 8M9 16H6C3.79086 16 2 14.2091 2 12C2 9.79086 3.79086 8 6 8L9 8M9 12L15 12"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4436,7 +4111,6 @@ export const LinkFlatOff = () => (
     <path
       fill="none"
       d="M16.9497 12.7071L19.0711 10.5858C20.6332 9.02369 20.6332 6.49103 19.0711 4.92893C17.509 3.36684 14.9763 3.36684 13.4142 4.92893L11.2929 7.05025M11.9999 17.6569L10.5858 19.0711C9.02369 20.6332 6.49103 20.6332 4.92893 19.0711C3.36683 17.509 3.36683 14.9763 4.92893 13.4142L6.34307 12.0001M12.0001 12.0001L14.1213 9.87868M3 3L21 21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4450,7 +4124,6 @@ export const LinkFlatSkew = () => (
     <path
       fill="none"
       d="M16.9502 12.7071L19.0715 10.5858C20.6336 9.02365 20.6336 6.49099 19.0715 4.9289C17.5094 3.3668 14.9768 3.3668 13.4147 4.9289L11.2933 7.05022M12.7076 16.9497L10.5862 19.071C9.02414 20.6331 6.49148 20.6331 4.92939 19.071C3.36729 17.5089 3.36729 14.9763 4.92939 13.4142L7.05071 11.2929M9.87913 14.1213L14.1218 9.87864"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4464,7 +4137,6 @@ export const LinkFlatVertical = () => (
     <path
       fill="none"
       d="M16 9V6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6L8 9M16 15V18C16 20.2091 14.2091 22 12 22C9.79086 22 8 20.2091 8 18L8 15M12 15L12 9"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4478,7 +4150,6 @@ export const LinkHorizontal = () => (
     <path
       fill="none"
       d="M15 19H16.5C16.9643 19 17.1965 19 17.3923 18.9846C19.8442 18.7916 21.7916 16.8442 21.9846 14.3923C22 14.1965 22 13.9643 22 13.5C22 13.0357 22 12.8035 21.9846 12.6077C21.7916 10.1558 19.8442 8.20838 17.3923 8.01541C17.1965 8 16.9643 8 16.5 8H13.3C10.9252 8 9 9.92517 9 12.3M9 5L7.5 5C7.0357 5 6.80355 5 6.6077 5.01541C4.15582 5.20838 2.20838 7.15582 2.01541 9.6077C2 9.80355 2 10.0357 2 10.5C2 10.9643 2 11.1965 2.01541 11.3923C2.20838 13.8442 4.15582 15.7916 6.6077 15.9846C6.80355 16 7.0357 16 7.5 16H10.7C13.0748 16 15 14.0748 15 11.7"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4492,7 +4163,6 @@ export const LinkOff = () => (
     <path
       fill="none"
       d="M3.00046 3L21.0005 21M19.563 12.902L20.313 11.603C20.5451 11.2009 20.6612 10.9998 20.7458 10.8225C21.8046 8.60265 21.0918 5.9424 19.0649 4.54934C18.903 4.43807 18.7019 4.32199 18.2998 4.08984C17.8977 3.85769 17.6967 3.74162 17.5194 3.65704C15.2995 2.59822 12.6392 3.31103 11.2462 5.33794C11.1349 5.49984 11.0188 5.70089 10.7867 6.10298L9.11409 9M4.43796 11.098L3.68796 12.397C3.45581 12.7991 3.33974 13.0002 3.25516 13.1775C2.19634 15.3973 2.90915 18.0576 4.93606 19.4507C5.09796 19.5619 5.29901 19.678 5.7011 19.9102C6.1032 20.1423 6.30425 20.2584 6.48156 20.343C8.70143 21.4018 11.3617 20.689 12.7547 18.6621C12.866 18.5002 12.9821 18.2991 13.2142 17.897L14.8868 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4506,7 +4176,6 @@ export const LinkSkew = () => (
     <path
       fill="none"
       d="M19.5623 12.9019L20.3123 11.6028C20.5445 11.2007 20.6605 10.9997 20.7451 10.8224C21.8039 8.6025 21.0911 5.94225 19.0642 4.54919C18.9023 4.43792 18.7013 4.32185 18.2992 4.0897C17.8971 3.85754 17.696 3.74147 17.5187 3.6569C15.2988 2.59807 12.6386 3.31088 11.2455 5.33779C11.1343 5.49969 11.0182 5.70074 10.786 6.10284L9.18604 8.87412C7.99863 10.9308 8.70329 13.5606 10.7599 14.748M4.43796 11.098L3.68796 12.3971C3.45581 12.7992 3.33974 13.0002 3.25516 13.1775C2.19634 15.3974 2.90915 18.0577 4.93606 19.4507C5.09796 19.562 5.29901 19.6781 5.7011 19.9102C6.1032 20.1424 6.30425 20.2584 6.48156 20.343C8.70143 21.4018 11.3617 20.689 12.7547 18.6621C12.866 18.5002 12.9821 18.2992 13.2142 17.8971L14.8142 15.1258C16.0017 13.0691 15.297 10.4393 13.2403 9.25187"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4520,7 +4189,6 @@ export const LinkVertical = () => (
     <path
       fill="none"
       d="M19 9V7.5C19 7.0357 19 6.80355 18.9846 6.6077C18.7916 4.15582 16.8442 2.20838 14.3923 2.01541C14.1965 2 13.9643 2 13.5 2C13.0357 2 12.8035 2 12.6077 2.01541C10.1558 2.20838 8.20838 4.15582 8.01541 6.60771C8 6.80355 8 7.0357 8 7.5L8 10.7C8 13.0748 9.92518 15 12.3 15M5 15L5 16.5C5 16.9643 5 17.1965 5.01541 17.3923C5.20838 19.8442 7.15582 21.7916 9.60771 21.9846C9.80355 22 10.0357 22 10.5 22C10.9643 22 11.1965 22 11.3923 21.9846C13.8442 21.7916 15.7916 19.8442 15.9846 17.3923C16 17.1965 16 16.9643 16 16.5V13.3C16 10.9252 14.0748 9 11.7 9"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4534,7 +4202,6 @@ export const ListCheck = () => (
     <path
       fill="none"
       d="M21 12L11 12M21 19L11 19M21 5.00003L11 5.00003M3 5.50003L4.41421 6.91424L7.24264 4.08582M3 11.8284L4.41421 13.2426L7.24264 10.4142M3 18.8284L4.41421 20.2426L7.24264 17.4142"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4548,7 +4215,6 @@ export const List = () => (
     <path
       fill="none"
       d="M21 12L7 12M21 17L7 17M21 7L7 7M3 11.99V11.9999M3 7V7.00995M3 17V17.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4562,7 +4228,6 @@ export const LlamaMeta = () => (
     <path
       fill="none"
       d="M5.0001 18C2.49996 18 1.96235 14.5694 2.0001 11.9231C2.04767 8.5884 4.00009 5 7.0001 5C9.13468 5 12.0907 7.92494 14.0002 11C16.1164 14.4078 17.1604 18 19.0001 18C21.5001 18 22.0379 14.5694 22.0001 11.9231C21.9525 8.5884 20.0002 5.00006 17.0001 5C14.8657 5 11.9562 7.92494 10.1116 11C8.06736 14.4078 7.10283 18 5.0001 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4576,7 +4241,6 @@ export const LoadingDots = () => (
     <path
       fill="none"
       d="M8 12C8 13.6569 6.65685 15 5 15C3.34315 15 2 13.6569 2 12C2 10.3431 3.34315 9 5 9C6.65685 9 8 10.3431 8 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4584,7 +4248,6 @@ export const LoadingDots = () => (
     <path
       fill="none"
       d="M16 12C16 13.1046 15.1046 14 14 14C12.8954 14 12 13.1046 12 12C12 10.8954 12.8954 10 14 10C15.1046 10 16 10.8954 16 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4592,7 +4255,6 @@ export const LoadingDots = () => (
     <path
       fill="none"
       d="M22 12C22 12.5523 21.5523 13 21 13C20.4477 13 20 12.5523 20 12C20 11.4477 20.4477 11 21 11C21.5523 11 22 11.4477 22 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4606,7 +4268,6 @@ export const Loading = () => (
     <path
       fill="none"
       d="M12 3V7M12 19V21M21 12H18M4 12H3M18.364 18.364L16.4997 16.4997M5.6363 18.3639L6.50006 17.5001M16.0002 8.00049L18.3644 5.63605M6 6V6.00995"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4620,7 +4281,6 @@ export const LockCircleDots = () => (
     <path
       fill="none"
       d="M12 8C8.13401 8 5 11.134 5 15C5 18.866 8.13401 22 12 22C15.866 22 19 18.866 19 15C19 11.134 15.866 8 12 8ZM12 8C10.5128 8 9.13383 8.46381 8 9.25469V6C8 3.79086 9.79086 2 12 2C14.2091 2 16 3.79086 16 6V9.25469C14.8662 8.46381 13.4872 8 12 8ZM10 15V15.0099M14 15V15.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4634,7 +4294,6 @@ export const LockCircleKey = () => (
     <path
       fill="none"
       d="M12 8C8.13401 8 5 11.134 5 15C5 18.866 8.13401 22 12 22C15.866 22 19 18.866 19 15C19 11.134 15.866 8 12 8ZM12 8C10.5128 8 9.13383 8.46381 8 9.25469V6C8 3.79086 9.79086 2 12 2C14.2091 2 16 3.79086 16 6V9.25469C14.8662 8.46381 13.4872 8 12 8ZM12 15V17M12 15C12.8284 15 13.5 14.3284 13.5 13.5C13.5 12.6716 12.8284 12 12 12C11.1716 12 10.5 12.6716 10.5 13.5C10.5 14.3284 11.1716 15 12 15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4648,7 +4307,6 @@ export const LockCircleOff = () => (
     <path
       fill="none"
       d="M3 3L21 21M5.90245 11.5595C5.32791 12.5755 5 13.7495 5 15C5 18.866 8.13401 22 12 22C13.2505 22 14.4244 21.6721 15.4405 21.0976M12 8C15.866 8 19 11.134 19 15C19 16.1603 18.7177 17.2547 18.218 18.2182L8.7818 8.782M12 8C10.8397 8 9.7453 8.28231 8.7818 8.782M12 8C13.4872 8 14.8662 8.46381 16 9.25469V6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6V8.00016L8.7818 8.782"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4662,7 +4320,6 @@ export const LockCircle = () => (
     <path
       fill="none"
       d="M12 8C8.13401 8 5 11.134 5 15C5 18.866 8.13401 22 12 22C15.866 22 19 18.866 19 15C19 11.134 15.866 8 12 8ZM12 8C10.5128 8 9.13383 8.46381 8 9.25469V6C8 3.79086 9.79086 2 12 2C14.2091 2 16 3.79086 16 6V9.25469C14.8662 8.46381 13.4872 8 12 8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4676,7 +4333,6 @@ export const LockNarrowDots = () => (
     <path
       fill="none"
       d="M8 16V16.0099M12 16V16.0099M16 16V16.0099M15.2 22H8.8C7.11984 22 6.27976 22 5.63803 21.673C5.07354 21.3854 4.6146 20.9265 4.32698 20.362C4 19.7202 4 18.8802 4 17.2L4 14.8C4 13.1198 4 12.2798 4.32698 11.638C4.6146 11.0735 5.07354 10.6146 5.63803 10.327C6.27976 10 7.11984 10 8.8 10H15.2C16.8802 10 17.7202 10 18.362 10.327C18.9265 10.6146 19.3854 11.0735 19.673 11.638C20 12.2798 20 13.1198 20 14.8V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22ZM16 6V10H8V6C8 3.79086 9.79086 2 12 2C14.2091 2 16 3.79086 16 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4690,7 +4346,6 @@ export const LockNarrowKey = () => (
     <path
       fill="none"
       d="M8.8 22H15.2C16.8802 22 17.7202 22 18.362 21.673C18.9265 21.3854 19.3854 20.9265 19.673 20.362C20 19.7202 20 18.8802 20 17.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C17.7202 10 16.8802 10 15.2 10H8.8C7.11984 10 6.27976 10 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8L4 17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4698,7 +4353,6 @@ export const LockNarrowKey = () => (
     <path
       fill="none"
       d="M16 10V6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6V10H16Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4706,7 +4360,6 @@ export const LockNarrowKey = () => (
     <path
       fill="none"
       d="M14 16C14 17.1046 13.1046 18 12 18C10.8954 18 10 17.1046 10 16C10 14.8954 10.8954 14 12 14C13.1046 14 14 14.8954 14 16Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4720,7 +4373,6 @@ export const LockNarrowOff = () => (
     <path
       fill="none"
       d="M3 3L21 21M5.0571 10.7141C4.75681 10.9694 4.50797 11.2828 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22H15.2C15.6307 22 16.0063 22 16.3374 21.9945M9.9998 10H15.2C16.8802 10 17.7202 10 18.362 10.327C18.9265 10.6146 19.3854 11.0735 19.673 11.638C20 12.2798 20 13.1198 20 14.8V17.2C20 18.4769 20 19.2686 19.8565 19.8567L9.9998 10ZM9.9998 10H16V6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6V8.00016L9.9998 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4734,7 +4386,6 @@ export const LockNarrow = () => (
     <path
       fill="none"
       d="M8.8 22H15.2C16.8802 22 17.7202 22 18.362 21.673C18.9265 21.3854 19.3854 20.9265 19.673 20.362C20 19.7202 20 18.8802 20 17.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C17.7202 10 16.8802 10 15.2 10H8.8C7.11984 10 6.27976 10 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8L4 17.2C4 18.8802 4 19.7202 4.32698 20.362C4.6146 20.9265 5.07354 21.3854 5.63803 21.673C6.27976 22 7.11984 22 8.8 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4742,7 +4393,6 @@ export const LockNarrow = () => (
     <path
       fill="none"
       d="M16 10V6C16 3.79086 14.2091 2 12 2C9.79086 2 8 3.79086 8 6V10H16Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4756,7 +4406,6 @@ export const LockSquareDots = () => (
     <path
       fill="none"
       d="M8 15V15.0099M12 15V15.0099M16 15V15.0099M16.2 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2L3 13.8C3 12.1198 3 11.2798 3.32698 10.638C3.6146 10.0735 4.07354 9.6146 4.63803 9.32698C5.27976 9 6.11984 9 7.8 9H16.2C17.8802 9 18.7202 9 19.362 9.32698C19.9265 9.6146 20.3854 10.0735 20.673 10.638C21 11.2798 21 12.1198 21 13.8V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21ZM11.8 3H12.2C13.8802 3 14.7202 3 15.362 3.32698C15.9265 3.6146 16.3854 4.07354 16.673 4.63803C17 5.27976 17 6.11984 17 7.8V9H7V7.8C7 6.11984 7 5.27976 7.32698 4.63803C7.6146 4.07354 8.07354 3.6146 8.63803 3.32698C9.27976 3 10.1198 3 11.8 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4770,7 +4419,6 @@ export const LockSquareKey = () => (
     <path
       fill="none"
       d="M12 16V18M12 16C12.8284 16 13.5 15.3284 13.5 14.5C13.5 13.6716 12.8284 13 12 13C11.1716 13 10.5 13.6716 10.5 14.5C10.5 15.3284 11.1716 16 12 16ZM16.2 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2L3 13.8C3 12.1198 3 11.2798 3.32698 10.638C3.6146 10.0735 4.07354 9.6146 4.63803 9.32698C5.27976 9 6.11984 9 7.8 9H16.2C17.8802 9 18.7202 9 19.362 9.32698C19.9265 9.6146 20.3854 10.0735 20.673 10.638C21 11.2798 21 12.1198 21 13.8V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21ZM11.8 3H12.2C13.8802 3 14.7202 3 15.362 3.32698C15.9265 3.6146 16.3854 4.07354 16.673 4.63803C17 5.27976 17 6.11984 17 7.8V9H7V7.8C7 6.11984 7 5.27976 7.32698 4.63803C7.6146 4.07354 8.07354 3.6146 8.63803 3.32698C9.27976 3 10.1198 3 11.8 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4784,7 +4432,6 @@ export const LockSquareOff = () => (
     <path
       fill="none"
       d="M3 3L21 21M4.05712 9.71414C3.75683 9.96938 3.50799 10.2828 3.327 10.638C3.00002 11.2798 3.00002 12.1198 3.00002 13.8V16.2C3.00002 17.8802 3.00002 18.7202 3.327 19.362C3.61462 19.9265 4.07356 20.3854 4.63805 20.673C5.27978 21 6.11986 21 7.80002 21H15.3429M8.99982 9H16.2C17.8802 9 18.7203 9 19.362 9.32698C19.9265 9.6146 20.3854 10.0735 20.673 10.638C21 11.2798 21 12.1198 21 13.8V16.2C21 17.8802 21 18.7202 20.673 19.362C20.5292 19.6443 20.3425 19.9002 20.1212 20.1214L8.99982 9ZM8.99982 9H17V7.8C17 6.11984 17 5.27976 16.673 4.63803C16.3854 4.07354 15.9265 3.6146 15.362 3.32698C14.7202 3 13.8802 3 12.2 3H11.8C10.1198 3 9.27976 3 8.63803 3.32698C8.07354 3.6146 7.6146 4.07354 7.32698 4.63803C7.05643 5.16901 7.00974 5.83579 7.00168 7.00187L8.99982 9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4798,7 +4445,6 @@ export const LockSquare = () => (
     <path
       fill="none"
       d="M7.8 21H16.2C17.8802 21 18.7202 21 19.362 20.673C19.9265 20.3854 20.3854 19.9265 20.673 19.362C21 18.7202 21 17.8802 21 16.2V13.8C21 12.1198 21 11.2798 20.673 10.638C20.3854 10.0735 19.9265 9.6146 19.362 9.32698C18.7202 9 17.8802 9 16.2 9H7.8C6.11984 9 5.27976 9 4.63803 9.32698C4.07354 9.6146 3.6146 10.0735 3.32698 10.638C3 11.2798 3 12.1198 3 13.8L3 16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4806,7 +4452,6 @@ export const LockSquare = () => (
     <path
       fill="none"
       d="M12.2 3H11.8C10.1198 3 9.27976 3 8.63803 3.32698C8.07354 3.6146 7.6146 4.07354 7.32698 4.63803C7 5.27976 7 6.11984 7 7.8V9H17V7.8C17 6.11984 17 5.27976 16.673 4.63803C16.3854 4.07354 15.9265 3.6146 15.362 3.32698C14.7202 3 13.8802 3 12.2 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4820,7 +4465,6 @@ export const LoginCircle = () => (
     <path
       fill="none"
       d="M20.0659 8.00285C18.5937 5.03787 15.5349 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C15.5326 21 18.5898 18.9647 20.0631 16.0028M12.0001 7.99991L8 12M8 12L12 16M8 12H21.0001"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4834,7 +4478,6 @@ export const LoginSquare = () => (
     <path
       fill="none"
       d="M20.9522 8.00285C20.8924 7.02082 20.7579 6.32439 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C20.7573 17.6768 20.8919 16.9819 20.9519 16.0028M12.0001 7.99991L8 12M8 12L12 16M8 12H21.0001"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4848,7 +4491,6 @@ export const LoginUserSquare = () => (
     <path
       fill="none"
       d="M12 14C13.6569 14 15 12.6569 15 11C15 9.34315 13.6569 8 12 8C10.3431 8 9 9.34315 9 11C9 12.6569 10.3431 14 12 14ZM12 14C11.071 14 10.6065 14 10.2178 14.0616C8.07837 14.4004 6.40042 16.0784 6.06156 18.2178C6 18.6065 6 19.071 6 20C6 20.2164 6 20.4076 6.00078 20.5785C7.03896 21 8.42966 21 11 21M12 14C12.4508 14 12.7923 14 13.0688 14.007M12.3639 21H11M11 21C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13V11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3H13C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V11.9254M11 21H12.7616M18 15L15 18M15 18L18 21M15 18H21.0001"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4862,7 +4504,6 @@ export const LoginUser = () => (
     <path
       fill="none"
       d="M3.05493 21C3.01863 20.6717 3 20.338 3 20C3 15.0294 7.02944 11 12 11M12 11C13.3698 11 14.6681 11.306 15.8304 11.8534M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11ZM18 15L15 18M15 18L18 21M15 18H21.0001"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4876,7 +4517,6 @@ export const Login = () => (
     <path
       fill="none"
       d="M10.5874 4.2262C9.78165 3.46599 8.69524 3 7.5 3C5.01472 3 3 5.01472 3 7.5V16.5C3 18.9853 5.01472 21 7.5 21C8.71862 21 9.82411 20.5156 10.6344 19.7288M12.0001 7.99991L8 12M8 12L12 16M8 12L21.0001 12"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4890,7 +4530,6 @@ export const LogoutCircle = () => (
     <path
       fill="none"
       d="M16.4474 4.17384C15.1356 3.42676 13.6176 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C13.6654 21 15.2251 20.5477 16.563 19.7592M17 7.99991L21.0001 12M21.0001 12L17.0001 16M21.0001 12H8"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4904,7 +4543,6 @@ export const LogoutSquare = () => (
     <path
       fill="none"
       d="M20.715 6.39884C20.6462 6.1582 20.5609 5.93788 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C20.5759 18.0328 20.6699 17.7794 20.7431 17.4981M17 7.99991L21.0001 12M21.0001 12L17.0001 16M21.0001 12H8"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4918,7 +4556,6 @@ export const LogoutUserSquare = () => (
     <path
       fill="none"
       d="M12 14C13.6569 14 15 12.6569 15 11C15 9.34315 13.6569 8 12 8C10.3431 8 9 9.34315 9 11C9 12.6569 10.3431 14 12 14ZM12 14C11.071 14 10.6065 14 10.2178 14.0616C8.07837 14.4004 6.40042 16.0784 6.06156 18.2178C6 18.6065 6 19.071 6 20C6 20.2164 6 20.4076 6.00078 20.5785M12 14C12.4508 14 12.7923 14 13.0688 14.007M12.3639 21H11C8.42966 21 7.03896 21 6.00078 20.5785M6.00078 20.5785C5.90791 20.5408 5.81787 20.4998 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13V11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3H13C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V12.6833M18.0001 15L21.0001 18M21.0001 18L18.0001 21M21.0001 18H15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4932,7 +4569,6 @@ export const LogoutUser = () => (
     <path
       fill="none"
       d="M3.05493 21C3.01863 20.6717 3 20.338 3 20C3 15.0294 7.02944 11 12 11M12 11C13.1663 11 14.2807 11.2218 15.3034 11.6256M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11ZM18.0001 15L21.0001 18M21.0001 18L18.0001 21M21.0001 18H15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4946,7 +4582,6 @@ export const Logout = () => (
     <path
       fill="none"
       d="M12 8.00285V7.5C12 5.01472 9.98528 3 7.5 3C5.01472 3 3 5.01472 3 7.5V16.5C3 18.9853 5.01472 21 7.5 21C9.98528 21 12 18.9853 12 16.5V16.0028M17 7.99991L21.0001 12M21.0001 12L17.0001 16M21.0001 12L8 12"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4960,7 +4595,6 @@ export const Loop = () => (
     <path
       fill="none"
       d="M6 9L3 6M3 6L6 3M3 6L15 6C17.7614 6 20 8.23858 20 11M18 15L21 18M21 18L18 21M21 18H9C6.23857 18 4 15.7614 4 13"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4974,7 +4608,6 @@ export const Luggage = () => (
     <path
       fill="none"
       d="M8 20V22M10 10V16M16 20V22M14 10V16M14.2 20H9.8C8.11984 20 7.27976 20 6.63803 19.673C6.07354 19.3854 5.6146 18.9265 5.32698 18.362C5 17.7202 5 16.8802 5 15.2L5 10.8C5 9.11984 5 8.27976 5.32698 7.63803C5.6146 7.07354 6.07354 6.6146 6.63803 6.32698C7.27976 6 8.11984 6 9.8 6H14.2C15.8802 6 16.7202 6 17.362 6.32698C17.9265 6.6146 18.3854 7.07354 18.673 7.63803C19 8.27976 19 9.11984 19 10.8V15.2C19 16.8802 19 17.7202 18.673 18.362C18.3854 18.9265 17.9265 19.3854 17.362 19.673C16.7202 20 15.8802 20 14.2 20ZM14 6H10V4C10 2.89543 10.8954 2 12 2C13.1046 2 14 2.89543 14 4V6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -4988,7 +4621,6 @@ export const MagicFat = () => (
     <path
       fill="none"
       d="M20 2V6M19 15V19M18 4L22 4M17 17H21M12.4853 7.85786L2.58579 17.7574C1.80474 18.5384 1.80474 19.8047 2.58579 20.5858C3.36683 21.3668 4.63316 21.3668 5.41421 20.5858L15.3137 10.6863M12.4853 7.85786C13.2663 7.07682 14.5327 7.07682 15.3137 7.85786C16.0948 8.63891 16.0948 9.90524 15.3137 10.6863M12.4853 7.85786L10.5 9.84281L13.3284 12.6712L15.3137 10.6863M3 4.82843L4.97994 3.97991L5.82843 2L6.67698 3.97991L8.65685 4.82843L6.67698 5.67698L5.82843 7.65685L4.97994 5.67698L3 4.82843Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5002,7 +4634,6 @@ export const MagicStarLeft = () => (
     <path
       fill="none"
       d="M3 21L6 18M12.9538 4.35099C13.2704 4.58732 13.4287 4.70549 13.5958 4.78904C13.982 4.98211 14.4183 5.05134 14.8453 4.9873C15.03 4.95958 15.2169 4.8963 15.5906 4.76973C16.853 4.34221 17.4841 4.12846 17.918 4.16442C18.9399 4.24912 19.7509 5.06007 19.8356 6.08196C19.8715 6.51585 19.6578 7.14702 19.2303 8.40936C19.1037 8.78309 19.0404 8.96996 19.0127 9.15474C18.9487 9.5817 19.0179 10.018 19.211 10.4042C19.2945 10.5713 19.4127 10.7296 19.649 11.0462C20.4444 12.1116 20.8421 12.6444 20.9426 13.0659C21.1813 14.0675 20.6578 15.0942 19.7071 15.4895C19.307 15.6558 18.6434 15.647 17.3163 15.6293C16.9226 15.624 16.7258 15.6214 16.5418 15.6518C16.1147 15.7225 15.7199 15.9235 15.4116 16.2274C15.2788 16.3583 15.1651 16.5191 14.9378 16.8406C14.1711 17.925 13.7878 18.4672 13.4176 18.693C12.5397 19.2285 11.4031 19.0487 10.7333 18.2686C10.4508 17.9395 10.2529 17.3038 9.85722 16.0325C9.73942 15.654 9.68052 15.4647 9.59404 15.2985C9.39519 14.9164 9.08357 14.6048 8.70148 14.406C8.5353 14.3195 8.34605 14.2606 7.96753 14.1428C6.69618 13.7471 6.06051 13.5492 5.73144 13.2667C4.95125 12.5969 4.77152 11.4603 5.30697 10.5824C5.53281 10.2122 6.075 9.82885 7.15939 9.06222C7.48095 8.83488 7.64173 8.72121 7.77263 8.58839C8.07647 8.28007 8.27751 7.88531 8.34817 7.45823C8.37862 7.27425 8.37599 7.0774 8.37074 6.6837C8.35304 5.35657 8.34418 4.69301 8.51051 4.29291C8.90576 3.34215 9.93255 2.81873 10.9341 3.05743C11.3556 3.15787 11.8884 3.55558 12.9538 4.35099Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5016,7 +4647,6 @@ export const MagicStarRight = () => (
     <path
       fill="none"
       d="M21 21L18 18M11.0462 4.35099C10.7296 4.58732 10.5713 4.70549 10.4042 4.78904C10.018 4.98211 9.5817 5.05134 9.15474 4.9873C8.96996 4.95958 8.78309 4.8963 8.40936 4.76973C7.14702 4.34221 6.51585 4.12846 6.08196 4.16442C5.06007 4.24912 4.24912 5.06007 4.16442 6.08196C4.12846 6.51585 4.34221 7.14702 4.76973 8.40936C4.8963 8.78309 4.95958 8.96996 4.9873 9.15474C5.05134 9.5817 4.98211 10.018 4.78904 10.4042C4.70549 10.5713 4.58732 10.7296 4.35099 11.0462C3.55558 12.1116 3.15788 12.6444 3.05743 13.0659C2.81873 14.0675 3.34215 15.0942 4.29291 15.4895C4.69301 15.6558 5.35657 15.647 6.6837 15.6293C7.0774 15.624 7.27425 15.6214 7.45823 15.6518C7.88531 15.7225 8.28007 15.9235 8.58839 16.2274C8.72121 16.3583 8.83488 16.5191 9.06222 16.8406C9.82886 17.925 10.2122 18.4672 10.5824 18.693C11.4603 19.2285 12.5969 19.0487 13.2667 18.2686C13.5492 17.9395 13.7471 17.3038 14.1428 16.0325C14.2606 15.654 14.3195 15.4647 14.406 15.2985C14.6048 14.9164 14.9164 14.6048 15.2985 14.406C15.4647 14.3195 15.654 14.2606 16.0325 14.1428C17.3038 13.7471 17.9395 13.5492 18.2686 13.2667C19.0487 12.5969 19.2285 11.4603 18.693 10.5824C18.4672 10.2122 17.925 9.82885 16.8406 9.06222C16.5191 8.83488 16.3583 8.72121 16.2274 8.58839C15.9235 8.28007 15.7225 7.88531 15.6518 7.45823C15.6214 7.27425 15.624 7.0774 15.6293 6.6837C15.647 5.35657 15.6558 4.69301 15.4895 4.29291C15.0942 3.34215 14.0675 2.81873 13.0659 3.05743C12.6444 3.15787 12.1116 3.55558 11.0462 4.35099Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5030,7 +4660,6 @@ export const Magic = () => (
     <path
       fill="none"
       d="M14 2V4M8.34277 4.34302L9.75677 5.75702M19.6572 15.6569L18.2432 14.2429M19.6572 4.34302L18.2432 5.75702M22 10H20M12 12L2 22M16 10C16 11.1046 15.1046 12 14 12C12.8954 12 12 11.1046 12 10C12 8.89543 12.8954 8 14 8C15.1046 8 16 8.89543 16 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5044,7 +4673,6 @@ export const Mask = () => (
     <path
       fill="none"
       d="M3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3M3 12C3 7.02944 7.02944 3 12 3M3 12C3 12.321 3.01681 12.6381 3.04959 12.9504C3.36191 12.9832 3.67899 13 4 13C8.97056 13 13 8.97056 13 4C13 3.67899 12.9832 3.36191 12.9504 3.04959C12.6381 3.01681 12.321 3 12 3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5058,7 +4686,6 @@ export const MaximizeBroken = () => (
     <path
       fill="none"
       d="M3 10V2.92896H10.0711M3 3.00002L10 10M14 14L21 21M21 14V21.0711H13.9289"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5072,7 +4699,6 @@ export const Maximize = () => (
     <path
       fill="none"
       d="M3 10V2.92896H10.0711M3 3.00002L21 21M21 14V21.0711H13.9289"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5086,7 +4712,6 @@ export const MedalAward = () => (
     <path
       fill="none"
       d="M12 16C15.866 16 19 12.866 19 9C19 5.13401 15.866 2 12 2C8.13401 2 5 5.13401 5 9C5 12.866 8.13401 16 12 16ZM12 16C13.4872 16 14.8662 15.5362 16 14.7453V22L12 21L8 22V14.7453C9.13383 15.5362 10.5128 16 12 16ZM10.5348 7.59661L9.52814 7.74398C9.02367 7.81784 8.82153 8.43708 9.18527 8.79435L9.91962 9.51565C10.0637 9.65712 10.1293 9.86014 10.0955 10.0592L9.92301 11.0727C9.83715 11.5772 10.3677 11.9608 10.8199 11.7212L11.7112 11.2489C11.8918 11.1532 12.1082 11.1532 12.2888 11.2489L13.1801 11.7212C13.6323 11.9608 14.1629 11.5772 14.077 11.0727L13.9045 10.0592C13.8707 9.86014 13.9363 9.65712 14.0804 9.51565L14.8147 8.79435C15.1785 8.43708 14.9763 7.81784 14.4719 7.74398L13.4652 7.59661C13.2639 7.56714 13.0901 7.4403 13.0006 7.25758L12.554 6.34553C12.3283 5.88482 11.6717 5.88482 11.446 6.34553L10.9994 7.25758C10.9099 7.4403 10.7361 7.56714 10.5348 7.59661Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5100,7 +4725,6 @@ export const MedalStar = () => (
     <path
       fill="none"
       d="M12 6V10M9.06955 13.1932L7.05628 13.488C6.04733 13.6357 5.64305 14.8742 6.37053 15.5887L7.83924 17.0313C8.12732 17.3142 8.25868 17.7203 8.19095 18.1184L7.84601 20.1454C7.6743 21.1545 8.73532 21.9217 9.63978 21.4424L11.4224 20.4978C11.7837 20.3064 12.2163 20.3064 12.5776 20.4978L14.3602 21.4424C15.2647 21.9217 16.3257 21.1545 16.154 20.1454L15.8091 18.1184C15.7413 17.7203 15.8727 17.3142 16.1608 17.0313L17.6295 15.5887C18.3569 14.8742 17.9527 13.6357 16.9437 13.488L14.9304 13.1932C14.5278 13.1343 14.1802 12.8806 14.0012 12.5152L13.1079 10.6911C12.6567 9.76965 11.3433 9.76965 10.8921 10.6911L9.99877 12.5152C9.8198 12.8806 9.47216 13.1343 9.06955 13.1932ZM8.19258 2L15.8074 2C16.4661 2 17 2.53394 17 3.19258C17 3.68023 16.7031 4.11876 16.2503 4.29987L13.1885 5.52462C12.7494 5.70024 12.5299 5.78805 12.3032 5.82281C12.1023 5.85364 11.8977 5.85364 11.6968 5.82281C11.4701 5.78805 11.2506 5.70024 10.8115 5.52462L7.74967 4.29987C7.2969 4.11876 7 3.68023 7 3.19258C7 2.53394 7.53394 2 8.19258 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5114,7 +4738,6 @@ export const Medal = () => (
     <path
       fill="none"
       d="M20 14C20 18.4183 16.4183 22 12 22C7.58172 22 4 18.4183 4 14C4 9.58172 7.58172 6 12 6C16.4183 6 20 9.58172 20 14Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5122,7 +4745,6 @@ export const Medal = () => (
     <path
       fill="none"
       d="M11.446 11.3455C11.6717 10.8848 12.3283 10.8848 12.554 11.3455L13.0006 12.2576C13.0901 12.4403 13.2639 12.5671 13.4652 12.5966L14.4719 12.744C14.9763 12.8178 15.1785 13.4371 14.8147 13.7944L14.0804 14.5156C13.9363 14.6571 13.8707 14.8601 13.9045 15.0592L14.077 16.0727C14.1629 16.5772 13.6323 16.9608 13.1801 16.7212L12.2888 16.2489C12.1082 16.1532 11.8918 16.1532 11.7112 16.2489L10.8199 16.7212C10.3677 16.9608 9.83715 16.5772 9.92301 16.0727L10.0955 15.0592C10.1293 14.8601 10.0637 14.6571 9.91962 14.5156L9.18527 13.7944C8.82153 13.4371 9.02367 12.8178 9.52814 12.744L10.5348 12.5966C10.7361 12.5671 10.9099 12.4403 10.9994 12.2576L11.446 11.3455Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5130,7 +4752,6 @@ export const Medal = () => (
     <path
       fill="none"
       d="M2 2L6 8H6.70835C7.66655 7.15427 8.82891 6.5345 10.112 6.22407L8 2H2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5138,7 +4759,6 @@ export const Medal = () => (
     <path
       fill="none"
       d="M17.2916 8C16.3334 7.15427 15.1711 6.5345 13.888 6.22407L16 2H22L18 8H17.2916Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5152,7 +4772,6 @@ export const Menu2Line = () => (
     <path
       fill="none"
       d="M21 9L3 9M21 15L3 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5166,7 +4785,6 @@ export const MenuArrowLeft = () => (
     <path
       fill="none"
       d="M21 5L9 5M21 19L9 19M21.0003 12L3 12M3 12L6 15M3 12L6 9"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5180,7 +4798,6 @@ export const MenuArrowRight = () => (
     <path
       fill="none"
       d="M15 5L3 5M15 19L3 19M3 12L21 12M21 12L18 15M21 12L18 9"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5194,7 +4811,6 @@ export const MenuSkew = () => (
     <path
       fill="none"
       d="M21 6L9 6M21 12L3 12M15 18H3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5208,7 +4824,6 @@ export const Menu = () => (
     <path
       fill="none"
       d="M21 6L3 6M21 12L3 12M21 18H3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5222,7 +4837,6 @@ export const Messenger = () => (
     <path
       fill="none"
       d="M8 11.9989L11.5 9.5L12.5 12.4989L16 10.0001M6.33 17.76V21L9.3 19.29C10.11 19.56 11.01 19.65 12 19.65C16.95 19.65 21 15.96 21 11.28C21 6.69 16.95 3 12 3C7.05 3 3 6.69 3 11.37C3 13.98 4.26 16.23 6.33 17.76Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -5237,7 +4851,6 @@ export const MinusCircle = () => (
     <path
       fill="none"
       d="M8 12L16 12M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5251,7 +4864,6 @@ export const MinusSquare = () => (
     <path
       fill="none"
       d="M8 12L16 12M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5265,7 +4877,6 @@ export const Minus = () => (
     <path
       fill="none"
       d="M5 12L19 12"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5279,7 +4890,6 @@ export const Move = () => (
     <path
       fill="none"
       d="M10 5L12 3M12 3L14 5M12 3L12 21M12 21L10 19M12 21L14 19M19 10L21 12M21 12L19 14M21 12H3M3 12L5 10M3 12L5 14"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5293,7 +4903,6 @@ export const NotificationAdd = () => (
     <path
       fill="none"
       d="M15 6L21 6M18 3V9M12.3542 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11.6458"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5307,7 +4916,6 @@ export const Notification = () => (
     <path
       fill="none"
       d="M13.3414 3.00004C13.23 3 13.1162 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 10.8838 21 10.77 21 10.6586M21 5C21 6.10457 20.1046 7 19 7C17.8954 7 17 6.10457 17 5C17 3.89543 17.8954 3 19 3C20.1046 3 21 3.89543 21 5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5321,7 +4929,6 @@ export const Octagon = () => (
     <path
       fill="none"
       d="M17.1335 4.40589C16.6147 3.88703 16.3552 3.6276 16.0525 3.44208C15.7841 3.27759 15.4914 3.15638 15.1853 3.08289C14.8401 3 14.4732 3 13.7394 3H10.2606C9.52682 3 9.15993 3 8.81467 3.08289C8.50856 3.15638 8.21593 3.27759 7.94751 3.44208C7.64476 3.6276 7.38533 3.88703 6.86648 4.40589L4.40589 6.86648C3.88703 7.38533 3.6276 7.64476 3.44208 7.94751C3.27759 8.21593 3.15638 8.50856 3.08289 8.81467C3 9.15993 3 9.52682 3 10.2606V13.7394C3 14.4732 3 14.8401 3.08289 15.1853C3.15638 15.4914 3.27759 15.7841 3.44208 16.0525C3.6276 16.3552 3.88703 16.6147 4.40589 17.1335L6.86648 19.5941C7.38533 20.113 7.64476 20.3724 7.94751 20.5579C8.21593 20.7224 8.50856 20.8436 8.81467 20.9171C9.15993 21 9.52682 21 10.2606 21H13.7394C14.4732 21 14.8401 21 15.1853 20.9171C15.4914 20.8436 15.7841 20.7224 16.0525 20.5579C16.3552 20.3724 16.6147 20.113 17.1335 19.5941L19.5941 17.1335C20.113 16.6147 20.3724 16.3552 20.5579 16.0525C20.7224 15.7841 20.8436 15.4914 20.9171 15.1853C21 14.8401 21 14.4732 21 13.7394V10.2606C21 9.52682 21 9.15993 20.9171 8.81467C20.8436 8.50856 20.7224 8.21593 20.5579 7.94751C20.3724 7.64476 20.113 7.38533 19.5941 6.86648L17.1335 4.40589Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5335,7 +4942,6 @@ export const OpenAi = () => (
     <path
       fill="none"
       d="M11.9995 14.3132L6.5957 11.1936V6.60226C6.5957 4.61255 8.20907 3 10.198 3C11.5291 3 12.6908 3.7216 13.3151 4.79499M9.81836 13.054V6.81405L13.7945 4.51835C15.5175 3.5235 17.7207 4.11419 18.7156 5.83719C19.3807 6.98994 19.3374 8.35705 18.7197 9.43372M9.81836 10.5341L15.2222 7.41455L19.1983 9.71024C20.9213 10.7051 21.512 12.9083 20.5171 14.6313C19.852 15.7841 18.6461 16.4296 17.4041 16.4329M12.0001 9.27515L17.4039 12.3947V16.9861C17.4039 18.9758 15.7906 20.5883 13.8017 20.5883C12.4706 20.5883 11.3088 19.8667 10.6846 18.7933M14.1822 10.5342V16.7741L10.2061 19.0698C8.48308 20.0647 6.27983 19.474 5.28498 17.751C4.61984 16.5982 4.6632 15.2311 5.28089 14.1544M14.182 13.0543L8.77818 16.1738L4.80203 13.8781C3.07904 12.8833 2.48834 10.6801 3.4832 8.95705C4.14834 7.8043 5.35428 7.15879 6.59621 7.15552"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5349,7 +4955,6 @@ export const Organization = () => (
     <path
       fill="none"
       d="M12 20H11C8.19974 20 6.79961 20 5.73005 19.455C4.78924 18.9757 4.02433 18.2108 3.54497 17.27C3 16.2004 3 14.8003 3 12M12 20C12 18.8954 12.8954 18 14 18H19C20.1046 18 21 18.8954 21 20C21 21.1046 20.1046 22 19 22H14C12.8954 22 12 21.1046 12 20ZM3 12L3 2M3 12H12M12 12C12 10.8954 12.8954 10 14 10H19C20.1046 10 21 10.8954 21 12C21 13.1046 20.1046 14 19 14H14C12.8954 14 12 13.1046 12 12ZM12 4H3M12 4C12 2.89543 12.8954 2 14 2L19 2C20.1046 2 21 2.89543 21 4C21 5.10457 20.1046 6 19 6H14C12.8954 6 12 5.10457 12 4Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5363,7 +4968,6 @@ export const Package = () => (
     <path
       fill="none"
       d="M12 21.282C12.8366 21.282 13.6732 21.0723 14.4282 20.6528L18.4282 18.4306C20.0155 17.5487 21 15.8756 21 14.0598V9.94383C21 9.1706 20.8215 8.42326 20.4939 7.75187L12 11.9988M12 21.282V11.9988M12 21.282C11.1634 21.282 10.3268 21.0725 9.57178 20.653L5.57178 18.4308C3.98446 17.549 3 15.8759 3 14.06V9.94405C3 9.17077 3.17853 8.42338 3.50612 7.75196L12 11.9988M7.5 14.0001V9.5001L16.5 4.5001M20.4946 7.75275L12.0001 12L3.50538 7.75265C3.947 6.84678 4.6599 6.07909 5.57175 5.5725L9.57175 3.35028C11.0819 2.51133 12.9181 2.51133 14.4282 3.35028L18.4282 5.5725C19.3401 6.07911 20.053 6.84684 20.4946 7.75275Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5377,7 +4981,6 @@ export const Paint = () => (
     <path
       fill="none"
       d="M4.27159 9.79712L11.1912 2.87753M4.27159 9.79712C3.08354 10.9852 2.48951 11.5792 2.26695 12.2642C2.07117 12.8667 2.07117 13.5158 2.26695 14.1183C2.48951 14.8033 3.08354 15.3973 4.27159 16.5854L5.96865 18.2824C7.1567 19.4705 7.75072 20.0645 8.43571 20.287C9.03824 20.4828 9.68728 20.4828 10.2898 20.287C10.9748 20.0645 11.5688 19.4705 12.7569 18.2824M4.27159 9.79712L4.50045 9.5685L15.0395 16L12.7569 18.2824M11.1912 2.87753L16.2824 7.9687C17.4704 9.15675 18.0644 9.75077 18.287 10.4358C18.4828 11.0383 18.4828 11.6873 18.287 12.2899C18.0644 12.9748 17.4704 13.5689 16.2824 14.7569L12.7569 18.2824M11.1912 2.87753L10.3138 2.00012M22.0005 20C22.0005 21.1046 21.105 22 20.0005 22C18.8959 22 18.0005 21.1046 18.0005 20C18.0005 18.8954 20.0005 17 20.0005 17C20.0005 17 22.0005 18.8954 22.0005 20Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5391,7 +4994,6 @@ export const Passport = () => (
     <path
       fill="none"
       d="M10 17H14M15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10ZM12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V10C4 7.19974 4 5.79961 4.54497 4.73005C5.02433 3.78924 5.78924 3.02433 6.73005 2.54497C7.79961 2 9.19974 2 12 2C14.8003 2 16.2004 2 17.27 2.54497C18.2108 3.02433 18.9757 3.78924 19.455 4.73005C20 5.79961 20 7.19974 20 10V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5405,7 +5007,6 @@ export const PasswordCircle = () => (
     <path
       fill="none"
       d="M6 11.9901V12M10 11.9901V12M14 11.9901V12M18 11.9901V12M16 18H8C4.68629 18 2 15.3137 2 12C2 8.68629 4.68629 6 8 6L16 6C19.3137 6 22 8.68629 22 12C22 15.3137 19.3137 18 16 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5419,7 +5020,6 @@ export const PasswordSquare = () => (
     <path
       fill="none"
       d="M6 11.99V11.9999M10 11.99V11.9999M14 11.99V11.9999M18 11.99V11.9999M17.2 18H6.8C5.11984 18 4.27976 18 3.63803 17.673C3.07354 17.3854 2.6146 16.9265 2.32698 16.362C2 15.7202 2 14.8802 2 13.2L2 10.8C2 9.11984 2 8.27976 2.32698 7.63803C2.6146 7.07354 3.07354 6.6146 3.63803 6.32698C4.27976 6 5.11984 6 6.8 6L17.2 6C18.8802 6 19.7202 6 20.362 6.32698C20.9265 6.6146 21.3854 7.07354 21.673 7.63803C22 8.27976 22 9.11984 22 10.8V13.2C22 14.8802 22 15.7202 21.673 16.362C21.3854 16.9265 20.9265 17.3854 20.362 17.673C19.7202 18 18.8802 18 17.2 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5433,7 +5033,6 @@ export const Paypal = () => (
     <path
       fill="none"
       d="M6.77968 2C5.7655 2 4.91187 2.75909 4.79337 3.76632L3.26396 16.7663C3.12408 17.9553 4.05308 19 5.25026 19H6.22268C7.23685 19 8.09048 18.2409 8.20898 17.2337L8.82471 12H11.9022C14.2856 12 16.3376 10.3177 16.8051 7.98058C17.4239 4.88662 15.0574 2 11.9022 2H8.00118V2.01528C7.91967 2.0052 7.83655 2 7.75209 2H6.77968Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5441,7 +5040,6 @@ export const Paypal = () => (
     <path
       fill="none"
       d="M9.02422 12.002H11.904C14.2874 12.002 16.3395 10.3197 16.8069 7.98255C16.8662 7.6862 16.898 7.39175 16.9045 7.10156C19.5389 7.63428 21.357 10.2261 20.8057 12.9826C20.3383 15.3197 18.2862 17.002 15.9028 17.002H13.2625L12.7596 20.3029C12.6107 21.2799 11.7706 22.0016 10.7824 22.0016H9.82855C8.60396 22.0016 7.66692 20.911 7.85136 19.7004L9.02422 12.002Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5455,7 +5053,6 @@ export const PenToolAdd = () => (
     <path
       fill="none"
       d="M4.16344 4.44013L7.06142 7.25375M20.068 3L20.068 6.75149M18.136 4.87574L22 4.87574M11.8328 15.2021L15.2481 11.8862C15.5653 11.5782 15.7239 11.4242 15.8746 11.312C16.9152 10.5367 18.3624 10.5367 19.403 11.312C19.5537 11.4242 19.7123 11.5782 20.0295 11.8862C20.3467 12.1942 20.5054 12.3482 20.621 12.4945C21.4195 13.5048 21.4195 14.9098 20.621 15.9202C20.5054 16.0665 20.3467 16.2205 20.0295 16.5284L16.6142 19.8443C16.297 20.1523 16.1384 20.3063 15.9877 20.4186C14.9471 21.1938 13.4999 21.1938 12.4593 20.4186C12.3086 20.3063 12.15 20.1523 11.8328 19.8443C11.5156 19.5363 11.3569 19.3823 11.2413 19.236C10.4428 18.2257 10.4428 16.8207 11.2413 15.8104C11.3569 15.6641 11.5156 15.5101 11.8328 15.2021ZM3.37496 11.0953L3.13519 8.30191C2.97865 6.47805 2.90037 5.56611 3.22807 4.88675C3.51564 4.29059 4.0094 3.81119 4.62344 3.532C5.32318 3.21384 6.26246 3.28984 8.14101 3.44183L11.0182 3.67461C12.1901 3.76943 12.776 3.81683 13.2615 4.04526C13.6904 4.24702 14.0613 4.54834 14.3416 4.92252C14.6589 5.34616 14.8104 5.89774 15.1134 7.0009L15.5152 8.464C15.7662 9.3777 15.8917 9.83456 15.8673 10.279C15.8457 10.6723 15.7393 11.0568 15.555 11.4077C15.3467 11.8042 15.0024 12.1386 14.3137 12.8072L12.7814 14.2949C12.0927 14.9635 11.7483 15.2978 11.3399 15.5C10.9786 15.6789 10.5825 15.7822 10.1775 15.8032C9.71966 15.8268 9.24913 15.705 8.30806 15.4614L6.80106 15.0712C5.66479 14.7771 5.09666 14.63 4.66031 14.3219C4.2749 14.0499 3.96454 13.6897 3.75672 13.2733C3.52144 12.802 3.47261 12.2331 3.37496 11.0953ZM10.4081 8.62723C10.4081 9.66318 9.54309 10.503 8.47608 10.503C7.40908 10.503 6.5441 9.66318 6.5441 8.62723C6.5441 7.59129 7.40908 6.75149 8.47608 6.75149C9.54309 6.75149 10.4081 7.59129 10.4081 8.62723Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5469,7 +5066,6 @@ export const PenToolMinus = () => (
     <path
       fill="none"
       d="M4.16344 4.1494L7.06142 7.01241M18.136 4.59265L22 4.59265M3.37496 10.9214L3.13519 8.07898C2.97865 6.22309 2.90037 5.29514 3.22807 4.60385C3.51564 3.99722 4.0094 3.50942 4.62344 3.22532C5.32318 2.90158 6.26246 2.97891 8.14101 3.13356L11.0182 3.37044C12.1901 3.46691 12.776 3.51515 13.2615 3.74759C13.6904 3.95289 14.0613 4.2595 14.3416 4.64025C14.6589 5.07133 14.8104 5.63259 15.1134 6.75512L15.5152 8.24391C15.7662 9.17366 15.8917 9.63853 15.8673 10.0908C15.8457 10.491 15.7393 10.8823 15.555 11.2393C15.3467 11.6428 15.0024 11.983 14.3137 12.6634L12.7814 14.1771C12.0927 14.8575 11.7483 15.1977 11.3399 15.4035C10.9786 15.5855 10.5825 15.6906 10.1775 15.7119C9.71966 15.736 9.24913 15.6121 8.30806 15.3641L6.80106 14.9671C5.66479 14.6678 5.09666 14.5182 4.66031 14.2047C4.2749 13.9278 3.96454 13.5613 3.75672 13.1377C3.52144 12.658 3.47261 12.0792 3.37496 10.9214ZM11.8328 15.1003L15.2481 11.7262C15.5653 11.4128 15.7239 11.2561 15.8746 11.1419C16.9152 10.353 18.3624 10.353 19.403 11.1419C19.5537 11.2561 19.7123 11.4128 20.0295 11.7262C20.3467 12.0396 20.5054 12.1963 20.621 12.3452C21.4195 13.3732 21.4195 14.8029 20.621 15.831C20.5054 15.9798 20.3467 16.1365 20.0295 16.4499L16.6142 19.824C16.297 20.1374 16.1384 20.2941 15.9877 20.4084C14.9471 21.1972 13.4999 21.1972 12.4593 20.4084C12.3086 20.2941 12.15 20.1374 11.8328 19.824C11.5156 19.5106 11.3569 19.3539 11.2413 19.2051C10.4428 18.177 10.4428 16.7473 11.2413 15.7193C11.3569 15.5704 11.5156 15.4137 11.8328 15.1003ZM10.4081 8.41001C10.4081 9.46414 9.54309 10.3187 8.47608 10.3187C7.40908 10.3187 6.5441 9.46414 6.5441 8.41001C6.5441 7.35587 7.40908 6.50133 8.47608 6.50133C9.54309 6.50133 10.4081 7.35587 10.4081 8.41001Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5483,7 +5079,6 @@ export const PenToolUp = () => (
     <path
       fill="none"
       d="M12.003 3.26199V7.42599M5.94933 7.88472L8.21278 4.98588C9.50779 3.32733 10.1553 2.49805 10.9369 2.19759C11.6221 1.93414 12.3769 1.93414 13.0622 2.19759C13.8437 2.49805 14.4912 3.32733 15.7862 4.98588L18.0513 7.88675C18.8016 8.84769 19.1767 9.32816 19.3488 9.8678C19.5008 10.3446 19.5389 10.852 19.4599 11.3472C19.3704 11.9076 19.0715 12.4417 18.4735 13.5098L17.4518 15.3349C16.9413 16.2466 16.6861 16.7025 16.3287 17.0341C16.0125 17.3275 15.6398 17.5491 15.2349 17.6846C14.7772 17.8378 14.2659 17.8379 13.2432 17.8379L10.7612 17.8382C9.73906 17.8382 9.22801 17.8383 8.77055 17.6853C8.36578 17.55 7.9932 17.3287 7.67698 17.0356C7.31959 16.7044 7.06423 16.249 6.5535 15.3382L5.5288 13.5108C4.92969 12.4424 4.63014 11.9082 4.54036 11.3475C4.46104 10.852 4.499 10.3443 4.65101 9.86717C4.82306 9.32716 5.19849 8.84635 5.94933 7.88472ZM7.95543 17.836H16.0506C17.1683 17.836 18.0744 18.7681 18.0744 19.918C18.0744 21.0679 17.1683 22 16.0506 22H7.95543C6.83771 22 5.93163 21.0679 5.93163 19.918C5.93163 18.7681 6.83771 17.836 7.95543 17.836ZM14.0268 9.77231C14.0268 10.9222 13.1207 11.8543 12.003 11.8543C10.8853 11.8543 9.97922 10.9222 9.97922 9.77231C9.97922 8.62245 10.8853 7.69031 12.003 7.69031C13.1207 7.69031 14.0268 8.62245 14.0268 9.77231Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5497,7 +5092,6 @@ export const PenTool = () => (
     <path
       fill="none"
       d="M4.1494 4.1494L7.01241 7.01241M11.7262 15.1003L15.1003 11.7262C15.4137 11.4128 15.5704 11.2561 15.7193 11.1419C16.7473 10.353 18.177 10.353 19.2051 11.1419C19.3539 11.2561 19.5106 11.4128 19.824 11.7262C20.1374 12.0396 20.2941 12.1963 20.4084 12.3452C21.1972 13.3732 21.1972 14.8029 20.4084 15.831C20.2941 15.9798 20.1374 16.1365 19.824 16.4499L16.4499 19.824C16.1365 20.1374 15.9798 20.2941 15.831 20.4084C14.8029 21.1972 13.3732 21.1972 12.3452 20.4084C12.1963 20.2941 12.0396 20.1374 11.7262 19.824C11.4128 19.5106 11.2561 19.3539 11.1419 19.2051C10.353 18.177 10.353 16.7473 11.1419 15.7193C11.2561 15.5704 11.4128 15.4137 11.7262 15.1003ZM3.37043 10.9214L3.13356 8.07898C2.97891 6.22309 2.90158 5.29514 3.22532 4.60385C3.50942 3.99722 3.99722 3.50942 4.60385 3.22532C5.29514 2.90158 6.22309 2.97891 8.07898 3.13356L10.9215 3.37044C12.0792 3.46691 12.6581 3.51515 13.1377 3.74759C13.5614 3.95289 13.9278 4.2595 14.2047 4.64025C14.5182 5.07133 14.6678 5.63259 14.9672 6.75512L15.3642 8.24391C15.6121 9.17366 15.7361 9.63853 15.712 10.0908C15.6907 10.491 15.5856 10.8823 15.4035 11.2393C15.1978 11.6428 14.8575 11.983 14.1771 12.6634L12.6633 14.1771C11.983 14.8575 11.6428 15.1977 11.2393 15.4035C10.8823 15.5855 10.491 15.6906 10.0909 15.7119C9.63858 15.736 9.17372 15.6121 8.24401 15.3641L6.75519 14.9671C5.63263 14.6678 5.07136 14.5182 4.64027 14.2047C4.25951 13.9278 3.9529 13.5613 3.74759 13.1377C3.51515 12.658 3.46691 12.0792 3.37043 10.9214ZM10.3187 8.41001C10.3187 9.46414 9.46414 10.3187 8.41001 10.3187C7.35587 10.3187 6.50133 9.46414 6.50133 8.41001C6.50133 7.35587 7.35587 6.50133 8.41001 6.50133C9.46414 6.50133 10.3187 7.35587 10.3187 8.41001Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5511,7 +5105,6 @@ export const Pencil = () => (
     <path
       fill="none"
       d="M3 21L6.60913 20.278C7.14385 20.1711 7.41122 20.1176 7.66054 20.0198C7.88183 19.933 8.09214 19.8204 8.28711 19.6845C8.50678 19.5313 8.69958 19.3385 9.08519 18.9529L20.1635 7.87521C21.2788 6.75997 21.2788 4.95173 20.1636 3.83644C19.0483 2.7212 17.2402 2.72118 16.1249 3.83642L5.04705 14.9143C4.66137 15.2999 4.46853 15.4928 4.3153 15.7125C4.17929 15.9075 4.06672 16.1178 3.97991 16.3392C3.88211 16.5886 3.82863 16.856 3.72169 17.3908L3 21ZM3 21L6.68583 20.2628C7.14444 20.1711 7.37376 20.1252 7.58953 20.0467C7.8607 19.9481 8.1164 19.8113 8.34886 19.6403C8.53382 19.5043 8.69919 19.339 9.02992 19.0083L9.05753 18.9807L5.01926 14.9421L4.97129 14.9901C4.66081 15.3006 4.50557 15.4558 4.3763 15.6283C4.19187 15.8742 4.04597 16.1469 3.94361 16.4368C3.87186 16.64 3.82881 16.8553 3.74272 17.2858L3 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5525,7 +5118,6 @@ export const PercentCircle = () => (
     <path
       fill="none"
       d="M15 9L9 15M15 15V15.0099M9 9V9.00995M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5539,7 +5131,6 @@ export const PercentSquare = () => (
     <path
       fill="none"
       d="M15 9L9 15M15 15V15.0099M9 9V9.00995M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5553,7 +5144,6 @@ export const Percent = () => (
     <path
       fill="none"
       d="M20 4L4 20M8 6C8 7.10457 7.10457 8 6 8C4.89543 8 4 7.10457 4 6C4 4.89543 4.89543 4 6 4C7.10457 4 8 4.89543 8 6ZM20 18C20 19.1046 19.1046 20 18 20C16.8954 20 16 19.1046 16 18C16 16.8954 16.8954 16 18 16C19.1046 16 20 16.8954 20 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5567,7 +5157,6 @@ export const Phone = () => (
     <path
       fill="none"
       d="M9.10305 3.95004C7.83633 2.68332 5.78256 2.68332 4.51584 3.95004L4.03689 4.42899C3.39533 5.07055 2.97047 5.91596 3.0016 6.82273C3.11338 10.0781 4.66127 13.6302 7.51554 16.4845C10.3698 19.3387 13.9219 20.8866 17.1773 20.9984C18.084 21.0295 18.9294 20.6047 19.571 19.9631L20.05 19.4842C21.3167 18.2174 21.3167 16.1637 20.05 14.897L19.8609 14.7079C18.8488 13.6958 17.2533 13.5637 16.0886 14.3957C15.4434 14.8565 14.6284 15.0628 13.8846 14.7881C12.8685 14.4129 11.8911 13.7991 11.046 12.954C10.2009 12.1089 9.58715 11.1315 9.2119 10.1154C8.93725 9.37158 9.14348 8.55657 9.60432 7.91139C10.4363 6.74668 10.3042 5.15121 9.29212 4.13911L9.10305 3.95004Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5581,7 +5170,6 @@ export const PinOff = () => (
     <path
       fill="none"
       d="M12.3426 17H7C5.34315 17 4 15.6569 4 14C4 12.5478 5.03176 11.3367 6.4022 11.0596M12 17V22M3 2L21 20M7.75375 5.98499C6.76536 5.86364 6 5.0212 6 4C6 2.89543 6.89543 2 8 2H16C17.1046 2 18 2.89543 18 4C18 5.0212 17.2346 5.86364 16.2462 5.98499L17.5108 11.0433C18.9244 11.2858 20 12.5173 20 14C20 15.3539 19.1031 16.4984 17.8711 16.8716L7.5999 6.6004L7.75375 5.98499Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5595,7 +5183,6 @@ export const PinRoundedOff = () => (
     <path
       fill="none"
       d="M12 17V22M12.3424 17H9.24774C7.12213 17 6.05933 17 5.33826 16.5585C4.70643 16.1716 4.2401 15.5646 4.02909 14.8545C3.78827 14.044 4.06212 13.0171 4.60981 10.9632L4.96683 9.62438M3 2L21 20M6.15801 5.1587L17.8571 16.8579C18.1741 16.7926 18.4349 16.6974 18.6617 16.5585C19.2936 16.1716 19.7599 15.5646 19.9709 14.8545C20.2117 14.044 19.9379 13.0171 19.3902 10.9632L17.9502 5.56322C17.61 4.28766 17.44 3.64988 17.0768 3.17571C16.7562 2.75727 16.3311 2.43066 15.8442 2.22877C15.2925 2 14.6324 2 13.3123 2H10.6877C9.3676 2 8.70754 2 8.15579 2.22877C7.66889 2.43066 7.24377 2.75727 6.92325 3.17571C6.60063 3.59688 6.43039 4.14712 6.15801 5.1587Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5609,7 +5196,6 @@ export const PinRoundedSkew = () => (
     <path
       fill="none"
       d="M7.5 16.5L3 21M9.87508 18.0883L5.98279 14.196C4.47976 12.693 3.72824 11.9415 3.53057 11.1194C3.35736 10.3991 3.45681 9.64011 3.80978 8.98874C4.2126 8.24536 5.13237 7.71285 6.97193 6.64785L11.8085 3.8477C12.951 3.18627 13.5223 2.85555 14.1144 2.77709C14.6369 2.70786 15.1685 2.77751 15.6555 2.97905C16.2074 3.20743 16.6741 3.67416 17.6076 4.60764L19.4634 6.46346C20.3969 7.39693 20.8637 7.86367 21.092 8.41558C21.2936 8.90263 21.3632 9.43418 21.294 9.95671C21.2155 10.5488 20.8848 11.1201 20.2234 12.2625L17.4232 17.0992C16.3582 18.9387 15.8257 19.8585 15.0823 20.2613C14.431 20.6143 13.672 20.7137 12.9517 20.5405C12.1296 20.3428 11.3781 19.5913 9.87508 18.0883Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5623,7 +5209,6 @@ export const PinRounded = () => (
     <path
       fill="none"
       d="M12.0002 17V22M14.7525 17H9.24793C7.12233 17 6.05952 17 5.33845 16.5585C4.70663 16.1716 4.2403 15.5646 4.02929 14.8545C3.78847 14.044 4.06231 13.0171 4.61 10.9632L6.05 5.56322C6.39015 4.28766 6.56023 3.64988 6.92344 3.17571C7.24397 2.75727 7.66908 2.43066 8.15598 2.22877C8.70773 2 9.3678 2 10.6879 2L13.3125 2C14.6326 2 15.2927 2 15.8444 2.22877C16.3313 2.43066 16.7564 2.75727 17.0769 3.17571C17.4402 3.64988 17.6102 4.28766 17.9504 5.56322L19.3904 10.9632C19.9381 13.0171 20.2119 14.044 19.9711 14.8545C19.7601 15.5646 19.2938 16.1716 18.6619 16.5585C17.9409 17 16.8781 17 14.7525 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5637,7 +5222,6 @@ export const PinSkew = () => (
     <path
       fill="none"
       d="M7.46484 16.5356L3 21.0005M12.4431 5.47209C11.83 4.68738 11.8845 3.5505 12.6066 2.8284C13.3877 2.04735 14.654 2.04735 15.435 2.8284L21.0919 8.48526C21.8729 9.2663 21.8729 10.5326 21.0919 11.3137C20.3698 12.0358 19.2329 12.0903 18.4482 11.4772L15.7656 15.9482C16.5937 17.1191 16.4835 18.7505 15.435 19.799C14.2635 20.9705 12.364 20.9705 11.1924 19.799L4.12132 12.7279C2.94975 11.5563 2.94975 9.65683 4.12132 8.48526C5.16976 7.43682 6.80114 7.32662 7.97212 8.15467L12.4431 5.47209Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5651,7 +5235,6 @@ export const Pin = () => (
     <path
       fill="none"
       d="M12 17V22M7.75375 5.98499C6.76536 5.86364 6 5.0212 6 4C6 2.89543 6.89543 2 8 2H16C17.1046 2 18 2.89543 18 4C18 5.0212 17.2346 5.86364 16.2462 5.98499L17.5108 11.0433C18.9244 11.2858 20 12.5173 20 14C20 15.6569 18.6569 17 17 17H7C5.34315 17 4 15.6569 4 14C4 12.5173 5.07565 11.2858 6.48917 11.0433L7.75375 5.98499Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5665,7 +5248,6 @@ export const Pinterest = () => (
     <path
       fill="none"
       d="M11.6619 14.7279C10.9602 13.8474 10.4981 12.0163 11.5 11.5C11.8147 11.3378 12.3025 11.4656 12.1939 12.3111C12.1198 12.8877 11.9167 13.7614 11.6619 14.7279ZM11.6619 14.7279C11.7006 14.7764 11.7401 14.8221 11.78 14.8645C12.5445 15.6756 15.6743 15.5722 15.9798 12.0668C16.3622 7.67804 11.2177 7.35029 9.48884 8.70857C7.75994 10.0669 7.57985 12.4694 8.72519 14.0669M11.6619 14.7279C11.0354 17.1049 10.097 20.0428 10 20.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5679,7 +5261,6 @@ export const Playstore = () => (
     <path
       fill="none"
       d="M16.265 8.08293L7.78201 3.2694C6.51818 2.55226 5.76166 2.12298 5.17935 2.02275M16.265 8.08293L18.0273 9.08292C19.7034 10.034 20.5415 10.5096 20.8188 11.1379C21.0604 11.6856 21.0604 12.3144 20.8188 12.8621C20.5415 13.4904 19.7034 13.966 18.0273 14.9171L16.2711 15.9136M16.265 8.08293L5.16917 21.979M16.2711 15.9136L7.78201 20.7306C6.5108 21.4519 5.75284 21.882 5.16917 21.979M16.2711 15.9136L5.17935 2.02275M5.17935 2.02275C5.03633 1.99814 4.90382 1.99337 4.77688 2.00906C4.21515 2.0785 3.70751 2.38816 3.37783 2.8625C3 3.40611 3 4.3329 3 6.18648V17.8135C3 19.6671 3 20.5939 3.37783 21.1375C3.70751 21.6118 4.21515 21.9215 4.77688 21.9909C4.9008 22.0063 5.03004 22.0021 5.16917 21.979"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5693,7 +5274,6 @@ export const Polygon = () => (
     <path
       fill="none"
       d="M14.8056 4.0441C13.8043 3.19505 13.3037 2.77052 12.7484 2.60771C12.2587 2.4641 11.7413 2.4641 11.2516 2.60771C10.6963 2.77052 10.1957 3.19505 9.19438 4.0441L4.89383 7.69077C4.07864 8.38201 3.67105 8.72763 3.4159 9.16504C3.19035 9.55172 3.0514 9.98805 3.00972 10.4405C2.96257 10.9523 3.08917 11.4891 3.34236 12.5626L4.59989 17.8942C4.90398 19.1834 5.05602 19.8281 5.3951 20.3081C5.69427 20.7315 6.09456 21.0628 6.55473 21.2677C7.07628 21.5 7.70318 21.5 8.95697 21.5H15.043C16.2968 21.5 16.9237 21.5 17.4453 21.2677C17.9054 21.0628 18.3057 20.7315 18.6049 20.3081C18.944 19.8281 19.096 19.1834 19.4001 17.8942L20.6576 12.5626C20.9108 11.4891 21.0374 10.9523 20.9903 10.4405C20.9486 9.98805 20.8096 9.55172 20.5841 9.16504C20.329 8.72763 19.9214 8.38201 19.1062 7.69077L14.8056 4.0441Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5707,7 +5287,6 @@ export const PositionBottomLeft = () => (
     <path
       fill="none"
       d="M10 3L14 3M21 10L21 14M14 21H9M3 10L3 15M18 3C19.6569 3 21 4.34315 21 6M3 6C3 4.34315 4.34315 3 6 3M21 18C21 19.6569 19.6569 21 18 21M3 16.5C3 15.1022 3 14.4033 3.22836 13.8519C3.53284 13.1169 4.11687 12.5328 4.85195 12.2284C5.40326 12 6.10218 12 7.5 12C8.89782 12 9.59674 12 10.148 12.2284C10.8831 12.5328 11.4672 13.1169 11.7716 13.8519C12 14.4033 12 15.1022 12 16.5C12 17.8978 12 18.5967 11.7716 19.1481C11.4672 19.8831 10.8831 20.4672 10.1481 20.7716C9.59674 21 8.89782 21 7.5 21C6.10218 21 5.40326 21 4.85195 20.7716C4.11687 20.4672 3.53284 19.8831 3.22836 19.1481C3 18.5967 3 17.8978 3 16.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5721,7 +5300,6 @@ export const PositionBottomRight = () => (
     <path
       fill="none"
       d="M3 14L3 10M10 3L14 3M21 10V15M10 21H15M3 6C3 4.34315 4.34315 3 6 3M6 21C4.34315 21 3 19.6569 3 18M18 3C19.6569 3 21 4.34315 21 6M16.5 21C15.1022 21 14.4033 21 13.8519 20.7716C13.1169 20.4672 12.5328 19.8831 12.2284 19.1481C12 18.5967 12 17.8978 12 16.5C12 15.1022 12 14.4033 12.2284 13.8519C12.5328 13.1169 13.1169 12.5328 13.8519 12.2284C14.4033 12 15.1022 12 16.5 12C17.8978 12 18.5967 12 19.1481 12.2284C19.8831 12.5328 20.4672 13.1169 20.7716 13.852C21 14.4033 21 15.1022 21 16.5C21 17.8978 21 18.5967 20.7716 19.1481C20.4672 19.8831 19.8831 20.4672 19.148 20.7716C18.5967 21 17.8978 21 16.5 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5735,7 +5313,6 @@ export const PositionBottom = () => (
     <path
       fill="none"
       d="M11 3L13 3M3 14L3 11M3 14L21 14M3 14L3 14.082C3 15.8666 3 16.7589 3.22521 17.4837C3.71364 19.0556 4.94443 20.2864 6.51632 20.7748C7.24107 21 8.13338 21 9.91797 21L14.0664 21C15.8656 21 16.7652 21 17.4954 20.7711C19.0578 20.2814 20.2814 19.0578 20.7711 17.4954C21 16.7652 21 15.8656 21 14.0664L21 14M21 11V14M3 7C3 4.79086 4.79086 3 7 3M17 3C19.2091 3 21 4.79086 21 7"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5749,7 +5326,6 @@ export const PositionCenter = () => (
     <path
       fill="none"
       d="M10 3L14 3M21 10V14M14 21H10M3 10L3 14M3 18C3 19.6569 4.34314 21 6 21M18 3C19.6569 3 21 4.34315 21 6M3 6C3 4.34315 4.34315 3 6 3M21 18C21 19.6569 19.6569 21 18 21M16 11.2V12.8C16 13.9201 16 14.4802 15.782 14.908C15.5903 15.2843 15.2843 15.5903 14.908 15.782C14.4802 16 13.9201 16 12.8 16H11.2C10.0799 16 9.51984 16 9.09202 15.782C8.71569 15.5903 8.40973 15.2843 8.21799 14.908C8 14.4802 8 13.9201 8 12.8V11.2C8 10.0799 8 9.51984 8.21799 9.09202C8.40973 8.71569 8.71569 8.40973 9.09202 8.21799C9.51984 8 10.0799 8 11.2 8H12.8C13.9201 8 14.4802 8 14.908 8.21799C15.2843 8.40973 15.5903 8.71569 15.782 9.09202C16 9.51984 16 10.0799 16 11.2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5763,7 +5339,6 @@ export const PositionLeft = () => (
     <path
       fill="none"
       d="M21 11V13M10 3L13 3M10 3L10 21M10 3L9.91797 3C8.13337 3 7.24107 3 6.51632 3.2252C4.94443 3.71364 3.71364 4.94443 3.2252 6.51632C3 7.24107 3 8.13338 3 9.91797L3 14.0664C3 15.8656 3 16.7652 3.22886 17.4954C3.71856 19.0578 4.9422 20.2814 6.5046 20.7711C7.23479 21 8.13439 21 9.93359 21H10M13 21H10M17 3C19.2091 3 21 4.79086 21 7M21 17C21 19.2091 19.2091 21 17 21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5777,7 +5352,6 @@ export const PositionRight = () => (
     <path
       fill="none"
       d="M3 13L3 11M14 21H11M14 21L14 3M14 21L14.082 21C15.8666 21 16.7589 21 17.4837 20.7748C19.0556 20.2864 20.2864 19.0556 20.7748 17.4837C21 16.7589 21 15.8666 21 14.082V9.93359C21 8.13439 21 7.23479 20.7711 6.5046C20.2814 4.9422 19.0578 3.71856 17.4954 3.22886C16.7652 3 15.8656 3 14.0664 3L14 3M11 3L14 3M7 21C4.79086 21 3 19.2091 3 17M3 7C3 4.79086 4.79086 3 7 3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5791,7 +5365,6 @@ export const PositionTopLeft = () => (
     <path
       fill="none"
       d="M21 10V14M14 21H10M3 14L3 9M14 3L9 3M21 18C21 19.6569 19.6569 21 18 21M18 3C19.6569 3 21 4.34315 21 6M6 21C4.34315 21 3 19.6569 3 18M7.5 3C8.89782 3 9.59674 3 10.1481 3.22836C10.8831 3.53284 11.4672 4.11687 11.7716 4.85195C12 5.40326 12 6.10218 12 7.5C12 8.89782 12 9.59674 11.7716 10.1481C11.4672 10.8831 10.8831 11.4672 10.148 11.7716C9.59674 12 8.89782 12 7.5 12C6.10218 12 5.40326 12 4.85195 11.7716C4.11687 11.4672 3.53284 10.8831 3.22836 10.148C3 9.59674 3 8.89782 3 7.5C3 6.10218 3 5.40326 3.22836 4.85195C3.53284 4.11687 4.11687 3.53284 4.85195 3.22836C5.40326 3 6.10218 3 7.5 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5805,7 +5378,6 @@ export const PositionTopRight = () => (
     <path
       fill="none"
       d="M3 10L3 14M10 21H14M21 14V9M10 3L15 3M3 18C3 19.6569 4.34315 21 6 21M6 3C4.34315 3 3 4.34315 3 6M18 21C19.6569 21 21 19.6569 21 18M16.5 3C15.1022 3 14.4033 3 13.8519 3.22836C13.1169 3.53284 12.5328 4.11687 12.2284 4.85195C12 5.40326 12 6.10218 12 7.5C12 8.89782 12 9.59674 12.2284 10.1481C12.5328 10.8831 13.1169 11.4672 13.8519 11.7716C14.4033 12 15.1022 12 16.5 12C17.8978 12 18.5967 12 19.148 11.7716C19.8831 11.4672 20.4672 10.8831 20.7716 10.148C21 9.59674 21 8.89782 21 7.5C21 6.10218 21 5.40326 20.7716 4.85195C20.4672 4.11687 19.8831 3.53284 19.148 3.22836C18.5967 3 17.8978 3 16.5 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5819,7 +5391,6 @@ export const PositionTop = () => (
     <path
       fill="none"
       d="M13 21H11M21 10V13M21 10L3 10M21 10L21 9.91797C21 8.13337 21 7.24107 20.7748 6.51632C20.2864 4.94443 19.0556 3.71364 17.4837 3.2252C16.7589 3 15.8666 3 14.082 3L9.93359 3C8.13439 3 7.23479 3 6.5046 3.22886C4.9422 3.71856 3.71856 4.9422 3.22886 6.5046C3 7.23479 3 8.13439 3 9.93359L3 10M3 13L3 10M21 17C21 19.2091 19.2091 21 17 21M7 21C4.79086 21 3 19.2091 3 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5833,7 +5404,6 @@ export const QrCodeScan = () => (
     <path
       fill="none"
       d="M2 7V6.8C2 5.11984 2 4.27976 2.32698 3.63803C2.6146 3.07354 3.07354 2.6146 3.63803 2.32698C4.27976 2 5.11984 2 6.8 2H7M2 17V17.2C2 18.8802 2 19.7202 2.32698 20.362C2.6146 20.9265 3.07354 21.3854 3.63803 21.673C4.27976 22 5.11984 22 6.8 22H7M22 7V6.8C22 5.11984 22 4.27976 21.673 3.63803C21.3854 3.07354 20.9265 2.6146 20.362 2.32698C19.7202 2 18.8802 2 17.2 2H17M22 17V17.2C22 18.8802 22 19.7202 21.673 20.362C21.3854 20.9265 20.9265 21.3854 20.362 21.673C19.7202 22 18.8802 22 17.2 22H17M13.9996 14H15V18H18M18 14V14.0099M10 10H6V6H10V10ZM10 18H6V14H10V18ZM18 10H14V6H18V10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5847,7 +5417,6 @@ export const QrCode = () => (
     <path
       fill="none"
       d="M13.9996 18V17.0002C13.9997 15.8958 14.8954 15.0001 15.9998 15C17.1042 15.0001 17.9999 15.8958 18 17.0002V18.0548C18 18.9353 18 19.3755 18.1362 19.7255C18.3395 20.2476 18.7524 20.6605 19.2745 20.8638C19.6245 21 20.0647 21 20.9452 21H21M21 15V15.0099M14 21V21.0099M17.5 6.5V6.50995M6.5 6.5V6.50995M6.5 17.5V17.5099M6.8 10H6.2C5.0799 10 4.51984 10 4.09202 9.78201C3.71569 9.59027 3.40973 9.28431 3.21799 8.90798C3 8.48016 3 7.9201 3 6.8L3 6.2C3 5.0799 3 4.51984 3.21799 4.09202C3.40973 3.71569 3.71569 3.40973 4.09202 3.21799C4.51984 3 5.0799 3 6.2 3L6.8 3C7.9201 3 8.48016 3 8.90798 3.21799C9.28431 3.40973 9.59027 3.71569 9.78201 4.09202C10 4.51984 10 5.0799 10 6.2V6.8C10 7.9201 10 8.48016 9.78201 8.90798C9.59027 9.28431 9.28431 9.59027 8.90798 9.78201C8.48016 10 7.9201 10 6.8 10ZM6.8 21H6.2C5.0799 21 4.51984 21 4.09202 20.782C3.71569 20.5903 3.40973 20.2843 3.21799 19.908C3 19.4802 3 18.9201 3 17.8L3 17.2C3 16.0799 3 15.5198 3.21799 15.092C3.40973 14.7157 3.71569 14.4097 4.09202 14.218C4.51984 14 5.0799 14 6.2 14H6.8C7.9201 14 8.48016 14 8.90798 14.218C9.28431 14.4097 9.59027 14.7157 9.78201 15.092C10 15.5198 10 16.0799 10 17.2V17.8C10 18.9201 10 19.4802 9.78201 19.908C9.59027 20.2843 9.28431 20.5903 8.90798 20.782C8.48016 21 7.9201 21 6.8 21ZM17.8 10H17.2C16.0799 10 15.5198 10 15.092 9.78201C14.7157 9.59027 14.4097 9.28431 14.218 8.90798C14 8.48016 14 7.9201 14 6.8V6.2C14 5.0799 14 4.51984 14.218 4.09202C14.4097 3.71569 14.7157 3.40973 15.092 3.21799C15.5198 3 16.0799 3 17.2 3L17.8 3C18.9201 3 19.4802 3 19.908 3.21799C20.2843 3.40973 20.5903 3.71569 20.782 4.09202C21 4.51984 21 5.0799 21 6.2V6.8C21 7.9201 21 8.48016 20.782 8.90798C20.5903 9.28431 20.2843 9.59027 19.908 9.78201C19.4802 10 18.9201 10 17.8 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5861,7 +5430,6 @@ export const QuestionCircle = () => (
     <path
       fill="none"
       d="M10 9.875C10 8.83947 10.8395 8 11.875 8C12.9105 8 13.75 8.83947 13.75 9.875C13.75 10.4728 13.4702 11.0053 13.0344 11.3486C12.4922 11.7759 11.875 12.3096 11.875 13M11.875 16V16.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5875,7 +5443,6 @@ export const QuestionSquare = () => (
     <path
       fill="none"
       d="M10 9.875C10 8.83947 10.8395 8 11.875 8C12.9105 8 13.75 8.83947 13.75 9.875C13.75 10.4728 13.4702 11.0053 13.0344 11.3486C12.4922 11.7759 11.875 12.3096 11.875 13M11.875 16V16.01M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5889,7 +5456,6 @@ export const Question = () => (
     <path
       fill="none"
       d="M7 8.05618C7 5.26373 9.26373 3 12.0562 3C14.8486 3 17.1124 5.26373 17.1124 8.05618C17.1124 9.6683 16.3579 11.1042 15.1828 12.03C13.7205 13.1821 12.0562 14.5 12.0562 17M12.0562 20.973V21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5903,7 +5469,6 @@ export const Ranking = () => (
     <path
       fill="none"
       d="M15 21H9M15 21V6C15 5.06812 15 4.60217 14.8478 4.23463C14.6448 3.74458 14.2554 3.35523 13.7654 3.15224C13.3978 3 12.9319 3 12 3C11.0681 3 10.6022 3 10.2346 3.15224C9.74458 3.35523 9.35523 3.74458 9.15224 4.23463C9 4.60217 9 5.06812 9 6V21M15 21H21V17C21 16.0681 21 15.6022 20.8478 15.2346C20.6448 14.7446 20.2554 14.3552 19.7654 14.1522C19.3978 14 18.9319 14 18 14C17.0681 14 16.6022 14 16.2346 14.1522C15.7446 14.3552 15.3552 14.7446 15.1522 15.2346C15 15.6022 15 16.0681 15 17V21ZM9 21H3L3 13C3 12.0681 3 11.6022 3.15224 11.2346C3.35523 10.7446 3.74458 10.3552 4.23463 10.1522C4.60218 10 5.06812 10 6 10C6.93188 10 7.39782 10 7.76537 10.1522C8.25542 10.3552 8.64477 10.7446 8.84776 11.2346C9 11.6022 9 12.0681 9 13V21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5917,7 +5482,6 @@ export const Redit = () => (
     <path
       fill="none"
       d="M12 10C13.8751 10 15.6162 10.3823 17.0577 11.0363M12 10C10.1249 10 8.38377 10.3823 6.94234 11.0363M12 10L14 2.50006L17 3.5M19.7823 12.9842C21.0301 12.844 22 11.7853 22 10.5C22 9.11929 20.8807 8 19.5 8C18.1193 8 17 9.11929 17 10.5C17 10.6841 17.0199 10.8635 17.0577 11.0363M19.7823 12.9842C20.5565 13.8703 21 14.9006 21 16C21 19.3137 16.9706 22 12 22C7.02944 22 3 19.3137 3 16C3 14.9006 3.44351 13.8703 4.21776 12.9842M19.7823 12.9842C19.1031 12.207 18.1696 11.5408 17.0577 11.0363M6.94234 11.0363C6.9801 10.8635 7 10.6841 7 10.5C7 9.11929 5.88071 8 4.5 8C3.11929 8 2 9.11929 2 10.5C2 11.7853 2.96992 12.844 4.21776 12.9842M6.94234 11.0363C5.83043 11.5408 4.89687 12.2071 4.21776 12.9842M16 17C16 17 14.6667 18 12 18C9.33333 18 8 17 8 17M17 3.5C17 4.32843 17.6716 5 18.5 5C19.3284 5 20 4.32843 20 3.5C20 2.67157 19.3284 2 18.5 2C17.6716 2 17 2.67157 17 3.5ZM9 14V14.0099M15 14V14.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5931,7 +5495,6 @@ export const Redo = () => (
     <path
       fill="none"
       d="M16 13L20 9L16 5M19.7896 9H9C6.23858 9 4 11.2386 4 14C4 16.7614 6.23858 19 9 19H15.7896"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5945,7 +5508,6 @@ export const ReflectHorizontal = () => (
     <path
       fill="none"
       d="M12 2V4M12 8V10M12 14V16M12 20V22M2 7L8 12L2 17V7ZM22 7L16 12L22 17V7Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5959,7 +5521,6 @@ export const ReflectVertical = () => (
     <path
       fill="none"
       d="M2 12H4M8 12H10M14 12H16M20 12H22M7 22L12 16L17 22H7ZM7 2L12 8L17 2L7 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5973,7 +5534,6 @@ export const RefreshHorizontal = () => (
     <path
       fill="none"
       d="M2 10C2 10 2.12132 9.15076 5.63604 5.63604C9.15076 2.12132 14.8492 2.12132 18.364 5.63604C19.0747 6.34677 19.6417 7.14679 20.065 8M2 10V5M2 10H7M22 14C22 14 21.8787 14.8492 18.364 18.364C14.8492 21.8787 9.15076 21.8787 5.63604 18.364C4.92531 17.6532 4.3583 16.8532 3.93501 16M22 14V19M22 14H17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -5987,7 +5547,6 @@ export const RefreshVertical = () => (
     <path
       fill="none"
       d="M14 2C14 2 14.8492 2.12132 18.364 5.63604C21.8787 9.15076 21.8787 14.8492 18.364 18.364C17.6532 19.0747 16.8532 19.6417 16 20.065M14 2L19 2M14 2L14 7M10 22C10 22 9.15076 21.8787 5.63604 18.364C2.12132 14.8492 2.12132 9.15076 5.63604 5.63604C6.34677 4.92531 7.14679 4.3583 8 3.93501M10 22H5M10 22L10 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6001,7 +5560,6 @@ export const ReloadReverse = () => (
     <path
       fill="none"
       d="M21 10C21 10 18.995 7.26822 17.3662 5.63824C15.7373 4.00827 13.4864 3 11 3C6.02944 3 2 7.02944 2 12C2 16.9706 6.02944 21 11 21C14.5337 21 17.5918 18.9634 19.0645 16M21 10V5M21 10H16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6015,7 +5573,6 @@ export const Reload = () => (
     <path
       fill="none"
       d="M2 10C2 10 4.00498 7.26822 5.63384 5.63824C7.26269 4.00827 9.5136 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C8.46628 21 5.40822 18.9634 3.93552 16M2 10V5M2 10H7"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6029,7 +5586,6 @@ export const RemoveCircle = () => (
     <path
       fill="none"
       d="M14.8284 9.17157L9.17157 14.8284M9.17157 9.17157L14.8284 14.8284M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6043,7 +5599,6 @@ export const RemoveSquare = () => (
     <path
       fill="none"
       d="M14.8284 9.17157L9.17157 14.8284M9.17157 9.17157L14.8284 14.8284M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6057,7 +5612,6 @@ export const Remove = () => (
     <path
       fill="none"
       d="M16.9497 7.05023L7.05025 16.9497M7.05025 7.05023L16.9497 16.9497"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6071,7 +5625,6 @@ export const RuleHorizontal = () => (
     <path
       fill="none"
       d="M6 7L6 10M10 7V12M14 7V10M18 7V12M17.2 17H6.8C5.11984 17 4.27976 17 3.63803 16.673C3.07354 16.3854 2.6146 15.9265 2.32698 15.362C2 14.7202 2 13.8802 2 12.2L2 11.8C2 10.1198 2 9.27976 2.32698 8.63803C2.6146 8.07354 3.07354 7.6146 3.63803 7.32698C4.27976 7 5.11984 7 6.8 7L17.2 7C18.8802 7 19.7202 7 20.362 7.32698C20.9265 7.6146 21.3854 8.07354 21.673 8.63803C22 9.27976 22 10.1198 22 11.8V12.2C22 13.8802 22 14.7202 21.673 15.362C21.3854 15.9265 20.9265 16.3854 20.362 16.673C19.7202 17 18.8802 17 17.2 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6085,7 +5638,6 @@ export const RulePencil = () => (
     <path
       fill="none"
       d="M12 18L12 6M12 18C12 18.93 12 19.395 12.1022 19.7765C12.3796 20.8117 13.1883 21.6204 14.2235 21.8978C14.605 22 15.07 22 16 22C16.93 22 17.395 22 17.7765 21.8978C18.8117 21.6204 19.6204 20.8117 19.8978 19.7765C20 19.395 20 18.93 20 18V6C20 5.07003 20 4.60504 19.8978 4.22354C19.6204 3.18827 18.8117 2.37962 17.7765 2.10222C17.395 2 16.93 2 16 2C15.07 2 14.605 2 14.2235 2.10222C13.1883 2.37962 12.3796 3.18827 12.1022 4.22354C12 4.60504 12 5.07003 12 6M12 18H14M12 6H15M12 14H15M12 10H14M8 4L8 16.8669C8 17.2895 8 17.5008 7.97103 17.7077C7.9453 17.8915 7.90256 18.0725 7.84338 18.2485C7.77674 18.4465 7.68223 18.6355 7.49325 19.0135L6 22L4.50675 19.0135C4.31776 18.6355 4.22326 18.4465 4.15662 18.2485C4.09744 18.0725 4.05471 17.8915 4.02897 17.7077C4 17.5008 4 17.2895 4 16.8669L4 4C4 2.89543 4.89543 2 6 2C7.10457 2 8 2.89543 8 4Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6099,7 +5651,6 @@ export const RuleSkew = () => (
     <path
       fill="none"
       d="M4.22153 12.7071L6.34285 14.8284M7.04996 9.87869L10.5855 13.4142M9.87838 7.05026L11.9997 9.17158M12.7068 4.22183L16.2423 7.75737M19.2122 11.8586L11.8583 19.2125C10.6702 20.4005 10.0762 20.9946 9.39122 21.2171C8.78869 21.4129 8.13965 21.4129 7.53712 21.2171C6.85213 20.9946 6.25811 20.4005 5.07006 19.2125L4.78721 18.9297C3.59916 17.7416 3.00514 17.1476 2.78257 16.4626C2.5868 15.8601 2.5868 15.211 2.78257 14.6085C3.00514 13.9235 3.59916 13.3295 4.78721 12.1414L12.1411 4.78752C13.3292 3.59947 13.9232 3.00544 14.6082 2.78288C15.2107 2.5871 15.8598 2.5871 16.4623 2.78288C17.1473 3.00544 17.7413 3.59947 18.9293 4.78752L19.2122 5.07036C20.4002 6.25841 20.9943 6.85244 21.2168 7.53742C21.4126 8.13995 21.4126 8.789 21.2168 9.39153C20.9943 10.0765 20.4002 10.6705 19.2122 11.8586Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6113,7 +5664,6 @@ export const RuleVertical = () => (
     <path
       fill="none"
       d="M7 18H10M7 14H12M7 10H10M7 6H12M17 6.8V17.2C17 18.8802 17 19.7202 16.673 20.362C16.3854 20.9265 15.9265 21.3854 15.362 21.673C14.7202 22 13.8802 22 12.2 22H11.8C10.1198 22 9.27976 22 8.63803 21.673C8.07354 21.3854 7.6146 20.9265 7.32698 20.362C7 19.7202 7 18.8802 7 17.2L7 6.8C7 5.11984 7 4.27976 7.32698 3.63803C7.6146 3.07354 8.07354 2.6146 8.63803 2.32698C9.27976 2 10.1198 2 11.8 2L12.2 2C13.8802 2 14.7202 2 15.362 2.32698C15.9265 2.6146 16.3854 3.07354 16.673 3.63803C17 4.27976 17 5.11984 17 6.8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6127,7 +5677,6 @@ export const RunwayMl = () => (
     <path
       fill="none"
       d="M6.5 3C8.433 3 10 4.567 10 6.5V17.5C10 19.433 8.433 21 6.5 21C4.567 21 3 19.433 3 17.5L3 6.5C3 4.567 4.567 3 6.5 3ZM6.5 3L17.5001 3C19.4331 3 21.0001 4.567 21.0001 6.5C21.0001 8.433 19.4331 10 17.5001 10H10M15.1528 9.99584L20.0396 14.9866C21.403 16.3789 21.3911 18.6094 20.0131 19.9871C18.6249 21.375 16.3745 21.3749 14.9865 19.9869L9.99517 14.9958"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6141,7 +5690,6 @@ export const Save = () => (
     <path
       fill="none"
       d="M11 8L8 8M8 20.952V18.2C8 17.0799 8 16.5198 8.21799 16.092C8.40973 15.7157 8.71569 15.4097 9.09202 15.218C9.51984 15 10.0799 15 11.2 15H12.8C13.9201 15 14.4802 15 14.908 15.218C15.2843 15.4097 15.5903 15.7157 15.782 16.092C16 16.5198 16 17.0799 16 18.2V20.952M8 20.952C8.7857 21 9.75432 21 11 21H13C14.2457 21 15.2143 21 16 20.952M8 20.952C7.01947 20.8922 6.32382 20.7576 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L12.6863 3C13.9092 3 14.5207 3 15.0962 3.13815C15.6063 3.26063 16.0941 3.46266 16.5414 3.7368C17.046 4.046 17.4784 4.47841 18.3431 5.34315L18.6569 5.65686C19.5216 6.52161 19.954 6.95399 20.2632 7.45858C20.5373 7.90594 20.7394 8.39366 20.8618 8.90384C21 9.47928 21 10.0908 21 11.3137V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.6762 20.7576 16.9805 20.8922 16 20.952"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6155,7 +5703,6 @@ export const ScaleDown = () => (
     <path
       fill="none"
       d="M9 3H8.90174C8.06411 3 7.64529 3 7.29414 3.05007C5.09325 3.36392 3.36392 5.09325 3.05007 7.29414C3 7.64529 3 8.06411 3 8.90174V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H15C15.929 21 16.3935 21 16.7822 20.9384C18.9216 20.5996 20.5996 18.9216 20.9384 16.7822C21 16.3935 21 15.929 21 15M12.0012 16.0002L8.00281 16.0017M8.00281 16.0017L8.00279 12.0017M8.00281 16.0017L13.5052 10.5M17.8 3H16.2C15.0799 3 14.5198 3 14.092 3.21799C13.7157 3.40973 13.4097 3.71569 13.218 4.09202C13 4.51984 13 5.07989 13 6.2V7.8C13 8.92011 13 9.48016 13.218 9.90798C13.4097 10.2843 13.7157 10.5903 14.092 10.782C14.5198 11 15.0799 11 16.2 11H17.8C18.9201 11 19.4802 11 19.908 10.782C20.2843 10.5903 20.5903 10.2843 20.782 9.90798C21 9.48016 21 8.92011 21 7.8V6.2C21 5.0799 21 4.51984 20.782 4.09202C20.5903 3.71569 20.2843 3.40973 19.908 3.21799C19.4802 3 18.9201 3 17.8 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6169,7 +5716,6 @@ export const ScaleUp = () => (
     <path
       fill="none"
       d="M15 21H15.0673C15.9337 21 16.3669 21 16.7299 20.9464C18.9115 20.6245 20.6245 18.9115 20.9464 16.7299C21 16.3669 21 15.9337 21 15.0673V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H9C8.07099 3 7.60649 3 7.21783 3.06156C5.07837 3.40042 3.40042 5.07837 3.06156 7.21783C3 7.60649 3 8.07099 3 9M12.0007 7.99965L15.9991 7.99808M15.9991 7.99808L15.9992 11.9981M15.9991 7.99808L10.4995 13.4972M6.2 21H7.8C8.92011 21 9.48016 21 9.90798 20.782C10.2843 20.5903 10.5903 20.2843 10.782 19.908C11 19.4802 11 18.9201 11 17.8V16.2C11 15.0799 11 14.5198 10.782 14.092C10.5903 13.7157 10.2843 13.4097 9.90798 13.218C9.48016 13 8.92011 13 7.8 13H6.2C5.0799 13 4.51984 13 4.09202 13.218C3.71569 13.4097 3.40973 13.7157 3.21799 14.092C3 14.5198 3 15.0799 3 16.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6183,7 +5729,6 @@ export const ScanHorizontal = () => (
     <path
       fill="none"
       d="M12 2L12 22M8 4C5.23858 4 3 6.23858 3 9L3 15C3 17.7614 5.23858 20 8 20M16 4C18.7614 4 21 6.23858 21 9V15C21 17.7614 18.7614 20 16 20"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6197,7 +5742,6 @@ export const ScanPassword = () => (
     <path
       fill="none"
       d="M15 7H17.2C18.8802 7 19.7202 7 20.362 7.32698C20.9265 7.6146 21.3854 8.07354 21.673 8.63803C22 9.27976 22 10.1198 22 11.8V12.2C22 13.8802 22 14.7202 21.673 15.362C21.3854 15.9265 20.9265 16.3854 20.362 16.673C19.7202 17 18.8802 17 17.2 17H15M11 7H6.8C5.11984 7 4.27976 7 3.63803 7.32698C3.07354 7.6146 2.6146 8.07354 2.32698 8.63803C2 9.27976 2 10.1198 2 11.8L2 12.2C2 13.8802 2 14.7202 2.32698 15.362C2.6146 15.9265 3.07354 16.3854 3.63803 16.673C4.27976 17 5.11984 17 6.8 17H11M15 2L15 22M6 11.9901V12M10 11.9901V12"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6211,7 +5755,6 @@ export const ScanVertical = () => (
     <path
       fill="none"
       d="M2 12L22 12M20 8C20 5.23858 17.7614 3 15 3L9 3C6.23858 3 4 5.23858 4 8M20 16C20 18.7614 17.7614 21 15 21H9C6.23858 21 4 18.7614 4 16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6225,7 +5768,6 @@ export const ScissorsCut = () => (
     <path
       fill="none"
       d="M6 9C7.65685 9 9 7.65685 9 6C9 4.34315 7.65685 3 6 3C4.34315 3 3 4.34315 3 6C3 7.65685 4.34315 9 6 9ZM6 9L22 16M6 15C4.34315 15 3 16.3431 3 18C3 19.6569 4.34315 21 6 21C7.65685 21 9 19.6569 9 18C9 16.3431 7.65685 15 6 15ZM6 15L22 8"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6239,7 +5781,6 @@ export const ScissorsOpen = () => (
     <path
       fill="none"
       d="M9 9L21 21M21 3L9 15M9 6C9 7.65685 7.65685 9 6 9C4.34315 9 3 7.65685 3 6C3 4.34315 4.34315 3 6 3C7.65685 3 9 4.34315 9 6ZM9 18C9 19.6569 7.65685 21 6 21C4.34315 21 3 19.6569 3 18C3 16.3431 4.34315 15 6 15C7.65685 15 9 16.3431 9 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6253,7 +5794,6 @@ export const SearchAdd = () => (
     <path
       fill="none"
       d="M11 8V11M11 11V14M11 11H8M11 11L14 11M16.6562 16.6562L20.9992 20.9992M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6267,7 +5807,6 @@ export const SearchFatAdd = () => (
     <path
       fill="none"
       d="M11 8L11 14M8 11L14 11M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11ZM15.0625 17.891L17.5842 20.4127C18.3652 21.1937 19.6315 21.1937 20.4126 20.4127C21.1936 19.6316 21.1936 18.3653 20.4126 17.5842L17.8909 15.0625C17.2026 16.2274 16.2274 17.2026 15.0625 17.891Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6281,7 +5820,6 @@ export const SearchFatMinus = () => (
     <path
       fill="none"
       d="M8 11L14 11M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11ZM15.0625 17.891L17.5842 20.4127C18.3652 21.1937 19.6315 21.1937 20.4126 20.4127C21.1936 19.6316 21.1936 18.3653 20.4126 17.5842L17.8909 15.0625C17.2026 16.2274 16.2274 17.2026 15.0625 17.891Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6295,7 +5833,6 @@ export const SearchFat = () => (
     <path
       fill="none"
       d="M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6303,7 +5840,6 @@ export const SearchFat = () => (
     <path
       fill="none"
       d="M15.0641 17.8922L17.5858 20.4139C18.3668 21.195 19.6332 21.195 20.4142 20.4139C21.1953 19.6329 21.1953 18.3665 20.4142 17.5855L17.8925 15.0637C17.2042 16.2286 16.229 17.2039 15.0641 17.8922Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6317,7 +5853,6 @@ export const SearchMinus = () => (
     <path
       fill="none"
       d="M8 11L14 11M16.6562 16.6562L20.9992 20.9992M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6331,7 +5866,6 @@ export const SearchThinAdd = () => (
     <path
       fill="none"
       d="M9.5 7V12M7 9.5L12 9.5M14.0977 14.0938L21.0011 20.9974M16 9.5C16 13.0899 13.0899 16 9.5 16C5.91015 16 3 13.0899 3 9.5C3 5.91015 5.91015 3 9.5 3C13.0899 3 16 5.91015 16 9.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6345,7 +5879,6 @@ export const SearchThinMinus = () => (
     <path
       fill="none"
       d="M7 9.5L12 9.5M14.0977 14.0938L21.0011 20.9974M16 9.5C16 13.0899 13.0899 16 9.5 16C5.91015 16 3 13.0899 3 9.5C3 5.91015 5.91015 3 9.5 3C13.0899 3 16 5.91015 16 9.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6359,7 +5892,6 @@ export const SearchThin = () => (
     <path
       fill="none"
       d="M14.0963 14.0961L20.9998 20.9998M16 9.5C16 13.0899 13.0899 16 9.5 16C5.91015 16 3 13.0899 3 9.5C3 5.91015 5.91015 3 9.5 3C13.0899 3 16 5.91015 16 9.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6373,7 +5905,6 @@ export const Search = () => (
     <path
       fill="none"
       d="M16.6569 16.6569L20.9998 20.9998M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6387,7 +5918,6 @@ export const SelectionExclude = () => (
     <path
       fill="none"
       d="M8 11V10.9464C8 9.31916 9.31916 8 10.9464 8H11M8 16V14M8 16H10M8 16H7.8C6.11984 16 5.27976 16 4.63803 15.673C4.07354 15.3854 3.6146 14.9265 3.32698 14.362C3 13.7202 3 12.8802 3 11.2V7.8C3 6.11984 3 5.27976 3.32698 4.63803C3.6146 4.07354 4.07354 3.6146 4.63803 3.32698C5.27976 3 6.11984 3 7.8 3H11.2C12.8802 3 13.7202 3 14.362 3.32698C14.9265 3.6146 15.3854 4.07354 15.673 4.63803C16 5.27976 16 6.11984 16 7.8L16 8M8 16L8 16.2C8 17.8802 8 18.7202 8.32698 19.362C8.6146 19.9265 9.07354 20.3854 9.63803 20.673C10.2798 21 11.1198 21 12.8 21H16.2C17.8802 21 18.7202 21 19.362 20.673C19.9265 20.3854 20.3854 19.9265 20.673 19.362C21 18.7202 21 17.8802 21 16.2V12.8C21 11.1198 21 10.2798 20.673 9.63803C20.3854 9.07354 19.9265 8.6146 19.362 8.32698C18.7202 8 17.8802 8 16.2 8H16M14 8H16M16 8V10M16 13C16 14.6569 14.6569 16 13 16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6401,7 +5931,6 @@ export const SelectionIntersect = () => (
     <path
       fill="none"
       d="M22 14V16.01M16.01 22H14M22 20C22 21.1046 21.1046 22 20 22M20 8C21.1046 8 22 8.89543 22 10M10 22C8.89543 22 8 21.1046 8 20M2 10L2 7.99M7.99 2L10 2M2 4C2 2.89543 2.89543 2 4 2M4 16C2.89543 16 2 15.1046 2 14M14 2C15.1046 2 16 2.89543 16 4M16 8H12.8C11.1198 8 10.2798 8 9.63803 8.32698C9.07354 8.6146 8.6146 9.07354 8.32698 9.63803C8 10.2798 8 11.1198 8 12.8V16H11.2C12.8802 16 13.7202 16 14.362 15.673C14.9265 15.3854 15.3854 14.9265 15.673 14.362C16 13.7202 16 12.8802 16 11.2V8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6415,7 +5944,6 @@ export const SelectionSubtract = () => (
     <path
       fill="none"
       d="M22 15V16.01M16.01 22H15M22 20C22 21.1046 21.1046 22 20 22M20 9C21.1046 9 22 9.89543 22 11M11 22C9.89543 22 9 21.1046 9 20M11.2 16H7.8C6.11984 16 5.27976 16 4.63803 15.673C4.07354 15.3854 3.6146 14.9265 3.32698 14.362C3 13.7202 3 12.8802 3 11.2L3 7.8C3 6.11984 3 5.27976 3.32698 4.63803C3.6146 4.07354 4.07354 3.6146 4.63803 3.32698C5.27976 3 6.11984 3 7.8 3L11.2 3C12.8802 3 13.7202 3 14.362 3.32698C14.9265 3.6146 15.3854 4.07354 15.673 4.63803C16 5.27976 16 6.11984 16 7.8V11.2C16 12.8802 16 13.7202 15.673 14.362C15.3854 14.9265 14.9265 15.3854 14.362 15.673C13.7202 16 12.8802 16 11.2 16Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6429,7 +5957,6 @@ export const SelectionUnion = () => (
     <path
       fill="none"
       d="M8 16H7.8C6.11984 16 5.27976 16 4.63803 15.673C4.07354 15.3854 3.6146 14.9265 3.32698 14.362C3 13.7202 3 12.8802 3 11.2V7.8C3 6.11984 3 5.27976 3.32698 4.63803C3.6146 4.07354 4.07354 3.6146 4.63803 3.32698C5.27976 3 6.11984 3 7.8 3H11.2C12.8802 3 13.7202 3 14.362 3.32698C14.9265 3.6146 15.3854 4.07354 15.673 4.63803C16 5.27976 16 6.11984 16 7.8V8H16.2C17.8802 8 18.7202 8 19.362 8.32698C19.9265 8.6146 20.3854 9.07354 20.673 9.63803C21 10.2798 21 11.1198 21 12.8V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21H12.8C11.1198 21 10.2798 21 9.63803 20.673C9.07354 20.3854 8.6146 19.9265 8.32698 19.362C8 18.7202 8 17.8802 8 16.2V16Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6443,7 +5970,6 @@ export const ServerMulti = () => (
     <path
       fill="none"
       d="M5.00007 15H19.0001M5.00007 15C3.34321 15 2.00007 16.3431 2.00007 18C2.00007 19.6569 3.34321 21 5.00007 21H19.0001C20.6569 21 22.0001 19.6569 22.0001 18C22.0001 16.3431 20.6569 15 19.0001 15M5.00007 15C3.34322 15 2.00007 13.6569 2.00007 12M19.0001 15C20.6569 15 22.0001 13.6569 22.0001 12C22.0001 10.3431 20.6569 9 19.0001 9M6.00007 11.99V11.9999M10.0001 11.99V11.9999M6.00007 18V18.0099M10.0001 18V18.0099M5.00007 9H19.0001M5.00007 9C3.34321 9 2.00007 10.3431 2.00007 12M5.00007 9C3.57101 9 2.37525 9.99921 2.07349 11.3371L2.2091 10.1165C2.48872 7.59998 2.62853 6.34169 3.20903 5.39211C3.72038 4.55563 4.46637 3.88793 5.35421 3.47208C6.36209 3 7.62812 3 10.1602 3H13.8395C16.3715 3 17.6376 3 18.6455 3.47208C19.5333 3.88793 20.2793 4.55563 20.7906 5.39211C21.3711 6.34169 21.5109 7.59998 21.7906 10.1165L21.9259 11.3342C21.623 9.99776 20.4281 9 19.0001 9M2.00007 12L2 11.9985M2.00007 12C2.00011 12 2.00007 12 2.00007 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6457,7 +5983,6 @@ export const Server = () => (
     <path
       fill="none"
       d="M6 13H18M6 13C3.79086 13 2 14.7909 2 17C2 19.2091 3.79086 21 6 21H18C20.2091 21 22 19.2091 22 17C22 14.7909 20.2091 13 18 13M6 13C3.98635 13 2.32023 14.4879 2.04112 16.4243L2.46928 10.43C2.6563 7.81181 2.74981 6.5027 3.31937 5.51059C3.82085 4.63709 4.57444 3.9354 5.48146 3.49743C6.51162 3 7.82407 3 10.449 3H13.551C16.1759 3 17.4884 3 18.5185 3.49743C19.4256 3.9354 20.1792 4.63709 20.6806 5.51059C21.2502 6.5027 21.3437 7.81181 21.5307 10.43L21.9589 16.4243C21.6798 14.4879 20.0136 13 18 13M7 17V17.0099M11 17V17.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6471,7 +5996,6 @@ export const SettingHexagon = () => (
     <path
       fill="none"
       d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6479,7 +6003,6 @@ export const SettingHexagon = () => (
     <path
       fill="none"
       d="M16.6649 3.93726C16.319 3.59135 16.146 3.4184 15.9442 3.29472C15.7653 3.18506 15.5702 3.10425 15.3661 3.05526C15.1359 3 14.8913 3 14.4022 3H9.59785C9.10867 3 8.86407 3 8.6339 3.05526C8.42983 3.10425 8.23474 3.18506 8.05579 3.29472C7.85396 3.4184 7.68101 3.59135 7.3351 3.93726L3.93726 7.33511C3.59135 7.68101 3.4184 7.85396 3.29472 8.05579C3.18506 8.23474 3.10425 8.42983 3.05526 8.6339C3 8.86407 3 9.10867 3 9.59785V14.4022C3 14.8913 3 15.1359 3.05526 15.3661C3.10425 15.5702 3.18506 15.7653 3.29472 15.9442C3.4184 16.146 3.59135 16.319 3.93726 16.6649L7.33511 20.0627C7.68101 20.4086 7.85396 20.5816 8.05579 20.7053C8.23474 20.8149 8.42983 20.8957 8.6339 20.9447C8.86407 21 9.10867 21 9.59785 21H14.4022C14.8913 21 15.1359 21 15.3661 20.9447C15.5702 20.8957 15.7653 20.8149 15.9442 20.7053C16.146 20.5816 16.319 20.4086 16.6649 20.0627L20.0627 16.6649C20.4086 16.319 20.5816 16.146 20.7053 15.9442C20.8149 15.7653 20.8957 15.5702 20.9447 15.3661C21 15.1359 21 14.8913 21 14.4022V9.59785C21 9.10867 21 8.86407 20.9447 8.6339C20.8957 8.42983 20.8149 8.23474 20.7053 8.05579C20.5816 7.85396 20.4086 7.68101 20.0627 7.3351L16.6649 3.93726Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6493,7 +6016,6 @@ export const ShapePerspective = () => (
     <path
       fill="none"
       d="M19.5 9C19.6712 9 19.8384 8.98278 20 8.94999V15.05C19.8384 15.0172 19.6712 15 19.5 15M19.5 9C18.1193 9 17 7.88071 17 6.5M19.5 9C20.8807 9 22 7.88071 22 6.5C22 5.11929 20.8807 4 19.5 4C18.1193 4 17 5.11929 17 6.5M17 6.5C17 6.19924 17.0531 5.91089 17.1505 5.64381L6.99691 4.37461C6.99896 4.41615 7 4.45795 7 4.5M7 4.5C7 5.88071 5.88071 7 4.5 7M7 4.5C7 3.11929 5.88071 2 4.5 2C3.11929 2 2 3.11929 2 4.5C2 5.88071 3.11929 7 4.5 7M4.5 7C4.32877 7 4.16156 6.98279 4 6.94999V17.05C4.16156 17.0172 4.32877 17 4.5 17M4.5 17C5.88071 17 7 18.1193 7 19.5M4.5 17C3.11929 17 2 18.1193 2 19.5C2 20.8807 3.11929 22 4.5 22C5.88071 22 7 20.8807 7 19.5M7 19.5C7 19.542 6.99896 19.5838 6.99691 19.6254L17.1505 18.3562C17.0531 18.0891 17 17.8008 17 17.5M17 17.5C17 16.1193 18.1193 15 19.5 15M17 17.5C17 18.8807 18.1193 20 19.5 20C20.8807 20 22 18.8807 22 17.5C22 16.1193 20.8807 15 19.5 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6507,7 +6029,6 @@ export const ShapeSquare = () => (
     <path
       fill="none"
       d="M19.5 7C19.6712 7 19.8384 6.98279 20 6.94999V17.05C19.8384 17.0172 19.6712 17 19.5 17M19.5 7C18.1193 7 17 5.88071 17 4.5M19.5 7C20.8807 7 22 5.88071 22 4.5C22 3.11929 20.8807 2 19.5 2C18.1193 2 17 3.11929 17 4.5M17 4.5C17 4.32877 17.0172 4.16156 17.05 4H6.94999C6.98279 4.16156 7 4.32877 7 4.5M7 4.5C7 5.88071 5.88071 7 4.5 7M7 4.5C7 3.11929 5.88071 2 4.5 2C3.11929 2 2 3.11929 2 4.5C2 5.88071 3.11929 7 4.5 7M4.5 7C4.32877 7 4.16156 6.98279 4 6.94999V17.05C4.16156 17.0172 4.32877 17 4.5 17M4.5 17C5.88071 17 7 18.1193 7 19.5M4.5 17C3.11929 17 2 18.1193 2 19.5C2 20.8807 3.11929 22 4.5 22C5.88071 22 7 20.8807 7 19.5M7 19.5C7 19.6712 6.98279 19.8384 6.94999 20H17.05C17.0172 19.8384 17 19.6712 17 19.5M17 19.5C17 18.1193 18.1193 17 19.5 17M17 19.5C17 20.8807 18.1193 22 19.5 22C20.8807 22 22 20.8807 22 19.5C22 18.1193 20.8807 17 19.5 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6521,7 +6042,6 @@ export const ShareCircle = () => (
     <path
       fill="none"
       d="M18 3L21 6L18 9M20.7891 6L17.957 6C17.0675 6 16.6228 6 16.2503 6.05645C14.0843 6.38471 12.3842 8.08478 12.056 10.2508C11.9995 10.6233 11.9995 11.068 11.9995 11.9575V12M12.8048 3.0355C12.5397 3.012 12.2713 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 11.7536 20.9901 11.5096 20.9707 11.2682"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6535,7 +6055,6 @@ export const ShareDots = () => (
     <path
       fill="none"
       d="M15.2453 6.6069L8.77253 10.3827M8.77253 13.6173L15.2453 17.3931M21 5C21 6.65685 19.6569 8 18 8C16.3431 8 15 6.65685 15 5C15 3.34315 16.3431 2 18 2C19.6569 2 21 3.34315 21 5ZM21 19C21 20.6569 19.6569 22 18 22C16.3431 22 15 20.6569 15 19C15 17.3431 16.3431 16 18 16C19.6569 16 21 17.3431 21 19ZM9 12C9 13.6569 7.65685 15 6 15C4.34315 15 3 13.6569 3 12C3 10.3431 4.34315 9 6 9C7.65685 9 9 10.3431 9 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6549,7 +6068,6 @@ export const ShareFatSquare = () => (
     <path
       fill="none"
       d="M9.67278 3.00278C7.72745 3.01615 6.61547 3.09382 5.73005 3.54496C4.78924 4.02433 4.02433 4.78923 3.54497 5.73004C3 6.7996 3 8.19973 3 11V13C3 15.8003 3 17.2004 3.54497 18.2699C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.2699C20.9483 17.3019 20.9951 16.063 20.9995 13.7602M17.5036 11.1029C18.0286 10.9658 18.6683 10.3261 19.9478 9.04658C20.5401 8.45429 20.8363 8.15814 20.9858 7.83401C21.2309 7.30246 21.2309 6.69019 20.9858 6.15865C20.8363 5.83452 20.5401 5.53836 19.9478 4.94606C18.6683 3.6666 18.0286 3.02686 17.5036 2.88971C16.6368 2.66323 15.7251 3.04087 15.2723 3.81395C15.1213 4.0717 15.0535 4.46174 15.023 5.06218C11.6197 5.53768 9.00045 8.4602 9.00045 11.9945C9.00045 12.1061 9.00306 12.2172 9.00823 12.3275C10.4666 10.5304 12.6038 9.30644 15.0295 9.04624C15.0628 9.58165 15.1313 9.93791 15.2723 10.1787C15.7251 10.9518 16.6368 11.3294 17.5036 11.1029Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6563,7 +6081,6 @@ export const ShareFat = () => (
     <path
       fill="none"
       d="M19.3124 7.53054L20.5769 8.75485C21.3627 9.51567 21.7557 9.8961 21.9029 10.3348C22.0324 10.7206 22.0324 11.1363 21.9029 11.5221C21.7557 11.9608 21.3627 12.3412 20.5769 13.102L19.3124 14.3264C17.6123 15.9724 16.7622 16.7953 16.0324 16.851C15.3992 16.8992 14.7803 16.651 14.3678 16.1834C14.0225 15.7919 13.928 15.0707 13.9021 13.8133C13.8984 13.8133 13.8947 13.8133 13.8909 13.8133C9.15779 13.8133 4.90845 15.8188 2 19C2.31047 12.9017 7.51571 8.04969 13.8914 8.04969C13.895 8.04969 13.8985 8.04969 13.902 8.04969C13.9277 6.78848 14.0219 6.0656 14.3678 5.67349C14.7803 5.20585 15.3992 4.95768 16.0324 5.00593C16.7622 5.06154 17.6123 5.88454 19.3124 7.53054Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6577,7 +6094,6 @@ export const Share = () => (
     <path
       fill="none"
       d="M18 3L21 6L18 9M20.7896 6L17.9575 6C17.068 6 16.6233 6 16.2508 6.05645C14.0848 6.38471 12.3847 8.08478 12.0564 10.2508C12 10.6233 12 11.068 12 11.9575V12M12.8435 3.01524C12.8433 3.01016 12.8432 3.00508 12.8431 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11.2389"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6591,7 +6107,6 @@ export const ShieldAdd = () => (
     <path
       fill="none"
       d="M12.0004 9.00001V15M9.00039 12L15.0004 12M5.00038 16.2857C3.76606 14.2842 3.28808 11.2 3.10579 8.89551C3.02985 7.93545 2.99188 7.4554 3.15774 6.91125C3.29172 6.4717 3.59958 5.96471 3.9278 5.64311C4.33413 5.24498 4.8379 5.03174 5.84545 4.60527L10.1293 2.79198C10.8194 2.49989 11.1645 2.35384 11.5219 2.29609C11.8388 2.24489 12.1619 2.24489 12.4788 2.29609C12.8363 2.35384 13.1813 2.49989 13.8714 2.79198L18.1553 4.60527C19.1629 5.03174 19.6666 5.24498 20.073 5.64311C20.4012 5.96471 20.709 6.4717 20.843 6.91125C21.0089 7.4554 20.9709 7.93544 20.895 8.89551C20.7127 11.2 20.2347 14.2842 19.0004 16.2857C17.8559 18.1416 15.6919 19.763 14.0716 20.8C13.4783 21.1797 13.1817 21.3695 12.6776 21.4863C12.3157 21.5702 11.685 21.5702 11.3231 21.4863C10.8191 21.3695 10.5224 21.1797 9.92914 20.8C8.30884 19.763 6.14488 18.1415 5.00038 16.2857Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6605,7 +6120,6 @@ export const ShieldCheck = () => (
     <path
       fill="none"
       d="M9.50039 11.5357L11.6217 13.657L15.1572 10.1214M5.00038 16.2857C3.76606 14.2842 3.28808 11.2 3.10579 8.89551C3.02985 7.93545 2.99188 7.4554 3.15774 6.91125C3.29172 6.4717 3.59958 5.96471 3.9278 5.64311C4.33413 5.24498 4.8379 5.03174 5.84545 4.60527L10.1293 2.79198C10.8194 2.49989 11.1645 2.35384 11.5219 2.29609C11.8388 2.24489 12.1619 2.24489 12.4788 2.29609C12.8363 2.35384 13.1813 2.49989 13.8714 2.79198L18.1553 4.60527C19.1629 5.03174 19.6666 5.24498 20.073 5.64311C20.4012 5.96471 20.709 6.4717 20.843 6.91125C21.0089 7.4554 20.9709 7.93544 20.895 8.89551C20.7127 11.2 20.2347 14.2842 19.0004 16.2857C17.8559 18.1416 15.6919 19.763 14.0716 20.8C13.4783 21.1797 13.1817 21.3695 12.6776 21.4863C12.3157 21.5702 11.685 21.5702 11.3231 21.4863C10.8191 21.3695 10.5224 21.1797 9.92914 20.8C8.30884 19.763 6.14488 18.1415 5.00038 16.2857Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6619,7 +6133,6 @@ export const ShieldKey = () => (
     <path
       fill="none"
       d="M12.0004 12L12.0004 15M12.0004 12C13.105 12 14.0004 11.1046 14.0004 10C14.0004 8.89544 13.105 8.00001 12.0004 8.00001C10.8958 8.00001 10.0004 8.89544 10.0004 10C10.0004 11.1046 10.8958 12 12.0004 12ZM5.00038 16.2857C3.76606 14.2842 3.28808 11.2 3.10579 8.89551C3.02985 7.93545 2.99188 7.4554 3.15774 6.91125C3.29172 6.4717 3.59958 5.96471 3.9278 5.64311C4.33413 5.24498 4.8379 5.03174 5.84545 4.60527L10.1293 2.79198C10.8194 2.49989 11.1645 2.35384 11.5219 2.29609C11.8388 2.24489 12.1619 2.24489 12.4788 2.29609C12.8363 2.35384 13.1813 2.49989 13.8714 2.79198L18.1553 4.60527C19.1629 5.03174 19.6666 5.24498 20.073 5.64311C20.4012 5.96471 20.709 6.4717 20.843 6.91125C21.0089 7.4554 20.9709 7.93544 20.895 8.89551C20.7127 11.2 20.2347 14.2842 19.0004 16.2857C17.8559 18.1416 15.6919 19.763 14.0716 20.8C13.4783 21.1797 13.1817 21.3695 12.6776 21.4863C12.3157 21.5702 11.685 21.5702 11.3231 21.4863C10.8191 21.3695 10.5224 21.1797 9.92914 20.8C8.30884 19.763 6.14488 18.1415 5.00038 16.2857Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6633,7 +6146,6 @@ export const ShieldOff = () => (
     <path
       fill="none"
       d="M3 3.00001L21 21M3.09414 8.75116C3.09782 8.79805 3.10162 8.84616 3.10553 8.89551C3.28781 11.2 3.7658 14.2842 5.00011 16.2857C6.14461 18.1415 8.30857 19.763 9.92887 20.8C10.5222 21.1797 10.8188 21.3695 11.3229 21.4863C11.6848 21.5702 12.3155 21.5702 12.6774 21.4863C13.1814 21.3695 13.478 21.1797 14.0714 20.8C14.2787 20.6673 14.495 20.525 14.7168 20.3739M17.8082 17.8084C18.2643 17.3253 18.6737 16.8151 19.0001 16.2857C20.2344 14.2842 20.7124 11.2 20.8947 8.89551C20.9706 7.93544 21.0086 7.4554 20.8428 6.91125C20.7088 6.4717 20.4009 5.96471 20.0727 5.64311C19.6664 5.24498 19.1626 5.03174 18.155 4.60527L13.8711 2.79198C13.1811 2.49989 12.836 2.35384 12.4786 2.29609C12.1616 2.24489 11.8386 2.24489 11.5217 2.29609C11.1642 2.35384 10.8192 2.49988 10.1291 2.79198L5.84519 4.60527C5.50443 4.7495 5.22128 4.86935 4.98005 4.98021L17.8082 17.8084Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6647,7 +6159,6 @@ export const ShieldRemove = () => (
     <path
       fill="none"
       d="M10.0004 10L14.0004 14M14.0004 10L10.0004 14M5.00038 16.2857C3.76606 14.2842 3.28808 11.2 3.10579 8.89551C3.02985 7.93545 2.99188 7.4554 3.15774 6.91125C3.29172 6.4717 3.59958 5.96471 3.9278 5.64311C4.33413 5.24498 4.8379 5.03174 5.84545 4.60527L10.1293 2.79198C10.8194 2.49989 11.1645 2.35384 11.5219 2.29609C11.8388 2.24489 12.1619 2.24489 12.4788 2.29609C12.8363 2.35384 13.1813 2.49989 13.8714 2.79198L18.1553 4.60527C19.1629 5.03174 19.6666 5.24498 20.073 5.64311C20.4012 5.96471 20.709 6.4717 20.843 6.91125C21.0089 7.4554 20.9709 7.93544 20.895 8.89551C20.7127 11.2 20.2347 14.2842 19.0004 16.2857C17.8559 18.1416 15.6919 19.763 14.0716 20.8C13.4783 21.1797 13.1817 21.3695 12.6776 21.4863C12.3157 21.5702 11.685 21.5702 11.3231 21.4863C10.8191 21.3695 10.5224 21.1797 9.92914 20.8C8.30884 19.763 6.14488 18.1415 5.00038 16.2857Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6661,7 +6172,6 @@ export const Shield = () => (
     <path
       fill="none"
       d="M3.10579 8.89551C3.28808 11.2 3.76606 14.2842 5.00038 16.2857C6.14488 18.1415 8.30884 19.763 9.92914 20.8C10.5224 21.1797 10.8191 21.3695 11.3231 21.4863C11.685 21.5702 12.3157 21.5702 12.6776 21.4863C13.1817 21.3695 13.4783 21.1797 14.0716 20.8C15.6919 19.763 17.8559 18.1416 19.0004 16.2857C20.2347 14.2842 20.7127 11.2 20.895 8.89551C20.9709 7.93544 21.0089 7.4554 20.843 6.91125C20.709 6.4717 20.4012 5.96471 20.073 5.64311C19.6666 5.24498 19.1629 5.03174 18.1553 4.60527L13.8714 2.79198C13.1813 2.49989 12.8363 2.35384 12.4788 2.29609C12.1619 2.24489 11.8388 2.24489 11.5219 2.29609C11.1645 2.35384 10.8194 2.49989 10.1293 2.79198L5.84545 4.60527C4.8379 5.03174 4.33413 5.24498 3.9278 5.64311C3.59958 5.96471 3.29172 6.4717 3.15774 6.91125C2.99188 7.4554 3.02985 7.93545 3.10579 8.89551Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6675,7 +6185,6 @@ export const Shuffle = () => (
     <path
       fill="none"
       d="M19 5L21 7M21 7L19 9M21 7H20.3916C18.7878 7 17.9859 7 17.2613 7.22512C16.6199 7.42439 16.0252 7.75083 15.5128 8.18497C14.9338 8.67546 14.5033 9.35197 13.6423 10.705L11.3577 14.295C10.4967 15.648 10.0662 16.3245 9.48723 16.815C8.97477 17.2492 8.38009 17.5756 7.7387 17.7749C7.01407 18 6.21219 18 4.60843 18H3M19 15L21 17M21 17L19 19M21 17H20.3916C18.7878 17 17.9859 17 17.2613 16.7749C16.6199 16.5756 16.0252 16.2492 15.5128 15.815C14.9338 15.3245 14.5033 14.648 13.6423 13.295L11.3577 9.705C10.4967 8.35197 10.0662 7.67546 9.48723 7.18497C8.97477 6.75083 8.38009 6.42439 7.7387 6.22512C7.01407 6 6.21219 6 4.60843 6H3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6689,7 +6198,6 @@ export const SidebarLeft = () => (
     <path
       fill="none"
       d="M14 10L12 12L14 14M8 3L8 21M14 21H10C7.19974 21 5.79961 21 4.73005 20.455C3.78924 19.9757 3.02433 19.2108 2.54497 18.27C2 17.2004 2 15.8003 2 13L2 11C2 8.19974 2 6.79961 2.54497 5.73005C3.02433 4.78924 3.78924 4.02433 4.73005 3.54497C5.79961 3 7.19974 3 10 3L14 3C16.8003 3 18.2004 3 19.27 3.54497C20.2108 4.02433 20.9757 4.78924 21.455 5.73005C22 6.79961 22 8.19974 22 11V13C22 15.8003 22 17.2004 21.455 18.27C20.9757 19.2108 20.2108 19.9757 19.27 20.455C18.2004 21 16.8003 21 14 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6703,7 +6211,6 @@ export const SidebarRight = () => (
     <path
       fill="none"
       d="M10 10L12 12L10 14M16 3L16 21M14 21H10C7.19974 21 5.79961 21 4.73005 20.455C3.78924 19.9757 3.02433 19.2108 2.54497 18.27C2 17.2004 2 15.8003 2 13L2 11C2 8.19974 2 6.79961 2.54497 5.73005C3.02433 4.78924 3.78924 4.02433 4.73005 3.54497C5.79961 3 7.19974 3 10 3L14 3C16.8003 3 18.2004 3 19.27 3.54497C20.2108 4.02433 20.9757 4.78924 21.455 5.73005C22 6.79961 22 8.19974 22 11V13C22 15.8003 22 17.2004 21.455 18.27C20.9757 19.2108 20.2108 19.9757 19.27 20.455C18.2004 21 16.8003 21 14 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6717,7 +6224,6 @@ export const Skype = () => (
     <path
       fill="none"
       d="M14.5 9.6C14.5 8.35586 13.3107 8 12 8C11.4455 8 10.8911 8.1574 10.4457 8.33257C9.82985 8.57479 9.5 9.18377 9.5 9.82269C9.5 10.6452 10.0483 11.3754 10.8611 11.6355L13.1389 12.3645C13.9517 12.6246 14.5 13.3548 14.5 14.1773C14.5 14.8162 14.1701 15.4252 13.5543 15.6674C13.1089 15.8426 12.5545 16 12 16C10.6893 16 9.5 15.6441 9.5 14.4M12 3C11.1938 3 10.4123 3.10601 9.66876 3.30486C8.85549 2.49826 7.73593 2 6.5 2C4.01472 2 2 4.01472 2 6.5C2 7.73593 2.49826 8.85549 3.30486 9.66876C3.10601 10.4123 3 11.1938 3 12C3 16.9706 7.02944 21 12 21C12.8062 21 13.5877 20.894 14.3312 20.6951C15.1445 21.5017 16.2641 22 17.5 22C19.9853 22 22 19.9853 22 17.5C22 16.2641 21.5017 15.1445 20.6951 14.3312C20.894 13.5877 21 12.8062 21 12C21 7.02944 16.9706 3 12 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6731,7 +6237,6 @@ export const Slack = () => (
     <path
       fill="none"
       d="M12 4.5V7.5C12 8.32843 12.6716 9 13.5 9C14.3284 9 15 8.32843 15 7.5V4.5C15 3.67157 14.3284 3 13.5 3C12.6716 3 12 3.67157 12 4.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -6740,7 +6245,6 @@ export const Slack = () => (
     <path
       fill="none"
       d="M9 16.5V19.5C9 20.3284 9.67157 21 10.5 21C11.3284 21 12 20.3284 12 19.5V16.5C12 15.6716 11.3284 15 10.5 15C9.67157 15 9 15.6716 9 16.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -6749,7 +6253,6 @@ export const Slack = () => (
     <path
       fill="none"
       d="M4.5 12H7.5C8.32843 12 9 11.3284 9 10.5C9 9.67157 8.32843 9 7.5 9H4.5C3.67157 9 3 9.67157 3 10.5C3 11.3284 3.67157 12 4.5 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -6758,7 +6261,6 @@ export const Slack = () => (
     <path
       fill="none"
       d="M16.5 15H19.5C20.3284 15 21 14.3284 21 13.5C21 12.6716 20.3284 12 19.5 12H16.5C15.6716 12 15 12.6716 15 13.5C15 14.3284 15.6716 15 16.5 15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -6767,7 +6269,6 @@ export const Slack = () => (
     <path
       fill="none"
       d="M6 4.5C6 5.32843 6.67157 6 7.5 6H9V4.5C9 3.67157 8.32843 3 7.5 3C6.67157 3 6 3.67157 6 4.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -6776,7 +6277,6 @@ export const Slack = () => (
     <path
       fill="none"
       d="M19.5 6C18.6716 6 18 6.67157 18 7.5V9H19.5C20.3284 9 21 8.32843 21 7.5C21 6.67157 20.3284 6 19.5 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -6785,7 +6285,6 @@ export const Slack = () => (
     <path
       fill="none"
       d="M18 19.5C18 18.6716 17.3284 18 16.5 18H15V19.5C15 20.3284 15.6716 21 16.5 21C17.3284 21 18 20.3284 18 19.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -6794,7 +6293,6 @@ export const Slack = () => (
     <path
       fill="none"
       d="M4.5 18C5.32843 18 6 17.3284 6 16.5V15H4.5C3.67157 15 3 15.6716 3 16.5C3 17.3284 3.67157 18 4.5 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -6809,7 +6307,6 @@ export const SliderHorizontal = () => (
     <path
       fill="none"
       d="M2 18L2 6M22 18L22 6M13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V7.8C6 6.11984 6 5.27976 6.32698 4.63803C6.6146 4.07354 7.07354 3.6146 7.63803 3.32698C8.27976 3 9.11984 3 10.8 3L13.2 3C14.8802 3 15.7202 3 16.362 3.32698C16.9265 3.6146 17.3854 4.07354 17.673 4.63803C18 5.27976 18 6.11984 18 7.8V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6823,7 +6320,6 @@ export const SliderVertical = () => (
     <path
       fill="none"
       d="M18 22L6 22M18 2L6 2M16.2 18H7.8C6.11984 18 5.27976 18 4.63803 17.673C4.07354 17.3854 3.6146 16.9265 3.32698 16.362C3 15.7202 3 14.8802 3 13.2L3 10.8C3 9.11984 3 8.27976 3.32698 7.63803C3.6146 7.07354 4.07354 6.6146 4.63803 6.32698C5.27976 6 6.11984 6 7.8 6H16.2C17.8802 6 18.7202 6 19.362 6.32698C19.9265 6.6146 20.3854 7.07354 20.673 7.63803C21 8.27976 21 9.11984 21 10.8V13.2C21 14.8802 21 15.7202 20.673 16.362C20.3854 16.9265 19.9265 17.3854 19.362 17.673C18.7202 18 17.8802 18 16.2 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6839,7 +6335,6 @@ export const Snapchat = () => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M21.5458 17.9259C21.0008 18.2963 20.6374 18.2963 20.2741 18.4815C19.9107 18.4815 19.729 18.6667 19.5473 18.8519C19.184 18.8519 19.184 19.2222 19.184 19.4074C19.184 19.5926 19.184 19.7778 19.0023 19.963C18.8206 20.1481 18.4573 20.1481 18.0939 20.1481C17.5489 20.1481 16.8222 20.1481 16.0954 20.5185C15.7321 20.7037 15.3687 20.8889 15.0054 21.0741C14.2787 21.6296 13.5519 22 12.0985 22C10.6451 22 9.91837 21.4444 9.19165 21.0741C8.8283 20.8889 8.46494 20.5185 8.10158 20.5185C7.37487 20.3333 6.64815 20.1481 6.10312 20.1481C5.73976 20.1481 5.3764 20.1481 5.19472 19.963C4.64969 19.7778 4.64969 19.5926 4.64969 19.4074C4.64969 19.2222 4.64969 18.8519 4.28633 18.8519C4.10465 18.6667 3.74129 18.6667 3.55961 18.4815C3.19626 18.2963 2.8329 18.2963 2.28786 17.9259C1.74283 17.5556 2.10618 17.3704 2.28786 17.1852C5.73976 15.5185 6.37256 13.1852 6.37256 13C6.37256 11.7759 2 10.5 3 9C4 7.5 6.64815 10.1868 6.64815 9C6.64815 5.10477 7.31789 2 12.0985 2C16.6858 2 17.5489 5.22196 17.5489 9C17.5489 9.93405 20 7.5 21 9C22 10.5 18 11.7249 18 13C18 13.1852 18.4573 15.3333 21.9092 17.1852C21.9092 17.3704 22.2725 17.5556 21.5458 17.9259Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -6854,7 +6349,6 @@ export const Sparks2Points = () => (
     <path
       fill="none"
       d="M4.54697 13.9085L2 15L4.54705 16.0916C5.41633 16.4641 5.85097 16.6504 6.22067 16.9218C6.5485 17.1624 6.83771 17.4516 7.07834 17.7795C7.34971 18.1492 7.53598 18.5838 7.90851 19.4531L9 22L10.0916 19.453C10.4642 18.5837 10.6504 18.1491 10.9218 17.7794C11.1624 17.4516 11.4516 17.1624 11.7794 16.9218C12.1491 16.6504 12.5837 16.4642 13.453 16.0916L16 15L13.453 13.9084C12.5838 13.5359 12.1492 13.3496 11.7795 13.0783C11.4516 12.8376 11.1624 12.5484 10.9218 12.2206C10.6504 11.8509 10.4642 11.4163 10.0916 10.547L9 8L7.90853 10.5469C7.53599 11.4162 7.34971 11.8509 7.07834 12.2206C6.83771 12.5484 6.54848 12.8376 6.22064 13.0783C5.85093 13.3496 5.41628 13.5359 4.54697 13.9085Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6862,7 +6356,6 @@ export const Sparks2Points = () => (
     <path
       fill="none"
       d="M14.4469 5.80846L14 6L14.447 6.19158C15.3163 6.56412 15.7509 6.7504 16.1206 7.02177C16.4485 7.26241 16.7377 7.55163 16.9783 7.87946C17.2497 8.24916 17.4359 8.68381 17.8085 9.55309L18 10L18.1916 9.55294C18.5641 8.68371 18.7504 8.24909 19.0218 7.87941C19.2624 7.5516 19.5516 7.2624 19.8794 7.02177C20.2491 6.75041 20.6837 6.56414 21.5529 6.1916L22 6L21.553 5.80844C20.6838 5.4359 20.2491 5.24963 19.8794 4.97826C19.5516 4.73764 19.2624 4.44843 19.0218 4.12061C18.7504 3.75092 18.5641 3.31629 18.1916 2.44703L18 2L17.8085 2.44688C17.4359 3.31619 17.2497 3.75085 16.9783 4.12056C16.7377 4.4484 16.4484 4.73763 16.1206 4.97826C15.7509 5.24964 15.3162 5.43592 14.4469 5.80846Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6876,7 +6369,6 @@ export const Sparks3Points = () => (
     <path
       fill="none"
       d="M19.4993 2V7M19.4993 17V22M16.9993 4.5L21.9993 4.5M16.9993 19.5H21.9993M2 11.9999L5.36705 10.5569C6.23635 10.1844 6.67101 9.99808 7.04072 9.7267C7.36856 9.48606 7.65778 9.19684 7.89842 8.869C8.16979 8.49929 8.35607 8.06461 8.7286 7.19532L10.1715 3.82837L11.6146 7.19547C11.9871 8.06473 12.1734 8.49935 12.4448 8.86905C12.6854 9.19687 12.9746 9.48608 13.3024 9.7267C13.6721 9.99807 14.1068 10.1843 14.976 10.5569L18.343 11.9999L14.9759 13.443C14.1067 13.8155 13.6721 14.0018 13.3024 14.2731C12.9746 14.5138 12.6854 14.803 12.4448 15.1308C12.1734 15.5005 11.9871 15.9351 11.6146 16.8043L10.1715 20.1714L8.72859 16.8045C8.35605 15.9352 8.16978 15.5005 7.89842 15.1308C7.65779 14.803 7.36857 14.5138 7.04074 14.2731C6.67105 14.0018 6.23639 13.8155 5.36712 13.4429L2 11.9999Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6890,7 +6382,6 @@ export const Sparks4Points = () => (
     <path
       fill="none"
       d="M19.5 2V7M4.5 17L4.5 22M17 4.5L22 4.5M2 19.5H7M2.32837 6.83569L3.36038 6.39341C4.22969 6.02087 4.66434 5.83459 5.03406 5.56322C5.36189 5.32258 5.65112 5.03335 5.89175 4.70551C6.16313 4.3358 6.3494 3.90115 6.72194 3.03184L7.16418 1.99988L7.60652 3.03199C7.97907 3.90124 8.16534 4.33587 8.43671 4.70556C8.67734 5.03338 8.96655 5.32259 9.29437 5.56322C9.66406 5.83458 10.0987 6.02085 10.968 6.39339L12 6.83569L10.9679 7.27805C10.0986 7.65059 9.66403 7.83686 9.29435 8.10822C8.96653 8.34884 8.67733 8.63804 8.43671 8.96586C8.16535 9.33554 7.97908 9.77015 7.60654 10.6394L7.16418 11.6715L6.72193 10.6395C6.34939 9.77025 6.16312 9.33561 5.89175 8.9659C5.65112 8.63807 5.36191 8.34885 5.03408 8.10822C4.66438 7.83685 4.22973 7.65057 3.36046 7.27802L2.32837 6.83569ZM12.3284 17L13.3604 16.5577C14.2297 16.1852 14.6643 15.9989 15.0341 15.7275C15.3619 15.4869 15.6511 15.1977 15.8918 14.8698C16.1631 14.5001 16.3494 14.0655 16.7219 13.1961L17.1642 12.1642L17.6065 13.1963C17.9791 14.0655 18.1653 14.5002 18.4367 14.8699C18.6773 15.1977 18.9665 15.4869 19.2944 15.7275C19.6641 15.9989 20.0987 16.1852 20.968 16.5577L22 17L20.9679 17.4424C20.0986 17.8149 19.664 18.0012 19.2943 18.2725C18.9665 18.5131 18.6773 18.8024 18.4367 19.1302C18.1654 19.4998 17.9791 19.9345 17.6065 20.8037L17.1642 21.8358L16.7219 20.8038C16.3494 19.9346 16.1631 19.4999 15.8918 19.1302C15.6511 18.8024 15.3619 18.5132 15.0341 18.2725C14.6644 18.0012 14.2297 17.8149 13.3605 17.4423L12.3284 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6904,7 +6395,6 @@ export const Spotify = () => (
     <path
       fill="none"
       d="M8 9.5754C10.6422 8.54788 13.6514 8.91485 16 10.5295M8.95508 12.4489C10.9367 11.7149 13.1386 11.9351 14.8266 13.1828M9.61523 15.3277C11.0831 14.7405 12.6978 14.9607 14.0189 15.8415M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -6919,7 +6409,6 @@ export const Square = () => (
     <path
       fill="none"
       d="M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3L11 3C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11L3 13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6933,7 +6422,6 @@ export const Star4PointsNarrow = () => (
     <path
       fill="none"
       d="M6.64709 10.0084L2 12L6.64716 13.9916C7.51643 14.3642 7.95109 14.5505 8.32078 14.8218C8.64861 15.0625 8.93783 15.3517 9.17846 15.6795C9.44982 16.0492 9.63609 16.4839 10.0086 17.3531L12.0001 22.0001L13.9918 17.353C14.3643 16.4838 14.5506 16.0492 14.822 15.6795C15.0626 15.3517 15.3518 15.0625 15.6796 14.8218C16.0493 14.5505 16.4839 14.3642 17.3531 13.9917L22.0002 12L17.3532 10.0084C16.4839 9.63587 16.0493 9.4496 15.6796 9.17824C15.3518 8.93761 15.0626 8.6484 14.822 8.32058C14.5506 7.95089 14.3643 7.51626 13.9918 6.647L12.0001 1.99988L10.0086 6.64686C9.6361 7.51616 9.44983 7.95082 9.17846 8.32053C8.93782 8.64837 8.6486 8.9376 8.32076 9.17824C7.95105 9.44961 7.51638 9.63589 6.64709 10.0084Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6947,7 +6435,6 @@ export const Star4PointsThin = () => (
     <path
       fill="none"
       d="M6.27477 10.9313L2 12L6.27477 13.0686C7.62928 13.4073 8.30653 13.5766 8.85763 13.9292C9.34509 14.2411 9.75906 14.6551 10.071 15.1426C10.4236 15.6937 10.5929 16.3709 10.9315 17.7254L12.0001 22.0001L13.0688 17.7253C13.4075 16.3708 13.5768 15.6936 13.9294 15.1425C14.2413 14.6551 14.6553 14.2411 15.1427 13.9292C15.6938 13.5766 16.3711 13.4073 17.7255 13.0687L22.0002 12L17.7255 10.9313C16.3711 10.5927 15.6938 10.4234 15.1427 10.0708C14.6553 9.75886 14.2413 9.3449 13.9294 8.85745C13.5768 8.30638 13.4075 7.62914 13.0688 6.27468L12.0001 1.99988L10.9315 6.27453C10.5929 7.62903 10.4236 8.30631 10.071 8.8574C9.75906 9.34486 9.34509 9.75884 8.85763 10.0708C8.30653 10.4234 7.62928 10.5927 6.27477 10.9313Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6961,7 +6448,6 @@ export const Star4Points = () => (
     <path
       fill="none"
       d="M8.00021 7.99998L2 12L8.00021 16.0001L12.0001 22.0001L16.0002 16.0001L22.0002 12L16.0002 7.99998L12.0001 1.99988L8.00021 7.99998Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6975,7 +6461,6 @@ export const Star6Points = () => (
     <path
       fill="none"
       d="M18 12L21 17H15L12 22L9 17H3L6 12L3 7L9 7L12 2L15 7L21 7L18 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -6989,7 +6474,6 @@ export const Star8Points = () => (
     <path
       fill="none"
       d="M9.44525 5.83232L4.92897 4.92899L5.83224 9.44525L2 12L5.83231 14.5548L4.92897 19.0713L9.44547 18.168L12.0001 22.0001L14.5549 18.1681L19.0713 19.0713L18.168 14.5549L22.0002 12L18.168 9.4452L19.0713 4.92899L14.5551 5.83232L12.0001 1.99988L9.44525 5.83232Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7003,7 +6487,6 @@ export const StarCircle = () => (
     <path
       fill="none"
       d="M12 3C11.8319 3 11.665 3.0046 11.4993 3.01369L8.91006 8.25476L3.49797 9.04021C3.34808 9.4708 3.22998 9.91628 3.14648 10.3738L7.00006 14.126L6.18569 18.8701C6.68019 19.289 7.22053 19.6555 7.79811 19.961L12.0001 17.7538L16.2019 19.9609C16.7795 19.6554 17.3199 19.2889 17.8144 18.8699L17.0001 14.126L20.8535 10.374C20.77 9.91638 20.6518 9.47083 20.5019 9.04017L15.0901 8.25476L12.5009 3.0137C12.335 3.00461 12.168 3 12 3ZM12 3C7.02939 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9705 3 12 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7017,7 +6500,6 @@ export const StarHalf = () => (
     <path
       fill="none"
       d="M12.0009 3.29999C11.6253 3.29983 11.2497 3.40176 10.9174 3.60579C10.409 3.9179 10.0086 4.72839 9.20779 6.34937C8.97106 6.82855 8.85269 7.06815 8.68886 7.26161C8.47377 7.51559 8.20059 7.71395 7.8925 7.83985C7.65783 7.93574 7.39311 7.97416 6.86367 8.051C5.07725 8.31026 4.18404 8.43989 3.73083 8.8243C3.13333 9.3311 2.8733 10.1319 3.05909 10.8931C3.20001 11.4704 3.84575 12.0991 5.13724 13.3566C5.51959 13.7289 5.71076 13.915 5.84422 14.1302C6.02026 14.4139 6.125 14.7361 6.14952 15.0691C6.1681 15.3216 6.12295 15.5846 6.03265 16.1106C5.72761 17.8877 5.57508 18.7762 5.80101 19.3263C6.09819 20.0499 6.77799 20.544 7.55796 20.6035C8.15094 20.6486 8.95072 20.2285 10.5503 19.3883C11.0252 19.1389 11.2626 19.0141 11.5094 18.9539C11.6708 18.9145 11.8359 18.8948 12.0009 18.8949V3.29999Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7031,7 +6513,6 @@ export const StarMoveHorizontal = () => (
     <path
       fill="none"
       d="M2 6.00001L6 6.00001M2 18H5M2 12H3M10.1035 8.54391C10.4666 8.49122 10.6481 8.46487 10.8127 8.40999C11.1931 8.2832 11.5251 8.04215 11.7634 7.71973C11.8665 7.58019 11.9477 7.41592 12.11 7.08739C12.6582 5.97772 12.9323 5.42289 13.2408 5.16158C13.9675 4.54616 15.0325 4.54616 15.7592 5.16158C16.0677 5.42289 16.3418 5.97772 16.89 7.08739C17.0523 7.41592 17.1335 7.58019 17.2366 7.71973C17.4749 8.04215 17.8069 8.2832 18.1873 8.40999C18.3519 8.46487 18.5334 8.49122 18.8965 8.54391C20.1185 8.72125 20.7295 8.80992 21.0722 9.02074C21.8866 9.52171 22.2172 10.5397 21.8524 11.4236C21.6989 11.7955 21.2573 12.2254 20.3742 13.0853C20.1123 13.3404 19.9813 13.4679 19.8804 13.6087C19.6464 13.9356 19.5192 14.3268 19.5163 14.7288C19.515 14.902 19.5459 15.0822 19.6078 15.4426C19.8165 16.6581 19.9208 17.2659 19.8259 17.6573C19.6011 18.5854 18.7367 19.2137 17.7845 19.1413C17.3829 19.1107 16.8356 18.8232 15.7409 18.2482C15.415 18.077 15.252 17.9914 15.0861 17.939C14.7046 17.8187 14.2954 17.8187 13.9139 17.939C13.748 17.9914 13.585 18.077 13.2591 18.2482C12.1644 18.8232 11.6171 19.1107 11.2155 19.1413C10.2633 19.2137 9.39892 18.5854 9.17406 17.6573C9.07922 17.2659 9.18354 16.6581 9.3922 15.4426C9.45407 15.0822 9.48501 14.902 9.48374 14.7288C9.4808 14.3268 9.35359 13.9356 9.11955 13.6087C9.01872 13.4679 8.88774 13.3404 8.62576 13.0853C7.74265 12.2254 7.3011 11.7955 7.1476 11.4236C6.78281 10.5397 7.11335 9.52171 7.92781 9.02074C8.27055 8.80992 8.88153 8.72125 10.1035 8.54391Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7045,7 +6526,6 @@ export const StarMoveVertical = () => (
     <path
       fill="none"
       d="M7 22V21M12 22V20M17 22V21M7.60351 5.8439C7.96659 5.7912 8.14813 5.76486 8.31274 5.70998C8.6931 5.58319 9.02507 5.34214 9.26338 5.01972C9.36652 4.88017 9.44768 4.71591 9.60998 4.38737C10.1582 3.27771 10.4323 2.72288 10.7408 2.46157C11.4675 1.84614 12.5325 1.84614 13.2592 2.46157C13.5677 2.72288 13.8418 3.27771 14.39 4.38737C14.5523 4.71591 14.6335 4.88017 14.7366 5.01972C14.9749 5.34214 15.3069 5.58319 15.6873 5.70998C15.8519 5.76486 16.0334 5.7912 16.3965 5.8439C17.6185 6.02124 18.2295 6.10991 18.5722 6.32073C19.3866 6.8217 19.7172 7.83966 19.3524 8.72354C19.1989 9.09549 18.7573 9.52542 17.8742 10.3853C17.6123 10.6404 17.4813 10.7679 17.3804 10.9087C17.1464 11.2355 17.0192 11.6268 17.0163 12.0288C17.015 12.202 17.0459 12.3822 17.1078 12.7426C17.3165 13.9581 17.4208 14.5659 17.3259 14.9573C17.1011 15.8854 16.2367 16.5137 15.2845 16.4413C14.8829 16.4107 14.3356 16.1232 13.2409 15.5482C12.915 15.377 12.752 15.2914 12.5861 15.239C12.2046 15.1187 11.7954 15.1187 11.4139 15.239C11.248 15.2914 11.085 15.377 10.7591 15.5482C9.66442 16.1232 9.11708 16.4107 8.71547 16.4413C7.76329 16.5137 6.89892 15.8854 6.67406 14.9573C6.57922 14.5659 6.68354 13.9581 6.8922 12.7426C6.95407 12.3822 6.98501 12.202 6.98374 12.0288C6.9808 11.6268 6.85359 11.2355 6.61955 10.9087C6.51872 10.7679 6.38774 10.6404 6.12576 10.3853C5.24265 9.52542 4.8011 9.09549 4.6476 8.72354C4.28281 7.83966 4.61335 6.8217 5.42781 6.32073C5.77055 6.10991 6.38153 6.02124 7.60351 5.8439Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7059,7 +6539,6 @@ export const StarOff = () => (
     <path
       fill="none"
       d="M3.99943 3L21.9994 21M3.99356 8.65291C3.89261 8.70425 3.80571 8.76081 3.73083 8.82432C3.13333 9.33113 2.8733 10.1319 3.05909 10.8931C3.20001 11.4704 3.84575 12.0991 5.13724 13.3566C5.51959 13.7289 5.71076 13.9151 5.84422 14.1302C6.02026 14.4139 6.125 14.7361 6.14952 15.0691C6.1681 15.3216 6.12295 15.5846 6.03265 16.1107C5.72761 17.8877 5.57508 18.7762 5.80101 19.3263C6.09819 20.0499 6.77799 20.5441 7.55796 20.6035C8.15094 20.6487 8.95072 20.2286 10.5503 19.3883C11.0252 19.1389 11.2626 19.0142 11.5094 18.9539C11.8317 18.8753 12.1683 18.8753 12.4906 18.9539C12.7374 19.0142 12.9748 19.1389 13.4497 19.3883C14.5929 19.9888 15.3275 20.3747 15.8702 20.5296M17.9673 16.1107C18.0333 16.4948 18.0921 16.8374 18.1415 17.144L8.47598 7.47848C8.55193 7.41172 8.62311 7.33927 8.68886 7.26163C8.85269 7.06817 8.97106 6.82858 9.20778 6.3494C10.0086 4.72841 10.409 3.91792 10.9174 3.60581C11.5815 3.19808 12.4185 3.19808 13.0826 3.60581C13.591 3.91792 13.9914 4.72841 14.7922 6.3494C15.0289 6.82858 15.1473 7.06817 15.3111 7.26163C15.5262 7.51562 15.7994 7.71397 16.1075 7.83987C16.3422 7.93577 16.6069 7.97419 17.1363 8.05102C18.9228 8.31028 19.816 8.43991 20.2692 8.82432C20.8667 9.33113 21.1267 10.1319 20.9409 10.8931C20.8 11.4704 20.1542 12.0991 18.8628 13.3566C18.4804 13.7289 18.2892 13.9151 18.1558 14.1302C17.9797 14.4139 17.875 14.7361 17.8505 15.0691C17.8319 15.3216 17.877 15.5846 17.9673 16.1107Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7073,7 +6552,6 @@ export const Star = () => (
     <path
       fill="none"
       d="M9.20778 6.34937C10.0086 4.72839 10.409 3.9179 10.9174 3.60579C11.5815 3.19805 12.4185 3.19805 13.0826 3.60579C13.591 3.9179 13.9914 4.72839 14.7922 6.34937C15.0289 6.82856 15.1473 7.06815 15.3111 7.26161C15.5262 7.51559 15.7994 7.71395 16.1075 7.83985C16.3422 7.93574 16.6069 7.97416 17.1363 8.051C18.9228 8.31026 19.816 8.43989 20.2692 8.8243C20.8667 9.3311 21.1267 10.1319 20.9409 10.8931C20.8 11.4704 20.1542 12.0991 18.8628 13.3566C18.4804 13.7289 18.2892 13.915 18.1558 14.1302C17.9797 14.4139 17.875 14.7361 17.8505 15.0691C17.8319 15.3216 17.877 15.5846 17.9673 16.1106C18.2724 17.8877 18.4249 18.7762 18.199 19.3263C17.9018 20.0499 17.222 20.544 16.442 20.6035C15.8491 20.6486 15.0493 20.2285 13.4497 19.3883C12.9748 19.1389 12.7374 19.0141 12.4906 18.9539C12.1683 18.8752 11.8317 18.8752 11.5094 18.9539C11.2626 19.0141 11.0252 19.1389 10.5503 19.3883C8.95072 20.2285 8.15094 20.6486 7.55796 20.6035C6.77799 20.544 6.09819 20.0499 5.80101 19.3263C5.57508 18.7762 5.72761 17.8877 6.03265 16.1106C6.12295 15.5846 6.1681 15.3216 6.14952 15.0691C6.125 14.7361 6.02026 14.4139 5.84422 14.1302C5.71076 13.915 5.51959 13.7289 5.13724 13.3566C3.84575 12.0991 3.20001 11.4704 3.05909 10.8931C2.8733 10.1319 3.13333 9.3311 3.73083 8.8243C4.18404 8.43989 5.07725 8.31026 6.86367 8.051C7.39311 7.97416 7.65783 7.93574 7.8925 7.83985C8.20059 7.71395 8.47377 7.51559 8.68886 7.26161C8.85269 7.06815 8.97106 6.82856 9.20778 6.34937Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7087,7 +6565,6 @@ export const Sticker = () => (
     <path
       fill="none"
       d="M20.938 13.062C20.9789 12.7137 21 12.3593 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C12.3593 21 12.7137 20.9789 13.062 20.938L20.938 13.062Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7095,7 +6572,6 @@ export const Sticker = () => (
     <path
       fill="none"
       d="M13.143 20.857L20.857 13.143C19.9282 12.4263 18.7639 12 17.5 12C14.4624 12 12 14.4624 12 17.5C12 18.7639 12.4263 19.9282 13.143 20.857Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7109,7 +6585,6 @@ export const Support = () => (
     <path
       fill="none"
       d="M18.364 5.63604C16.7353 4.00736 14.4853 3 12 3C9.51471 3 7.26471 4.00736 5.63603 5.63604M18.364 5.63604L14.8284 9.17157M18.364 5.63604C19.9926 7.26472 21 9.5154 21 12.0007C21 14.486 19.9926 16.736 18.364 18.3646M5.63603 5.63604L9.17157 9.17157M5.63603 5.63604C4.00735 7.26472 3 9.5154 3 12.0007C3 14.486 4.00736 16.736 5.63604 18.3646M9.17157 9.17157C9.89542 8.44771 10.8954 8 12 8C13.1046 8 14.1046 8.44772 14.8284 9.17157M9.17157 9.17157C8.44771 9.89543 8 10.8961 8 12.0007C8 13.1053 8.44772 14.1053 9.17157 14.8291M14.8284 9.17157C15.5523 9.89543 16 10.8961 16 12.0007C16 13.1052 15.5523 14.1052 14.8284 14.8291M5.63604 18.3646L9.17157 14.8291M5.63604 18.3646C7.26472 19.9933 9.51471 20.9997 12 20.9997C14.4853 20.9997 16.7353 19.9933 18.364 18.3646M9.17157 14.8291C9.89543 15.553 10.8954 15.9997 12 15.9997C13.1046 15.9997 14.1046 15.553 14.8284 14.8291M18.364 18.3646L14.8284 14.8291"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7123,7 +6598,6 @@ export const SwapHalfHorizontalReverse = () => (
     <path
       fill="none"
       d="M4 9L20 9L16 5M20 15L4 15L8.00026 19"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7137,7 +6611,6 @@ export const SwapHalfHorizontal = () => (
     <path
       fill="none"
       d="M20 9L4 9L8 5M4 15L20 15L16 19"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7151,7 +6624,6 @@ export const SwapHalfVerticalReverse = () => (
     <path
       fill="none"
       d="M15 4V20L19 16M9.00002 20V4L5.00146 8"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7165,7 +6637,6 @@ export const SwapHalfVertical = () => (
     <path
       fill="none"
       d="M9 4V20L5 16M15 20V4L19 8"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7179,7 +6650,6 @@ export const SwapHorizontalReverse = () => (
     <path
       fill="none"
       d="M4 7L20 7M20 7L17 4M20 7L17 10M4 17L20 17M4 17L7 14M4 17L7 20"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7193,7 +6663,6 @@ export const SwapHorizontal = () => (
     <path
       fill="none"
       d="M20 7L4 7M4 7L7 4M4 7L7 10M20 17L4 17M20 17L17 14M20 17L17 20"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7207,7 +6676,6 @@ export const SwapVerticalReverse = () => (
     <path
       fill="none"
       d="M7 4V20M7 4L4 7M7 4L10 7M17 4L17 20M17 20L14 17M17 20L20 17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7221,7 +6689,6 @@ export const SwapVertical = () => (
     <path
       fill="none"
       d="M7 4V20M7 20L4 17M7 20L10 17M17 4L17 20M17 4L14 7M17 4L20 7"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7235,7 +6702,6 @@ export const Table = () => (
     <path
       fill="none"
       d="M3 9L21 9M3 15L21 15M9 21L9 3M16.2 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2L3 7.8C3 6.11984 3 5.27976 3.32698 4.63803C3.6146 4.07354 4.07354 3.6146 4.63803 3.32698C5.27976 3 6.11984 3 7.8 3L16.2 3C17.8802 3 18.7202 3 19.362 3.32698C19.9265 3.6146 20.3854 4.07354 20.673 4.63803C21 5.27976 21 6.11984 21 7.8V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7249,7 +6715,6 @@ export const Telegram = () => (
     <path
       fill="none"
       d="M11 16L15 10L7 14M11 16L10 21M11 16L15 18.5M7 14L2 11.3333L22 3L19 21L15 18.5M7 14L10 21M10 21L15 18.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7263,7 +6728,6 @@ export const TerminalSquare = () => (
     <path
       fill="none"
       d="M8 9L11 12L8 15M16 15H13M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7277,7 +6741,6 @@ export const TerminalWindow = () => (
     <path
       fill="none"
       d="M8 12L10 14L8 16M16 16H13M22 8H2M14 21H10C7.19974 21 5.79961 21 4.73005 20.455C3.78924 19.9757 3.02433 19.2108 2.54497 18.27C2 17.2004 2 15.8003 2 13L2 11C2 8.19974 2 6.79961 2.54497 5.73005C3.02433 4.78924 3.78924 4.02433 4.73005 3.54497C5.79961 3 7.19974 3 10 3L14 3C16.8003 3 18.2004 3 19.27 3.54497C20.2108 4.02433 20.9757 4.78924 21.455 5.73005C22 6.79961 22 8.19974 22 11V13C22 15.8003 22 17.2004 21.455 18.27C20.9757 19.2108 20.2108 19.9757 19.27 20.455C18.2004 21 16.8003 21 14 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7291,7 +6754,6 @@ export const Terminal = () => (
     <path
       fill="none"
       d="M4 5L11 12L4 19M20 19H13"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7305,7 +6767,6 @@ export const TextInput = () => (
     <path
       fill="none"
       d="M14 17H17.2C18.8802 17 19.7202 17 20.362 16.673C20.9265 16.3854 21.3854 15.9265 21.673 15.362C22 14.7202 22 13.8802 22 12.2V11.8C22 10.1198 22 9.27976 21.673 8.63803C21.3854 8.07354 20.9265 7.6146 20.362 7.32698C19.7202 7 18.8802 7 17.2 7H14M12 3L8 3M12 21H8M10 3L10 21M10 17H6.8C5.11984 17 4.27976 17 3.63803 16.673C3.07354 16.3854 2.6146 15.9265 2.32698 15.362C2 14.7202 2 13.8802 2 12.2L2 11.8C2 10.1198 2 9.27976 2.32698 8.63803C2.6146 8.07354 3.07354 7.6146 3.63803 7.32698C4.27976 7 5.11984 7 6.8 7H10V17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7319,7 +6780,6 @@ export const ThreeDotsHorizontalCircle = () => (
     <path
       fill="none"
       d="M8 11.99V11.9999M12 11.99V11.9999M16 11.99V11.9999M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7333,7 +6793,6 @@ export const ThreeDotsHorizontalSquare = () => (
     <path
       fill="none"
       d="M8 11.99V11.9999M12 11.99V11.9999M16 11.99V11.9999M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7347,7 +6806,6 @@ export const ThreeDotsHorizontal = () => (
     <path
       fill="none"
       d="M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7355,7 +6813,6 @@ export const ThreeDotsHorizontal = () => (
     <path
       fill="none"
       d="M6 12C6 12.5523 5.55228 13 5 13C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11C5.55228 11 6 11.4477 6 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7363,7 +6820,6 @@ export const ThreeDotsHorizontal = () => (
     <path
       fill="none"
       d="M20 12C20 12.5523 19.5523 13 19 13C18.4477 13 18 12.5523 18 12C18 11.4477 18.4477 11 19 11C19.5523 11 20 11.4477 20 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7377,7 +6833,6 @@ export const ThreeDotsVerticalCircle = () => (
     <path
       fill="none"
       d="M12 8V8.00995M12 11.99V11.9999M12 16V16.0099M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7391,7 +6846,6 @@ export const ThreeDotsVerticalSquare = () => (
     <path
       fill="none"
       d="M12 8V8.00995M12 11.99V11.9999M12 16V16.0099M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7405,7 +6859,6 @@ export const ThreeDotsVertical = () => (
     <path
       fill="none"
       d="M12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7413,7 +6866,6 @@ export const ThreeDotsVertical = () => (
     <path
       fill="none"
       d="M12 18C12.5523 18 13 18.4477 13 19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19C11 18.4477 11.4477 18 12 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7421,7 +6873,6 @@ export const ThreeDotsVertical = () => (
     <path
       fill="none"
       d="M12 4C12.5523 4 13 4.44772 13 5C13 5.55228 12.5523 6 12 6C11.4477 6 11 5.55228 11 5C11 4.44772 11.4477 4 12 4Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7435,7 +6886,6 @@ export const ToggleOff = () => (
     <path
       fill="none"
       d="M9 19H15C18.866 19 22 15.866 22 12C22 8.13401 18.866 5 15 5L9 5C5.13401 5 2 8.13401 2 12C2 15.866 5.13401 19 9 19Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7443,7 +6893,6 @@ export const ToggleOff = () => (
     <path
       fill="none"
       d="M12 12C12 13.6569 10.6569 15 9 15C7.34315 15 6 13.6569 6 12C6 10.3431 7.34315 9 9 9C10.6569 9 12 10.3431 12 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7457,7 +6906,6 @@ export const ToggleOn = () => (
     <path
       fill="none"
       d="M9 19H15C18.866 19 22 15.866 22 12C22 8.13401 18.866 5 15 5L9 5C5.13401 5 2 8.13401 2 12C2 15.866 5.13401 19 9 19Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7465,7 +6913,6 @@ export const ToggleOn = () => (
     <path
       fill="none"
       d="M18 12C18 13.6569 16.6569 15 15 15C13.3431 15 12 13.6569 12 12C12 10.3431 13.3431 9 15 9C16.6569 9 18 10.3431 18 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7479,7 +6926,6 @@ export const ToggleSquareOff = () => (
     <path
       fill="none"
       d="M6.8 19H17.2C18.8802 19 19.7202 19 20.362 18.673C20.9265 18.3854 21.3854 17.9265 21.673 17.362C22 16.7202 22 15.8802 22 14.2V9.8C22 8.11984 22 7.27976 21.673 6.63803C21.3854 6.07354 20.9265 5.6146 20.362 5.32698C19.7202 5 18.8802 5 17.2 5L6.8 5C5.11984 5 4.27976 5 3.63803 5.32698C3.07354 5.6146 2.6146 6.07354 2.32698 6.63803C2 7.27976 2 8.11984 2 9.8L2 14.2C2 15.8802 2 16.7202 2.32698 17.362C2.6146 17.9265 3.07354 18.3854 3.63803 18.673C4.27976 19 5.11984 19 6.8 19Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7487,7 +6933,6 @@ export const ToggleSquareOff = () => (
     <path
       fill="none"
       d="M6 15H12V9H6V15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7501,7 +6946,6 @@ export const ToggleSquareOn = () => (
     <path
       fill="none"
       d="M6.8 19H17.2C18.8802 19 19.7202 19 20.362 18.673C20.9265 18.3854 21.3854 17.9265 21.673 17.362C22 16.7202 22 15.8802 22 14.2V9.8C22 8.11984 22 7.27976 21.673 6.63803C21.3854 6.07354 20.9265 5.6146 20.362 5.32698C19.7202 5 18.8802 5 17.2 5L6.8 5C5.11984 5 4.27976 5 3.63803 5.32698C3.07354 5.6146 2.6146 6.07354 2.32698 6.63803C2 7.27976 2 8.11984 2 9.8L2 14.2C2 15.8802 2 16.7202 2.32698 17.362C2.6146 17.9265 3.07354 18.3854 3.63803 18.673C4.27976 19 5.11984 19 6.8 19Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7509,7 +6953,6 @@ export const ToggleSquareOn = () => (
     <path
       fill="none"
       d="M12 15H18V9H12V15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7523,7 +6966,6 @@ export const Tool = () => (
     <path
       fill="none"
       d="M12.0462 14.4236C13.7986 15.6968 16.1716 15.6968 17.924 14.4236C18.2424 14.1923 18.5708 13.8639 19.2278 13.207C19.8847 12.5501 20.2131 12.2216 20.4444 11.9032C21.6741 10.2107 21.7161 7.9394 20.5706 6.2073L17.8135 8.96432C17.0325 9.74537 15.7662 9.74537 14.9851 8.96432C14.2041 8.18327 14.2041 6.91694 14.9851 6.1359L17.7421 3.37888C16.01 2.23329 13.7387 2.27534 12.0462 3.50503C11.7278 3.73632 11.3994 4.06478 10.7425 4.72168C10.0856 5.37859 9.75711 5.70704 9.52581 6.0254C8.25259 7.77783 8.25259 10.1508 9.52581 11.9032M12.0462 14.4236C11.7278 14.1923 11.3994 13.8639 10.7425 13.207C10.0856 12.5501 9.75711 12.2216 9.52581 11.9032M12.0462 14.4236C12.218 14.5484 12.3957 14.6601 12.5783 14.7605L8.14475 20.2515C6.97199 21.704 4.79888 21.8194 3.47882 20.4994C2.15587 19.1764 2.27518 16.9976 3.73468 15.827L9.22006 11.4275C9.31218 11.59 9.41409 11.7495 9.52581 11.9032"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7537,7 +6979,6 @@ export const Tools = () => (
     <path
       fill="none"
       d="M8.49988 8.50003L5.99988 6.00003M12.5782 14.7609L8.14475 20.2517C6.97199 21.7042 4.79888 21.8197 3.47882 20.4996C2.15587 19.1767 2.27518 16.9979 3.73468 15.8273L9.21995 11.4278C8.26239 9.73858 8.36434 7.62358 9.5258 6.02497C9.7571 5.70661 10.0856 5.37816 10.7425 4.72126C11.3994 4.06435 11.7278 3.7359 12.0462 3.5046C13.7387 2.27492 16.01 2.23287 17.7421 3.37845L14.9851 6.13547C14.2041 6.91652 14.2041 8.18285 14.9851 8.9639C15.7661 9.74494 17.0325 9.74494 17.8135 8.9639L20.5705 6.20688C21.7161 7.93897 21.6741 10.2103 20.4444 11.9028C20.2131 12.2212 19.8846 12.5496 19.2277 13.2065C18.5708 13.8634 18.2424 14.1919 17.924 14.4232M12.5782 14.7609C14.2578 15.6842 16.3433 15.5716 17.924 14.4232M12.5782 14.7609L11.9802 15.5017L15.8152 20.2515C16.988 21.704 19.1611 21.8195 20.4812 20.4994C21.8041 19.1765 21.6848 16.9976 20.2253 15.827L18.1995 14.2023C18.1023 14.2869 18.0128 14.3587 17.924 14.4232M6.95007 4.12112L4.12165 6.94955L2.99988 4.41357L4.41409 2.99935L6.95007 4.12112Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7551,7 +6992,6 @@ export const TouchId = () => (
     <path
       fill="none"
       d="M3 8V7.8C3 6.11984 3 5.27976 3.32698 4.63803C3.6146 4.07354 4.07354 3.6146 4.63803 3.32698C5.27976 3 6.11984 3 7.8 3H8M3 16V16.2C3 17.8802 3 18.7202 3.32698 19.362C3.6146 19.9265 4.07354 20.3854 4.63803 20.673C5.27976 21 6.11984 21 7.8 21H8M21 8V7.8C21 6.11984 21 5.27976 20.673 4.63803C20.3854 4.07354 19.9265 3.6146 19.362 3.32698C18.7202 3 17.8802 3 16.2 3H16M21 16V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21H16M12 11V13M8 13V11C8 8.79086 9.79086 7 12 7C13.0144 7 13.9407 7.37764 14.6458 8M16 11V13C16 14.0144 15.6224 14.9407 15 15.6458M12 17C10.9856 17 10.0593 16.6224 9.35418 16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7565,7 +7005,6 @@ export const TranslateSquare = () => (
     <path
       fill="none"
       d="M12.2102 17.0001L14.12 12.2256C14.2381 11.9305 14.5239 11.7369 14.8418 11.7369C15.1597 11.7369 15.4455 11.9305 15.5636 12.2256L17.4734 17.0001M13.2637 14.8949H16.4216M12.2632 8.05237H7M12.2632 8.05237L7 14.3682M12.2632 8.05237H13.0004M10 7V8.05263M8 11L10 13M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7579,7 +7018,6 @@ export const Translate = () => (
     <path
       fill="none"
       d="M11 21L14.6286 11.9285C14.8529 11.3677 15.396 11 16 11C16.604 11 17.1471 11.3677 17.3714 11.9285L21 21M13 17H19M13 4H3M13 4L3 16M13 4H15M8 2V4M4.7192 7.62155L9.7192 12.6215"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7593,7 +7031,6 @@ export const TrashForever = () => (
     <path
       fill="none"
       d="M12 6C9.47182 6 7.08972 6.41698 5 7.1534V15C5 16.8613 5 17.7919 5.24472 18.5451C5.73931 20.0673 6.93272 21.2607 8.45492 21.7553C9.20808 22 10.1387 22 12 22C13.8613 22 14.7919 22 15.5451 21.7553C17.0673 21.2607 18.2607 20.0673 18.7553 18.5451C19 17.7919 19 16.8613 19 15V7.1534C16.9103 6.41698 14.5282 6 12 6ZM12 6C10.6148 6 9.27344 6.12518 8 6.35949V6C8 5.07003 8 4.60504 8.10222 4.22354C8.37962 3.18827 9.18827 2.37962 10.2235 2.10222C10.605 2 11.07 2 12 2C12.93 2 13.395 2 13.7765 2.10222C14.8117 2.37962 15.6204 3.18827 15.8978 4.22354C16 4.60504 16 5.07003 16 6V6.35949C14.7266 6.12518 13.3852 6 12 6ZM12 6C15.3775 6 18.4942 6.74418 21.0015 8M12 6C8.62318 6 5.50698 6.74389 3 7.99927M10 12L14 16M14 12L10 16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7607,7 +7044,6 @@ export const TrashLineForever = () => (
     <path
       fill="none"
       d="M15 3H9M21 7H3M10 12L14 16M14 12L10 16M5.06362 14.1253L5 7H19L18.9364 14.1253C18.9204 15.9128 18.9124 16.8066 18.679 17.532C18.1808 19.0798 16.9611 20.2886 15.4089 20.773C14.6815 21 13.7876 21 12 21C10.2124 21 9.31854 21 8.59111 20.773C7.03895 20.2886 5.81924 19.0798 5.32104 17.532C5.08756 16.8066 5.07958 15.9128 5.06362 14.1253Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7621,7 +7057,6 @@ export const TrashLinePattern = () => (
     <path
       fill="none"
       d="M15 3H9M21 7H3M9 12L15 12M11 16H13M5.06362 14.1253L5 7H19L18.9364 14.1253C18.9204 15.9128 18.9124 16.8066 18.679 17.532C18.1808 19.0798 16.9611 20.2886 15.4089 20.773C14.6815 21 13.7876 21 12 21C10.2124 21 9.31854 21 8.59111 20.773C7.03895 20.2886 5.81924 19.0798 5.32104 17.532C5.08756 16.8066 5.07958 15.9128 5.06362 14.1253Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7635,7 +7070,6 @@ export const TrashLineRestore = () => (
     <path
       fill="none"
       d="M15 3H9M21 7H3M9 13.3333C9 13.3333 9.66833 12.4227 10.2113 11.8794C10.7542 11.3361 11.5045 11 12.3333 11C13.9902 11 15.3333 12.3431 15.3333 14C15.3333 15.6569 13.9902 17 12.3333 17C11.8544 17 11.4017 16.8878 11 16.6882M9 13.3333V11M9 13.3333H11M5.06362 14.1253L5 7H19L18.9364 14.1253C18.9204 15.9128 18.9124 16.8066 18.679 17.532C18.1808 19.0798 16.9611 20.2886 15.4089 20.773C14.6815 21 13.7876 21 12 21C10.2124 21 9.31854 21 8.59111 20.773C7.03895 20.2886 5.81924 19.0798 5.32104 17.532C5.08756 16.8066 5.07958 15.9128 5.06362 14.1253Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7649,7 +7083,6 @@ export const TrashLine = () => (
     <path
       fill="none"
       d="M15 3H9M21 7H3M5.06362 14.1253L5 7H19L18.9364 14.1253C18.9204 15.9128 18.9124 16.8066 18.679 17.532C18.1808 19.0798 16.9611 20.2886 15.4089 20.773C14.6815 21 13.7876 21 12 21C10.2124 21 9.31854 21 8.59111 20.773C7.03895 20.2886 5.81924 19.0798 5.32104 17.532C5.08756 16.8066 5.07958 15.9128 5.06362 14.1253Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7663,7 +7096,6 @@ export const TrashPattern = () => (
     <path
       fill="none"
       d="M12 6C9.47182 6 7.08972 6.41698 5 7.1534V15C5 16.8613 5 17.7919 5.24472 18.5451C5.73931 20.0673 6.93272 21.2607 8.45492 21.7553C9.20808 22 10.1387 22 12 22C13.8613 22 14.7919 22 15.5451 21.7553C17.0673 21.2607 18.2607 20.0673 18.7553 18.5451C19 17.7919 19 16.8613 19 15V7.1534C16.9103 6.41698 14.5282 6 12 6ZM12 6C10.6148 6 9.27344 6.12518 8 6.35949V6C8 5.07003 8 4.60504 8.10222 4.22354C8.37962 3.18827 9.18827 2.37962 10.2235 2.10222C10.605 2 11.07 2 12 2C12.93 2 13.395 2 13.7765 2.10222C14.8117 2.37962 15.6204 3.18827 15.8978 4.22354C16 4.60504 16 5.07003 16 6V6.35949C14.7266 6.12518 13.3852 6 12 6ZM12 6C15.3775 6 18.4942 6.74418 21.0015 8M12 6C8.62318 6 5.50698 6.74389 3 7.99927M10 16L10 12M14 16V12"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7677,7 +7109,6 @@ export const TrashRestore = () => (
     <path
       fill="none"
       d="M12 6C9.47182 6 7.08972 6.41698 5 7.1534V15C5 16.8613 5 17.7919 5.24472 18.5451C5.73931 20.0673 6.93272 21.2607 8.45492 21.7553C9.20808 22 10.1387 22 12 22C13.8613 22 14.7919 22 15.5451 21.7553C17.0673 21.2607 18.2607 20.0673 18.7553 18.5451C19 17.7919 19 16.8613 19 15V7.1534C16.9103 6.41698 14.5282 6 12 6ZM12 6C10.6148 6 9.27344 6.12518 8 6.35949V6C8 5.07003 8 4.60504 8.10222 4.22354C8.37962 3.18827 9.18827 2.37962 10.2235 2.10222C10.605 2 11.07 2 12 2C12.93 2 13.395 2 13.7765 2.10222C14.8117 2.37962 15.6204 3.18827 15.8978 4.22354C16 4.60504 16 5.07003 16 6V6.35949C14.7266 6.12518 13.3852 6 12 6ZM12 6C15.3775 6 18.4942 6.74418 21.0015 8M12 6C8.62318 6 5.50698 6.74389 3 7.99927M9 13.3333C9 13.3333 9.66833 12.4227 10.2113 11.8794C10.7542 11.3361 11.5045 11 12.3333 11C13.9902 11 15.3333 12.3431 15.3333 14C15.3333 15.6569 13.9902 17 12.3333 17C11.8544 17 11.4017 16.8878 11 16.6882M9 13.3333V11M9 13.3333H11"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7691,7 +7122,6 @@ export const Trash = () => (
     <path
       fill="none"
       d="M12 6C9.47182 6 7.08972 6.41698 5 7.1534V15C5 16.8613 5 17.7919 5.24472 18.5451C5.73931 20.0673 6.93272 21.2607 8.45492 21.7553C9.20808 22 10.1387 22 12 22C13.8613 22 14.7919 22 15.5451 21.7553C17.0673 21.2607 18.2607 20.0673 18.7553 18.5451C19 17.7919 19 16.8613 19 15V7.1534C16.9103 6.41698 14.5282 6 12 6ZM12 6C10.6148 6 9.27344 6.12518 8 6.35949V6C8 5.07003 8 4.60504 8.10222 4.22354C8.37962 3.18827 9.18827 2.37962 10.2235 2.10222C10.605 2 11.07 2 12 2C12.93 2 13.395 2 13.7765 2.10222C14.8117 2.37962 15.6204 3.18827 15.8978 4.22354C16 4.60504 16 5.07003 16 6V6.35949C14.7266 6.12518 13.3852 6 12 6ZM12 6C15.3775 6 18.4942 6.74418 21.0015 8M12 6C8.62318 6 5.50698 6.74389 3 7.99927"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7705,7 +7135,6 @@ export const TriangleDown = () => (
     <path
       fill="none"
       d="M7.47623 11.7876C6.45867 10.225 5.94989 9.44375 6.00389 8.799C6.05097 8.237 6.34847 7.72184 6.82008 7.38567C7.36113 7 8.32109 7 10.241 7H13.759C15.6789 7 16.6389 7 17.1799 7.38567C17.6515 7.72184 17.949 8.237 17.9961 8.799C18.0501 9.44375 17.5413 10.225 16.5238 11.7876L14.7648 14.4887C13.848 15.8966 13.3896 16.6005 12.8027 16.8419C12.2901 17.0527 11.7099 17.0527 11.1973 16.8419C10.6104 16.6005 10.152 15.8966 9.23521 14.4887L7.47623 11.7876Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7719,7 +7148,6 @@ export const TriangleLeft = () => (
     <path
       fill="none"
       d="M12.2124 16.5238C13.775 17.5413 14.5563 18.0501 15.201 17.9961C15.763 17.949 16.2782 17.6515 16.6143 17.1799C17 16.6389 17 15.6789 17 13.759L17 10.241C17 8.32109 17 7.36113 16.6143 6.82008C16.2782 6.34847 15.763 6.05097 15.201 6.00389C14.5563 5.94989 13.775 6.45867 12.2124 7.47623L9.5113 9.23521C8.10344 10.152 7.39952 10.6104 7.15812 11.1973C6.94729 11.7099 6.94729 12.2901 7.15812 12.8027C7.39952 13.3896 8.10344 13.848 9.5113 14.7648L12.2124 16.5238Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7733,7 +7161,6 @@ export const TriangleRight = () => (
     <path
       fill="none"
       d="M11.7876 16.5238C10.225 17.5413 9.44375 18.0501 8.799 17.9961C8.237 17.949 7.72184 17.6515 7.38567 17.1799C7 16.6389 7 15.6789 7 13.759L7 10.241C7 8.32109 7 7.36113 7.38567 6.82008C7.72184 6.34847 8.237 6.05097 8.799 6.00389C9.44375 5.94989 10.225 6.45867 11.7876 7.47623L14.4887 9.23521C15.8966 10.152 16.6005 10.6104 16.8419 11.1973C17.0527 11.7099 17.0527 12.2901 16.8419 12.8027C16.6005 13.3896 15.8966 13.848 14.4887 14.7648L11.7876 16.5238Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7747,7 +7174,6 @@ export const TriangleUp = () => (
     <path
       fill="none"
       d="M7.47623 12.2124C6.45867 13.775 5.94989 14.5563 6.00389 15.201C6.05097 15.763 6.34847 16.2782 6.82008 16.6143C7.36113 17 8.32109 17 10.241 17H13.759C15.6789 17 16.6389 17 17.1799 16.6143C17.6515 16.2782 17.949 15.763 17.9961 15.201C18.0501 14.5563 17.5413 13.775 16.5238 12.2124L14.7648 9.5113C13.848 8.10344 13.3896 7.39952 12.8027 7.15812C12.2901 6.94729 11.7099 6.94729 11.1973 7.15812C10.6104 7.39952 10.152 8.10344 9.23521 9.5113L7.47623 12.2124Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7761,7 +7187,6 @@ export const Triangle = () => (
     <path
       fill="none"
       d="M9.09159 20.5C6.39451 20.5 5.04597 20.5 4.25499 19.9304C3.5648 19.4335 3.11422 18.6682 3.01318 17.8214C2.89739 16.851 3.54728 15.6644 4.84705 13.2913L7.75547 7.9812C9.13936 5.45451 9.83131 4.19116 10.7456 3.77321C11.5425 3.40893 12.4575 3.40893 13.2544 3.77321C14.1687 4.19116 14.8606 5.45451 16.2445 7.9812L19.153 13.2913C20.4527 15.6644 21.1026 16.851 20.9868 17.8214C20.8858 18.6682 20.4352 19.4335 19.745 19.9304C18.954 20.5 17.6055 20.5 14.9084 20.5H9.09159Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7775,7 +7200,6 @@ export const Undo = () => (
     <path
       fill="none"
       d="M8 13L4 9L8 5M4.21045 9H15C17.7614 9 20 11.2386 20 14C20 16.7614 17.7614 19 15 19H8.21045"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7789,7 +7213,6 @@ export const Unlike = () => (
     <path
       fill="none"
       d="M2 15.2568L2 7.08561C2 5.39329 3.37899 4.0214 5.08005 4.0214C6.78112 4.0214 8.1601 5.39329 8.1601 7.08561V15.2568C8.1601 16.9491 6.78112 18.321 5.08005 18.321C3.37899 18.321 2 16.9491 2 15.2568Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7797,7 +7220,6 @@ export const Unlike = () => (
     <path
       fill="none"
       d="M11.2695 20.145L9.24 17.6212C8.83975 17.1234 8.63963 16.8746 8.49732 16.5974C8.37106 16.3516 8.27878 16.0899 8.22299 15.8194C8.1601 15.5146 8.1601 15.1959 8.1601 14.5584V8.09498C8.1601 7.34551 8.1601 6.97077 8.2452 6.61812C8.32065 6.30546 8.4451 6.00656 8.61398 5.7324C8.80445 5.42317 9.0708 5.15819 9.6035 4.62823L9.79675 4.43598C10.3295 3.90602 10.5958 3.64104 10.9066 3.45154C11.1822 3.28353 11.4826 3.15973 11.7969 3.08466C12.1514 3 12.5281 3 13.2814 3H15.1415C16.3289 3 16.9226 3 17.4378 3.18873C17.8931 3.35552 18.3024 3.62695 18.6323 3.98093C19.0055 4.38148 19.2339 4.92667 19.6905 6.01707L20.7172 8.46843C21.6679 10.7382 22.1432 11.8731 21.962 12.786C21.8037 13.5842 21.3327 14.2869 20.6531 14.7393C19.8757 15.2568 18.6398 15.2568 16.1682 15.2568H15.3469V18.7221C15.3469 19.7025 14.7163 20.573 13.7814 20.883C12.8714 21.1848 11.8688 20.8902 11.2695 20.145Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7811,7 +7233,6 @@ export const UnlockCircle = () => (
     <path
       fill="none"
       d="M8 9V6C8 3.79086 9.79086 2 12 2C13.4806 2 14.7733 2.8044 15.4649 4M19 15C19 18.866 15.866 22 12 22C8.13401 22 5 18.866 5 15C5 11.134 8.13401 8 12 8C15.866 8 19 11.134 19 15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7825,7 +7246,6 @@ export const UnlockNarrow = () => (
     <path
       fill="none"
       d="M8 10V6C8 3.79086 9.79086 2 12 2C14.2091 2 16 3.79086 16 6M15.2 22H8.8C7.11984 22 6.27976 22 5.63803 21.673C5.07354 21.3854 4.6146 20.9265 4.32698 20.362C4 19.7202 4 18.8802 4 17.2L4 14.8C4 13.1198 4 12.2798 4.32698 11.638C4.6146 11.0735 5.07354 10.6146 5.63803 10.327C6.27976 10 7.11984 10 8.8 10H15.2C16.8802 10 17.7202 10 18.362 10.327C18.9265 10.6146 19.3854 11.0735 19.673 11.638C20 12.2798 20 13.1198 20 14.8V17.2C20 18.8802 20 19.7202 19.673 20.362C19.3854 20.9265 18.9265 21.3854 18.362 21.673C17.7202 22 16.8802 22 15.2 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7839,7 +7259,6 @@ export const UnlockSquare = () => (
     <path
       fill="none"
       d="M17.081 5.01551L17.0649 4.97576C16.7304 4.15104 16.5632 3.73867 16.3388 3.43468C15.688 2.55295 14.6082 2.09625 13.5222 2.24342C13.1478 2.29416 12.7354 2.46139 11.9107 2.79585L10.1713 3.50126C9.03461 3.96222 8.46628 4.1927 8.07353 4.54734C7.45397 5.10679 7.09553 5.89909 7.08436 6.73379C7.07728 7.26291 7.27939 7.84194 7.68359 9.00001M16.2 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2L3 13.8C3 12.1199 3 11.2798 3.32698 10.638C3.6146 10.0736 4.07354 9.61461 4.63803 9.32699C5.27976 9.00001 6.11984 9.00001 7.8 9.00001H16.2C17.8802 9.00001 18.7202 9.00001 19.362 9.32699C19.9265 9.61461 20.3854 10.0736 20.673 10.638C21 11.2798 21 12.1199 21 13.8V16.2C21 17.8802 21 18.7202 20.673 19.362C20.3854 19.9265 19.9265 20.3854 19.362 20.673C18.7202 21 17.8802 21 16.2 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7853,7 +7272,6 @@ export const UploadCircle = () => (
     <path
       fill="none"
       d="M12 20L12 8M12 8L8 12M12 8L16 12M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7867,7 +7285,6 @@ export const UploadCloud = () => (
     <path
       fill="none"
       d="M6.64363 17H6C3.79086 17 2 15.2091 2 13C2 11.5129 2.81149 10.2154 4.01579 9.52604C4.25949 5.88108 7.29329 3 11 3C14.5267 3 17.4442 5.60802 17.9292 9.00062C17.9528 9.00021 17.9764 9 18 9C20.2091 9 22 10.7909 22 13C22 13.8854 21.7124 14.7035 21.2254 15.3662M17 16L14 13M14 13L11 16M14 13L14 21.0001"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7881,7 +7298,6 @@ export const UploadSquare = () => (
     <path
       fill="none"
       d="M12 20L12 8M12 8L8 12M12 8L16 12M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7895,7 +7311,6 @@ export const Upload = () => (
     <path
       fill="none"
       d="M12.0014 21.0019L12.0014 8.00188M12.0014 8.00188L16.0014 12.0019M12.0014 8.00188L8.00142 12.0019M3.01172 9.00188C3.04114 7.46156 3.14914 6.50829 3.54568 5.73005C4.02504 4.78924 4.78994 4.02433 5.73076 3.54497C6.80031 3 8.20045 3 11.0007 3L13.0007 3C15.801 3 17.2011 3 18.2707 3.54497C19.2115 4.02434 19.9764 4.78924 20.4557 5.73005C20.8523 6.50829 20.9603 7.46156 20.9897 9.00188"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7909,7 +7324,6 @@ export const UseAsMask = () => (
     <path
       fill="none"
       d="M16 9C16 12.866 12.866 16 9 16M16 9C16 5.13401 12.866 2 9 2C5.13401 2 2 5.13401 2 9C2 12.866 5.13401 16 9 16M16 9C16 8.66048 15.9758 8.3266 15.9291 8H12.8C11.1198 8 10.2798 8 9.63803 8.32698C9.07354 8.6146 8.6146 9.07354 8.32698 9.63803C8 10.2798 8 11.1198 8 12.8V15.9291C8.3266 15.9758 8.66048 16 9 16M22 14V16.01M16.01 22H14M22 20C22 21.1046 21.1046 22 20 22M20 8C21.1046 8 22 8.89543 22 10M10 22C8.89543 22 8 21.1046 8 20"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7923,7 +7337,6 @@ export const UserAdd = () => (
     <path
       fill="none"
       d="M17.7071 13.0406C16.154 11.7654 14.1664 11 12 11M3.05493 21C3.01863 20.6717 3 20.338 3 20C3 15.0294 7.02944 11 12 11M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11ZM17 19H21M19 17V21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7937,7 +7350,6 @@ export const UserCard = () => (
     <path
       fill="none"
       d="M10 12C11.1046 12 12 11.1046 12 10C12 8.89543 11.1046 8 10 8C8.89543 8 8 8.89543 8 10C8 11.1046 8.89543 12 10 12ZM10 12C12.2091 12 14 13.7909 14 16M10 12C7.79086 12 6 13.7909 6 16M17 9H18M17 13H18M10 21H14C16.8003 21 18.2004 21 19.27 20.455C20.2108 19.9757 20.9757 19.2108 21.455 18.27C22 17.2004 22 15.8003 22 13V11C22 8.19974 22 6.79961 21.455 5.73005C20.9757 4.78924 20.2108 4.02433 19.27 3.54497C18.2004 3 16.8003 3 14 3H10C7.19974 3 5.79961 3 4.73005 3.54497C3.78924 4.02433 3.02433 4.78924 2.54497 5.73005C2 6.79961 2 8.19974 2 11V13C2 15.8003 2 17.2004 2.54497 18.27C3.02433 19.2108 3.78924 19.9757 4.73005 20.455C5.79961 21 7.19974 21 10 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7951,7 +7363,6 @@ export const UserCircle = () => (
     <path
       fill="none"
       d="M12 14C13.6569 14 15 12.6569 15 11C15 9.34315 13.6569 8 12 8C10.3431 8 9 9.34315 9 11C9 12.6569 10.3431 14 12 14ZM12 14C11.071 14 10.6065 14 10.2178 14.0616C8.07837 14.4004 6.40042 16.0784 6.06156 18.2178C6.03792 18.3671 6.02336 18.5275 6.01439 18.7212C7.60493 20.1386 9.70187 21 12 21M12 14C12.929 14 13.3935 14 13.7822 14.0616C15.9216 14.4004 17.5996 16.0784 17.9384 18.2178C17.9621 18.3671 17.9766 18.5275 17.9856 18.7212C16.3951 20.1386 14.2981 21 12 21M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7965,7 +7376,6 @@ export const UserMinus = () => (
     <path
       fill="none"
       d="M17 19H21M19.4845 15C17.8699 12.588 15.1204 11 12 11M3.05493 21C3.01863 20.6717 3 20.338 3 20C3 15.0294 7.02944 11 12 11M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79087 3 8.00001 4.79086 8.00001 7C8.00001 9.20914 9.79086 11 12 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7979,7 +7389,6 @@ export const UserNarrowAdd = () => (
     <path
       fill="none"
       d="M5 21V17C5 15.1387 5 14.2081 5.24472 13.4549C5.73931 11.9327 6.93273 10.7393 8.45492 10.2447C9.20808 10 10.1387 10 12 10M12 10C13.8613 10 14.7919 10 15.5451 10.2447C16.9133 10.6893 18.0159 11.6984 18.5841 13.0034M12 10C13.933 10 15.5 8.433 15.5 6.5C15.5 4.567 13.933 3 12 3C10.067 3 8.5 4.567 8.5 6.5C8.5 8.433 10.067 10 12 10ZM17 19H21M19 17V21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -7993,7 +7402,6 @@ export const UserNarrowMinus = () => (
     <path
       fill="none"
       d="M17 19H21M5 21V17C5 15.1387 5 14.2081 5.24472 13.4549C5.73931 11.9327 6.93273 10.7393 8.45492 10.2447C9.20808 10 10.1387 10 12 10M12 10C13.8613 10 14.7919 10 15.5451 10.2447C17.0673 10.7393 18.2607 11.9327 18.7553 13.4549C18.891 13.8726 18.9514 14.3448 18.9784 15M12 10C13.933 10 15.5 8.433 15.5 6.5C15.5 4.567 13.933 3 12 3C10.067 3 8.5 4.567 8.5 6.5C8.5 8.433 10.067 10 12 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8007,7 +7415,6 @@ export const UserNarrow = () => (
     <path
       fill="none"
       d="M5 21V17C5 15.1387 5 14.2081 5.24472 13.4549C5.73931 11.9327 6.93273 10.7393 8.45492 10.2447C9.20808 10 10.1387 10 12 10M19 21V17C19 15.1387 19 14.2081 18.7553 13.4549C18.2607 11.9327 17.0673 10.7393 15.5451 10.2447C14.7919 10 13.8613 10 12 10M12 10C13.933 10 15.5 8.433 15.5 6.5C15.5 4.567 13.933 3 12 3C10.067 3 8.5 4.567 8.5 6.5C8.5 8.433 10.067 10 12 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8021,7 +7428,6 @@ export const UserRoundedAdd = () => (
     <path
       fill="none"
       d="M13 21H6.5C4.567 21 3 19.433 3 17.5C3 15.567 4.567 14 6.5 14H15.7639M17 19H21M19 17V21M15.5 6.5C15.5 8.433 13.933 10 12 10C10.067 10 8.5 8.433 8.5 6.5C8.5 4.567 10.067 3 12 3C13.933 3 15.5 4.567 15.5 6.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8035,7 +7441,6 @@ export const UserRoundedMinus = () => (
     <path
       fill="none"
       d="M17 19H21M13 21H6.5C4.567 21 3 19.433 3 17.5C3 15.567 4.567 14 6.5 14H17.5C18.4537 14 19.3182 14.3814 19.9495 15M15.5 6.5C15.5 8.433 13.933 10 12 10C10.067 10 8.50001 8.433 8.50001 6.5C8.50001 4.567 10.067 3 12 3C13.933 3 15.5 4.567 15.5 6.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8049,7 +7454,6 @@ export const UserRounded = () => (
     <path
       fill="none"
       d="M15.5 6.5C15.5 8.433 13.933 10 12 10C10.067 10 8.5 8.433 8.5 6.5C8.5 4.567 10.067 3 12 3C13.933 3 15.5 4.567 15.5 6.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8057,7 +7461,6 @@ export const UserRounded = () => (
     <path
       fill="none"
       d="M3 17.5C3 15.567 4.567 14 6.5 14H17.5C19.433 14 21 15.567 21 17.5C21 19.433 19.433 21 17.5 21H6.5C4.567 21 3 19.433 3 17.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8071,7 +7474,6 @@ export const UserSquare = () => (
     <path
       fill="none"
       d="M12 14C13.6569 14 15 12.6569 15 11C15 9.34315 13.6569 8 12 8C10.3431 8 9 9.34315 9 11C9 12.6569 10.3431 14 12 14ZM12 14C11.071 14 10.6065 14 10.2178 14.0616C8.07837 14.4004 6.40042 16.0784 6.06156 18.2178C6 18.6065 6 19.071 6 20C6 20.2164 6 20.4076 6.00078 20.5785C7.03896 21 8.42966 21 11 21M12 14C12.929 14 13.3935 14 13.7822 14.0616C15.9216 14.4004 17.5996 16.0784 17.9384 18.2178C18 18.6065 18 19.071 18 20C18 20.2164 18 20.4076 17.9992 20.5785C16.961 21 15.5703 21 13 21M11 21H13M11 21C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13V11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3H13C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8085,7 +7487,6 @@ export const User = () => (
     <path
       fill="none"
       d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11ZM12 11C7.02944 11 3 15.0294 3 20C3 20.338 3.01863 20.6717 3.05493 21M12 11C16.9706 11 21 15.0294 21 20C21 20.338 20.9814 20.6717 20.9451 21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8099,7 +7500,6 @@ export const WarningCircle = () => (
     <path
       fill="none"
       d="M12 8V11.9999M12 15.9901V16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8123,7 +7523,6 @@ export const WarningOctagon = () => (
     <path
       fill="none"
       d="M12 8V11.9999M12 15.9901V16M21 9.59785V14.4022C21 14.8913 21 15.1359 20.9447 15.3661C20.8957 15.5702 20.8149 15.7653 20.7053 15.9442C20.5816 16.146 20.4086 16.319 20.0627 16.6649L16.6649 20.0627C16.319 20.4086 16.146 20.5816 15.9442 20.7053C15.7653 20.8149 15.5702 20.8957 15.3661 20.9447C15.1359 21 14.8913 21 14.4022 21H9.59785C9.10867 21 8.86407 21 8.6339 20.9447C8.42983 20.8957 8.23474 20.8149 8.05579 20.7053C7.85396 20.5816 7.68101 20.4086 7.33511 20.0627L3.93726 16.6649C3.59135 16.319 3.4184 16.146 3.29472 15.9442C3.18506 15.7653 3.10425 15.5702 3.05526 15.3661C3 15.1359 3 14.8913 3 14.4022V9.59785C3 9.10867 3 8.86407 3.05526 8.6339C3.10425 8.42983 3.18506 8.23474 3.29472 8.05579C3.4184 7.85396 3.59135 7.68101 3.93726 7.33511L7.3351 3.93726C7.68101 3.59135 7.85396 3.4184 8.05579 3.29472C8.23474 3.18506 8.42983 3.10425 8.6339 3.05526C8.86407 3 9.10867 3 9.59785 3H14.4022C14.8913 3 15.1359 3 15.3661 3.05526C15.5702 3.10425 15.7653 3.18506 15.9442 3.29472C16.146 3.4184 16.319 3.59135 16.6649 3.93726L20.0627 7.3351C20.4086 7.68101 20.5816 7.85396 20.7053 8.05579C20.8149 8.23474 20.8957 8.42983 20.9447 8.6339C21 8.86407 21 9.10867 21 9.59785Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8137,7 +7536,6 @@ export const WarningSign = () => (
     <path
       fill="none"
       d="M12 9.90751V12.9327M12 16.9563V16.9664M20.7306 16.218L14.9171 5.97269C13.966 4.29656 13.4904 3.4585 12.8621 3.18124C12.3144 2.93959 11.6856 2.93959 11.1379 3.18124C10.5096 3.4585 10.034 4.29656 9.08292 5.97269L3.2694 16.218C2.37612 17.7922 1.92948 18.5794 2.00906 19.2231C2.0785 19.7849 2.38816 20.2925 2.8625 20.6222C3.40611 21 4.3329 21 6.18648 21L17.8135 21C19.6671 21 20.5939 21 21.1375 20.6222C21.6118 20.2925 21.9215 19.7848 21.9909 19.2231C22.0705 18.5794 21.6239 17.7922 20.7306 16.218Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8151,7 +7549,6 @@ export const WarningSquare = () => (
     <path
       fill="none"
       d="M12 8V11.9999M12 15.9901V16M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8165,7 +7562,6 @@ export const Webpage = () => (
     <path
       fill="none"
       d="M7 6V6.00995M11 6V6.00995M8 9L8 21M22 9L2 9M14 21H10C7.19974 21 5.79961 21 4.73005 20.455C3.78924 19.9757 3.02433 19.2108 2.54497 18.27C2 17.2004 2 15.8003 2 13L2 11C2 8.19974 2 6.79961 2.54497 5.73005C3.02433 4.78924 3.78924 4.02433 4.73005 3.54497C5.79961 3 7.19974 3 10 3L14 3C16.8003 3 18.2004 3 19.27 3.54497C20.2108 4.02433 20.9757 4.78924 21.455 5.73005C22 6.79961 22 8.19974 22 11V13C22 15.8003 22 17.2004 21.455 18.27C20.9757 19.2108 20.2108 19.9757 19.27 20.455C18.2004 21 16.8003 21 14 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8179,7 +7575,6 @@ export const Wechat = () => (
     <path
       fill="none"
       d="M17.9856 10.424C20.3422 11.2649 22 13.2657 22 15.6C22 16.7898 21.5693 17.8929 20.8349 18.8C20.3813 19.3603 20.375 22 20.375 22C20.375 22 17.8605 20.8605 17.125 21.0236C16.6056 21.1387 16.0611 21.2 15.5 21.2C12.4566 21.2 9.90177 19.398 9.19445 16.965M17.9856 10.424C17.2199 10.1508 16.3804 10 15.5 10C11.9101 10 9 12.5072 9 15.6C9 16.0708 9.06744 16.5281 9.19445 16.965M17.9856 10.424C17.9951 10.2838 18 10.1424 18 10C18 6.13401 14.4183 3 10 3C5.58172 3 2 6.13401 2 10C2 11.4872 2.53007 12.8662 3.43393 14C3.99227 14.7004 4 18 4 18C4 18 7.09473 16.5756 8 16.7795C8.38756 16.8668 8.78649 16.9293 9.19445 16.965M7.5 8V8.00995M12.5 8V8.00995M17.5 14V14.0099M13.5 14V14.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8193,7 +7588,6 @@ export const Whatsapp = () => (
     <path
       fill="none"
       d="M7.41 19.74C8.76 20.55 10.38 21 12 21C16.95 21 21 16.95 21 12C21 7.05 16.95 3 12 3C7.05 3 3 7.05 3 12C3 13.62 3.45 15.15 4.17 16.5L3 21L7.41 19.74Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8201,7 +7595,6 @@ export const Whatsapp = () => (
     <path
       fill="none"
       d="M14.9415 15.9167C15.2258 15.8655 15.4737 15.7095 15.678 15.5052L16.0204 15.1628C16.5613 14.6219 16.5613 13.7447 16.0204 13.2038L15.8333 13.0167C15.3956 12.579 14.686 12.579 14.2483 13.0167C14.1253 13.1397 13.974 13.2348 13.8 13.2395C13.4249 13.2497 12.6782 13.1268 11.7757 12.2242C10.8731 11.3217 10.7502 10.575 10.7604 10.1998C10.7651 10.0259 10.8602 9.87457 10.9832 9.75155C11.4209 9.31388 11.4209 8.60428 10.9832 8.16662L10.7961 7.97954C10.2552 7.43856 9.37804 7.43855 8.83706 7.97954L8.49455 8.32205C8.29032 8.52628 8.13441 8.774 8.08316 9.05825C7.91925 9.96747 7.79274 12.1805 9.80578 14.1936C11.8187 16.2065 14.032 16.0804 14.9415 15.9167Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8215,7 +7608,6 @@ export const Width = () => (
     <path
       fill="none"
       d="M22 4V20M17 12H7M2 4L2 20M9 9L6 12L9 15M15 9L18 12L15 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8231,7 +7623,6 @@ export const Window = () => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M22 2L13 4V10H22V2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -8242,7 +7633,6 @@ export const Window = () => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M22 22L13 20V14H22V22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -8253,7 +7643,6 @@ export const Window = () => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M9 5.00005L2 6.50005V10H9V5.00005Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -8264,7 +7653,6 @@ export const Window = () => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M9 19L2 17.5V14H9V19Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -8279,7 +7667,6 @@ export const Youtube = () => (
     <path
       fill="none"
       d="M10 20H14C16.8003 20 18.2004 20 19.27 19.455C20.2108 18.9757 20.9757 18.2108 21.455 17.27C22 16.2004 22 14.8003 22 12C22 9.19974 22 7.79961 21.455 6.73005C20.9757 5.78924 20.2108 5.02433 19.27 4.54497C18.2004 4 16.8003 4 14 4L10 4C7.19974 4 5.79961 4 4.73005 4.54497C3.78924 5.02433 3.02433 5.78924 2.54497 6.73005C2 7.79961 2 9.19974 2 12C2 14.8003 2 16.2004 2.54497 17.27C3.02433 18.2108 3.78924 18.9757 4.73005 19.455C5.79961 20 7.19974 20 10 20Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8287,7 +7674,6 @@ export const Youtube = () => (
     <path
       fill="none"
       d="M10 9L14.9091 12L10 15V9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8301,7 +7687,6 @@ export const Zoom = () => (
     <path
       fill="none"
       d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -8310,7 +7695,6 @@ export const Zoom = () => (
     <path
       fill="none"
       d="M7 9.5H9.3C10.4201 9.5 10.9802 9.5 11.408 9.71799C11.7843 9.90973 12.0903 10.2157 12.282 10.592C12.5 11.0198 12.5 11.5799 12.5 12.7V14.5H10.2C9.0799 14.5 8.51984 14.5 8.09202 14.282C7.71569 14.0903 7.40973 13.7843 7.21799 13.408C7 12.9802 7 12.4201 7 11.3V9.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -8321,7 +7705,6 @@ export const Zoom = () => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M17 10V14L15.5 12.7715V11.2287L17 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeMiterlimit="10"
       strokeLinecap="round"
@@ -8336,7 +7719,6 @@ export const Sun = () => (
     <path
       fill="none"
       d="M12 2V2.00995M22 12V12.0099M2 12V12.0099M19 5V5.00995M19 19V19.0099M5 19V19.0099M5 5V5.00995M12 22V22.0099M18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12Z"
-      stroke="currentColor"
       stroke-width="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8350,7 +7732,6 @@ export const Moon = () => (
     <path
       fill="none"
       d="M20.9504 12.9504C20.6381 12.9832 20.321 13 20 13C15.0294 13 11 8.97054 11 3.99997C11 3.67897 11.0168 3.36188 11.0496 3.04956C6.52579 3.52435 3 7.35042 3 12C3 16.9705 7.02944 21 12 21C16.6496 21 20.4756 17.4742 20.9504 12.9504Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8364,7 +7745,6 @@ export const Layers = () => (
     <path
       fill="none"
       d="M10.6766 16.3981C11.1638 16.6196 11.4075 16.7303 11.6611 16.774C11.8859 16.8127 12.1156 16.8127 12.3404 16.774C12.5941 16.7303 12.8377 16.6196 13.3249 16.3981L16.5918 14.9132C18.6278 13.9877 19.6459 13.5249 19.9617 12.8837C20.2362 12.3265 20.2362 11.6735 19.9617 11.1163C19.6459 10.475 18.6278 10.0123 16.5918 9.08681L13.3249 7.60188C12.8377 7.3804 12.5941 7.26966 12.3404 7.22595C12.1156 7.18722 11.8859 7.18722 11.6611 7.22595C11.4075 7.26966 11.1638 7.3804 10.6766 7.60188L7.40974 9.08681C5.37368 10.0123 4.35565 10.475 4.03981 11.1163C3.76537 11.6735 3.76537 12.3265 4.03981 12.8837C4.35565 13.5249 5.37368 13.9877 7.40975 14.9132L10.6766 16.3981Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8378,7 +7758,6 @@ export const Columns = () => (
     <path
       fill="none"
       d="M12 3L12 21M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8392,7 +7771,6 @@ export const BarChartLeft = () => (
     <path
       fill="none"
       d="M7 19L3 19M14 12L3 12M21 5L3 5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8406,7 +7784,6 @@ export const BarChartRight = () => (
     <path
       fill="none"
       d="M7 5H3M14 12H3M21 19L3 19"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8420,7 +7797,6 @@ export const ColumnChartLeft = () => (
     <path
       fill="none"
       d="M19 17V21M12 10L12 21M5 3V21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8434,7 +7810,6 @@ export const ColumnChartRight = () => (
     <path
       fill="none"
       d="M5 17L5 21M12 10L12 21M19 3V21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8448,7 +7823,6 @@ export const LayersFlat = () => (
     <path
       fill="none"
       d="M16.8 12H17.2C18.8802 12 19.7202 12 20.362 11.673C20.9265 11.3854 21.3854 10.9265 21.673 10.362C22 9.72024 22 8.88016 22 7.2V6.8C22 5.11984 22 4.27976 21.673 3.63803C21.3854 3.07354 20.9265 2.6146 20.362 2.32698C19.7202 2 18.8802 2 17.2 2L16.8 2C15.1198 2 14.2798 2 13.638 2.32698C13.0735 2.6146 12.6146 3.07354 12.327 3.63803C12 4.27976 12 5.11984 12 6.8V7.2M16.8 12C15.1198 12 14.2798 12 13.638 11.673C13.0735 11.3854 12.6146 10.9265 12.327 10.362C12 9.72024 12 8.88016 12 7.2M16.8 12H17V12.2C17 13.8802 17 14.7202 16.673 15.362C16.3854 15.9265 15.9265 16.3854 15.362 16.673C14.7202 17 13.8802 17 12.2 17H11.8M12 7.2V7H11.8C10.1198 7 9.27976 7 8.63803 7.32698C8.07354 7.6146 7.6146 8.07354 7.32698 8.63803C7 9.27976 7 10.1198 7 11.8V12.2M7 12.2C7 13.8802 7 14.7202 7.32698 15.362C7.6146 15.9265 8.07354 16.3854 8.63803 16.673C9.27976 17 10.1198 17 11.8 17M7 12.2V12H6.8C5.11984 12 4.27976 12 3.63803 12.327C3.07354 12.6146 2.6146 13.0735 2.32698 13.638C2 14.2798 2 15.1198 2 16.8V17.2C2 18.8802 2 19.7202 2.32698 20.362C2.6146 20.9265 3.07354 21.3854 3.63803 21.673C4.27976 22 5.11984 22 6.8 22H7.2C8.88016 22 9.72024 22 10.362 21.673C10.9265 21.3854 11.3854 20.9265 11.673 20.362C12 19.7202 12 18.8802 12 17.2V17H11.8"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8462,7 +7836,6 @@ export const LayersSkew = () => (
     <path
       fill="none"
       d="M9.40801 9.91316L12.6749 11.3981C13.1621 11.6196 13.4057 11.7303 13.6594 11.774C13.8842 11.8127 14.1139 11.8127 14.3387 11.774C14.5923 11.7303 14.8359 11.6196 15.3232 11.3981M9.40801 9.91316C7.37194 8.98767 6.35391 8.52493 6.03807 7.8837C5.76363 7.32651 5.76363 6.67345 6.03807 6.11627C6.35391 5.47503 7.37194 5.01229 9.408 4.08681L12.6749 2.60188C13.1621 2.3804 13.4057 2.26966 13.6594 2.22595C13.8842 2.18722 14.1139 2.18722 14.3387 2.22595C14.5923 2.26966 14.8359 2.3804 15.3232 2.60188L18.59 4.08681C20.6261 5.01229 21.6441 5.47503 21.96 6.11627C22.2344 6.67345 22.2344 7.32651 21.96 7.8837C21.6441 8.52493 20.6261 8.98767 18.59 9.91315L15.3232 11.3981M9.40801 9.91316C8.64347 9.56564 8.02223 9.28313 7.52806 9.03215L7.40779 9.08682C5.37173 10.0123 4.3537 10.475 4.03786 11.1163C3.76342 11.6735 3.76342 12.3265 4.03786 12.8837C4.3537 13.5249 5.37173 13.9877 7.4078 14.9132M15.3232 11.3981L18.4695 9.96758C19.2914 10.385 19.7625 10.7158 19.9598 11.1163C20.2342 11.6735 20.2342 12.3265 19.9598 12.8837C19.6439 13.5249 18.6259 13.9877 16.5898 14.9132L13.323 16.3981M7.4078 14.9132L10.6746 16.3981C11.1619 16.6196 11.4055 16.7303 11.6592 16.774C11.8839 16.8128 12.1137 16.8128 12.3385 16.774C12.5921 16.7303 12.8357 16.6196 13.323 16.3981M7.4078 14.9132C6.64326 14.5656 6.02223 14.2831 5.52805 14.0322L5.40779 14.0868C3.37173 15.0123 2.3537 15.475 2.03786 16.1163C1.76342 16.6735 1.76342 17.3265 2.03786 17.8837C2.3537 18.5249 3.37173 18.9877 5.4078 19.9132L8.67464 21.3981C9.16189 21.6196 9.40552 21.7303 9.65916 21.774C9.88394 21.8128 10.1137 21.8128 10.3385 21.774C10.5921 21.7303 10.8357 21.6196 11.323 21.3981L14.5898 19.9132C16.6259 18.9877 17.6439 18.5249 17.9598 17.8837C18.2342 17.3265 18.2342 16.6735 17.9598 16.1163C17.7625 15.7158 17.2914 15.385 16.4695 14.9676L13.323 16.3981"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8476,7 +7849,6 @@ export const PieChart = () => (
     <path
       fill="none"
       d="M12 3C7.02944 3 3 7.02944 3 12C3 16.1031 5.74572 19.5649 9.5 20.6482M12 3C16.9706 3 21 7.02944 21 12C21 12.6874 20.9229 13.3568 20.777 14M12 3V12M12 12L20.777 14M12 12L9.5 20.6482M20.777 14C19.8675 18.008 16.2832 21 12 21C11.1325 21 10.2937 20.8773 9.5 20.6482"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8490,7 +7862,6 @@ export const BarChartBottom = () => (
     <path
       fill="none"
       d="M9 3H3M13 9H3M17 15H3M21 21H3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8504,7 +7875,6 @@ export const BarChartTop = () => (
     <path
       fill="none"
       d="M9 21H3M13 15L3 15M17 9L3 9M21 3L3 3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8518,7 +7888,6 @@ export const BarChart = () => (
     <path
       fill="none"
       d="M13 3L3 3M21 9L3 9M13 15H3M21 21H3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8532,7 +7901,6 @@ export const ColumnChart = () => (
     <path
       fill="none"
       d="M3 11V21M9 3V21M15 11V21M21 3V21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8546,7 +7914,6 @@ export const Airdrop = () => (
     <path
       fill="none"
       d="M18.7083 18C20.1334 16.4077 21 14.3051 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 14.3051 3.86656 16.4077 5.29168 18M16.0004 15C16.6281 14.1643 17 13.1256 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 13.1256 7.37194 14.1643 7.99963 15M12 12V12.0099M8 21L12 16L16 21H8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8560,7 +7927,6 @@ export const AirplaneUp = () => (
     <path
       fill="none"
       d="M7.9997 22H15.9997L13.9997 19L14.8235 4.99482C14.9191 3.37007 13.6273 2 11.9997 2C10.3721 2 9.08029 3.37007 9.17587 4.99482L9.9997 19L7.9997 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8568,7 +7934,6 @@ export const AirplaneUp = () => (
     <path
       fill="none"
       d="M9.42805 9.28208L9.71166 14.1034C9.65261 14.1259 9.59214 14.1457 9.53039 14.1627C9.39098 14.2011 9.22661 14.2216 8.89786 14.2627L4.92605 14.7592C3.90333 14.8871 3 14.0896 3 13.059C3 12.41 3.36667 11.8167 3.94715 11.5264L7.52722 9.73621C8.03383 9.48289 8.28714 9.35622 8.48399 9.30372C8.80433 9.21828 9.12637 9.21561 9.42805 9.28208Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8576,7 +7941,6 @@ export const AirplaneUp = () => (
     <path
       fill="none"
       d="M14.2877 14.1035L14.5713 9.28201C14.8729 9.21561 15.1949 9.21831 15.5151 9.30372C15.712 9.35622 15.9653 9.48289 16.4719 9.7362L20.0519 11.5264C20.6324 11.8167 20.9991 12.41 20.9991 13.059C20.9991 14.0896 20.0958 14.8871 19.0731 14.7592L15.1013 14.2627C14.7725 14.2216 14.6081 14.2011 14.4687 14.1627C14.4071 14.1457 14.3467 14.1259 14.2877 14.1035Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8590,7 +7954,6 @@ export const Airplane = () => (
     <path
       fill="none"
       d="M3 15.2793L8.72071 21L9.4358 17.4246L20.0399 7.99873C21.27 6.90523 21.326 5.00173 20.1621 3.83787C18.9983 2.67402 17.0948 2.72996 16.0013 3.96015L6.57544 14.5642L3 15.2793Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8598,7 +7961,6 @@ export const Airplane = () => (
     <path
       fill="none"
       d="M13.1158 7.20618L9.87096 10.8566C9.81265 10.8305 9.75524 10.8014 9.69892 10.7694C9.57178 10.6972 9.43954 10.5943 9.17507 10.3886L5.97982 7.90349C5.15707 7.26358 5.08135 6.04738 5.81837 5.31036C6.28247 4.84626 6.96893 4.68419 7.59159 4.89173L11.4318 6.17166C11.9752 6.35278 12.2469 6.44334 12.4252 6.54656C12.7154 6.71454 12.9476 6.94291 13.1158 7.20618Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8606,7 +7968,6 @@ export const Airplane = () => (
     <path
       fill="none"
       d="M13.1432 14.129L16.7938 10.884C17.0569 11.0522 17.2852 11.2844 17.4531 11.5744C17.5563 11.7527 17.6469 12.0245 17.828 12.5679L19.1079 16.4081C19.3155 17.0307 19.1534 17.7172 18.6893 18.1813C17.9523 18.9183 16.7361 18.8426 16.0962 18.0199L13.6111 14.8246C13.4054 14.5602 13.3025 14.4279 13.2303 14.3008C13.1983 14.2445 13.1693 14.1872 13.1432 14.129Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8620,7 +7981,6 @@ export const Airplay = () => (
     <path
       fill="none"
       d="M5.30642 17.7017C5.23135 17.6764 5.15822 17.6491 5.08658 17.6194C3.86144 17.1119 2.88807 16.1386 2.3806 14.9134C2 13.9946 2 12.8297 2 10.5C2 8.17029 2 7.00544 2.3806 6.08658C2.88807 4.86144 3.86144 3.88807 5.08658 3.3806C6.00544 3 7.17029 3 9.5 3H14.5C16.8297 3 17.9946 3 18.9134 3.3806C20.1386 3.88807 21.1119 4.86144 21.6194 6.08658C22 7.00544 22 8.17029 22 10.5C22 12.8297 22 13.9946 21.6194 14.9134C21.1119 16.1386 20.1386 17.1119 18.9134 17.6194C18.8418 17.6491 18.7686 17.6764 18.6936 17.7017M8 21L12 15L16 21H8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8634,7 +7994,6 @@ export const Airpods = () => (
     <path
       fill="none"
       d="M8.5 19C9.32843 19 10 18.3284 10 17.5V7C10 4.79086 8.20914 3 6 3C3.79086 3 2 4.79086 2 7C2 9.20914 3.79086 11 6 11C6.51191 11 7 11.3727 7 11.8846V17.5C7 18.3284 7.67157 19 8.5 19ZM8.5 19V21M15.5 19C14.6716 19 14 18.3284 14 17.5V7C14 4.79086 15.7909 3 18 3C20.2091 3 22 4.79086 22 7C22 9.20914 20.2091 11 18 11C17.4881 11 17 11.3727 17 11.8846V17.5C17 18.3284 16.3284 19 15.5 19ZM15.5 19V21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8648,7 +8007,6 @@ export const AlarmOff = () => (
     <path
       fill="none"
       d="M4 2L2 4.0001M18.5 19.5L21 21.9999M21 2.00007L3 22M8.88118 21.4449C9.85289 21.8039 10.9035 22 12 22C16.9706 22 21 17.9706 21 13C21 11.568 20.6656 10.2142 20.0706 9.01228M12 11V12M17.5072 5.88113C15.9851 4.70188 14.0745 4 12 4C7.02944 4 3 8.02944 3 13C3 15.4147 3.95098 17.6073 5.49884 19.2238L17.5072 5.88113Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8662,7 +8020,6 @@ export const Alarm = () => (
     <path
       fill="none"
       d="M5.5 19.5L3 21.9999M4 2L2 4.0001M20 2L22 4.0001M18.5 19.5L21 21.9999M12 9V13L15 15M21 13C21 17.9706 16.9706 22 12 22C7.02944 22 3 17.9706 3 13C3 8.02944 7.02944 4 12 4C16.9706 4 21 8.02944 21 13Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8716,7 +8073,6 @@ export const Atom = () => (
     <path
       fill="none"
       d="M12 12V12.0099M8.71136 6.30454C8.26263 7.92073 7.99964 9.88359 7.99964 12C7.99964 12.7739 8.03481 13.5273 8.10136 14.2507M8.71136 6.30454C9.43362 3.70324 10.6371 2 11.9996 2C13.3622 2 14.5656 3.70322 15.2879 6.30451M8.71136 6.30454C6.09744 5.62938 4.02067 5.81998 3.33938 7C2.6581 8.18001 3.5314 10.0738 5.42303 11.9999M8.71136 6.30454C9.74152 6.57063 10.8551 6.97118 11.9996 7.49862M18.5761 11.9999C17.4008 10.8033 15.8325 9.59409 13.9996 8.5359C13.3294 8.14893 12.6594 7.80269 11.9996 7.49862M18.5761 11.9999C20.4678 13.9261 21.3412 15.82 20.6599 17C19.9786 18.18 17.9018 18.3706 15.2879 17.6955M18.5761 11.9999C17.8306 12.759 16.9269 13.5232 15.8979 14.2506M18.5761 11.9999C20.4678 10.0738 21.3411 8.18 20.6598 6.99999C19.9785 5.81998 17.9018 5.62937 15.2879 6.30451M8.71136 17.6954C6.09739 18.3706 4.02058 18.18 3.33929 17C2.65799 15.82 3.53134 13.9261 5.42303 11.9999M8.71136 17.6954C10.3354 17.2759 12.1667 16.5223 13.9995 15.4641C14.6698 15.0771 15.3047 14.67 15.8979 14.2506M8.71136 17.6954C9.43361 20.2967 10.6371 22 11.9996 22C13.3622 22 14.5657 20.2968 15.2879 17.6955M8.71136 17.6954C8.42672 16.6702 8.21681 15.5056 8.10136 14.2507M15.2879 6.30451C14.2577 6.57059 13.1441 6.97116 11.9996 7.49862M15.8979 14.2506C15.7825 15.5055 15.5726 16.6702 15.2879 17.6955M5.42303 11.9999C6.16857 12.7591 7.07229 13.5232 8.10136 14.2507"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8730,7 +8086,6 @@ export const AttachmentHorizontal = () => (
     <path
       fill="none"
       d="M12 6L12 14.5C12 15.8807 13.1193 17 14.5 17C15.8807 17 17 15.8807 17 14.5V7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7L7 15C7 18.866 10.134 22 14 22"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8744,7 +8099,6 @@ export const AttachmentVertical = () => (
     <path
       fill="none"
       d="M18 12H9.5C8.11929 12 7 13.1193 7 14.5C7 15.8807 8.11929 17 9.5 17H17C19.7614 17 22 14.7614 22 12C22 9.23858 19.7614 7 17 7H9C5.13401 7 2 10.134 2 14"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8758,7 +8112,6 @@ export const Attachment = () => (
     <path
       fill="none"
       d="M16.2427 7.75737L10.2323 13.7678C9.256 14.7441 9.256 16.327 10.2323 17.3033C11.2086 18.2796 12.7915 18.2796 13.7678 17.3033L19.0711 12C21.0238 10.0474 21.0238 6.88156 19.0711 4.92894C17.1185 2.97632 13.9527 2.97632 12.0001 4.92894L6.34322 10.5858C3.60955 13.3195 3.60955 17.7516 6.34322 20.4853"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8772,7 +8125,6 @@ export const BarChartCoordinateLeft = () => (
     <path
       fill="none"
       d="M3 3V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H21M15.5 10.5L8.5 10.5M19.5 5.5L8.5 5.5M11.5 15.5H8.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8786,7 +8138,6 @@ export const BarChartCoordinateRight = () => (
     <path
       fill="none"
       d="M3 3V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H21M15.5 10.5H8.5M19.5 15.5H8.5M11.5 5.5H8.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8800,7 +8151,6 @@ export const BarChartCoordinate = () => (
     <path
       fill="none"
       d="M3 3V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H21M19.5 10.5L8.5 10.5M14.5 15.5H8.5M14.5 5.5L8.5 5.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8814,7 +8164,6 @@ export const BarChartFatLeft = () => (
     <path
       fill="none"
       d="M7 22H5C3.89543 22 3 21.1046 3 20C3 18.8954 3.89543 18 5 18H7C8.10457 18 9 18.8954 9 20C9 21.1046 8.10457 22 7 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8822,7 +8171,6 @@ export const BarChartFatLeft = () => (
     <path
       fill="none"
       d="M13 14L5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10L13 10C14.1046 10 15 10.8954 15 12C15 13.1046 14.1046 14 13 14Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8830,7 +8178,6 @@ export const BarChartFatLeft = () => (
     <path
       fill="none"
       d="M19 6L5 6C3.89543 6 3 5.10457 3 4C3 2.89543 3.89543 2 5 2L19 2C20.1046 2 21 2.89543 21 4C21 5.10457 20.1046 6 19 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8844,7 +8191,6 @@ export const BarChartFatRight = () => (
     <path
       fill="none"
       d="M7 2L5 2C3.89543 2 3 2.89543 3 4C3 5.10457 3.89543 6 5 6H7C8.10457 6 9 5.10457 9 4C9 2.89543 8.10457 2 7 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8852,7 +8198,6 @@ export const BarChartFatRight = () => (
     <path
       fill="none"
       d="M13 10L5 10C3.89543 10 3 10.8954 3 12C3 13.1046 3.89543 14 5 14L13 14C14.1046 14 15 13.1046 15 12C15 10.8954 14.1046 10 13 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8860,7 +8205,6 @@ export const BarChartFatRight = () => (
     <path
       fill="none"
       d="M19 18L5 18C3.89543 18 3 18.8954 3 20C3 21.1046 3.89543 22 5 22L19 22C20.1046 22 21 21.1046 21 20C21 18.8954 20.1046 18 19 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8874,7 +8218,6 @@ export const BarChartFat = () => (
     <path
       fill="none"
       d="M11 2L5 2C3.89543 2 3 2.89543 3 4C3 5.10457 3.89543 6 5 6L11 6C12.1046 6 13 5.10457 13 4C13 2.89543 12.1046 2 11 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8882,7 +8225,6 @@ export const BarChartFat = () => (
     <path
       fill="none"
       d="M19 10L5 10C3.89543 10 3 10.8954 3 12C3 13.1046 3.89543 14 5 14L19 14C20.1046 14 21 13.1046 21 12C21 10.8954 20.1046 10 19 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8890,7 +8232,6 @@ export const BarChartFat = () => (
     <path
       fill="none"
       d="M11 18H5C3.89543 18 3 18.8954 3 20C3 21.1046 3.89543 22 5 22H11C12.1046 22 13 21.1046 13 20C13 18.8954 12.1046 18 11 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8904,7 +8245,6 @@ export const BarChartNarrowFatLeft = () => (
     <path
       fill="none"
       d="M6 15C6.93188 15 7.39782 15 7.76537 15.1522C8.25542 15.3552 8.64477 15.7446 8.84776 16.2346C9 16.6022 9 17.0681 9 18C9 18.9319 9 19.3978 8.84776 19.7654C8.64477 20.2554 8.25542 20.6448 7.76537 20.8478C7.39782 21 6.93188 21 6 21C5.06812 21 4.60218 21 4.23463 20.8478C3.74458 20.6448 3.35523 20.2554 3.15224 19.7654C3 19.3978 3 18.9319 3 18C3 17.0681 3 16.6022 3.15224 16.2346C3.35523 15.7446 3.74458 15.3552 4.23463 15.1522C4.60218 15 5.06812 15 6 15ZM6 15H12C12.9319 15 13.3978 15 13.7654 14.8478C14.2554 14.6448 14.6448 14.2554 14.8478 13.7654C15 13.3978 15 12.9319 15 12C15 11.0681 15 10.6022 14.8478 10.2346C14.6448 9.74458 14.2554 9.35523 13.7654 9.15224C13.3978 9 12.9319 9 12 9L6 9M6 15C5.06812 15 4.60218 15 4.23463 14.8478C3.74458 14.6448 3.35523 14.2554 3.15224 13.7654C3 13.3978 3 12.9319 3 12C3 11.0681 3 10.6022 3.15224 10.2346C3.35523 9.74458 3.74458 9.35523 4.23463 9.15224C4.60218 9 5.06812 9 6 9M6 9L18 9C18.9319 9 19.3978 9 19.7654 8.84776C20.2554 8.64477 20.6448 8.25542 20.8478 7.76537C21 7.39783 21 6.93188 21 6C21 5.06812 21 4.60218 20.8478 4.23463C20.6448 3.74458 20.2554 3.35523 19.7654 3.15224C19.3978 3 18.9319 3 18 3L6 3C5.06812 3 4.60218 3 4.23463 3.15224C3.74458 3.35523 3.35523 3.74458 3.15224 4.23463C3 4.60218 3 5.06812 3 6C3 6.93188 3 7.39782 3.15224 7.76537C3.35523 8.25542 3.74458 8.64477 4.23463 8.84776C4.60218 9 5.06812 9 6 9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8918,7 +8258,6 @@ export const BarChartNarrowFatRight = () => (
     <path
       fill="none"
       d="M6 9C6.93188 9 7.39782 9 7.76537 8.84776C8.25542 8.64477 8.64477 8.25542 8.84776 7.76537C9 7.39782 9 6.93188 9 6C9 5.06812 9 4.60218 8.84776 4.23463C8.64477 3.74458 8.25542 3.35523 7.76537 3.15224C7.39782 3 6.93188 3 6 3C5.06812 3 4.60218 3 4.23463 3.15224C3.74458 3.35523 3.35523 3.74458 3.15224 4.23463C3 4.60218 3 5.06812 3 6C3 6.93188 3 7.39782 3.15224 7.76537C3.35523 8.25542 3.74458 8.64477 4.23463 8.84776C4.60218 9 5.06812 9 6 9ZM6 9L12 9C12.9319 9 13.3978 9 13.7654 9.15224C14.2554 9.35523 14.6448 9.74458 14.8478 10.2346C15 10.6022 15 11.0681 15 12C15 12.9319 15 13.3978 14.8478 13.7654C14.6448 14.2554 14.2554 14.6448 13.7654 14.8478C13.3978 15 12.9319 15 12 15H6M6 9C5.06812 9 4.60218 9 4.23463 9.15224C3.74458 9.35523 3.35523 9.74458 3.15224 10.2346C3 10.6022 3 11.0681 3 12C3 12.9319 3 13.3978 3.15224 13.7654C3.35523 14.2554 3.74458 14.6448 4.23463 14.8478C4.60218 15 5.06812 15 6 15M6 15L18 15C18.9319 15 19.3978 15 19.7654 15.1522C20.2554 15.3552 20.6448 15.7446 20.8478 16.2346C21 16.6022 21 17.0681 21 18C21 18.9319 21 19.3978 20.8478 19.7654C20.6448 20.2554 20.2554 20.6448 19.7654 20.8478C19.3978 21 18.9319 21 18 21H6C5.06812 21 4.60218 21 4.23463 20.8478C3.74458 20.6448 3.35523 20.2554 3.15224 19.7654C3 19.3978 3 18.9319 3 18C3 17.0681 3 16.6022 3.15224 16.2346C3.35523 15.7446 3.74458 15.3552 4.23463 15.1522C4.60218 15 5.06812 15 6 15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8932,7 +8271,6 @@ export const BarChartNarrowFat = () => (
     <path
       fill="none"
       d="M6 9H10C10.9319 9 11.3978 9 11.7654 8.84776C12.2554 8.64477 12.6448 8.25542 12.8478 7.76537C13 7.39782 13 6.93188 13 6C13 5.06812 13 4.60218 12.8478 4.23463C12.6448 3.74458 12.2554 3.35523 11.7654 3.15224C11.3978 3 10.9319 3 10 3L6 3C5.06812 3 4.60218 3 4.23463 3.15224C3.74458 3.35523 3.35523 3.74458 3.15224 4.23463C3 4.60218 3 5.06812 3 6C3 6.93188 3 7.39782 3.15224 7.76537C3.35523 8.25542 3.74458 8.64477 4.23463 8.84776C4.60218 9 5.06812 9 6 9ZM6 9L18 9C18.9319 9 19.3978 9 19.7654 9.15224C20.2554 9.35523 20.6448 9.74458 20.8478 10.2346C21 10.6022 21 11.0681 21 12C21 12.9319 21 13.3978 20.8478 13.7654C20.6448 14.2554 20.2554 14.6448 19.7654 14.8478C19.3978 15 18.9319 15 18 15L6 15M6 9C5.06812 9 4.60218 9 4.23463 9.15224C3.74458 9.35523 3.35523 9.74458 3.15224 10.2346C3 10.6022 3 11.0681 3 12C3 12.9319 3 13.3978 3.15224 13.7654C3.35523 14.2554 3.74458 14.6448 4.23463 14.8478C4.60218 15 5.06812 15 6 15M6 15H14C14.9319 15 15.3978 15 15.7654 15.1522C16.2554 15.3552 16.6448 15.7446 16.8478 16.2346C17 16.6022 17 17.0681 17 18C17 18.9319 17 19.3978 16.8478 19.7654C16.6448 20.2554 16.2554 20.6448 15.7654 20.8478C15.3978 21 14.9319 21 14 21H6C5.06812 21 4.60218 21 4.23463 20.8478C3.74458 20.6448 3.35523 20.2554 3.15224 19.7654C3 19.3978 3 18.9319 3 18C3 17.0681 3 16.6022 3.15224 16.2346C3.35523 15.7446 3.74458 15.3552 4.23463 15.1522C4.60218 15 5.06812 15 6 15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8946,7 +8284,6 @@ export const BatteryEmpty = () => (
     <path
       fill="none"
       d="M22 11V13M13.2 18H6.8C5.11984 18 4.27976 18 3.63803 17.673C3.07354 17.3854 2.6146 16.9265 2.32698 16.362C2 15.7202 2 14.8802 2 13.2L2 10.8C2 9.11984 2 8.27976 2.32698 7.63803C2.6146 7.07354 3.07354 6.6146 3.63803 6.32698C4.27976 6 5.11984 6 6.8 6L13.2 6C14.8802 6 15.7202 6 16.362 6.32698C16.9265 6.6146 17.3854 7.07354 17.673 7.63803C18 8.27976 18 9.11984 18 10.8V13.2C18 14.8802 18 15.7202 17.673 16.362C17.3854 16.9265 16.9265 17.3854 16.362 17.673C15.7202 18 14.8802 18 13.2 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8960,7 +8297,6 @@ export const BatteryFull = () => (
     <path
       fill="none"
       d="M22 11V13M6 10V14M10 10V14M14 10V14M13.2 18H6.8C5.11984 18 4.27976 18 3.63803 17.673C3.07354 17.3854 2.6146 16.9265 2.32698 16.362C2 15.7202 2 14.8802 2 13.2L2 10.8C2 9.11984 2 8.27976 2.32698 7.63803C2.6146 7.07354 3.07354 6.6146 3.63803 6.32698C4.27976 6 5.11984 6 6.8 6L13.2 6C14.8802 6 15.7202 6 16.362 6.32698C16.9265 6.6146 17.3854 7.07354 17.673 7.63803C18 8.27976 18 9.11984 18 10.8V13.2C18 14.8802 18 15.7202 17.673 16.362C17.3854 16.9265 16.9265 17.3854 16.362 17.673C15.7202 18 14.8802 18 13.2 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8974,7 +8310,6 @@ export const BatteryLow = () => (
     <path
       fill="none"
       d="M22 11V13M6 10V14M13.2 18H6.8C5.11984 18 4.27976 18 3.63803 17.673C3.07354 17.3854 2.6146 16.9265 2.32698 16.362C2 15.7202 2 14.8802 2 13.2L2 10.8C2 9.11984 2 8.27976 2.32698 7.63803C2.6146 7.07354 3.07354 6.6146 3.63803 6.32698C4.27976 6 5.11984 6 6.8 6L13.2 6C14.8802 6 15.7202 6 16.362 6.32698C16.9265 6.6146 17.3854 7.07354 17.673 7.63803C18 8.27976 18 9.11984 18 10.8V13.2C18 14.8802 18 15.7202 17.673 16.362C17.3854 16.9265 16.9265 17.3854 16.362 17.673C15.7202 18 14.8802 18 13.2 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -8988,7 +8323,6 @@ export const BatteryMiddle = () => (
     <path
       fill="none"
       d="M22 11V13M6 10V14M10 10V14M13.2 18H6.8C5.11984 18 4.27976 18 3.63803 17.673C3.07354 17.3854 2.6146 16.9265 2.32698 16.362C2 15.7202 2 14.8802 2 13.2L2 10.8C2 9.11984 2 8.27976 2.32698 7.63803C2.6146 7.07354 3.07354 6.6146 3.63803 6.32698C4.27976 6 5.11984 6 6.8 6L13.2 6C14.8802 6 15.7202 6 16.362 6.32698C16.9265 6.6146 17.3854 7.07354 17.673 7.63803C18 8.27976 18 9.11984 18 10.8V13.2C18 14.8802 18 15.7202 17.673 16.362C17.3854 16.9265 16.9265 17.3854 16.362 17.673C15.7202 18 14.8802 18 13.2 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9002,7 +8336,6 @@ export const BluetoothConnecting = () => (
     <path
       fill="none"
       d="M3 19L17 5L10 2V22L17 19L3 5M15 12V12.0099M18 12V12.0099M21 12V12.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9016,7 +8349,6 @@ export const BluetoothOff = () => (
     <path
       fill="none"
       d="M3 3L21 21M15 20.7143L12 22V18M5 19L9 15M19 5L12 2V12L19 5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9030,7 +8362,6 @@ export const BluetoothOn = () => (
     <path
       fill="none"
       d="M5 19L19 5L12 2V22L19 19L5 5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9044,7 +8375,6 @@ export const BluetoothSquareConnecting = () => (
     <path
       fill="none"
       d="M7 15.5L14 8.5L10.5 7V17L14 15.5L7 8.5M15 12V12.0099M18 12V12.0099M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9058,7 +8388,6 @@ export const BluetoothSquareOff = () => (
     <path
       fill="none"
       d="M3.01873 8.67577C3 9.327 3 10.0895 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H13C13.9105 21 14.673 21 15.3242 20.9813M3 3L21 21M8.5 15.5L9.17147 14.8285M4.46438 4.46456L19.5354 19.5357C19.9042 19.1669 20.2153 18.7404 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C5.2596 3.78467 4.83314 4.09577 4.46438 4.46456ZM15.5 8.5L12 7V12L15.5 8.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9072,7 +8401,6 @@ export const BluetoothSquareOn = () => (
     <path
       fill="none"
       d="M8 15.5L15 8.5L11.5 7V17L15 15.5L8 8.5M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9086,7 +8414,6 @@ export const BookCloseFlat = () => (
     <path
       fill="none"
       d="M3 7H7M3 12H7M3 17H7M5 14V10C5 7.19974 5 5.7996 5.54497 4.73005C6.02433 3.78924 6.78924 3.02433 7.73005 2.54497C8.79961 2 10.1997 2 13 2C15.8003 2 17.2004 2 18.27 2.54497C19.2108 3.02433 19.9757 3.78924 20.455 4.73005C21 5.7996 21 7.19974 21 10V14C21 16.8003 21 18.2004 20.455 19.27C19.9757 20.2108 19.2108 20.9757 18.27 21.455C17.2004 22 15.8003 22 13 22C10.1997 22 8.79961 22 7.73005 21.455C6.78924 20.9757 6.02433 20.2108 5.54497 19.27C5 18.2004 5 16.8003 5 14Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9100,7 +8427,6 @@ export const BookClose = () => (
     <path
       fill="none"
       d="M20 16V10C20 7.19974 20 5.79961 19.455 4.73005C18.9757 3.78924 18.2108 3.02433 17.27 2.54497C16.2004 2 14.8003 2 12 2C9.19974 2 7.79961 2 6.73005 2.54497C5.78924 3.02433 5.02433 3.78924 4.54497 4.73005C4 5.79961 4 7.19974 4 10V19M20 16H7C5.34315 16 4 17.3431 4 19M20 16V16.1707C18.8348 16.5825 18 17.6938 18 19C18 20.3062 18.8348 21.4175 20 21.8293V22H7C5.34315 22 4 20.6569 4 19"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9114,7 +8440,6 @@ export const BookOpenCurve = () => (
     <path
       fill="none"
       d="M12 21C12 19.3431 14.2386 18 17 18C19.7614 18 22 19.3431 22 21V6C22 4.34315 19.7614 3 17 3C14.2386 3 12 4.34315 12 6M12 21V6M12 21C12 19.3431 9.76142 18 7 18C4.23858 18 2 19.3431 2 21V6C2 4.34315 4.23858 3 7 3C9.76142 3 12 4.34315 12 6"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9128,7 +8453,6 @@ export const BookOpen = () => (
     <path
       fill="none"
       d="M12 4.99997L8.17927 3.85375C6.08497 3.22546 5.03782 2.91132 4.20785 3.13854C3.48096 3.33753 2.8556 3.80282 2.45613 4.44187C2 5.17155 2 6.26481 2 8.45132L2 14.4286C2 15.71 2 16.3508 2.21826 16.8912C2.41093 17.3683 2.72308 17.7879 3.1247 18.1095C3.57966 18.4739 4.19335 18.658 5.42073 19.0262L12 21M12 4.99997V21M12 4.99997L15.8207 3.85375C17.915 3.22546 18.9622 2.91132 19.7922 3.13854C20.519 3.33753 21.1444 3.80282 21.5439 4.44187C22 5.17155 22 6.26481 22 8.45132V14.4286C22 15.71 22 16.3508 21.7817 16.8912C21.5891 17.3683 21.2769 17.7879 20.8753 18.1095C20.4203 18.4739 19.8066 18.658 18.5793 19.0262L12 21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9142,7 +8466,6 @@ export const BookmarkFind = () => (
     <path
       fill="none"
       d="M13.5 11.5L15 13M14 9.5C14 10.8807 12.8807 12 11.5 12C10.1193 12 9 10.8807 9 9.5C9 8.11929 10.1193 7 11.5 7C12.8807 7 14 8.11929 14 9.5ZM4 22L4 10C4 7.19974 4 5.79961 4.54497 4.73005C5.02433 3.78924 5.78924 3.02433 6.73005 2.54497C7.79961 2 9.19974 2 12 2C14.8003 2 16.2004 2 17.27 2.54497C18.2108 3.02433 18.9757 3.78924 19.455 4.73005C20 5.79961 20 7.19974 20 10V22L12 18L4 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9156,7 +8479,6 @@ export const BookmarkRefresh = () => (
     <path
       fill="none"
       d="M14.4547 7.87868C13.2831 6.70711 11.3836 6.70711 10.212 7.87868C9.04044 9.05025 9 9.33333 9 9.33333M9 9.33333V7.66667M9 9.33333H10.6667M10.212 12.1213C11.3836 13.2929 13.2831 13.2929 14.4547 12.1213C15.6262 10.9497 15.6667 10.6667 15.6667 10.6667M15.6667 10.6667V12.3333M15.6667 10.6667H14M4 22L4 10C4 7.19974 4 5.79961 4.54497 4.73005C5.02433 3.78924 5.78924 3.02433 6.73005 2.54497C7.79961 2 9.19974 2 12 2C14.8003 2 16.2004 2 17.27 2.54497C18.2108 3.02433 18.9757 3.78924 19.455 4.73005C20 5.79961 20 7.19974 20 10V22L12 18L4 22Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9170,7 +8492,6 @@ export const BooksHorizontal = () => (
     <path
       fill="none"
       d="M8 21H9.2C10.8802 21 11.7202 21 12.362 20.673C12.9265 20.3854 13.3854 19.9265 13.673 19.362C14 18.7202 14 17.8802 14 16.2V7.8M8 21V3M8 21H6.8C5.11984 21 4.27976 21 3.63803 20.673C3.07354 20.3854 2.6146 19.9265 2.32698 19.362C2 18.7202 2 17.8802 2 16.2L2 7.8M8 3L9.2 3C10.8802 3 11.7202 3 12.362 3.32698C12.9265 3.6146 13.3854 4.07354 13.673 4.63803C14 5.27976 14 6.11984 14 7.8M8 3L6.8 3C5.11984 3 4.27976 3 3.63803 3.32698C3.07354 3.6146 2.6146 4.07354 2.32698 4.63803C2 5.27976 2 6.11984 2 7.8M8 3V15M14 7.8V15H8M2 7.8L2 15H8M14.3679 6.31092L15.7053 18.3476C15.8731 19.8576 17.1494 21 18.6687 21C20.4458 21 21.8284 19.4553 21.6321 17.6891L20.2947 5.65238M14.3679 6.31092C14.1716 4.54469 15.5542 3 17.3313 3C18.8506 3 20.1269 4.14238 20.2947 5.65238M14.3679 6.31092L15.3333 15H21.3333L20.2947 5.65238"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9184,7 +8505,6 @@ export const BooksVertical = () => (
     <path
       fill="none"
       d="M19 9H8M19 9C20.6569 9 22 7.65685 22 6C22 4.34315 20.6569 3 19 3M19 9H11V3L19 3M8 9C6.34315 9 5 7.65685 5 6C5 4.34315 6.34315 3 8 3L19 3M8 9V15M8 9H16M16 15H8M16 15C17.6569 15 19 13.6569 19 12C19 10.3431 17.6569 9 16 9M16 15H5C3.34315 15 2 13.6569 2 12C2 10.3431 3.34315 9 5 9H16M8 15H19M8 15C6.34315 15 5 16.3431 5 18C5 19.6569 6.34315 21 8 21H19M19 21H11V15H19M19 21C20.6569 21 22 19.6569 22 18C22 16.3431 20.6569 15 19 15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9198,7 +8518,6 @@ export const BulbFlash = () => (
     <path
       fill="none"
       d="M12.75 7L10.5 10H13.5L11.25 13M12 18C16.4183 18 20 14.4183 20 10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10C4 14.4183 7.58172 18 12 18ZM12 18C13.0609 18 14.0736 17.7935 15 17.4185V19C15 20.6568 13.6569 22 12 22C10.3431 22 9 20.6568 9 19V17.4185C9.92643 17.7935 10.9391 18 12 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9212,7 +8531,6 @@ export const BulbLight = () => (
     <path
       fill="none"
       d="M12 2V3M3 12H2M5.5 5.5L4.8999 4.8999M18.5 5.5L19.1002 4.8999M22 12H21M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 18C12.7013 18 13.3744 17.8798 14 17.6587V20.0001C14 21.1047 13.1046 22.0001 12 22.0001C10.8954 22.0001 10 21.1047 10 20.0001V17.6587C10.6256 17.8798 11.2987 18 12 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9226,7 +8544,6 @@ export const Bulb = () => (
     <path
       fill="none"
       d="M20 10C20 14.4183 16.4183 18 12 18C7.58172 18 4 14.4183 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9234,7 +8551,6 @@ export const Bulb = () => (
     <path
       fill="none"
       d="M9 17.4219V19.0034C9 20.6602 10.3431 22.0034 12 22.0034C13.6569 22.0034 15 20.6602 15 19.0034V17.4219C14.0736 17.7969 13.0609 18.0034 12 18.0034C10.9391 18.0034 9.92643 17.7969 9 17.4219Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9248,7 +8564,6 @@ export const CameraLeftOff = () => (
     <path
       fill="none"
       d="M3 3L21 21M15.3429 21H6.8C5.11984 21 4.27976 21 3.63803 20.673C3.07354 20.3854 2.6146 19.9265 2.32698 19.362C2 18.7202 2 17.8802 2 16.2V10.8C2 9.32213 2 8.49423 2.22253 7.87956M10.3255 15.9825C10.2186 15.9941 10.11 16 10 16C8.34315 16 7 14.6569 7 13C7 12.89 7.00592 12.7814 7.01745 12.6745M13.1716 4.9526L13.8 6H17.2C18.8802 6 19.7202 6 20.362 6.32698C20.9265 6.6146 21.3854 7.07354 21.673 7.63803C22 8.27976 22 9.11984 22 10.8V16.2C22 17.8802 22 18.7202 21.673 19.362C21.4201 19.8584 21.0346 20.2732 20.5614 20.5616L13 13C13 11.3431 11.6567 10 9.9998 10L5.85709 5.85728L5.98874 5.52814C6.23557 4.91108 6.35898 4.60254 6.52701 4.34787C6.96488 3.6842 7.64831 3.2215 8.42713 3.06142C8.72599 3 9.05829 3 9.72289 3C10.2845 3 10.5653 3 10.8252 3.04607C11.5007 3.16583 12.1147 3.5135 12.565 4.03113C12.7381 4.23023 12.8826 4.47102 13.1716 4.9526Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9262,7 +8577,6 @@ export const CameraLeft = () => (
     <path
       fill="none"
       d="M10 16C11.6569 16 13 14.6569 13 13C13 11.3431 11.6569 10 10 10C8.34315 10 7 11.3431 7 13C7 14.6569 8.34315 16 10 16Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9270,7 +8584,6 @@ export const CameraLeft = () => (
     <path
       fill="none"
       d="M13.8 6L13.1716 4.9526C12.8826 4.47102 12.7381 4.23023 12.565 4.03113C12.1147 3.5135 11.5007 3.16583 10.8252 3.04607C10.5653 3 10.2845 3 9.72289 3C9.05829 3 8.72599 3 8.42713 3.06142C7.64831 3.2215 6.96488 3.6842 6.52701 4.34787C6.35898 4.60254 6.23557 4.91108 5.98874 5.52814L5.79857 6.00357C4.75677 6.0161 4.13736 6.07256 3.63803 6.32698C3.07354 6.6146 2.6146 7.07354 2.32698 7.63803C2 8.27976 2 9.11984 2 10.8V16.2C2 17.8802 2 18.7202 2.32698 19.362C2.6146 19.9265 3.07354 20.3854 3.63803 20.673C4.27976 21 5.11984 21 6.8 21H17.2C18.8802 21 19.7202 21 20.362 20.673C20.9265 20.3854 21.3854 19.9265 21.673 19.362C22 18.7202 22 17.8802 22 16.2V10.8C22 9.11984 22 8.27976 21.673 7.63803C21.3854 7.07354 20.9265 6.6146 20.362 6.32698C19.7202 6 18.8802 6 17.2 6H13.8Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9284,7 +8597,6 @@ export const CameraOff = () => (
     <path
       fill="none"
       d="M3 3L21 21M15.3421 20.9992C15.0793 21 14.7993 21 14.5 21H9.5C7.17029 21 6.00544 21 5.08658 20.6194C3.86144 20.1119 2.88807 19.1386 2.3806 17.9134C2 16.9946 2 15.8297 2 13.5C2 11.1703 2 10.0054 2.3806 9.08658C2.48088 8.84448 2.59936 8.61221 2.73438 8.39142M16.3983 5.33042L16.8151 6.02515C17.7313 6.0622 18.366 6.15387 18.9134 6.3806C20.1386 6.88807 21.1119 7.86144 21.6194 9.08658C22 10.0054 22 11.1703 22 13.5C22 15.8297 22 16.9946 21.6194 17.9134C21.2735 18.7486 20.711 19.4668 19.9999 20.0001L14.5618 14.562C14.8398 14.107 15 13.5722 15 13C15 11.3431 13.6569 10 12 10C11.4278 10 10.893 10.1602 10.438 10.4382L6.1137 6.11389C6.42658 6.06884 6.77797 6.04161 7.18491 6.02515L7.60175 5.33042C8.11163 4.48062 8.36657 4.05572 8.71757 3.74708C9.02818 3.47396 9.39192 3.26802 9.78593 3.14219C10.2312 3 10.7267 3 11.7177 3H12.2823C13.2733 3 13.7688 3 14.2141 3.14219C14.6081 3.26802 14.9718 3.47396 15.2824 3.74708C15.6334 4.05572 15.8884 4.48062 16.3983 5.33042Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9298,7 +8610,6 @@ export const CameraSquareOff = () => (
     <path
       fill="none"
       d="M3 3L21 21M15.3242 20.9813C14.673 21 13.9105 21 13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13V11C3 10.0895 3 9.327 3.01873 8.67577M17 7V7.00995M14.1212 14.1214L19.5354 19.5357C19.9042 19.1669 20.2153 18.7404 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C8.19974 3 6.79961 3 5.73005 3.54497C5.2596 3.78467 4.83314 4.09577 4.46438 4.46456L9.87858 9.87878C10.4215 9.33583 11.1715 9 12 9C13.6569 9 15 10.3431 15 12C15 12.8285 14.6642 13.5785 14.1212 14.1214Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9312,7 +8623,6 @@ export const CameraSquare = () => (
     <path
       fill="none"
       d="M17 7V7.00995M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21ZM15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9326,7 +8636,6 @@ export const Camera = () => (
     <path
       fill="none"
       d="M12 16C13.6569 16 15 14.6569 15 13C15 11.3431 13.6569 10 12 10C10.3431 10 9 11.3431 9 13C9 14.6569 10.3431 16 12 16Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9334,7 +8643,6 @@ export const Camera = () => (
     <path
       fill="none"
       d="M16.8151 6.02515L16.3983 5.33042C15.8884 4.48062 15.6334 4.05572 15.2824 3.74708C14.9718 3.47396 14.6081 3.26802 14.2141 3.14219C13.7688 3 13.2733 3 12.2823 3H11.7177C10.7267 3 10.2312 3 9.78593 3.14219C9.39192 3.26802 9.02818 3.47396 8.71757 3.74708C8.36657 4.05572 8.11163 4.48062 7.60175 5.33042L7.18491 6.02515C6.26866 6.0622 5.63397 6.15387 5.08658 6.3806C3.86144 6.88807 2.88807 7.86144 2.3806 9.08658C2 10.0054 2 11.1703 2 13.5C2 15.8297 2 16.9946 2.3806 17.9134C2.88807 19.1386 3.86144 20.1119 5.08658 20.6194C6.00544 21 7.17029 21 9.5 21H14.5C16.8297 21 17.9946 21 18.9134 20.6194C20.1386 20.1119 21.1119 19.1386 21.6194 17.9134C22 16.9946 22 15.8297 22 13.5C22 11.1703 22 10.0054 21.6194 9.08658C21.1119 7.86144 20.1386 6.88807 18.9134 6.3806C18.366 6.15387 17.7313 6.0622 16.8151 6.02515Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9348,7 +8656,6 @@ export const Certificate = () => (
     <path
       fill="none"
       d="M16 17.4649V22L18 21L20 22V17.4649C19.4117 17.8052 18.7286 18 18 18M16 17.4649C16.5883 17.8052 17.2714 18 18 18M16 17.4649V18.9712C15.5286 19 14.9474 19 14.2 19H6.8C5.11984 19 4.27976 19 3.63803 18.673C3.07354 18.3854 2.6146 17.9265 2.32698 17.362C2 16.7202 2 15.8802 2 14.2V6.8C2 5.11984 2 4.27976 2.32698 3.63803C2.6146 3.07354 3.07354 2.6146 3.63803 2.32698C4.27976 2 5.11984 2 6.8 2H14.2C15.8802 2 16.7202 2 17.362 2.32698C17.9265 2.6146 18.3854 3.07354 18.673 3.63803C19 4.27976 19 5.11984 19 6.8V10.126C18.6804 10.0438 18.3453 10 18 10M16 17.4649C14.8044 16.7733 14 15.4806 14 14M18 18C20.2091 18 22 16.2091 22 14C22 11.7909 20.2091 10 18 10M18 18C15.7909 18 14 16.2091 14 14M14 14C14 11.7909 15.7909 10 18 10M6 7H13M6 11H10M6 15H7"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9362,7 +8669,6 @@ export const ChatArticle = () => (
     <path
       fill="none"
       d="M21.4713 13.5336C21.8109 14.286 22 15.1209 22 16C22 17.0274 21.7418 17.9944 21.2867 18.8398L21.9999 21.9999L18.6039 21.4071C17.8163 21.787 16.933 22 16 22C15.1209 22 14.286 21.8109 13.5336 21.4713M13 12H7M9 8H7M18 10C18 14.4183 14.4183 18 10 18C8.756 18 7.57832 17.7161 6.52823 17.2095L2.00005 17.9999L2.95102 13.7864C2.34428 12.6592 2 11.3698 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9376,7 +8682,6 @@ export const ChatDots = () => (
     <path
       fill="none"
       d="M21.4713 13.5336C21.8109 14.286 22 15.1209 22 16C22 17.0274 21.7418 17.9944 21.2867 18.8398L21.9999 21.9999L18.6039 21.4071C17.8163 21.787 16.933 22 16 22C15.1209 22 14.286 21.8109 13.5336 21.4713M6 10V10.0099M10 10V10.0099M14 10V10.0099M18 10C18 14.4183 14.4183 18 10 18C8.756 18 7.57832 17.7161 6.52823 17.2095L2.00005 17.9999L2.95102 13.7864C2.34428 12.6592 2 11.3698 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9390,7 +8695,6 @@ export const ChatRoundedArticle = () => (
     <path
       fill="none"
       d="M20.6726 12.2358C21.5029 13.2652 22 14.5745 22 16V18.8001C22 19.9201 22 20.4801 21.782 20.908C21.5903 21.2843 21.2843 21.5903 20.908 21.782C20.4802 22 19.9201 22 18.8 22H16C14.5745 22 13.2652 21.5029 12.2358 20.6726M11 12H7M9 8H7M17 9.5C17 13.6421 13.6421 17 9.5 17C8.53556 17 6.77342 17 5.19945 17C4.07971 17 3.51984 17 3.09202 16.782C2.71569 16.5903 2.40973 16.2843 2.21799 15.908C2 15.4802 2 14.9202 2 13.8004C2 12.2505 2 10.5104 2 9.5C2 5.35786 5.35786 2 9.5 2C13.6421 2 17 5.35786 17 9.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9404,7 +8708,6 @@ export const ChatRoundedDots = () => (
     <path
       fill="none"
       d="M6 10V10.0099M9.5 10V10.0099M13 10V10.0099M20.6726 12.2358C21.5029 13.2652 22 14.5745 22 16V18.8001C22 19.9201 22 20.4801 21.782 20.908C21.5903 21.2843 21.2843 21.5903 20.908 21.782C20.4802 22 19.9201 22 18.8 22H16C14.5745 22 13.2652 21.5029 12.2358 20.6726M17 9.5C17 13.6421 13.6421 17 9.5 17C8.53556 17 6.77342 17 5.19945 17C4.07971 17 3.51984 17 3.09202 16.782C2.71569 16.5903 2.40973 16.2843 2.21799 15.908C2 15.4802 2 14.9202 2 13.8004C2 12.2505 2 10.5104 2 9.5C2 5.35786 5.35786 2 9.5 2C13.6421 2 17 5.35786 17 9.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9418,7 +8721,6 @@ export const ChatRounded = () => (
     <path
       fill="none"
       d="M20.6726 12.2358C21.5029 13.2652 22 14.5745 22 16V18.8001C22 19.9201 22 20.4801 21.782 20.908C21.5903 21.2843 21.2843 21.5903 20.908 21.782C20.4802 22 19.9201 22 18.8 22H16C14.5745 22 13.2652 21.5029 12.2358 20.6726M17 9.5C17 13.6421 13.6421 17 9.5 17C8.53556 17 6.77342 17 5.19945 17C4.07971 17 3.51984 17 3.09202 16.782C2.71569 16.5903 2.40973 16.2843 2.21799 15.908C2 15.4802 2 14.9202 2 13.8004C2 12.2505 2 10.5104 2 9.5C2 5.35786 5.35786 2 9.5 2C13.6421 2 17 5.35786 17 9.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9452,7 +8754,6 @@ export const ChatSquare = () => (
     <path
       fill="none"
       d="M13.65 19.9943C13.967 19.9997 14.325 20 14.7333 20L19 22V19.9712C19.5883 19.9353 20.0057 19.8545 20.362 19.673C20.9265 19.3854 21.3854 18.9265 21.673 18.362C22 17.7202 22 16.8802 22 15.2V12.8C22 11.1198 22 10.2798 21.673 9.63803C21.3854 9.07354 20.9265 8.6146 20.362 8.32698C20.2487 8.26925 20.1292 8.22172 20 8.18257M10.2667 16H11.2C12.8802 16 13.7202 16 14.362 15.673C14.9265 15.3854 15.3854 14.9265 15.673 14.362C16 13.7202 16 12.8802 16 11.2V6.8C16 5.11984 16 4.27976 15.673 3.63803C15.3854 3.07354 14.9265 2.6146 14.362 2.32698C13.7202 2 12.8802 2 11.2 2H6.8C5.11984 2 4.27976 2 3.63803 2.32698C3.07354 2.6146 2.6146 3.07354 2.32698 3.63803C2 4.27976 2 5.11984 2 6.8V11.2C2 12.8802 2 13.7202 2.32698 14.362C2.6146 14.9265 3.07354 15.3854 3.63803 15.673C4.16873 15.9434 4.83507 15.9902 6 15.9983V18L10.2667 16Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9466,7 +8767,6 @@ export const Chat = () => (
     <path
       fill="none"
       d="M21.4713 13.5336C21.8109 14.286 22 15.1209 22 16C22 17.0274 21.7418 17.9944 21.2867 18.8398L21.9999 21.9999L18.6039 21.4071C17.8163 21.787 16.933 22 16 22C15.1209 22 14.286 21.8109 13.5336 21.4713M18 10C18 14.4183 14.4183 18 10 18C8.756 18 7.57832 17.7161 6.52823 17.2095L2.00005 17.9999L2.95102 13.7864C2.34428 12.6592 2 11.3698 2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9480,7 +8780,6 @@ export const ClipboardAdd = () => (
     <path
       fill="none"
       d="M9 14H15M12 11L12 17M6.73005 4.54136C7.10072 4.35249 7.51109 4.22908 8.00569 4.14844C8.08339 5.18198 8.94658 5.99639 10 5.99639H14C15.0534 5.99639 15.9166 5.18198 15.9943 4.14844C16.4889 4.22908 16.8993 4.35249 17.27 4.54136C18.2108 5.02072 18.9757 5.78563 19.455 6.72644C20 7.796 20 9.19613 20 11.9964V13.9964C20 16.7967 20 18.1968 19.455 19.2663C18.9757 20.2072 18.2108 20.9721 17.27 21.4514C16.2004 21.9964 14.8003 21.9964 12 21.9964C9.19974 21.9964 7.79961 21.9964 6.73005 21.4514C5.78924 20.9721 5.02433 20.2072 4.54497 19.2663C4 18.1968 4 16.7967 4 13.9964V11.9964C4 9.19613 4 7.796 4.54497 6.72644C5.02433 5.78563 5.78924 5.02072 6.73005 4.54136ZM10 6H14C15.1046 6 16 5.10457 16 4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4C8 5.10457 8.89543 6 10 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9494,7 +8793,6 @@ export const ClipboardArticle = () => (
     <path
       fill="none"
       d="M16 12H11.0001M8.00995 12H8M16 16H11.0001M8.00995 16H8M6.73005 4.54136C7.10072 4.35249 7.51109 4.22908 8.00569 4.14844C8.08339 5.18198 8.94658 5.99639 10 5.99639H14C15.0534 5.99639 15.9166 5.18198 15.9943 4.14844C16.4889 4.22908 16.8993 4.35249 17.27 4.54136C18.2108 5.02072 18.9757 5.78563 19.455 6.72644C20 7.796 20 9.19613 20 11.9964V13.9964C20 16.7967 20 18.1968 19.455 19.2663C18.9757 20.2072 18.2108 20.9721 17.27 21.4514C16.2004 21.9964 14.8003 21.9964 12 21.9964C9.19974 21.9964 7.79961 21.9964 6.73005 21.4514C5.78924 20.9721 5.02433 20.2072 4.54497 19.2663C4 18.1968 4 16.7967 4 13.9964V11.9964C4 9.19613 4 7.796 4.54497 6.72644C5.02433 5.78563 5.78924 5.02072 6.73005 4.54136ZM10 6H14C15.1046 6 16 5.10457 16 4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4C8 5.10457 8.89543 6 10 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9508,7 +8806,6 @@ export const ClipboardAttachment = () => (
     <path
       fill="none"
       d="M12.8584 13.0817L10.3325 14.5401C9.73467 14.8852 9.52982 15.6497 9.875 16.2476C10.2202 16.8455 10.9847 17.0503 11.5825 16.7051L14.1084 15.2468C15.3042 14.5564 15.7139 13.0275 15.0235 11.8317C14.3331 10.636 12.8042 10.2263 11.6084 10.9167L8 13M6.73005 4.54136C7.10072 4.35249 7.51109 4.22908 8.00569 4.14844C8.08339 5.18198 8.94658 5.99639 10 5.99639H14C15.0534 5.99639 15.9166 5.18198 15.9943 4.14844C16.4889 4.22908 16.8993 4.35249 17.27 4.54136C18.2108 5.02072 18.9757 5.78563 19.455 6.72644C20 7.796 20 9.19613 20 11.9964V13.9964C20 16.7967 20 18.1968 19.455 19.2663C18.9757 20.2072 18.2108 20.9721 17.27 21.4514C16.2004 21.9964 14.8003 21.9964 12 21.9964C9.19974 21.9964 7.79961 21.9964 6.73005 21.4514C5.78924 20.9721 5.02433 20.2072 4.54497 19.2663C4 18.1968 4 16.7967 4 13.9964V11.9964C4 9.19613 4 7.796 4.54497 6.72644C5.02433 5.78563 5.78924 5.02072 6.73005 4.54136ZM10 6H14C15.1046 6 16 5.10457 16 4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4C8 5.10457 8.89543 6 10 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9522,7 +8819,6 @@ export const ClipboardDownload = () => (
     <path
       fill="none"
       d="M9 14L12 17M12 17L15 14M12 17V10.9999M6.73005 4.54136C7.10072 4.35249 7.51109 4.22908 8.00569 4.14844C8.08339 5.18198 8.94658 5.99639 10 5.99639H14C15.0534 5.99639 15.9166 5.18198 15.9943 4.14844C16.4889 4.22908 16.8993 4.35249 17.27 4.54136C18.2108 5.02072 18.9757 5.78563 19.455 6.72644C20 7.796 20 9.19613 20 11.9964V13.9964C20 16.7967 20 18.1968 19.455 19.2663C18.9757 20.2072 18.2108 20.9721 17.27 21.4514C16.2004 21.9964 14.8003 21.9964 12 21.9964C9.19974 21.9964 7.79961 21.9964 6.73005 21.4514C5.78924 20.9721 5.02433 20.2072 4.54497 19.2663C4 18.1968 4 16.7967 4 13.9964V11.9964C4 9.19613 4 7.796 4.54497 6.72644C5.02433 5.78563 5.78924 5.02072 6.73005 4.54136ZM10 6H14C15.1046 6 16 5.10457 16 4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4C8 5.10457 8.89543 6 10 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9536,7 +8832,6 @@ export const ClipboardError = () => (
     <path
       fill="none"
       d="M12 11V13.9999M12 16.9901V17M6.73005 4.54136C7.10072 4.35249 7.51109 4.22908 8.00569 4.14844C8.08339 5.18198 8.94658 5.99639 10 5.99639H14C15.0534 5.99639 15.9166 5.18198 15.9943 4.14844C16.4889 4.22908 16.8993 4.35249 17.27 4.54136C18.2108 5.02072 18.9757 5.78563 19.455 6.72644C20 7.796 20 9.19613 20 11.9964V13.9964C20 16.7967 20 18.1968 19.455 19.2663C18.9757 20.2072 18.2108 20.9721 17.27 21.4514C16.2004 21.9964 14.8003 21.9964 12 21.9964C9.19974 21.9964 7.79961 21.9964 6.73005 21.4514C5.78924 20.9721 5.02433 20.2072 4.54497 19.2663C4 18.1968 4 16.7967 4 13.9964V11.9964C4 9.19613 4 7.796 4.54497 6.72644C5.02433 5.78563 5.78924 5.02072 6.73005 4.54136ZM10 6H14C15.1046 6 16 5.10457 16 4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4C8 5.10457 8.89543 6 10 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9550,7 +8845,6 @@ export const ClipboardMinus = () => (
     <path
       fill="none"
       d="M9 14H15M6.73005 4.54136C7.10072 4.35249 7.51109 4.22908 8.00569 4.14844C8.08339 5.18198 8.94658 5.99639 10 5.99639H14C15.0534 5.99639 15.9166 5.18198 15.9943 4.14844C16.4889 4.22908 16.8993 4.35249 17.27 4.54136C18.2108 5.02072 18.9757 5.78563 19.455 6.72644C20 7.796 20 9.19613 20 11.9964V13.9964C20 16.7967 20 18.1968 19.455 19.2663C18.9757 20.2072 18.2108 20.9721 17.27 21.4514C16.2004 21.9964 14.8003 21.9964 12 21.9964C9.19974 21.9964 7.79961 21.9964 6.73005 21.4514C5.78924 20.9721 5.02433 20.2072 4.54497 19.2663C4 18.1968 4 16.7967 4 13.9964V11.9964C4 9.19613 4 7.796 4.54497 6.72644C5.02433 5.78563 5.78924 5.02072 6.73005 4.54136ZM10 6H14C15.1046 6 16 5.10457 16 4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4C8 5.10457 8.89543 6 10 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9564,7 +8858,6 @@ export const ClipboardRemove = () => (
     <path
       fill="none"
       d="M10 12L14 16M14 12L9.99998 16M6.73005 4.54136C7.10072 4.35249 7.51109 4.22908 8.00569 4.14844C8.08339 5.18198 8.94658 5.99639 10 5.99639H14C15.0534 5.99639 15.9166 5.18198 15.9943 4.14844C16.4889 4.22908 16.8993 4.35249 17.27 4.54136C18.2108 5.02072 18.9757 5.78563 19.455 6.72644C20 7.796 20 9.19613 20 11.9964V13.9964C20 16.7967 20 18.1968 19.455 19.2663C18.9757 20.2072 18.2108 20.9721 17.27 21.4514C16.2004 21.9964 14.8003 21.9964 12 21.9964C9.19974 21.9964 7.79961 21.9964 6.73005 21.4514C5.78924 20.9721 5.02433 20.2072 4.54497 19.2663C4 18.1968 4 16.7967 4 13.9964V11.9964C4 9.19613 4 7.796 4.54497 6.72644C5.02433 5.78563 5.78924 5.02072 6.73005 4.54136ZM10 6H14C15.1046 6 16 5.10457 16 4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4C8 5.10457 8.89543 6 10 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9578,7 +8871,6 @@ export const ClipboardUpload = () => (
     <path
       fill="none"
       d="M9 13.9999L12 10.9999M12 10.9999L15 13.9999M12 10.9999V17M6.73005 4.54136C7.10072 4.35249 7.51109 4.22908 8.00569 4.14844C8.08339 5.18198 8.94658 5.99639 10 5.99639H14C15.0534 5.99639 15.9166 5.18198 15.9943 4.14844C16.4889 4.22908 16.8993 4.35249 17.27 4.54136C18.2108 5.02072 18.9757 5.78563 19.455 6.72644C20 7.796 20 9.19613 20 11.9964V13.9964C20 16.7967 20 18.1968 19.455 19.2663C18.9757 20.2072 18.2108 20.9721 17.27 21.4514C16.2004 21.9964 14.8003 21.9964 12 21.9964C9.19974 21.9964 7.79961 21.9964 6.73005 21.4514C5.78924 20.9721 5.02433 20.2072 4.54497 19.2663C4 18.1968 4 16.7967 4 13.9964V11.9964C4 9.19613 4 7.796 4.54497 6.72644C5.02433 5.78563 5.78924 5.02072 6.73005 4.54136ZM10 6H14C15.1046 6 16 5.10457 16 4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4C8 5.10457 8.89543 6 10 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9592,7 +8884,6 @@ export const Clipboard = () => (
     <path
       fill="none"
       d="M8.00569 4.14844C7.51109 4.22908 7.10072 4.35249 6.73005 4.54136C5.78924 5.02072 5.02433 5.78563 4.54497 6.72644C4 7.796 4 9.19613 4 11.9964V13.9964C4 16.7967 4 18.1968 4.54497 19.2663C5.02433 20.2072 5.78924 20.9721 6.73005 21.4514C7.79961 21.9964 9.19974 21.9964 12 21.9964C14.8003 21.9964 16.2004 21.9964 17.27 21.4514C18.2108 20.9721 18.9757 20.2072 19.455 19.2663C20 18.1968 20 16.7967 20 13.9964V11.9964C20 9.19613 20 7.796 19.455 6.72644C18.9757 5.78563 18.2108 5.02072 17.27 4.54136C16.8993 4.35249 16.4889 4.22908 15.9943 4.14844C15.9166 5.18198 15.0534 5.99639 14 5.99639H10C8.94658 5.99639 8.08339 5.18198 8.00569 4.14844Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9600,7 +8891,6 @@ export const Clipboard = () => (
     <path
       fill="none"
       d="M8 4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4C16 5.10457 15.1046 6 14 6H10C8.89543 6 8 5.10457 8 4Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9614,7 +8904,6 @@ export const ClockAdd = () => (
     <path
       fill="none"
       d="M12 8V12L15 14M11 20.9451C11.3283 20.9814 11.662 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 12.338 3.01863 12.6717 3.05493 13M3 19H7M5 17L5 21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9628,7 +8917,6 @@ export const ClockBackward = () => (
     <path
       fill="none"
       d="M2 10C2 10 4.00498 7.26822 5.63384 5.63824C7.26269 4.00827 9.5136 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C8.46628 21 5.40822 18.9634 3.93552 16M2 10V7M2 10H5M12 8V12L15 14"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9642,7 +8930,6 @@ export const ClockForward = () => (
     <path
       fill="none"
       d="M22 10C22 10 19.995 7.26822 18.3662 5.63824C16.7373 4.00827 14.4864 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C15.5337 21 18.5918 18.9634 20.0645 16M22 10V7M22 10H19M12 8V12L15 14"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9656,7 +8943,6 @@ export const ClockRefresh = () => (
     <path
       fill="none"
       d="M3.99998 17.3336C3.99998 17.3336 3.5147 16.6866 3.51471 12.0003C3.51471 7.31409 7.31366 3.51514 11.9999 3.51514C12.9475 3.51514 13.8589 3.67048 14.7099 3.95709M3.99998 17.3336L2 15.3336M3.99998 17.3336L5.99996 15.3336M19.9998 6.66706C19.9998 6.66706 20.4851 7.31409 20.4851 12.0003C20.4851 16.6866 16.6862 20.4856 11.9999 20.4855C11.0523 20.4855 10.1409 20.3302 9.28994 20.0436M19.9998 6.66706L21.9998 8.66704M19.9998 6.66706L17.9999 8.66704M11.9999 8.00001V12L14.9999 14"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9670,7 +8956,6 @@ export const Clock = () => (
     <path
       fill="none"
       d="M12 8V12L15 14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9684,7 +8969,6 @@ export const CodeAnnotation = () => (
     <path
       fill="none"
       d="M14 9L16 11L14 13M10 9L8 11L10 13M15.0113 18.9887C16.5439 18.959 17.4939 18.8504 18.27 18.455C19.2108 17.9757 19.9757 17.2108 20.455 16.27C21 15.2004 21 13.8003 21 11V10C21 7.19974 21 5.79961 20.455 4.73005C19.9757 3.78924 19.2108 3.02433 18.27 2.54497C17.2004 2 15.8003 2 13 2H11C8.19974 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V11C3 13.8003 3 15.2004 3.54497 16.27C4.02433 17.2108 4.78924 17.9757 5.73005 18.455C6.50608 18.8504 7.45613 18.959 8.98874 18.9887L12 22L15.0113 18.9887Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9698,7 +8982,6 @@ export const ColumnChartCircleLeft = () => (
     <path
       fill="none"
       d="M12 11V14M8 9L8 14M16 13V14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9712,7 +8995,6 @@ export const ColumnChartCircleRight = () => (
     <path
       fill="none"
       d="M12 11V14M16 9V14M8 13V14M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9726,7 +9008,6 @@ export const ColumnChartCircle = () => (
     <path
       fill="none"
       d="M12 8V15M16 12V15M8 13V15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9740,7 +9021,6 @@ export const ColumnChartCoordinateLeft = () => (
     <path
       fill="none"
       d="M3 3V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H21M14 9V16M9 5L9 16M19 13V16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9754,7 +9034,6 @@ export const ColumnChartCoordinateRight = () => (
     <path
       fill="none"
       d="M3 3V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H21M14 9V16M19 5V16M9 13V16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9768,7 +9047,6 @@ export const ColumnChartCoordinate = () => (
     <path
       fill="none"
       d="M3 3V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H21M14 5V16M19 10V16M9 10V16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9782,7 +9060,6 @@ export const ColumnChartFatLeft = () => (
     <path
       fill="none"
       d="M22 17V19C22 20.1046 21.1046 21 20 21C18.8954 21 18 20.1046 18 19V17C18 15.8954 18.8954 15 20 15C21.1046 15 22 15.8954 22 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9790,7 +9067,6 @@ export const ColumnChartFatLeft = () => (
     <path
       fill="none"
       d="M14 11V19C14 20.1046 13.1046 21 12 21C10.8954 21 10 20.1046 10 19V11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9798,7 +9074,6 @@ export const ColumnChartFatLeft = () => (
     <path
       fill="none"
       d="M6 5V19C6 20.1046 5.10457 21 4 21C2.89543 21 2 20.1046 2 19L2 5C2 3.89543 2.89543 3 4 3C5.10457 3 6 3.89543 6 5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9812,7 +9087,6 @@ export const ColumnChartFatRight = () => (
     <path
       fill="none"
       d="M2 17L2 19C2 20.1046 2.89543 21 4 21C5.10457 21 6 20.1046 6 19V17C6 15.8954 5.10457 15 4 15C2.89543 15 2 15.8954 2 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9820,7 +9094,6 @@ export const ColumnChartFatRight = () => (
     <path
       fill="none"
       d="M10 11V19C10 20.1046 10.8954 21 12 21C13.1046 21 14 20.1046 14 19V11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9828,7 +9101,6 @@ export const ColumnChartFatRight = () => (
     <path
       fill="none"
       d="M18 5V19C18 20.1046 18.8954 21 20 21C21.1046 21 22 20.1046 22 19V5C22 3.89543 21.1046 3 20 3C18.8954 3 18 3.89543 18 5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9842,7 +9114,6 @@ export const ColumnChartFat = () => (
     <path
       fill="none"
       d="M2 13L2 19C2 20.1046 2.89543 21 4 21C5.10457 21 6 20.1046 6 19V13C6 11.8954 5.10457 11 4 11C2.89543 11 2 11.8954 2 13Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9850,7 +9121,6 @@ export const ColumnChartFat = () => (
     <path
       fill="none"
       d="M10 5V19C10 20.1046 10.8954 21 12 21C13.1046 21 14 20.1046 14 19V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9858,7 +9128,6 @@ export const ColumnChartFat = () => (
     <path
       fill="none"
       d="M18 13V19C18 20.1046 18.8954 21 20 21C21.1046 21 22 20.1046 22 19V13C22 11.8954 21.1046 11 20 11C18.8954 11 18 11.8954 18 13Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9872,7 +9141,6 @@ export const ColumnChartNarrowFatLeft = () => (
     <path
       fill="none"
       d="M15 18C15 17.0681 15 16.6022 15.1522 16.2346C15.3552 15.7446 15.7446 15.3552 16.2346 15.1522C16.6022 15 17.0681 15 18 15C18.9319 15 19.3978 15 19.7654 15.1522C20.2554 15.3552 20.6448 15.7446 20.8478 16.2346C21 16.6022 21 17.0681 21 18C21 18.9319 21 19.3978 20.8478 19.7654C20.6448 20.2554 20.2554 20.6448 19.7654 20.8478C19.3978 21 18.9319 21 18 21C17.0681 21 16.6022 21 16.2346 20.8478C15.7446 20.6448 15.3552 20.2554 15.1522 19.7654C15 19.3978 15 18.9319 15 18ZM15 18V12C15 11.0681 15 10.6022 14.8478 10.2346C14.6448 9.74458 14.2554 9.35523 13.7654 9.15224C13.3978 9 12.9319 9 12 9C11.0681 9 10.6022 9 10.2346 9.15224C9.74458 9.35523 9.35523 9.74458 9.15224 10.2346C9 10.6022 9 11.0681 9 12V18M15 18C15 18.9319 15 19.3978 14.8478 19.7654C14.6448 20.2554 14.2554 20.6448 13.7654 20.8478C13.3978 21 12.9319 21 12 21C11.0681 21 10.6022 21 10.2346 20.8478C9.74458 20.6448 9.35523 20.2554 9.15224 19.7654C9 19.3978 9 18.9319 9 18M9 18V6C9 5.06812 9 4.60217 8.84776 4.23463C8.64477 3.74458 8.25542 3.35523 7.76537 3.15224C7.39782 3 6.93188 3 6 3C5.06812 3 4.60218 3 4.23463 3.15224C3.74458 3.35523 3.35523 3.74458 3.15224 4.23463C3 4.60217 3 5.06812 3 6L3 18C3 18.9319 3 19.3978 3.15224 19.7654C3.35523 20.2554 3.74458 20.6448 4.23463 20.8478C4.60218 21 5.06812 21 6 21C6.93188 21 7.39782 21 7.76537 20.8478C8.25542 20.6448 8.64477 20.2554 8.84776 19.7654C9 19.3978 9 18.9319 9 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9886,7 +9154,6 @@ export const ColumnChartNarrowFatRight = () => (
     <path
       fill="none"
       d="M9 18C9 17.0681 9 16.6022 8.84776 16.2346C8.64477 15.7446 8.25542 15.3552 7.76537 15.1522C7.39782 15 6.93188 15 6 15C5.06812 15 4.60218 15 4.23463 15.1522C3.74458 15.3552 3.35523 15.7446 3.15224 16.2346C3 16.6022 3 17.0681 3 18C3 18.9319 3 19.3978 3.15224 19.7654C3.35523 20.2554 3.74458 20.6448 4.23463 20.8478C4.60218 21 5.06812 21 6 21C6.93188 21 7.39782 21 7.76537 20.8478C8.25542 20.6448 8.64477 20.2554 8.84776 19.7654C9 19.3978 9 18.9319 9 18ZM9 18V12C9 11.0681 9 10.6022 9.15224 10.2346C9.35523 9.74458 9.74458 9.35523 10.2346 9.15224C10.6022 9 11.0681 9 12 9C12.9319 9 13.3978 9 13.7654 9.15224C14.2554 9.35523 14.6448 9.74458 14.8478 10.2346C15 10.6022 15 11.0681 15 12V18M9 18C9 18.9319 9 19.3978 9.15224 19.7654C9.35523 20.2554 9.74458 20.6448 10.2346 20.8478C10.6022 21 11.0681 21 12 21C12.9319 21 13.3978 21 13.7654 20.8478C14.2554 20.6448 14.6448 20.2554 14.8478 19.7654C15 19.3978 15 18.9319 15 18M15 18V6C15 5.06812 15 4.60217 15.1522 4.23463C15.3552 3.74458 15.7446 3.35523 16.2346 3.15224C16.6022 3 17.0681 3 18 3C18.9319 3 19.3978 3 19.7654 3.15224C20.2554 3.35523 20.6448 3.74458 20.8478 4.23463C21 4.60217 21 5.06812 21 6V18C21 18.9319 21 19.3978 20.8478 19.7654C20.6448 20.2554 20.2554 20.6448 19.7654 20.8478C19.3978 21 18.9319 21 18 21C17.0681 21 16.6022 21 16.2346 20.8478C15.7446 20.6448 15.3552 20.2554 15.1522 19.7654C15 19.3978 15 18.9319 15 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9900,7 +9167,6 @@ export const ColumnChartNarrowFat = () => (
     <path
       fill="none"
       d="M9 18V14C9 13.0681 9 12.6022 8.84776 12.2346C8.64477 11.7446 8.25542 11.3552 7.76537 11.1522C7.39782 11 6.93188 11 6 11C5.06812 11 4.60218 11 4.23463 11.1522C3.74458 11.3552 3.35523 11.7446 3.15224 12.2346C3 12.6022 3 13.0681 3 14L3 18C3 18.9319 3 19.3978 3.15224 19.7654C3.35523 20.2554 3.74458 20.6448 4.23463 20.8478C4.60218 21 5.06812 21 6 21C6.93188 21 7.39782 21 7.76537 20.8478C8.25542 20.6448 8.64477 20.2554 8.84776 19.7654C9 19.3978 9 18.9319 9 18ZM9 18V6C9 5.06812 9 4.60217 9.15224 4.23463C9.35523 3.74458 9.74458 3.35523 10.2346 3.15224C10.6022 3 11.0681 3 12 3C12.9319 3 13.3978 3 13.7654 3.15224C14.2554 3.35523 14.6448 3.74458 14.8478 4.23463C15 4.60217 15 5.06812 15 6V18M9 18C9 18.9319 9 19.3978 9.15224 19.7654C9.35523 20.2554 9.74458 20.6448 10.2346 20.8478C10.6022 21 11.0681 21 12 21C12.9319 21 13.3978 21 13.7654 20.8478C14.2554 20.6448 14.6448 20.2554 14.8478 19.7654C15 19.3978 15 18.9319 15 18M15 18V11C15 10.0681 15 9.60217 15.1522 9.23463C15.3552 8.74458 15.7446 8.35523 16.2346 8.15224C16.6022 8 17.0681 8 18 8C18.9319 8 19.3978 8 19.7654 8.15224C20.2554 8.35523 20.6448 8.74458 20.8478 9.23463C21 9.60217 21 10.0681 21 11V18C21 18.9319 21 19.3978 20.8478 19.7654C20.6448 20.2554 20.2554 20.6448 19.7654 20.8478C19.3978 21 18.9319 21 18 21C17.0681 21 16.6022 21 16.2346 20.8478C15.7446 20.6448 15.3552 20.2554 15.1522 19.7654C15 19.3978 15 18.9319 15 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9914,7 +9180,6 @@ export const ColumnChartSquareLeft = () => (
     <path
       fill="none"
       d="M12 11V16M8 8L8 16M16 14V16M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9928,7 +9193,6 @@ export const ColumnChartSquareRight = () => (
     <path
       fill="none"
       d="M12 11V16M16 8L16 16M8 14V16M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9942,7 +9206,6 @@ export const ColumnChartSquare = () => (
     <path
       fill="none"
       d="M12 8V16M16 12V16M8 14V16M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9956,7 +9219,6 @@ export const DonutChartCircle = () => (
     <path
       fill="none"
       d="M16.9225 4.46424C15.5079 3.53835 13.8168 3 12 3C7.02944 3 3 7.02944 3 12C3 13.1974 3.23384 14.3402 3.65833 15.3852M20.7481 14.1298C20.9134 13.4477 21.001 12.7352 21.001 12.0023C21.001 10.2971 20.5268 8.70271 19.7031 7.34375M6.00391 18.7135C7.59592 20.1375 9.69774 21.0032 12.0018 21.0032C14.7984 21.0032 17.2971 19.7277 18.9478 17.7266"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9970,7 +9232,6 @@ export const FileAdd = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M9 14H15M12 11V17"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9984,7 +9245,6 @@ export const FileArticle = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M8 13H16M8 17H16M8 7H10V9H8V7Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -9998,7 +9258,6 @@ export const FileAttachment = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M12.714 13.7902L10.6517 15.8526C10.1635 16.3408 10.1635 17.1322 10.6517 17.6204C11.1398 18.1086 11.9313 18.1086 12.4194 17.6204L14.4818 15.558C15.4581 14.5817 15.4581 12.9988 14.4818 12.0225C13.5055 11.0462 11.9226 11.0462 10.9463 12.0225L8 14.9688"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10012,7 +9271,6 @@ export const FileBookmark = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C10.2538 2 9.58467 2 9 2.01135M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M20.4397 7.9998C20.6077 8.32413 20.7399 8.66646 20.8337 9.02079C21 9.64942 21 10.3261 21 11.6795V14C21 16.8003 21 18.2004 20.455 19.27C19.9757 20.2108 19.2108 20.9757 18.27 21.455C17.2004 22 15.8003 22 13 22H11C8.19974 22 6.79961 22 5.73005 21.455C4.78924 20.9757 4.02433 20.2108 3.54497 19.27C3 18.2004 3 16.8003 3 14V10C3 7.19974 3 5.79961 3.54497 4.73005C4.02433 3.78924 4.78924 3.02433 5.73005 2.54497C6.50535 2.14993 7.45954 2.04125 9 2.01135M3 11L6 8.75L9 11V2.01135"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10026,7 +9284,6 @@ export const FileChartPie = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M15 14C15 15.6569 13.6569 17 12 17C11.0185 17 10.1471 16.5287 9.59978 15.8C9.22317 15.2986 9 14.6754 9 14C9 12.3431 10.3431 11 12 11V14H15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10040,7 +9297,6 @@ export const FileChart = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M12 17V11M16 17V14M8 17V16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10054,7 +9310,6 @@ export const FileCheck = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M9 15L11 17L15 13"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10068,7 +9323,6 @@ export const FileCopy = () => (
     <path
       fill="none"
       d="M8.20925 6C8.6596 6 8.88477 6 9.10252 6.01907C10.0178 6.09925 10.8933 6.43008 11.6329 6.97523C11.8088 7.10492 11.9777 7.25383 12.3155 7.55166L13.3867 8.49603C14.2893 9.29176 14.7405 9.68962 15.0757 10.1612C15.4509 10.6892 15.72 11.2851 15.8679 11.9158C16 12.479 16 13.0807 16 14.2839V15M8.20925 6C7.08555 6 6.5237 6 6.05596 6.08993C4.04712 6.47616 2.47616 8.04712 2.08993 10.056C2 10.5237 2 11.0855 2 12.2092V15C2 16.8613 2 17.7919 2.24472 18.5451C2.73931 20.0673 3.93273 21.2607 5.45492 21.7553C6.20808 22 7.13872 22 9 22C10.8613 22 11.7919 22 12.5451 21.7553C14.0673 21.2607 15.2607 20.0673 15.7553 18.5451C16 17.7919 16 16.8613 16 15M8.20925 6C8.17258 6 8.13651 6 8.10102 6C8.50543 4.01799 10.0658 2.47257 12.056 2.08993C12.5237 2 13.0855 2 14.2092 2C14.6596 2 14.8848 2 15.1025 2.01907C16.0178 2.09925 16.8933 2.43008 17.6329 2.97523C17.8088 3.10492 17.9777 3.25383 18.3155 3.55166L19.3867 4.49603C20.2893 5.29176 20.7405 5.68962 21.0757 6.16119C21.4509 6.68922 21.72 7.28514 21.8679 7.9158C22 8.47904 22 9.08066 22 10.2839V11C22 12.8613 22 13.7919 21.7553 14.5451C21.2607 16.0673 20.0673 17.2607 18.5451 17.7553C17.9222 17.9577 17.178 17.9927 15.8865 17.9987C16 17.3239 16 16.4408 16 15M10 7.7978V6.1853C10.5857 6.34743 11.1395 6.6157 11.6329 6.97934C11.8088 7.10903 11.9777 7.25794 12.3155 7.55577L13.3867 8.50015C14.2893 9.29587 14.7405 9.69373 15.0757 10.1653C15.2619 10.4274 15.4221 10.7063 15.5542 10.9978H13.2C12.0799 10.9978 11.5198 10.9978 11.092 10.7798C10.7157 10.5881 10.4097 10.2821 10.218 9.90578C10 9.47795 10 8.9179 10 7.7978Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10082,7 +9336,6 @@ export const FileDownload = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M9 14.0001L12 17.0001M12 17.0001L15 14.0001M12 17.0001V11"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10096,7 +9349,6 @@ export const FileEdit = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M11.5714 11.8571L14.0627 14.3485C14.4086 14.6944 14.5816 14.8673 14.7053 15.0691C14.8149 15.2481 14.8957 15.4432 14.9447 15.6473C15 15.8774 15 16.122 15 16.6112V17H14.6112C14.122 17 13.8774 17 13.6473 16.9447C13.4432 16.8957 13.2481 16.8149 13.0691 16.7053C12.8673 16.5816 12.6944 16.4086 12.3485 16.0627L9.85714 13.5714C9.38376 13.098 9.38376 12.3305 9.85714 11.8571C10.3305 11.3838 11.098 11.3838 11.5714 11.8571Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10110,7 +9362,6 @@ export const FileFavorite = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M11.9961 11L12.9231 12.9752L14.9961 13.2919L13.4961 14.8293L13.8501 17L11.9961 15.9749L10.1421 17L10.4961 14.8293L8.99609 13.2919L11.0691 12.9752L11.9961 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10124,7 +9375,6 @@ export const FileFind = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M15 17L13.2678 15.2678M13.2678 15.2678C13.7202 14.8154 14 14.1904 14 13.5C14 12.1193 12.8807 11 11.5 11C10.1193 11 9 12.1193 9 13.5C9 14.8807 10.1193 16 11.5 16C12.1904 16 12.8154 15.7202 13.2678 15.2678Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10138,7 +9388,6 @@ export const FileInfo = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M12 12V14.9999M12 17.9901V18"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10152,7 +9401,6 @@ export const FileMedia = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M10 11L14.5 14L10 17V11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10166,7 +9414,6 @@ export const FileMinus = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M9 14H15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10180,7 +9427,6 @@ export const FileNarrowAdd = () => (
     <path
       fill="none"
       d="M9 12H15M12 9L12 15M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10194,7 +9440,6 @@ export const FileNarrowArticle = () => (
     <path
       fill="none"
       d="M8 13H16M8 17H16M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2ZM8 7H10V9H8V7Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10208,7 +9453,6 @@ export const FileNarrowAttachment = () => (
     <path
       fill="none"
       d="M12.714 11.7902L10.6517 13.8526C10.1635 14.3408 10.1635 15.1322 10.6517 15.6204C11.1398 16.1086 11.9313 16.1086 12.4194 15.6204L14.4818 13.558C15.4581 12.5817 15.4581 10.9988 14.4818 10.0225C13.5055 9.04616 11.9226 9.04616 10.9463 10.0225L8 12.9688M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10222,7 +9466,6 @@ export const FileNarrowBookmark = () => (
     <path
       fill="none"
       d="M4 11L7 8.75L10 11V2.00827M10 2.00827C10.5167 2 11.1035 2 11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77818C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.62977 2.122 8.53205 2.03176 10 2.00827Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10236,7 +9479,6 @@ export const FileNarrowChartPie = () => (
     <path
       fill="none"
       d="M4 9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10244,7 +9486,6 @@ export const FileNarrowChartPie = () => (
     <path
       fill="none"
       d="M12 15C13.6569 15 15 13.6569 15 12H12V9C10.3431 9 9 10.3431 9 12C9 12.6754 9.22317 13.2986 9.59978 13.8C10.1471 14.5287 11.0185 15 12 15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10258,7 +9499,6 @@ export const FileNarrowChart = () => (
     <path
       fill="none"
       d="M12 17L12 11M16 17V14M8 17V16M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10272,7 +9512,6 @@ export const FileNarrowCheck = () => (
     <path
       fill="none"
       d="M9 13L11 15L15 11M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10286,7 +9525,6 @@ export const FileNarrowCopy = () => (
     <path
       fill="none"
       d="M9.46353 6.02866C9.197 6 8.91932 6 8.36396 6C7.0962 6 6.46232 6 5.93692 6.11432C4.02435 6.53048 2.53048 8.02435 2.11432 9.93692C2 10.4623 2 11.0962 2 12.364V15.5C2 16.8945 2 17.5918 2.13815 18.1672C2.57707 19.9955 4.00453 21.4229 5.83277 21.8618C6.40821 22 7.10547 22 8.5 22C9.89453 22 10.5918 22 11.1672 21.8618C12.9955 21.4229 14.4229 19.9955 14.8618 18.1672C15 17.5918 15 16.8945 15 15.5M9.46353 6.02866C10.4165 6.13114 11.3199 6.50534 12.0662 7.10671C12.2749 7.27491 12.4713 7.47126 12.864 7.86396L13 8C13.5266 8.52655 13.7898 8.78983 14.0051 9.0779C14.5048 9.74646 14.8291 10.5295 14.9485 11.3555C15 11.7114 15 12.0838 15 12.8284V15.5M9.46353 6.02866C9.35107 6.01657 9.23662 6.00958 9.10016 6.00554C9.10467 5.98244 9.10939 5.95958 9.11432 5.93692C9.53048 4.02435 11.0244 2.53048 12.9369 2.11432C13.4623 2 14.0962 2 15.364 2C15.9193 2 16.197 2 16.4635 2.02866C17.4165 2.13114 18.3199 2.50534 19.0662 3.10671C19.2749 3.27491 19.4713 3.47126 19.864 3.86396L20 4C20.5266 4.52655 20.7898 4.78983 21.0051 5.0779C21.5048 5.74646 21.8291 6.52947 21.9485 7.35551C22 7.71144 22 8.08377 22 8.82843V11.5C22 12.8945 22 13.5918 21.8619 14.1672C21.4229 15.9955 19.9955 17.4229 18.1672 17.8618C17.5918 18 16.8945 18 15.5 18C15.283 18 15.083 18 14.8976 17.9995C15 17.4531 15 16.7621 15 15.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10300,7 +9538,6 @@ export const FileNarrowDownload = () => (
     <path
       fill="none"
       d="M9 12.0001L12 15.0001M12 15.0001L15 12.0001M12 15.0001V9M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10314,7 +9551,6 @@ export const FileNarrowEdit = () => (
     <path
       fill="none"
       d="M4 9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10322,7 +9558,6 @@ export const FileNarrowEdit = () => (
     <path
       fill="none"
       d="M14.0627 12.3485L11.5714 9.85714C11.098 9.38376 10.3305 9.38376 9.85714 9.85714C9.38376 10.3305 9.38376 11.098 9.85714 11.5714L12.3485 14.0627C12.6944 14.4086 12.8673 14.5816 13.0691 14.7053C13.2481 14.8149 13.4432 14.8957 13.6473 14.9447C13.8774 15 14.122 15 14.6112 15H15V14.6112C15 14.122 15 13.8774 14.9447 13.6473C14.8957 13.4432 14.8149 13.2481 14.7053 13.0691C14.5816 12.8673 14.4086 12.6944 14.0627 12.3485Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10336,7 +9571,6 @@ export const FileNarrowFavorite = () => (
     <path
       fill="none"
       d="M4 9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10344,7 +9578,6 @@ export const FileNarrowFavorite = () => (
     <path
       fill="none"
       d="M11.9961 9L12.9231 10.9752L14.9961 11.2919L13.4961 12.8293L13.8501 15L11.9961 13.9749L10.1421 15L10.4961 12.8293L8.99609 11.2919L11.0691 10.9752L11.9961 9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10358,7 +9591,6 @@ export const FileNarrowFind = () => (
     <path
       fill="none"
       d="M15 15L13.2678 13.2678M13.2678 13.2678C13.7202 12.8154 14 12.1904 14 11.5C14 10.1193 12.8807 9 11.5 9C10.1193 9 9 10.1193 9 11.5C9 12.8807 10.1193 14 11.5 14C12.1904 14 12.8154 13.7202 13.2678 13.2678ZM11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10372,7 +9604,6 @@ export const FileNarrowInfo = () => (
     <path
       fill="none"
       d="M12 9V11.9999M12 14.9901V15M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10386,7 +9617,6 @@ export const FileNarrowMedia = () => (
     <path
       fill="none"
       d="M4 9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10394,7 +9624,6 @@ export const FileNarrowMedia = () => (
     <path
       fill="none"
       d="M10 9L14.5 12L10 15V9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10408,7 +9637,6 @@ export const FileNarrowMinus = () => (
     <path
       fill="none"
       d="M9 12H15M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10422,7 +9650,6 @@ export const FileNarrowNoAccess = () => (
     <path
       fill="none"
       d="M14.4002 10.2C13.8529 9.47133 12.9815 9 12 9C10.3431 9 9 10.3431 9 12C9 12.6754 9.22317 13.2986 9.59978 13.8M14.4002 10.2C14.7768 10.7014 15 11.3246 15 12C15 13.6569 13.6569 15 12 15C11.0185 15 10.1471 14.5287 9.59978 13.8M14.4002 10.2L9.59978 13.8M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10436,7 +9663,6 @@ export const FileNarrowQuestion = () => (
     <path
       fill="none"
       d="M10 9.87266C10 8.83842 10.8954 8 12 8C13.1046 8 14 8.83842 14 9.87266C14 10.4697 13.7016 11.0016 13.2367 11.3445C12.6583 11.7712 12 12.3043 12 12.9938M12 15.99V16M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10450,7 +9676,6 @@ export const FileNarrowRemove = () => (
     <path
       fill="none"
       d="M10 10L14 14M14 10L10 14M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10464,7 +9689,6 @@ export const FileNarrowText = () => (
     <path
       fill="none"
       d="M8 12H16M8 8H16M8 16H13M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10478,7 +9702,6 @@ export const FileNarrowUpload = () => (
     <path
       fill="none"
       d="M9 11.9999L12 8.99991M12 8.99991L15 11.9999M12 8.99991V15M11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10492,7 +9715,6 @@ export const FileNarrow = () => (
     <path
       fill="none"
       d="M4 9.77817C4 7.18697 4 5.89136 4.46859 4.88663C4.96536 3.82147 5.82147 2.96536 6.88663 2.46859C7.89136 2 9.18697 2 11.7782 2C12.9105 2 13.4766 2 14.0113 2.11855C14.5806 2.24479 15.1235 2.46965 15.6153 2.78296C16.0772 3.07721 16.4775 3.47753 17.2782 4.27818L17.6569 4.65685C18.5216 5.52161 18.954 5.95399 19.2632 6.45858C19.5373 6.90594 19.7394 7.39366 19.8618 7.90384C20 8.47928 20 9.09076 20 10.3137V14C20 16.8003 20 18.2004 19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14V9.77817Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10506,7 +9728,6 @@ export const FileNoAccess = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M14.4002 13.2C13.8529 12.4713 12.9815 12 12 12C10.3431 12 9 13.3431 9 15C9 15.6754 9.22317 16.2986 9.59978 16.8M14.4002 13.2C14.7768 13.7014 15 14.3246 15 15C15 16.6569 13.6569 18 12 18C11.0185 18 10.1471 17.5287 9.59978 16.8M14.4002 13.2L9.59978 16.8"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10520,7 +9741,6 @@ export const FileQuestion = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M10 11.8727C10 10.8384 10.8954 10 12 10C13.1046 10 14 10.8384 14 11.8727C14 12.4697 13.7016 13.0016 13.2367 13.3445C12.6583 13.7712 12 14.3043 12 14.9938M12 17.99V18"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10534,7 +9754,6 @@ export const FileRemove = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M10 12L14 16M14 12L10 16"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10548,7 +9767,6 @@ export const FileText = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M8 13H16M8 17H13"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10562,7 +9780,6 @@ export const FileUpload = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998M9 14L12 11M12 11L15 14M12 11V17.0001"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10576,7 +9793,6 @@ export const File = () => (
     <path
       fill="none"
       d="M14 2.35469V4.7998C14 5.91991 14 6.47996 14.218 6.90778C14.4097 7.28411 14.7157 7.59007 15.092 7.78182C15.5198 7.9998 16.0799 7.9998 17.2 7.9998H20.4397M14 2.35469C13.7426 2.2522 13.4768 2.17116 13.2053 2.11256C12.6839 2 12.1325 2 11.0296 2C8.20962 2 6.79961 2 5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.6795C21 10.3261 21 9.64942 20.8337 9.02079C20.7399 8.66646 20.6077 8.32413 20.4397 7.9998M14 2.35469C14.1812 2.42683 14.3582 2.50959 14.5301 2.60263C14.9993 2.85653 15.4152 3.213 16.2469 3.92595L18.2063 5.60543C19.2339 6.48619 19.7477 6.92657 20.1167 7.46196C20.2357 7.6346 20.3435 7.81426 20.4397 7.9998"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10590,7 +9806,6 @@ export const FolderMinus = () => (
     <path
       fill="none"
       d="M17.7357 8.05443C17.3699 8 16.9332 8 16.0598 8H14.8628C13.2127 8 11.7214 7.01664 11.0714 5.5M17.7357 8.05443C19.9126 8.37828 21.6217 10.0874 21.9456 12.2643C22 12.6301 22 13.0668 22 13.9402V14.5C22 15.8945 22 16.5918 21.8618 17.1672C21.4229 18.9955 19.9955 20.4229 18.1672 20.8618C17.5918 21 16.8945 21 15.5 21H10C7.19974 21 5.79961 21 4.73005 20.455C3.78924 19.9757 3.02433 19.2108 2.54497 18.27C2 17.2004 2 15.8003 2 13V7.82103C2 5.15845 4.15845 3 6.82103 3H7.28008C8.93014 3 10.4214 3.98336 11.0714 5.5M17.7357 8.05443C18.5565 8.17654 19.3108 8.49559 19.9494 8.96239C19.8884 8.00163 19.7534 7.3162 19.4547 6.73005C18.9754 5.78924 18.2105 5.02433 17.2697 4.54497C16.2001 4 14.8 4 11.9997 4H9.97266C10.4392 4.40188 10.8189 4.91068 11.0714 5.5M9 14H15"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10604,7 +9819,6 @@ export const FolderOpen = () => (
     <path
       fill="none"
       d="M17.2952 10H8.57404C7.24639 10 6.58257 10 6.02867 10.2308C5.5399 10.4345 5.11375 10.7639 4.7935 11.1856C4.43058 11.6635 4.26334 12.3059 3.92886 13.5907L3.5644 14.9907C3.03178 17.0367 2.76546 18.0596 3.00881 18.8664M17.2952 10C19.2564 10 20.237 10 20.9324 10.4007C21.5425 10.7523 22.0095 11.3074 22.2516 11.9686C22.5275 12.7223 22.3599 13.6884 22.0245 15.6208L21.7815 17.0208C21.536 18.4353 21.4133 19.1425 21.057 19.6729C20.7429 20.1404 20.3035 20.5101 19.7891 20.7397C19.2057 21 18.4878 21 17.0522 21H8.20958C6.09543 21 5.03835 21 4.31896 20.5613C3.68854 20.1768 3.22205 19.5733 3.00881 18.8664M17.2952 10C18.4715 10 19.2951 10 19.9159 10.0865C19.524 7.97313 17.8172 6.33491 15.6688 6.04493C15.3359 6 14.9392 6 14.1459 6H11.9177C10.9276 6 10.0329 5.40999 9.64286 4.5C9.25286 3.59001 8.35809 3 7.36805 3H5C3.34315 3 2 4.34315 2 6V13C2 15.8003 2 17.2004 2.54497 18.27C2.70173 18.5776 2.88902 18.8665 3.10301 19.1327C3.06758 19.0458 3.03612 18.9569 3.00881 18.8664"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10618,7 +9832,6 @@ export const Folder = () => (
     <path
       fill="none"
       d="M17.7357 8.05443C17.3699 8 16.9332 8 16.0598 8H14.8628C13.2127 8 11.7214 7.01664 11.0714 5.5M17.7357 8.05443C19.9126 8.37828 21.6217 10.0874 21.9456 12.2643C22 12.6301 22 13.0668 22 13.9402V14.5C22 15.8945 22 16.5918 21.8618 17.1672C21.4229 18.9955 19.9955 20.4229 18.1672 20.8618C17.5918 21 16.8945 21 15.5 21H10C7.19974 21 5.79961 21 4.73005 20.455C3.78924 19.9757 3.02433 19.2108 2.54497 18.27C2 17.2004 2 15.8003 2 13V7.82103C2 5.15845 4.15845 3 6.82103 3H7.28008C8.93014 3 10.4214 3.98336 11.0714 5.5M17.7357 8.05443C18.5565 8.17654 19.3108 8.49559 19.9494 8.96239C19.8884 8.00163 19.7534 7.3162 19.4547 6.73005C18.9754 5.78924 18.2105 5.02433 17.2697 4.54497C16.2001 4 14.8 4 11.9997 4H9.97266C10.4392 4.40188 10.8189 4.91068 11.0714 5.5"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10632,7 +9845,6 @@ export const GlobeSimple = () => (
     <path
       fill="none"
       d="M12 3C16.9706 3 21 7.02944 21 12M12 3C7.02944 3 3 7.02944 3 12M12 3C9.79086 3 8 7.02944 8 12C8 16.9684 9.78927 20.9964 11.9971 21C11.998 21 11.999 21 12 21M12 3C14.2091 3 16 7.02944 16 12C16 16.9706 14.2091 21 12 21M21 12H3M21 12C21 16.9706 16.9706 21 12 21M3 12C3 16.9706 7.02944 21 12 21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10646,7 +9858,6 @@ export const Globe = () => (
     <path
       fill="none"
       d="M21 12C21 16.9706 16.9706 21 12 21M21 12C21 7.02944 16.9706 3 12 3M21 12C21 12.6138 20.9386 13.2132 20.8215 13.7925C18.8159 14.5254 15.6112 15 12 15C8.38881 15 5.18405 14.5254 3.17851 13.7925C3.06144 13.2132 3 12.6138 3 12M21 12C21 11.3862 20.9386 10.7868 20.8215 10.2075C18.8159 9.47459 15.6112 9 12 9C8.38881 9 5.18405 9.47458 3.17851 10.2075C3.06144 10.7868 3 11.3862 3 12M12 21C7.02944 21 3 16.9706 3 12M12 21C11.3862 21 10.7868 20.9386 10.2075 20.8215C9.47458 18.8159 9 15.6112 9 12C9 8.38881 9.47458 5.18405 10.2075 3.17851C10.7868 3.06144 11.3862 3 12 3M12 21C12.6138 21 13.2132 20.9386 13.7925 20.8215C14.5254 18.8159 15 15.6112 15 12C15 8.38881 14.5254 5.18405 13.7925 3.17851C13.2132 3.06144 12.6138 3 12 3M3 12C3 7.02944 7.02944 3 12 3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10660,7 +9871,6 @@ export const GrammarCheck = () => (
     <path
       fill="none"
       d="M17 11L21 12.5M20 7C20 4.23858 17.7614 2 15 2H12C9.19974 2 7.79961 2 6.73005 2.54497C5.78924 3.02433 5.02433 3.78924 4.54497 4.73005C4 5.79961 4 7.19974 4 10V14C4 16.8003 4 18.2004 4.54497 19.27C5.02433 20.2108 5.78924 20.9757 6.73005 21.455C7.79961 22 9.19974 22 12 22H14C14.929 22 15.3935 22 15.7822 21.9384C17.9216 21.5996 19.5996 19.9216 19.9384 17.7822C20 17.3935 20 16.929 20 16M8 17H13M8 13V13.0099M8 9V9.00995M17 10C17 11.6569 15.6569 13 14 13C12.3431 13 11 11.6569 11 10C11 8.34315 12.3431 7 14 7C15.6569 7 17 8.34315 17 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10674,7 +9884,6 @@ export const ImageAdd = () => (
     <path
       fill="none"
       d="M18.5005 16V21M16.0005 18.5H21.0005M12.0005 21.0013H5.55011C3.39636 21.0013 1.94427 18.7992 2.79267 16.8196L4.24305 13.4353C5.28205 11.011 8.71893 11.011 9.75792 13.4353L10.055 14.1284L12.259 9.16928C13.3148 6.79383 16.6862 6.79383 17.7419 9.16928L19 12M7.00049 5C7.00049 6.10457 6.10506 7 5.00049 7C3.89592 7 3.00049 6.10457 3.00049 5C3.00049 3.89543 3.89592 3 5.00049 3C6.10506 3 7.00049 3.89543 7.00049 5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10688,7 +9897,6 @@ export const ImageCircleAdd = () => (
     <path
       fill="none"
       d="M18.5 3V8M16 5.5L21 5.5M21 12C21 16.9706 16.9706 21 12 21M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3M12 21C15.7107 21 18.897 18.7543 20.2737 15.5478L18.789 12.5782C18.6749 12.3502 18.5282 12.1575 18.359 12C17.0985 11.9997 16.4303 11.9927 15.9062 11.7932C15.6242 11.9764 15.3813 12.2381 15.2112 12.5782L13 17.0007L12.789 16.5787C12.0519 15.1046 9.94832 15.1046 9.21127 16.5787L7.57982 19.8416C8.88541 20.5791 10.3936 21 12 21ZM9 9V9.00995"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10702,7 +9910,6 @@ export const ImageCircleMinus = () => (
     <path
       fill="none"
       d="M16 5L21 5M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21M12 21C16.9706 21 21 16.9706 21 12C21 10.9478 20.8194 9.93782 20.4876 8.99927M12 21C10.3936 21 8.88541 20.5789 7.57982 19.8414L9.21127 16.5784C9.94832 15.1043 12.0519 15.1043 12.789 16.5784L13 17.0005L15.2112 12.578C15.9483 11.1039 18.0519 11.1039 18.789 12.578L20.2737 15.5475C18.897 18.754 15.7107 21 12 21ZM9 9V9.00995"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10716,7 +9923,6 @@ export const ImageCircle = () => (
     <path
       fill="none"
       d="M9 9V9.00995M12 20.9998C15.7108 20.9998 18.897 18.754 20.2737 15.5476L18.789 12.578C18.0519 11.1039 15.9483 11.1039 15.2113 12.578L13 17.0005L12.789 16.5785C12.0519 15.1044 9.94833 15.1044 9.21128 16.5785L7.57983 19.8414C8.88541 20.5789 10.3936 20.9998 12 20.9998ZM12 20.9998C16.9706 20.9998 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02945 20.9998 12 20.9998Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10730,7 +9936,6 @@ export const ImageGallery = () => (
     <path
       fill="none"
       d="M9 21H15C16.8613 21 17.7919 21 18.5451 20.7553M9 21C7.13872 21 6.20808 21 5.45491 20.7553C3.93272 20.2607 2.73931 19.0673 2.24472 17.5451C2 16.7919 2 15.8613 2 14C2 12.1387 2 11.2081 2.24472 10.4549C2.73931 8.93273 3.93272 7.73931 5.45491 7.24472C6.20808 7 7.13872 7 9 7H15C16.8613 7 17.7919 7 18.5451 7.24472C20.0673 7.73931 21.2607 8.93273 21.7553 10.4549C22 11.2081 22 12.1387 22 14C22 15.8613 22 16.7919 21.7553 17.5451C21.2607 19.0673 20.0673 20.2607 18.5451 20.7553M9 21C8.2896 21 7.71481 21 7.23367 20.9864C7.23573 20.6943 7.30317 20.3949 7.44735 20.1066L9.21128 16.5787C9.94833 15.1046 12.0519 15.1046 12.789 16.5787L13 17.0007L15.2113 12.5782C15.9483 11.1041 18.0519 11.1041 18.789 12.5782L21.5435 18.0874C20.9644 19.3483 19.8814 20.3211 18.5451 20.7553M6 3L18 3M7 12V12.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10744,7 +9949,6 @@ export const ImageHorizontalAdd = () => (
     <path
       fill="none"
       d="M17.5 2V7M15 4.5L20 4.5M11 2.00111C8.84993 2.00876 7.66397 2.06911 6.73005 2.54497C5.78924 3.02433 5.02433 3.78924 4.54497 4.73005C4 5.7996 4 7.19974 4 10V14C4 16.8003 4 18.2004 4.54497 19.27C5.02433 20.2108 5.78924 20.9757 6.73005 21.455C7.79961 22 9.19974 22 12 22M20 11V14C20 16.8003 20 18.2004 19.455 19.27M19.455 19.27C18.9757 20.2108 18.2108 20.9757 17.27 21.455C16.2004 22 14.8003 22 12 22M19.455 19.27C19.931 18.3358 19.9913 17.1494 19.9989 14.9981L18.789 12.5782C18.0519 11.1041 15.9483 11.1041 15.2112 12.5782L13 17.0007L12.789 16.5787C12.0519 15.1046 9.94832 15.1046 9.21127 16.5787L7.44734 20.1065C7.18051 20.6402 7.17649 21.2117 7.36342 21.7047C8.36472 22 9.71705 22 12 22M8 8V8.00995"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10758,7 +9962,6 @@ export const ImageHorizontalMinus = () => (
     <path
       fill="none"
       d="M15 3.99999L20 3.99999M11 2.0011C8.84993 2.00875 7.66397 2.0691 6.73005 2.54495C5.78924 3.02432 5.02433 3.78922 4.54497 4.73003C4 5.79959 4 7.19972 4 9.99999V14C4 16.8002 4 18.2004 4.54497 19.2699C5.02433 20.2107 5.78924 20.9757 6.73005 21.455C7.79961 22 9.19974 22 12 22M12 22C14.8003 22 16.2004 22 17.27 21.455C18.2108 20.9757 18.9757 20.2107 19.455 19.2699M12 22C9.71704 22 8.36472 21.9997 7.36342 21.7044C7.17649 21.2114 7.18051 20.64 7.44734 20.1063L9.21127 16.5784C9.94832 15.1043 12.0519 15.1043 12.789 16.5784L13 17.0005L15.2112 12.578C15.9483 11.1039 18.0519 11.1039 18.789 12.578L19.9989 14.9979C19.9913 17.1491 19.931 18.3358 19.455 19.2699M19.455 19.2699C20 18.2004 20 16.8002 20 14V9.99999C20 9.23269 20 8.57051 19.9888 7.99146M8 7.99999V8.00993"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10772,7 +9975,6 @@ export const ImageHorizontal = () => (
     <path
       fill="none"
       d="M8 8V8.00995M12 22C9.19974 22 7.79961 22 6.73005 21.455C5.78924 20.9757 5.02433 20.2108 4.54497 19.27C4 18.2004 4 16.8003 4 14L4 10C4 7.19974 4 5.7996 4.54497 4.73005C5.02433 3.78924 5.78924 3.02433 6.73005 2.54497C7.79961 2 9.19974 2 12 2C14.8003 2 16.2004 2 17.27 2.54497C18.2108 3.02433 18.9757 3.78924 19.455 4.73005C20 5.7996 20 7.19974 20 10V14C20 16.8003 20 18.2004 19.455 19.27M12 22C14.8003 22 16.2004 22 17.27 21.455C18.2108 20.9757 18.9757 20.2108 19.455 19.27M12 22C9.71705 22 8.36473 21.9998 7.36343 21.7045C7.1765 21.2115 7.18052 20.64 7.44735 20.1063L9.21128 16.5785C9.94833 15.1044 12.0519 15.1044 12.789 16.5785L13 17.0005L15.2113 12.578C15.9483 11.1039 18.0519 11.1039 18.789 12.578L19.9989 14.9979C19.9913 17.1492 19.931 18.3358 19.455 19.27"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10786,7 +9988,6 @@ export const ImageLens = () => (
     <path
       fill="none"
       d="M16.1728 12.0001L11.1001 3.0819M14.0454 15.6L19.2817 6.68182M9.87273 15.5999L20.1818 15.6817M7.82735 12L12.9001 20.9182M9.95455 8.40008L4.71818 17.3183M14.1274 8.4L3.81826 8.31818M3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10800,7 +10001,6 @@ export const ImageMinus = () => (
     <path
       fill="none"
       d="M16.0005 19H21.0005M12.0207 21.0013H5.55011C3.39636 21.0013 1.94427 18.7992 2.79267 16.8196L4.24305 13.4353C5.28205 11.011 8.71893 11.011 9.75792 13.4353L10.055 14.1284L12.259 9.16928C13.3148 6.79384 16.6862 6.79383 17.7419 9.16928L20.3334 15M7.00049 5C7.00049 6.10457 6.10506 7 5.00049 7C3.89592 7 3.00049 6.10457 3.00049 5C3.00049 3.89543 3.89592 3 5.00049 3C6.10506 3 7.00049 3.89543 7.00049 5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10814,7 +10014,6 @@ export const ImageSimpleAdd = () => (
     <path
       fill="none"
       d="M18.5 3V8M16 5.5L21 5.5M12 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V12M13.8519 9.77164C13.6361 9.68224 13.4333 9.56873 13.2468 9.43438L11.3125 12.7502L10 11.0002L7 15.0002H17L13.9775 9.81886C13.9347 9.80432 13.8929 9.78861 13.8519 9.77164Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10828,7 +10027,6 @@ export const ImageSimpleMinus = () => (
     <path
       fill="none"
       d="M16 5.5L21 5.5M12 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 10.644 21 10.3107 20.9989 9.99774M13.638 9.67302C13.501 9.60322 13.3703 9.52309 13.2467 9.43406L11.3125 12.7498L10 10.9998L7 14.9998H17L13.9717 9.80844C13.8533 9.77102 13.743 9.72651 13.638 9.67302Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10842,7 +10040,6 @@ export const ImageSquareMinus = () => (
     <path
       fill="none"
       d="M16 5L21 5M12 3H11C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27M11 21C9.3177 21 8.14073 21 7.23718 20.8818C7.25282 20.6231 7.32028 20.3604 7.44734 20.1063L9.21127 16.5784C9.94832 15.1043 12.0519 15.1043 12.789 16.5784L13 17.0005L15.2112 12.578C15.9483 11.1039 18.0519 11.1039 18.789 12.578L20.8817 16.7635C20.8032 17.3636 20.6725 17.8431 20.455 18.27M20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 10.2278 21 9.5621 20.9886 8.98043M8 8V8.00995"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10856,7 +10053,6 @@ export const ImageSquare = () => (
     <path
       fill="none"
       d="M8 8V8.00995M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27M11 21C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27M11 21C9.3177 21 8.14073 21 7.23719 20.8818C7.25283 20.6231 7.32029 20.3604 7.44735 20.1063L9.21128 16.5785C9.94833 15.1044 12.0519 15.1044 12.789 16.5785L13 17.0005L15.2113 12.578C15.9483 11.1039 18.0519 11.1039 18.789 12.578L20.8817 16.7635C20.8032 17.3636 20.6725 17.8431 20.455 18.27"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10870,7 +10066,6 @@ export const ImageVerticalAdd = () => (
     <path
       fill="none"
       d="M19.5 4V9M17 6.5L22 6.5M10 20H14C16.8003 20 18.2004 20 19.27 19.455M10 20C7.19974 20 5.7996 20 4.73005 19.455C3.78924 18.9757 3.02433 18.2108 2.54497 17.27C2 16.2004 2 14.8003 2 12C2 9.19974 2 7.79961 2.54497 6.73005C3.02433 5.78924 3.78924 5.02433 4.73005 4.54497C5.7996 4 7.19974 4 10 4H13M10 20C9.01232 20 8.19882 20 7.51257 19.9761L9.21127 16.5787C9.94832 15.1046 12.0519 15.1046 12.789 16.5787L13 17.0007L15.2112 12.5782C15.3405 12.3196 15.5119 12.1064 15.7105 11.9385C16.0165 12.2998 16.4065 12.5871 16.8519 12.7716C17.3332 12.971 17.9268 12.9962 18.9996 12.9994L21.2867 17.5737C20.8053 18.3755 20.1073 19.0284 19.27 19.455M21.9989 13C21.9912 15.1501 21.9309 16.336 21.455 17.27C20.9757 18.2108 20.2108 18.9757 19.27 19.455M7 10V10.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10884,7 +10079,6 @@ export const ImageVerticalMinus = () => (
     <path
       fill="none"
       d="M17 6L22 6M13 4H10C7.19974 4 5.79961 4 4.73005 4.54497C3.78924 5.02433 3.02433 5.78924 2.54497 6.73005C2 7.79961 2 9.19974 2 12C2 14.8003 2 16.2004 2.54497 17.27C3.02433 18.2108 3.78924 18.9757 4.73005 19.455C5.79961 20 7.19974 20 10 20M10 20H14C16.8003 20 18.2004 20 19.27 19.455M10 20C9.01232 20 8.19882 19.9998 7.51257 19.9758L9.21127 16.5784C9.94832 15.1044 12.0519 15.1043 12.789 16.5784L13 17.0005L15.2112 12.578C15.9483 11.1039 18.0519 11.1039 18.789 12.578L21.2867 17.5735C20.8053 18.3753 20.1073 19.0284 19.27 19.455M19.27 19.455C20.2108 18.9757 20.9757 18.2108 21.455 17.27C22 16.2004 22 14.8003 22 12C22 11.2363 22 10.5767 21.9889 9.99956M7 10V10.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10898,7 +10092,6 @@ export const ImageVertical = () => (
     <path
       fill="none"
       d="M7 9V9.00995M10 20H14C16.8003 20 18.2004 20 19.27 19.455C20.2108 18.9757 20.9757 18.2108 21.455 17.27M10 20C7.19974 20 5.79961 20 4.73005 19.455C3.78924 18.9757 3.02433 18.2108 2.54497 17.27C2 16.2004 2 14.8003 2 12C2 9.19974 2 7.79961 2.54497 6.73005C3.02433 5.78924 3.78924 5.02433 4.73005 4.54497C5.79961 4 7.19974 4 10 4L14 4C16.8003 4 18.2004 4 19.27 4.54497C20.2108 5.02433 20.9757 5.78924 21.455 6.73005C22 7.79961 22 9.19974 22 12C22 14.8003 22 16.2004 21.455 17.27M10 20C8.87516 20 7.97627 19.9998 7.23395 19.9644C7.23911 19.6792 7.30674 19.3875 7.44735 19.1063L9.21128 15.5785C9.94833 14.1044 12.0519 14.1044 12.789 15.5785L13 16.0005L15.2113 11.578C15.9483 10.1039 18.0519 10.1039 18.789 11.578L21.5424 17.0849C21.515 17.1477 21.4859 17.2095 21.455 17.27"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10922,7 +10115,6 @@ export const InboxNotice = () => (
     <path
       fill="none"
       d="M12.3414 3H11.4163C9.46065 3 8.48284 3 7.63743 3.3154C6.89043 3.5941 6.22091 4.04739 5.68472 4.63746C5.0779 5.30525 4.71475 6.21312 3.98846 8.02884L2.47979 11.8005C2.3581 12.1048 2.29725 12.2569 2.24681 12.4114C2.11708 12.8088 2.03771 13.221 2.01056 13.6382M2.01056 13.6382C2 13.8004 2 13.9642 2 14.2919C2 15.8805 2 16.6748 2.1789 17.3255C2.6463 19.0255 3.97448 20.3537 5.67447 20.8211C6.32516 21 7.11949 21 8.70813 21H15.2919C16.8805 21 17.6748 21 18.3255 20.8211C20.0255 20.3537 21.3537 19.0255 21.8211 17.3255C22 16.6748 22 15.8805 22 14.2919C22 13.9642 22 13.8004 21.9894 13.6382M2.01056 13.6382C2.01928 13.5042 2.03339 13.3707 2.05282 13.2381C2.33475 13.0862 2.65731 13 3 13H6.55848C7.41934 13 8.18362 13.5509 8.45585 14.3675L8.54415 14.6325C8.81638 15.4491 9.58066 16 10.4415 16H13.5585C14.4193 16 15.1836 15.4491 15.4558 14.6325L15.5442 14.3675C15.8164 13.5509 16.5807 13 17.4415 13H21C21.3427 13 21.6652 13.0862 21.9472 13.2381C21.9666 13.3707 21.9807 13.5042 21.9894 13.6382M21.9894 13.6382C21.9623 13.221 21.8829 12.8088 21.7532 12.4114C21.7028 12.2569 21.6419 12.1048 21.5202 11.8005L20.9013 10.2532M20 5C20 6.10457 19.1046 7 18 7C16.8954 7 16 6.10457 16 5C16 3.89543 16.8954 3 18 3C19.1046 3 20 3.89543 20 5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -10956,7 +10148,6 @@ export const InboxSquareNotice = () => (
     <path
       fill="none"
       d="M12.3414 3H10C7.19974 3 5.79961 3 4.73005 3.54497C3.78924 4.02433 3.02433 4.78924 2.54497 5.73005C2 6.79961 2 8.19974 2 11V13C2 15.8003 2 17.2004 2.54497 18.27M2.54497 18.27C3.02433 19.2108 3.78924 19.9757 4.73005 20.455C5.79961 21 7.19974 21 10 21H14C16.8003 21 18.2004 21 19.27 20.455C20.2108 19.9757 20.9757 19.2108 21.455 18.27M2.54497 18.27C2.01764 17.235 2.00057 15.8906 2.00002 13.2676C2.29419 13.0974 2.63572 13 3 13H6.55848C7.41934 13 8.18362 13.5509 8.45585 14.3675L8.54415 14.6325C8.81638 15.4491 9.58066 16 10.4415 16H13.5585C14.4193 16 15.1836 15.4491 15.4558 14.6325L15.5442 14.3675C15.8164 13.5509 16.5807 13 17.4415 13H21C21.3643 13 21.7058 13.0974 22 13.2676C21.9994 15.8906 21.9824 17.235 21.455 18.27M21.455 18.27C22 17.2004 22 15.8003 22 13V11C22 10.4387 22 9.93357 21.9956 9.47614M20 5C20 6.10457 19.1046 7 18 7C16.8954 7 16 6.10457 16 5C16 3.89543 16.8954 3 18 3C19.1046 3 20 3.89543 20 5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11010,7 +10201,6 @@ export const InfinitySymbol = () => (
     <path
       fill="none"
       d="M9.5 15.4296C8.71193 16.1259 7.68341 16.55 6.54025 16.55C4.03025 16.55 1.99023 14.5101 1.99023 12.0001C1.99023 9.49006 4.03025 7.45007 6.54025 7.45007C8.23025 7.45007 9.80026 8.34004 10.6703 9.79004L12.0002 12.0001L13.3203 14.2101C14.1903 15.6601 15.7603 16.55 17.4503 16.55C19.9603 16.55 22.0002 14.5101 22.0002 12.0001C22.0002 9.49006 19.9603 7.45007 17.4503 7.45007C16.3293 7.45007 15.3144 7.86335 14.5267 8.54383"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11024,7 +10214,6 @@ export const Keyboard = () => (
     <path
       fill="none"
       d="M14 14H10M6 10V10.0099M10 10V10.0099M14 10V10.0099M18 10V10.0099M6 14V14.0099M18 14V14.0099M15 19H9C7.13872 19 6.20808 19 5.45491 18.7553C3.93272 18.2607 2.73931 17.0673 2.24472 15.5451C2 14.7919 2 13.8613 2 12C2 10.1387 2 9.20808 2.24472 8.45492C2.73931 6.93272 3.93272 5.73931 5.45491 5.24472C6.20808 5 7.13872 5 9 5L15 5C16.8613 5 17.7919 5 18.5451 5.24472C20.0673 5.73931 21.2607 6.93272 21.7553 8.45492C22 9.20808 22 10.1387 22 12C22 13.8613 22 14.7919 21.7553 15.5451C21.2607 17.0673 20.0673 18.2607 18.5451 18.7553C17.7919 19 16.8613 19 15 19Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11038,7 +10227,6 @@ export const LineChartArrowDown = () => (
     <path
       fill="none"
       d="M2 8L8 14L13 10L21.5 17.5M17.6172 17.7127H21.8598V13.47"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11052,7 +10240,6 @@ export const LineChartArrowUp = () => (
     <path
       fill="none"
       d="M2 16L8 9.99999L13 14L21.5 6.49993M17.6171 6.28741L21.8597 6.28741V10.5301"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11066,7 +10253,6 @@ export const LineChartCircle = () => (
     <path
       fill="none"
       d="M8 15L10 11L12.9231 13L16 9M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11080,7 +10266,6 @@ export const LineChartCoordinate = () => (
     <path
       fill="none"
       d="M8 15L11.25 9L16 12L21 6M3 3V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11094,7 +10279,6 @@ export const LineChartDots = () => (
     <path
       fill="none"
       d="M7 11L4 14M9.5 11L12 14M19 10L15 14M10 9.5C10 10.3284 9.32843 11 8.5 11C7.67157 11 7 10.3284 7 9.5C7 8.67157 7.67157 8 8.5 8C9.32843 8 10 8.67157 10 9.5ZM15 15.5C15 16.3284 14.3284 17 13.5 17C12.6716 17 12 16.3284 12 15.5C12 14.6716 12.6716 14 13.5 14C14.3284 14 15 14.6716 15 15.5ZM22 8.5C22 9.32843 21.3284 10 20.5 10C19.6716 10 19 9.32843 19 8.5C19 7.67157 19.6716 7 20.5 7C21.3284 7 22 7.67157 22 8.5ZM5 15.5C5 16.3284 4.32843 17 3.5 17C2.67157 17 2 16.3284 2 15.5C2 14.6716 2.67157 14 3.5 14C4.32843 14 5 14.6716 5 15.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11108,7 +10292,6 @@ export const LineChartSmallDots = () => (
     <path
       fill="none"
       d="M6 12L2 16M10 12L12 14M22 8L16 14M8 10V10.0099M14 16V16.0099"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11122,7 +10305,6 @@ export const LineChartSmoothCoordinate = () => (
     <path
       fill="none"
       d="M8 15L9.77959 11.7146C10.5753 10.2457 12.4478 9.75648 13.8602 10.6486C15.0848 11.422 16.6929 11.1685 17.6202 10.0558L21 6M3 3V13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21H21"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11136,7 +10318,6 @@ export const LineChartSmooth = () => (
     <path
       fill="none"
       d="M2 16L4.43832 13.074C5.89522 11.3257 8.43589 10.9573 10.3294 12.2196C11.9243 13.2828 14.0205 13.2063 15.5335 12.0295L22 7"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11150,7 +10331,6 @@ export const LineChartSquare = () => (
     <path
       fill="none"
       d="M8 15L10 11L12.9231 13L16 9M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11164,7 +10344,6 @@ export const LineChart = () => (
     <path
       fill="none"
       d="M2 16L7 10L13 14L22 7"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11178,7 +10357,6 @@ export const LocationAdd = () => (
     <path
       fill="none"
       d="M12 8L12 14M9 11L15 11M20 11C20 16.4183 13 21 12 21C11 21 4 16.4183 4 11C4 6.58172 7.58172 3 12 3C16.4183 3 20 6.58172 20 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11192,7 +10370,6 @@ export const LocationCheck = () => (
     <path
       fill="none"
       d="M9 11L11 13L15 9M20 11C20 16.4183 13 21 12 21C11 21 4 16.4183 4 11C4 6.58172 7.58172 3 12 3C16.4183 3 20 6.58172 20 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11206,7 +10383,6 @@ export const LocationEdit = () => (
     <path
       fill="none"
       d="M20 11C20 16.4183 13 21 12 21C11 21 4 16.4183 4 11C4 6.58172 7.58172 3 12 3C16.4183 3 20 6.58172 20 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11214,7 +10390,6 @@ export const LocationEdit = () => (
     <path
       fill="none"
       d="M9.93726 11.0627L13 8C13.5523 7.44772 14.4477 7.44772 15 8C15.5523 8.55228 15.5523 9.44771 15 10L11.9373 13.0627C11.5914 13.4086 11.4184 13.5816 11.2166 13.7053C11.0376 13.8149 10.8425 13.8957 10.6385 13.9447C10.4083 14 10.1637 14 9.67452 14H9V13.3255C9 12.8363 9 12.5917 9.05526 12.3615C9.10425 12.1575 9.18506 11.9624 9.29472 11.7834C9.4184 11.5816 9.59136 11.4086 9.93726 11.0627Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11228,7 +10403,6 @@ export const LocationFavorite = () => (
     <path
       fill="none"
       d="M20 11C20 16.4183 13 21 12 21C11 21 4 16.4183 4 11C4 6.58172 7.58172 3 12 3C16.4183 3 20 6.58172 20 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11236,7 +10410,6 @@ export const LocationFavorite = () => (
     <path
       fill="none"
       d="M12 7L13.0815 9.30438L15.5 9.67385L13.75 11.4675L14.163 14L12 12.804L9.837 14L10.25 11.4675L8.5 9.67385L10.9185 9.30438L12 7Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11250,7 +10423,6 @@ export const LocationFind = () => (
     <path
       fill="none"
       d="M13.5 12.5L15 14M20 11C20 16.4183 13 21 12 21C11 21 4 16.4183 4 11C4 6.58172 7.58172 3 12 3C16.4183 3 20 6.58172 20 11ZM14 10.5C14 11.8807 12.8807 13 11.5 13C10.1193 13 9 11.8807 9 10.5C9 9.11929 10.1193 8 11.5 8C12.8807 8 14 9.11929 14 10.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11264,7 +10436,6 @@ export const LocationMinus = () => (
     <path
       fill="none"
       d="M9 11L15 11M20 11C20 16.4183 13 21 12 21C11 21 4 16.4183 4 11C4 6.58172 7.58172 3 12 3C16.4183 3 20 6.58172 20 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11278,7 +10449,6 @@ export const LocationNoAccess = () => (
     <path
       fill="none"
       d="M14.4002 9.2C13.8529 8.47133 12.9815 8 12 8C10.3431 8 9 9.34315 9 11C9 11.6754 9.22317 12.2986 9.59978 12.8M14.4002 9.2C14.7768 9.7014 15 10.3246 15 11C15 12.6569 13.6569 14 12 14C11.0185 14 10.1471 13.5287 9.59978 12.8M14.4002 9.2L9.59978 12.8M20 11C20 16.4183 13 21 12 21C11 21 4 16.4183 4 11C4 6.58172 7.58172 3 12 3C16.4183 3 20 6.58172 20 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11292,7 +10462,6 @@ export const LocationOff = () => (
     <path
       fill="none"
       d="M3 3L21 21M14.1913 19.8484C13.1521 20.5817 12.3022 21 12 21C11 21 4 16.4183 4 11C4 10.576 4.03298 10.1597 4.09652 9.75357M17.1871 17.1873C18.7258 15.471 20 13.3117 20 11C20 6.58172 16.4183 3 12 3C9.53622 3 7.33257 4.11375 5.86507 5.86525L10.1767 10.1769C10.4905 9.48289 11.1888 9 12 9C13.1046 9 14 9.89543 14 11C14 11.8112 13.5171 12.5095 12.8231 12.8233L17.1871 17.1873Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11306,7 +10475,6 @@ export const LocationPin = () => (
     <path
       fill="none"
       d="M3 16.9726C2.35934 17.4341 2 17.9524 2 18.5C2 20.433 6.47715 22 12 22C17.5228 22 22 20.433 22 18.5C22 17.9524 21.6407 17.4341 21 16.9726M19 9.11111C19 13.9274 12.875 18 12 18C11.125 18 5 13.9274 5 9.11111C5 5.18375 8.13401 2 12 2C15.866 2 19 5.18375 19 9.11111ZM10 9C10 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7C10.8954 7 10 7.89543 10 9Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11320,7 +10488,6 @@ export const LocationRefresh = () => (
     <path
       fill="none"
       d="M14.1547 8.87868C12.9831 7.70711 11.0836 7.70711 9.91201 8.87868C8.74044 10.0503 8.7 10.3333 8.7 10.3333M8.7 10.3333V8.66667M8.7 10.3333H10.3667M9.91201 13.1213C11.0836 14.2929 12.9831 14.2929 14.1547 13.1213C15.3262 11.9497 15.3667 11.6667 15.3667 11.6667M15.3667 11.6667V13.3333M15.3667 11.6667H13.7M20 11C20 16.4183 13 21 12 21C11 21 4 16.4183 4 11C4 6.58172 7.58172 3 12 3C16.4183 3 20 6.58172 20 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11334,7 +10501,6 @@ export const LocationRemove = () => (
     <path
       fill="none"
       d="M10 9L14 13M14 9L9.99998 13M20 11C20 16.4183 13 21 12 21C11 21 4 16.4183 4 11C4 6.58172 7.58172 3 12 3C16.4183 3 20 6.58172 20 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11348,7 +10514,6 @@ export const LocationSharpAdd = () => (
     <path
       fill="none"
       d="M13 2.0579C12.6724 2.0196 12.3387 2 12 2C7.58172 2 4 5.33626 4 10C4 12.8644 5.88608 14.8508 8.03649 17.1156C9.38736 18.5383 10.8425 20.0709 12 22C13.1575 20.0709 14.6126 18.5383 15.9635 17.1156C18.1139 14.8508 20 12.8644 20 10M17 4H21M19 2V6M12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10C15 11.6569 13.6569 13 12 13Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11362,7 +10527,6 @@ export const LocationSharpCheck = () => (
     <path
       fill="none"
       d="M15 4L17 6L21 2M11 2.05791C7.05369 2.51925 4 5.69374 4 10C4 12.8644 5.88608 14.8508 8.03649 17.1156C9.38736 18.5383 10.8425 20.0709 12 22C13.1575 20.0709 14.6126 18.5383 15.9635 17.1156C18.1139 14.8508 20 12.8644 20 10C20 9.77021 19.9913 9.54363 19.9742 9.32052M14.9821 9.66998C14.9939 9.77836 15 9.88847 15 10C15 11.6569 13.6569 13 12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7.00001 12 7.00001C12.0471 7.00001 12.0939 7.0011 12.1405 7.00324"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11376,7 +10540,6 @@ export const LocationSharpEdit = () => (
     <path
       fill="none"
       d="M11 7.17071C9.83481 7.58254 9 8.69378 9 10C9 11.6569 10.3431 13 12 13C12.3506 13 12.6872 12.9398 13 12.8293M13.8075 2.19251C13.2266 2.06604 12.6216 2 12 2C7.58172 2 4 5.33626 4 10C4 12.8644 5.88608 14.8508 8.03649 17.1156C9.38736 18.5383 10.8425 20.0709 12 22C13.1575 20.0709 14.6126 18.5383 15.9635 17.1156C17.45 15.55 18.8102 14.1175 19.5084 12.436M19 3L15.9373 6.06274C15.5914 6.40864 15.4184 6.5816 15.2947 6.78343C15.1851 6.96237 15.1043 7.15746 15.0553 7.36154C15 7.59171 15 7.8363 15 8.32548V9H15.6745C16.1637 9 16.4083 9 16.6385 8.94474C16.8425 8.89575 17.0376 8.81494 17.2166 8.70528C17.4184 8.5816 17.5914 8.40865 17.9373 8.06274L21 5C21.5523 4.44771 21.5523 3.55228 21 3C20.4477 2.44772 19.5523 2.44772 19 3Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11390,7 +10553,6 @@ export const LocationSharpFavorite = () => (
     <path
       fill="none"
       d="M11.7369 2.00396C7.4404 2.13349 4 5.4292 4 10C4 12.8644 5.88608 14.8508 8.03649 17.1156C9.38736 18.5383 10.8425 20.0709 12 22C13.1575 20.0709 14.6126 18.5383 15.9635 17.1156C17.4325 15.5685 18.7781 14.1513 19.4834 12.4954M14.0011 12.2351C13.4702 12.7108 12.7689 13 12 13C10.3431 13 9 11.6569 9 10C9 8.53686 10.0474 7.31836 11.4334 7.05344M17.5 2L18.5815 4.30438L21 4.67385L19.25 6.46746L19.663 9L17.5 7.80402L15.337 9L15.75 6.46746L14 4.67385L16.4185 4.30438L17.5 2Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11404,7 +10566,6 @@ export const LocationSharpFind = () => (
     <path
       fill="none"
       d="M19.5 6.5L21 8M11.492 2.01482C7.31041 2.25968 4 5.51638 4 10C4 12.8644 5.88608 14.8508 8.03649 17.1156C9.38736 18.5383 10.8425 20.0709 12 22C13.1575 20.0709 14.6126 18.5383 15.9635 17.1156C17.6323 15.3581 19.1418 13.7682 19.7344 11.8056M11.5146 7.03907C10.0886 7.27107 9 8.50841 9 10C9 11.6569 10.3431 13 12 13C13.4916 13 14.7289 11.9114 14.9609 10.4854M20 4.5C20 5.88071 18.8807 7 17.5 7C16.1193 7 15 5.88071 15 4.5C15 3.11929 16.1193 2 17.5 2C18.8807 2 20 3.11929 20 4.5Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11418,7 +10579,6 @@ export const LocationSharpMinus = () => (
     <path
       fill="none"
       d="M13 2.0579C12.6724 2.0196 12.3387 2 12 2C7.58172 2 4 5.33626 4 10C4 12.8644 5.88608 14.8508 8.03649 17.1156C9.38736 18.5383 10.8425 20.0709 12 22C13.1575 20.0709 14.6126 18.5383 15.9635 17.1156C18.1139 14.8508 20 12.8644 20 10C20 9.30129 19.9196 8.63237 19.7681 8M17 4H21M12 13C10.3431 13 9 11.6569 9 10C9 8.34315 10.3431 7 12 7C13.6569 7 15 8.34315 15 10C15 11.6569 13.6569 13 12 13Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11432,7 +10592,6 @@ export const LocationSharpNoAccess = () => (
     <path
       fill="none"
       d="M20.4002 3.2C19.8529 2.47133 18.9815 2 18 2C16.3431 2 15 3.34315 15 5C15 5.67536 15.2232 6.2986 15.5998 6.8M20.4002 3.2C20.7768 3.7014 21 4.32464 21 5C21 6.65685 19.6569 8 18 8C17.0185 8 16.1471 7.52867 15.5998 6.8M20.4002 3.2L15.5998 6.8M11.6707 2.00622C7.40511 2.16742 4 5.45271 4 10C4 12.8644 5.88608 14.8508 8.03649 17.1156C9.38736 18.5383 10.8425 20.0709 12 22C13.1575 20.0709 14.6126 18.5383 15.9635 17.1156C17.639 15.3509 19.1541 13.7553 19.7415 11.7816M14.7498 11.2013C14.2866 12.2602 13.2297 13 12 13C10.3431 13 9 11.6569 9 10C9 8.57923 9.98766 7.38914 11.3139 7.07884"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11446,7 +10605,6 @@ export const LocationSharpOff = () => (
     <path
       fill="none"
       d="M3 3L21 21M13.8186 19.4757C13.1737 20.2475 12.5529 21.0785 12 22C10.8425 20.0709 9.38736 18.5383 8.03649 17.1156C5.88608 14.8508 4 12.8644 4 10C4 9.88698 4.0021 9.77474 4.00627 9.66331M16.5236 16.5238C18.431 14.4946 20 12.6125 20 10C20 5.33626 16.4183 2 12 2C9.25225 2 6.82805 3.29035 5.3877 5.38789L9.12849 9.12869C9.5018 7.89676 10.6462 7 12 7C13.6569 7 15 8.34315 15 10C15 11.3538 14.1032 12.4982 12.8713 12.8715L16.5236 16.5238Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11460,7 +10618,6 @@ export const LocationSharpRefresh = () => (
     <path
       fill="none"
       d="M19.4547 2.87868C18.2831 1.70711 16.3836 1.70711 15.212 2.87868C14.0404 4.05025 14 4.33333 14 4.33333M14 4.33333V2.66667M14 4.33333H15.6667M15.212 7.12132C16.3836 8.29289 18.2831 8.29289 19.4547 7.12132C20.6262 5.94975 20.6667 5.66667 20.6667 5.66667M20.6667 5.66667V7.33333M20.6667 5.66667H19M10.3738 2.15517C6.73529 2.86261 4 5.92443 4 10C4 12.8644 5.88608 14.8508 8.03649 17.1156C9.38736 18.5383 10.8425 20.0709 12 22C13.1575 20.0709 14.6126 18.5383 15.9635 17.1156C17.6769 15.311 19.2225 13.6832 19.78 11.6472M14.6359 11.4337C14.1273 12.3669 13.1376 13 12 13C10.3431 13 9 11.6569 9 10C9 8.86244 9.63316 7.87275 10.5663 7.36413"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11474,7 +10631,6 @@ export const LocationSharpRemove = () => (
     <path
       fill="none"
       d="M19.9996 10.0708C19.9688 12.8972 18.0962 14.8695 15.9635 17.1156C14.6126 18.5383 13.1575 20.0709 12 22C10.8425 20.0709 9.38736 18.5383 8.03649 17.1156C5.88608 14.8508 4 12.8644 4 10C4 5.36124 7.54346 2.03577 11.9291 2.00029M17 2L21 6M21 2L17 5.99998M9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11488,7 +10644,6 @@ export const LocationSharp = () => (
     <path
       fill="none"
       d="M20 10C20 14.6637 15 17 12 22C9 17 4 14.6637 4 10C4 5.33626 7.58172 2 12 2C16.4183 2 20 5.33626 20 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11496,7 +10651,6 @@ export const LocationSharp = () => (
     <path
       fill="none"
       d="M9 10C9 11.6569 10.3431 13 12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11510,7 +10664,6 @@ export const Location = () => (
     <path
       fill="none"
       d="M20 11C20 16.4183 13 21 12 21C11 21 4 16.4183 4 11C4 6.58172 7.58172 3 12 3C16.4183 3 20 6.58172 20 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11518,7 +10671,6 @@ export const Location = () => (
     <path
       fill="none"
       d="M10 11C10 12.1046 10.8954 13 12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11532,7 +10684,6 @@ export const Lowercase = () => (
     <path
       fill="none"
       d="M22 6.14282V17.0439C22 19.2288 20.241 21 18.0712 21C16.9077 21 15.8622 20.4906 15.1429 19.6813M2 7.98558C2.95327 6.65448 4.65939 5.88781 6.40533 6.01337C8.68187 6.1767 10 7.40558 10 9.05447V16M10 13.0943C8.99313 15.0448 6.94536 15.97 5.03369 15.9996C3.68153 16.02 2.30039 15.3123 2.03954 14.0644C1.81397 12.9881 2.55116 11.73 4.31413 11.3001C6.07711 10.8702 10 11.0285 10 11.0285M22 10.7143C22 13.239 20.2091 15.2857 18 15.2857C15.7909 15.2857 14 13.239 14 10.7143C14 8.18952 15.7909 6.14282 18 6.14282C20.2091 6.14282 22 8.18952 22 10.7143Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11546,7 +10697,6 @@ export const MailClose = () => (
     <path
       fill="none"
       d="M6 8L9.39488 10.2384C10.3605 10.875 10.8433 11.1934 11.364 11.3153C11.8241 11.4231 12.3033 11.4207 12.7623 11.3082C13.2817 11.1809 13.7612 10.8576 14.7202 10.2111L18 8M6 14L9.5 10.5M18 14L14.5 10.5M14 20H10C7.19974 20 5.79961 20 4.73005 19.455C3.78924 18.9757 3.02433 18.2108 2.54497 17.27C2 16.2004 2 14.8003 2 12C2 9.19974 2 7.79961 2.54497 6.73005C3.02433 5.78924 3.78924 5.02433 4.73005 4.54497C5.79961 4 7.19974 4 10 4L14 4C16.8003 4 18.2004 4 19.27 4.54497C20.2108 5.02433 20.9757 5.78924 21.455 6.73005C22 7.79961 22 9.19974 22 12C22 14.8003 22 16.2004 21.455 17.27C20.9757 18.2108 20.2108 18.9757 19.27 19.455C18.2004 20 16.8003 20 14 20Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11560,7 +10710,6 @@ export const MailNarrowNotice = () => (
     <path
       fill="none"
       d="M14.3404 2.00287C13.9322 2 13.4873 2 13 2H11C8.19974 2 6.79961 2 5.73005 2.54497M5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10V14C3 16.8003 3 18.2004 3.54497 19.27M5.73005 2.54497C5.04649 2.89326 4.45579 3.39228 4 3.99999L9.87884 9.87868M3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27M3.54497 19.27C3.06904 18.3359 3.00875 17.1497 3.00111 14.9991L9.00016 9L9.87884 9.87868M20.455 19.27C21 18.2004 21 16.8003 21 14V10C21 9.97221 21 9.94456 21 9.91704M20.455 19.27C20.931 18.3358 20.9913 17.1496 20.9989 14.9987L15.0002 9L14.1215 9.87868M14.1215 9.87868C12.9499 11.0503 11.0504 11.0503 9.87884 9.87868M14.1215 9.87868L15.7574 8.24264M22 4C22 5.10457 21.1046 6 20 6C18.8954 6 18 5.10457 18 4C18 2.89543 18.8954 2 20 2C21.1046 2 22 2.89543 22 4Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11574,7 +10723,6 @@ export const MailNarrowOpen = () => (
     <path
       fill="none"
       d="M4.03488 7.11217C4.46525 6.55192 5.06164 6.11248 6.25441 5.2336L7.25441 4.49676C8.95831 3.24125 9.81027 2.61349 10.7436 2.37119C11.5675 2.15727 12.4325 2.15728 13.2564 2.37119C14.1897 2.61349 15.0417 3.24125 16.7456 4.49676L17.7456 5.2336C18.9384 6.11248 19.5347 6.55192 19.9651 7.11217M4.03488 7.11217C3.65372 7.60835 3.36908 8.17165 3.19573 8.77283C3 9.45165 3 10.1925 3 11.6741L3 14C3 16.8003 3 18.2004 3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27C21 18.2004 21 16.8003 21 14V11.674C21 10.1924 21 9.45165 20.8043 8.77283C20.6309 8.17165 20.3463 7.60835 19.9651 7.11217M4.03488 7.11217C3.72028 7.5217 3.47144 7.97696 3.29665 8.46151L10.3894 12.9751C11.3721 13.6004 12.6279 13.6004 13.6106 12.9751L20.7034 8.46151C20.5286 7.97697 20.2797 7.5217 19.9651 7.11217"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11588,7 +10736,6 @@ export const MailNarrowSending = () => (
     <path
       fill="none"
       d="M8 14H2M7 18H3M7.78785 21.9375C8.60993 22 9.63978 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27M3 10C3 7.19974 3 5.79961 3.54497 4.73005C4.02433 3.78924 4.78924 3.02433 5.73005 2.54497M5.73005 2.54497C6.79961 2 8.19974 2 11 2H13C15.8003 2 17.2004 2 18.27 2.54497M5.73005 2.54497C5.04649 2.89326 4.45579 3.39228 4 3.99999L9.87847 9.87868M18.27 2.54497C19.2108 3.02433 19.9757 3.78924 20.455 4.73005C21 5.79961 21 7.19974 21 10V14C21 16.8003 21 18.2004 20.455 19.27M18.27 2.54497C18.9535 2.89326 19.5442 3.39229 20 4L14.1211 9.87868M20.455 19.27C20.931 18.3358 20.9909 17.1496 20.9985 14.9987L14.9998 9L14.1211 9.87868M14.1211 9.87868C12.9495 11.0502 11.05 11.0503 9.87847 9.87868M9.87847 9.87868L8.99979 9L7.91531 10.0845"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11602,7 +10749,6 @@ export const MailNarrow = () => (
     <path
       fill="none"
       d="M18.27 2.54497C17.2004 2 15.8003 2 13 2L11 2C8.19974 2 6.79961 2 5.73005 2.54497M18.27 2.54497C19.2108 3.02433 19.9757 3.78924 20.455 4.73005C21 5.79961 21 7.19974 21 10V14C21 16.8003 21 18.2004 20.455 19.27M18.27 2.54497C18.9535 2.89326 19.5442 3.39229 20 4L14.1213 9.87868M5.73005 2.54497C4.78924 3.02433 4.02433 3.78924 3.54497 4.73005C3 5.79961 3 7.19974 3 10L3 14C3 16.8003 3 18.2004 3.54497 19.27M5.73005 2.54497C5.04649 2.89326 4.45579 3.39228 4 3.99999L9.87869 9.87868M3.54497 19.27C4.02433 20.2108 4.78924 20.9757 5.73005 21.455C6.79961 22 8.19974 22 11 22H13C15.8003 22 17.2004 22 18.27 21.455C19.2108 20.9757 19.9757 20.2108 20.455 19.27M3.54497 19.27C3.06904 18.3359 3.0086 17.1497 3.00096 14.9991L9.00001 9L9.87869 9.87868M20.455 19.27C20.931 18.3358 20.9911 17.1496 20.9987 14.9987L15 9L14.1213 9.87868M9.87869 9.87868C11.0503 11.0503 12.9498 11.0503 14.1213 9.87868"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11616,7 +10762,6 @@ export const MailNotice = () => (
     <path
       fill="none"
       d="M14.3414 4.00004C14.23 4 14.1162 4 14 4H10C7.19974 4 5.79961 4 4.73005 4.54497C3.78924 5.02433 3.02433 5.78924 2.54497 6.73005C2 7.79961 2 9.19974 2 12C2 14.8003 2 16.2004 2.54497 17.27C3.02433 18.2108 3.78924 18.9757 4.73005 19.455C5.79961 20 7.19974 20 10 20H14C16.8003 20 18.2004 20 19.27 19.455C20.2108 18.9757 20.9757 18.2108 21.455 17.27C22 16.2004 22 14.8003 22 12C22 11.8838 22 11.77 22 11.6586M6 8L9.39488 10.2384C10.3605 10.875 10.8433 11.1934 11.364 11.3153C11.8241 11.4231 12.3033 11.4207 12.7623 11.3082C13.2817 11.1809 13.7612 10.8576 14.7202 10.2111L15.3471 9.78848M22 6C22 7.10457 21.1046 8 20 8C18.8954 8 18 7.10457 18 6C18 4.89543 18.8954 4 20 4C21.1046 4 22 4.89543 22 6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11630,7 +10775,6 @@ export const MailOpen = () => (
     <path
       fill="none"
       d="M6 9.99998L9.39488 12.2384C10.3605 12.875 10.8433 13.1934 11.364 13.3153C11.8241 13.4231 12.3033 13.4206 12.7623 13.3081C13.2817 13.1808 13.7612 12.8576 14.7202 12.2111L18 9.99998M10 21H14C16.8003 21 18.2004 21 19.27 20.455C20.2108 19.9756 20.9757 19.2107 21.455 18.2699C22 17.2004 22 15.8002 22 13V12.5295C22 10.8778 22 10.0519 21.763 9.30986C21.5533 8.65318 21.2101 8.04695 20.7549 7.52926C20.2405 6.94426 19.5323 6.51936 18.116 5.66956L16.116 4.46956C14.6195 3.57166 13.8712 3.12271 13.0724 2.9473C12.3659 2.79214 11.6341 2.79214 10.9276 2.9473C10.1288 3.12271 9.38053 3.57166 7.88403 4.46956L5.88403 5.66956C4.4677 6.51936 3.75954 6.94426 3.24514 7.52926C2.78993 8.04695 2.44669 8.65318 2.23698 9.30986C2 10.0519 2 10.8778 2 12.5295L2 13C2 15.8002 2 17.2004 2.54497 18.2699C3.02433 19.2107 3.78924 19.9756 4.73005 20.455C5.79961 21 7.19974 21 10 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11644,7 +10788,6 @@ export const MailSending = () => (
     <path
       fill="none"
       d="M6 20H4M10 16H2M10 20H14C16.8003 20 18.2004 20 19.27 19.455C20.2108 18.9757 20.9757 18.2108 21.455 17.27C22 16.2004 22 14.8003 22 12C22 9.19974 22 7.79961 21.455 6.73005C20.9757 5.78924 20.2108 5.02433 19.27 4.54497C18.2004 4 16.8003 4 14 4H10C7.19974 4 5.79961 4 4.73005 4.54497C3.78924 5.02433 3.02433 5.78924 2.54497 6.73005C2 7.79961 2 9.19974 2 12M6 8L9.39488 10.2384C10.3605 10.875 10.8433 11.1934 11.364 11.3153C11.8241 11.4231 12.3033 11.4207 12.7623 11.3082C13.2817 11.1809 13.7612 10.8576 14.7202 10.2111L18 8"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11658,7 +10801,6 @@ export const Mail = () => (
     <path
       fill="none"
       d="M6 8L9.39488 10.2384C10.3605 10.875 10.8433 11.1934 11.364 11.3153C11.8241 11.4231 12.3033 11.4207 12.7623 11.3082C13.2817 11.1809 13.7612 10.8576 14.7202 10.2111L18 8M14 20H10C7.19974 20 5.79961 20 4.73005 19.455C3.78924 18.9757 3.02433 18.2108 2.54497 17.27C2 16.2004 2 14.8003 2 12C2 9.19974 2 7.79961 2.54497 6.73005C3.02433 5.78924 3.78924 5.02433 4.73005 4.54497C5.79961 4 7.19974 4 10 4L14 4C16.8003 4 18.2004 4 19.27 4.54497C20.2108 5.02433 20.9757 5.78924 21.455 6.73005C22 7.79961 22 9.19974 22 12C22 14.8003 22 16.2004 21.455 17.27C20.9757 18.2108 20.2108 18.9757 19.27 19.455C18.2004 20 16.8003 20 14 20Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11672,7 +10814,6 @@ export const MicrophoneNarrowOff = () => (
     <path
       fill="none"
       d="M3 3L21 21M10 22H14M12 22V18M12 18C7.58172 18 4 14.4183 4 10V9.65693M12 18C12.1126 18 12.2246 17.9977 12.3361 17.9931M20 8V10C20 12.72 18.6426 15.1229 16.5682 16.5683M8 6C8 3.79086 9.79086 2 12 2C14.2091 2 16 3.79086 16 6V10C16 11.6223 15.0343 13.019 13.6463 13.6466L8 8.00023V6Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11686,7 +10827,6 @@ export const MicrophoneNarrow = () => (
     <path
       fill="none"
       d="M20 8V10C20 14.4183 16.4183 18 12 18M4 8V10C4 14.4183 7.58172 18 12 18M12 18V22M10 22H14M12 14C9.79086 14 8 12.2091 8 10V6C8 3.79086 9.79086 2 12 2C14.2091 2 16 3.79086 16 6V10C16 12.2091 14.2091 14 12 14Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11700,7 +10840,6 @@ export const MicrophoneOff = () => (
     <path
       fill="none"
       d="M3 3L18.364 18.364M21 21L18.364 18.364M11.2934 16.9505C9.09741 16.6398 7.36018 14.9026 7.04955 12.7066M3 12C3 16.9706 7.02944 21 12 21C13.0051 21 13.9716 20.8353 14.8742 20.5313M21 12C21 14.4853 19.9926 16.7353 18.364 18.364M12 12H13M7.08373 7.08395L15.5354 15.5357C16.4403 14.6308 17 13.3808 17 12V8C17 5.23858 14.7614 3 12 3C9.55147 3 7.51402 4.76001 7.08373 7.08395Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11714,7 +10853,6 @@ export const Microphone = () => (
     <path
       fill="none"
       d="M3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12M11 12H13M12 17C9.23858 17 7 14.7614 7 12V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V12C17 14.7614 14.7614 17 12 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11728,7 +10866,6 @@ export const MonitorCase = () => (
     <path
       fill="none"
       d="M12 17H6.8C5.11984 17 4.27976 17 3.63803 16.673C3.07354 16.3854 2.6146 15.9265 2.32698 15.362C2 14.7202 2 13.8802 2 12.2L2 9.8C2 8.11984 2 7.27976 2.32698 6.63803C2.6146 6.07354 3.07354 5.6146 3.63803 5.32698C4.27976 5 5.11984 5 6.8 5H12M8 21H4M18 8H16M18 12H16M17 17V17.0099M17.2 21H16.8C15.1198 21 14.2798 21 13.638 20.673C13.0735 20.3854 12.6146 19.9265 12.327 19.362C12 18.7202 12 17.8802 12 16.2V7.8C12 6.11984 12 5.27976 12.327 4.63803C12.6146 4.07354 13.0735 3.6146 13.638 3.32698C14.2798 3 15.1198 3 16.8 3L17.2 3C18.8802 3 19.7202 3 20.362 3.32698C20.9265 3.6146 21.3854 4.07354 21.673 4.63803C22 5.27976 22 6.11984 22 7.8V16.2C22 17.8802 22 18.7202 21.673 19.362C21.3854 19.9265 20.9265 20.3854 20.362 20.673C19.7202 21 18.8802 21 17.2 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11742,7 +10879,6 @@ export const MonitorDesktop = () => (
     <path
       fill="none"
       d="M6.8 17H17.2C18.8802 17 19.7202 17 20.362 16.673C20.9265 16.3854 21.3854 15.9265 21.673 15.362C22 14.7202 22 13.8802 22 12.2V7.8C22 6.11984 22 5.27976 21.673 4.63803C21.3854 4.07354 20.9265 3.6146 20.362 3.32698C19.7202 3 18.8802 3 17.2 3L6.8 3C5.11984 3 4.27976 3 3.63803 3.32698C3.07354 3.6146 2.6146 4.07354 2.32698 4.63803C2 5.27976 2 6.11984 2 7.8L2 12.2C2 13.8802 2 14.7202 2.32698 15.362C2.6146 15.9265 3.07354 16.3854 3.63803 16.673C4.27976 17 5.11984 17 6.8 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11750,7 +10886,6 @@ export const MonitorDesktop = () => (
     <path
       fill="none"
       d="M10 21H14V17H10V21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11764,7 +10899,6 @@ export const MonitorLine = () => (
     <path
       fill="none"
       d="M16 21H8M22 13H2M12 17V21M17.2 17H6.8C5.11984 17 4.27976 17 3.63803 16.673C3.07354 16.3854 2.6146 15.9265 2.32698 15.362C2 14.7202 2 13.8802 2 12.2L2 7.8C2 6.11984 2 5.27976 2.32698 4.63803C2.6146 4.07354 3.07354 3.6146 3.63803 3.32698C4.27976 3 5.11984 3 6.8 3L17.2 3C18.8802 3 19.7202 3 20.362 3.32698C20.9265 3.6146 21.3854 4.07354 21.673 4.63803C22 5.27976 22 6.11984 22 7.8V12.2C22 13.8802 22 14.7202 21.673 15.362C21.3854 15.9265 20.9265 16.3854 20.362 16.673C19.7202 17 18.8802 17 17.2 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11778,7 +10912,6 @@ export const MonitorMobile = () => (
     <path
       fill="none"
       d="M20 9V7.8C20 6.11984 20 5.27976 19.673 4.63803C19.3854 4.07354 18.9265 3.6146 18.362 3.32698C17.7202 3 16.8802 3 15.2 3L6.8 3C5.11984 3 4.27976 3 3.63803 3.32698C3.07354 3.6146 2.6146 4.07354 2.32698 4.63803C2 5.27976 2 6.11984 2 7.8L2 10.2C2 11.8802 2 12.7202 2.32698 13.362C2.6146 13.9265 3.07354 14.3854 3.63803 14.673C4.27976 15 5.11984 15 6.8 15H12M12 19H8M11 15V19M11 11V11.0099M16 18V16C16 15.0681 16 14.6022 16.1522 14.2346C16.3552 13.7446 16.7446 13.3552 17.2346 13.1522C17.6022 13 18.0681 13 19 13C19.9319 13 20.3978 13 20.7654 13.1522C21.2554 13.3552 21.6448 13.7446 21.8478 14.2346C22 14.6022 22 15.0681 22 16V18C22 18.9319 22 19.3978 21.8478 19.7654C21.6448 20.2554 21.2554 20.6448 20.7654 20.8478C20.3978 21 19.9319 21 19 21C18.0681 21 17.6022 21 17.2346 20.8478C16.7446 20.6448 16.3552 20.2554 16.1522 19.7654C16 19.3978 16 18.9319 16 18Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11792,7 +10925,6 @@ export const MonitorPc = () => (
     <path
       fill="none"
       d="M15 21H9M12 17V21M12 13V13.0099M17.2 17H6.8C5.11984 17 4.27976 17 3.63803 16.673C3.07354 16.3854 2.6146 15.9265 2.32698 15.362C2 14.7202 2 13.8802 2 12.2L2 7.8C2 6.11984 2 5.27976 2.32698 4.63803C2.6146 4.07354 3.07354 3.6146 3.63803 3.32698C4.27976 3 5.11984 3 6.8 3L17.2 3C18.8802 3 19.7202 3 20.362 3.32698C20.9265 3.6146 21.3854 4.07354 21.673 4.63803C22 5.27976 22 6.11984 22 7.8V12.2C22 13.8802 22 14.7202 21.673 15.362C21.3854 15.9265 20.9265 16.3854 20.362 16.673C19.7202 17 18.8802 17 17.2 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11806,7 +10938,6 @@ export const MonitorTv = () => (
     <path
       fill="none"
       d="M16 21H8M17.2 17H6.8C5.11984 17 4.27976 17 3.63803 16.673C3.07354 16.3854 2.6146 15.9265 2.32698 15.362C2 14.7202 2 13.8802 2 12.2L2 7.8C2 6.11984 2 5.27976 2.32698 4.63803C2.6146 4.07354 3.07354 3.6146 3.63803 3.32698C4.27976 3 5.11984 3 6.8 3L17.2 3C18.8802 3 19.7202 3 20.362 3.32698C20.9265 3.6146 21.3854 4.07354 21.673 4.63803C22 5.27976 22 6.11984 22 7.8V12.2C22 13.8802 22 14.7202 21.673 15.362C21.3854 15.9265 20.9265 16.3854 20.362 16.673C19.7202 17 18.8802 17 17.2 17Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11820,7 +10951,6 @@ export const PieChartSimple = () => (
     <path
       fill="none"
       d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3M21 12C21 7.02944 16.9706 3 12 3M21 12H15.2C14.0799 12 13.5198 12 13.092 11.782C12.7157 11.5903 12.4097 11.2843 12.218 10.908C12 10.4802 12 9.92011 12 8.8V3"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11834,7 +10964,6 @@ export const RadialChartCircle = () => (
     <path
       fill="none"
       d="M12.0002 2C17.523 2 22.0002 6.47715 22.0002 12C22.0002 17.5228 17.523 22 12.0002 22C7.16224 22 3.12674 18.5645 2.2002 14M10.0002 6.34141C10.6257 6.12031 11.2989 6 12.0002 6C15.3139 6 18.0002 8.68629 18.0002 12C18.0002 15.3137 15.3139 18 12.0002 18C9.77931 18 7.84028 16.7934 6.80285 15M12.0002 14C13.1047 14 14.0002 13.1046 14.0002 12C14.0002 10.8954 13.1047 10 12.0002 10C11.4028 10 10.8666 10.2619 10.5002 10.6771"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11848,7 +10977,6 @@ export const StopCircle = () => (
     <path
       fill="none"
       d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11856,7 +10984,6 @@ export const StopCircle = () => (
     <path
       fill="none"
       d="M9 15H15V9H9V15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11870,7 +10997,6 @@ export const StopSquare = () => (
     <path
       fill="none"
       d="M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3L11 3C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11L3 13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11878,7 +11004,6 @@ export const StopSquare = () => (
     <path
       fill="none"
       d="M9 15H15V9H9V15Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11892,7 +11017,6 @@ export const Stop = () => (
     <path
       fill="none"
       d="M11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3L11 3C8.19974 3 6.79961 3 5.73005 3.54497C4.78924 4.02433 4.02433 4.78924 3.54497 5.73005C3 6.79961 3 8.19974 3 11L3 13C3 15.8003 3 17.2004 3.54497 18.27C4.02433 19.2108 4.78924 19.9757 5.73005 20.455C6.79961 21 8.19974 21 11 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11906,7 +11030,6 @@ export const VoiceNoRhythmCircle = () => (
     <path
       fill="none"
       d="M8 9V13M12 8V16M16 13V15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11920,7 +11043,6 @@ export const VoiceNoRhythmSquare = () => (
     <path
       fill="none"
       d="M8 9V13M12 8V16M16 13V15M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11934,7 +11056,6 @@ export const VoiceNoRhythm = () => (
     <path
       fill="none"
       d="M2 7V17M7 8.99994V14.9998M12 4L12 20M17 11V13M22 7.99939V16.0006"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11948,7 +11069,6 @@ export const VoiceRhythmCircle = () => (
     <path
       fill="none"
       d="M8 10.0679V14.0679M12 8V16M16 10.0679V14.0679M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11962,7 +11082,6 @@ export const VoiceRhythmSquare = () => (
     <path
       fill="none"
       d="M8 10.0679V14.0679M12 8V16M16 10.0679V14.0679M13 21H11C8.19974 21 6.79961 21 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13L3 11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.79961 3 8.19974 3 11 3L13 3C15.8003 3 17.2004 3 18.27 3.54497C19.2108 4.02433 19.9757 4.78924 20.455 5.73005C21 6.79961 21 8.19974 21 11V13C21 15.8003 21 17.2004 20.455 18.27C19.9757 19.2108 19.2108 19.9757 18.27 20.455C17.2004 21 15.8003 21 13 21Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11976,7 +11095,6 @@ export const VoiceRhythm = () => (
     <path
       fill="none"
       d="M2 8.56797V15.432M7 6.28799V17.712M12 4V20M17 6.28799V17.712M22 8.56797V15.432"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -11990,7 +11108,6 @@ export const Voicemail = () => (
     <path
       fill="none"
       d="M6 16C8.20914 16 10 14.2091 10 12C10 9.79086 8.20914 8 6 8C3.79086 8 2 9.79086 2 12C2 14.2091 3.79086 16 6 16ZM6 16H18M18 16C20.2091 16 22 14.2091 22 12C22 9.79086 20.2091 8 18 8C15.7909 8 14 9.79086 14 12C14 14.2091 15.7909 16 18 16Z"
-      stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"

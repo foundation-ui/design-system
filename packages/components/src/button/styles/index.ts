@@ -58,25 +58,6 @@ const ButtonIconStyles = css`
   svg {
     width: var(--fontsize-medium-20);
     height: var(--fontsize-medium-20);
-    fill: currentColor;
-  }
-
-  svg {
-    opacity: 0.6;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    svg {
-      opacity: 1;
-    }
-  }
-
-  &[data-variant="primary"] {
-    svg {
-      fill: var(--body-color);
-    }
   }
 `;
 const ButtonSizeStyles = css`
@@ -132,7 +113,6 @@ const ButtonBeforeDefaultStyles = css`
 `;
 const ButtonVariantsStyles = css`
   &[data-variant="primary"] {
-    color: var(--body-color-alpha-80);
     background-color: var(--font-color);
     background: linear-gradient(
       180deg,
@@ -141,6 +121,11 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+
+    color: var(--body-color-alpha-80) !important;
+    svg * {
+      stroke: var(--body-color-alpha-80) !important;
+    }
 
     ::before {
       ${ButtonBeforeDefaultStyles}
@@ -160,7 +145,6 @@ const ButtonVariantsStyles = css`
     }
   }
   &[data-variant="secondary"] {
-    color: var(--font-color-alpha-60);
     border-color: var(--font-color-alpha-10);
 
     background-color: var(--body-color);
@@ -171,6 +155,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+
+    color: var(--font-color-alpha-60) !important;
 
     ::before {
       ${ButtonBeforeDefaultStyles}
@@ -188,8 +174,6 @@ const ButtonVariantsStyles = css`
     }
   }
   &[data-variant="tertiary"] {
-    color: var(--font-color-alpha-60);
-
     background-color: transparent;
     background: linear-gradient(
       -180deg,
@@ -198,6 +182,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 10%;
+
+    color: var(--font-color-alpha-60) !important;
 
     &:hover,
     &:focus,
@@ -214,8 +200,8 @@ const ButtonVariantsStyles = css`
     }
   }
   &[data-variant="mono"] {
-    color: var(--font-color-alpha-80);
     background-color: var(--contrast-color);
+    color: var(--font-color-alpha-80) !important;
 
     ::before {
       ${ButtonBeforeDefaultStyles}
@@ -234,9 +220,9 @@ const ButtonVariantsStyles = css`
     }
   }
   &[data-variant="border"] {
-    color: var(--font-color-alpha-60);
     background-color: transparent;
     border-color: var(--font-color-alpha-10);
+    color: var(--font-color-alpha-60) !important;
 
     &:hover,
     &:focus,
@@ -278,7 +264,6 @@ const ButtonVariantsStyles = css`
   }
 
   &[data-variant="meta"] {
-    color: var(--alpha-mono-white-80);
     background-color: var(--color-blue);
     background: linear-gradient(
       180deg,
@@ -287,6 +272,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+
+    color: var(--alpha-mono-white-80) !important;
 
     ::before {
       ${ButtonBeforeDefaultStyles}
@@ -308,7 +295,6 @@ const ButtonVariantsStyles = css`
     }
   }
   &[data-variant="hint"] {
-    color: var(--alpha-mono-white-80);
     background-color: var(--color-purple);
     background: linear-gradient(
       180deg,
@@ -317,6 +303,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+
+    color: var(--alpha-mono-white-80) !important;
 
     ::before {
       ${ButtonBeforeDefaultStyles}
@@ -334,7 +322,6 @@ const ButtonVariantsStyles = css`
     }
   }
   &[data-variant="success"] {
-    color: var(--alpha-mono-white-90);
     background-color: var(--shade-green-30);
     background: linear-gradient(
       180deg,
@@ -343,6 +330,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+
+    color: var(--alpha-mono-white-80) !important;
 
     ::before {
       ${ButtonBeforeDefaultStyles}
@@ -360,7 +349,6 @@ const ButtonVariantsStyles = css`
     }
   }
   &[data-variant="danger"] {
-    color: var(--alpha-mono-white-80);
     background-color: var(--color-red);
     background: linear-gradient(
       180deg,
@@ -369,6 +357,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+
+    color: var(--alpha-mono-white-80) !important;
 
     ::before {
       ${ButtonBeforeDefaultStyles}
@@ -389,7 +379,6 @@ const ButtonVariantsStyles = css`
     }
   }
   &[data-variant="warning"] {
-    color: var(--alpha-mono-dark-80);
     background-color: var(--color-orange);
     background: linear-gradient(
       180deg,
@@ -398,6 +387,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+
+    color: var(--alpha-mono-dark-80) !important;
 
     ::before {
       ${ButtonBeforeDefaultStyles}
@@ -476,7 +467,8 @@ export const ButtonWrapper = styled.button`
     ${ButtonSizeStyles}
     ${ButtonShapeStyles}
     ${ButtonVariantsStyles}
-      &[data-rawIcon="false"] {
+
+    &[data-rawIcon="false"] {
       ${ButtonIconStyles}
     }
   }

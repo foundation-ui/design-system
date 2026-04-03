@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.7.2
+
+### Patch Changes
+
+- Handle missing variations and adjust UI on component. Fix Icon definition.
+
 ## 1.7.1
 
 ### Patch Changes

@@ -80,3 +80,35 @@ export const Variants: Story = {
     );
   },
 };
+export const Emphasis: Story = {
+  render: ({ ...args }) => {
+    return (
+      <div className="flex g-medium-30">
+        <Badge emphasis variant="primary">
+          Primary
+        </Badge>
+        <Badge emphasis variant="secondary">
+          Secondary
+        </Badge>
+        <Badge emphasis variant="border">
+          Border
+        </Badge>
+        <Badge emphasis variant="meta">
+          Meta
+        </Badge>
+        <Badge emphasis variant="hint">
+          Hint
+        </Badge>
+        <Badge emphasis variant="success">
+          Success
+        </Badge>
+        <Badge emphasis variant="warning">
+          Warning
+        </Badge>
+        <Badge emphasis variant="danger">
+          Error
+        </Badge>
+      </div>
+    );
+  },
+};

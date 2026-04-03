@@ -40,6 +40,7 @@ export interface IMessageBubbleContentProperties
     IComponentSize,
     React.HTMLAttributes<HTMLDivElement> {
   variant?: TComponentVariant | TComponentVariantExtended;
+  emphasis?: boolean;
   children: string;
 }
 
@@ -99,11 +100,13 @@ MessageBubble.displayName = "MessageBubble";
  *
  * @param {IMessageBubbleContentProperties} props - The props for the MessageBubble.Content component.
  * @param {boolean} props.raw - When true, removes default styling for custom layouts.
+ * @param {boolean} props.emphasis - Emphasis change the style definition used by the component.
  * @param {ReactNode} props.children - The message text or rich content to render.
  * @returns {ReactElement} The MessageBubble.Content component.
  */
 const MessageBubbleContent = (props: IMessageBubbleContentProperties) => {
-  const { sizing, shape, variant, children, raw, ...restProps } = props;
+  const { emphasis, sizing, shape, variant, children, raw, ...restProps } =
+    props;
   const { id, states } = useMessageBubble();
 
   return (
@@ -111,8 +114,9 @@ const MessageBubbleContent = (props: IMessageBubbleContentProperties) => {
       data-raw={Boolean(raw)}
       data-side={states?.side}
       variant={variant ?? ComponentVariantEnum.Border}
-      shape={shape ?? ComponentShapeEnum.Smooth}
+      shape={shape ?? ComponentShapeEnum.Round}
       sizing={sizing ?? ComponentSizeEnum.Medium}
+      emphasis={emphasis}
       aria-label={`message-bubble-content-${id}`}
       {...restProps}
     >

@@ -21,6 +21,7 @@ export interface IBadgeProperties
     IComponentSize,
     React.ComponentProps<"div"> {
   variant?: TComponentVariant | TComponentVariantExtended;
+  emphasis?: boolean;
 }
 
 /**
@@ -36,12 +37,14 @@ export interface IBadgeProperties
  * @param {TComponentShape} props.shape - The shape of the component. Defaults to `smooth`.
  * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to "small".
  * @param {string} props.variant - The style definition used by the component.
+ * @param {boolean} props.emphasis - Emphasis change the style definition used by the component.
  * @param {ReactNode} props.children - The content to be rendered inside the Badge.
  * @returns {ReactElement} The Badge component.
  */
 export const Badge = (props: IBadgeProperties) => {
   const {
     raw = false,
+    emphasis = false,
     sizing = ComponentSizeEnum.Small,
     variant = ComponentVariantEnum.Primary,
     shape = ComponentShapeEnum.Smooth,
@@ -55,6 +58,7 @@ export const Badge = (props: IBadgeProperties) => {
       data-variant={variant}
       data-shape={shape}
       data-size={sizing}
+      data-emphasis={emphasis}
       {...restProps}
     >
       {children}

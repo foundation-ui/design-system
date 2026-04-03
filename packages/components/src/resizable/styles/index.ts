@@ -5,9 +5,12 @@ import styled from "styled-components";
 export const SplitContainer = styled.div`
   position: relative;
 `;
-export const Panel = styled.div<{ width: number }>`
+export const Panel = styled.div<{
+  width: number;
+}>`
   overflow: hidden;
-  width: ${(props) => props.width}%;
+  width: ${(props) => props.width}dvw;
+  min-width: var(--measurement-large-60);
 `;
 export const Divider = styled.div<{ $dragging: boolean }>`
   width: var(--measurement-medium-10);

@@ -20,7 +20,8 @@ import {
 } from "../../../../types";
 
 export interface IDialogItemProperties
-  extends IComponentStyling,
+  extends
+    IComponentStyling,
     IComponentSize,
     IScrollAreaProperties,
     React.ComponentProps<"dialog"> {
@@ -64,26 +65,22 @@ const Dialog = (props: IDialogItemProperties) => {
   }, []);
 
   if (lock) useDisabledScroll(Boolean(states.open));
-
+  if (!states.open) return null;
   return (
-    <>
-      {states.open && (
-        <ScrollArea
-          as={DialogWrapper}
-          role="dialog"
-          tabIndex={-1}
-          id={String(contentId)}
-          open={Boolean(states.open)}
-          aria-labelledby={String(triggerId)}
-          data-state={applyDataState(Boolean(states.open))}
-          data-size={sizing}
-          data-raw={Boolean(raw)}
-          {...restProps}
-        >
-          {children}
-        </ScrollArea>
-      )}
-    </>
+    <ScrollArea
+      as={DialogWrapper}
+      role="dialog"
+      tabIndex={-1}
+      id={String(contentId)}
+      open={Boolean(states.open)}
+      aria-labelledby={String(triggerId)}
+      data-state={applyDataState(Boolean(states.open))}
+      data-size={sizing}
+      data-raw={Boolean(raw)}
+      {...restProps}
+    >
+      {children}
+    </ScrollArea>
   );
 };
 Dialog.displayName = "Dialog";

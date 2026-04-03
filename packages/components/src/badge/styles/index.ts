@@ -96,6 +96,28 @@ const BadgeVariantStyles = css`
     }
   }
 `;
+const BadgeEmphasisVariantStyles = css`
+  &[data-variant="danger"] {
+    background-color: var(--color-red) !important;
+    color: var(--color-mono-white) !important;
+  }
+  &[data-variant="warning"] {
+    background-color: var(--color-orange) !important;
+    color: var(--color-mono-dark) !important;
+  }
+  &[data-variant="success"] {
+    background-color: var(--color-green) !important;
+    color: var(--color-mono-white) !important;
+  }
+  &[data-variant="meta"] {
+    background-color: var(--color-blue) !important;
+    color: var(--color-mono-white) !important;
+  }
+  &[data-variant="hint"] {
+    background-color: var(--color-purple) !important;
+    color: var(--color-mono-white) !important;
+  }
+`;
 const BadgeShapeStyles = css`
   &[data-shape="square"] {
     border-radius: 0;
@@ -134,5 +156,9 @@ export const BadgeWrapper = styled.div<any>`
     ${BadgeVariantStyles}
     ${BadgeShapeStyles}
     ${BadgeSizeStyles}
+
+    &[data-emphasis="true"] {
+      ${BadgeEmphasisVariantStyles}
+    }
   }
 `;

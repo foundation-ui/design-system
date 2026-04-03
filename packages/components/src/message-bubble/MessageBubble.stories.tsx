@@ -76,25 +76,30 @@ export const Conversation: Story = {
       {(
         [
           {
-            variant: "border",
+            variant: "primary",
             side: "left",
             message: "Hey, how are you doing?",
           },
           {
-            variant: "primary",
+            variant: "meta",
             side: "right",
             message: "All good! What about you?",
           },
           {
-            variant: "border",
+            variant: "primary",
             side: "left",
             message: "Pretty great, thanks for asking",
           },
           {
-            variant: "primary",
+            variant: "meta",
             side: "right",
             message:
               "Hic dolorum esse magnam sint quibusdam porro reprehenderit, enim, repellendus ipsam, iste est! Deserunt ipsam ullam dolores expedita rem, magni iste eveniet.",
+          },
+          {
+            variant: "meta",
+            side: "right",
+            message: "Hic dolorum esse magnam sint quibusdam.",
           },
           {
             variant: "hint",
@@ -102,7 +107,17 @@ export const Conversation: Story = {
             message: "Hic dolorum esse magnam sint quibusdam.",
           },
           {
-            variant: "meta",
+            variant: "success",
+            side: "right",
+            message: "Hic dolorum esse magnam sint quibusdam.",
+          },
+          {
+            variant: "warning",
+            side: "right",
+            message: "Ipsa nisi fugiat doloribus.",
+          },
+          {
+            variant: "danger",
             side: "right",
             message: "Ipsa nisi fugiat doloribus.",
           },
@@ -116,7 +131,7 @@ export const Conversation: Story = {
                   sizing="small"
                   alt="foundation-logo"
                   src="https://www.untitledui.com/images/avatars/olivia-rhye?fm=webp&q=80"
-                  shape="smooth"
+                  // shape="smooth"
                 >
                   <Avatar.Badge
                     alt="foundation-logo"
@@ -126,7 +141,12 @@ export const Conversation: Story = {
               </Field.Meta>
             )}
 
-            <MessageBubble.Content variant={variant} className="fs-medium-20">
+            <MessageBubble.Content
+              variant={variant}
+              className="fs-medium-20"
+              shape="round"
+              emphasis
+            >
               {message}
             </MessageBubble.Content>
             <MessageBubble.Meta createdAt={MOCK_DATE} />

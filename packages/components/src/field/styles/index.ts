@@ -290,12 +290,8 @@ export const InnerWrapper = styled.div<any>`
     display: flex;
     flex-direction: column;
 
-    right: 0;
-    &[data-multiple="true"] {
-      right: var(--measurement-small-10) !important;
-    }
-
     top: var(--measurement-small-10);
+    right: var(--measurement-small-10);
     bottom: var(--measurement-small-10);
 
     border-left: var(--measurement-small-10) solid var(--font-color-alpha-10);
@@ -306,7 +302,6 @@ export const InnerWrapper = styled.div<any>`
     &[data-error="true"] {
       border-color: var(--alpha-red-10) !important;
     }
-
     &[data-shape="round"] {
       border-radius: 0 var(--measurement-large-90) var(--measurement-large-90) 0;
     }
@@ -332,16 +327,7 @@ export const InnerTrigger = styled.button<any>`
   padding: 0 var(--measurement-medium-40);
 
   color: var(--font-color-alpha-60);
-
-  background-color: var(--body-color);
-  background: linear-gradient(
-    180deg,
-    transparent 50%,
-    var(--font-color-alpha-10) 100%
-  );
-  background-size: 100% 200%;
-  background-position: 0% 0%;
-  backdrop-filter: blur(var(--measurement-medium-10));
+  backdrop-filter: blur(var(--measurement-small-60));
 
   cursor: pointer;
   transition: all ease-in-out 0.2s;
@@ -351,7 +337,7 @@ export const InnerTrigger = styled.button<any>`
     transition: all ease-in-out 0.2s;
   }
 
-  ::before {
+  /* ::before {
     content: "";
     inset: 0;
 
@@ -365,12 +351,12 @@ export const InnerTrigger = styled.button<any>`
 
     transition: all ease-in-out 0.2s;
     mask-image: linear-gradient(var(--font-color), transparent);
-  }
+  } */
 
   &:hover,
   &:active {
     color: var(--font-color);
-    background-position: 0% 50%;
+    /* background-position: 0% 50%; */
 
     svg {
       opacity: 0.8;
@@ -390,7 +376,7 @@ export const InnerSegment = styled.span<any>`
     text-align: center;
     outline: none;
     color: inherit;
-    transition: background-color ease-in-out 0.2s;
+    /* transition: background-color ease-in-out 0.2s; */
 
     &[data-placeholder="true"] {
       color: var(--font-color-alpha-30);
@@ -401,7 +387,7 @@ export const InnerSegment = styled.span<any>`
     &:active,
     &:focus-within,
     &:has(:active) {
-      background-color: var(--font-color-alpha-10);
+      /* background-color: var(--font-color-alpha-10); */
       color: var(--font-color);
     }
   }

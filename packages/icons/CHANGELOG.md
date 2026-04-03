@@ -1,5 +1,11 @@
 # @usefui/icons
 
+## 1.4.1
+
+### Patch Changes
+
+- Handle missing variations and adjust UI on component. Fix Icon definition.
+
 ## 1.4.0
 
 ### Minor Changes

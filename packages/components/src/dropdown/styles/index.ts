@@ -22,7 +22,15 @@ const ContentWrapperSizes = css`
     max-width: var(--large);
   }
 `;
+const ContentWrapperVariants = css`
+  &[data-variant="body"] {
+    background-color: var(--body-color);
+  }
 
+  &[data-variant="contrast"] {
+    background-color: var(--contrast-color);
+  }
+`;
 export const RootWrapper = styled.div`
   position: relative;
 `;
@@ -49,13 +57,14 @@ export const ContentWrapper = styled.ul<any>`
     padding: var(--measurement-medium-30);
     margin: var(--measurement-medium-10) 0;
 
-    background-color: var(--body-color);
     border: var(--measurement-small-10) solid var(--font-color-alpha-10);
     border-radius: var(--measurement-medium-30);
 
     z-index: var(--depth-default-100);
 
     ${ContentWrapperSizes}
+    ${ContentWrapperVariants}
+
     animation-duration: 0.2s;
     animation-name: slide-in;
     animation-fill-mode: backwards;
@@ -71,14 +80,13 @@ export const ItemWrapper = styled.li<any>`
   &[data-raw="false"] {
     padding: var(--measurement-medium-10) var(--measurement-medium-30);
     border-radius: var(--measurement-medium-20);
+    color: var(--font-color);
 
-    text-align: left;
-    font-weight: 600;
     letter-spacing: calc(
       var(--fontsize-small-10) - ((var(--fontsize-small-10) * 1.066))
     );
-    font-size: var(--fontsize-medium-10);
-    color: var(--font-color);
+    font-size: inherit;
+    text-align: left;
 
     outline: none;
     cursor: pointer;
@@ -90,7 +98,7 @@ export const ItemWrapper = styled.li<any>`
     &:active,
     &:focus-within,
     &:has(:active) {
-      background-color: var(--contrast-color);
+      background-color: var(--font-color-alpha-10);
     }
   }
 

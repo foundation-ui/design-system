@@ -11,11 +11,14 @@ import {
   IComponentStyling,
   IComponentSize,
   ComponentSideEnum,
+  ComponentSizeEnum,
 } from "../../../../types";
 
+type DropdownContentVariant = "body" | "contrast";
 export interface IDropdownContentProperties
   extends IComponentStyling, IComponentSize, React.ComponentPropsWithRef<"ul"> {
   defaultOpen?: boolean;
+  variant?: DropdownContentVariant;
 }
 export interface IDropdownItemProperties
   extends IComponentStyling, React.ComponentProps<"li"> {
@@ -133,6 +136,7 @@ DropdownMenuTrigger.displayName = "DropdownMenu.Trigger";
  * @param {IDropdownContentProperties} props - The props for the DropdownMenu.Content component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to "medium".
+ * @param {DropdownContentVariant} props.variant - The variant of the component. Defaults to "body".
  * @param {boolean} props.defaultOpen - The initial open state of the dropdown menu. Defaults to false.
  * @param {ReactNode} props.children - The content to be rendered inside the dropdown menu.
  * @returns {ReactElement} The DropdownMenu.Content component.
@@ -141,7 +145,14 @@ const DropdownMenuContent = React.forwardRef<
   HTMLUListElement,
   IDropdownContentProperties
 >((props, _) => {
-  const { raw, sizing = "medium", defaultOpen, children, ...restProps } = props;
+  const {
+    raw,
+    sizing = ComponentSizeEnum.Medium,
+    variant = "body",
+    defaultOpen,
+    children,
+    ...restProps
+  } = props;
   const { id, states, methods } = useDropdownMenu();
   const { toggleOpen, setContentProps } = methods;
 
@@ -227,6 +238,7 @@ const DropdownMenuContent = React.forwardRef<
       aria-labelledby={id.split("|").at(0)}
       data-state={applyDataState(Boolean(states.open))}
       data-sizing={sizing}
+      data-variant={variant}
       data-side={
         hasEnoughHorizontalSpace
           ? ComponentSideEnum.Left

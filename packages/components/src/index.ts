@@ -29,7 +29,6 @@ export * from "./text-area";
 export * from "./toggle";
 export * from "./toolbar";
 export * from "./tooltip";
-export * from "./tree";
 export * from "./select";
 
 export { useAccordion } from "./accordion/hooks";
@@ -43,6 +42,4 @@ export { useSwitch } from "./switch/hooks";
 export { useTabs } from "./tabs/hooks";
 export { useToolbar } from "./toolbar/hooks";
 export { useMessageBubble } from "./message-bubble/hooks";
-export { useTree } from "./tree/hooks/tree-provider";
-export { useTreeNode } from "./tree/hooks/tree-node-provider";
 export { useSelect } from "./select/hooks";

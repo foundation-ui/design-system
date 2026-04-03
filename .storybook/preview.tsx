@@ -19,29 +19,29 @@ const StoriesWrapepr = styled.div`
 
 const preview: Preview = {
   parameters: {
-    // docs: {
-    //   theme: theme,
-    //   page: DocumentationTemplate,
-    //   canvas: {
-    //     sourceState: "shown",
-    //   },
-    // },
-    // options: {
-    //   storySort: {
-    //     order: [
-    //       "Introduction",
-    //       "Getting Started",
-    //       "Design Tokens",
-    //       "Assets",
-    //       "Generators",
-    //       "Theming",
-    //       "Styling",
-    //       "Components",
-    //       ["Usage"],
-    //       "Sandbox",
-    //     ],
-    //   },
-    // },
+    docs: {
+      theme: theme,
+      // page: DocumentationTemplate,
+      canvas: {
+        sourceState: "shown",
+      },
+    },
+    options: {
+      storySort: {
+        order: [
+          "Introduction",
+          "Getting Started",
+          "Design Tokens",
+          "Assets",
+          "Generators",
+          "Theming",
+          "Styling",
+          "Components",
+          ["Usage"],
+          "Sandbox",
+        ],
+      },
+    },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
@@ -53,7 +53,18 @@ const preview: Preview = {
   decorators: [
     (Story) => {
       return (
-        <ColorModeProvider>
+        <ColorModeProvider
+        // config={{
+        //   body: {
+        //     light: "var(--color-mono-lightest)",
+        //     dark: "var(--color-mono-darker)",
+        //   },
+        //   contrast: {
+        //     light: "var(--color-mono-white)",
+        //     dark: "var(--color-mono-dark)",
+        //   },
+        // }}
+        >
           <ResetStyles />
           <CSSRoot />
           <TypographyRoot />

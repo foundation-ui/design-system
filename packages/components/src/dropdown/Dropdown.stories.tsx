@@ -136,3 +136,90 @@ export const RadioItem: Story = {
     </DropdownMenu.Root>
   ),
 };
+export const Variants: Story = {
+  render: ({ ...args }) => (
+    <>
+      <DropdownMenu.Root>
+        <DropdownMenu>
+          <DropdownMenu.Trigger variant="secondary">
+            Actions
+          </DropdownMenu.Trigger>
+
+          <DropdownMenu.Content className="flex flex-column g-small-60">
+            <DropdownMenu.Item
+              className="flex justify-between align-center"
+              radio
+            >
+              Cut
+              <Badge variant="border">
+                <span className="fs-small-50">⌘X</span>
+              </Badge>
+            </DropdownMenu.Item>
+
+            <DropdownMenu.Item
+              className="flex justify-between align-center"
+              radio
+            >
+              Copy
+              <Badge variant="border">
+                <span className="fs-small-50">⌘C</span>
+              </Badge>
+            </DropdownMenu.Item>
+
+            <DropdownMenu.Item
+              className="flex justify-between align-center"
+              radio
+            >
+              Paste
+              <Badge variant="border">
+                <span className="fs-small-50">⌘V</span>
+              </Badge>
+            </DropdownMenu.Item>
+          </DropdownMenu.Content>
+        </DropdownMenu>
+      </DropdownMenu.Root>
+      <DropdownMenu.Root>
+        <DropdownMenu>
+          <DropdownMenu.Trigger variant="secondary">
+            Actions
+          </DropdownMenu.Trigger>
+
+          <DropdownMenu.Content
+            className="flex flex-column g-small-60"
+            variant="contrast"
+          >
+            <DropdownMenu.Item
+              className="flex justify-between align-center"
+              radio
+            >
+              Cut
+              <Badge variant="border">
+                <span className="fs-small-50">⌘X</span>
+              </Badge>
+            </DropdownMenu.Item>
+
+            <DropdownMenu.Item
+              className="flex justify-between align-center"
+              radio
+            >
+              Copy
+              <Badge variant="border">
+                <span className="fs-small-50">⌘C</span>
+              </Badge>
+            </DropdownMenu.Item>
+
+            <DropdownMenu.Item
+              className="flex justify-between align-center"
+              radio
+            >
+              Paste
+              <Badge variant="border">
+                <span className="fs-small-50">⌘V</span>
+              </Badge>
+            </DropdownMenu.Item>
+          </DropdownMenu.Content>
+        </DropdownMenu>
+      </DropdownMenu.Root>
+    </>
+  ),
+};

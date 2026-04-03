@@ -13,6 +13,8 @@ import {
 
 type ResizableEditorProperties = {
   defaultWidth?: number;
+  minWidth?: number;
+  maxWidth?: number;
   left: React.ReactNode;
   right: React.ReactNode;
 };
@@ -22,12 +24,16 @@ type ResizableEditorProperties = {
  *
  * @param {ResizableEditorProperties} props - The props for the Resizable component.
  * @param {number} props.defaultWidth - The default width of the Resizable left section.
+ * @param {number} props.minWidth - The minimum width of the Resizable sections, expressed as a percentage.
+ * @param {number} props.maxWidth - The maximum width of the Resizable sections, expressed as a percentage.
  * @param {ReactNode} props.left - The content to be rendered inside the Left panel of the Resizable component.
  * @param {ReactNode} props.right - The content to be rendered inside the Right panel of the Resizable component.
  * @returns {ReactElement} The Resizable component.
  */
 export const Resizable = ({
   defaultWidth,
+  minWidth,
+  maxWidth,
   left,
   right,
 }: ResizableEditorProperties) => {
@@ -47,16 +53,14 @@ export const Resizable = ({
       const newLeftWidth =
         ((e.clientX - containerRect.left) / containerRect.width) * 100;
 
-      // Constrain between 20% and 80%
-      const threshold = { min: 30, max: 70 };
-
+      const threshold = { min: minWidth ?? 30, max: maxWidth ?? 70 };
       const constrainedWidth = Math.min(
         Math.max(newLeftWidth, threshold.min),
-        threshold.max
+        threshold.max,
       );
       setLeftWidth(constrainedWidth);
     },
-    [isDragging]
+    [isDragging],
   );
 
   React.useEffect(() => {

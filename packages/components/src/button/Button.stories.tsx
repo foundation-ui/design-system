@@ -18,6 +18,29 @@ const meta = {
 } satisfies Meta<typeof Button>;
 export default meta;
 
+const Icon = (props: React.ComponentProps<"svg">) => {
+  return (
+    <svg
+      focusable="false"
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="currentColor"
+      {...props}
+    >
+      <path
+        fill="none"
+        d="M20 6L9.71429 17L4 10.8889"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
 type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: ({ ...args }) => <Button {...args} />,
@@ -71,6 +94,76 @@ export const Variants: Story = {
           <div className="flex align-center justify-center g-medium-30 flex-wrap">
             <Button variant="link">Link</Button>
             <Button variant="ghost">Ghost</Button>
+          </div>
+        </Page.Content>
+      </Page>
+    );
+  },
+};
+export const VariantsWithIcon: Story = {
+  render: ({ ...args }) => {
+    return (
+      <Page>
+        <Page.Content className="flex flex-column g-medium-30 align-center justify-center">
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button variant="accent">
+              <span className="color-mono-white">With Icon</span>
+              <Icon stroke="white" />
+            </Button>
+          </div>
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button variant="primary">
+              With Icon
+              <Icon stroke="var(--color-red)" />
+            </Button>
+            <Button variant="secondary">
+              With Icon
+              <Icon />
+            </Button>
+            <Button variant="tertiary">
+              With Icon
+              <Icon />
+            </Button>
+            <Button variant="mono">
+              With Icon
+              <Icon />
+            </Button>
+            <Button variant="border">
+              With Icon
+              <Icon />
+            </Button>
+          </div>
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button variant="hint">
+              With Icon
+              <Icon stroke="white" />
+            </Button>
+            <Button variant="meta">
+              With Icon
+              <Icon stroke="white" />
+            </Button>
+            <Button variant="success">
+              With Icon
+              <Icon stroke="white" />
+            </Button>
+            <Button variant="danger">
+              With Icon
+              <Icon stroke="white" />
+            </Button>
+            <Button variant="warning">
+              With Icon
+              <Icon stroke="black" />
+            </Button>
+          </div>
+          <div className="flex align-center justify-center g-medium-30 flex-wrap">
+            <Button variant="link">
+              With Icon
+              <Icon />
+            </Button>
+            <Button variant="ghost">
+              With Icon
+              <Icon />
+            </Button>
           </div>
         </Page.Content>
       </Page>
