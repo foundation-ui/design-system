@@ -10,7 +10,6 @@ export const Panel = styled.div<{
 }>`
   overflow: hidden;
   width: ${(props) => props.width}dvw;
-  min-width: var(--measurement-large-60);
 `;
 export const Divider = styled.div<{ $dragging: boolean }>`
   width: var(--measurement-medium-10);

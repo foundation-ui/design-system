@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.7.3
+
+### Patch Changes
+
+- Fix resizable styling
+
 ## 1.7.2
 
 ### Patch Changes
