@@ -121,6 +121,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+    box-shadow: 0 var(--measurement-small-20) var(--measurement-small-20)
+      calc(var(--measurement-small-10) * -1) var(--alpha-mono-darkest-60);
 
     color: var(--body-color-alpha-80) !important;
     svg * {
@@ -151,10 +153,12 @@ const ButtonVariantsStyles = css`
     background: linear-gradient(
       180deg,
       transparent 50%,
-      var(--contrast-color) 100%
+      var(--body-color) 100%
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+    box-shadow: 0 var(--measurement-small-20) var(--measurement-small-20)
+      calc(var(--measurement-small-10) * -1) var(--alpha-mono-darkest-60);
 
     color: var(--font-color-alpha-60) !important;
 
@@ -171,6 +175,10 @@ const ButtonVariantsStyles = css`
       background-color: var(--font-color-alpha-10);
       background-position: 0% 75%;
       border-color: transparent;
+
+      ::before {
+        border-color: var(--font-color-alpha-20);
+      }
     }
   }
   &[data-variant="tertiary"] {
@@ -247,6 +255,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+    box-shadow: 0 var(--measurement-small-20) var(--measurement-small-20)
+      calc(var(--measurement-small-20) * -1) var(--alpha-mono-darkest-60);
 
     ::before {
       ${ButtonBeforeDefaultStyles}
@@ -272,6 +282,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+    box-shadow: 0 var(--measurement-small-20) var(--measurement-small-20)
+      calc(var(--measurement-small-10) * -1) var(--alpha-mono-darkest-60);
 
     color: var(--alpha-mono-white-80) !important;
 
@@ -303,6 +315,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+    box-shadow: 0 var(--measurement-small-20) var(--measurement-small-20)
+      calc(var(--measurement-small-10) * -1) var(--alpha-mono-darkest-60);
 
     color: var(--alpha-mono-white-80) !important;
 
@@ -330,6 +344,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+    box-shadow: 0 var(--measurement-small-20) var(--measurement-small-20)
+      calc(var(--measurement-small-10) * -1) var(--alpha-mono-darkest-60);
 
     color: var(--alpha-mono-white-80) !important;
 
@@ -357,6 +373,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+    box-shadow: 0 var(--measurement-small-20) var(--measurement-small-20)
+      calc(var(--measurement-small-10) * -1) var(--alpha-mono-darkest-60);
 
     color: var(--alpha-mono-white-80) !important;
 
@@ -387,6 +405,8 @@ const ButtonVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
+    box-shadow: 0 var(--measurement-small-20) var(--measurement-small-20)
+      calc(var(--measurement-small-10) * -1) var(--alpha-mono-darkest-60);
 
     color: var(--alpha-mono-dark-80) !important;
 

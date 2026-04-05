@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.7.5
+
+### Patch Changes
+
+- Add missing icons, enhance buttons a11y criterias
+
 ## 1.7.4
 
 ### Patch Changes

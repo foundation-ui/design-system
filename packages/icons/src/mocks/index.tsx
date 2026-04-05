@@ -183,6 +183,14 @@ export const IconList = [
 ];
 
 export const DefaultIconList: { name: string; icon: React.ReactNode }[] = [
+  { name: "Strikethrough", icon: <Icon.Strikethrough /> },
+  { name: "Underline", icon: <Icon.Underline /> },
+  { name: "Italic", icon: <Icon.Italic /> },
+  { name: "TextNumber", icon: <Icon.TextNumber /> },
+  { name: "TextBullet", icon: <Icon.TextBullet /> },
+  { name: "Bold", icon: <Icon.Bold /> },
+  { name: "Quote", icon: <Icon.Quote /> },
+  { name: "Headline", icon: <Icon.Headline /> },
   { name: "Add", icon: <Icon.Add /> },
   { name: "Call", icon: <Icon.Call /> },
   { name: "CallAdd", icon: <Icon.CallAdd /> },

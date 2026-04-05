@@ -1,5 +1,11 @@
 # @usefui/icons
 
+## 1.4.2
+
+### Patch Changes
+
+- Add missing icons, enhance buttons a11y criterias
+
 ## 1.4.1
 
 ### Patch Changes

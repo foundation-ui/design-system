@@ -1,6 +1,6 @@
 {
   "name": "@usefui/components",
-  "version": "1.7.4",
+  "version": "1.7.5",
   "description": "Open Source React components library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
