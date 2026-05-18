@@ -8,40 +8,30 @@ const FadeIn = keyframes`
     opacity: 1;
   }
 `;
-const TooltipBeforeDefaultStyles = css`
-  content: "";
-  inset: 0;
-
-  border-radius: inherit;
-  border: var(--measurement-small-10) solid transparent;
-  position: absolute;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-
-  mask-composite: intersect;
-
-  transition: all ease-in-out 0.2s;
-`;
 const TooltipVariantsStyles = css`
   &[data-variant="primary"] {
-    background: var(--font-color);
-    ::before {
-      ${TooltipBeforeDefaultStyles}
-      border-color: var(--body-color-alpha-20);
-      mask-image: linear-gradient(var(--body-color-alpha-90), transparent);
-    }
+    background-color: var(--font-color);
+    background: linear-gradient(
+      180deg,
+      var(--font-color) 50%,
+      var(--font-color-alpha-60) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
+
     span {
-      color: var(--contrast-color) !important;
+      color: var(--body-color) !important;
     }
   }
   &[data-variant="secondary"] {
-    background: var(--body-color);
-    ::before {
-      ${TooltipBeforeDefaultStyles}
-      border-color: var(--font-color-alpha-10);
-      mask-image: linear-gradient(var(--font-color-alpha-30), transparent);
-    }
+    background-color: var(--body-color);
+    background: linear-gradient(
+      180deg,
+      var(--body-color) 50%,
+      var(--font-color-alpha-10) 100%
+    );
+    background-size: 100% 200%;
+    background-position: 0% 50%;
   }
 `;
 const TooltipSizesStyles = css`

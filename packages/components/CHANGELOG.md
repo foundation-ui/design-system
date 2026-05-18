@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.7.7
+
+### Patch Changes
+
+- Fix Tooltip styles
+
 ## 1.7.6
 
 ### Patch Changes
