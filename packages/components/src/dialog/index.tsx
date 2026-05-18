@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useDialog, DialogProvider } from "./hooks";
-import { useDisabledScroll } from "@usefui/hooks";
+import { useDisabledScroll, useKeyPress } from "@usefui/hooks";
 import {
   Overlay,
   IOverlayProperties,
@@ -17,6 +17,7 @@ import {
   IComponentStyling,
   ComponentSizeEnum,
   IComponentSize,
+  KeyBindingEnum,
 } from "../../../../types";
 
 export interface IDialogItemProperties
@@ -41,6 +42,9 @@ export interface IDialogItemProperties
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to "medium".
  * @param {boolean} props.open - Whether the dialog is open or not.
+ * @param {string} props.shortcut - The key combination used as keyboard shortcuts to trigger the sheet.
+ * @param {string} props.hotkey - The key to use in the key combination for the keyboard shortcuts.
+ * @param {KeyBindingEnum} props.bindkey - The modifier key to use in the key combination.
  * @param {ReactNode} props.children - The content to be rendered inside the dialog.
  * @returns {ReactElement} The Dialog component.
  */
@@ -50,19 +54,30 @@ const Dialog = (props: IDialogItemProperties) => {
     sizing = ComponentSizeEnum.Medium,
     open = false,
     lock = true,
+    shortcut,
+    bindkey = KeyBindingEnum.Ctrl,
+    hotkey,
     children,
     ...restProps
   } = props;
   const { states, methods } = useDialog();
   const { getDialogId, toggleDialog } = methods;
+  const shortcutControls = useKeyPress(String(hotkey), true, bindkey);
 
   const triggerId = getDialogId && getDialogId("trigger");
   const contentId = getDialogId && getDialogId("content");
 
   React.useEffect(() => {
-    if (open && toggleDialog) toggleDialog();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (open && toggleDialog) {
+      return toggleDialog();
+    }
+  }, [open]);
+
+  React.useEffect(() => {
+    if (shortcut && shortcutControls && toggleDialog) {
+      return toggleDialog();
+    }
+  }, [shortcutControls]);
 
   if (lock) useDisabledScroll(Boolean(states.open));
   if (!states.open) return null;
