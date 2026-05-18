@@ -2,16 +2,23 @@
 
 import React from "react";
 
-import { ContentBox, ContentWrapper } from "./styles";
+import { ContentBox, ContentWrapper, ShortcutBox } from "./styles";
 
 import { applyDataState } from "../utils";
-import { ComponentSideEnum, IComponentStyling } from "../../../../types";
+import {
+  ComponentSideEnum,
+  ComponentSizeEnum,
+  ComponentVariantEnum,
+  IComponentSize,
+  IComponentStyling,
+} from "../../../../types";
 
 interface ITooltipProperties
-  extends IComponentStyling,
-    React.ComponentProps<"span"> {
+  extends IComponentStyling, IComponentSize, React.ComponentProps<"span"> {
   delay?: number;
   content: string;
+  hint?: string;
+  variant?: "primary" | "secondary";
   children: React.ReactNode;
 }
 
@@ -26,15 +33,22 @@ interface ITooltipProperties
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {number} props.delay - The delay in ms awaited until the Tooltip is displayed. Default to 200ms.
  * @param {string} props.content - The additional content to be rendered inside the Tooltip.
+ * @param {string} props.hint - The additional content to be rendered inside the Tooltip, beside the content.
+ * @param {string} props.variant - The style definition used by the component.
+ * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to "medium".
  * @param {ReactNode} props.children - The content to be rendered as Tooltip children.
  * @returns {ReactElement} The Tooltip component.
  */
-const Tooltip = ({
-  delay = 200,
-  content,
-  children,
-  ...restProps
-}: ITooltipProperties) => {
+const Tooltip = (props: ITooltipProperties) => {
+  const {
+    delay = 200,
+    content,
+    hint,
+    variant = ComponentVariantEnum.Primary,
+    sizing = ComponentSizeEnum.Medium,
+    children,
+    ...restProps
+  } = props;
   const [visible, setVisible] = React.useState(false);
   const [triggerProps, setTriggerProps] = React.useState<{
     top: number;
@@ -67,8 +81,8 @@ const Tooltip = ({
   };
 
   const positions = {
-    btt: `calc((${triggerProps?.top}px - ${contentProps?.height}px) - (var(--measurement-medium-10)))`,
-    ttb: `calc((${triggerProps?.top}px + ${triggerProps?.height}px) + var(--measurement-medium-10))`,
+    btt: `calc((${triggerProps?.top}px - ${contentProps?.height}px))`,
+    ttb: `calc((${triggerProps?.top}px + ${triggerProps?.height}px))`,
     ltr: `${triggerProps?.left}px`,
     rtl: `calc(${triggerProps?.left}px - (${contentProps?.width}px - ${triggerProps?.width}px))`,
   };
@@ -115,7 +129,7 @@ const Tooltip = ({
 
   const handleMouseLeave = React.useCallback(
     () => hideTooltip(),
-    [hideTooltip]
+    [hideTooltip],
   );
 
   React.useEffect(() => {
@@ -139,7 +153,6 @@ const Tooltip = ({
   return (
     <ContentBox
       ref={containerRef}
-      style={{ display: "inline-block", position: "relative" }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       {...restProps}
@@ -148,6 +161,7 @@ const Tooltip = ({
       {visible && (
         <ContentWrapper
           ref={contentRef}
+          className="flex align-center g-medium-10"
           style={{
             top: hasEnoughVerticalSpace ? positions.ttb : positions.btt,
             left: hasEnoughHorizontalSpace ? positions.ltr : positions.rtl,
@@ -156,6 +170,8 @@ const Tooltip = ({
           role="tooltip"
           data-state={applyDataState(visible)}
           data-raw={Boolean(restProps.raw)}
+          data-variant={variant}
+          data-size={sizing}
           data-side={
             hasEnoughHorizontalSpace
               ? ComponentSideEnum.Left
@@ -167,7 +183,12 @@ const Tooltip = ({
               : ComponentSideEnum.Right
           }
         >
-          <div>{content}</div>
+          <span>{content}</span>
+          {hint && (
+            <ShortcutBox data-variant={variant ?? ComponentVariantEnum.Primary}>
+              {hint}
+            </ShortcutBox>
+          )}
         </ContentWrapper>
       )}
     </ContentBox>

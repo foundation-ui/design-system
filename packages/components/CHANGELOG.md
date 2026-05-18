@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.7.6
+
+### Patch Changes
+
+- Enhance Tooltip component
+
 ## 1.7.5
 
 ### Patch Changes
