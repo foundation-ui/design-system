@@ -37,12 +37,6 @@ export const Default: Story = {
       { value: "demi", label: "Demi Wilkinson", handle: "@demi" },
       { value: "candice", label: "Candice Wu", handle: "@candice" },
       { value: "natali", label: "Natali Craig", handle: "@natali" },
-      { value: "phoenix", label: "Phoenix Baker", handle: "@phoenix" },
-      { value: "olivia", label: "Olivia Rhye", handle: "@olivia" },
-      { value: "lana", label: "Lana Steiner", handle: "@lana" },
-      { value: "demi", label: "Demi Wilkinson", handle: "@demi" },
-      { value: "candice", label: "Candice Wu", handle: "@candice" },
-      { value: "natali", label: "Natali Craig", handle: "@natali" },
     ];
 
     return (

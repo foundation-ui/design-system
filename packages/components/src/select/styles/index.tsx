@@ -124,18 +124,12 @@ export const List = styled.li<any>`
     &:active,
     &:focus-within,
     &:has(:active) {
-      background-color: var(--contrast-color);
+      background-color: var(--font-color-alpha-10);
     }
 
     &[data-selected="true"] {
       color: var(--font-color);
-      background-color: var(--contrast-color);
-
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: var(--font-color-alpha-10);
-      }
+      background-color: var(--font-color-alpha-10);
     }
   }
 

@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.7.10
+
+### Patch Changes
+
+- Fix Select styling
+
 ## 1.7.9
 
 ### Patch Changes
