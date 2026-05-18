@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.7.8
+
+### Patch Changes
+
+- Fix Button primary variant text color, restore tooltip position
+
 ## 1.7.7
 
 ### Patch Changes

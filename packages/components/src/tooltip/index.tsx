@@ -81,8 +81,8 @@ const Tooltip = (props: ITooltipProperties) => {
   };
 
   const positions = {
-    btt: `calc((${triggerProps?.top}px - ${contentProps?.height}px))`,
-    ttb: `calc((${triggerProps?.top}px + ${triggerProps?.height}px))`,
+    btt: `calc((${triggerProps?.top}px - ${contentProps?.height}px) - var(--measurement-small-80))`,
+    ttb: `calc((${triggerProps?.top}px + ${triggerProps?.height}px) + var(--measurement-small-80))`,
     ltr: `${triggerProps?.left}px`,
     rtl: `calc(${triggerProps?.left}px - (${contentProps?.width}px - ${triggerProps?.width}px))`,
   };

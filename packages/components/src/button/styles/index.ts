@@ -124,9 +124,9 @@ const ButtonVariantsStyles = css`
     box-shadow: 0 var(--measurement-small-20) var(--measurement-small-20)
       calc(var(--measurement-small-10) * -1) var(--alpha-mono-darkest-60);
 
-    color: var(--body-color-alpha-80) !important;
+    color: var(--body-color) !important;
     svg * {
-      stroke: var(--body-color-alpha-80) !important;
+      stroke: var(--body-color) !important;
     }
 
     ::before {
