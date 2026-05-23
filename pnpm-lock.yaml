@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@usefui/design-system':
+        specifier: 'link:'
+        version: 'link:'
       react:
         specifier: ^19.2.4
         version: 19.2.4

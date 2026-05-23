@@ -8,27 +8,11 @@ const CheckboxDefaultStyles = css`
   backdrop-filter: blur(var(--measurement-small-10));
   transition: all ease-in-out 0.2s;
 `;
-const CheckboxBeforeDefaultStyles = css`
-  content: "";
-  inset: 0;
-
-  border-radius: inherit;
-  border: var(--measurement-small-10) solid transparent;
-  position: absolute;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-
-  mask-composite: intersect;
-
-  transition: all ease-in-out 0.2s;
-`;
 const CheckboxVariantsStyles = css`
   &[data-variant="accent"] {
     background-color: var(--alpha-accent-30);
 
     ::before {
-      ${CheckboxBeforeDefaultStyles}
       border-color: var(--alpha-accent-30);
       mask-image: linear-gradient(var(--alpha-accent-30), transparent);
     }
@@ -58,21 +42,11 @@ const CheckboxVariantsStyles = css`
     background-size: 100% 200%;
     background-position: 0% 50%;
 
-    ::before {
-      ${CheckboxBeforeDefaultStyles}
-      border-color: var(--body-color-alpha-20);
-      mask-image: linear-gradient(var(--body-color-alpha-90), transparent);
-    }
-
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
       background-position: 0% 25%;
-
-      ::before {
-        border-color: var(--body-color-alpha-10);
-      }
 
       svg {
         stroke: var(--body-color);
@@ -82,21 +56,11 @@ const CheckboxVariantsStyles = css`
   &[data-variant="secondary"] {
     background-color: var(--contrast-color);
 
-    ::before {
-      ${CheckboxBeforeDefaultStyles}
-      border-color: var(--font-color-alpha-30);
-      mask-image: linear-gradient(var(--font-color-alpha-30), transparent);
-    }
-
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
       color: var(--font-color);
-
-      ::before {
-        border-color: var(--font-color-alpha-60);
-      }
 
       svg {
         stroke: var(--font-color);
@@ -114,12 +78,6 @@ const CheckboxVariantsStyles = css`
     );
     background-size: 100% 200%;
     background-position: 0% 50%;
-
-    ::before {
-      ${CheckboxBeforeDefaultStyles}
-      border-color: var(--font-color-alpha-10);
-      mask-image: linear-gradient(var(--font-color-alpha-30), transparent);
-    }
 
     &:hover,
     &:focus,
@@ -145,22 +103,11 @@ const CheckboxVariantsStyles = css`
     background-size: 100% 200%;
     background-position: 0% 50%;
 
-    ::before {
-      ${CheckboxBeforeDefaultStyles}
-      border-color: var(--alpha-green-30);
-      mask-image: linear-gradient(var(--alpha-green-30), transparent);
-    }
-
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
       color: var(--font-color);
-
-      ::before {
-        border-color: var(--color-green);
-        background-color: var(--alpha-green-60);
-      }
 
       svg {
         stroke: var(--color-green);
@@ -178,22 +125,11 @@ const CheckboxVariantsStyles = css`
     background-size: 100% 200%;
     background-position: 0% 50%;
 
-    ::before {
-      ${CheckboxBeforeDefaultStyles}
-      border-color: var(--alpha-blue-30);
-      mask-image: linear-gradient(var(--alpha-blue-30), transparent);
-    }
-
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
       color: var(--font-color);
-
-      ::before {
-        border-color: var(--color-blue);
-        background-color: var(--alpha-blue-60);
-      }
 
       svg {
         stroke: var(--color-blue);
@@ -211,22 +147,11 @@ const CheckboxVariantsStyles = css`
     background-size: 100% 200%;
     background-position: 0% 50%;
 
-    ::before {
-      ${CheckboxBeforeDefaultStyles}
-      border-color: var(--alpha-purple-30);
-      mask-image: linear-gradient(var(--alpha-purple-30), transparent);
-    }
-
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
       color: var(--font-color);
-
-      ::before {
-        border-color: var(--color-purple);
-        background-color: var(--alpha-purple-60);
-      }
 
       svg {
         stroke: var(--color-purple);
@@ -244,22 +169,11 @@ const CheckboxVariantsStyles = css`
     background-size: 100% 200%;
     background-position: 0% 50%;
 
-    ::before {
-      ${CheckboxBeforeDefaultStyles}
-      border-color: var(--alpha-red-30);
-      mask-image: linear-gradient(var(--alpha-red-30), transparent);
-    }
-
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
       color: var(--font-color);
-
-      ::before {
-        border-color: var(--color-red);
-        background-color: var(--alpha-red-60);
-      }
 
       svg {
         stroke: var(--color-red);
@@ -277,22 +191,11 @@ const CheckboxVariantsStyles = css`
     background-size: 100% 200%;
     background-position: 0% 50%;
 
-    ::before {
-      ${CheckboxBeforeDefaultStyles}
-      border-color: var(--alpha-orange-30);
-      mask-image: linear-gradient(var(--alpha-orange-30), transparent);
-    }
-
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
       color: var(--font-color);
-
-      ::before {
-        border-color: var(--color-orange);
-        background-color: var(--alpha-orange-60);
-      }
 
       svg {
         stroke: var(--color-orange);

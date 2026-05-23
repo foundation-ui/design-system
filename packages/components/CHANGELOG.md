@@ -1,5 +1,11 @@
 # @usefui/components
 
+## 1.7.11
+
+### Patch Changes
+
+- Fix checkbox styles
+
 ## 1.7.10
 
 ### Patch Changes
