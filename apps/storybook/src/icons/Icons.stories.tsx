@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import type { Meta } from "@storybook/react-vite";
 
-import { Icon, PixelIcon, SocialIcon, WebIcon } from "./";
+import { Icon, PixelIcon, SocialIcon, WebIcon } from "@usefui/icons";
 import { PixelIconList, DefaultIconList, IconList } from "./mocks";
 
 const meta = {

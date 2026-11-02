@@ -10,6 +10,7 @@
     "@usefui/core": "workspace:*",
     "@usefui/components": "workspace:*",
     "@usefui/hooks": "workspace:*",
+    "@usefui/icons": "workspace:*",
     "@usefui/tokens": "workspace:*",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"

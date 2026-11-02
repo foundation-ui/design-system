@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, PixelIcon, WebIcon } from "../";
+import { Icon, PixelIcon, WebIcon } from "@usefui/icons";
 
 export const PixelIconList = [
   <PixelIcon.Alert />,

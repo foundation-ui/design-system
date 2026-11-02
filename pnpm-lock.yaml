@@ -102,6 +102,9 @@ importers:
       '@usefui/hooks':
         specifier: workspace:*
         version: link:../../packages/hooks
+      '@usefui/icons':
+        specifier: workspace:*
+        version: link:../../packages/icons
       '@usefui/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
