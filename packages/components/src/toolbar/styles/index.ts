@@ -10,7 +10,11 @@ export const ToolbarDefaultStyles = css`
   height: 100%;
 
   box-sizing: border-box;
-  /* transition: all ease-in-out 0.2s; */
+  overflow: hidden;
+
+  /* Lets browsers that support it animate to/from intrinsic sizes */
+  interpolate-size: allow-keywords;
+  transition: width 0.25s ease-in-out;
 
   &[data-state="expanded"] {
     width: 100%;
@@ -19,37 +23,36 @@ export const ToolbarDefaultStyles = css`
     width: fit-content;
   }
 
-  &[data-orientation="horizontal"] {
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 `;
 
 export const ToolbarSizeStyles = css`
+  /* Vertical: numeric widths so the transition can interpolate */
+  &[data-orientation="vertical"] {
+    &[data-state="collapsed"] {
+      width: var(--measurement-medium-80);
+    }
+    &[data-size="small"][data-state="expanded"] {
+      width: var(--measurement-large-70);
+    }
+    &[data-size="medium"][data-state="expanded"] {
+      width: var(--measurement-large-80);
+    }
+    &[data-size="large"][data-state="expanded"] {
+      width: var(--measurement-large-90);
+    }
+  }
+
   &[data-size="small"] {
-    &[data-orientation="vertical"] {
-      max-width: var(--measurement-large-70);
-    }
-    &[data-orientation="horizontal"] {
-      max-height: var(--measurement-large-70);
-    }
+    max-width: var(--measurement-large-70);
   }
   &[data-size="medium"] {
-    &[data-orientation="vertical"] {
-      max-width: var(--measurement-large-80);
-    }
-    &[data-orientation="horizontal"] {
-      max-height: var(--measurement-large-80);
-    }
+    max-width: var(--measurement-large-80);
   }
   &[data-size="large"] {
-    &[data-orientation="vertical"] {
-      max-width: var(--measurement-large-90);
-    }
-    &[data-orientation="horizontal"] {
-      max-height: var(--measurement-large-90);
-    }
+    max-width: var(--measurement-large-90);
   }
 `;
 
@@ -73,5 +76,10 @@ export const ToolbarContentWrapper = styled.div<any>`
     flex-direction: inherit;
     gap: inherit;
     overflow: hidden;
+    min-width: 0;
+    white-space: nowrap; /* avoid text re-wrapping while the width animates */
+  }
+  &[hidden] {
+    display: none;
   }
 `;

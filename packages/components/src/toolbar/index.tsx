@@ -17,6 +17,7 @@ import {
 } from "../types";
 import type {
   IToolbarBodyProperties,
+  IToolbarContentProperties,
   IToolbarItemProperties,
   IToolbarRootProperties,
   IToolbarSectionProperties,
@@ -31,46 +32,31 @@ export interface IToolbarComposition {
   Section: typeof ToolbarSection;
 }
 
-/**
- * Toolbar is a collapsible set of tools or actions.
- *
- * Follows the shadcn Sidebar conventions: state is owned by `Toolbar.Root`,
- * `Toolbar.Trigger` toggles it, and `Ctrl/Cmd + B` toggles it from anywhere.
- *
- * **Best practices:**
- *
- * - Wrap the trigger and content in `Toolbar.Root` to share state.
- * - Use `open` / `onOpenChange` on `Toolbar.Root` to control the state from outside.
- * - Keep the trigger visible at all times so users can always expand the toolbar.
- *
- * @param {IToolbarBodyProperties} props - The props for the Toolbar component.
- * @param {boolean} props.raw - Define whether the component is styled or not.
- * @param {ComponentSizeEnum} props.sizing - The size of the toolbar.
- * @param {ComponentHeightEnum} props.height - The height definition of the toolbar.
- * @param {ComponentSideEnum} props.side - The side of the toolbar. Drives orientation.
- * @returns {ReactElement} The Toolbar component.
- */
 const Toolbar = (props: IToolbarBodyProperties) => {
   const {
     raw,
     sizing = ComponentSizeEnum.Medium,
     side = ComponentSideEnum.Left,
     height = ComponentHeightEnum.Fullscreen,
+    breakOnMobile,
+    breakpoint,
     children,
     ...restProps
   } = props;
-  const { id, states, methods } = useToolbar();
-  const { state, open, isMobile, openMobile } = states;
+  const { states, methods } = useToolbar();
+  const { state, isMobile, expanded } = states;
+  const { configure } = methods;
 
-  const orientation =
-    side === "left" || side === "right" ? "vertical" : "horizontal";
-  const expanded = isMobile ? openMobile : open;
+  // Undefined values keep what <Toolbar.Root> provided
+  React.useEffect(() => {
+    configure({ breakOnMobile, breakpoint });
+  }, [breakOnMobile, breakpoint, configure]);
 
   return (
     <ToolbarWrapper
       role="toolbar"
-      aria-orientation={orientation}
-      aria-label={props["aria-label"] ?? "Toolbar"}
+      aria-label="Toolbar"
+      {...restProps}
       data-sidebar="toolbar"
       data-state={state}
       data-collapsible={expanded ? "" : "icon"}
@@ -79,15 +65,11 @@ const Toolbar = (props: IToolbarBodyProperties) => {
       data-size={sizing}
       data-height={height}
       data-side={side}
-      data-orientation={orientation}
-      data-id={id}
-      {...restProps}
     >
       {children}
     </ToolbarWrapper>
   );
 };
-Toolbar.displayName = "Toolbar";
 
 /**
  * Toolbar.Root owns the open state and exposes it through context.
@@ -127,66 +109,58 @@ const ToolbarTrigger = (props: IToolbarTriggerProperties) => {
     ...restProps
   } = props;
   const { id, states, methods } = useToolbar();
-  const { open, isMobile, openMobile } = states;
-  const { toggle } = methods;
-  const expanded = isMobile ? openMobile : open;
+  const { expanded } = states;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     onClick?.(event);
-    if (!event.defaultPrevented) toggle();
+    if (!event.defaultPrevented) methods.toggle();
   };
 
   return (
     <ToolbarTriggerWrapper data-raw={Boolean(raw)}>
       <Button
+        aria-label={typeof children === "string" ? undefined : "Toggle toolbar"}
+        variant={variant}
+        sizing={sizing}
+        raw={Boolean(raw)}
+        {...restProps}
         data-sidebar="trigger"
         data-state={expanded ? "expanded" : "collapsed"}
         aria-controls={`${id}-content`}
         aria-expanded={expanded}
-        aria-label={
-          typeof children === "string"
-            ? undefined
-            : (props["aria-label"] ?? "Toggle toolbar")
-        }
-        variant={variant}
-        sizing={sizing}
-        raw={Boolean(raw)}
         onClick={handleClick}
-        {...restProps}
       >
         {children}
       </Button>
     </ToolbarTriggerWrapper>
   );
 };
+
 ToolbarTrigger.displayName = "Toolbar.Trigger";
 
 /**
- * Toolbar.Content wraps the toolbar's tools. Its `id` is referenced by the
- * trigger's `aria-controls`. Children stay mounted while collapsed so they
- * can animate, and are hidden from assistive technology when collapsed.
+ * Toolbar.Content wraps the tools. It stays visible while collapsed so `Item showFirstChild`
+ * and `Section alwaysVisible` can render. Sections and Items decide what to show.
  *
  * @param {React.ComponentProps<"div">} props
  * @returns {ReactElement} The Toolbar.Content component.
  */
-const ToolbarContent = (props: React.ComponentProps<"div">) => {
-  const { children, ...restProps } = props;
+const ToolbarContent = (props: IToolbarContentProperties) => {
+  const { raw, children, ...restProps } = props;
   const { id, states } = useToolbar();
-  const { open, isMobile, openMobile } = states;
-  const expanded = isMobile ? openMobile : open;
 
   return (
     <ToolbarContentWrapper
-      id={`${id}-content`}
-      data-raw="false"
-      data-state={expanded ? "expanded" : "collapsed"}
-      hidden={!expanded}
       {...restProps}
+      id={`${id}-content`}
+      data-raw={Boolean(raw)}
+      data-state={states.expanded ? "expanded" : "collapsed"}
     >
       {children}
     </ToolbarContentWrapper>
   );
 };
+
 ToolbarContent.displayName = "Toolbar.Content";
 
 /**
@@ -199,21 +173,20 @@ ToolbarContent.displayName = "Toolbar.Content";
  */
 const ToolbarSection = (props: IToolbarSectionProperties) => {
   const { alwaysVisible, children, ...restProps } = props;
-  const { states } = useToolbar();
-  const { open, isMobile, openMobile } = states;
-  const expanded = isMobile ? openMobile : open;
+  const { expanded } = useToolbar().states;
 
   return (
     <section
+      {...restProps}
       data-sidebar="section"
       data-state={expanded ? "expanded" : "collapsed"}
       hidden={!alwaysVisible && !expanded}
-      {...restProps}
     >
       {children}
     </section>
   );
 };
+
 ToolbarSection.displayName = "Toolbar.Section";
 
 /**
@@ -229,27 +202,21 @@ const ToolbarItem = (props: IToolbarItemProperties) => {
   const { showFirstChild, onClick, children, ...restProps } = props;
   const childArray = React.Children.toArray(children);
   const { states, methods } = useToolbar();
-  const { open, isMobile, openMobile } = states;
-  const { setOpen, setOpenMobile } = methods;
-  const expanded = isMobile ? openMobile : open;
+  const { expanded } = states;
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     onClick?.(event);
-    if (!expanded) {
-      if (isMobile) setOpenMobile(true);
-      else setOpen(true);
-    }
+    if (!event.defaultPrevented && !expanded) methods.setExpanded(true);
   };
 
   return (
     <div
+      {...restProps}
       data-sidebar="item"
       data-state={expanded ? "expanded" : "collapsed"}
       onClick={handleClick}
-      {...restProps}
     >
-      {!expanded && showFirstChild ? childArray[0] : null}
-      {expanded ? children : null}
+      {expanded ? children : showFirstChild ? childArray[0] : null}
     </div>
   );
 };
