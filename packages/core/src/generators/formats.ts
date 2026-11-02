@@ -1,11 +1,11 @@
-import { THex } from "../../../../types";
+import { THex } from "../types";
 
 export const PXToREM = (value: number): number => Number(0.0625 * value);
 export const PXToPT = (value: number): number => Number(0.75 * value);
 
 export const HEXToRGB = (
   Hex: THex,
-  raw?: boolean
+  raw?: boolean,
 ): [number, number, number] | string => {
   const filteredHex = Hex && Hex.includes("#") ? Hex.replace("#", "") : Hex;
 
@@ -48,10 +48,10 @@ export const RGBAToHEX = (rgba: string, backgroundHex: string): string => {
       Math.round(
         parseInt(channel, 16) * alpha +
           parseInt(backgroundColor.slice(index * 2, index * 2 + 2), 16) *
-            (1 - alpha)
+            (1 - alpha),
       )
         .toString(16)
-        .padStart(2, "0")
+        .padStart(2, "0"),
     )
     .join("");
 
@@ -99,7 +99,7 @@ export const HEXToHSL = (hex: string, raw?: boolean): number[] | string => {
   const rawHSL = RGBToHSL(
     Number(parsedHEXtoRGB[0]),
     Number(parsedHEXtoRGB[1]),
-    Number(parsedHEXtoRGB[2])
+    Number(parsedHEXtoRGB[2]),
   );
 
   if (raw) return rawHSL;

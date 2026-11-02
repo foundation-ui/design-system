@@ -6,7 +6,7 @@ import { useOTPField, OTPFieldProvider } from "./hooks";
 import { OTPCell } from "./styles";
 
 import type { OTPFieldProps, OTPFieldSlotProps } from "./types";
-import { ComponentShapeEnum } from "../../../../types";
+import { ComponentShapeEnum } from "../types";
 
 export interface IOTPFieldComposition {
   Slot: typeof OTPFieldSlot;

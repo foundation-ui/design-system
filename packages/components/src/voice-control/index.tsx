@@ -12,7 +12,7 @@ import {
 } from "./styles";
 import { Button } from "../button";
 
-import { ComponentSizeEnum } from "../../../../types";
+import { ComponentSizeEnum } from "../types";
 import type { IVoiceControlRootProperties, IVoiceControlStates } from "./types";
 
 import type {

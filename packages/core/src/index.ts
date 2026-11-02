@@ -7,4 +7,5 @@ export * from "./generators/score";
 export * from "./generators/formats";
 
 export * from "./speech/web-speech";
-export * from "./speech/types";
+
+export * from "./types";

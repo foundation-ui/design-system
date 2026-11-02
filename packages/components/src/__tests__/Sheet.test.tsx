@@ -15,7 +15,7 @@ import {
   ComponentSideEnum,
   ComponentSizeEnum,
   TComponentSize,
-} from "../../../../types";
+} from "../types";
 
 afterEach(async () => {
   vi.clearAllMocks();

@@ -1,5 +1,5 @@
 import type * as React from "react";
-import type { IReactChildren } from "../../../../../types";
+import type { IReactChildren } from "../../types";
 import type { IButtonProperties } from "../../button/types";
 
 export interface ITabsProperties extends React.ComponentProps<"div"> {

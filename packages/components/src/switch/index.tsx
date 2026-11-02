@@ -8,7 +8,7 @@ import {
   ComponentSizeEnum,
   ComponentVariantEnum,
   ComponentShapeEnum,
-} from "../../../../types";
+} from "../types";
 import type { ISwitchProperties, ISwitchThumbProperties } from "./types";
 
 export interface ISwitchComposition {

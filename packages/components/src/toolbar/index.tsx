@@ -14,7 +14,7 @@ import {
   ComponentHeightEnum,
   ComponentVariantEnum,
   ComponentSideEnum,
-} from "../../../../types";
+} from "../types";
 import type {
   IToolbarBodyProperties,
   IToolbarItemProperties,

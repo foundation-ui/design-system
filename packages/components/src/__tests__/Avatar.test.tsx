@@ -5,7 +5,7 @@ import { screen, render, cleanup } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Avatar } from "../../src/avatar";
-import { ComponentSizeEnum, TComponentSize } from "../../../../types";
+import { ComponentSizeEnum, TComponentSize } from "../types";
 import { AvataStatusEnum } from "../avatar/types";
 
 afterEach(async () => {

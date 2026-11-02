@@ -21,7 +21,7 @@ import {
 
 import { MAJOR_TICK_INTERVAL, MINOR_TICK_INTERVAL } from "./constants";
 import { Guide } from "./types";
-import { IReactChildren } from "../../../../types";
+import { IReactChildren } from "../types";
 
 export interface RulerComposition {
   Root: typeof RulerRoot;

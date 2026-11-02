@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Field, Page, Switch } from "..";
-import { ComponentSizeEnum, ComponentVariantEnum } from "../../../../types";
+import { ComponentSizeEnum, ComponentVariantEnum } from "../types";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.
 

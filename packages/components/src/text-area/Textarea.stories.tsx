@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Field, Page, Textarea } from "..";
-import { TComponentSize } from "../../../../types";
+import { TComponentSize } from "../types";
 
 /**
  * Textarea are used to allow users to write large chunks of text.

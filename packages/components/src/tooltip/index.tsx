@@ -9,7 +9,7 @@ import {
   ComponentSideEnum,
   ComponentSizeEnum,
   ComponentVariantEnum,
-} from "../../../../types";
+} from "../types";
 import type { ITooltipProperties } from "./types";
 
 /**

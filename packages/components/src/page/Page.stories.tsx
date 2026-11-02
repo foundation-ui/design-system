@@ -6,7 +6,7 @@ import {
   ComponentSizeEnum,
   ComponentSideEnum,
   ComponentHeightEnum,
-} from "../../../../types";
+} from "../types";
 
 const meta = {
   title: "Components/Page",

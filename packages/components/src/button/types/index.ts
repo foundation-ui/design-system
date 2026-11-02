@@ -5,7 +5,7 @@ import type {
   IComponentStyling,
   TComponentVariant,
   TComponentVariantExtended,
-} from "../../../../../types";
+} from "../../types";
 import type { SoundName } from "@usefui/hooks";
 
 export interface IButtonProperties

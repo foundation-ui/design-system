@@ -1,6 +1,6 @@
 import type * as React from "react";
 import type { IButtonProperties } from "../../button/types";
-import type { IReactChildren } from "../../../../../types";
+import type { IReactChildren } from "../../types";
 
 export interface IWhiteboardOptionsProperties {
   step?: number;

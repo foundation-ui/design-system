@@ -12,7 +12,7 @@ import { Viewport } from "../viewport";
 import type { IViewportProperties } from "../viewport/types";
 import type { IPromptProperties } from "./types";
 
-import { KeyBindingEnum } from "../../../../types";
+import { KeyBindingEnum } from "../types";
 
 export interface PromptComposition {
   Root: typeof PromptRoot;

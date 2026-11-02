@@ -9,7 +9,7 @@ import { Overlay, Button } from "..";
 import { MorphingBoxWrapper, Trigger } from "./styles";
 
 import { applyDataState } from "../utils";
-import { ComponentSizeEnum, KeyBindingEnum } from "../../../../types";
+import { ComponentSizeEnum, KeyBindingEnum } from "../types";
 
 import type { IButtonProperties } from "../button/types";
 import type { IOverlayProperties } from "../overlay/types";

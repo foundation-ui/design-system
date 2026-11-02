@@ -9,7 +9,7 @@ import {
   IReactChildren,
   ComponentSizeEnum,
   ComponentVariantEnum,
-} from "../../../../types";
+} from "../types";
 import type { ICheckboxProperties } from "./types";
 
 export interface ICheckboxComposition {

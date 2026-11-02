@@ -17,7 +17,7 @@ import {
   SequenceVariantEnum,
   TokenTypesEnum,
   ITemplatePayload,
-} from "../../../../types";
+} from "../types";
 
 export const generateColorTokens = (
   name: string,
@@ -26,7 +26,7 @@ export const generateColorTokens = (
     alpha?: boolean;
     tint?: boolean;
     shade?: boolean;
-  }
+  },
 ) => {
   const HEXRegExp = new RegExp("^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
   if (!HEXRegExp.test(hex)) return;
@@ -53,7 +53,7 @@ export const generateMeasurementTokens = (
   base: number,
   units: number,
   ratio: number,
-  _variant?: TMeasureVariant
+  _variant?: TMeasureVariant,
 ) => {
   return {
     name: name,
@@ -82,13 +82,13 @@ export const generateSequenceVariation = ({
       contrast &&
       calculateContrastScore(
         RGBAToHEX(`rgba(0, 0, 0, ${contrast})`, "ffffff"),
-        "ffffff"
+        "ffffff",
       ),
     dark:
       contrast &&
       calculateContrastScore(
         RGBAToHEX(`rgba(255, 255, 255, ${contrast})`, "000000"),
-        "000000"
+        "000000",
       ),
   };
 
@@ -110,7 +110,7 @@ export const generateSequenceTokens = (
   base: number,
   units: number,
   steps: number,
-  decimal: boolean
+  decimal: boolean,
 ) => {
   const sequenceValues = generateSequences({
     base: base,
@@ -146,7 +146,7 @@ export const generateTokensFromTemplate = (payload) => {
     const isColorType = payload.type === TokenTypesEnum.Color;
 
     const isMeasurementType = ["measurement", "fontsize"].includes(
-      payload.type
+      payload.type,
     );
 
     const isSequenceType = [
@@ -163,7 +163,7 @@ export const generateTokensFromTemplate = (payload) => {
         value.base,
         value.units,
         value.ratio,
-        value.variant
+        value.variant,
       );
     }
     if (isSequenceType) {
@@ -172,14 +172,14 @@ export const generateTokensFromTemplate = (payload) => {
         value.base,
         value.units,
         value.steps,
-        value.decimal
+        value.decimal,
       );
     }
   });
 };
 export const generateTokensLibrary = (
   name: string,
-  template: ITemplatePayload[]
+  template: ITemplatePayload[],
 ): IDesignTokensLibrary => {
   let design_tokens = {
     color: [],
@@ -193,7 +193,7 @@ export const generateTokensLibrary = (
     if (!token.type) return;
     if (token.type && token.values)
       return design_tokens[token.type].push(
-        ...generateTokensFromTemplate(token)
+        ...generateTokensFromTemplate(token),
       );
   });
 

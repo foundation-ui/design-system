@@ -3,7 +3,7 @@
 import React from "react";
 import { AvatarWrapper, BadgeWrapper, StatusWrapper } from "./styles";
 
-import { ComponentSizeEnum, ComponentShapeEnum } from "../../../../types";
+import { ComponentSizeEnum, ComponentShapeEnum } from "../types";
 import type {
   AvatarStatusType,
   IAvatarBadgeProperties,

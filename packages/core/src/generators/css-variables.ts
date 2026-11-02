@@ -6,7 +6,7 @@ import {
   ColorVariantEnum,
   MeasureVariantEnum,
   SequenceVariantEnum,
-} from "../../../../types";
+} from "../types";
 
 const DEFAULT_COLOR_TOKENS_VARIANT = "color";
 const COLOR_TOKENS_VARIANT: TColorVariant[] = [
@@ -36,7 +36,7 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
         return library.map(
           (token) => `
             ${`--${DEFAULT_COLOR_TOKENS_VARIANT}-${token.name}: ${token.base["hex"]};`}
-          `
+          `,
         );
       }
 
@@ -44,7 +44,7 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
         return token[variant].map(
           (item, key) => `
             ${`${variableName(variant, token.name, key)}: ${item.rgb};`}
-          `
+          `,
         );
       });
     },
@@ -53,20 +53,20 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
         token.values.map(
           (value, key) => `
             ${`${variableName(variant, token.name, key)}: ${value.rem}rem;`}
-          `
-        )
+          `,
+        ),
       );
     },
     sequence: (
       library: IComposedLibraryItem[],
-      variant: SequenceVariantEnum
+      variant: SequenceVariantEnum,
     ) => {
       return library.map((token) =>
         token.values.map(
           (value, key) => `
             ${`${variableName(variant, token.name, key)}: ${value.value};`}
-          `
-        )
+          `,
+        ),
       );
     },
   };
@@ -74,13 +74,13 @@ export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
   const [color, alpha, tint, shade, fontsize, measurement, depth, opacity] = [
     variationsTransformers.color(payload.design_tokens.color),
     ...COLOR_TOKENS_VARIANT.map((variant) =>
-      variationsTransformers.color(payload.design_tokens.color, variant)
+      variationsTransformers.color(payload.design_tokens.color, variant),
     ),
     ...SCALE_TOKENS_VARIANT.map((variant) =>
-      variationsTransformers.scale(payload.design_tokens[variant], variant)
+      variationsTransformers.scale(payload.design_tokens[variant], variant),
     ),
     ...SEQUENCE_TOKENS_VARIANT.map((variant) =>
-      variationsTransformers.sequence(payload.design_tokens[variant], variant)
+      variationsTransformers.sequence(payload.design_tokens[variant], variant),
     ),
   ];
 

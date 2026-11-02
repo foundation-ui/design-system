@@ -5,7 +5,7 @@ import {
   type SpeechEngineStartOptions,
   type SpeechError,
   type TranscriptChunk,
-} from "./types";
+} from "../types";
 
 interface RecognitionAlternative {
   transcript: string;

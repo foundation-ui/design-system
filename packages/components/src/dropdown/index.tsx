@@ -15,7 +15,7 @@ import {
   IReactChildren,
   ComponentSideEnum,
   ComponentSizeEnum,
-} from "../../../../types";
+} from "../types";
 
 import type { IButtonProperties } from "../button/types";
 import type {

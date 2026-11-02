@@ -2,7 +2,7 @@ import {
   IComponentVariant,
   IComponentShape,
   IComponentStyling,
-} from "../../../../../types";
+} from "../../types";
 
 export interface IOTPFieldStates {
   otp: string[];

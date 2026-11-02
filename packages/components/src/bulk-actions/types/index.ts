@@ -7,7 +7,7 @@ import type {
   IComponentVariant,
   IReactChildren,
   TComponentSide,
-} from "../../../../../types";
+} from "../../types";
 import type { IButtonProperties } from "../../button/types";
 
 export interface IBulkActionsProperties

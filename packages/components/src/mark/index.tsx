@@ -4,7 +4,7 @@ import React from "react";
 
 import { MarkWrapper } from "./styles";
 
-import { ComponentVariantEnum } from "../../../../types";
+import { ComponentVariantEnum } from "../types";
 import type { IMarkProperties } from "./types";
 
 /**

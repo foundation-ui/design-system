@@ -7,7 +7,7 @@ import { Button } from "..";
 
 import { applyDataState } from "../utils";
 
-import { IReactChildren, ComponentVariantEnum } from "../../../../types";
+import { IReactChildren, ComponentVariantEnum } from "../types";
 import type { IButtonProperties } from "../button/types";
 import type { ICollapsibleProperties } from "./types";
 

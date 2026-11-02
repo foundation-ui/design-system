@@ -1,5 +1,5 @@
 import type * as React from "react";
-import type { IComponentSize, IComponentStyling } from "../../../../../types";
+import type { IComponentSize, IComponentStyling } from "../../types";
 import type { IButtonProperties } from "../../button/types";
 
 import type {
@@ -11,7 +11,7 @@ import type {
 } from "@usefui/core";
 import { UseSpeechOptions } from "@usefui/hooks";
 
-import type { IReactChildren } from "../../../../../types";
+import type { IReactChildren } from "../../types";
 
 export interface IVoiceControlStates {
   transcript: string;

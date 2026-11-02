@@ -7,7 +7,7 @@ import { TabsProvider, useTabs } from "./hooks";
 import { Button } from "../button";
 import { TabWrapper } from "./styles";
 
-import { IReactChildren, ComponentVariantEnum } from "../../../../types";
+import { IReactChildren, ComponentVariantEnum } from "../types";
 import type { ITabsProperties, ITabsTriggerProperties } from "./types";
 
 export interface ITabsComposition {

@@ -3,7 +3,7 @@ import type {
   IComponentShape,
   IComponentSize,
   IComponentStyling,
-} from "../../../../../types";
+} from "../../types";
 
 export enum AvataStatusEnum {
   Online = "online",

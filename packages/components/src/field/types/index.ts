@@ -5,7 +5,7 @@ import type {
   IComponentStyling,
   IComponentVariant,
   IReactChildren,
-} from "../../../../../types";
+} from "../../types";
 
 export type TDateSegmentType =
   | "day"

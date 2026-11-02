@@ -9,11 +9,7 @@ export type SpeechStatus =
 
 export type SpeechProcessing = "on-device" | "cloud" | "unknown";
 
-export type SpeechPermissionState =
-  | "granted"
-  | "denied"
-  | "prompt"
-  | "unknown";
+export type SpeechPermissionState = "granted" | "denied" | "prompt" | "unknown";
 
 export type SpeechErrorCode =
   | "not-allowed"

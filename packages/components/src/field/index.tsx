@@ -31,7 +31,7 @@ import {
   ComponentSizeEnum,
   ComponentVariantEnum,
   ComponentShapeEnum,
-} from "../../../../types";
+} from "../types";
 import { TDateSegmentType, ISegment, SegmentRanges, DateState } from "./types";
 import { dateToState, buildSegments, commitState, clamp } from "./utils";
 

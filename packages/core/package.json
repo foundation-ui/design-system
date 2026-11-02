@@ -36,7 +36,5 @@
     "styled-components": "^5.3.11",
     "typescript": "^5.9.3"
   },
-  "dependencies": {
-    "@usefui/hooks": "workspace:^"
-  }
+  "dependencies": {}
 }

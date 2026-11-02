@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Page, Toggle } from "..";
-import { ComponentVariantEnum } from "../../../../types";
+import { ComponentVariantEnum } from "../types";
 
 const meta = {
   title: "Components/Toggle",

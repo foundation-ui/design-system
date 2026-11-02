@@ -140,10 +140,6 @@ importers:
         version: 5.9.3
 
   packages/core:
-    dependencies:
-      '@usefui/hooks':
-        specifier: workspace:^
-        version: link:../hooks
     devDependencies:
       '@types/react':
         specifier: ^19.2.14
@@ -234,6 +230,10 @@ importers:
         version: 5.9.3
 
   packages/tokens:
+    dependencies:
+      '@usefui/core':
+        specifier: workspace:^
+        version: link:../core
     devDependencies:
       '@types/react':
         specifier: ^19.2.14

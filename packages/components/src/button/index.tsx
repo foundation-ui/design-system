@@ -8,7 +8,7 @@ import {
   ComponentSizeEnum,
   ComponentVariantEnum,
   ComponentShapeEnum,
-} from "../../../../types";
+} from "../types";
 import type { IButtonProperties } from "./types";
 
 /**

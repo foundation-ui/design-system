@@ -8,7 +8,7 @@ import {
   SharedLayoutContent,
 } from "./styles";
 import { useSharedLayout, SharedLayoutProvider } from "./hooks";
-import { IReactChildren } from "../../../../types";
+import { IReactChildren } from "../types";
 import type {
   ISharedLayoutItemProperties,
   ISharedLayoutProperties,

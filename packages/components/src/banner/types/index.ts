@@ -4,7 +4,7 @@ import type {
   IComponentStyling,
   TComponentVariant,
   TComponentVariantExtended,
-} from "../../../../../types";
+} from "../../types";
 
 export interface IBannerProperties
   extends IComponentStyling, IComponentShape, React.ComponentProps<"div"> {

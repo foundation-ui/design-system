@@ -2,7 +2,7 @@ import type {
   IColorProperties,
   IScaleProperties,
   ISequenceProperties,
-} from "../../../../types";
+} from "../types";
 
 interface Size extends IScaleProperties {
   name: string;
@@ -136,7 +136,7 @@ export const generateOpacityClasses = (opacity: ISequenceProperties[]) => {
 export const generateColorClasses = (color: Color[]) => {
   const generateClasses = (
     items: Color[],
-    mode: "background" | "color"
+    mode: "background" | "color",
   ): string[] => {
     const classNamePrefix = mode === "background" ? "bg" : "color";
     const cssAttribute = mode === "background" ? "background-color" : "color";
@@ -234,7 +234,7 @@ export const generateLayoutClasses = () => {
     const wrapClasses = generateCSSClasses(wrap_option, wrap_values);
     const directionClasses = generateCSSClasses(
       direction_option,
-      direction_values
+      direction_values,
     );
 
     return [

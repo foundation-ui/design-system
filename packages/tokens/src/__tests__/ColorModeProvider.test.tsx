@@ -4,7 +4,7 @@ import { test, vi, beforeEach, afterEach, describe, expect } from "vitest";
 import { screen, render, cleanup, fireEvent } from "@testing-library/react";
 
 import { ColorModeProvider, useColorMode } from "../../src";
-import { ColorModesEnum } from "../../../../types";
+import { ColorModesEnum } from "@usefui/core";
 
 const STORAGE_KEY = "color-mode";
 
@@ -75,7 +75,7 @@ describe("ColorModeContext", () => {
     render(
       <ColorModeProvider>
         <TestComponent />
-      </ColorModeProvider>
+      </ColorModeProvider>,
     );
 
     const button = screen.getByTestId("set-color-mode");
@@ -85,7 +85,7 @@ describe("ColorModeContext", () => {
 
     expect(localStorage.setItem).toHaveBeenCalledWith(
       STORAGE_KEY,
-      ColorModesEnum.Light
+      ColorModesEnum.Light,
     );
     expect(button.textContent).toBe(ColorModesEnum.Light);
   });
@@ -95,39 +95,39 @@ describe("ColorModeContext", () => {
     render(
       <ColorModeProvider>
         <TestComponent />
-      </ColorModeProvider>
+      </ColorModeProvider>,
     );
 
     expect(screen.getByTestId("set-color-mode").textContent).toBe(
-      ColorModesEnum.Light
+      ColorModesEnum.Light,
     );
   });
   test("Respect explicit color mode prop", () => {
     render(
       <ColorModeProvider>
         <TestComponent />
-      </ColorModeProvider>
+      </ColorModeProvider>,
     );
 
     expect(screen.getByTestId("set-color-mode").textContent).toBe(
-      ColorModesEnum.Dark
+      ColorModesEnum.Dark,
     );
   });
   test("Update document attribute on mode change", () => {
     render(
       <ColorModeProvider>
         <TestComponent />
-      </ColorModeProvider>
+      </ColorModeProvider>,
     );
 
     expect(document.documentElement.getAttribute("data-theme")).toBe(
-      ColorModesEnum.Dark
+      ColorModesEnum.Dark,
     );
 
     fireEvent.click(screen.getByTestId("set-color-mode"));
 
     expect(document.documentElement.getAttribute("data-theme")).toBe(
-      ColorModesEnum.Light
+      ColorModesEnum.Light,
     );
   });
   test("Empty localStorage and Undefined prefers-color-scheme", () => {
@@ -148,7 +148,7 @@ describe("ColorModeContext", () => {
     render(
       <ColorModeProvider>
         <TestComponent />
-      </ColorModeProvider>
+      </ColorModeProvider>,
     );
 
     // Since no color scheme is preferred and localStorage is empty, it should default to system
@@ -172,7 +172,7 @@ describe("ColorModeContext", () => {
     render(
       <ColorModeProvider config={{}}>
         <TestComponent />
-      </ColorModeProvider>
+      </ColorModeProvider>,
     );
 
     const button = screen.getByTestId("set-color-mode");

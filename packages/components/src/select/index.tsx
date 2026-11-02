@@ -13,7 +13,7 @@ import {
   ComponentVariantEnum,
   ComponentShapeEnum,
   ComponentSizeEnum,
-} from "../../../../types";
+} from "../types";
 import { SharedLayout } from "../shared-layout";
 
 import type {

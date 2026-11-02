@@ -13,7 +13,7 @@ import {
   ComponentSizeEnum,
   ComponentVariantEnum,
   type TComponentSide,
-} from "../../../../types";
+} from "../types";
 
 import type {
   IBulkActionsItemProperties,

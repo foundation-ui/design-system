@@ -4,7 +4,7 @@ import type {
   IComponentSize,
   IComponentStyling,
   IComponentVariant,
-} from "../../../../../types";
+} from "../../types";
 
 export type ScrollContainerProps = {
   $height?: string;

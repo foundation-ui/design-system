@@ -1,3 +1,6 @@
+/** Shared Types */
+export * from "./types";
+
 /** Components */
 export * from "./accordion";
 export * from "./action-swap";

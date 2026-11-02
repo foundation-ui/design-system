@@ -1,5 +1,5 @@
 import type * as React from "react";
-import type { IComponentSize } from "../../../../../types";
+import type { IComponentSize } from "../../types";
 
 export interface LoaderSpinnerProperties extends IComponentSize {
   variant?: "circle" | "circle-filled";

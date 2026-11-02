@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Accordion, Page } from "..";
-import { ComponentSizeEnum, ComponentVariantEnum } from "../../../../types";
+import { ComponentSizeEnum, ComponentVariantEnum } from "../types";
 
 const meta = {
   title: "Components/Accordion",

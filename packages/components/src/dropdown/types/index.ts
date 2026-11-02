@@ -3,7 +3,7 @@ import type {
   IComponentSize,
   IComponentStyling,
   IReactChildren,
-} from "../../../../../types";
+} from "../../types";
 
 export type DropdownContentVariant = "body" | "contrast";
 

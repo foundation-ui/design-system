@@ -3,7 +3,7 @@ import type {
   IComponentShape,
   IComponentSize,
   IReactChildren,
-} from "../../../../../types";
+} from "../../types";
 
 export interface IContextMenuAreaProperties extends React.ComponentProps<"div"> {}
 

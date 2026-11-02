@@ -6,7 +6,7 @@ import type {
   IReactChildren,
   TComponentVariant,
   TComponentVariantExtended,
-} from "../../../../../types";
+} from "../../types";
 
 export type MessageBubbleSide = "left" | "right";
 

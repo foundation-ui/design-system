@@ -3,7 +3,7 @@
 import React from "react";
 
 import { PillBody } from "./styles";
-import { ComponentSizeEnum, ComponentShapeEnum } from "../../../../types";
+import { ComponentSizeEnum, ComponentShapeEnum } from "../types";
 import type { IPillProperties } from "./types";
 
 const Pill = (props: IPillProperties) => {

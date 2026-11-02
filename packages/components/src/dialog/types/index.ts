@@ -3,7 +3,7 @@ import type {
   IComponentSize,
   IComponentStyling,
   IReactChildren,
-} from "../../../../../types";
+} from "../../types";
 import type { IScrollAreaProperties } from "../../scrollarea/types";
 
 export interface IDialogItemProperties

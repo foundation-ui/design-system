@@ -3,7 +3,7 @@
 import React from "react";
 import { SkeletonLoader } from "./styles";
 
-import { ComponentShapeEnum, ComponentSizeEnum } from "../../../../types";
+import { ComponentShapeEnum, ComponentSizeEnum } from "../types";
 import type { SkeletonProperties } from "./types";
 
 /**

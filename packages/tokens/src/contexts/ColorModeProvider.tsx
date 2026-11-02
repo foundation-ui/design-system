@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { TColorMode, ColorModesEnum } from "../../../../types";
+import { TColorMode, ColorModesEnum } from "@usefui/core";
 
 const STORAGE_KEY = "color-mode";
 const DARK_QUERY = "(prefers-color-scheme: dark)";
@@ -44,7 +44,7 @@ export const getPreferredColorScheme = (): TColorMode => {
 
 export const writeColorModeStyles = (
   colorMode: TColorMode,
-  config?: ColorModeConfig
+  config?: ColorModeConfig,
 ) => {
   // Ensure safe usage of window and document
   if (typeof window === "undefined" || typeof document === "undefined") {
@@ -77,21 +77,21 @@ export const writeColorModeStyles = (
 
   if (colorMode) {
     const fontColor = is_light
-      ? config?.font?.light ?? "var(--color-mono-darkest)"
-      : config?.font?.dark ?? "var(--color-mono-white)";
+      ? (config?.font?.light ?? "var(--color-mono-darkest)")
+      : (config?.font?.dark ?? "var(--color-mono-white)");
 
     const bodyColor = is_light
-      ? config?.body?.light ?? "var(--color-mono-white)"
-      : config?.body?.dark ?? "var(--color-mono-darker)";
+      ? (config?.body?.light ?? "var(--color-mono-white)")
+      : (config?.body?.dark ?? "var(--color-mono-darker)");
 
     const contrastColor = is_light
-      ? config?.contrast?.light ?? "var(--color-mono-light)"
-      : config?.contrast?.dark ?? "var(--color-mono-dark)";
+      ? (config?.contrast?.light ?? "var(--color-mono-light)")
+      : (config?.contrast?.dark ?? "var(--color-mono-dark)");
 
     const generateAlphaVars = (
       baseVar: string,
       lightPrefix: string,
-      darkPrefix: string
+      darkPrefix: string,
     ) =>
       vars_array
         .map(
@@ -100,7 +100,7 @@ export const writeColorModeStyles = (
               is_light
                 ? `--${lightPrefix}-${index}`
                 : `--${darkPrefix}-${index}`
-            });`
+            });`,
         )
         .join("\n");
 
@@ -109,21 +109,21 @@ export const writeColorModeStyles = (
         ${generateAlphaVars(
           FONT_VAR,
           config?.font?.light ?? "alpha-mono-darkest",
-          config?.font?.dark ?? "alpha-mono-white"
+          config?.font?.dark ?? "alpha-mono-white",
         )}
 
         ${BODY_VAR}: ${bodyColor};
         ${generateAlphaVars(
           BODY_VAR,
           config?.body?.light ?? "alpha-mono-white",
-          config?.body?.dark ?? "alpha-mono-darker"
+          config?.body?.dark ?? "alpha-mono-darker",
         )}
 
         ${CONTRAST_VAR}: ${contrastColor};
         ${generateAlphaVars(
           CONTRAST_VAR,
           config?.contrast?.light ?? "alpha-mono-light",
-          config?.contrast?.dark ?? "alpha-mono-dark"
+          config?.contrast?.dark ?? "alpha-mono-dark",
         )}
       }`.replace(/\s/g, ""); // minify string
   }
@@ -156,7 +156,7 @@ export const ColorModeProvider = ({
 }) => {
   const fetchedMode = storage.get() as ColorModesEnum;
   const [colorMode, setColorMode] = React.useState<FetchedColorModeType>(
-    fetchedMode ?? getPreferredColorScheme()
+    fetchedMode ?? getPreferredColorScheme(),
   );
 
   /**

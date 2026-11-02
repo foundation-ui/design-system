@@ -34,13 +34,6 @@ export enum ComponentHeightEnum {
   Auto = "auto",
 }
 
-export enum KeyBindingEnum {
-  Ctrl = "ctrlKey",
-  Meta = "metaKey",
-  Alt = "altKey",
-  Shift = "shiftKey",
-}
-
 export type TKeyboardLayout =
   | "QWERTY"
   | "AZERTY"
@@ -66,7 +59,11 @@ export type TComponentVariantExtended =
   | "meta"
   | "success"
   | "hint";
-export type TKeyBinding = "ctrlKey" | "metaKey" | "altKey" | "shiftKey";
+import type { TKeyBinding } from "@usefui/core";
+import { KeyBindingEnum } from "@usefui/core";
+
+export { KeyBindingEnum };
+export type { TKeyBinding };
 export type TFrequencyLabels = "greater-than" | "less-than" | "equals-to";
 export interface IComponentAPI {
   id: string;

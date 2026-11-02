@@ -1,5 +1,5 @@
 import type * as React from "react";
-import type { IComponentControlProperties } from "../../../../../types";
+import type { IComponentControlProperties } from "../../types";
 
 export interface IPromptProperties
   extends

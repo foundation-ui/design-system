@@ -4,7 +4,7 @@ import type {
   IComponentSize,
   IComponentStyling,
   IReactChildren,
-} from "../../../../../types";
+} from "../../types";
 
 export interface ISheetStates {
   open: boolean;

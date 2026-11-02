@@ -11,7 +11,7 @@ import {
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Tooltip } from "../";
-import { ComponentSizeEnum } from "../../../../types";
+import { ComponentSizeEnum } from "../types";
 
 afterEach(async () => {
   vi.clearAllMocks();

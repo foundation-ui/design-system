@@ -3,7 +3,7 @@ import type {
   IComponentSize,
   IComponentStyling,
   IReactChildren,
-} from "../../../../../types";
+} from "../../types";
 import type { IButtonProperties } from "../../button/types";
 import type { IScrollAreaProperties } from "../../scrollarea/types";
 

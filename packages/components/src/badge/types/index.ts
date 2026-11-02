@@ -5,7 +5,7 @@ import type {
   IComponentStyling,
   TComponentVariant,
   TComponentVariantExtended,
-} from "../../../../../types";
+} from "../../types";
 
 export interface IBadgeProperties
   extends

@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Field } from "..";
-import { ComponentVariantEnum, ComponentSizeEnum } from "../../../../types";
+import { ComponentVariantEnum, ComponentSizeEnum } from "../types";
 
 const meta = {
   title: "Components/Field",

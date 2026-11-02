@@ -5,7 +5,7 @@ import type {
   IReactChildren,
   TComponentVariant,
   TComponentVariantExtended,
-} from "../../../../../types";
+} from "../../types";
 
 export interface ICheckboxProperties
   extends IComponentStyling, IComponentSize, React.ComponentProps<"input"> {

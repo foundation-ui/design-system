@@ -1,5 +1,5 @@
 import type * as React from "react";
-import type { IComponentSpacing, IReactChildren } from "../../../../../types";
+import type { IComponentSpacing, IReactChildren } from "../../types";
 import type { IButtonProperties } from "../../button/types";
 
 export interface IAccordionProperties

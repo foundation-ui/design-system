@@ -1,12 +1,6 @@
 import { HEXToRGB, HEXToHSL, RGBAToHEX } from "./formats";
 import { calculateContrastScore } from "./score";
-import {
-  TMode,
-  IColorVariation,
-  THex,
-  TTone,
-  TLuminance,
-} from "../../../../types";
+import { TMode, IColorVariation, THex, TTone, TLuminance } from "../types";
 
 export function applyColorLuminance(hex: THex, luminance: TLuminance): string {
   if (hex.length < 6) return;
@@ -22,7 +16,7 @@ export function applyColorLuminance(hex: THex, luminance: TLuminance): string {
   for (RGBDecLen = 0; RGBDecLen < 3; RGBDecLen++) {
     RBGDec = parseInt(hex.substr(RGBDecLen * 2, 2), 16);
     RBGDec = Math.round(
-      Math.min(Math.max(0, RBGDec + RBGDec * luminance), 255)
+      Math.min(Math.max(0, RBGDec + RBGDec * luminance), 255),
     ).toString(16);
     RGBHex += ("00" + RBGDec).slice(RBGDec.length);
   }
@@ -67,7 +61,7 @@ export const generateAlpha = (Hex: string, amount?: number) => {
       contrast_score: {
         light: calculateContrastScore(
           RGBAToHEX(parsedRGBA, "ffffff"),
-          "ffffff"
+          "ffffff",
         ),
         dark: calculateContrastScore(RGBAToHEX(parsedRGBA, "000000"), "000000"),
       },
@@ -81,14 +75,14 @@ export const generateAlpha = (Hex: string, amount?: number) => {
 export const generateVariation = (
   Hex: string,
   mode: TMode,
-  amount?: number
+  amount?: number,
 ) => {
   const variationValuesArray: IColorVariation[] = [];
 
   while (variationValuesArray.length < (amount ?? 10)) {
     const variationHHEXValue = applyColorLuminance(
       Hex,
-      setLuminanceTone(luminanceAmountFormatter(variationValuesArray), mode)
+      setLuminanceTone(luminanceAmountFormatter(variationValuesArray), mode),
     );
     const variationFormats = {
       hex: variationHHEXValue,

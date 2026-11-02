@@ -5,7 +5,7 @@ import { screen, render, cleanup, fireEvent } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 
 import { Button } from "../../src/button";
-import { ComponentVariantEnum } from "../../../../types";
+import { ComponentVariantEnum } from "../types";
 
 afterEach(async () => {
   vi.clearAllMocks();

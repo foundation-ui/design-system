@@ -7,7 +7,7 @@ import {
   ComponentSizeEnum,
   ComponentShapeEnum,
   ComponentVariantEnum,
-} from "../../../../types";
+} from "../types";
 import type { TextareaProps } from "./types";
 
 /**

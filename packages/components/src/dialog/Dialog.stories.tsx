@@ -3,7 +3,7 @@ import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Badge, Dialog, Divider, DropdownMenu, Field, Tooltip } from "..";
-import { ComponentSizeEnum } from "../../../../types";
+import { ComponentSizeEnum } from "../types";
 
 const Wrapper = styled.div``;
 const meta = {

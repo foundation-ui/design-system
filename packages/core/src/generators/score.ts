@@ -3,7 +3,7 @@ import { getRelativeLuminance } from "./colors";
 
 export const getContrastRatio = (
   textRgb: [number, number, number],
-  backgroundRgb: [number, number, number]
+  backgroundRgb: [number, number, number],
 ): number => {
   const textLuminance = getRelativeLuminance(textRgb);
   const backgroundLuminance = getRelativeLuminance(backgroundRgb);
@@ -14,7 +14,7 @@ export const getContrastRatio = (
 };
 export const calculateContrastScore = (
   textColor: string,
-  backgroundColor: string
+  backgroundColor: string,
 ): string => {
   const textRgb = HEXToRGB(textColor, true);
   const backgroundRgb = HEXToRGB(backgroundColor, true);
@@ -49,7 +49,7 @@ export const calculateStackOrder = (index: number, sequence: number[]) => {
 };
 export const getSequenceUsages = (
   contrastScore: any | null,
-  stackOrder?: any
+  stackOrder?: any,
 ) => {
   const contrastScoreRef = JSON.stringify(Object.values(contrastScore ?? ""));
   const scores = {

@@ -11,7 +11,7 @@ import {
   TreeLink,
 } from "./styles";
 
-import { ComponentSizeEnum } from "../../../../types";
+import { ComponentSizeEnum } from "../types";
 import type { ITreeBranchProperties, ITreeProperties } from "./types";
 
 const TreeBranch = (props: ITreeBranchProperties) => {

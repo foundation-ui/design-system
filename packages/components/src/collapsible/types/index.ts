@@ -1,5 +1,5 @@
 import type * as React from "react";
-import type { IReactChildren } from "../../../../../types";
+import type { IReactChildren } from "../../types";
 
 export interface ICollapsibleProperties extends React.ComponentProps<"div"> {
   defaultOpen?: boolean;

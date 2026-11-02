@@ -15,7 +15,7 @@ import {
   ComponentSizeEnum,
   ComponentVariantEnum,
   IReactChildren,
-} from "../../../../types";
+} from "../types";
 import type {
   IMessageBubbleContentProperties,
   IMessageBubbleMetaProperties,

@@ -7,7 +7,7 @@ import {
   ComponentShapeEnum,
   ComponentSizeEnum,
   ComponentVariantEnum,
-} from "../../../../types";
+} from "../types";
 import type { IBadgeProperties } from "./types";
 
 /**

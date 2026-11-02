@@ -2,15 +2,15 @@ import {
   TokenTypesEnum,
   IComposedLibraryItem,
   IQueryProperties,
-} from "../../../../types";
+} from "@usefui/core";
 
 export const GetTokenFromSource = (
-  props: IQueryProperties
+  props: IQueryProperties,
 ): IComposedLibraryItem | void => {
   const { source, token_category, query } = props;
 
   const filterSource = source.design_tokens[token_category].find(
-    (token: IComposedLibraryItem) => token.name === query
+    (token: IComposedLibraryItem) => token.name === query,
   );
 
   if (filterSource) return filterSource;

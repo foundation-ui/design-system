@@ -4,7 +4,7 @@ import {
   TSequencesOptions,
   IScaleVariation,
   RatioEnum,
-} from "../../../../types";
+} from "../types";
 
 export const MeasurementRatios = [
   {
@@ -37,7 +37,7 @@ export const MeasurementRatios = [
   },
 ];
 export const generateModularScales = (
-  options: TModularScalesOptions
+  options: TModularScalesOptions,
 ): IScaleVariation[] | number[] => {
   const { base, ratio, units, convert } = options;
   const scalesArray: number[] = [base];

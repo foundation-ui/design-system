@@ -4,7 +4,7 @@ import React from "react";
 
 import { BannerWrapper } from "./styles";
 
-import { ComponentShapeEnum, ComponentVariantEnum } from "../../../../types";
+import { ComponentShapeEnum, ComponentVariantEnum } from "../types";
 import type { IBannerProperties } from "./types";
 
 /**

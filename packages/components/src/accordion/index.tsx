@@ -6,7 +6,7 @@ import { AccordionProvider, useAccordion } from "./hooks";
 import { Button } from "../button";
 import { AccordionContentWrapper, AccordionContentInner } from "./styles";
 
-import { IReactChildren, ComponentVariantEnum } from "../../../../types";
+import { IReactChildren, ComponentVariantEnum } from "../types";
 
 import type {
   IAccordionContentProperties,

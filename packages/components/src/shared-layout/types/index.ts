@@ -1,5 +1,5 @@
 import type * as React from "react";
-import type { IComponentStyling, IReactChildren } from "../../../../../types";
+import type { IComponentStyling, IReactChildren } from "../../types";
 
 export type SharedLayoutElementType = "div" | "ul";
 

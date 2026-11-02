@@ -1,5 +1,5 @@
 import type * as React from "react";
-import type { IComponentSize, IComponentStyling } from "../../../../../types";
+import type { IComponentSize, IComponentStyling } from "../../types";
 
 export interface ITreeLink {
   label: React.ReactNode;

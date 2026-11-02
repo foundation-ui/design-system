@@ -1,10 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
-import { KeyBindingEnum, TKeyBinding } from "../../../types";
+import { KeyBindingEnum, TKeyBinding } from "@usefui/core";
 
 export function useKeyPress(
   targetKey: KeyboardEvent["key"],
   hotkey?: boolean,
-  bindKey?: TKeyBinding
+  bindKey?: TKeyBinding,
 ): boolean {
   const [keyPressed, setKeyPressed] = useState(false);
 
@@ -22,16 +22,16 @@ export function useKeyPress(
       }
       return;
     },
-    [bindKey, hotkey, targetKey]
+    [bindKey, hotkey, targetKey],
   );
   const KeyDownHandler = useCallback(
     (event: any) => switchStoredKeyPressed(event, true),
-    [switchStoredKeyPressed]
+    [switchStoredKeyPressed],
   );
 
   const KeyUpHandler = useCallback(
     (event: any) => switchStoredKeyPressed(event, false),
-    [switchStoredKeyPressed]
+    [switchStoredKeyPressed],
   );
 
   useEffect(() => {
