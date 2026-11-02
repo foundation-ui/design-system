@@ -8,15 +8,7 @@ const meta = {
   title: "Components/Collapsible",
   component: Collapsible,
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <Page>
-        <Page.Content className="p-medium-30">
-          <Story />
-        </Page.Content>
-      </Page>
-    ),
-  ],
+  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Collapsible>;
 export default meta;
 

@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { InsetShadowCSSVariable } from "../../global";
 
 const ContentWrapperSizes = css`
   --small: var(--measurement-large-60);
@@ -39,10 +40,12 @@ export const ContentWrapper = styled.ul<any>`
   --medium: var(--measurement-large-80);
   --large: var(--measurement-large-90);
 
+  ${InsetShadowCSSVariable}
+
   @keyframes slide-in {
     0% {
       opacity: 0;
-      transform: translateY(calc(var(--measurement-small-60) * -1));
+      transform: translateY(calc(var(--measurement-small-30) * -1));
     }
     100% {
       opacity: 1;
@@ -53,14 +56,13 @@ export const ContentWrapper = styled.ul<any>`
   &[data-raw="false"] {
     position: fixed;
     margin: 0;
+    padding: 0;
 
-    padding: var(--measurement-medium-30);
-    margin: var(--measurement-medium-10) 0;
-
-    border: var(--measurement-small-10) solid var(--font-color-alpha-10);
+    box-shadow: var(--inset-shadow);
     border-radius: var(--measurement-medium-30);
 
     z-index: var(--depth-default-100);
+    overflow-x: hidden;
 
     ${ContentWrapperSizes}
     ${ContentWrapperVariants}
@@ -73,34 +75,10 @@ export const ContentWrapper = styled.ul<any>`
 
 export const ItemWrapper = styled.li<any>`
   list-style: none;
-  padding: 0;
+  padding: var(--measurement-medium-30);
+
   margin: 0;
   user-select: none;
-
-  &[data-raw="false"] {
-    padding: var(--measurement-medium-10) var(--measurement-medium-30);
-    border-radius: var(--measurement-medium-20);
-    color: var(--font-color);
-
-    letter-spacing: calc(
-      var(--fontsize-small-10) - ((var(--fontsize-small-10) * 1.066))
-    );
-    font-size: inherit;
-    text-align: left;
-
-    outline: none;
-    cursor: pointer;
-
-    transition: all ease-in-out 0.2s;
-
-    &:hover,
-    &:focus,
-    &:active,
-    &:focus-within,
-    &:has(:active) {
-      background-color: var(--font-color-alpha-10);
-    }
-  }
 
   &[aria-disabled="true"] {
     cursor: not-allowed;

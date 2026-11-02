@@ -23,6 +23,10 @@ export interface ICheckboxComposition {
 export interface ICheckboxProperties
   extends IComponentStyling, IComponentSize, React.ComponentProps<"input"> {
   variant?: TComponentVariant | TComponentVariantExtended | "accent";
+  /** Shows the mixed state. Takes visual precedence over `checked`. */
+  indeterminate?: boolean;
+  /** Called with the next checked value when the user toggles the checkbox. */
+  onCheckedChange?: (checked: boolean) => void;
 }
 
 /**
@@ -36,13 +40,16 @@ export interface ICheckboxProperties
  * @param {boolean} props.raw - Whether the checkbox is styled or not. Defaults to `false`.
  * @param {ComponentSizeEnum} props.sizing - The size of the checkbox. Defaults to `medium`.
  * @param {ComponentVariantEnum} props.variant - The styles used by the checkbox. Defaults to `tertiary`.
- * @param {boolean} props.defaultChecked - The initial checked state of the checkbox..
+ * @param {boolean} props.checked - The controlled checked state of the checkbox.
+ * @param {boolean} props.defaultChecked - The initial checked state when uncontrolled.
+ * @param {boolean} props.indeterminate - Whether the checkbox is in a mixed state.
+ * @param {(checked: boolean) => void} props.onCheckedChange - Called when the checked state changes.
  * @param {ReactNode} props.children - The content to be rendered inside the checkbox.
  * @returns {ReactElement} The Checkbox component.
  */
 const Checkbox = (props: ICheckboxProperties) => {
   const { states, methods } = useCheckbox();
-  const { applyChecked, toggleChecked } = methods;
+  const { applyChecked, applyIndeterminate } = methods;
   const {
     raw,
     sizing = ComponentSizeEnum.Medium,
@@ -50,49 +57,77 @@ const Checkbox = (props: ICheckboxProperties) => {
     name,
     disabled,
     required,
+    checked: checkedProp,
     defaultChecked,
+    indeterminate,
     value,
-    onClick,
+    onChange,
+    onCheckedChange,
     children,
     ...restProps
   } = props;
-  const defaultValue = states.checked ? "checked" : "unchecked";
 
-  const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
-    if (toggleChecked) toggleChecked();
-    if (onClick) onClick(event);
+  const isControlled = checkedProp !== undefined;
+  const isChecked = Boolean(states.checked);
+  const isIndeterminate = Boolean(states.indeterminate);
+  const currentState = isIndeterminate
+    ? "indeterminate"
+    : isChecked
+      ? "checked"
+      : "unchecked";
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (disabled) return;
+    const next = event.target.checked;
+
+    // Uncontrolled: own the state. Controlled: the parent drives it.
+    if (!isControlled && applyChecked) applyChecked(next);
+    if (onCheckedChange) onCheckedChange(next);
+    if (onChange) onChange(event);
   };
 
+  // Initial state (uncontrolled)
   React.useEffect(() => {
-    if (defaultChecked && applyChecked) applyChecked(defaultChecked);
+    if (!isControlled && defaultChecked && applyChecked) {
+      applyChecked(defaultChecked);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Keep context in sync with the controlled value
+  React.useEffect(() => {
+    if (isControlled && applyChecked) applyChecked(checkedProp);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checkedProp]);
+
+  // Keep context in sync with indeterminate
+  React.useEffect(() => {
+    if (applyIndeterminate) applyIndeterminate(Boolean(indeterminate));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [indeterminate]);
+
   return (
     <CheckboxWrapper
-      role="checkbox"
-      aria-hidden="true"
-      data-state={value ?? defaultValue}
+      data-state={currentState}
       data-disabled={disabled}
       data-raw={Boolean(raw)}
       data-size={sizing}
       data-variant={variant}
-      aria-label={props["aria-label"] ?? `${name}-checkbox`}
     >
       <NativeInput
         type="checkbox"
         tabIndex={0}
         name={name}
-        value={value ?? defaultValue}
-        defaultChecked={Boolean(states.checked)}
+        value={value}
+        checked={isChecked}
         required={required}
         disabled={disabled}
-        onInput={handleClick}
-        data-state={defaultValue}
+        onChange={handleChange}
+        data-state={currentState}
         data-raw={Boolean(raw)}
         aria-disabled={Boolean(disabled)}
         aria-required={Boolean(required)}
-        aria-checked={Boolean(states.checked)}
+        aria-checked={isIndeterminate ? "mixed" : isChecked}
         aria-label={props["aria-label"] ?? `${name}-native-checkbox`}
         {...restProps}
       />
@@ -108,37 +143,38 @@ const CheckboxRoot = (props: IReactChildren) => {
 };
 CheckboxRoot.displayName = "Checkbox.Root";
 
-const CheckboxIndicator = (props: React.ComponentProps<"span">) => {
+const CheckboxIndicator = (props: React.ComponentProps<"svg">) => {
   const { states } = useCheckbox();
-  const { children, ...restProps } = props;
+  const indeterminate = Boolean(states.indeterminate);
+  const showMark = Boolean(states.checked) || indeterminate;
 
   return (
-    <>
-      {states.checked && (
-        <Indicator {...restProps}>
-          {children ?? (
-            <svg
-              tabIndex={-1}
-              aria-hidden="true"
-              aria-label="checked-icon"
-              focusable="false"
-              width="10"
-              height="10"
-              viewBox="0 0 10 10"
-              fill="none"
-            >
-              <title>Checked</title>
-              <path
-                d="M2 5.5L4.12132 7.62132L8.36396 3.37868"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          )}
-        </Indicator>
+    <React.Fragment>
+      {showMark && (
+        <svg
+          tabIndex={-1}
+          aria-hidden="true"
+          focusable="false"
+          width="10"
+          height="10"
+          viewBox="0 0 10 10"
+          fill="none"
+          {...props}
+        >
+          <title>{indeterminate ? "Partially selected" : "Checked"}</title>
+          <path
+            d={
+              indeterminate
+                ? "M2 5H8"
+                : "M2 5.5L4.12132 7.62132L8.36396 3.37868"
+            }
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       )}
-    </>
+    </React.Fragment>
   );
 };
 CheckboxIndicator.displayName = "Checkbox.Indicator";

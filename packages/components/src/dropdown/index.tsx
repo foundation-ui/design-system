@@ -13,6 +13,7 @@ import {
   ComponentSideEnum,
   ComponentSizeEnum,
 } from "../../../../types";
+import { SharedLayout } from "../shared-layout";
 
 type DropdownContentVariant = "body" | "contrast";
 export interface IDropdownContentProperties
@@ -256,7 +257,9 @@ const DropdownMenuContent = React.forwardRef<
       }}
       {...restProps}
     >
-      {children}
+      <SharedLayout.Root>
+        <SharedLayout inset={12}>{children}</SharedLayout>
+      </SharedLayout.Root>
     </ContentWrapper>
   );
 });
@@ -309,18 +312,20 @@ const DropdownMenuItem = (props: IDropdownItemProperties) => {
   };
 
   return (
-    <ItemWrapper
-      role="menuitem"
-      tabIndex={0}
-      onClick={handleClick}
-      onKeyDown={handleKeydown}
-      aria-disabled={disabled}
-      data-orientation="vertical"
-      data-raw={Boolean(raw)}
-      {...restProps}
-    >
-      {children}
-    </ItemWrapper>
+    <SharedLayout.Item>
+      <ItemWrapper
+        role="menuitem"
+        tabIndex={0}
+        onClick={handleClick}
+        onKeyDown={handleKeydown}
+        aria-disabled={disabled}
+        data-orientation="vertical"
+        data-raw={Boolean(raw)}
+        {...restProps}
+      >
+        {children}
+      </ItemWrapper>
+    </SharedLayout.Item>
   );
 };
 DropdownMenuItem.displayName = "DropdownMenu.Item";

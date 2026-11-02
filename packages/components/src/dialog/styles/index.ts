@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
+import { InsetShadowCSSVariable } from "../../global";
 
 const DialogDefaultStyles = css`
+  ${InsetShadowCSSVariable}
+
   position: fixed;
   top: 15dvh;
   bottom: auto;
@@ -9,11 +12,8 @@ const DialogDefaultStyles = css`
   width: 100%;
 
   border-radius: var(--measurement-medium-30);
-  background: var(--body-color);
-
-  border: var(--measurement-small-10) solid var(--contrast-color);
-  box-shadow: 0 var(--measurement-medium-40) var(--measurement-medium-60)
-    calc(var(--measurement-medium-60) * -1) rgba(0, 0, 0, 0.3);
+  background: var(--contrast-color);
+  box-shadow: var(--inset-shadow);
 
   transition: all ease-in-out 0.2s;
   z-index: var(--depth-default-100);

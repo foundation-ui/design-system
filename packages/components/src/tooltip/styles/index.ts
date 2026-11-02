@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
+import { InsetShadowCSSVariable } from "../../global";
 
 const FadeIn = keyframes`
   0% {
@@ -82,14 +83,16 @@ export const ContentBox = styled.div<any>`
 `;
 export const ContentWrapper = styled.span<any>`
   &[data-raw="false"] {
+    ${InsetShadowCSSVariable}
+
     width: fit-content;
     padding: var(--measurement-medium-10) var(--measurement-medium-30);
 
-    border: var(--measurement-small-10) solid var(--font-color-alpha-10);
+    /* border: var(--measurement-small-10) solid var(--font-color-alpha-10); */
+    box-shadow: var(--inset-shadow);
+
     border-radius: var(--measurement-medium-30);
     backdrop-filter: blur(var(--measurement-small-10));
-    box-shadow: 0 var(--measurement-small-20) var(--measurement-small-20)
-      calc(var(--measurement-small-10) * -1) var(--alpha-mono-darkest-60);
 
     font-size: var(--fontsize-small-60);
     font-weight: 500;

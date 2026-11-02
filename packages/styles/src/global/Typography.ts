@@ -1,11 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 export const TypographyRoot = createGlobalStyle`
-    * {
-        color: var(--font-color);
-    }
     html {
-        font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+        font-family:"Helvetica Neue", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",  ui-sans-serif, system-ui, -apple-system, sans-serif;
     }
     h2, h3, h4, h5, h6 {
         font-weight: 600;

@@ -1,21 +1,13 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Page, Shimmer } from "..";
+import { Shimmer } from "..";
 
 const meta = {
   title: "Components/Shimmer",
   component: Shimmer,
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <Page>
-        <Page.Content className="p-medium-30">
-          <Story />
-        </Page.Content>
-      </Page>
-    ),
-  ],
+  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Shimmer>;
 export default meta;
 

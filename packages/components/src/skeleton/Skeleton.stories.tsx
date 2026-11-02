@@ -14,19 +14,17 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {},
   render: ({ ...args }) => (
-    <Page>
-      <Page.Content className="flex flex-column g-medium-30">
-        <div className="flex align-center justify-center ">
-          <Skeleton sizing="small" />
-          <Skeleton sizing="medium" />
-          <Skeleton sizing="large" />
-        </div>
-        <div className="flex align-center justify-center">
-          <Skeleton shape="square" />
-          <Skeleton shape="smooth" />
-          <Skeleton shape="round" />
-        </div>
-      </Page.Content>
-    </Page>
+    <React.Fragment>
+      <div className="flex align-center justify-center ">
+        <Skeleton sizing="small" />
+        <Skeleton sizing="medium" />
+        <Skeleton sizing="large" />
+      </div>
+      <div className="flex align-center justify-center">
+        <Skeleton shape="square" />
+        <Skeleton shape="smooth" />
+        <Skeleton shape="round" />
+      </div>
+    </React.Fragment>
   ),
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Page, Breadcrumb } from "..";
+import { Breadcrumb, Page } from "..";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -23,14 +23,18 @@ export const Default: Story = {
     path: "",
   },
   render: ({ ...args }) => (
-    <Page>
-      <Page.Content>
-        <div className="flex align-center justify-center h-100">
-          <Breadcrumb path={"/test/demo-path/current-path"} navigate={navigate}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-          </Breadcrumb>
-        </div>
-      </Page.Content>
+    <Page className="flex flex-column">
+      <Page.Navigation className="flex align-center justify-center">
+        <Breadcrumb path={"/test/demo-path/current-path"} navigate={navigate}>
+          <Breadcrumb.Item>Home</Breadcrumb.Item>
+        </Breadcrumb>
+      </Page.Navigation>
+      <Page.Wrapper
+        $navigations={1}
+        className="flex p-x-medium-30 p-b-medium-30"
+      >
+        <Page.Content className="w-100 h-100 p-medium-30"></Page.Content>
+      </Page.Wrapper>
     </Page>
   ),
 };

@@ -2,7 +2,9 @@
 
 import React from "react";
 import { AccordionProvider, useAccordion } from "./hooks";
+
 import { Button, IButtonProperties } from "../button";
+import { AccordionContentWrapper, AccordionContentInner } from "./styles";
 
 import {
   IReactChildren,
@@ -133,31 +135,43 @@ const AccordionContent = (props: IAccordionContentProperties) => {
   const { states, methods } = useAccordion();
   const { getAccordionId, applyValue } = methods;
 
-  const hasSameValueAsContext = value === states.value;
+  const isOpen = value === states.value;
+  const [mounted, setMounted] = React.useState(isOpen);
+
   const IdHandler = {
     trigger: getAccordionId && getAccordionId({ value, type: "trigger" }),
     content: getAccordionId && getAccordionId({ value, type: "content" }),
   };
 
+  const handleAnimationEnd = (event: React.AnimationEvent<HTMLDivElement>) => {
+    restProps.onAnimationEnd?.(event as any);
+    if (event.target === event.currentTarget && !isOpen) {
+      setMounted(false);
+    }
+  };
+
+  React.useLayoutEffect(() => {
+    if (isOpen) setMounted(true);
+  }, [isOpen]);
+
   React.useEffect(() => {
-    if (defaultOpen && !hasSameValueAsContext && applyValue) applyValue(value);
+    if (defaultOpen && !isOpen && applyValue) applyValue(value);
   }, []);
 
+  if (!mounted && !isOpen) return null;
   return (
-    <React.Fragment>
-      {hasSameValueAsContext && (
-        <div
-          role="article"
-          id={String(IdHandler.content)}
-          aria-labelledby={String(IdHandler.trigger)}
-          aria-expanded={hasSameValueAsContext}
-          data-value={value}
-          {...restProps}
-        >
-          {children}
-        </div>
-      )}
-    </React.Fragment>
+    <AccordionContentWrapper
+      role="article"
+      id={String(IdHandler.content)}
+      aria-labelledby={String(IdHandler.trigger)}
+      aria-expanded={isOpen}
+      data-value={value}
+      data-state={isOpen ? "open" : "closed"}
+      {...restProps}
+      onAnimationEnd={handleAnimationEnd}
+    >
+      <AccordionContentInner>{children}</AccordionContentInner>
+    </AccordionContentWrapper>
   );
 };
 AccordionContent.displayName = "Accordion.Content";

@@ -5,3 +5,6 @@ export * from "./generators/css-classes";
 export * from "./generators/tokens";
 export * from "./generators/score";
 export * from "./generators/formats";
+
+export * from "./speech/web-speech";
+export * from "./speech/types";

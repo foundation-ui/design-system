@@ -2,23 +2,18 @@ import React from "react";
 
 export const useTimer = ({ startOnLoad }: { startOnLoad: boolean }) => {
   const [timer, setTimer] = React.useState(Boolean(startOnLoad));
-  const [counter, setCounter] = React.useState(0);
-  const [sec, setSecond] = React.useState(0);
+  const [sec, setSec] = React.useState(0);
 
   React.useEffect(() => {
-    let intervalId: string | number | any;
+    if (!timer) return;
 
-    if (timer) {
-      intervalId = setInterval(() => {
-        const timeElapsed = Math.round(performance.now() - counter);
-
-        setCounter((counter) => counter + 1);
-        setSecond(Number((Number(timeElapsed) / 1000) % 60));
-      }, 1000);
-    }
+    const startedAt = performance.now();
+    const intervalId = setInterval(() => {
+      setSec(Math.floor((performance.now() - startedAt) / 1000));
+    }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [timer, counter]);
+  }, [timer]);
 
   return {
     sec,

@@ -2,8 +2,8 @@ import React from "react";
 
 export interface IEventPayload {
   type: string;
-  occured_at: string;
-  occured_at_epoch: number;
+  occurred_at: string;
+  occurred_at_epoch: number;
   dimension: {
     width: number;
     height: number;
@@ -45,64 +45,82 @@ export const TRACKED_EVENTS: TTrackedEvent[] = [
 ];
 
 export const useComponentsInteractions = (
-  references: string[]
+  references: string[],
+  options?: { silent?: boolean }
 ): { interactions: IComponentUsage[] } => {
   const [componentUsage, setComponentUsage] = React.useState<IComponentUsage[]>(
     []
   );
+  const silent = options?.silent ?? false;
 
-  const handleInteraction = (event: MouseEvent) => {
-    const target = event.target as Element;
+  const handleInteraction = React.useCallback(
+    (event: Event) => {
+      const target = event.target;
 
-    if (references.includes(target.id)) {
+      if (!(target instanceof Element) || !references.includes(target.id)) {
+        return;
+      }
+
+      const targetRect = target.getBoundingClientRect();
+
+      const eventData: IEventPayload = {
+        type: event.type,
+        occurred_at: new Date().toISOString(),
+        occurred_at_epoch: Date.now(),
+        dimension: {
+          width: targetRect.width,
+          height: targetRect.height,
+        },
+        position: {
+          x: targetRect.x,
+          y: targetRect.y,
+          top: targetRect.top,
+          right: targetRect.right,
+          bottom: targetRect.bottom,
+          left: targetRect.left,
+        },
+      };
+
       setComponentUsage((prevData) => {
-        const usageRef = [...prevData];
         const index = prevData.findIndex((item) => item.origin === target.id);
-        const targetRect = target.getBoundingClientRect();
+        const element = target.nodeName.toLowerCase();
+        const content = target.textContent?.trim() ?? "";
 
-        const eventData: IEventPayload = {
-          type: event.type,
-          occured_at: new Date().toISOString(),
-          occured_at_epoch: Date.now(),
-          dimension: {
-            width: targetRect.width,
-            height: targetRect.height,
-          },
-          position: {
-            x: targetRect.x,
-            y: targetRect.y,
-            top: targetRect.top,
-            right: targetRect.right,
-            bottom: targetRect.bottom,
-            left: targetRect.left,
-          },
-        };
-
-        if (index !== -1) {
-          usageRef[index] = {
-            origin: target.id,
-            element: target.nodeName.toLowerCase(),
-            content: target.textContent ?? target.firstChild.nodeName,
-            frequency: usageRef[index]!.frequency + 1,
-            events: [...usageRef[index]!.events, eventData],
-          };
-
-          return usageRef;
-        } else {
+        if (index === -1) {
           return [
             ...prevData,
             {
               origin: target.id,
+              element,
+              content,
               frequency: 1,
               events: [eventData],
             },
           ];
         }
+
+        const existing = prevData[index];
+        if (!existing) return prevData;
+
+        return prevData.map((item, itemIndex) =>
+          itemIndex === index
+            ? {
+                ...existing,
+                element,
+                content,
+                frequency: existing.frequency + 1,
+                events: [...existing.events, eventData],
+              }
+            : item
+        );
       });
-    }
-  };
+    },
+    [references]
+  );
 
   React.useEffect(() => {
+    if (silent) return;
+
     TRACKED_EVENTS.forEach((eventType) =>
       document.addEventListener(eventType, handleInteraction)
     );
@@ -112,7 +130,7 @@ export const useComponentsInteractions = (
         document.removeEventListener(eventType, handleInteraction)
       );
     };
-  }, [references]);
+  }, [silent, handleInteraction]);
 
   return { interactions: componentUsage };
 };

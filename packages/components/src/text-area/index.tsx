@@ -23,7 +23,7 @@ export type ScrollContainerProps = {
 
 export interface TextareaProps
   extends
-    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    React.ComponentPropsWithRef<"textarea">,
     IComponentStyling,
     IComponentSize,
     IComponentShape,

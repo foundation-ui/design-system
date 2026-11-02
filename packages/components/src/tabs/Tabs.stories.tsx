@@ -20,17 +20,7 @@ const meta = {
   title: "Components/Tabs",
   component: Tabs,
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <Page>
-        <Page.Content className="p-medium-30">
-          <div className="flex flex-column  g-medium-30">
-            <Story />
-          </div>
-        </Page.Content>
-      </Page>
-    ),
-  ],
+  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Tabs>;
 export default meta;
 

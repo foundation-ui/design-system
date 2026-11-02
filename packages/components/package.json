@@ -33,6 +33,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/styled-components": "^5.1.36",
+    "@usefui/analytics": "workspace:^",
     "@usefui/core": "workspace:^",
     "@usefui/hooks": "workspace:^",
     "@usefui/tokens": "workspace:^",

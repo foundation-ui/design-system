@@ -1,21 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import theme from "./theme";
 
+import { ClientProvider } from "./client-provider";
 import { Preview } from "@storybook/react-vite";
-
-import { ColorModeProvider } from "../packages/tokens";
-import { ResetStyles, CSSRoot, TypographyRoot } from "../packages/styles";
-
-// import DocumentationTemplate from "./DocumentationTemplate.mdx";
-
-const StoriesWrapepr = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-`;
 
 const preview: Preview = {
   parameters: {
@@ -42,37 +29,14 @@ const preview: Preview = {
         ],
       },
     },
-    actions: { argTypesRegex: "^on[A-Z].*" },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
-    },
   },
   decorators: [
     (Story) => {
       return (
-        <ColorModeProvider
-        // config={{
-        //   body: {
-        //     light: "var(--color-mono-lightest)",
-        //     dark: "var(--color-mono-darker)",
-        //   },
-        //   contrast: {
-        //     light: "var(--color-mono-white)",
-        //     dark: "var(--color-mono-dark)",
-        //   },
-        // }}
-        >
-          <ResetStyles />
-          <CSSRoot />
-          <TypographyRoot />
-          <StoriesWrapepr>
-            <div id="dialog-portal" />
-            <Story />
-          </StoriesWrapepr>
-        </ColorModeProvider>
+        <ClientProvider>
+          <div id="dialog-portal" />
+          <Story />
+        </ClientProvider>
       );
     },
   ],

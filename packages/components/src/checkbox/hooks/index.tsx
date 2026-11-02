@@ -29,16 +29,20 @@ export const CheckboxProvider = ({
 
 function useCheckboxProvider(): IComponentAPI {
   const [checked, setChecked] = useState<boolean>(false);
+  const [indeterminate, setIndeterminate] = useState<boolean>(false);
   const checkboxId = React.useId();
 
   return {
     id: checkboxId,
     states: {
       checked,
+      indeterminate,
     },
     methods: {
-      toggleChecked: () => setChecked(!checked),
+      toggleChecked: () => setChecked((prev) => !prev),
       applyChecked: (state: TComponentAPI) => setChecked(Boolean(state)),
+      applyIndeterminate: (state: TComponentAPI) =>
+        setIndeterminate(Boolean(state)),
     },
   };
 }

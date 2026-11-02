@@ -7,6 +7,11 @@ export type TIDBConfig = {
   version: number;
 };
 
+export type TIDBRecord<T = unknown> = {
+  id: string;
+  value: T;
+};
+
 /**
  * Custom hook to interact with IndexedDB.
  * @param config - Configuration object containing the database name, store names, and version.
@@ -14,21 +19,25 @@ export type TIDBConfig = {
  */
 export const useIndexedDB = (config: TIDBConfig) => {
   const { silent, name, stores, version } = config;
-
-  if (silent) return;
-
   const [db, setDb] = React.useState<IDBDatabase | null>(null);
+
+  const storesKey = stores.join(",");
+  const storesRef = React.useRef(stores);
+  storesRef.current = stores;
 
   /**
    * Retrieves data from IndexedDB.
    * @param storeName - The name of the store to retrieve data from.
    * @param key - The key of the data to retrieve.
-   * @returns A promise that resolves with the retrieved data or rejects with an error.
+   * @returns A promise that resolves with the retrieved record, or `undefined` when absent.
    */
-  const getDataFromIDB = (storeName: string, key: string) => {
-    return new Promise<any>((resolve, reject) => {
+  const getDataFromIDB = <T = unknown>(
+    storeName: string,
+    key: string
+  ): Promise<TIDBRecord<T> | undefined> => {
+    return new Promise((resolve, reject) => {
       if (!db) {
-        reject(`[${name}-v${version}] Database not initialized`);
+        reject(new Error(`[${name}-v${version}] Database not initialized`));
         return;
       }
 
@@ -37,7 +46,7 @@ export const useIndexedDB = (config: TIDBConfig) => {
       const request = store.get(key);
 
       request.onsuccess = () => {
-        resolve(request.result);
+        resolve(request.result as TIDBRecord<T> | undefined);
       };
 
       request.onerror = () => {
@@ -53,10 +62,14 @@ export const useIndexedDB = (config: TIDBConfig) => {
    * @param value - The value of the data to store or update.
    * @returns A promise that resolves when the data is successfully stored or updated, or rejects with an error.
    */
-  const setDataInIDB = (storeName: string, key: string, value: any) => {
-    return new Promise<void>((resolve, reject) => {
+  const setDataInIDB = (
+    storeName: string,
+    key: string,
+    value: unknown
+  ): Promise<void> => {
+    return new Promise((resolve, reject) => {
       if (!db) {
-        reject(`[${name}-v${version}] Database not initialized`);
+        reject(new Error(`[${name}-v${version}] Database not initialized`));
         return;
       }
 
@@ -79,10 +92,10 @@ export const useIndexedDB = (config: TIDBConfig) => {
    * @param storeName - The name of the store to flush.
    * @returns A promise that resolves when the store is successfully flushed, or rejects with an error.
    */
-  const flushDBStore = (storeName: string) => {
-    return new Promise<void>((resolve, reject) => {
+  const flushDBStore = (storeName: string): Promise<void> => {
+    return new Promise((resolve, reject) => {
       if (!db) {
-        reject(`[${name}-v${version}] Database not initialized`);
+        reject(new Error(`[${name}-v${version}] Database not initialized`));
         return;
       }
 
@@ -101,20 +114,21 @@ export const useIndexedDB = (config: TIDBConfig) => {
   };
 
   React.useEffect(() => {
+    if (silent) return;
+
     const openRequest = indexedDB.open(name, version);
 
     openRequest.onupgradeneeded = (event: IDBVersionChangeEvent) => {
-      const db = (event.target as IDBOpenDBRequest).result;
-      stores.forEach((storeName) => {
-        if (!db.objectStoreNames.contains(storeName)) {
-          db.createObjectStore(storeName, { keyPath: "id" });
+      const database = (event.target as IDBOpenDBRequest).result;
+      storesRef.current.forEach((storeName) => {
+        if (!database.objectStoreNames.contains(storeName)) {
+          database.createObjectStore(storeName, { keyPath: "id" });
         }
       });
     };
 
     openRequest.onsuccess = (event: Event) => {
-      const db = (event.target as IDBOpenDBRequest).result;
-      setDb(db);
+      setDb((event.target as IDBOpenDBRequest).result);
     };
 
     openRequest.onerror = (event: Event) => {
@@ -123,7 +137,7 @@ export const useIndexedDB = (config: TIDBConfig) => {
         (event.target as IDBOpenDBRequest).error
       );
     };
-  }, [config]);
+  }, [silent, name, version, storesKey]);
 
   return { db, getDataFromIDB, setDataInIDB, flushDBStore };
 };

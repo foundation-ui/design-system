@@ -11,10 +11,7 @@ import {
 } from "../../../../types";
 
 export interface SkeletonProperties
-  extends
-    IComponentSize,
-    IComponentShape,
-    React.ComponentPropsWithRef<"span"> {}
+  extends IComponentSize, IComponentShape, React.ComponentPropsWithRef<"div"> {}
 
 /**
  * Skeletons are used to convoy a loading state information.

@@ -1,41 +1,49 @@
 import React from "react";
 
-export interface IPerfomanceMetricsProperties {
+export interface IPerformanceMetricsProperties {
   memory_usage: string;
   network_latency: string;
 }
-export const usePerformanceMetrics = (): {
-  metrics: IPerfomanceMetricsProperties;
-} => {
-  const [metrics, setMetrics] = React.useState<{
-    memory_usage: string;
-    network_latency: string;
-  } | null>(null);
 
-  const performance = window.performance;
+const getMemoryUsage = (): string => {
+  const memory = (
+    performance as Performance & { memory?: { usedJSHeapSize: number } }
+  ).memory;
+
+  if (!memory) return "N/A";
+
+  return `${(memory.usedJSHeapSize / (1024 * 1024)).toFixed(2)}MB`;
+};
+
+const getNetworkLatency = (): string => {
+  const [navigation] = performance.getEntriesByType("navigation");
+
+  if (navigation instanceof PerformanceNavigationTiming) {
+    if (navigation.responseStart > 0) {
+      return `${(navigation.responseStart - navigation.requestStart).toFixed(
+        2
+      )}ms`;
+    }
+    return `${navigation.duration.toFixed(2)}ms`;
+  }
+
+  return "N/A";
+};
+
+export const usePerformanceMetrics = (): {
+  metrics: IPerformanceMetricsProperties;
+} => {
+  const [metrics, setMetrics] = React.useState<IPerformanceMetricsProperties>(
+    () => ({
+      memory_usage: getMemoryUsage(),
+      network_latency: getNetworkLatency(),
+    })
+  );
 
   React.useEffect(() => {
-    // Measure memory usage as MB
-    let memoryUsage = "N/A";
-    if ((performance as any).memory) {
-      const memory = (performance as any).memory;
-      memoryUsage = `${(memory.usedJSHeapSize / (1024 * 1024)).toFixed(2)}MB`; // Convert the memory usage from bytes to megabytes
-    }
-
-    // Measure network latency
-    let networkLatency = "N/A";
-    const resourceEntries = performance.getEntriesByType("resource");
-
-    if (resourceEntries.length > 0) {
-      const firstResource = resourceEntries[0];
-      networkLatency = firstResource
-        ? `${firstResource.duration.toFixed(2)}ms`
-        : "N/A";
-    }
-
     setMetrics({
-      memory_usage: memoryUsage,
-      network_latency: networkLatency,
+      memory_usage: getMemoryUsage(),
+      network_latency: getNetworkLatency(),
     });
   }, []);
 

@@ -7,13 +7,9 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story: any) => (
-      <Page>
-        <Page.Content className="p-medium-30">
-          <div className="flex flex-column align-center justify-center h-100">
-            <Story />
-          </div>
-        </Page.Content>
-      </Page>
+      <div className="flex flex-column align-center justify-center h-100">
+        <Story />
+      </div>
     ),
   ],
 };

@@ -16,6 +16,7 @@ import {
   ComponentShapeEnum,
   ComponentSizeEnum,
 } from "../../../../types";
+import { SharedLayout } from "../shared-layout";
 
 export interface ISelectTriggerProperties extends IButtonProperties {
   error?: boolean;
@@ -258,7 +259,9 @@ const SelectContent = (props: ISelectContentProperties) => {
       }}
       {...restProps}
     >
-      {children}
+      <SharedLayout.Root>
+        <SharedLayout inset={12}>{children}</SharedLayout>
+      </SharedLayout.Root>
     </ScrollArea>
   );
 };
@@ -305,20 +308,22 @@ const SelectItem = (props: ISelectItemProperties) => {
   };
 
   return (
-    <List
-      role="option"
-      tabIndex={0}
-      aria-disabled={disabled}
-      aria-selected={isSelected}
-      data-orientation="vertical"
-      data-selected={isSelected}
-      data-raw={Boolean(raw)}
-      onClick={handleSelect}
-      onKeyDown={handleKeyDown}
-      {...restProps}
-    >
-      <Item>{children}</Item>
-    </List>
+    <SharedLayout.Item>
+      <List
+        role="option"
+        tabIndex={0}
+        aria-disabled={disabled}
+        aria-selected={isSelected}
+        data-orientation="vertical"
+        data-selected={isSelected}
+        data-raw={Boolean(raw)}
+        onClick={handleSelect}
+        onKeyDown={handleKeyDown}
+        {...restProps}
+      >
+        <Item>{children}</Item>
+      </List>
+    </SharedLayout.Item>
   );
 };
 SelectItem.displayName = "Select.Item";

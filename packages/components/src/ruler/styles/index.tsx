@@ -2,12 +2,12 @@ import styled, { css } from "styled-components";
 import { RULER_SIZE } from "../constants";
 
 const activeGuideStyles = css`
-  background-color: var(--color-orange);
+  background-color: var(--color-red);
   transition: background ease-in-out 0.2s;
 `;
 
 const inactiveGuideStyles = css`
-  background-color: var(--alpha-orange-60);
+  background-color: var(--alpha-red-60);
   transition: background ease-in-out 0.2s;
 `;
 

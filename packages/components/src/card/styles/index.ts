@@ -1,6 +1,7 @@
 "use client";
 
 import styled, { css } from "styled-components";
+import { FETurbulenceCSSVariable, InsetShadowCSSVariable } from "../../global";
 
 const GridDefaultStyles = css`
   display: grid;
@@ -56,12 +57,20 @@ export const CardContainer = styled.div`
   ${CardDefaultStyles}
 `;
 export const CardWrapper = styled.div`
+  ${InsetShadowCSSVariable}
+  ${FETurbulenceCSSVariable}
+  
   display: flex;
   flex-direction: column;
   gap: var(--measurement-large-10);
   padding: var(--measurement-medium-60);
+
   background-color: var(--contrast-color);
-  border: var(--measurement-small-10) solid var(--font-color-alpha-10);
+  background-image: var(--fe-turbulence);
+  background-repeat: repeat;
+  background-size: 128px 128px;
+
+  box-shadow: var(--inset-shadow);
 
   ${CardDefaultStyles}
 `;

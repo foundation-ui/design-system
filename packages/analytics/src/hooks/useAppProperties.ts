@@ -16,7 +16,7 @@ export type TFeatFlagConfig = {
     open?: boolean;
   };
 };
-export type TSortcutsConfig = {
+export type TShortcutsConfig = {
   enabled: boolean;
   shortcut: {
     hotkey: string;
@@ -25,7 +25,7 @@ export type TSortcutsConfig = {
 };
 export type TUIPropsConfig = {
   silent?: boolean;
-  config?: TIDBConfig;
+  config: TIDBConfig;
   source: TAppPropsSrc;
 };
 export interface IAppProperties {
@@ -36,43 +36,54 @@ export interface IAppProperties {
 
 export const useAppProperties = (
   props: TUIPropsConfig
-): IAppProperties | Record<string, unknown> => {
+): IAppProperties | undefined => {
   const { silent, source, config } = props;
-
-  if (silent) return;
-
+  const { store, key } = source;
   const idb = useIndexedDB(config);
-  const [pending, setPending] = React.useState(true);
-  const [appProps, setAppProps] = React.useState(null);
+  const [appProps, setAppProps] = React.useState<IAppProperties | undefined>(
+    undefined
+  );
+
+  const sourceRef = React.useRef(source);
+  sourceRef.current = source;
 
   React.useEffect(() => {
-    const hasRequiredConfs = () => {
-      if (idb.db && !appProps) {
-        return source.key && source.store && source.payload;
-      } else return false;
-    };
+    if (silent || !idb.db) return;
 
-    if (hasRequiredConfs()) {
-      idb
-        .getDataFromIDB(source.store, source.key)
-        .then((response) => response)
-        .then((data) => {
-          if (data) {
-            setAppProps(data.value);
-            setPending(false);
-          } else {
-            idb
-              .setDataInIDB(source.store, source.key, source.payload)
-              .then(() =>
-                idb.getDataFromIDB(source.store, source.key).then((data) => {
-                  setAppProps(data.value);
-                  setPending(false);
-                })
-              );
-          }
+    if (!store || !key) return;
+
+    let cancelled = false;
+
+    idb
+      .getDataFromIDB<IAppProperties>(store, key)
+      .then((record) => {
+        if (cancelled) return;
+
+        if (record) {
+          setAppProps(record.value);
+          return;
+        }
+
+        const payload = sourceRef.current.payload;
+        if (!payload) return;
+
+        return idb.setDataInIDB(store, key, payload).then(() => {
+          if (!cancelled) setAppProps(payload);
         });
-    }
-  }, [idb.db, pending]);
+      })
+      .catch((error) => {
+        if (!silent) {
+          console.error(
+            "[useAppProperties] Failed to load app properties:",
+            error
+          );
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [idb.db, silent, store, key]);
 
   return appProps;
 };

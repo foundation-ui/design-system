@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Badge, Dialog, Divider, DropdownMenu, Field, Page, Tooltip } from "..";
+import { Badge, Dialog, Divider, DropdownMenu, Field, Tooltip } from "..";
 import { ComponentSizeEnum } from "../../../../types";
 
 const Wrapper = styled.div``;
@@ -18,35 +18,26 @@ type Story = StoryObj<typeof meta>;
 const DialogContent = () => {
   return (
     <React.Fragment>
-      <Dialog.Menu className="align-center ">
-        <Field.Root>
-          <Field variant="ghost" sizing="medium" placeholder="Search" />
-        </Field.Root>
-        <Tooltip content="Close">
-          <Dialog.Control variant="ghost">⏎</Dialog.Control>
-        </Tooltip>
+      <Dialog.Menu className="flex justify-between align-center p-medium-30">
+        <p className="fs-medium-20">Adipisicing elit</p>
       </Dialog.Menu>
       <Divider className="opacity-default-50" />
-      <DropdownMenu.Item className="flex justify-between align-center">
-        Cut
-        <Badge variant="border">
-          <span className="fs-small-50">⌘X</span>
-        </Badge>
-      </DropdownMenu.Item>
 
-      <DropdownMenu.Item className="flex justify-between align-center">
-        Copy
-        <Badge variant="border">
-          <span className="fs-small-50">⌘C</span>
-        </Badge>
-      </DropdownMenu.Item>
+      <p className="fs-medium-10 p-medium-30 m-b-medium-60">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus
+        aliquid suscipit neque aperiam! Voluptatum non a incidunt asperiores
+        sint maiores, molestias culpa fugiat nesciunt dolore nisi quae dolorum
+        vitae autem?
+      </p>
 
-      <DropdownMenu.Item className="flex justify-between align-center">
-        Paste
-        <Badge variant="border">
-          <span className="fs-small-50">⌘V</span>
-        </Badge>
-      </DropdownMenu.Item>
+      <footer className="flex justify-between">
+        <Dialog.Control variant="mono" sizing="medium">
+          Close
+        </Dialog.Control>
+        <Dialog.Control variant="primary" sizing="medium">
+          Continue
+        </Dialog.Control>
+      </footer>
     </React.Fragment>
   );
 };
@@ -68,19 +59,15 @@ export const Default: Story = {
     },
   },
   render: ({ ...args }) => (
-    <Page>
-      <Page.Content className="flex flex-column g-medium-30 align-center justify-center">
-        <div className="flex align-center justify-center g-medium-30 flex-wrap">
-          <Dialog.Root>
-            <Dialog.Trigger>Open Command Menu</Dialog.Trigger>
-            <Dialog>
-              <DialogContent />
-            </Dialog>
-            <Dialog.Overlay />
-          </Dialog.Root>
-        </div>
-      </Page.Content>
-    </Page>
+    <div className="flex align-center justify-center g-medium-30 flex-wrap">
+      <Dialog.Root>
+        <Dialog.Trigger>Open Command Menu</Dialog.Trigger>
+        <Dialog>
+          <DialogContent />
+        </Dialog>
+        <Dialog.Overlay />
+      </Dialog.Root>
+    </div>
   ),
 };
 
@@ -101,19 +88,15 @@ export const Small: Story = {
     },
   },
   render: ({ ...args }) => (
-    <Page>
-      <Page.Content className="flex flex-column g-medium-30 align-center justify-center">
-        <div className="flex align-center justify-center g-medium-30 flex-wrap">
-          <Dialog.Root>
-            <Dialog.Trigger>Open Command Menu</Dialog.Trigger>
-            <Dialog sizing="small" open>
-              <DialogContent />
-            </Dialog>
-            <Dialog.Overlay />
-          </Dialog.Root>
-        </div>
-      </Page.Content>
-    </Page>
+    <div className="flex align-center justify-center g-medium-30 flex-wrap">
+      <Dialog.Root>
+        <Dialog.Trigger>Open Command Menu</Dialog.Trigger>
+        <Dialog sizing="small" open>
+          <DialogContent />
+        </Dialog>
+        <Dialog.Overlay />
+      </Dialog.Root>
+    </div>
   ),
 };
 export const Medium: Story = {
@@ -133,19 +116,15 @@ export const Medium: Story = {
     },
   },
   render: ({ ...args }) => (
-    <Page>
-      <Page.Content className="flex flex-column g-medium-30 align-center justify-center">
-        <div className="flex align-center justify-center g-medium-30 flex-wrap">
-          <Dialog.Root>
-            <Dialog.Trigger>Open Command Menu</Dialog.Trigger>
-            <Dialog sizing="medium" open>
-              <DialogContent />
-            </Dialog>
-            <Dialog.Overlay />
-          </Dialog.Root>
-        </div>
-      </Page.Content>
-    </Page>
+    <div className="flex align-center justify-center g-medium-30 flex-wrap">
+      <Dialog.Root>
+        <Dialog.Trigger>Open Command Menu</Dialog.Trigger>
+        <Dialog sizing="medium" open>
+          <DialogContent />
+        </Dialog>
+        <Dialog.Overlay />
+      </Dialog.Root>
+    </div>
   ),
 };
 export const Large: Story = {
@@ -165,51 +144,39 @@ export const Large: Story = {
     },
   },
   render: ({ ...args }) => (
-    <Page>
-      <Page.Content className="flex flex-column g-medium-30 align-center justify-center">
-        <div className="flex align-center justify-center g-medium-30 flex-wrap">
-          <Dialog.Root>
-            <Dialog.Trigger>Open Command Menu</Dialog.Trigger>
-            <Dialog sizing="large" open>
-              <DialogContent />
-            </Dialog>
-            <Dialog.Overlay />
-          </Dialog.Root>
-        </div>
-      </Page.Content>
-    </Page>
+    <div className="flex align-center justify-center g-medium-30 flex-wrap">
+      <Dialog.Root>
+        <Dialog.Trigger>Open Command Menu</Dialog.Trigger>
+        <Dialog sizing="large" open>
+          <DialogContent />
+        </Dialog>
+        <Dialog.Overlay />
+      </Dialog.Root>
+    </div>
   ),
 };
 export const DefaultOpen = {
   render: ({ ...args }) => (
-    <Page>
-      <Page.Content className="flex flex-column g-medium-30 align-center justify-center">
-        <div className="flex align-center justify-center g-medium-30 flex-wrap">
-          <Dialog.Root>
-            <Dialog.Trigger>Open Command Menu</Dialog.Trigger>
-            <Dialog open>
-              <DialogContent />
-            </Dialog>
-            <Dialog.Overlay closeOnInteract />
-          </Dialog.Root>
-        </div>
-      </Page.Content>
-    </Page>
+    <div className="flex align-center justify-center g-medium-30 flex-wrap">
+      <Dialog.Root>
+        <Dialog.Trigger>Open Command Menu</Dialog.Trigger>
+        <Dialog open>
+          <DialogContent />
+        </Dialog>
+        <Dialog.Overlay closeOnInteract />
+      </Dialog.Root>
+    </div>
   ),
 };
 export const NoOverlay = {
   render: ({ ...args }) => (
-    <Page>
-      <Page.Content className="flex flex-column g-medium-30 align-center justify-center">
-        <div className="flex align-center justify-center g-medium-30 flex-wrap">
-          <Dialog.Root>
-            <Dialog.Trigger>🐻‍❄️</Dialog.Trigger>
-            <Dialog open>
-              <DialogContent />
-            </Dialog>
-          </Dialog.Root>
-        </div>
-      </Page.Content>
-    </Page>
+    <div className="flex align-center justify-center g-medium-30 flex-wrap">
+      <Dialog.Root>
+        <Dialog.Trigger>🐻‍❄️</Dialog.Trigger>
+        <Dialog open>
+          <DialogContent />
+        </Dialog>
+      </Dialog.Root>
+    </div>
   ),
 };

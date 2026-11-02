@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { InsetShadowCSSVariable } from "../../global";
 
 export const FieldDefaultStyles = css`
   outline: none;
@@ -54,10 +55,28 @@ export const FieldDefaultStyles = css`
     opacity: 0.6;
   }
 `;
+export const FieldErrorStyles = css`
+  &[data-error="true"] {
+    color: var(--color-red);
+    border-color: var(--alpha-red-10);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-within,
+    &:has(:hover),
+    &:has(:active) {
+      background-color: var(--alpha-red-10);
+      box-shadow: 0 0 0 var(--measurement-small-30) var(--alpha-red-10);
+    }
+  }
+`;
 export const FieldVariantsStyles = css`
+  ${InsetShadowCSSVariable}
+
   &[data-variant="primary"] {
-    background-color: transparent;
-    border-color: var(--font-color-alpha-10);
+    background: var(--contrast-color);
+    box-shadow: var(--inset-shadow);
 
     &:hover,
     &:focus,
@@ -65,34 +84,28 @@ export const FieldVariantsStyles = css`
     &:focus-within,
     &:has(:hover),
     &:has(:active) {
-      border-color: var(--font-color-alpha-20);
+      border-color: var(--font-color-alpha-10);
     }
 
-    &:focus,
-    &:active,
-    &:focus-within,
-    &:has(:active) {
-      box-shadow: 0 0 0 var(--measurement-small-30) var(--alpha-accent-30);
-    }
-
-    &[data-error="true"] {
-      color: var(--color-red);
-      border-color: var(--alpha-red-10);
-
-      &:hover,
-      &:focus,
-      &:active,
-      &:focus-within,
-      &:has(:hover),
-      &:has(:active) {
-        background-color: var(--alpha-red-10);
-        box-shadow: 0 0 0 var(--measurement-small-30) var(--alpha-red-10);
-      }
-    }
+    ${FieldErrorStyles}
   }
-
   &[data-variant="secondary"] {
-    background-color: transparent;
+    background: transparent;
+    box-shadow: var(--inset-shadow);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-within,
+    &:has(:hover),
+    &:has(:active) {
+      border-color: var(--font-color-alpha-10);
+    }
+
+    ${FieldErrorStyles}
+  }
+  &[data-variant="tertiary"] {
+    background: transparent;
     border-color: var(--font-color-alpha-10);
 
     &:hover,
@@ -104,31 +117,10 @@ export const FieldVariantsStyles = css`
       border-color: var(--font-color-alpha-20);
     }
 
-    &:focus,
-    &:active,
-    &:focus-within,
-    &:has(:active) {
-      box-shadow: 0 0 0 var(--measurement-small-30) var(--font-color-alpha-10);
-    }
-
-    &[data-error="true"] {
-      color: var(--color-red);
-      border-color: var(--alpha-red-10);
-
-      &:hover,
-      &:focus,
-      &:active,
-      &:focus-within,
-      &:has(:hover),
-      &:has(:active) {
-        background-color: var(--alpha-red-10);
-        box-shadow: 0 0 0 var(--measurement-small-30) var(--alpha-red-10);
-      }
-    }
+    ${FieldErrorStyles}
   }
-
   &[data-variant="ghost"] {
-    padding: 0;
+    padding: 0 !important;
     border: none;
     background-color: transparent;
     min-width: fit-content;
@@ -147,6 +139,71 @@ export const FieldVariantsStyles = css`
     &[data-error="true"] {
       color: var(--color-red);
     }
+  }
+
+  &[data-variant="meta"] {
+    background: var(--alpha-blue-10);
+    border-style: dashed !important;
+    border-color: var(--alpha-blue-10) !important;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-within,
+    &:has(:hover),
+    &:has(:active) {
+      border-color: var(--alpha-blue-20) !important;
+    }
+
+    ${FieldErrorStyles}
+  }
+  &[data-variant="warning"] {
+    background: var(--alpha-orange-10);
+    border-style: dashed !important;
+    border-color: var(--alpha-orange-10) !important;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-within,
+    &:has(:hover),
+    &:has(:active) {
+      border-color: var(--alpha-orange-20) !important;
+    }
+
+    ${FieldErrorStyles}
+  }
+  &[data-variant="danger"] {
+    background: var(--alpha-red-10);
+    border-style: dashed !important;
+    border-color: var(--alpha-red-10) !important;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-within,
+    &:has(:hover),
+    &:has(:active) {
+      border-color: var(--alpha-red-20) !important;
+    }
+
+    ${FieldErrorStyles}
+  }
+  &[data-variant="success"] {
+    background: var(--alpha-green-10);
+    border-style: dashed !important;
+    border-color: var(--alpha-green-10) !important;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-within,
+    &:has(:hover),
+    &:has(:active) {
+      border-color: var(--alpha-green-20) !important;
+    }
+
+    ${FieldErrorStyles}
   }
 `;
 export const FieldSizeStyles = css`
@@ -280,7 +337,7 @@ export const ParentWrapper = styled.div<any>`
 `;
 
 export const InnerDivider = styled.div<any>`
-  height: var(--measurement-small-10);
+  height: calc(var(--measurement-small-10) / 2);
   width: 100%;
   background-color: var(--font-color-alpha-10);
 `;
@@ -291,8 +348,8 @@ export const InnerWrapper = styled.div<any>`
     flex-direction: column;
 
     top: var(--measurement-small-10);
-    right: var(--measurement-small-10);
     bottom: var(--measurement-small-10);
+    right: var(--measurement-small-10);
 
     border-left: var(--measurement-small-10) solid var(--font-color-alpha-10);
     border-color: var(--font-color-alpha-10);
@@ -317,6 +374,11 @@ export const InnerWrapper = styled.div<any>`
 export const InnerTrigger = styled.button<any>`
   all: unset;
 
+  &[data-suffix="true"] {
+    user-select: none;
+    pointer-events: none;
+  }
+
   position: relative;
   display: flex;
   flex: 1;
@@ -326,38 +388,19 @@ export const InnerTrigger = styled.button<any>`
   box-sizing: border-box;
   padding: 0 var(--measurement-medium-40);
 
+  min-width: var(--measurement-medium-90);
   color: var(--font-color-alpha-60);
-  backdrop-filter: blur(var(--measurement-small-60));
-
   cursor: pointer;
   transition: all ease-in-out 0.2s;
 
   svg {
-    opacity: 0.6;
+    opacity: 0.3;
     transition: all ease-in-out 0.2s;
   }
-
-  /* ::before {
-    content: "";
-    inset: 0;
-
-    border-radius: inherit;
-    position: absolute;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
-    mask-composite: intersect;
-
-    transition: all ease-in-out 0.2s;
-    mask-image: linear-gradient(var(--font-color), transparent);
-  } */
 
   &:hover,
   &:active {
     color: var(--font-color);
-    /* background-position: 0% 50%; */
-
     svg {
       opacity: 0.8;
     }
@@ -371,24 +414,33 @@ export const InnerTrigger = styled.button<any>`
 
 export const InnerSegment = styled.span<any>`
   &[data-raw="false"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     border-radius: inherit;
+    box-sizing: border-box;
 
     text-align: center;
     outline: none;
+    cursor: text;
     color: inherit;
-    /* transition: background-color ease-in-out 0.2s; */
+    font-variant-numeric: tabular-nums;
+    transition: all ease-in-out 0.2s;
 
     &[data-placeholder="true"] {
       color: var(--font-color-alpha-30);
     }
 
-    &:hover,
-    &:focus,
-    &:active,
-    &:focus-within,
-    &:has(:active) {
-      /* background-color: var(--font-color-alpha-10); */
+    &:hover {
+      background-color: var(--font-color-alpha-10);
       color: var(--font-color);
+    }
+
+    /* Active cell: explicit so it wins over the inherited wrapper styles */
+    &[data-raw="false"][data-focused="true"] {
+      color: var(--font-color);
+      background-color: var(--font-color-alpha-10);
     }
   }
 `;
@@ -407,4 +459,141 @@ export const HiddenInput = styled.input<any>`
   color: inherit;
   padding: 0;
   min-width: var(--measurement-medium-60);
+`;
+
+export const RangeWrapper = styled.div<any>`
+  display: flex;
+  align-items: center;
+  gap: var(--measurement-medium-30);
+  width: 100%;
+
+  &[data-disabled="true"] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+`;
+export const RangeValue = styled.output<any>`
+  &[data-raw="false"] {
+    flex-shrink: 0;
+    min-width: var(--measurement-medium-90);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--font-color-alpha-60);
+  }
+`;
+
+const RangeSizeStyles = css`
+  &[data-size="small"] {
+    --range-track-height: var(--measurement-medium-60);
+    --range-thumb-size: var(--measurement-medium-60);
+  }
+  &[data-size="medium"] {
+    --range-track-height: var(--measurement-medium-80);
+    --range-thumb-size: var(--measurement-medium-80);
+  }
+  &[data-size="large"] {
+    --range-track-height: var(--measurement-medium-90);
+    --range-thumb-size: var(--measurement-medium-90);
+  }
+`;
+const RangeShapeStyles = css`
+  &[data-shape="square"] {
+    --radius: 0;
+  }
+
+  &[data-shape="smooth"] {
+    --radius: var(--measurement-medium-10);
+  }
+
+  &[data-shape="round"] {
+    --radius: var(--measurement-medium-90);
+  }
+`;
+export const RangeInput = styled.input<any>`
+  ${RangeSizeStyles}
+  ${RangeShapeStyles}
+  --range-progress: 0%;
+
+  &[data-raw="false"] {
+    -webkit-appearance: none;
+    appearance: none;
+    flex: 1;
+    width: 100%;
+    height: var(--range-thumb-size);
+
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    /* Track */
+    &::-webkit-slider-runnable-track {
+      height: var(--range-track-height);
+      border-radius: var(--radius);
+      background: linear-gradient(
+        to right,
+        var(--font-color-alpha-10) var(--range-progress),
+        var(--contrast-color) var(--range-progress)
+      );
+    }
+    &::-moz-range-track {
+      height: var(--range-track-height);
+      ${RangeShapeStyles}
+      background: var(--font-color-alpha-10);
+    }
+    &::-moz-range-progress {
+      height: var(--range-track-height);
+      ${RangeShapeStyles}
+      background: var(--font-color-alpha-10);
+    }
+
+    /* Thumb */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: var(--measurement-medium-10);
+      height: var(--range-thumb-size);
+      margin-top: calc(
+        (var(--range-track-height) - var(--range-thumb-size)) / 2
+      );
+      border-radius: var(--radius);
+      border: var(--measurement-small-10) solid var(--font-color);
+      background: var(--font-color);
+      transition: transform ease-in-out 0.2s;
+    }
+    &::-moz-range-thumb {
+      width: var(--range-thumb-size);
+      height: var(--range-thumb-size);
+      border-radius: 50%;
+      border: var(--measurement-small-10) solid var(--font-color);
+      background: var(--font-color);
+      transition: transform ease-in-out 0.2s;
+    }
+
+    &:hover:not(:disabled)::-webkit-slider-thumb {
+      transform: scaleY(0.6);
+    }
+    &:hover:not(:disabled)::-moz-range-thumb {
+      transform: scaleY(0.6);
+    }
+
+    /* &:focus-visible::-webkit-slider-thumb {
+      box-shadow: 0 0 0 var(--measurement-small-30) var(--font-color-alpha-20);
+    }
+    &:focus-visible::-moz-range-thumb {
+      box-shadow: 0 0 0 var(--measurement-small-30) var(--font-color-alpha-20);
+    } */
+
+    &[data-error="true"]::-webkit-slider-thumb {
+      border-color: var(--color-red);
+    }
+    &[data-error="true"]::-moz-range-thumb {
+      border-color: var(--color-red);
+    }
+  }
 `;

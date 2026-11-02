@@ -11,15 +11,7 @@ const meta = {
   title: "Components/Textarea",
   component: Textarea,
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <Page>
-        <Page.Content className="p-medium-30">
-          <Story />
-        </Page.Content>
-      </Page>
-    ),
-  ],
+  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Textarea>;
 export default meta;
 

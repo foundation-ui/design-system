@@ -8,15 +8,7 @@ const meta = {
   title: "Components/Toggle",
   component: Toggle,
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <Page>
-        <Page.Content className="p-medium-30">
-          <Story />
-        </Page.Content>
-      </Page>
-    ),
-  ],
+  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Toggle>;
 export default meta;
 

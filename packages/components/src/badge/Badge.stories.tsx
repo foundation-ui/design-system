@@ -1,8 +1,7 @@
 import React from "react";
+
+import { Badge, Page, Pill } from "../";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Badge } from "./";
-import { Page } from "..";
-import { ComponentSizeEnum } from "../../../../types";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.
 
@@ -21,9 +20,9 @@ const meta = {
   component: Badge,
   tags: ["autodocs"],
   decorators: [
-    (Story) => (
-      <Page>
-        <Page.Content className="p-medium-30">
+    (Story: any) => (
+      <Page className="p-medium-30">
+        <Page.Content className="flex align-center justify-center h-100 w-100 g-medium-30">
           <Story />
         </Page.Content>
       </Page>
@@ -34,7 +33,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 export const Default: Story = {
-  render: ({ ...args }) => <Badge {...args} />,
+  render: ({ ...args }) => <Badge {...args}>Badge</Badge>,
 };
 export const Shapes: Story = {
   render: ({ ...args }) => {
@@ -106,6 +105,46 @@ export const Emphasis: Story = {
           Warning
         </Badge>
         <Badge emphasis variant="danger">
+          Error
+        </Badge>
+      </div>
+    );
+  },
+};
+export const WithPill: Story = {
+  render: ({ ...args }) => {
+    return (
+      <div className="flex g-medium-30">
+        <Badge variant="primary">
+          <Pill status="success" />
+          Primary
+        </Badge>
+        <Badge variant="secondary">
+          <Pill status="warning" />
+          Secondary
+        </Badge>
+        <Badge variant="border">
+          <Pill status="danger" />
+          Border
+        </Badge>
+        <Badge variant="meta">
+          <Pill color="var(--color-indigo)" className="bg-indigo" pulse />
+          Meta
+        </Badge>
+        <Badge variant="hint">
+          <Pill color="var(--color-purple)" className="bg-purple" pulse />
+          Hint
+        </Badge>
+        <Badge variant="success">
+          <Pill status="success" />
+          Success
+        </Badge>
+        <Badge variant="warning">
+          <Pill status="warning" />
+          Warning
+        </Badge>
+        <Badge variant="danger">
+          <Pill status="danger" />
           Error
         </Badge>
       </div>

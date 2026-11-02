@@ -2,3 +2,7 @@ export * from "./useClickOutside";
 export * from "./useEventListener";
 export * from "./useKeyPress";
 export * from "./useDisabledScroll";
+export * from "./useIsMobile";
+export * from "./useSpeech";
+export * from "./useSound";
+export * from "./useGradient";

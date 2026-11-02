@@ -18,17 +18,7 @@ const meta = {
   title: "Components/Switch",
   component: Switch,
   tags: ["autodocs"],
-  decorators: [
-    (Story) => (
-      <Page>
-        <Page.Content className="p-medium-30">
-          <div className="flex flex-column align-center justify-center h-100 g-medium-30">
-            <Story />
-          </div>
-        </Page.Content>
-      </Page>
-    ),
-  ],
+  decorators: [(Story) => <Story />],
 } satisfies Meta<typeof Switch>;
 export default meta;
 

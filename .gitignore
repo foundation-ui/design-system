@@ -198,3 +198,6 @@ storybook-static/
 
 # Nx
 .nx/cache
+
+# Registry
+.registry

@@ -10,15 +10,14 @@ const config: StorybookConfig = {
     "../apps/**/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../apps/**/src/**/*.mdx",
   ],
-  addons: [getAbsolutePath("@storybook/addon-links"), getAbsolutePath("@storybook/addon-docs")],
+  addons: [
+    getAbsolutePath("@storybook/addon-links"),
+    getAbsolutePath("@storybook/addon-docs"),
+  ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
-  // docs: {
-  //   autodocs: "tag",
-  //   defaultName: "Documentation",
-  // },
 };
 export default config;
 

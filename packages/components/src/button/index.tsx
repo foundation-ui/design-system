@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useSound, SoundName } from "@usefui/hooks";
 
 import { ButtonWrapper, ButtonMaskElement, ButtonOverlay } from "./styles";
 import {
@@ -22,7 +23,7 @@ export interface IButtonProperties
     React.ComponentPropsWithRef<"button"> {
   rawicon?: boolean;
   variant?: TComponentVariant | TComponentVariantExtended | "link" | "accent";
-
+  sound?: SoundName;
   animation?: "reflective";
 }
 
@@ -41,6 +42,7 @@ export interface IButtonProperties
  * @param {TComponentShape} props.shape - The size of the component. Defaults to `smooth`.
  * @param {string} props.variant - The style definition used by the component.
  * @param {string} props.animation - The animation that comes with the variant.
+ * @param {string} props.sound - Define whether the component emmit a sound when interacted with or not.
  * @param {ReactNode} props.children - The content to be rendered inside the button.
  * @returns {ReactElement} The Button component.
  */
@@ -52,8 +54,10 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
       sizing = ComponentSizeEnum.Medium,
       shape = ComponentShapeEnum.Smooth,
       animation,
+      sound,
       raw,
       rawicon,
+      onClick,
       onMouseMove,
       onMouseEnter,
       onMouseLeave,
@@ -74,6 +78,8 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
 
     const [position, setPosition] = React.useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = React.useState(false);
+
+    const interactionSound = useSound();
 
     const handleMouseMove = React.useCallback(
       (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -106,6 +112,15 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
       },
       [],
     );
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      onClick?.(e);
+
+      if (!sound || disabledState || e.defaultPrevented) return;
+      try {
+        const result: unknown = interactionSound.play(sound);
+        if (result instanceof Promise) result.catch(() => {});
+      } catch {}
+    };
 
     return (
       <ButtonWrapper
@@ -123,6 +138,7 @@ export const Button = React.forwardRef<HTMLButtonElement, IButtonProperties>(
         data-raw={Boolean(raw)}
         data-rawicon={Boolean(rawicon)}
         tabIndex={0}
+        onClick={handleClick}
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

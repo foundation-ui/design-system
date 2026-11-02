@@ -14,24 +14,22 @@ export default meta;
 
 export const Default = {
   render: () => (
-    <Page>
-      <Page.Content>
-        <Resizable
-          defaultWidth={30}
-          minWidth={0}
-          maxWidth={50}
-          left={
-            <div className="h-100 w-100 flex align-center justify-center bg-mono-darkest">
-              One
-            </div>
-          }
-          right={
-            <div className="h-100 w-100 flex align-center justify-center">
-              Two
-            </div>
-          }
-        />
-      </Page.Content>
+    <Page className="w-100">
+      <Resizable
+        defaultWidth={30}
+        minWidth={0}
+        maxWidth={50}
+        left={
+          <div className="h-100 w-100 flex align-center justify-center bg-mono-dark">
+            One
+          </div>
+        }
+        right={
+          <div className="h-100 w-100 flex align-center justify-center">
+            Two
+          </div>
+        }
+      />
     </Page>
   ),
 };

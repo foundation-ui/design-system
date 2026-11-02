@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { InsetShadowCSSVariable } from "../../global";
 
 const AvatarSizesStyles = css`
   &[data-size="small"] {
@@ -66,20 +67,21 @@ const AvatarStatusesStyles = css`
 
 export const AvatarWrapper = styled.div`
   &[data-raw="false"] {
+    ${InsetShadowCSSVariable}
+
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 
     background-color: var(--font-color-alpha-10);
-    border: var(--measurement-small-10) solid var(--font-color-alpha-10);
+    box-shadow: var(--inset-shadow);
 
     img {
       width: inherit;
       height: inherit;
       min-width: inherit;
       min-height: inherit;
-      border: var(--measurement-small-10) solid var(--font-color-alpha-10);
     }
 
     ${AvatarShapesStyles}
@@ -88,17 +90,19 @@ export const AvatarWrapper = styled.div`
 `;
 export const StatusWrapper = styled.svg`
   --status-position: calc(
-    var(--measurement-medium-10) - (var(--measurement-medium-10) * 2)
+    var(--measurement-small-60) - (var(--measurement-small-60) * 2)
   );
 
   position: absolute;
   stroke-width: var(--measurement-small-10);
   bottom: var(--status-position);
-  right: var(--status-position);
+  left: var(--status-position);
 
   ${AvatarStatusesStyles}
 `;
 export const BadgeWrapper = styled.div`
+  ${InsetShadowCSSVariable}
+
   --status-position: calc(
     var(--measurement-medium-10) - (var(--measurement-medium-10) * 2)
   );
@@ -108,8 +112,8 @@ export const BadgeWrapper = styled.div`
   bottom: var(--status-position);
   right: var(--status-position);
 
-  width: var(--measurement-medium-60);
-  height: var(--measurement-medium-60);
+  width: var(--fontsize-medium-40);
+  height: var(--fontsize-medium-40);
 
   background-color: var(--font-color-alpha-10);
   border-radius: 100%;
@@ -120,6 +124,6 @@ export const BadgeWrapper = styled.div`
     min-width: inherit;
     min-height: inherit;
     border-radius: 100%;
-    border: var(--measurement-small-10) solid var(--font-color-alpha-10);
+    box-shadow: var(--inset-shadow);
   }
 `;

@@ -22,9 +22,9 @@ const meta = {
   component: DropdownMenu,
   tags: ["autodocs"],
   decorators: [
-    (Story) => (
-      <Page>
-        <Page.Content className="p-medium-30 flex align-center justify-center w-100 h-100">
+    (Story: any) => (
+      <Page className="p-medium-30">
+        <Page.Content className="flex align-center justify-center h-100 w-100 g-medium-30">
           <Story />
         </Page.Content>
       </Page>
@@ -36,190 +36,104 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    raw: false,
-    container: "",
-    defaultOpen: false,
-    radio: false,
-    disabled: false,
-  },
-  argTypes: {
-    variant: {
-      options: [
-        ComponentVariantEnum.Primary,
-        ComponentVariantEnum.Secondary,
-        ComponentVariantEnum.Tertiary,
-        ComponentVariantEnum.Mono,
-        ComponentVariantEnum.Border,
-        ComponentVariantEnum.Ghost,
-      ],
-      control: { type: "radio" },
-    },
-    sizing: {
-      options: [
-        ComponentSizeEnum.Small,
-        ComponentSizeEnum.Medium,
-        ComponentSizeEnum.Large,
-      ],
-      control: { type: "radio" },
-    },
-  },
   render: ({ ...args }) => (
     <DropdownMenu.Root>
       <DropdownMenu>
-        <DropdownMenu.Trigger variant="secondary">Actions</DropdownMenu.Trigger>
+        <DropdownMenu.Trigger variant="secondary" sizing="small" shape="round">
+          Actions
+        </DropdownMenu.Trigger>
 
-        <DropdownMenu.Content>
-          <DropdownMenu.Item className="flex justify-between align-center">
-            Cut
-            <Badge variant="border">
-              <span className="fs-small-50">⌘X</span>
-            </Badge>
-          </DropdownMenu.Item>
-
-          <DropdownMenu.Item className="flex justify-between align-center">
-            Copy
-            <Badge variant="border">
-              <span className="fs-small-50">⌘C</span>
-            </Badge>
-          </DropdownMenu.Item>
-
-          <DropdownMenu.Item className="flex justify-between align-center">
-            Paste
-            <Badge variant="border">
-              <span className="fs-small-50">⌘V</span>
-            </Badge>
-          </DropdownMenu.Item>
+        <DropdownMenu.Content className="flex flex-column">
+          <DropdownMenu.Item className="fs-medium-10">Cut</DropdownMenu.Item>
+          <DropdownMenu.Item className="fs-medium-10">Copy</DropdownMenu.Item>
+          <DropdownMenu.Item className="fs-medium-10">Paste</DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu>
     </DropdownMenu.Root>
+  ),
+};
+export const Sizes: Story = {
+  render: ({ ...args }) => (
+    <React.Fragment>
+      {["small", "medium", "large"].map((variant) => (
+        <DropdownMenu.Root>
+          <DropdownMenu>
+            <DropdownMenu.Trigger
+              variant="secondary"
+              sizing="small"
+              shape="round"
+            >
+              {variant}
+            </DropdownMenu.Trigger>
+
+            <DropdownMenu.Content sizing={variant as any}>
+              <DropdownMenu.Item className="fs-medium-10">
+                Cut
+              </DropdownMenu.Item>
+              <DropdownMenu.Item className="fs-medium-10">
+                Copy
+              </DropdownMenu.Item>
+              <DropdownMenu.Item className="fs-medium-10">
+                Paste
+              </DropdownMenu.Item>
+            </DropdownMenu.Content>
+          </DropdownMenu>
+        </DropdownMenu.Root>
+      ))}
+    </React.Fragment>
+  ),
+};
+export const Variants: Story = {
+  render: ({ ...args }) => (
+    <React.Fragment>
+      {["body", "contrast"].map((variant) => (
+        <DropdownMenu.Root>
+          <DropdownMenu>
+            <DropdownMenu.Trigger
+              variant="secondary"
+              sizing="small"
+              shape="round"
+            >
+              {variant}
+            </DropdownMenu.Trigger>
+
+            <DropdownMenu.Content sizing="small" variant={variant as any}>
+              <DropdownMenu.Item className="fs-medium-10">
+                Cut
+              </DropdownMenu.Item>
+              <DropdownMenu.Item className="fs-medium-10">
+                Copy
+              </DropdownMenu.Item>
+              <DropdownMenu.Item className="fs-medium-10">
+                Paste
+              </DropdownMenu.Item>
+            </DropdownMenu.Content>
+          </DropdownMenu>
+        </DropdownMenu.Root>
+      ))}
+    </React.Fragment>
   ),
 };
 export const RadioItem: Story = {
   render: ({ ...args }) => (
     <DropdownMenu.Root>
       <DropdownMenu>
-        <DropdownMenu.Trigger variant="secondary">Actions</DropdownMenu.Trigger>
+        <DropdownMenu.Trigger variant="secondary" sizing="small" shape="round">
+          Actions
+        </DropdownMenu.Trigger>
 
-        <DropdownMenu.Content className="flex flex-column g-small-60">
-          <DropdownMenu.Item
-            className="flex justify-between align-center"
-            radio
-          >
+        <DropdownMenu.Content sizing="small">
+          <DropdownMenu.Item radio className="fs-medium-10">
             Cut
-            <Badge variant="border">
-              <span className="fs-small-50">⌘X</span>
-            </Badge>
           </DropdownMenu.Item>
-
-          <DropdownMenu.Item
-            className="flex justify-between align-center"
-            radio
-          >
+          <DropdownMenu.Item radio className="fs-medium-10">
             Copy
-            <Badge variant="border">
-              <span className="fs-small-50">⌘C</span>
-            </Badge>
           </DropdownMenu.Item>
-
-          <DropdownMenu.Item
-            className="flex justify-between align-center"
-            radio
-          >
+          <DropdownMenu.Item radio className="fs-medium-10">
             Paste
-            <Badge variant="border">
-              <span className="fs-small-50">⌘V</span>
-            </Badge>
           </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu>
     </DropdownMenu.Root>
-  ),
-};
-export const Variants: Story = {
-  render: ({ ...args }) => (
-    <>
-      <DropdownMenu.Root>
-        <DropdownMenu>
-          <DropdownMenu.Trigger variant="secondary">
-            Actions
-          </DropdownMenu.Trigger>
-
-          <DropdownMenu.Content className="flex flex-column g-small-60">
-            <DropdownMenu.Item
-              className="flex justify-between align-center"
-              radio
-            >
-              Cut
-              <Badge variant="border">
-                <span className="fs-small-50">⌘X</span>
-              </Badge>
-            </DropdownMenu.Item>
-
-            <DropdownMenu.Item
-              className="flex justify-between align-center"
-              radio
-            >
-              Copy
-              <Badge variant="border">
-                <span className="fs-small-50">⌘C</span>
-              </Badge>
-            </DropdownMenu.Item>
-
-            <DropdownMenu.Item
-              className="flex justify-between align-center"
-              radio
-            >
-              Paste
-              <Badge variant="border">
-                <span className="fs-small-50">⌘V</span>
-              </Badge>
-            </DropdownMenu.Item>
-          </DropdownMenu.Content>
-        </DropdownMenu>
-      </DropdownMenu.Root>
-      <DropdownMenu.Root>
-        <DropdownMenu>
-          <DropdownMenu.Trigger variant="secondary">
-            Actions
-          </DropdownMenu.Trigger>
-
-          <DropdownMenu.Content
-            className="flex flex-column g-small-60"
-            variant="contrast"
-          >
-            <DropdownMenu.Item
-              className="flex justify-between align-center"
-              radio
-            >
-              Cut
-              <Badge variant="border">
-                <span className="fs-small-50">⌘X</span>
-              </Badge>
-            </DropdownMenu.Item>
-
-            <DropdownMenu.Item
-              className="flex justify-between align-center"
-              radio
-            >
-              Copy
-              <Badge variant="border">
-                <span className="fs-small-50">⌘C</span>
-              </Badge>
-            </DropdownMenu.Item>
-
-            <DropdownMenu.Item
-              className="flex justify-between align-center"
-              radio
-            >
-              Paste
-              <Badge variant="border">
-                <span className="fs-small-50">⌘V</span>
-              </Badge>
-            </DropdownMenu.Item>
-          </DropdownMenu.Content>
-        </DropdownMenu>
-      </DropdownMenu.Root>
-    </>
   ),
 };

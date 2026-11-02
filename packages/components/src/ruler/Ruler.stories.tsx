@@ -20,24 +20,19 @@ export const Default: Story = {
   args: {},
   render: ({ ...args }) => (
     <Page>
-      <Page.Content>
-        <Ruler.Root>
-          <Ruler>
-            <Ruler.Corner />
-            <Ruler.Row orientation="horizontal" />
-            <Ruler.Row orientation="vertical" />
-            <Ruler.Canvas>
-              <Ruler.Lines />
-              <div
-                className="h-100 w-100 flex align-center justify-center"
-                style={{ background: "var(--background-color)" }}
-              >
-                <p className="fs-medium-20">Canvas Content</p>
-              </div>
-            </Ruler.Canvas>
-          </Ruler>
-        </Ruler.Root>
-      </Page.Content>
+      <Ruler.Root>
+        <Ruler>
+          <Ruler.Corner />
+          <Ruler.Row orientation="horizontal" />
+          <Ruler.Row orientation="vertical" />
+          <Ruler.Canvas>
+            <Ruler.Lines />
+            <div className="h-100 w-100 flex align-center justify-center">
+              <p className="fs-medium-20">Page Content</p>
+            </div>
+          </Ruler.Canvas>
+        </Ruler>
+      </Ruler.Root>
     </Page>
   ),
 };

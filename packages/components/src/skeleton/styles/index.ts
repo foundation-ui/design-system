@@ -1,22 +1,25 @@
 "use client";
 
 import styled, { css, keyframes } from "styled-components";
+import { FETurbulenceCSSVariable } from "../../global";
 
 const SkeletonBlink = keyframes`
     0% {
-      opacity: 0.3;
+      opacity: 0.6;
     }
     100% {
-      opacity: 0.1;
+      opacity: 0.3;
     }
 `;
 
 const SkeletonBaseStyles = css`
-  background: linear-gradient(
-    45deg,
-    var(--font-color-alpha-10),
-    var(--font-color-alpha-20)
-  );
+  ${FETurbulenceCSSVariable}
+
+  background-color: var(--font-color-alpha-10);
+  background-image: var(--fe-turbulence);
+  background-repeat: repeat;
+  background-size: 128px 128px;
+
   animation: ${SkeletonBlink} 1s ease-in-out alternate-reverse infinite;
 `;
 const SkeletonSizeStyles = css`
@@ -49,7 +52,7 @@ const SkeletonShapeStyles = css`
   }
 `;
 
-export const SkeletonLoader = styled.span`
+export const SkeletonLoader = styled.div`
   ${SkeletonBaseStyles}
   ${SkeletonSizeStyles}
   ${SkeletonShapeStyles}

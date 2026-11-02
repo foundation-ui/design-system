@@ -1,10 +1,20 @@
 import React from "react";
 
-export const useTimeBeforeInteraction = () => {
+export const useTimeBeforeInteraction = (options?: { silent?: boolean }) => {
   const [timeBeforeInteract, setTimeBeforeInteract] = React.useState<number>(0);
+  const silent = options?.silent ?? false;
 
   React.useEffect(() => {
+    if (silent) return;
+
     const pageLoadTime = performance.now();
+
+    const handleUserInteraction = () => {
+      const timeElapsed = Math.round(performance.now() - pageLoadTime);
+
+      setTimeBeforeInteract(timeElapsed / 1000);
+      removeEventListeners(); // Remove event listeners after the first interaction
+    };
 
     const removeEventListeners = () => {
       window.removeEventListener("click", handleUserInteraction);
@@ -12,23 +22,14 @@ export const useTimeBeforeInteraction = () => {
       window.removeEventListener("touchstart", handleUserInteraction);
     };
 
-    const handleUserInteraction = () => {
-      const timeElapsed = Math.round(performance.now() - pageLoadTime);
-
-      setTimeBeforeInteract(Number((Number(timeElapsed) / 1000) % 60));
-      removeEventListeners(); // Remove event listeners after the first interaction
-    };
-
-    // Add event listeners for various user interactions
     window.addEventListener("click", handleUserInteraction);
     window.addEventListener("keydown", handleUserInteraction);
     window.addEventListener("touchstart", handleUserInteraction);
 
-    // Clean up the event listeners on unmount
     return () => {
       removeEventListeners();
     };
-  }, []);
+  }, [silent]);
 
   return {
     time_before_interact: timeBeforeInteract,

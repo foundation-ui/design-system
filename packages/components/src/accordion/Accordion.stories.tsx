@@ -9,9 +9,9 @@ const meta = {
   component: Accordion,
   tags: ["autodocs"],
   decorators: [
-    (Story) => (
-      <Page>
-        <Page.Content className="p-medium-30">
+    (Story: any) => (
+      <Page className="p-medium-30">
+        <Page.Content className="flex align-center justify-center h-100 w-100 g-medium-30">
           <Story />
         </Page.Content>
       </Page>
@@ -22,43 +22,20 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 export const Default = {
-  args: {
-    value: "",
-  },
-  argTypes: {
-    spacing: {
-      options: [
-        ComponentSizeEnum.Small,
-        ComponentSizeEnum.Medium,
-        ComponentSizeEnum.Large,
-      ],
-      control: { type: "radio" },
-    },
-    variant: {
-      options: [
-        ComponentVariantEnum.Primary,
-        ComponentVariantEnum.Secondary,
-        ComponentVariantEnum.Tertiary,
-        ComponentVariantEnum.Mono,
-        ComponentVariantEnum.Border,
-        ComponentVariantEnum.Ghost,
-      ],
-      control: { type: "radio" },
-    },
-    sizing: {
-      options: [
-        ComponentSizeEnum.Small,
-        ComponentSizeEnum.Medium,
-        ComponentSizeEnum.Large,
-      ],
-      control: { type: "radio" },
-    },
-  },
+  args: {},
+  argTypes: {},
   render: ({ ...args }) => (
     <Accordion.Root>
-      <Accordion>
-        <Accordion.Trigger value="demo">🐻‍❄️</Accordion.Trigger>
-        <Accordion.Content value="demo">🐻🐻‍❄️🦊🐱🐶</Accordion.Content>
+      <Accordion className="flex flex-column align-center justify-center w-100 g-medium-30">
+        <Accordion.Trigger value="demo">
+          chambellan registry:read Components Accordion&nbsp;↓
+        </Accordion.Trigger>
+
+        <Accordion.Content value="demo">
+          <p className="fs-medium-20">
+            Accordions are used to expand and collapse sections of content.
+          </p>
+        </Accordion.Content>
       </Accordion>
     </Accordion.Root>
   ),
@@ -66,10 +43,15 @@ export const Default = {
 export const DefaultOpen: Story = {
   render: ({ ...args }) => (
     <Accordion.Root>
-      <Accordion>
-        <Accordion.Trigger value="demo">🐻</Accordion.Trigger>
+      <Accordion className="flex flex-column align-center justify-center w-100 g-medium-30">
+        <Accordion.Trigger value="demo">
+          chambellan registry:read Components Accordion&nbsp;↓
+        </Accordion.Trigger>
+
         <Accordion.Content value="demo" defaultOpen>
-          🐻🐻‍❄️🦊🐱🐶
+          <p className="fs-medium-20">
+            Accordions are used to expand and collapse sections of content.
+          </p>
         </Accordion.Content>
       </Accordion>
     </Accordion.Root>
@@ -77,15 +59,22 @@ export const DefaultOpen: Story = {
 };
 export const Group: Story = {
   render: ({ ...args }) => (
-    <React.Fragment>
-      {["🐻", "🐻‍❄️", "🦊", "🐱", "🐶"].map((item) => (
+    <div className="flex flex-column g-medium-60">
+      {["Accordion", "Button"].map((item) => (
         <Accordion.Root key={item}>
-          <Accordion className="m-b-medium-30">
-            <Accordion.Trigger value={item}>{item}</Accordion.Trigger>
-            <Accordion.Content value={item}>{item}</Accordion.Content>
+          <Accordion className="flex flex-column w-100 g-medium-30">
+            <Accordion.Trigger value="demo">
+              chambellan registry:read Components&nbsp;{item}&nbsp;↓
+            </Accordion.Trigger>
+
+            <Accordion.Content value="demo" defaultOpen>
+              <p className="fs-medium-20">
+                {item}&nbsp;are exported by @usefui/components.
+              </p>
+            </Accordion.Content>
           </Accordion>
         </Accordion.Root>
       ))}
-    </React.Fragment>
+    </div>
   ),
 };

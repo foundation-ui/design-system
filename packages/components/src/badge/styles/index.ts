@@ -1,16 +1,18 @@
 import styled, { css } from "styled-components";
+import { InsetShadowCSSVariable } from "../../global";
 
-const BadgeBaseStyles = css`
+export const BadgeBaseStyles = css`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+
   gap: var(--measurement-medium-10);
 
   min-width: var(--measurement-medium-60);
   min-height: var(--measurement-medium-60);
   width: fit-content;
 
-  border: var(--measurement-small-10) solid transparent;
   padding: 0 var(--measurement-medium-30);
 
   font-size: var(--fontsize-small-60);
@@ -22,19 +24,20 @@ const BadgeBaseStyles = css`
 
   transition: all ease-in-out 0.2s;
 `;
-const BadgeVariantStyles = css`
-  border: var(--measurement-small-10) solid transparent;
+export const BadgeVariantStyles = css`
+  ${InsetShadowCSSVariable}
+  box-shadow: var(--inset-shadow);
 
   &[data-variant="primary"] {
-    background-color: var(--font-color-alpha-10);
-    color: var(--font-color-alpha-80);
+    background-color: var(--font-color);
+    color: var(--body-color);
 
     * {
       color: currentColor !important;
     }
   }
   &[data-variant="secondary"] {
-    background-color: var(--contrast-color);
+    background-color: var(--font-color-alpha-10);
     color: var(--font-color-alpha-80);
 
     * {
@@ -43,7 +46,6 @@ const BadgeVariantStyles = css`
   }
   &[data-variant="border"] {
     background-color: transparent;
-    border-color: var(--font-color-alpha-10);
     color: var(--font-color-alpha-80);
 
     * {
@@ -51,52 +53,48 @@ const BadgeVariantStyles = css`
     }
   }
   &[data-variant="danger"] {
-    background-color: var(--alpha-red-10);
+    background-color: var(--alpha-red-30);
     border-color: var(--alpha-red-10);
-    color: var(--shade-red-20);
+    color: var(--tint-red-60);
 
     * {
       color: currentColor !important;
     }
   }
   &[data-variant="warning"] {
-    background-color: var(--alpha-orange-10);
-    border-color: var(--alpha-orange-10);
-    color: var(--shade-orange-20);
+    background-color: var(--alpha-orange-30);
+    color: var(--color-orange);
 
     * {
       color: currentColor !important;
     }
   }
   &[data-variant="success"] {
-    background-color: var(--alpha-green-10);
-    border-color: var(--alpha-green-10);
-    color: var(--shade-lime-20);
+    background-color: var(--alpha-green-30);
+    color: var(--color-green);
 
     * {
       color: currentColor !important;
     }
   }
   &[data-variant="meta"] {
-    background-color: var(--alpha-indigo-10);
-    border-color: var(--alpha-indigo-10);
-    color: var(--shade-indigo-20);
+    background-color: var(--alpha-indigo-30);
+    color: var(--color-indigo);
 
     * {
       color: currentColor !important;
     }
   }
   &[data-variant="hint"] {
-    background-color: var(--alpha-purple-10);
-    border-color: var(--alpha-purple-10);
-    color: var(--shade-purple-20);
+    background-color: var(--alpha-purple-30);
+    color: var(--color-purple);
 
     * {
       color: currentColor !important;
     }
   }
 `;
-const BadgeEmphasisVariantStyles = css`
+export const BadgeEmphasisVariantStyles = css`
   &[data-variant="danger"] {
     background-color: var(--color-red) !important;
     color: var(--color-mono-white) !important;
@@ -118,7 +116,7 @@ const BadgeEmphasisVariantStyles = css`
     color: var(--color-mono-white) !important;
   }
 `;
-const BadgeShapeStyles = css`
+export const BadgeShapeStyles = css`
   &[data-shape="square"] {
     border-radius: 0;
   }
@@ -129,7 +127,7 @@ const BadgeShapeStyles = css`
     border-radius: var(--measurement-medium-60);
   }
 `;
-const BadgeSizeStyles = css`
+export const BadgeSizeStyles = css`
   &[data-size="small"] {
     padding: 0 var(--measurement-medium-30);
 

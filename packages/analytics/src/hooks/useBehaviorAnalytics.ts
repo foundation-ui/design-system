@@ -2,12 +2,9 @@ import React from "react";
 import { useTimeBeforeInteraction } from "./useTimeBeforeInteraction";
 import {
   usePerformanceMetrics,
-  IPerfomanceMetricsProperties,
+  IPerformanceMetricsProperties,
 } from "./usePerformanceMetrics";
 import {
-  TTrackedEvent,
-  TRACKED_EVENTS,
-  IComponentUsage,
   useComponentsInteractions,
   IEventPayload,
 } from "./useComponentsInteractions";
@@ -15,19 +12,22 @@ import {
 export type TUbaConfig = {
   silent?: boolean;
   flags: string[];
+  captureSnapshot?: boolean;
 };
 
 type TInteractionsData = {
   origin: string;
   frequency: number;
-  types: unknown[];
-  events: IEventPayload[] | [];
+  types: string[];
+  events: IEventPayload[];
+  element?: string;
+  content?: string;
 };
-interface IBehaviorAnalyticsProperties {
-  silent?: boolean;
-  interactions: TInteractionsData[] | [];
+
+export interface IBehaviorAnalyticsProperties {
+  interactions: TInteractionsData[];
   session: {
-    html_snapshot: string;
+    html_snapshot: string | null;
     entry_time: string;
     entry_epoch: number;
     last_interaction_time: string | null;
@@ -38,7 +38,7 @@ interface IBehaviorAnalyticsProperties {
     path: string;
     user_agent: string;
     device_os: string;
-    performances: IPerfomanceMetricsProperties | null;
+    performances: IPerformanceMetricsProperties | null;
     viewport: {
       width: number;
       height: number;
@@ -106,37 +106,41 @@ const getDeviceOs = (): string | undefined => {
 export const useBehaviorAnalytics = ({
   silent,
   flags,
-}: TUbaConfig): IBehaviorAnalyticsProperties | void => {
-  if (silent) return;
-
+  captureSnapshot,
+}: TUbaConfig): IBehaviorAnalyticsProperties => {
   const { metrics } = usePerformanceMetrics();
-  const { time_before_interact } = useTimeBeforeInteraction();
-  const { interactions } = useComponentsInteractions(flags);
+  const { time_before_interact } = useTimeBeforeInteraction({ silent });
+  const { interactions } = useComponentsInteractions(flags, { silent });
 
   const { innerWidth, innerHeight, screen, location } = window;
+  const href = location.href;
 
-  const getLastInteractionEpoch = (): number => {
-    const maxEpoch = Math.max(
-      ...interactions.flatMap(({ events }: IComponentUsage) =>
-        events.map(({ occured_at_epoch }: IEventPayload) => occured_at_epoch)
-      )
+  const entry = React.useMemo(
+    () => ({
+      entry_time: new Date().toISOString(),
+      entry_epoch: Date.now(),
+    }),
+    []
+  );
+
+  const lastInteractionEpoch = React.useMemo(() => {
+    const epochs = interactions.flatMap((interaction) =>
+      interaction.events.map((event) => event.occurred_at_epoch)
     );
-    if (maxEpoch === -Infinity) return 0;
-    else return maxEpoch;
-  };
+
+    return epochs.length > 0 ? Math.max(...epochs) : null;
+  }, [interactions]);
 
   const system_data = React.useMemo(() => {
     return {
-      path: location.href,
+      path: href,
       user_agent: navigator.userAgent,
-      device_os: getDeviceOs(),
+      device_os: getDeviceOs() ?? "Unknown",
       viewport: {
         width: innerWidth,
         height: innerHeight,
       },
-      performances: {
-        ...metrics,
-      },
+      performances: metrics,
       screen: {
         width: screen.availWidth,
         height: screen.availHeight,
@@ -147,60 +151,72 @@ export const useBehaviorAnalytics = ({
         },
       },
     };
-  }, [innerWidth, innerHeight, location, metrics]);
+  }, [href, innerWidth, innerHeight, metrics, screen]);
 
   const page_snapshot = React.useMemo(
-    () => document.getElementsByTagName("html")[0]?.innerHTML,
-    [location]
+    () => (captureSnapshot ? document.documentElement.innerHTML : null),
+    [captureSnapshot, href]
   );
 
-  const session_data = React.useMemo(() => {
-    const hasTrackedInteractions = getLastInteractionEpoch() !== 0;
+  if (silent) {
     return {
-      entry_time: new Date(Date.now()).toISOString(),
-      entry_epoch: Date.now(),
-      last_interaction_time: hasTrackedInteractions
-        ? new Date(getLastInteractionEpoch()).toISOString()
-        : null,
-      last_interaction_epoch: hasTrackedInteractions
-        ? getLastInteractionEpoch()
-        : null,
-      time_before_interact: time_before_interact ?? null,
+      session: {
+        html_snapshot: null,
+        entry_time: "",
+        entry_epoch: 0,
+        last_interaction_time: null,
+        last_interaction_epoch: null,
+        time_before_interact: null,
+      },
+      interactions: [],
+      system: {
+        path: "",
+        user_agent: "",
+        device_os: "Unknown",
+        performances: null,
+        viewport: {
+          width: 0,
+          height: 0,
+        },
+        screen: {
+          width: 0,
+          height: 0,
+          pixel_depth: 0,
+          orientation: {
+            angle: 0,
+            type: "",
+          },
+        },
+      },
     };
-  }, [interactions, time_before_interact]);
+  }
 
-  const interactions_data = interactions?.flatMap((interaction) => {
-    let interaction_types: unknown[] = [];
-    let interactions_count: Record<string | TTrackedEvent, number> = {
-      click: 0,
-      dblclick: 0,
-      mouseover: 0,
-      focusin: 0,
-      focusout: 0,
-      touchstart: 0,
-      touchend: 0,
-    };
+  const interactions_data: TInteractionsData[] = interactions.map(
+    (interaction) => {
+      const types: string[] = [];
 
-    interaction.events.forEach((event) => {
-      if (!interaction_types.includes(event.type))
-        interaction_types.push(event.type);
-      else
-        TRACKED_EVENTS.forEach((eventType: TTrackedEvent) => {
-          if (event.type === eventType) interactions_count[eventType]++;
-        });
-    });
+      interaction.events.forEach((event) => {
+        if (!types.includes(event.type)) types.push(event.type);
+      });
 
-    return {
-      ...interaction,
-      frequency: interaction.events.length,
-      types: interaction_types,
-    };
-  });
+      return {
+        ...interaction,
+        frequency: interaction.events.length,
+        types,
+      };
+    }
+  );
 
   return {
     session: {
-      ...session_data,
+      ...entry,
       html_snapshot: page_snapshot,
+      last_interaction_time:
+        lastInteractionEpoch !== null
+          ? new Date(lastInteractionEpoch).toISOString()
+          : null,
+      last_interaction_epoch: lastInteractionEpoch,
+      time_before_interact: time_before_interact ?? null,
     },
     interactions: interactions_data,
     system: system_data,

@@ -1,10 +1,13 @@
 "use client";
 
 import React from "react";
-import { useKeyPress } from "@usefui/hooks";
 
-import { ToolbarProvider, useToolbar } from "./hooks";
-import { ToolbarWrapper, ToolbarTriggerWrapper } from "./styles";
+import { ToolbarProvider, useToolbar, IToolbarProviderProps } from "./hooks";
+import {
+  ToolbarWrapper,
+  ToolbarTriggerWrapper,
+  ToolbarContentWrapper,
+} from "./styles";
 import { Button, IButtonProperties } from "..";
 import {
   IComponentStyling,
@@ -13,99 +16,83 @@ import {
   TComponentHeight,
   ComponentVariantEnum,
   IComponentSize,
-  IReactChildren,
   ComponentSideEnum,
   TComponentSide,
-  IComponentControlProperties,
-  KeyBindingEnum,
 } from "../../../../types";
 
 export interface IToolbarBodyProperties
-  extends IComponentStyling,
-    IComponentSize,
-    IComponentControlProperties,
-    React.ComponentProps<"aside"> {
-  defaultOpen?: boolean;
+  extends IComponentStyling, IComponentSize, React.ComponentProps<"div"> {
   side?: TComponentSide;
   height?: TComponentHeight;
 }
-export interface IToolbarSectionProperties
-  extends React.ComponentProps<"section"> {
-  showoncollapse?: boolean;
+export interface IToolbarRootProperties extends IToolbarProviderProps {}
+export interface IToolbarSectionProperties extends React.ComponentProps<"section"> {
+  /** Keep the section visible when the toolbar is collapsed. */
+  alwaysVisible?: boolean;
 }
 export interface IToolbarItemProperties extends React.ComponentProps<"div"> {
-  showfirstchild?: boolean;
+  /** Keep the first child visible when the toolbar is collapsed. */
+  showFirstChild?: boolean;
 }
+export interface IToolbarTriggerProperties extends IButtonProperties {}
 
 export interface IToolbarComposition {
   Root: typeof ToolbarRoot;
   Trigger: typeof ToolbarTrigger;
+  Content: typeof ToolbarContent;
   Item: typeof ToolbarItem;
   Section: typeof ToolbarSection;
 }
 
 /**
- * Toolbar are component that provides a set of tools or actions for the user.
+ * Toolbar is a collapsible set of tools or actions.
+ *
+ * Follows the shadcn Sidebar conventions: state is owned by `Toolbar.Root`,
+ * `Toolbar.Trigger` toggles it, and `Ctrl/Cmd + B` toggles it from anywhere.
  *
  * **Best practices:**
  *
- * - Use semantic HTML elements to structure the content of the toolbar.
- * - Ensure that the toolbar is visible and accessible to all users, including those using assistive technologies.
- * - Use keyboard shortcuts to provide an alternative way of interacting with the toolbar.
- * - Ensure that the toolbar is responsive and adapts to different screen sizes and orientations.
+ * - Wrap the trigger and content in `Toolbar.Root` to share state.
+ * - Use `open` / `onOpenChange` on `Toolbar.Root` to control the state from outside.
+ * - Keep the trigger visible at all times so users can always expand the toolbar.
  *
  * @param {IToolbarBodyProperties} props - The props for the Toolbar component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
- * @param {string} props.shortcut - The key combination used as keyboard shortcuts to trigger the toolbar.
- * @param {string} props.hotkey - The key to use in the key combination for the keyboard shortcuts.
- * @param {KeyBindingEnum} props.bindkey - The modifier key to use in the key combination.
- * @param {TComponentSide} props.sizing - The size of the toolbar.
+ * @param {ComponentSizeEnum} props.sizing - The size of the toolbar.
  * @param {ComponentHeightEnum} props.height - The height definition of the toolbar.
- * @param {ComponentSideEnum} props.side - The side of the toolbar.
- * @param {boolean} props.defaultOpen - Whether the toolbar should be open by default.
- * @param {ReactNode} props.children - The content to be rendered inside the toolbar.
+ * @param {ComponentSideEnum} props.side - The side of the toolbar. Drives orientation.
  * @returns {ReactElement} The Toolbar component.
  */
 const Toolbar = (props: IToolbarBodyProperties) => {
   const {
-    shortcut,
-    hotkey,
-    bindkey = KeyBindingEnum.Ctrl,
     raw,
     sizing = ComponentSizeEnum.Medium,
     side = ComponentSideEnum.Left,
     height = ComponentHeightEnum.Fullscreen,
-    defaultOpen,
     children,
     ...restProps
   } = props;
-  const { id, methods, states } = useToolbar();
-  const { toggleToolbar } = methods;
+  const { id, state, open, isMobile, openMobile } = useToolbar();
 
-  const shortcutControls = useKeyPress(String(hotkey), true, bindkey);
   const orientation =
-    side && ["left", "right"].includes(side) ? "vertical" : "horizontal";
-
-  React.useEffect(() => {
-    if (defaultOpen && toggleToolbar) return toggleToolbar(true);
-  }, [defaultOpen]);
-
-  React.useEffect(() => {
-    if (shortcut && shortcutControls && toggleToolbar) toggleToolbar();
-  }, [shortcutControls]);
+    side === "left" || side === "right" ? "vertical" : "horizontal";
+  const expanded = isMobile ? openMobile : open;
 
   return (
     <ToolbarWrapper
-      id={id}
       role="toolbar"
-      aria-label={props["aria-label"] ?? `${id}-toolbar`}
-      aria-controls={`${id}-trigger`}
-      aria-expanded={Boolean(states.expanded)}
       aria-orientation={orientation}
+      aria-label={props["aria-label"] ?? "Toolbar"}
+      data-sidebar="toolbar"
+      data-state={state}
+      data-collapsible={expanded ? "" : "icon"}
+      data-mobile={isMobile}
       data-raw={Boolean(raw)}
       data-size={sizing}
       data-height={height}
       data-side={side}
+      data-orientation={orientation}
+      data-id={id}
       {...restProps}
     >
       {children}
@@ -114,25 +101,35 @@ const Toolbar = (props: IToolbarBodyProperties) => {
 };
 Toolbar.displayName = "Toolbar";
 
-const ToolbarRoot = ({ children }: IReactChildren) => {
-  return <ToolbarProvider>{children}</ToolbarProvider>;
+/**
+ * Toolbar.Root owns the open state and exposes it through context.
+ *
+ * @param {IToolbarRootProperties} props
+ * @param {boolean} props.open - Controlled open state.
+ * @param {boolean} props.defaultOpen - Initial open state when uncontrolled.
+ * @param {(open: boolean) => void} props.onOpenChange - Called when the state changes.
+ */
+const ToolbarRoot = ({
+  children,
+  ...providerProps
+}: IToolbarRootProperties) => {
+  return <ToolbarProvider {...providerProps}>{children}</ToolbarProvider>;
 };
 ToolbarRoot.displayName = "Toolbar.Root";
 
 /**
- * Toolbar.Trigger are used to triggers the expansion and collapse of the associated Toolbar component.
+ * Toolbar.Trigger toggles the toolbar. It exposes `aria-expanded` and
+ * `aria-controls` so assistive technology knows what it controls.
  *
  * **Best practices:**
  *
- * - Use a clear and descriptive title for the trigger that accurately conveys the content of the associated toolbar section.
- * - Ensure that the trigger can be operated using only the keyboard.
- * - Ensure that the focus is properly managed when the trigger is activated.
+ * - Give the trigger a clear accessible name, as icon-only triggers need an `aria-label`.
+ * - Keep the trigger reachable with the keyboard.
  *
- * @param {IButtonProperties} props - The props for the Toolbar.Trigger component.
- * @param {ReactNode} props.children - The content to be rendered inside the Toolbar trigger.
+ * @param {IToolbarTriggerProperties} props - The props for the Toolbar.Trigger component.
  * @returns {ReactElement} The Toolbar.Trigger component.
  */
-const ToolbarTrigger = (props: IButtonProperties) => {
+const ToolbarTrigger = (props: IToolbarTriggerProperties) => {
   const {
     raw,
     onClick,
@@ -141,18 +138,26 @@ const ToolbarTrigger = (props: IButtonProperties) => {
     children,
     ...restProps
   } = props;
-  const { id, methods, states } = useToolbar();
-  const { toggleToolbar } = methods;
+  const { id, open, isMobile, openMobile, toggle } = useToolbar();
+  const expanded = isMobile ? openMobile : open;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    if (onClick) onClick(event);
-    if (toggleToolbar) toggleToolbar(!states.expanded);
+    onClick?.(event);
+    if (!event.defaultPrevented) toggle();
   };
 
   return (
     <ToolbarTriggerWrapper data-raw={Boolean(raw)}>
       <Button
-        id={`${id}-trigger`}
+        data-sidebar="trigger"
+        data-state={expanded ? "expanded" : "collapsed"}
+        aria-controls={`${id}-content`}
+        aria-expanded={expanded}
+        aria-label={
+          typeof children === "string"
+            ? undefined
+            : (props["aria-label"] ?? "Toggle toolbar")
+        }
         variant={variant}
         sizing={sizing}
         raw={Boolean(raw)}
@@ -167,69 +172,90 @@ const ToolbarTrigger = (props: IButtonProperties) => {
 ToolbarTrigger.displayName = "Toolbar.Trigger";
 
 /**
- * ToolbarSection are used to hold components within a toolbar.
+ * Toolbar.Content wraps the toolbar's tools. Its `id` is referenced by the
+ * trigger's `aria-controls`. Children stay mounted while collapsed so they
+ * can animate, and are hidden from assistive technology when collapsed.
  *
- * **Best practices:**
- *
- * - Use semantic HTML elements to structure the content of the toolbar section.
- * - Ensure that the toolbar section is visible and accessible to all users, including those using assistive technologies.
+ * @param {React.ComponentProps<"div">} props
+ * @returns {ReactElement} The Toolbar.Content component.
+ */
+const ToolbarContent = (props: React.ComponentProps<"div">) => {
+  const { children, ...restProps } = props;
+  const { id, open, isMobile, openMobile } = useToolbar();
+  const expanded = isMobile ? openMobile : open;
+
+  return (
+    <ToolbarContentWrapper
+      id={`${id}-content`}
+      data-raw="false"
+      data-state={expanded ? "expanded" : "collapsed"}
+      hidden={!expanded}
+      {...restProps}
+    >
+      {children}
+    </ToolbarContentWrapper>
+  );
+};
+ToolbarContent.displayName = "Toolbar.Content";
+
+/**
+ * ToolbarSection groups related tools. Hidden while collapsed unless
+ * `alwaysVisible` is set.
  *
  * @param {IToolbarSectionProperties} props - The props for the Toolbar.Section component.
- * @param {boolean} props.showoncollapse - Whether the section should be shown only when the toolbar is collapsed.
- * @param {ReactNode} props.children - The content to be rendered inside the toolbar section.
+ * @param {boolean} props.alwaysVisible - Keep the section visible when collapsed.
  * @returns {ReactElement} The Toolbar.Section component.
  */
 const ToolbarSection = (props: IToolbarSectionProperties) => {
-  const { showoncollapse, children, ...restProps } = props;
-  const { states } = useToolbar();
-  const { expanded } = states;
+  const { alwaysVisible, children, ...restProps } = props;
+  const { open, isMobile, openMobile } = useToolbar();
+  const expanded = isMobile ? openMobile : open;
 
-  if (showoncollapse) return <section {...restProps}>{children}</section>;
-  return <section {...restProps}>{expanded && children}</section>;
+  return (
+    <section
+      data-sidebar="section"
+      data-state={expanded ? "expanded" : "collapsed"}
+      hidden={!alwaysVisible && !expanded}
+      {...restProps}
+    >
+      {children}
+    </section>
+  );
 };
 ToolbarSection.displayName = "Toolbar.Section";
 
 /**
- * ToolbarItem is a component that represents an item within a toolbar.
- *
- * **Best practices:**
- *
- * - Use semantic HTML elements to structure the content of the toolbar item.
- * - Ensure that the toolbar item is visible and accessible to all users, including those using assistive technologies.
- * - Ensure that the toolbar item is focusable and can be interacted with using the keyboard.
+ * ToolbarItem is a single tool. When `showFirstChild` is set, the first
+ * child stays visible while collapsed. Clicking a collapsed item expands
+ * the toolbar.
  *
  * @param {IToolbarItemProperties} props - The props for the Toolbar.Item component.
- * @param {boolean} props.showfirstchild - Whether to show only the first child of the toolbar item when the toolbar is collapsed.
- * @param {ReactNode} props.children - The content to be rendered inside the toolbar item.
+ * @param {boolean} props.showFirstChild - Keep the first child visible when collapsed.
  * @returns {ReactElement} The Toolbar.Item component.
  */
 const ToolbarItem = (props: IToolbarItemProperties) => {
-  const { showfirstchild, onClick, children, ...restProps } = props;
+  const { showFirstChild, onClick, children, ...restProps } = props;
   const childArray = React.Children.toArray(children);
-
-  const { id, states, methods } = useToolbar();
-  const { expanded } = states;
-  const { toggleToolbar } = methods;
-
-  const displayFirstChild =
-    showfirstchild && childArray.length > 1 && !expanded;
+  const { open, setOpen, isMobile, openMobile, setOpenMobile } = useToolbar();
+  const expanded = isMobile ? openMobile : open;
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (onClick) onClick(event);
-    if (toggleToolbar && !expanded) toggleToolbar(true);
+    onClick?.(event);
+    if (!expanded) {
+      if (isMobile) setOpenMobile(true);
+      else setOpen(true);
+    }
   };
 
   return (
     <div
-      tabIndex={-1}
-      aria-hidden
-      aria-describedby={id}
-      data-expanded={expanded}
+      data-sidebar="item"
+      data-state={expanded ? "expanded" : "collapsed"}
       onClick={handleClick}
       {...restProps}
     >
-      {displayFirstChild && childArray[0]}
-      {expanded && children}
+      {!expanded && showFirstChild ? childArray[0] : null}
+      {expanded ? children : null}
     </div>
   );
 };
@@ -237,7 +263,15 @@ ToolbarItem.displayName = "Toolbar.Item";
 
 Toolbar.Root = ToolbarRoot;
 Toolbar.Trigger = ToolbarTrigger;
+Toolbar.Content = ToolbarContent;
 Toolbar.Item = ToolbarItem;
 Toolbar.Section = ToolbarSection;
 
-export { Toolbar, ToolbarRoot, ToolbarTrigger, ToolbarItem, ToolbarSection };
+export {
+  Toolbar,
+  ToolbarRoot,
+  ToolbarTrigger,
+  ToolbarContent,
+  ToolbarItem,
+  ToolbarSection,
+};

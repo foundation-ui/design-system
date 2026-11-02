@@ -33,24 +33,40 @@ export interface IuseABProperties {
 export const useABTesting = (config: TABConfig): IuseABProperties => {
   const { silent, randomize, versions, variations } = config;
 
-  if (silent) return;
+  const [version, setVersion] = React.useState<number>(
+    () => versions.default ?? 0
+  );
 
-  const [version, setVersion] = React.useState<number>(versions.default ?? 0);
   const ticket = React.useMemo(() => {
     return Math.floor(Math.random() * randomize.odds);
-  }, []);
+  }, [randomize.odds]);
 
   React.useLayoutEffect(() => {
+    if (silent) return;
     if (ticket === randomize.gamble) {
       setVersion(versions.alternative);
     }
-  }, []);
+  }, [silent, ticket, randomize.gamble, versions.alternative]);
 
   // Ensure the version is always within bounds of the variations array
-  const abVersion = version >= 0 && version < variations.length ? version : 0;
+  const clampVersion = (value: number): number =>
+    value >= 0 && value < variations.length ? value : 0;
+
+  if (silent) {
+    const inertVersion = clampVersion(versions.default ?? 0);
+
+    return {
+      version: inertVersion,
+      variant: (variations[inertVersion] ?? {}) as TABVariant,
+      forceABVersion: () => undefined,
+    };
+  }
+
+  const abVersion = clampVersion(version);
+
   return {
     version: abVersion,
-    variant: variations[abVersion]!,
-    forceABVersion: (version: number) => setVersion(version),
+    variant: (variations[abVersion] ?? {}) as TABVariant,
+    forceABVersion: setVersion,
   };
 };

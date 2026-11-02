@@ -1,23 +1,18 @@
 import styled from "styled-components";
 import { HiddenScrollbar } from "../../scrollarea/styles";
+import { InsetShadowCSSVariable, FETurbulenceCSSVariable } from "../../global";
 
 export const PageRootWrapper = styled.div<any>`
   height: 100dvh;
   width: 100%;
 `;
 export const PageNavWrapper = styled.nav<any>`
-  background-color: var(--body-color);
-  border: var(--measurement-small-10) solid transparent;
-  border-bottom-color: var(--font-color-alpha-10);
   width: 100%;
   height: 100%;
   max-height: var(--measurement-large-20);
   padding: var(--measurement-medium-30);
 `;
 export const PageMenuWrapper = styled.menu<any>`
-  background-color: var(--body-color);
-  border: var(--measurement-small-10) solid transparent;
-  border-bottom-color: var(--font-color-alpha-10);
   width: 100%;
   height: 100%;
   max-height: var(--measurement-large-30);
@@ -32,9 +27,21 @@ export const PagePanelWrapper = styled.aside<any>`
   ${HiddenScrollbar}
 `;
 export const PageSectionWrapper = styled.div<any>`
-  background: var(--body-color);
+  ${InsetShadowCSSVariable}
+  ${FETurbulenceCSSVariable}
+  
   width: 100%;
   height: 100%;
+
+  background:
+    /* radial-gradient(at 18% 18%, var(--body-color), transparent 70%),
+    radial-gradient(at 94% 57%, var(--contrast-color), transparent 70%),
+    radial-gradient(at 10% 70%, var(--body-color), transparent 70%), */ var(
+    --contrast-color
+  );
+
+  border-radius: var(--measurement-medium-50);
+  box-shadow: var(--inset-shadow);
 `;
 export const PageBodyWrapper = styled.div<any>`
   --menus-height: calc(

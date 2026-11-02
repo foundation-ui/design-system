@@ -16,7 +16,8 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
-export const Composed: Story = {
+
+export const Default: Story = {
   args: {
     raw: false,
     defaultOpen: false,
@@ -51,34 +52,17 @@ export const Composed: Story = {
   },
   render: ({ ...args }) => {
     return (
-      <Page>
-        <Page.Tools
-          shortcut
-          hotkey=";"
-          showoncollapse
-          side={ComponentSideEnum.Left}
-          sizing={ComponentSizeEnum.Medium}
-        />
-        <div style={{ height: "100dvh" }}>
-          <Page.Navigation>🐻</Page.Navigation>
-          <Page.Menu>🐻‍❄️</Page.Menu>
-          <Page.Content>🦊</Page.Content>
-          <Page.Panel
-            shortcut
-            hotkey=","
-            side={ComponentSideEnum.Bottom}
-            sizing={ComponentSizeEnum.Large}
-          >
-            🐱
-          </Page.Panel>
-        </div>
-        <Page.Tools
-          shortcut
-          hotkey=":"
-          defaultOpen
-          side={ComponentSideEnum.Right}
-          sizing={ComponentSizeEnum.Large}
-        />
+      <Page className="flex flex-column">
+        <Page.Navigation />
+        <Page.Wrapper
+          $navigations={1}
+          $menus={1}
+          className="w-100 h-100 flex p-medium-30"
+        >
+          <Page.Content></Page.Content>
+        </Page.Wrapper>
+
+        <Page.Menu />
       </Page>
     );
   },
