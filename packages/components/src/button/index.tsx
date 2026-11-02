@@ -1,31 +1,15 @@
 "use client";
 
 import React from "react";
-import { useSound, SoundName } from "@usefui/hooks";
+import { useSound } from "@usefui/hooks";
 
 import { ButtonWrapper, ButtonMaskElement, ButtonOverlay } from "./styles";
 import {
-  IComponentStyling,
   ComponentSizeEnum,
-  IComponentSize,
   ComponentVariantEnum,
-  TComponentVariant,
   ComponentShapeEnum,
-  IComponentShape,
-  TComponentVariantExtended,
 } from "../../../../types";
-
-export interface IButtonProperties
-  extends
-    IComponentStyling,
-    IComponentShape,
-    IComponentSize,
-    React.ComponentPropsWithRef<"button"> {
-  rawicon?: boolean;
-  variant?: TComponentVariant | TComponentVariantExtended | "link" | "accent";
-  sound?: SoundName;
-  animation?: "reflective";
-}
+import type { IButtonProperties } from "./types";
 
 /**
  * Buttons are used to initialize an action.

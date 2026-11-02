@@ -1,14 +1,8 @@
 "use client";
 
 import React from "react";
-import { ViewportRoot, type ScrollDirection } from "./styles";
-
-export interface IViewportProperties {
-  children?: React.ReactNode;
-  height: number;
-  direction?: ScrollDirection;
-  className?: string;
-}
+import { ViewportRoot } from "./styles";
+import type { IViewportProperties } from "./types";
 
 const DRAG_THRESHOLD = 4; // px before a press becomes a drag
 

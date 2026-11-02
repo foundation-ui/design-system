@@ -2,14 +2,11 @@
 
 import React, { Children } from "react";
 import { TabsProvider, useTabs } from "./hooks";
-import { Button, IButtonProperties } from "../button";
+import { Button } from "../button";
 import { TabWrapper } from "./styles";
 import { IReactChildren, ComponentVariantEnum } from "../../../../types";
-
-export interface ITabsProperties extends React.ComponentProps<"div"> {
-  value?: string;
-  defaultOpen?: string;
-}
+import type { IButtonProperties } from "../button/types";
+import type { ITabsProperties } from "./types";
 
 export interface ITabsComposition {
   Root: typeof TabsRoot;

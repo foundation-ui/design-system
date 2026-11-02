@@ -1,35 +1,27 @@
 "use client";
 
 import React from "react";
+
 import { useClickOutside, useDisabledScroll } from "@usefui/hooks";
 import { DropdownMenuProvider, useDropdownMenu } from "./hooks";
+
 import { RootWrapper, ContentWrapper, ItemWrapper } from "./styles";
-import { Button, IButtonProperties } from "../button";
+
+import { Button } from "../button";
+import { SharedLayout } from "../shared-layout";
+
 import { applyDataState } from "../utils";
 import {
   IReactChildren,
-  IComponentStyling,
-  IComponentSize,
   ComponentSideEnum,
   ComponentSizeEnum,
 } from "../../../../types";
-import { SharedLayout } from "../shared-layout";
 
-type DropdownContentVariant = "body" | "contrast";
-export interface IDropdownContentProperties
-  extends IComponentStyling, IComponentSize, React.ComponentPropsWithRef<"ul"> {
-  defaultOpen?: boolean;
-  variant?: DropdownContentVariant;
-}
-export interface IDropdownItemProperties
-  extends IComponentStyling, React.ComponentProps<"li"> {
-  radio?: boolean;
-  disabled?: boolean;
-  onClick?: (
-    event: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>,
-  ) => void;
-  onKeyDown?: (event: React.KeyboardEvent<HTMLLIElement>) => void;
-}
+import type { IButtonProperties } from "../button/types";
+import type {
+  IDropdownContentProperties,
+  IDropdownItemProperties,
+} from "./types";
 
 export interface IDropdownComposition {
   Root: typeof DropdownMenuRoot;

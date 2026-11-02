@@ -5,53 +5,19 @@ import React from "react";
 import { useMorphingBox, MorphingBoxProvider } from "./hooks";
 import { useDisabledScroll, useKeyPress } from "@usefui/hooks";
 
-import {
-  Overlay,
-  IOverlayProperties,
-  Button,
-  IButtonProperties,
-  IScrollAreaProperties,
-} from "..";
+import { Overlay, Button } from "..";
 import { MorphingBoxWrapper, Trigger } from "./styles";
+
 import { applyDataState } from "../utils";
-import {
-  IComponentStyling,
-  ComponentSizeEnum,
-  IComponentSize,
-  KeyBindingEnum,
-} from "../../../../types";
+import { ComponentSizeEnum, KeyBindingEnum } from "../../../../types";
 
-export interface IMorphingBoxTriggerProperties extends IButtonProperties {
-  threshold?: number;
-  position?:
-    | "top"
-    | "top-left"
-    | "top-right"
-    | "right"
-    | "bottom"
-    | "bottom-left"
-    | "bottom-right"
-    | "left";
-  gap?: number;
-}
-
-export interface IMorphingBoxItemProperties
-  extends
-    IComponentStyling,
-    IComponentSize,
-    IScrollAreaProperties,
-    React.ComponentProps<"dialog"> {
-  lock?: boolean;
-  direction?:
-    | "top-left-bottom-center"
-    | "top-bottom"
-    | "top-right-bottom-center"
-    | "right-left"
-    | "bottom-right-top-center"
-    | "bottom-top"
-    | "bottom-left-top-center"
-    | "left-right";
-}
+import type { IButtonProperties } from "../button/types";
+import type { IOverlayProperties } from "../overlay/types";
+import type { IScrollAreaProperties } from "../scrollarea/types";
+import type {
+  IMorphingBoxItemProperties,
+  IMorphingBoxTriggerProperties,
+} from "./types";
 
 const MorphingBoxRoot = ({ children }: React.ComponentProps<"div">) => {
   return <MorphingBoxProvider>{children}</MorphingBoxProvider>;

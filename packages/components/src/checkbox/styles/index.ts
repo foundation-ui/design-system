@@ -353,7 +353,3 @@ export const NativeInput = styled.input<any>`
     }
   }
 `;
-export const Indicator = styled.span<any>`
-  line-height: 0;
-  pointer-events: none;
-`;

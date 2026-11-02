@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import type { ScrollAreaContainerProps } from "../types";
 
 export const HiddenScrollbar = css`
   scrollbar-width: none;
@@ -13,15 +14,7 @@ export const HiddenScrollbar = css`
   }
 `;
 
-interface ScrollContainerProps {
-  $height?: string;
-  $width?: string;
-  $thumbColor?: string;
-  $trackColor?: string;
-  $thumbHoverColor?: string;
-}
-
-export const CustomScrollbar = css<ScrollContainerProps>`
+export const CustomScrollbar = css<ScrollAreaContainerProps>`
   height: ${({ $height }) => $height || "100%"};
   width: ${({ $width }) => $width || "100%"};
   overflow-y: auto;

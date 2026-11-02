@@ -2,17 +2,7 @@
 
 import React from "react";
 import { RangeContainer, RangeSegment } from "./styles";
-
-export type ProgressBarProps = {
-  /** Amount consumed so far. */
-  consumption: number;
-  /** Amount still remaining. When 0, the bar is shown as empty (red). */
-  remaining: number;
-  /** Ratio between 0 and 1 (e.g. 0.42 for 42%). */
-  percentage: number;
-  /** Ratio at or above which the bar turns orange (warning). */
-  threshold?: number;
-};
+import type { ProgressBarProps } from "./types";
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));

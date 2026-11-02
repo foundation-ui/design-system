@@ -3,18 +3,12 @@
 import React from "react";
 
 import { ItemWrapper, SeparatorItem } from "./styles";
-import { Button, type IButtonProperties } from "../";
+import { Button } from "../";
+
+import type { BreadcrumbItemProps, BreadcrumbProps } from "./types";
 
 const SEGMENT_SEPARATOR = "/";
 
-interface BreadcrumbProps extends React.ComponentProps<"div"> {
-  navigate?: (href: string) => void;
-  capitalizeItems?: boolean;
-  path: string;
-}
-interface BreadcrumbItemProps extends IButtonProperties {
-  isLastItem?: boolean;
-}
 export interface BreadcrumbComposition {
   Item: typeof BreadcrumbItem;
   Separator: typeof BreadcrumbSeparator;

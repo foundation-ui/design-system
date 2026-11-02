@@ -1,3 +1,7 @@
+import type * as React from "react";
+import type { IComponentSize, IComponentStyling } from "../../../../../types";
+import type { IButtonProperties } from "../../button/types";
+
 import type {
   SpeechError,
   SpeechPermissionState,
@@ -43,3 +47,25 @@ export interface IVoiceControlContext {
 
 export interface IVoiceControlRootProperties
   extends IReactChildren, UseSpeechOptions {}
+
+export interface IVoiceControlTriggerProperties extends IButtonProperties {
+  children: React.ReactNode;
+}
+
+export interface IVoiceControlTranscriptProperties
+  extends IComponentStyling, React.ComponentProps<"div"> {
+  /**
+   * Render interim results and announce transcript updates politely.
+   * When false, only finalized transcript is rendered.
+   */
+  live?: boolean;
+}
+
+export interface IVoiceControlStatusProperties extends React.ComponentProps<"div"> {}
+
+export interface IVoiceControlErrorProperties extends React.ComponentProps<"div"> {}
+
+export interface VoiceControlIndicatorProperties
+  extends IComponentSize, React.ComponentProps<"div"> {
+  lines?: number;
+}

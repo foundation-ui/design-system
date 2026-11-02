@@ -1,13 +1,5 @@
 import styled, { css } from "styled-components";
-
-interface OverlayProps {
-  $isHovering: boolean;
-}
-
-interface MaskProps {
-  $mouseX: number;
-  $mouseY: number;
-}
+import type { MaskProps, OverlayProps } from "../types";
 
 const ButtonDefaultStyles = css`
   cursor: pointer;

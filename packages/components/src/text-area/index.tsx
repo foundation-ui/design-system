@@ -4,32 +4,11 @@ import React from "react";
 
 import { TextAreaContainer } from "./styles";
 import {
-  IComponentSize,
-  IComponentStyling,
-  IComponentVariant,
   ComponentSizeEnum,
   ComponentShapeEnum,
   ComponentVariantEnum,
-  IComponentShape,
 } from "../../../../types";
-
-export type ScrollContainerProps = {
-  $height?: string;
-  $width?: string;
-  $thumbColor?: string;
-  $trackColor?: string;
-  $thumbHoverColor?: string;
-};
-
-export interface TextareaProps
-  extends
-    React.ComponentPropsWithRef<"textarea">,
-    IComponentStyling,
-    IComponentSize,
-    IComponentShape,
-    IComponentVariant {
-  resizable?: boolean;
-}
+import type { TextareaProps } from "./types";
 
 /**
  * Textarea are used to allow users to write large chunks of text.

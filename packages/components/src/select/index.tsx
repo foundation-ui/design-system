@@ -9,33 +9,18 @@ import { Wrapper, Trigger, Label, Content, List, Item } from "./styles";
 import { ScrollArea } from "../scrollarea";
 
 import { applyDataState } from "../utils";
-import { IButtonProperties } from "../button";
 import {
-  IComponentStyling,
   ComponentVariantEnum,
   ComponentShapeEnum,
   ComponentSizeEnum,
 } from "../../../../types";
 import { SharedLayout } from "../shared-layout";
 
-export interface ISelectTriggerProperties extends IButtonProperties {
-  error?: boolean;
-  children?: React.ReactNode;
-}
-
-export interface ISelectContentProperties
-  extends IComponentStyling, React.ComponentPropsWithRef<"ul"> {
-  defaultOpen?: boolean;
-}
-
-export interface ISelectItemProperties
-  extends IComponentStyling, Omit<React.ComponentProps<"li">, "onClick"> {
-  value?: string;
-  disabled?: boolean;
-  onClick?: (
-    event: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>,
-  ) => void;
-}
+import type {
+  ISelectContentProperties,
+  ISelectItemProperties,
+  ISelectTriggerProperties,
+} from "./types";
 
 const SelectRoot = ({ children }: { children: React.ReactElement }) => {
   return <SelectProvider>{children}</SelectProvider>;

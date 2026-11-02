@@ -1,33 +1,19 @@
 "use client";
 
 import React from "react";
+
 import { useDialog, DialogProvider } from "./hooks";
 import { useDisabledScroll, useKeyPress } from "@usefui/hooks";
-import {
-  Overlay,
-  IOverlayProperties,
-  Button,
-  IButtonProperties,
-  ScrollArea,
-  IScrollAreaProperties,
-} from "..";
-import { DialogWrapper, Menu } from "./styles";
-import { applyDataState } from "../utils";
-import {
-  IComponentStyling,
-  ComponentSizeEnum,
-  IComponentSize,
-  KeyBindingEnum,
-} from "../../../../types";
 
-export interface IDialogItemProperties
-  extends
-    IComponentStyling,
-    IComponentSize,
-    IScrollAreaProperties,
-    React.ComponentProps<"dialog"> {
-  lock?: boolean;
-}
+import { Overlay, Button, ScrollArea } from "..";
+import { DialogWrapper, Menu } from "./styles";
+
+import { applyDataState } from "../utils";
+import { ComponentSizeEnum, KeyBindingEnum } from "../../../../types";
+
+import type { IButtonProperties } from "../button/types";
+import type { IOverlayProperties } from "../overlay/types";
+import type { IDialogItemProperties } from "./types";
 
 /**
  * Dialog are used displays a modal window to the user on top of the current layer.

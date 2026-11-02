@@ -2,7 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Tree, Page } from "..";
-import type { ITreeLink } from "./index";
+import type { ITreeLink } from "./types";
 
 const meta = {
   title: "Components/Tree",

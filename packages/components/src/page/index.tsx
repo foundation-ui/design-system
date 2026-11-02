@@ -1,27 +1,18 @@
 "use client";
 
 import React from "react";
-import {
-  Toolbar,
-  IToolbarBodyProperties,
-  IToolbarSectionProperties,
-  ScrollArea,
-  IScrollAreaProperties,
-  IButtonProperties,
-} from "..";
+
+import { ScrollArea } from "..";
 import {
   PageRootWrapper,
   PageNavWrapper,
   PageMenuWrapper,
-  PagePanelWrapper,
   PageSectionWrapper,
   PageBodyWrapper,
 } from "./styles";
 
-export interface IPageWrapperProperties {
-  $menus?: number;
-  $navigations?: number;
-}
+import type { IScrollAreaProperties } from "../scrollarea/types";
+import type { IPageWrapperProperties } from "./types";
 
 /**
  * Pages are structured components used to build User Interface layouts.

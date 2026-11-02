@@ -10,14 +10,7 @@ import {
   DragIndicator,
   DragOverlay,
 } from "./styles";
-
-type ResizableEditorProperties = {
-  defaultWidth?: number;
-  minWidth?: number;
-  maxWidth?: number;
-  left: React.ReactNode;
-  right: React.ReactNode;
-};
+import type { ResizableEditorProperties } from "./types";
 
 /**
  * Resizable are used to render children into separated sections that can be resized by users.

@@ -3,8 +3,6 @@
 import styled, { css } from "styled-components";
 import { HiddenScrollbar } from "../../scrollarea/styles";
 
-export type ScrollDirection = "x" | "y" | "both";
-
 const FADE = "12px";
 
 const fade = (axis: "bottom" | "right") =>

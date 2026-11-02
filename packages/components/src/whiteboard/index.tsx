@@ -3,25 +3,9 @@
 import React from "react";
 import { WhiteboardProvider, useWhiteboard } from "./hooks";
 
-import { Button, IButtonProperties } from "../";
+import { Button } from "../";
 import { WhiteboardWrapper, WhiteboardContent } from "./styles";
-
-export interface IWhiteboardOptionsProperties {
-  step?: number;
-  min?: number;
-  max?: number;
-}
-export interface IWhiteboardZoomProperties
-  extends IButtonProperties, IWhiteboardOptionsProperties {
-  direction: "in" | "out" | "reset";
-  initial?: number;
-  children: React.ReactNode;
-}
-export interface IWhiteboardProperties extends IWhiteboardOptionsProperties {
-  allowWheelZoom?: boolean;
-  allowDrag?: boolean;
-  children: React.ReactNode;
-}
+import type { IWhiteboardProperties, IWhiteboardZoomProperties } from "./types";
 
 export interface WhiteboardComposition {
   Root: typeof WhiteboardRoot;

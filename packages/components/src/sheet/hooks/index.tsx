@@ -2,13 +2,7 @@
 
 import React from "react";
 import { IReactChildren } from "../../../../../types";
-
-type MethodsType = React.Dispatch<React.SetStateAction<boolean>> | any;
-interface IContextProperties {
-  id: Record<string, string>;
-  states: Record<string, string | boolean>;
-  methods: Record<string, MethodsType>;
-}
+import type { IContextProperties } from "../types";
 
 const SheetContext = React.createContext<IContextProperties>({
   id: {},

@@ -9,18 +9,8 @@ import {
   ComponentSideEnum,
   ComponentSizeEnum,
   ComponentVariantEnum,
-  IComponentSize,
-  IComponentStyling,
 } from "../../../../types";
-
-interface ITooltipProperties
-  extends IComponentStyling, IComponentSize, React.ComponentProps<"span"> {
-  delay?: number;
-  content: string;
-  hint?: string;
-  variant?: "primary" | "secondary";
-  children: React.ReactNode;
-}
+import type { ITooltipProperties } from "./types";
 
 /**
  * Tooltips are used to convey additional information while hovering a component.

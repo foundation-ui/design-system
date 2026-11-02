@@ -3,15 +3,8 @@
 import React from "react";
 import { SkeletonLoader } from "./styles";
 
-import {
-  ComponentShapeEnum,
-  ComponentSizeEnum,
-  type IComponentShape,
-  type IComponentSize,
-} from "../../../../types";
-
-export interface SkeletonProperties
-  extends IComponentSize, IComponentShape, React.ComponentPropsWithRef<"div"> {}
+import { ComponentShapeEnum, ComponentSizeEnum } from "../../../../types";
+import type { SkeletonProperties } from "./types";
 
 /**
  * Skeletons are used to convoy a loading state information.

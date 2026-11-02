@@ -10,14 +10,18 @@ import {
   IndicatorWrapper,
   IndicatorLine,
 } from "./styles";
-import { Button, IButtonProperties } from "../button";
+import { Button } from "../button";
 
-import {
-  ComponentSizeEnum,
-  type IComponentSize,
-  type IComponentStyling,
-} from "../../../../types";
+import { ComponentSizeEnum } from "../../../../types";
 import type { IVoiceControlRootProperties, IVoiceControlStates } from "./types";
+
+import type {
+  IVoiceControlErrorProperties,
+  IVoiceControlStatusProperties,
+  IVoiceControlTranscriptProperties,
+  IVoiceControlTriggerProperties,
+  VoiceControlIndicatorProperties,
+} from "./types";
 
 export interface IVoiceControlComposition {
   Root: typeof VoiceControlRoot;
@@ -26,26 +30,6 @@ export interface IVoiceControlComposition {
   Status: typeof VoiceControlStatus;
   Indicator: typeof VoiceControlIndicator;
   Error: typeof VoiceControlError;
-}
-
-export interface IVoiceControlTriggerProperties extends IButtonProperties {
-  children: React.ReactNode;
-}
-
-export interface IVoiceControlTranscriptProperties
-  extends IComponentStyling, React.ComponentProps<"div"> {
-  /**
-   * Render interim results and announce transcript updates politely.
-   * When false, only finalized transcript is rendered.
-   */
-  live?: boolean;
-}
-
-export interface IVoiceControlStatusProperties extends React.ComponentProps<"div"> {}
-export interface IVoiceControlErrorProperties extends React.ComponentProps<"div"> {}
-export interface VoiceControlIndicatorProperties
-  extends IComponentSize, React.ComponentProps<"div"> {
-  lines?: number;
 }
 
 const getStatusMessage = (
@@ -377,10 +361,3 @@ export {
   VoiceControlIndicator,
   VoiceControlError,
 };
-
-export type {
-  IVoiceControlContext,
-  IVoiceControlRootProperties,
-  IVoiceControlStates,
-  IVoiceControlMethods,
-} from "./types";

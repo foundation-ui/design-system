@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Badge, IBadgeProperties } from "../../";
+import { Badge } from "../../";
+import type { IBadgeProperties } from "../../badge/types";
 
 export const MessageBubbleWrapper = styled.div`
   display: flex;

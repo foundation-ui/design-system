@@ -1,23 +1,11 @@
 "use client";
 
 import React from "react";
+
 import { BannerWrapper } from "./styles";
 
-import {
-  ComponentShapeEnum,
-  ComponentSizeEnum,
-  ComponentVariantEnum,
-  TComponentVariant,
-  TComponentVariantExtended,
-  type IComponentShape,
-  type IComponentStyling,
-} from "../../../../types";
-
-export interface IBannerProperties
-  extends IComponentStyling, IComponentShape, React.ComponentProps<"div"> {
-  variant?: TComponentVariant | TComponentVariantExtended;
-  emphasis?: boolean;
-}
+import { ComponentShapeEnum, ComponentVariantEnum } from "../../../../types";
+import type { IBannerProperties } from "./types";
 
 /**
  * Banners are used to convey rich data or states to the users.

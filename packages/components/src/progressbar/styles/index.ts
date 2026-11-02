@@ -1,10 +1,7 @@
 "use client";
 
 import styled, { keyframes } from "styled-components";
-
-type RangeProps = {
-  $percentage: number;
-};
+import type { RangeProps } from "../types";
 
 const RangeAnimation = keyframes`
   from {

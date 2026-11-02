@@ -3,7 +3,7 @@
 import React, { useState, createContext, useContext } from "react";
 
 import { IReactChildren, IComponentAPI } from "../../../../../types";
-import { MessageBubbleSide } from "../";
+import type { MessageBubbleSide } from "../types";
 
 const defaultComponentAPI = {
   id: "",

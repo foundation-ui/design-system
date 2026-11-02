@@ -1,5 +1,10 @@
-import type React from "react";
-import type { IComponentStyling } from "../../../../types";
+import type * as React from "react";
+import type { IComponentShape, IComponentSize } from "../../../../../types";
+
+export interface IContextMenuAreaProperties extends React.ComponentProps<"div"> {}
+
+export interface IContextMenuContentProperties
+  extends IComponentSize, IComponentShape, React.ComponentProps<"div"> {}
 
 export interface IContextMenuPoint {
   x: number;

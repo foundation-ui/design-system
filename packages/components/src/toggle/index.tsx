@@ -1,11 +1,9 @@
 "use client";
 
 import React from "react";
-import { Button, IButtonProperties } from "../button";
 
-export interface IToggleProperties extends IButtonProperties {
-  defaultChecked?: boolean;
-}
+import { Button } from "../button";
+import type { IToggleProperties } from "./types";
 
 /**
  * Toggle are button that can be switched on or off.
@@ -23,7 +21,7 @@ export interface IToggleProperties extends IButtonProperties {
 export const Toggle = (props: IToggleProperties) => {
   const { defaultChecked, onClick, disabled, children, ...restProps } = props;
   const [checked, setChecked] = React.useState<boolean>(
-    defaultChecked ?? false
+    defaultChecked ?? false,
   );
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {

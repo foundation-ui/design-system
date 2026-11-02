@@ -2,20 +2,13 @@
 
 import React from "react";
 import { TextShimmerWrapper } from "./styles";
-import { IComponentStyling } from "../../../../types";
+
+import type { ITextShimmerProperties } from "./types";
 
 const DEFAULT_DURATION = 2;
 const DEFAULT_SPREAD = 200;
 const DEFAULT_SHIMMER_COLOR = "var(--font-color-alpha-60)";
 const DEFAULT_BASE_COLOR = "var(--font-color-alpha-30)";
-
-export interface ITextShimmerProperties
-  extends IComponentStyling, React.HTMLAttributes<HTMLSpanElement> {
-  duration?: number;
-  spread?: number;
-  shimmerColor?: string;
-  baseColor?: string;
-}
 
 /**
  * Shimmer applies an animated shimmer gradient effect to inline text content.

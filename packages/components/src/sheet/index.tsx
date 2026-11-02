@@ -10,29 +10,15 @@ import { SheetWrapper } from "./styles";
 
 import { applyDataState } from "../utils";
 
-import { IButtonProperties } from "../button";
 import {
   ComponentVariantEnum,
   ComponentSizeEnum,
   ComponentSideEnum,
-  IComponentStyling,
-  IComponentSize,
-  IComponentControlProperties,
   IReactChildren,
   KeyBindingEnum,
 } from "../../../../types";
-
-export interface ISheetProperties
-  extends IComponentStyling,
-    IComponentSize,
-    IComponentControlProperties,
-    React.ComponentProps<"dialog"> {
-  side?: "left" | "right";
-  lock?: boolean;
-  overlay?: boolean;
-  closeOnInteract?: boolean;
-  open?: boolean;
-}
+import type { IButtonProperties } from "../button/types";
+import type { ISheetProperties } from "./types";
 
 export interface ISheetComposition {
   Root: typeof SheetRoot;

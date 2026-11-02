@@ -3,23 +3,8 @@
 import React from "react";
 
 import { PillBody } from "./styles";
-import {
-  ComponentSizeEnum,
-  IComponentSize,
-  ComponentShapeEnum,
-  IComponentShape,
-} from "../../../../types";
-
-export interface IPillProperties
-  extends
-    IComponentSize,
-    IComponentShape,
-    React.HTMLAttributes<HTMLDivElement> {
-  pulse?: boolean;
-  fixed?: boolean;
-  color?: string;
-  status?: "success" | "warning" | "danger";
-}
+import { ComponentSizeEnum, ComponentShapeEnum } from "../../../../types";
+import type { IPillProperties } from "./types";
 
 const Pill = (props: IPillProperties) => {
   const {

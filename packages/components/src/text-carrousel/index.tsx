@@ -2,12 +2,7 @@
 
 import React from "react";
 import { TextCarrouselWrapper } from "./styles";
-
-interface ITextCarrouselProperties {
-  auto?: boolean;
-  duration?: number;
-  content: string[];
-}
+import type { ITextCarrouselProperties } from "./types";
 
 export const TextCarrousel = (props: ITextCarrouselProperties) => {
   const { auto = true, duration, content } = props;

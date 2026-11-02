@@ -1,7 +1,8 @@
-import type React from "react";
-import type { IScrollAreaProperties } from "../scrollarea";
+import type * as React from "react";
+import type { IScrollAreaProperties } from "../../scrollarea/types";
 
 export type SortDirection = "asc" | "desc";
+
 export type SortState = { key: string; direction: SortDirection } | null;
 
 export interface TableColumn<T> {

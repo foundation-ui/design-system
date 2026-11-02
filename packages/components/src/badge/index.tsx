@@ -7,22 +7,8 @@ import {
   ComponentShapeEnum,
   ComponentSizeEnum,
   ComponentVariantEnum,
-  IComponentSize,
-  TComponentVariant,
-  TComponentVariantExtended,
-  type IComponentShape,
-  type IComponentStyling,
 } from "../../../../types";
-
-export interface IBadgeProperties
-  extends
-    IComponentStyling,
-    IComponentShape,
-    IComponentSize,
-    React.ComponentProps<"div"> {
-  variant?: TComponentVariant | TComponentVariantExtended;
-  emphasis?: boolean;
-}
+import type { IBadgeProperties } from "./types";
 
 /**
  * Badges are used to convey data or states to the users.

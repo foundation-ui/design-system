@@ -1,49 +1,31 @@
 "use client";
 
 import React from "react";
+
+import { useKeyPress } from "@usefui/hooks";
+import { BulkActionsProvider, useBulkActions } from "./hooks";
+
 import { ActionWrapper, BulkActionsWrapper } from "./styles";
+import { Button } from "../button";
 
 import {
   ComponentShapeEnum,
   ComponentSizeEnum,
   ComponentVariantEnum,
-  type IComponentSize,
-  type IComponentVariant,
-  type IComponentShape,
-  type IComponentStyling,
   type TComponentSide,
-  IComponentControlProperties,
-  KeyBindingEnum,
 } from "../../../../types";
-import { BulkActionsProvider, useBulkActions } from "./hooks";
-import { Button, IButtonProperties } from "../button";
-import { useKeyPress } from "@usefui/hooks";
+
+import type {
+  IBulkActionsItemProperties,
+  IBulkActionsProperties,
+  IBulkActionsTriggerProperties,
+} from "./types";
 
 export interface IBulkActionsComposition {
   Root: typeof BulkActionsRoot;
   Trigger: typeof BulkActionsTrigger;
   Handle: typeof BulkActionsHandle;
   Item: typeof BulkActionsItem;
-}
-
-export interface IBulkActionsProperties
-  extends
-    IComponentStyling,
-    IComponentShape,
-    IComponentSize,
-    IComponentVariant,
-    IComponentControlProperties,
-    React.ComponentProps<"div"> {
-  side?: TComponentSide;
-  gap?: number;
-}
-export interface IBulkActionsBodyProperties
-  extends IComponentStyling, React.ComponentProps<"div"> {
-  side?: TComponentSide;
-}
-export interface IBulkActionsTriggerProperties extends IButtonProperties {}
-export interface IBulkActionsItemProperties extends React.ComponentProps<"div"> {
-  status?: "idle" | "pending" | "processing" | "running";
 }
 
 const BulkActions = (props: IBulkActionsProperties) => {

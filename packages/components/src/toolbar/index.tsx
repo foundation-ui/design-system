@@ -2,39 +2,26 @@
 
 import React from "react";
 
-import { ToolbarProvider, useToolbar, IToolbarProviderProps } from "./hooks";
+import { ToolbarProvider, useToolbar } from "./hooks";
 import {
   ToolbarWrapper,
   ToolbarTriggerWrapper,
   ToolbarContentWrapper,
 } from "./styles";
-import { Button, IButtonProperties } from "..";
+import { Button } from "..";
 import {
-  IComponentStyling,
   ComponentSizeEnum,
   ComponentHeightEnum,
-  TComponentHeight,
   ComponentVariantEnum,
-  IComponentSize,
   ComponentSideEnum,
-  TComponentSide,
 } from "../../../../types";
-
-export interface IToolbarBodyProperties
-  extends IComponentStyling, IComponentSize, React.ComponentProps<"div"> {
-  side?: TComponentSide;
-  height?: TComponentHeight;
-}
-export interface IToolbarRootProperties extends IToolbarProviderProps {}
-export interface IToolbarSectionProperties extends React.ComponentProps<"section"> {
-  /** Keep the section visible when the toolbar is collapsed. */
-  alwaysVisible?: boolean;
-}
-export interface IToolbarItemProperties extends React.ComponentProps<"div"> {
-  /** Keep the first child visible when the toolbar is collapsed. */
-  showFirstChild?: boolean;
-}
-export interface IToolbarTriggerProperties extends IButtonProperties {}
+import type {
+  IToolbarBodyProperties,
+  IToolbarItemProperties,
+  IToolbarRootProperties,
+  IToolbarSectionProperties,
+  IToolbarTriggerProperties,
+} from "./types";
 
 export interface IToolbarComposition {
   Root: typeof ToolbarRoot;

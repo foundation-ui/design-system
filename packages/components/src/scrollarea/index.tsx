@@ -2,10 +2,7 @@
 
 import React from "react";
 import { ScrollAreaWrapper } from "./styles";
-
-export interface IScrollAreaProperties extends React.ComponentProps<any> {
-  scrollbar?: boolean;
-}
+import type { IScrollAreaProperties } from "./types";
 
 /**
  * Add native scroll functionality to custom components.

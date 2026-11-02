@@ -8,18 +8,12 @@ import {
   DitherCell,
   AsciiContainer,
 } from "./styles";
-import type { IComponentSize } from "../../../../types";
 
-interface LoaderSpinnerProperties extends IComponentSize {
-  variant?: "circle" | "circle-filled";
-}
-
-interface LoaderBaseProperties
-  extends IComponentSize, React.ComponentProps<"div"> {
-  duration?: number;
-}
-interface LoaderDitherProperties
-  extends IComponentSize, React.ComponentProps<"div"> {}
+import type {
+  LoaderBaseProperties,
+  LoaderDitherProperties,
+  LoaderSpinnerProperties,
+} from "./types";
 
 export interface LoaderComposition {
   Spinner: typeof LoaderSpinner;

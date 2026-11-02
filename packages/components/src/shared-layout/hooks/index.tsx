@@ -8,15 +8,9 @@ import React, {
   useContext,
 } from "react";
 import { IReactChildren, IComponentAPI } from "../../../../../types";
+import type { ISharedLayoutPillState, SharedLayoutElementType } from "../types";
 
-export type SharedLayoutElementType = "div" | "ul";
 
-export interface ISharedLayoutPillState {
-  top: number;
-  height: number;
-  visible: boolean;
-  moving: boolean;
-}
 
 const defaultComponentAPI = {
   id: "",

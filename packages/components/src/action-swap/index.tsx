@@ -1,20 +1,12 @@
 "use client";
 
 import React from "react";
-import { Button, type IButtonProperties } from "../";
+
+import { Button } from "../";
+import type { ActionSwapCopyProperties, ActionSwapProperties } from "./types";
 
 export interface IActionSwapComposition {
   Copy: typeof ActionSwapCopy;
-}
-
-interface ActionSwapProperties extends IButtonProperties {
-  delay?: number;
-  actions: React.ReactNode[];
-}
-interface ActionSwapCopyProperties extends IButtonProperties {
-  value?: string;
-  delay?: number;
-  actions?: React.ReactNode[];
 }
 
 const ActionSwap = ({

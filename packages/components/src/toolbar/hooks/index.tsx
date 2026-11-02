@@ -9,25 +9,10 @@ import React, {
   useState,
 } from "react";
 import { useIsMobile } from "@usefui/hooks";
-import { IReactChildren } from "../../../../../types";
+
+import type { IToolbarContext, IToolbarProviderProps } from "../types";
 
 const TOOLBAR_KEYBOARD_SHORTCUT = "b";
-
-export interface IToolbarContext {
-  id: string;
-  state: "expanded" | "collapsed";
-  open: boolean;
-  setOpen: (open: boolean) => void;
-  toggle: () => void;
-  isMobile: boolean;
-  openMobile: boolean;
-  setOpenMobile: (open: boolean) => void;
-}
-export interface IToolbarProviderProps extends IReactChildren {
-  open?: boolean;
-  defaultOpen?: boolean;
-  onOpenChange?: (open: boolean) => void;
-}
 
 const ToolbarContext = createContext<IToolbarContext | null>(null);
 

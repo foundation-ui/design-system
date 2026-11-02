@@ -11,35 +11,8 @@ import {
   TreeLink,
 } from "./styles";
 
-import {
-  IComponentStyling,
-  IComponentSize,
-  ComponentSizeEnum,
-} from "../../../../types";
-
-export interface ITreeLink {
-  label: React.ReactNode;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  icon?: React.ReactNode;
-  disabled?: boolean;
-  links?: ITreeLink[];
-  defaultOpen?: boolean;
-}
-
-export interface ITreeProperties
-  extends
-    IComponentStyling,
-    IComponentSize,
-    Omit<React.ComponentProps<"ul">, "children"> {
-  icon?: React.ReactNode;
-  label: React.ReactNode;
-  links: ITreeLink[];
-  defaultOpen?: boolean;
-}
-
-interface ITreeBranchProperties extends ITreeProperties {
-  nested?: boolean;
-}
+import { ComponentSizeEnum } from "../../../../types";
+import type { ITreeBranchProperties, ITreeProperties } from "./types";
 
 const TreeBranch = (props: ITreeBranchProperties) => {
   const {

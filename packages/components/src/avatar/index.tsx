@@ -2,35 +2,13 @@
 
 import React from "react";
 import { AvatarWrapper, BadgeWrapper, StatusWrapper } from "./styles";
-import {
-  IComponentStyling,
-  ComponentSizeEnum,
-  IComponentSize,
-  ComponentShapeEnum,
-  IComponentShape,
-} from "../../../../types";
 
-export enum AvataStatusEnum {
-  Online = "online",
-  Away = "away",
-  Busy = "busy",
-  Offline = "offline",
-}
-export type AvatarStatusType = "online" | "away" | "busy" | "offline";
-export interface IAvatarProperties
-  extends
-    IComponentStyling,
-    IComponentSize,
-    IComponentShape,
-    React.HTMLAttributes<HTMLDivElement> {
-  src?: string;
-  alt?: string;
-  status?: AvatarStatusType;
-}
-export interface IAvatarBadgeProperties extends React.HTMLAttributes<HTMLDivElement> {
-  src?: string;
-  alt?: string;
-}
+import { ComponentSizeEnum, ComponentShapeEnum } from "../../../../types";
+import type {
+  AvatarStatusType,
+  IAvatarBadgeProperties,
+  IAvatarProperties,
+} from "./types";
 
 export interface IAvatarComposition {
   Status: typeof AvatarStatus;

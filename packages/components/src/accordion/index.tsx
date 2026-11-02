@@ -3,28 +3,21 @@
 import React from "react";
 import { AccordionProvider, useAccordion } from "./hooks";
 
-import { Button, IButtonProperties } from "../button";
+import { Button } from "../button";
 import { AccordionContentWrapper, AccordionContentInner } from "./styles";
 
-import {
-  IReactChildren,
-  IComponentSpacing,
-  ComponentVariantEnum,
-} from "../../../../types";
+import { IReactChildren, ComponentVariantEnum } from "../../../../types";
+
+import type {
+  IAccordionContentProperties,
+  IAccordionProperties,
+  IAccordionTriggerProperties,
+} from "./types";
 
 export interface IAccordionComposition {
   Root: typeof AccordionRoot;
   Trigger: typeof AccordionTrigger;
   Content: typeof AccordionContent;
-}
-export interface IAccordionProperties
-  extends IComponentSpacing, React.ComponentProps<"div"> {}
-export interface IAccordionTriggerProperties extends IButtonProperties {
-  value: string;
-}
-export interface IAccordionContentProperties extends IAccordionProperties {
-  defaultOpen?: boolean;
-  value: string;
 }
 
 /**

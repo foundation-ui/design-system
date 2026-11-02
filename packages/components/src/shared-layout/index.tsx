@@ -8,23 +8,11 @@ import {
   SharedLayoutContent,
 } from "./styles";
 import { useSharedLayout, SharedLayoutProvider } from "./hooks";
-import { IComponentStyling, IReactChildren } from "../../../../types";
-
-import type { SharedLayoutElementType } from "./hooks";
-
-export interface ISharedLayoutProperties
-  extends
-    IComponentStyling,
-    Omit<React.HTMLAttributes<HTMLElement>, "children"> {
-  as?: SharedLayoutElementType;
-  /** Horizontal inset of the pill relative to each item (px). Defaults to 16. */
-  inset?: number;
-  children: React.ReactNode;
-}
-
-export interface ISharedLayoutItemProperties extends React.HTMLAttributes<HTMLElement> {
-  children?: React.ReactNode;
-}
+import { IReactChildren } from "../../../../types";
+import type {
+  ISharedLayoutItemProperties,
+  ISharedLayoutProperties,
+} from "./types";
 
 export interface ISharedLayoutComposition {
   Root: typeof SharedLayoutRoot;

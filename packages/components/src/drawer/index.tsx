@@ -5,37 +5,16 @@ import React from "react";
 import { useDrawer, DrawerProvider } from "./hooks";
 import { useDisabledScroll, useKeyPress } from "@usefui/hooks";
 
-import {
-  Overlay,
-  IOverlayProperties,
-  Button,
-  IButtonProperties,
-  IScrollAreaProperties,
-} from "..";
+import { Overlay, Button } from "..";
 import { DrawerWrapper, Trigger, Menu } from "./styles";
+
 import { applyDataState } from "../utils";
-import {
-  IComponentStyling,
-  ComponentSizeEnum,
-  IComponentSize,
-  KeyBindingEnum,
-} from "../../../../types";
+import { ComponentSizeEnum, KeyBindingEnum } from "../../../../types";
 
-export interface IDrawerTriggerProperties extends IButtonProperties {
-  threshold?: number;
-  position?: "top" | "right" | "bottom" | "left";
-  gap?: number;
-}
-
-export interface IDrawerItemProperties
-  extends
-    IComponentStyling,
-    IComponentSize,
-    IScrollAreaProperties,
-    React.ComponentProps<"dialog"> {
-  lock?: boolean;
-  direction?: "top-bottom" | "right-left" | "bottom-top" | "left-right";
-}
+import type { IButtonProperties } from "../button/types";
+import type { IOverlayProperties } from "../overlay/types";
+import type { IScrollAreaProperties } from "../scrollarea/types";
+import type { IDrawerItemProperties, IDrawerTriggerProperties } from "./types";
 
 const Drawer = (props: IDrawerItemProperties) => {
   const {

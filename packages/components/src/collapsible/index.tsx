@@ -3,18 +3,18 @@
 import React from "react";
 
 import { CollapsibleProvider, useCollapsible } from "./hooks";
-import { Button, IButtonProperties } from "..";
+import { Button } from "..";
+
 import { applyDataState } from "../utils";
+
 import { IReactChildren, ComponentVariantEnum } from "../../../../types";
+import type { IButtonProperties } from "../button/types";
+import type { ICollapsibleProperties } from "./types";
 
 export interface ICollapsibleComposition {
   Root: typeof CollapsibleRoot;
   Trigger: typeof CollapsibleTrigger;
   Content: typeof CollapsibleContent;
-}
-export interface ICollapsibleProperties extends React.ComponentProps<"div"> {
-  defaultOpen?: boolean;
-  showFirstChild?: boolean;
 }
 
 /**

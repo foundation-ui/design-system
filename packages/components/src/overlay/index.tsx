@@ -1,15 +1,9 @@
 "use client";
 
 import React from "react";
-import { OverlayWrapper } from "./styles";
-import { IComponentStyling } from "../../../../types";
 
-export interface IOverlayProperties
-  extends IComponentStyling,
-    React.ComponentProps<"div"> {
-  visible?: boolean;
-  closeOnInteract?: boolean;
-}
+import { OverlayWrapper } from "./styles";
+import type { IOverlayProperties } from "./types";
 
 /**
  * Overlay are used to display content on top of the current layer.

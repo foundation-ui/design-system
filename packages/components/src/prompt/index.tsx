@@ -5,19 +5,14 @@ import React from "react";
 import { useKeyPress } from "@usefui/hooks";
 
 import { PromptWrapper, ToolsWrapper, AuxiliaryWrapper } from "./styles";
+
 import { Textarea } from "../text-area";
+import { Viewport } from "../viewport";
 
-import { IComponentControlProperties, KeyBindingEnum } from "../../../../types";
-import { IViewportProperties, Viewport } from "../viewport";
+import type { IViewportProperties } from "../viewport/types";
+import type { IPromptProperties } from "./types";
 
-export interface IPromptProperties
-  extends
-    IComponentControlProperties,
-    React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-  cleanup?: boolean;
-  onCleanup?: () => void;
-  onSubmit?: () => void;
-}
+import { KeyBindingEnum } from "../../../../types";
 
 export interface PromptComposition {
   Root: typeof PromptRoot;

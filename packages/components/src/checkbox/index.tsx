@@ -3,30 +3,18 @@
 import React from "react";
 
 import { CheckboxProvider, useCheckbox } from "./hooks";
-import { CheckboxWrapper, NativeInput, Indicator } from "./styles";
+import { CheckboxWrapper, NativeInput } from "./styles";
 
 import {
   IReactChildren,
-  IComponentStyling,
   ComponentSizeEnum,
-  IComponentSize,
   ComponentVariantEnum,
-  TComponentVariant,
-  TComponentVariantExtended,
 } from "../../../../types";
+import type { ICheckboxProperties } from "./types";
 
 export interface ICheckboxComposition {
   Root: typeof CheckboxRoot;
   Indicator: typeof CheckboxIndicator;
-}
-
-export interface ICheckboxProperties
-  extends IComponentStyling, IComponentSize, React.ComponentProps<"input"> {
-  variant?: TComponentVariant | TComponentVariantExtended | "accent";
-  /** Shows the mixed state. Takes visual precedence over `checked`. */
-  indeterminate?: boolean;
-  /** Called with the next checked value when the user toggles the checkbox. */
-  onCheckedChange?: (checked: boolean) => void;
 }
 
 /**

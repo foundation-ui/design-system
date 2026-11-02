@@ -6,8 +6,7 @@ import {
   FieldDefaultStyles,
   FieldVariantsStyles,
 } from "../../field/styles";
-
-import type { ScrollContainerProps } from "../";
+import type { ScrollContainerProps } from "../types";
 
 const CustomScrollbar = css<ScrollContainerProps>`
   height: ${({ $height }) => $height ?? "100%"};

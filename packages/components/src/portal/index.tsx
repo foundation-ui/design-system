@@ -2,11 +2,7 @@
 
 import React from "react";
 import { createPortal } from "react-dom";
-
-export interface IPortalProperties {
-  container: string;
-  children?: React.ReactNode;
-}
+import type { IPortalProperties } from "./types";
 
 /**
  * Portal are used to render children into a DOM node that exists outside the DOM hierarchy of the parent component.

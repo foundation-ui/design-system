@@ -3,17 +3,9 @@
 import React from "react";
 
 import { MarkWrapper } from "./styles";
-import {
-  ComponentVariantEnum,
-  IComponentStyling,
-  IComponentVariant,
-} from "../../../../types";
 
-interface IMarkProperties
-  extends IComponentStyling, IComponentVariant, React.ComponentProps<"span"> {
-  fontFamily?: "monospace" | "inherit";
-  children: React.ReactNode;
-}
+import { ComponentVariantEnum } from "../../../../types";
+import type { IMarkProperties } from "./types";
 
 /**
  * Marks are used to put emphasis on important information.

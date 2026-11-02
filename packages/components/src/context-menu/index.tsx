@@ -3,6 +3,8 @@
 import React from "react";
 
 import { ContextMenuProvider, useContextMenu } from "./hooks";
+
+import { SharedLayout } from "../shared-layout";
 import {
   ContextMenuContentWrapper,
   ContextMenuPortal,
@@ -12,16 +14,12 @@ import {
 import { clamp, getCollapsedClip } from "../utils";
 
 import type {
+  IContextMenuAreaProperties,
+  IContextMenuContentProperties,
   IContextMenuMenuProperties,
   IContextMenuPoint,
   IContextMenuItem,
 } from "./types";
-import type { IComponentShape, IComponentSize } from "../../../../types";
-import { SharedLayout } from "../shared-layout";
-
-export interface IContextMenuAreaProperties extends React.ComponentProps<"div"> {}
-export interface IContextMenuContentProperties
-  extends IComponentSize, IComponentShape, React.ComponentProps<"div"> {}
 
 export interface IContextMenuComposition {
   Root: typeof ContextMenuRoot;
