@@ -91,6 +91,31 @@ importers:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@25.5.0)(jiti@2.7.0)(jsdom@25.0.1)(yaml@2.4.5)
 
+  apps/storybook:
+    dependencies:
+      '@usefui/components':
+        specifier: workspace:*
+        version: link:../../packages/components
+      '@usefui/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@usefui/hooks':
+        specifier: workspace:*
+        version: link:../../packages/hooks
+      '@usefui/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      react:
+        specifier: ^19.2.4
+        version: 19.2.4
+      react-dom:
+        specifier: ^19.2.4
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/analytics:
     devDependencies:
       '@types/react':

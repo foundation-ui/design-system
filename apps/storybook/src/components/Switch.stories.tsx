@@ -1,0 +1,142 @@
+import React from "react";
+import type { Meta, StoryObj } from "@storybook/react";
+
+import { Field, Page, Switch } from "@usefui/components";
+import { ComponentSizeEnum, ComponentVariantEnum } from "@usefui/components";
+
+// Duplicated doc: The JSDoc content isn't rendering on Storybook.
+
+/**
+ * Switch are toggle components that allows the user to turn a setting on or off.
+ *
+ * **Best practices:**
+ *
+ * - Use a clear and descriptive label for each switch.
+ * - The interaction must have predictable behavior.
+ */
+const meta = {
+  title: "Components/Switch",
+  component: Switch,
+  tags: ["autodocs"],
+  decorators: [(Story) => <Story />],
+} satisfies Meta<typeof Switch>;
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+export const Default: Story = {
+  args: {
+    raw: false,
+    defaultChecked: false,
+  },
+  argTypes: {
+    variant: {
+      options: [ComponentVariantEnum.Primary, ComponentVariantEnum.Ghost],
+      control: { type: "radio" },
+    },
+    sizing: {
+      options: [
+        ComponentSizeEnum.Small,
+        ComponentSizeEnum.Medium,
+        ComponentSizeEnum.Large,
+      ],
+      control: { type: "radio" },
+    },
+  },
+  render: ({ ...args }) => (
+    <Switch.Root>
+      <Switch>
+        <Switch.Thumb />
+      </Switch>
+    </Switch.Root>
+  ),
+};
+export const DefaultChecked: Story = {
+  render: ({ ...args }) => (
+    <Switch.Root>
+      <Switch defaultChecked>
+        <Switch.Thumb />
+      </Switch>
+    </Switch.Root>
+  ),
+};
+export const Sizes: Story = {
+  render: ({ ...args }) => (
+    <div className="flex flex-column g-medium-30">
+      {["small", "medium", "large"].map((item) => (
+        <Switch.Root key={item}>
+          <Field.Label
+            id={`${item}-label`}
+            htmlFor={item}
+            className="flex align-center g-medium-30"
+            optional
+          >
+            <Switch name={item} sizing={item as any}>
+              <Switch.Thumb sizing={item as any} />
+            </Switch>
+
+            <div className="flex flex-column">
+              <Field.Meta variant="emphasis">{item}</Field.Meta>
+              <Field.Meta variant="hint" className="fs-small-60">
+                The {item} Switch sizing
+              </Field.Meta>
+            </div>
+          </Field.Label>
+        </Switch.Root>
+      ))}
+    </div>
+  ),
+};
+export const Shapes: Story = {
+  render: ({ ...args }) => (
+    <div className="flex flex-column g-medium-30">
+      {["square", "smooth", "round"].map((item) => (
+        <Switch.Root key={item}>
+          <Field.Label
+            id={`${item}-label`}
+            htmlFor={item}
+            className="flex align-center g-medium-30"
+            optional
+          >
+            <Switch name={item} shape={item as any}>
+              <Switch.Thumb shape={item as any} />
+            </Switch>
+
+            <div className="flex flex-column">
+              <Field.Meta variant="emphasis">{item}</Field.Meta>
+              <Field.Meta variant="hint" className="fs-small-60">
+                The {item} Switch sizing
+              </Field.Meta>
+            </div>
+          </Field.Label>
+        </Switch.Root>
+      ))}
+    </div>
+  ),
+};
+export const Variants: Story = {
+  render: ({ ...args }) => (
+    <div className="flex flex-column g-medium-30">
+      {["accent", "primary"].map((item) => (
+        <Switch.Root key={item}>
+          <Field.Label
+            id={`${item}-label`}
+            htmlFor={item}
+            className="flex align-center g-medium-30"
+            optional
+          >
+            <Switch name={item} variant={item}>
+              <Switch.Thumb />
+            </Switch>
+
+            <div className="flex flex-column">
+              <Field.Meta variant="emphasis">{item}</Field.Meta>
+              <Field.Meta variant="hint" className="fs-small-60">
+                The {item} Switch variant
+              </Field.Meta>
+            </div>
+          </Field.Label>
+        </Switch.Root>
+      ))}
+    </div>
+  ),
+};
