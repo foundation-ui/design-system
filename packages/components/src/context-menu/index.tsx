@@ -281,6 +281,11 @@ const ContextMenuContent = (props: IContextMenuContentProperties) => {
 };
 ContextMenuContent.displayName = "ContextMenu.Content";
 
+/**
+ * ContextMenuItem component.
+ *
+ * @returns {ReactElement} The ContextMenuItem component.
+ */
 const ContextMenuItem = (props: IContextMenuItem) => {
   const { onClick, radio = false, disabled, children, ...restProps } = props;
   const { states, methods } = useContextMenu();

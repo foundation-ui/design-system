@@ -6,6 +6,18 @@ import type { IViewportProperties } from "./types";
 
 const DRAG_THRESHOLD = 4; // px before a press becomes a drag
 
+/**
+ * Viewport is used to create a scrollable, draggable viewport region.
+ *
+ * **Best practices:**
+ *
+ * - Provide a height to constrain the viewport.
+ * - Use direction to enable drag scrolling.
+ *
+ * @param {IViewportProperties} props - The props for the Viewport component.
+ * @param {ReactNode} props.children - The content to be rendered inside the viewport.
+ * @returns {ReactElement} The Viewport component.
+ */
 export const Viewport = React.forwardRef<HTMLDivElement, IViewportProperties>(
   function Viewport({ children, height, direction, className }, ref) {
     const scrollX = direction === "x" || direction === "both";
@@ -107,3 +119,5 @@ export const Viewport = React.forwardRef<HTMLDivElement, IViewportProperties>(
     );
   },
 );
+
+Viewport.displayName = "Viewport";

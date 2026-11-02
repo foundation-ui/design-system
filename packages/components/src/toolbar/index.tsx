@@ -32,6 +32,11 @@ export interface IToolbarComposition {
   Section: typeof ToolbarSection;
 }
 
+/**
+ * Toolbar component.
+ *
+ * @returns {ReactElement} The Toolbar component.
+ */
 const Toolbar = (props: IToolbarBodyProperties) => {
   const {
     raw,

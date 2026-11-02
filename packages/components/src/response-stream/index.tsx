@@ -7,6 +7,11 @@ import type { IResponseStreamProperties } from "./types";
 const SCROLLABLE = ["auto", "scroll", "overlay", "hidden"];
 const PIN_THRESHOLD = 8;
 
+/**
+ * getScrollParent component.
+ *
+ * @returns {ReactElement} The getScrollParent component.
+ */
 const getScrollParent = (node: HTMLElement): HTMLElement | null => {
   let parent = node.parentElement;
 

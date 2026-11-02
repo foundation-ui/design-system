@@ -6,6 +6,11 @@ import { PillBody } from "./styles";
 import { ComponentSizeEnum, ComponentShapeEnum } from "../types";
 import type { IPillProperties } from "./types";
 
+/**
+ * Pill component.
+ *
+ * @returns {ReactElement} The Pill component.
+ */
 const Pill = (props: IPillProperties) => {
   const {
     status,

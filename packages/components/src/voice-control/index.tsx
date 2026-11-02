@@ -32,6 +32,11 @@ export interface IVoiceControlComposition {
   Error: typeof VoiceControlError;
 }
 
+/**
+ * getStatusMessage component.
+ *
+ * @returns {ReactElement} The getStatusMessage component.
+ */
 const getStatusMessage = (
   states: IVoiceControlStates,
 ): React.ReactNode | null => {
@@ -49,6 +54,11 @@ const getStatusMessage = (
   }
 };
 
+/**
+ * getErrorCopy component.
+ *
+ * @returns {ReactElement} The getErrorCopy component.
+ */
 const getErrorCopy = (states: IVoiceControlStates): string => {
   if (states.status === "denied") {
     return "Microphone access was denied. Enable microphone access in your browser settings, then try again.";

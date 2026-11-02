@@ -43,6 +43,11 @@ const Collapsible = (props: ICollapsibleProperties) => {
 };
 Collapsible.displayName = "Collapsible";
 
+/**
+ * CollapsibleRoot component.
+ *
+ * @returns {ReactElement} The CollapsibleRoot component.
+ */
 const CollapsibleRoot = ({ children }: IReactChildren) => {
   return <CollapsibleProvider>{children}</CollapsibleProvider>;
 };

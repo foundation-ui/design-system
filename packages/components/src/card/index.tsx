@@ -11,6 +11,11 @@ export interface CardComposition {
   Grid: typeof CardGrid;
 }
 
+/**
+ * CardGrid component.
+ *
+ * @returns {ReactElement} The CardGrid component.
+ */
 const CardGrid = (props: CardGridProps) => {
   const { sizing = "medium", children } = props;
 
@@ -18,6 +23,11 @@ const CardGrid = (props: CardGridProps) => {
 };
 CardGrid.displayName = "Card.Grid";
 
+/**
+ * CardMeta component.
+ *
+ * @returns {ReactElement} The CardMeta component.
+ */
 const CardMeta = (props: React.ComponentProps<"div">) => {
   const { children } = props;
 
@@ -29,6 +39,11 @@ const CardMeta = (props: React.ComponentProps<"div">) => {
 };
 CardMeta.displayName = "Card.Meta";
 
+/**
+ * CardBody component.
+ *
+ * @returns {ReactElement} The CardBody component.
+ */
 const CardBody = (props: CardProps) => {
   const { shape = "smooth", children } = props;
 
@@ -36,6 +51,11 @@ const CardBody = (props: CardProps) => {
 };
 CardBody.displayName = "Card.Body";
 
+/**
+ * Card component.
+ *
+ * @returns {ReactElement} The Card component.
+ */
 const Card = (props: CardProps) => {
   const { shape = "smooth", children } = props;
 

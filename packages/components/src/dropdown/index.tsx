@@ -62,6 +62,11 @@ const DropdownMenu = ({ children }: React.ComponentProps<"div">) => {
 };
 DropdownMenu.displayName = "DropdownMenu";
 
+/**
+ * DropdownMenuRoot component.
+ *
+ * @returns {ReactElement} The DropdownMenuRoot component.
+ */
 const DropdownMenuRoot = ({ children }: IReactChildren) => {
   return <DropdownMenuProvider>{children}</DropdownMenuProvider>;
 };

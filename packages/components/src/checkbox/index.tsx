@@ -125,12 +125,22 @@ const Checkbox = (props: ICheckboxProperties) => {
 };
 Checkbox.displayName = "Checkbox";
 
+/**
+ * CheckboxRoot component.
+ *
+ * @returns {ReactElement} The CheckboxRoot component.
+ */
 const CheckboxRoot = (props: IReactChildren) => {
   const { children, ...restProps } = props;
   return <CheckboxProvider {...restProps}>{children}</CheckboxProvider>;
 };
 CheckboxRoot.displayName = "Checkbox.Root";
 
+/**
+ * CheckboxIndicator component.
+ *
+ * @returns {ReactElement} The CheckboxIndicator component.
+ */
 const CheckboxIndicator = (props: React.ComponentProps<"svg">) => {
   const { states } = useCheckbox();
   const indeterminate = Boolean(states.indeterminate);

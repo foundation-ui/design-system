@@ -4,6 +4,11 @@ import React from "react";
 import { RangeContainer, RangeSegment } from "./styles";
 import type { ProgressBarProps } from "./types";
 
+/**
+ * clamp component.
+ *
+ * @returns {ReactElement} The clamp component.
+ */
 const clamp = (value: number, min: number, max: number) =>
   Math.min(max, Math.max(min, value));
 

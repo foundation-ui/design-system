@@ -9,6 +9,20 @@ export interface IActionSwapComposition {
   Copy: typeof ActionSwapCopy;
 }
 
+/**
+ * ActionSwap is used to swap between two actions on click, such as copy buttons.
+ *
+ * **Best practices:**
+ *
+ * - Provide clear labels for both actions.
+ * - Keep the delay short enough to feel responsive.
+ *
+ * @param {ActionSwapProperties} props - The props for the ActionSwap component.
+ * @param {number} props.delay - The delay before reverting to the initial action. Defaults to `1000`.
+ * @param {ReactNode[]} props.actions - The actions to swap between.
+ * @param {ReactNode} props.children - The content to be rendered inside the action swap.
+ * @returns {ReactElement} The ActionSwap component.
+ */
 const ActionSwap = ({
   delay = 1000,
   actions,
@@ -46,6 +60,20 @@ const ActionSwap = ({
 };
 ActionSwap.displayName = "ActionSwap";
 
+/**
+ * ActionSwap.Copy is used to copy a value to the clipboard with swap feedback.
+ *
+ * **Best practices:**
+ *
+ * - Provide the value to copy via the value prop.
+ * - Keep labels concise.
+ *
+ * @param {ActionSwapCopyProperties} props - The props for the ActionSwap.Copy component.
+ * @param {number} props.delay - The delay before reverting. Defaults to `1000`.
+ * @param {string} props.value - The value to copy to the clipboard.
+ * @param {ReactNode} props.children - The content to be rendered inside the action swap.
+ * @returns {ReactElement} The ActionSwap.Copy component.
+ */
 const ActionSwapCopy = ({
   delay = 1000,
   actions,

@@ -14,6 +14,11 @@ import {
 import { ComponentSizeEnum } from "../types";
 import type { ITreeBranchProperties, ITreeProperties } from "./types";
 
+/**
+ * TreeBranch component.
+ *
+ * @returns {ReactElement} The TreeBranch component.
+ */
 const TreeBranch = (props: ITreeBranchProperties) => {
   const {
     raw,
@@ -96,6 +101,11 @@ const TreeBranch = (props: ITreeBranchProperties) => {
 };
 TreeBranch.displayName = "Tree.Branch";
 
+/**
+ * Tree component.
+ *
+ * @returns {ReactElement} The Tree component.
+ */
 const Tree = (props: ITreeProperties) => <TreeBranch {...props} />;
 Tree.displayName = "Tree";
 

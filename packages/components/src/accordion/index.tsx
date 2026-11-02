@@ -45,6 +45,11 @@ const Accordion = (props: IAccordionProperties) => {
 };
 Accordion.displayName = "Accordion";
 
+/**
+ * AccordionRoot component.
+ *
+ * @returns {ReactElement} The AccordionRoot component.
+ */
 const AccordionRoot = ({ children }: IReactChildren) => {
   return <AccordionProvider>{children}</AccordionProvider>;
 };

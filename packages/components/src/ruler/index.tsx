@@ -31,16 +31,31 @@ export interface RulerComposition {
   Canvas: typeof RulerCanvas;
 }
 
+/**
+ * Ruler component.
+ *
+ * @returns {ReactElement} The Ruler component.
+ */
 const Ruler = ({ children }: IReactChildren) => {
   return <CanvasWrapper>{children}</CanvasWrapper>;
 };
 Ruler.displayName = "Ruler";
 
+/**
+ * RulerRoot component.
+ *
+ * @returns {ReactElement} The RulerRoot component.
+ */
 const RulerRoot = ({ children }: IReactChildren) => {
   return <RulerProvider>{children}</RulerProvider>;
 };
 RulerRoot.displayName = "Ruler.Root";
 
+/**
+ * RulerRow component.
+ *
+ * @returns {ReactElement} The RulerRow component.
+ */
 const RulerRow = ({
   orientation,
 }: {
@@ -114,11 +129,21 @@ const RulerRow = ({
 };
 RulerRow.displayName = "Ruler.Row";
 
+/**
+ * RulerCorner component.
+ *
+ * @returns {ReactElement} The RulerCorner component.
+ */
 const RulerCorner = () => {
   return <CornerSquare />;
 };
 RulerCorner.displayName = "Ruler.Corner";
 
+/**
+ * RulerLine component.
+ *
+ * @returns {ReactElement} The RulerLine component.
+ */
 const RulerLine = ({ guide }: { guide: Guide }) => {
   const [isHovered, setIsHovered] = React.useState(false);
   const { states, methods } = useRuler();
@@ -154,6 +179,11 @@ const RulerLine = ({ guide }: { guide: Guide }) => {
 };
 RulerLine.displayName = "Ruler.Line";
 
+/**
+ * RulerLines component.
+ *
+ * @returns {ReactElement} The RulerLines component.
+ */
 const RulerLines = () => {
   const { states, methods } = useRuler();
   const { guides, activeGuide, isDragging, canvasRef } = states;
@@ -215,6 +245,11 @@ const RulerLines = () => {
 };
 RulerLines.displayName = "Ruler.Lines";
 
+/**
+ * RulerCanvas component.
+ *
+ * @returns {ReactElement} The RulerCanvas component.
+ */
 const RulerCanvas = ({ children }: IReactChildren) => {
   const { states } = useRuler();
   const { canvasRef, isDragging } = states;

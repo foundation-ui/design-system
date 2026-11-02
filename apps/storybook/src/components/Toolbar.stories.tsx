@@ -16,6 +16,7 @@ import {
 } from "@usefui/components";
 
 import { ComponentSizeEnum, ComponentSideEnum } from "@usefui/components";
+import { Icon } from "@usefui/icons";
 
 const meta = {
   title: "Components/Toolbar",
@@ -156,8 +157,15 @@ const Demo = ({
           </Toolbar>
 
           <Page.Content className="h-100 w-100 p-medium-30 flex justify-between">
-            <Toolbar.Trigger aria-label="Toggle toolbar" variant="mono">
-              &hArr;
+            <Toolbar.Trigger
+              aria-label="Toggle toolbar"
+              variant="mono"
+              sizing="small"
+              shape="round"
+            >
+              <Icon className="m-y-small-80">
+                <Icon.LayoutLeft />
+              </Icon>
             </Toolbar.Trigger>
             {aside}
           </Page.Content>
@@ -217,16 +225,18 @@ export const ShowFirstChild = {
     <Demo root={{ defaultOpen: false }}>
       <Toolbar.Section className="p-r-medium-30" alwaysVisible>
         {[
-          { icon: "▶", label: "Playground" },
-          { icon: "◆", label: "Models" },
-          { icon: "☰", label: "Documentation" },
+          { icon: <Icon.CodeAnnotation />, label: "Playground" },
+          { icon: <Icon.OpenAi />, label: "Models" },
+          { icon: <Icon.BookOpen />, label: "Documentation" },
         ].map(({ icon, label }) => (
           <Toolbar.Item
             key={label}
             showFirstChild
             className="flex align-center g-medium-30 p-y-medium-10"
           >
-            <span aria-hidden="true">{icon}</span>
+            <span aria-hidden="true">
+              <Icon>{icon}</Icon>
+            </span>
             <span className="fs-medium-20">{label}</span>
           </Toolbar.Item>
         ))}
@@ -244,7 +254,11 @@ export const SectionVisibility = {
     <Demo root={{ defaultOpen: false }}>
       <Toolbar.Section className="p-r-medium-30" alwaysVisible>
         <Toolbar.Item showFirstChild className="flex g-medium-30">
-          <span aria-hidden="true">★</span>
+          <span aria-hidden="true">
+            <Icon>
+              <Icon.Star />
+            </Icon>
+          </span>
           <span className="fs-medium-10">Always visible</span>
         </Toolbar.Item>
       </Toolbar.Section>

@@ -20,6 +20,11 @@ export interface PromptComposition {
   Auxiliary: typeof PromptAuxiliary;
 }
 
+/**
+ * Prompt component.
+ *
+ * @returns {ReactElement} The Prompt component.
+ */
 const Prompt = (props: IPromptProperties) => {
   const {
     shortcut,
@@ -106,18 +111,33 @@ const Prompt = (props: IPromptProperties) => {
 };
 Prompt.displayName = "Prompt";
 
+/**
+ * PromptRoot component.
+ *
+ * @returns {ReactElement} The PromptRoot component.
+ */
 const PromptRoot = (props: React.ComponentProps<"div">) => {
   const { children, ...restProps } = props;
   return <PromptWrapper {...restProps}>{children}</PromptWrapper>;
 };
 PromptRoot.displayName = "Prompt.Root";
 
+/**
+ * PromptTools component.
+ *
+ * @returns {ReactElement} The PromptTools component.
+ */
 const PromptTools = (props: React.ComponentProps<"div">) => {
   const { children, ...restProps } = props;
   return <ToolsWrapper {...restProps}>{children}</ToolsWrapper>;
 };
 PromptTools.displayName = "Prompt.Tools";
 
+/**
+ * PromptAuxiliary component.
+ *
+ * @returns {ReactElement} The PromptAuxiliary component.
+ */
 const PromptAuxiliary = (
   props: IViewportProperties & React.ComponentProps<"div">,
 ) => {

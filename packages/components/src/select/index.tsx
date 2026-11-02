@@ -22,6 +22,11 @@ import type {
   ISelectTriggerProperties,
 } from "./types";
 
+/**
+ * SelectRoot component.
+ *
+ * @returns {ReactElement} The SelectRoot component.
+ */
 const SelectRoot = ({ children }: { children: React.ReactElement }) => {
   return <SelectProvider>{children}</SelectProvider>;
 };

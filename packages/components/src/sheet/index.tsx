@@ -25,6 +25,11 @@ export interface ISheetComposition {
   Trigger: typeof SheetTrigger;
 }
 
+/**
+ * SheetRoot component.
+ *
+ * @returns {ReactElement} The SheetRoot component.
+ */
 const SheetRoot = ({ children }: IReactChildren) => {
   return <SheetProvider>{children}</SheetProvider>;
 };

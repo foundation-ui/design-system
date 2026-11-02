@@ -19,11 +19,21 @@ import type {
   IMorphingBoxTriggerProperties,
 } from "./types";
 
+/**
+ * MorphingBoxRoot component.
+ *
+ * @returns {ReactElement} The MorphingBoxRoot component.
+ */
 const MorphingBoxRoot = ({ children }: React.ComponentProps<"div">) => {
   return <MorphingBoxProvider>{children}</MorphingBoxProvider>;
 };
 MorphingBoxRoot.displayName = "MorphingBox.Root";
 
+/**
+ * MorphingBox component.
+ *
+ * @returns {ReactElement} The MorphingBox component.
+ */
 const MorphingBox = (props: IMorphingBoxItemProperties) => {
   const {
     raw,
@@ -93,6 +103,11 @@ const MorphingBox = (props: IMorphingBoxItemProperties) => {
 };
 MorphingBox.displayName = "MorphingBox";
 
+/**
+ * MorphingBoxTrigger component.
+ *
+ * @returns {ReactElement} The MorphingBoxTrigger component.
+ */
 const MorphingBoxTrigger = (props: IMorphingBoxTriggerProperties) => {
   const {
     gap,
@@ -130,6 +145,11 @@ const MorphingBoxTrigger = (props: IMorphingBoxTriggerProperties) => {
 };
 MorphingBoxTrigger.displayName = "MorphingBox.Trigger";
 
+/**
+ * MorphingBoxControl component.
+ *
+ * @returns {ReactElement} The MorphingBoxControl component.
+ */
 const MorphingBoxControl = (props: IButtonProperties) => {
   const { onClick, children, ...restProps } = props;
   const { states, methods } = useMorphingBox();
@@ -158,6 +178,11 @@ const MorphingBoxControl = (props: IButtonProperties) => {
 };
 MorphingBoxControl.displayName = "MorphingBox.Control";
 
+/**
+ * MorphingBoxOverlay component.
+ *
+ * @returns {ReactElement} The MorphingBoxOverlay component.
+ */
 const MorphingBoxOverlay = (props: IOverlayProperties) => {
   const { closeOnInteract = false, onClick, ...restProps } = props;
   const { states, methods } = useMorphingBox();

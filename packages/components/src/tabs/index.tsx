@@ -57,6 +57,11 @@ const Tabs = (props: ITabsProperties) => {
 };
 Tabs.displayName = "Tabs";
 
+/**
+ * TabsRoot component.
+ *
+ * @returns {ReactElement} The TabsRoot component.
+ */
 const TabsRoot = ({ children }: IReactChildren) => {
   return <TabsProvider>{children}</TabsProvider>;
 };

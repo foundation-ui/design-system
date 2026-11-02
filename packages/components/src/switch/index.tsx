@@ -125,12 +125,22 @@ const Switch = (props: ISwitchProperties) => {
 };
 Switch.displayName = "Switch";
 
+/**
+ * SwitchRoot component.
+ *
+ * @returns {ReactElement} The SwitchRoot component.
+ */
 const SwitchRoot = (props: IReactChildren) => {
   const { children, ...restProps } = props;
   return <SwitchProvider {...restProps}>{children}</SwitchProvider>;
 };
 SwitchRoot.displayName = "Switch.Root";
 
+/**
+ * SwitchThumb component.
+ *
+ * @returns {ReactElement} The SwitchThumb component.
+ */
 const SwitchThumb = (props: ISwitchThumbProperties) => {
   const {
     raw,

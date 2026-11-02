@@ -238,11 +238,21 @@ const Field = (props: IField) => {
 };
 Field.displayName = "Field";
 
+/**
+ * FieldRoot component.
+ *
+ * @returns {ReactElement} The FieldRoot component.
+ */
 const FieldRoot = ({ children }: IReactChildren) => {
   return <FieldProvider>{children}</FieldProvider>;
 };
 FieldRoot.displayName = "Field.Root";
 
+/**
+ * FieldWrapper component.
+ *
+ * @returns {ReactElement} The FieldWrapper component.
+ */
 const FieldWrapper = ({
   children,
   ...restProps

@@ -28,6 +28,18 @@ export interface IBulkActionsComposition {
   Item: typeof BulkActionsItem;
 }
 
+/**
+ * BulkActions displays a floating toolbar for performing actions on selected items.
+ *
+ * **Best practices:**
+ *
+ * - Provide a clear trigger to open the bulk actions panel.
+ * - Ensure keyboard shortcuts are accessible and documented.
+ *
+ * @param {IBulkActionsProperties} props - The props for the BulkActions component.
+ * @param {ReactNode} props.children - The content to be rendered inside the bulk actions.
+ * @returns {ReactElement} The BulkActions component.
+ */
 const BulkActions = (props: IBulkActionsProperties) => {
   const { states, methods } = useBulkActions();
   const { open, position } = states;
@@ -124,11 +136,23 @@ const BulkActions = (props: IBulkActionsProperties) => {
 };
 BulkActions.displayName = "BulkActions";
 
+/**
+ * BulkActions.Root wraps children with the bulk actions context provider.
+ *
+ * @param {ReactNode} props.children - The content to be rendered inside the provider.
+ * @returns {ReactElement} The BulkActions.Root component.
+ */
 const BulkActionsRoot = ({ children }: { children: React.ReactNode }) => {
   return <BulkActionsProvider>{children}</BulkActionsProvider>;
 };
 BulkActionsRoot.displayName = "BulkActions.Root";
 
+/**
+ * BulkActions.Handle is the draggable handle for repositioning the bulk actions panel.
+ *
+ * @param {IBulkActionsTriggerProperties} props - The props for the BulkActions.Handle component.
+ * @returns {ReactElement} The BulkActions.Handle component.
+ */
 const BulkActionsHandle = (props: IBulkActionsTriggerProperties) => {
   const {
     disabled,
@@ -203,6 +227,12 @@ const BulkActionsHandle = (props: IBulkActionsTriggerProperties) => {
 };
 BulkActionsHandle.displayName = "BulkActions.Handle";
 
+/**
+ * BulkActions.Trigger toggles the visibility of the bulk actions panel.
+ *
+ * @param {IBulkActionsTriggerProperties} props - The props for the BulkActions.Trigger component.
+ * @returns {ReactElement} The BulkActions.Trigger component.
+ */
 const BulkActionsTrigger = (props: IBulkActionsTriggerProperties) => {
   const { disabled, onClick, children, ...restProps } = props;
 
@@ -225,6 +255,12 @@ const BulkActionsTrigger = (props: IBulkActionsTriggerProperties) => {
 };
 BulkActionsTrigger.displayName = "BulkActions.Trigger";
 
+/**
+ * BulkActions.Item renders an individual action item within the bulk actions panel.
+ *
+ * @param {IBulkActionsItemProperties} props - The props for the BulkActions.Item component.
+ * @returns {ReactElement} The BulkActions.Item component.
+ */
 const BulkActionsItem = (props: IBulkActionsItemProperties) => {
   const { status, children, ...restProps } = props;
 

@@ -16,6 +16,11 @@ import type { IOverlayProperties } from "../overlay/types";
 import type { IScrollAreaProperties } from "../scrollarea/types";
 import type { IDrawerItemProperties, IDrawerTriggerProperties } from "./types";
 
+/**
+ * Drawer component.
+ *
+ * @returns {ReactElement} The Drawer component.
+ */
 const Drawer = (props: IDrawerItemProperties) => {
   const {
     raw,
@@ -85,11 +90,21 @@ const Drawer = (props: IDrawerItemProperties) => {
 };
 Drawer.displayName = "Drawer";
 
+/**
+ * DrawerRoot component.
+ *
+ * @returns {ReactElement} The DrawerRoot component.
+ */
 const DrawerRoot = ({ children }: React.ComponentProps<"div">) => {
   return <DrawerProvider>{children}</DrawerProvider>;
 };
 DrawerRoot.displayName = "Drawer.Root";
 
+/**
+ * DrawerOverlay component.
+ *
+ * @returns {ReactElement} The DrawerOverlay component.
+ */
 const DrawerOverlay = (props: IOverlayProperties) => {
   const { closeOnInteract = false, onClick, ...restProps } = props;
   const { states, methods } = useDrawer();
@@ -111,6 +126,11 @@ const DrawerOverlay = (props: IOverlayProperties) => {
 };
 DrawerOverlay.displayName = "Drawer.Overlay";
 
+/**
+ * DrawerTrigger component.
+ *
+ * @returns {ReactElement} The DrawerTrigger component.
+ */
 const DrawerTrigger = (props: IDrawerTriggerProperties) => {
   const {
     gap,
@@ -226,6 +246,11 @@ const DrawerTrigger = (props: IDrawerTriggerProperties) => {
 };
 DrawerTrigger.displayName = "Drawer.Trigger";
 
+/**
+ * DrawerMenu component.
+ *
+ * @returns {ReactElement} The DrawerMenu component.
+ */
 const DrawerMenu = (props: IDrawerItemProperties) => {
   const { raw, children, ...restProps } = props;
 
@@ -237,6 +262,11 @@ const DrawerMenu = (props: IDrawerItemProperties) => {
 };
 DrawerMenu.displayName = "Drawer.Menu";
 
+/**
+ * DrawerControl component.
+ *
+ * @returns {ReactElement} The DrawerControl component.
+ */
 const DrawerControl = (props: IButtonProperties) => {
   const { onClick, children, ...restProps } = props;
   const { states, methods } = useDrawer();

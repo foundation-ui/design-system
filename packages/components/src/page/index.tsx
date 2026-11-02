@@ -42,6 +42,11 @@ const PageNavigation = (props: React.ComponentProps<"nav">) => {
 };
 PageNavigation.displayName = "Page.Navigation";
 
+/**
+ * PageContent component.
+ *
+ * @returns {ReactElement} The PageContent component.
+ */
 const PageContent = (
   props: React.ComponentProps<"div"> & IScrollAreaProperties,
 ) => {
@@ -54,6 +59,11 @@ const PageContent = (
 };
 PageContent.displayName = "Page.Content";
 
+/**
+ * PageWrapper component.
+ *
+ * @returns {ReactElement} The PageWrapper component.
+ */
 const PageWrapper = (
   props: IPageWrapperProperties & React.ComponentProps<"div">,
 ) => {

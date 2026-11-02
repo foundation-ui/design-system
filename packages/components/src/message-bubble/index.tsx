@@ -22,6 +22,11 @@ import type {
   IMessageBubbleProperties,
 } from "./types";
 
+/**
+ * MessageBubbleRoot component.
+ *
+ * @returns {ReactElement} The MessageBubbleRoot component.
+ */
 const MessageBubbleRoot = ({ children }: IReactChildren) => {
   return <MessageBubbleProvider>{children}</MessageBubbleProvider>;
 };

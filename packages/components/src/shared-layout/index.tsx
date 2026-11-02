@@ -105,6 +105,11 @@ const SharedLayout = (props: ISharedLayoutProperties) => {
 };
 SharedLayout.displayName = "SharedLayout";
 
+/**
+ * SharedLayoutRoot component.
+ *
+ * @returns {ReactElement} The SharedLayoutRoot component.
+ */
 const SharedLayoutRoot = ({ children }: IReactChildren) => {
   return <SharedLayoutProvider>{children}</SharedLayoutProvider>;
 };

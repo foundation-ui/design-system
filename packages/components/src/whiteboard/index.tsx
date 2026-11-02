@@ -13,11 +13,21 @@ export interface WhiteboardComposition {
   Indicator: typeof WhiteboardIndicator;
 }
 
+/**
+ * WhiteboardRoot component.
+ *
+ * @returns {ReactElement} The WhiteboardRoot component.
+ */
 const WhiteboardRoot = ({ children }: { children: React.ReactNode }) => {
   return <WhiteboardProvider>{children}</WhiteboardProvider>;
 };
 WhiteboardRoot.displayName = "Whiteboard.Root";
 
+/**
+ * Whiteboard component.
+ *
+ * @returns {ReactElement} The Whiteboard component.
+ */
 const Whiteboard = (props: IWhiteboardProperties) => {
   const {
     allowWheelZoom = true,
@@ -139,6 +149,11 @@ const Whiteboard = (props: IWhiteboardProperties) => {
 };
 Whiteboard.displayName = "Whiteboard";
 
+/**
+ * WhiteboardZoom component.
+ *
+ * @returns {ReactElement} The WhiteboardZoom component.
+ */
 const WhiteboardZoom = (props: IWhiteboardZoomProperties) => {
   const {
     onClick,
@@ -189,6 +204,11 @@ const WhiteboardZoom = (props: IWhiteboardZoomProperties) => {
 };
 WhiteboardZoom.displayName = "Whiteboard.Zoom";
 
+/**
+ * WhiteboardIndicator component.
+ *
+ * @returns {ReactElement} The WhiteboardIndicator component.
+ */
 const WhiteboardIndicator = () => {
   const { states } = useWhiteboard();
   const { zoomLevel } = states;

@@ -25,11 +25,21 @@ export interface LoaderComposition {
   ASCIIBlocks: typeof LoaderASCIIBlocks;
 }
 
+/**
+ * Loader component.
+ *
+ * @returns {ReactElement} The Loader component.
+ */
 const Loader = ({ children }: { children: React.ReactNode }) => {
   return children;
 };
 Loader.displayName = "Loader";
 
+/**
+ * LoaderSpinner component.
+ *
+ * @returns {ReactElement} The LoaderSpinner component.
+ */
 const LoaderSpinner = (props: LoaderSpinnerProperties) => {
   const { variant = "circle", sizing = "medium" } = props;
 
@@ -40,6 +50,11 @@ const LoaderSpinner = (props: LoaderSpinnerProperties) => {
 LoaderSpinner.displayName = "Loader.Spinner";
 
 const BAYER_4 = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5];
+/**
+ * LoaderDither component.
+ *
+ * @returns {ReactElement} The LoaderDither component.
+ */
 const LoaderDither = (props: LoaderDitherProperties) => {
   const { sizing = "medium", ...restProps } = props;
 
@@ -54,6 +69,11 @@ const LoaderDither = (props: LoaderDitherProperties) => {
 LoaderDither.displayName = "Loader.Dither";
 
 const ASCII_FRAMES = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
+/**
+ * LoaderASCII component.
+ *
+ * @returns {ReactElement} The LoaderASCII component.
+ */
 const LoaderASCII = (props: LoaderBaseProperties) => {
   const { duration, sizing = "medium", ...restProps } = props;
 
@@ -75,6 +95,11 @@ const LoaderASCII = (props: LoaderBaseProperties) => {
 LoaderASCII.displayName = "Loader.ASCII";
 
 const ASCIIBRAILLE_FRAMES = ["⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷"];
+/**
+ * LoaderASCIIBraille component.
+ *
+ * @returns {ReactElement} The LoaderASCIIBraille component.
+ */
 const LoaderASCIIBraille = (props: LoaderBaseProperties) => {
   const { duration, sizing = "medium", ...restProps } = props;
 
@@ -96,6 +121,11 @@ const LoaderASCIIBraille = (props: LoaderBaseProperties) => {
 LoaderASCIIBraille.displayName = "Loader.ASCIIBraille";
 
 const ASCIILINE_FRAMES = ["|", "/", "-", "\\"];
+/**
+ * LoaderASCIILine component.
+ *
+ * @returns {ReactElement} The LoaderASCIILine component.
+ */
 const LoaderASCIILine = (props: LoaderBaseProperties) => {
   const { duration, sizing = "medium", ...restProps } = props;
 
@@ -117,6 +147,11 @@ const LoaderASCIILine = (props: LoaderBaseProperties) => {
 LoaderASCIILine.displayName = "Loader.ASCIILine";
 
 const ASCIIBOUNCE_FRAMES = ["⠁", "⠂", "⠄", "⡀", "⢀", "⠠", "⠐", "⠈"];
+/**
+ * LoaderASCIIBounce component.
+ *
+ * @returns {ReactElement} The LoaderASCIIBounce component.
+ */
 const LoaderASCIIBounce = (props: LoaderBaseProperties) => {
   const { duration, sizing = "medium", ...restProps } = props;
 
@@ -153,6 +188,11 @@ const ASCIIBLOCKS_FRAMES = [
   "▃",
   "▂",
 ];
+/**
+ * LoaderASCIIBlocks component.
+ *
+ * @returns {ReactElement} The LoaderASCIIBlocks component.
+ */
 const LoaderASCIIBlocks = (props: LoaderBaseProperties) => {
   const { duration, sizing = "medium", ...restProps } = props;
 

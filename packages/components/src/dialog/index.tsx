@@ -86,11 +86,21 @@ const Dialog = (props: IDialogItemProperties) => {
 };
 Dialog.displayName = "Dialog";
 
+/**
+ * DialogRoot component.
+ *
+ * @returns {ReactElement} The DialogRoot component.
+ */
 const DialogRoot = ({ children }: React.ComponentProps<"div">) => {
   return <DialogProvider>{children}</DialogProvider>;
 };
 DialogRoot.displayName = "Dialog.Root";
 
+/**
+ * DialogOverlay component.
+ *
+ * @returns {ReactElement} The DialogOverlay component.
+ */
 const DialogOverlay = (props: IOverlayProperties) => {
   const { closeOnInteract = false, onClick, ...restProps } = props;
   const { states, methods } = useDialog();
@@ -152,6 +162,11 @@ const DialogTrigger = (props: IButtonProperties) => {
 };
 DialogTrigger.displayName = "Dialog.Trigger";
 
+/**
+ * DialogMenu component.
+ *
+ * @returns {ReactElement} The DialogMenu component.
+ */
 const DialogMenu = (props: IDialogItemProperties) => {
   const { raw, children, ...restProps } = props;
 
