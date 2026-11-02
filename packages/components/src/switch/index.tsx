@@ -9,7 +9,8 @@ import {
   ComponentSizeEnum,
   ComponentVariantEnum,
   IComponentSize,
-  IComponentVariant,
+  IComponentShape,
+  ComponentShapeEnum,
 } from "../../../../types";
 
 export interface ISwitchComposition {
@@ -19,12 +20,31 @@ export interface ISwitchComposition {
 
 type SwitchVariants = "primary" | "accent";
 export interface ISwitchProperties
-  extends React.ComponentProps<"button">, IComponentSize, IComponentStyling {
-  defaultChecked?: boolean;
+  extends
+    Omit<React.ComponentProps<"button">, "value">,
+    IComponentSize,
+    IComponentShape,
+    IComponentStyling {
   variant?: SwitchVariants;
+  /** Controlled checked state. */
+  checked?: boolean;
+  /** Initial checked state when uncontrolled. */
+  defaultChecked?: boolean;
+  /** Form field name. Enables form submission. */
+  name?: string;
+  /** Form value submitted when checked. Defaults to `on`. */
+  value?: string;
+  /** Marks the field as required in a form. */
+  required?: boolean;
+  /** Called with the next checked value when the user toggles the switch. */
+  onCheckedChange?: (checked: boolean) => void;
 }
 export interface ISwitchThumbProperties
-  extends React.ComponentProps<"span">, IComponentSize, IComponentStyling {}
+  extends
+    React.ComponentProps<"span">,
+    IComponentSize,
+    IComponentShape,
+    IComponentStyling {}
 
 /**
  * Switch are toggle components that allows the user to turn a setting on or off.
@@ -38,76 +58,128 @@ export interface ISwitchThumbProperties
  * @param {boolean} props.raw - Whether the switch should be rendered without any styles.
  * @param {ComponentSizeEnum} props.sizing - The size of the switch.
  * @param {SwitchVariants} props.variant - The variant of the switch.
- * @param {boolean} props.defaultChecked - The initial state of the switch.
+ * @param {TComponentShape} props.shape - The size of the component. Defaults to `smooth`.
+ * @param {boolean} props.checked - The controlled checked state.
+ * @param {boolean} props.defaultChecked - The initial state when uncontrolled.
+ * @param {(checked: boolean) => void} props.onCheckedChange - Called when the state changes.
  * @param {ReactNode} props.children - The content to be rendered inside the switch.
  * @returns {ReactElement} The Switch component.
  */
 const Switch = (props: ISwitchProperties) => {
+  const { states, methods } = useSwitch();
+  const { applyChecked } = methods;
   const {
     raw,
     sizing = ComponentSizeEnum.Medium,
+    shape = ComponentShapeEnum.Smooth,
     variant = ComponentVariantEnum.Primary,
+    name,
     value,
-    defaultChecked,
+    required,
     disabled,
+    checked: checkedProp,
+    defaultChecked,
     onClick,
+    onCheckedChange,
     children,
     ...restProps
   } = props;
-  const { id, states, methods } = useSwitch();
-  const { toggleSwitch } = methods;
 
-  const handleClick = (event: any) => {
-    if (onClick) onClick(event);
-    if (toggleSwitch) toggleSwitch();
+  const isControlled = checkedProp !== undefined;
+  const isChecked = Boolean(states.checked);
+  const currentState = isChecked ? "checked" : "unchecked";
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (disabled) return;
+    onClick?.(event);
+    if (event.defaultPrevented) return;
+
+    const next = !isChecked;
+    // Uncontrolled: own the state. Controlled: the parent drives it.
+    if (!isControlled && applyChecked) applyChecked(next);
+    onCheckedChange?.(next);
   };
 
+  // Initial state (uncontrolled)
   React.useEffect(() => {
-    if (defaultChecked && toggleSwitch) toggleSwitch();
-  }, [defaultChecked]);
+    if (!isControlled && defaultChecked && applyChecked) {
+      applyChecked(defaultChecked);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Keep context in sync with the controlled value
+  React.useEffect(() => {
+    if (isControlled && applyChecked) applyChecked(checkedProp);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checkedProp]);
 
   return (
-    <TriggerWrapper
-      type="button"
-      role="switch"
-      title="switch-trigger"
-      onClick={handleClick}
-      value={String(states.checked)}
-      aria-label={`${id}-switch-trigger`}
-      aria-checked={Boolean(states.checked)}
-      data-disabled={String(disabled ?? false)}
-      data-variant={variant}
-      data-size={sizing}
-      data-raw={Boolean(raw)}
-      {...restProps}
-    >
-      <title>Switch</title>
-      {children}
-    </TriggerWrapper>
+    <React.Fragment>
+      <TriggerWrapper
+        type="button"
+        role="switch"
+        aria-checked={isChecked}
+        aria-required={required || undefined}
+        aria-disabled={disabled || undefined}
+        disabled={disabled}
+        onClick={handleClick}
+        data-state={currentState}
+        data-disabled={Boolean(disabled)}
+        data-variant={variant}
+        data-shape={shape}
+        data-size={sizing}
+        data-raw={Boolean(raw)}
+        {...restProps}
+      >
+        {children}
+      </TriggerWrapper>
+
+      {/* Buttons don't submit values, so mirror the state in a hidden input */}
+      {name && (
+        <input
+          type="checkbox"
+          hidden
+          aria-hidden="true"
+          tabIndex={-1}
+          name={name}
+          value={value ?? "on"}
+          checked={isChecked}
+          required={required}
+          disabled={disabled}
+          readOnly
+        />
+      )}
+    </React.Fragment>
   );
 };
 Switch.displayName = "Switch";
 
-const SwitchRoot = ({ children }: IReactChildren) => {
-  return <SwitchProvider>{children}</SwitchProvider>;
+const SwitchRoot = (props: IReactChildren) => {
+  const { children, ...restProps } = props;
+  return <SwitchProvider {...restProps}>{children}</SwitchProvider>;
 };
 SwitchRoot.displayName = "Switch.Root";
 
 const SwitchThumb = (props: ISwitchThumbProperties) => {
-  const { raw, sizing } = props;
-  const { id, states } = useSwitch();
+  const {
+    raw,
+    shape = ComponentShapeEnum.Smooth,
+    sizing = ComponentSizeEnum.Medium,
+    ...restProps
+  } = props;
+  const { states } = useSwitch();
+  const isChecked = Boolean(states.checked);
 
   return (
     <Thumb
-      role="presentation"
-      title="switch-thumb"
-      tabIndex={-1}
-      aria-hidden={true}
-      aria-label={`${id}-switch-thumb`}
-      data-checked={states.checked}
+      aria-hidden="true"
+      {...restProps}
+      data-state={isChecked ? "checked" : "unchecked"}
+      data-checked={isChecked}
       data-raw={Boolean(raw)}
-      data-size={sizing ?? ComponentSizeEnum.Medium}
-      {...props}
+      data-size={sizing}
+      data-shape={shape}
     />
   );
 };

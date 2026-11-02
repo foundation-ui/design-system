@@ -70,14 +70,41 @@ export const Sizes: Story = {
             className="flex align-center g-medium-30"
             optional
           >
-            <Switch name={item} sizing={item}>
-              <Switch.Thumb />
+            <Switch name={item} sizing={item as any}>
+              <Switch.Thumb sizing={item as any} />
             </Switch>
 
             <div className="flex flex-column">
               <Field.Meta variant="emphasis">{item}</Field.Meta>
               <Field.Meta variant="hint" className="fs-small-60">
-                The {item} Checkbox sizing
+                The {item} Switch sizing
+              </Field.Meta>
+            </div>
+          </Field.Label>
+        </Switch.Root>
+      ))}
+    </div>
+  ),
+};
+export const Shapes: Story = {
+  render: ({ ...args }) => (
+    <div className="flex flex-column g-medium-30">
+      {["square", "smooth", "round"].map((item) => (
+        <Switch.Root key={item}>
+          <Field.Label
+            id={`${item}-label`}
+            htmlFor={item}
+            className="flex align-center g-medium-30"
+            optional
+          >
+            <Switch name={item} shape={item as any}>
+              <Switch.Thumb shape={item as any} />
+            </Switch>
+
+            <div className="flex flex-column">
+              <Field.Meta variant="emphasis">{item}</Field.Meta>
+              <Field.Meta variant="hint" className="fs-small-60">
+                The {item} Switch sizing
               </Field.Meta>
             </div>
           </Field.Label>
@@ -104,7 +131,7 @@ export const Variants: Story = {
             <div className="flex flex-column">
               <Field.Meta variant="emphasis">{item}</Field.Meta>
               <Field.Meta variant="hint" className="fs-small-60">
-                The {item} Checkbox variant
+                The {item} Switch variant
               </Field.Meta>
             </div>
           </Field.Label>

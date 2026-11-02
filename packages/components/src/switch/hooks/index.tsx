@@ -1,7 +1,11 @@
 "use client";
 
 import React, { useState, createContext, useContext } from "react";
-import { IReactChildren, IComponentAPI } from "../../../../../types";
+import {
+  IReactChildren,
+  IComponentAPI,
+  TComponentAPI,
+} from "../../../../../types";
 
 const defaultComponentAPI = {
   id: "",
@@ -31,7 +35,8 @@ function useSwitchProvider(): IComponentAPI {
       checked,
     },
     methods: {
-      toggleSwitch: (): boolean | void => setChecked(!checked),
+      toggleChecked: () => setChecked((prev) => !prev),
+      applyChecked: (state: TComponentAPI) => setChecked(Boolean(state)),
     },
   };
 }
