@@ -1,45 +1,50 @@
 "use client";
 
-import React from "react";
-import { IReactChildren } from "../../../../../types";
-import type { IContextProperties } from "../types";
+import React, { createContext, useContext, useState } from "react";
 
-const SheetContext = React.createContext<IContextProperties>({
-  id: {},
-  states: {},
-  methods: {},
-});
-export const useSheet = () => React.useContext(SheetContext);
+import type { ISheetContext, ISheetProviderProperties } from "../types";
+
+const noop = (): void => {};
+const noopState = <T,>(_value: React.SetStateAction<T>): void => {};
+const noopId = (): string => "";
+
+const defaultSheetContext: ISheetContext = {
+  id: "",
+  states: {
+    open: false,
+  },
+  methods: {
+    setOpen: noopState,
+    toggle: noop,
+    getSheetId: noopId,
+  },
+};
+
+const SheetContext = createContext<ISheetContext>(defaultSheetContext);
+
+export const useSheet = (): ISheetContext => useContext(SheetContext);
 
 export const SheetProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useSheetProvider();
+}: ISheetProviderProperties): React.JSX.Element => {
+  const id = React.useId();
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <SheetContext.Provider value={context}>{children}</SheetContext.Provider>
+    <SheetContext.Provider
+      value={{
+        id,
+        states: {
+          open,
+        },
+        methods: {
+          setOpen,
+          toggle: () => setOpen((current) => !current),
+          getSheetId: (type) => (type === "container" ? id : `${id}-trigger`),
+        },
+      }}
+    >
+      {children}
+    </SheetContext.Provider>
   );
 };
-
-function useSheetProvider(): IContextProperties {
-  const containerId = React.useId();
-  const triggerId = React.useId();
-  const controlId = React.useId();
-
-  const [open, setOpen] = React.useState<boolean>(false);
-
-  return {
-    id: {
-      containerId,
-      triggerId,
-      controlId,
-    },
-    states: {
-      open,
-    },
-    methods: {
-      setOpen,
-      toggle: () => setOpen(!open),
-    },
-  };
-}

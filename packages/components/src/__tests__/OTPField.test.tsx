@@ -51,17 +51,17 @@ describe("One Tiime Password Field Component", () => {
     render(<Component length={1} />);
 
     expect(
-      screen.getByTestId("otp-field-slot").getAttribute("autoComplete")
+      screen.getByTestId("otp-field-slot").getAttribute("autoComplete"),
     ).toEqual("one-time-code");
   });
-  test("Does not render OTP Field Slot if OTP Field context isn't set", async () => {
+  test("Renders OTP Field Slot with safe defaults when context isn't set", async () => {
     render(
       <OTPField.Group aria-label="otp-field-group">
         <OTPField.Slot index={0} />
-      </OTPField.Group>
+      </OTPField.Group>,
     );
 
-    expect(() => screen.getByTestId("otp-field-slot")).toThrow();
+    expect(screen.getByTestId("otp-field-slot")).toBeDefined();
   });
   test("Render OTP Slots based on length", async () => {
     render(<Component length={10} />);
@@ -99,7 +99,7 @@ describe("One Tiime Password Field Component", () => {
     });
 
     expect(
-      screen.getAllByTestId("otp-field-slot")[1]!.getAttribute("data-active")
+      screen.getAllByTestId("otp-field-slot")[1]!.getAttribute("data-active"),
     ).toEqual("false");
   });
   test("Focus next slot when current slot is filled", async () => {
@@ -112,7 +112,7 @@ describe("One Tiime Password Field Component", () => {
 
     await waitFor(() => {
       expect(
-        screen.getAllByTestId("otp-field-slot")[1]!.getAttribute("data-active")
+        screen.getAllByTestId("otp-field-slot")[1]!.getAttribute("data-active"),
       ).toEqual("true");
     });
   });
@@ -163,7 +163,7 @@ describe("One Tiime Password Field Component", () => {
 
     await waitFor(() => {
       expect(
-        screen.getAllByTestId("otp-field-slot")[0]!.getAttribute("data-active")
+        screen.getAllByTestId("otp-field-slot")[0]!.getAttribute("data-active"),
       ).toEqual("true");
     });
   });
@@ -178,10 +178,10 @@ describe("One Tiime Password Field Component", () => {
     });
 
     expect(
-      screen.getAllByTestId("otp-field-slot")[0]!.getAttribute("value")
+      screen.getAllByTestId("otp-field-slot")[0]!.getAttribute("value"),
     ).toEqual("1");
     expect(
-      screen.getAllByTestId("otp-field-slot")[1]!.getAttribute("value")
+      screen.getAllByTestId("otp-field-slot")[1]!.getAttribute("value"),
     ).toEqual("2");
   });
   test("Focus the next slot to fill on click", async () => {

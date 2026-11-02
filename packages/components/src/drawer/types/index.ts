@@ -1,5 +1,9 @@
 import type * as React from "react";
-import type { IComponentSize, IComponentStyling } from "../../../../../types";
+import type {
+  IComponentSize,
+  IComponentStyling,
+  IReactChildren,
+} from "../../../../../types";
 import type { IButtonProperties } from "../../button/types";
 import type { IScrollAreaProperties } from "../../scrollarea/types";
 
@@ -18,3 +22,20 @@ export interface IDrawerItemProperties
   lock?: boolean;
   direction?: "top-bottom" | "right-left" | "bottom-top" | "left-right";
 }
+
+export interface IDrawerStates {
+  open: boolean;
+}
+
+export interface IDrawerMethods {
+  toggleDrawer: () => void;
+  getDrawerId: (type: "trigger" | "content" | "inner-control") => string;
+}
+
+export interface IDrawerContext {
+  id: string;
+  states: IDrawerStates;
+  methods: IDrawerMethods;
+}
+
+export interface IDrawerProviderProperties extends IReactChildren {}

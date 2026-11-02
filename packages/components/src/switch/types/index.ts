@@ -3,6 +3,7 @@ import type {
   IComponentShape,
   IComponentSize,
   IComponentStyling,
+  IReactChildren,
 } from "../../../../../types";
 
 export type SwitchVariants = "primary" | "accent";
@@ -34,3 +35,20 @@ export interface ISwitchThumbProperties
     IComponentSize,
     IComponentShape,
     IComponentStyling {}
+
+export interface ISwitchStates {
+  checked: boolean;
+}
+
+export interface ISwitchMethods {
+  toggleChecked: () => void;
+  applyChecked: (checked: boolean) => void;
+}
+
+export interface ISwitchContext {
+  id: string;
+  states: ISwitchStates;
+  methods: ISwitchMethods;
+}
+
+export interface ISwitchProviderProperties extends IReactChildren {}

@@ -1,39 +1,47 @@
 "use client";
 
-import React, { useState, createContext, useContext } from "react";
-import { IReactChildren, IComponentAPI } from "../../../../../types";
+import React, { createContext, useContext, useState } from "react";
 
-const defaultComponentAPI = {
+import type { IDialogContext, IDialogProviderProperties } from "../types";
+
+const noop = (): void => {};
+const noopId = (): string => "";
+
+const defaultDialogContext: IDialogContext = {
   id: "",
-  states: {},
-  methods: {},
+  states: {
+    open: false,
+  },
+  methods: {
+    toggleDialog: noop,
+    getDialogId: noopId,
+  },
 };
-const DialogContext = createContext<IComponentAPI>(defaultComponentAPI);
-export const useDialog = () => useContext(DialogContext);
+
+const DialogContext = createContext<IDialogContext>(defaultDialogContext);
+
+export const useDialog = (): IDialogContext => useContext(DialogContext);
 
 export const DialogProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useDialogProvider();
+}: IDialogProviderProperties): React.JSX.Element => {
+  const id = React.useId();
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <DialogContext.Provider value={context}>{children}</DialogContext.Provider>
+    <DialogContext.Provider
+      value={{
+        id,
+        states: {
+          open,
+        },
+        methods: {
+          toggleDialog: () => setOpen((current) => !current),
+          getDialogId: (type) => `${id}-${type}`,
+        },
+      }}
+    >
+      {children}
+    </DialogContext.Provider>
   );
 };
-
-function useDialogProvider(): IComponentAPI {
-  const [open, setOpen] = useState<boolean>(false);
-  const dialogId = React.useId();
-
-  return {
-    id: dialogId,
-    states: {
-      open: open,
-    },
-    methods: {
-      toggleDialog: () => setOpen(!open),
-      getDialogId: (type: "trigger" | "dialog" | "inner-control"): string =>
-        `${dialogId}-${type}`,
-    },
-  };
-}

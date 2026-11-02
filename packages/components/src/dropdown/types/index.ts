@@ -1,5 +1,9 @@
 import type * as React from "react";
-import type { IComponentSize, IComponentStyling } from "../../../../../types";
+import type {
+  IComponentSize,
+  IComponentStyling,
+  IReactChildren,
+} from "../../../../../types";
 
 export type DropdownContentVariant = "body" | "contrast";
 
@@ -18,3 +22,38 @@ export interface IDropdownItemProperties
   ) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLLIElement>) => void;
 }
+
+export interface IDropdownPosition {
+  top: number;
+  right: number;
+  bottom: number;
+  left: number;
+}
+
+export interface IDropdownDimensions {
+  width: number;
+  height: number;
+}
+
+export interface IDropdownMetrics
+  extends IDropdownPosition, IDropdownDimensions {}
+
+export interface IDropdownStates {
+  open: boolean;
+  contentProps: IDropdownMetrics;
+  triggerProps: IDropdownMetrics;
+}
+
+export interface IDropdownMethods {
+  toggleOpen: () => void;
+  setContentProps: React.Dispatch<React.SetStateAction<IDropdownMetrics>>;
+  setTriggerProps: React.Dispatch<React.SetStateAction<IDropdownMetrics>>;
+}
+
+export interface IDropdownContext {
+  id: string;
+  states: IDropdownStates;
+  methods: IDropdownMethods;
+}
+
+export interface IDropdownProviderProperties extends IReactChildren {}

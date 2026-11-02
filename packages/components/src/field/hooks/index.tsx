@@ -1,32 +1,27 @@
 "use client";
 
 import React, { createContext, useContext } from "react";
-import { IReactChildren, IComponentAPI } from "../../../../../types";
 
-const defaultComponentAPI = {
+import type { IFieldContext, IFieldProviderProperties } from "../types";
+
+const defaultFieldContext: IFieldContext = {
   id: "",
   states: {},
   methods: {},
 };
-const FieldContext = createContext<IComponentAPI>(defaultComponentAPI);
-export const useField = () => useContext(FieldContext);
+
+const FieldContext = createContext<IFieldContext>(defaultFieldContext);
+
+export const useField = (): IFieldContext => useContext(FieldContext);
 
 export const FieldProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useFieldProvider();
+}: IFieldProviderProperties): React.JSX.Element => {
+  const id = React.useId();
 
   return (
-    <FieldContext.Provider value={context}>{children}</FieldContext.Provider>
+    <FieldContext.Provider value={{ id, states: {}, methods: {} }}>
+      {children}
+    </FieldContext.Provider>
   );
 };
-
-function useFieldProvider(): IComponentAPI {
-  const fieldId = React.useId();
-
-  return {
-    id: fieldId,
-    states: {},
-    methods: {},
-  };
-}

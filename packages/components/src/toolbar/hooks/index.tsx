@@ -5,7 +5,6 @@ import React, {
   useCallback,
   useContext,
   useEffect,
-  useMemo,
   useState,
 } from "react";
 import { useIsMobile } from "@usefui/hooks";
@@ -14,15 +13,26 @@ import type { IToolbarContext, IToolbarProviderProps } from "../types";
 
 const TOOLBAR_KEYBOARD_SHORTCUT = "b";
 
-const ToolbarContext = createContext<IToolbarContext | null>(null);
+const noop = (): void => {};
 
-export const useToolbar = () => {
-  const context = useContext(ToolbarContext);
-  if (!context) {
-    throw new Error("useToolbar must be used within a Toolbar.Root.");
-  }
-  return context;
+const defaultToolbarContext: IToolbarContext = {
+  id: "",
+  states: {
+    state: "collapsed",
+    open: false,
+    isMobile: false,
+    openMobile: false,
+  },
+  methods: {
+    setOpen: noop,
+    toggle: noop,
+    setOpenMobile: noop,
+  },
 };
+
+const ToolbarContext = createContext<IToolbarContext>(defaultToolbarContext);
+
+export const useToolbar = (): IToolbarContext => useContext(ToolbarContext);
 
 export const ToolbarProvider = ({
   children,
@@ -37,7 +47,7 @@ export const ToolbarProvider = ({
   const [openMobile, setOpenMobile] = useState<boolean>(false);
 
   const isControlled = openProp !== undefined;
-  const open = isControlled ? openProp : internalOpen;
+  const open = isControlled ? (openProp as boolean) : internalOpen;
 
   const setOpen = useCallback(
     (next: boolean) => {
@@ -67,21 +77,24 @@ export const ToolbarProvider = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [toggle]);
 
-  const value = useMemo<IToolbarContext>(
-    () => ({
-      id,
-      state: open ? "expanded" : "collapsed",
-      open,
-      setOpen,
-      toggle,
-      isMobile,
-      openMobile,
-      setOpenMobile,
-    }),
-    [id, open, setOpen, toggle, isMobile, openMobile],
-  );
-
   return (
-    <ToolbarContext.Provider value={value}>{children}</ToolbarContext.Provider>
+    <ToolbarContext.Provider
+      value={{
+        id,
+        states: {
+          state: open ? "expanded" : "collapsed",
+          open,
+          isMobile,
+          openMobile,
+        },
+        methods: {
+          setOpen,
+          toggle,
+          setOpenMobile,
+        },
+      }}
+    >
+      {children}
+    </ToolbarContext.Provider>
   );
 };

@@ -1,50 +1,69 @@
-import React from "react";
+"use client";
 
-const defaultComponentAPI = {
+import React, { createContext, useContext, useState } from "react";
+
+import type {
+  IWhiteboardContext,
+  IWhiteboardProviderProperties,
+} from "../types";
+
+const noop = (): void => {};
+const noopState = <T,>(_value: React.SetStateAction<T>): void => {};
+
+const defaultWhiteboardContext: IWhiteboardContext = {
   id: "",
-  states: {},
-  methods: {},
+  states: {
+    whiteboardOffset: { x: 0, y: 0 },
+    isDraggingWhiteboard: false,
+    dragStart: { x: 0, y: 0 },
+    zoomLevel: 1,
+  },
+  methods: {
+    setWhiteboardOffset: noopState,
+    setIsDraggingWhiteboard: noopState,
+    setDragStart: noopState,
+    setZoomLevel: noopState,
+  },
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const WhiteboardContext = React.createContext<any>(defaultComponentAPI);
-export const useWhiteboard = () => React.useContext(WhiteboardContext);
+const WhiteboardContext = createContext<IWhiteboardContext>(
+  defaultWhiteboardContext,
+);
+
+export const useWhiteboard = (): IWhiteboardContext =>
+  useContext(WhiteboardContext);
 
 export const WhiteboardProvider = ({
   children,
-}: {
-  children: React.ReactNode;
-}) => {
-  const context = useWhiteboardProvider();
+}: IWhiteboardProviderProperties): React.JSX.Element => {
+  const id = React.useId();
+  const [whiteboardOffset, setWhiteboardOffset] = useState({
+    x: 0,
+    y: 0,
+  });
+  const [isDraggingWhiteboard, setIsDraggingWhiteboard] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   return (
-    <WhiteboardContext.Provider value={context}>
+    <WhiteboardContext.Provider
+      value={{
+        id,
+        states: {
+          whiteboardOffset,
+          isDraggingWhiteboard,
+          dragStart,
+          zoomLevel,
+        },
+        methods: {
+          setWhiteboardOffset,
+          setIsDraggingWhiteboard,
+          setDragStart,
+          setZoomLevel,
+        },
+      }}
+    >
       {children}
     </WhiteboardContext.Provider>
   );
 };
-
-function useWhiteboardProvider() {
-  const [whiteboardOffset, setWhiteboardOffset] = React.useState({
-    x: 0,
-    y: 0,
-  });
-  const [isDraggingWhiteboard, setIsDraggingWhiteboard] = React.useState(false);
-  const [dragStart, setDragStart] = React.useState({ x: 0, y: 0 });
-  const [zoomLevel, setZoomLevel] = React.useState(1);
-
-  return {
-    states: {
-      whiteboardOffset,
-      isDraggingWhiteboard,
-      dragStart,
-      zoomLevel,
-    },
-    methods: {
-      setWhiteboardOffset,
-      setIsDraggingWhiteboard,
-      setDragStart,
-      setZoomLevel,
-    },
-  };
-}

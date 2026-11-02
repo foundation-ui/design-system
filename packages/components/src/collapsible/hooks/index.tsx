@@ -1,52 +1,65 @@
 "use client";
 
-import React, { useState, createContext, useContext } from "react";
-import { IReactChildren, IComponentAPI } from "../../../../../types";
+import React, { createContext, useContext, useState } from "react";
 
-const defaultComponentAPI = {
+import type {
+  ICollapsibleContext,
+  ICollapsibleProviderProperties,
+} from "../types";
+
+const noop = (): void => {};
+
+const defaultCollapsibleContext: ICollapsibleContext = {
   id: "",
-  states: {},
-  methods: {},
+  states: {
+    expanded: false,
+    defaultOpen: false,
+  },
+  methods: {
+    toggleCollapsible: noop,
+    applyDefaultOpen: noop,
+  },
 };
-const CollapsibleContext = createContext<IComponentAPI>(defaultComponentAPI);
-export const useCollapsible = () => useContext(CollapsibleContext);
+
+const CollapsibleContext = createContext<ICollapsibleContext>(
+  defaultCollapsibleContext,
+);
+
+export const useCollapsible = (): ICollapsibleContext =>
+  useContext(CollapsibleContext);
 
 export const CollapsibleProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useCollapsibleProvider();
-
-  return (
-    <CollapsibleContext.Provider value={context}>
-      {children}
-    </CollapsibleContext.Provider>
-  );
-};
-
-function useCollapsibleProvider(): IComponentAPI {
+}: ICollapsibleProviderProperties): React.JSX.Element => {
+  const id = React.useId();
   const [expanded, setExpanded] = useState<boolean>(false);
   const [defaultOpen, setDefaultOpen] = useState<boolean>(false);
-  const collapsibleId = React.useId();
 
   const toggleCollapsible = () => {
-    setExpanded(!expanded);
+    setExpanded((current) => !current);
     setDefaultOpen(false);
   };
 
   const applyDefaultOpen = () => {
-    setExpanded(!expanded);
+    setExpanded((current) => !current);
     setDefaultOpen(true);
   };
 
-  return {
-    id: collapsibleId,
-    states: {
-      expanded,
-      defaultOpen,
-    },
-    methods: {
-      toggleCollapsible: () => toggleCollapsible(),
-      applyDefaultOpen: () => applyDefaultOpen(),
-    },
-  };
-}
+  return (
+    <CollapsibleContext.Provider
+      value={{
+        id,
+        states: {
+          expanded,
+          defaultOpen,
+        },
+        methods: {
+          toggleCollapsible,
+          applyDefaultOpen,
+        },
+      }}
+    >
+      {children}
+    </CollapsibleContext.Provider>
+  );
+};

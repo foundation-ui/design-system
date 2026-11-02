@@ -74,11 +74,11 @@ const Sheet = (props: ISheetProperties) => {
   const shortcutControls = useKeyPress(String(hotkey), true, bindkey);
 
   React.useEffect(() => {
-    if (open && toggle) return toggle();
+    if (open) return toggle();
   }, [open]);
 
   React.useEffect(() => {
-    if (shortcut && shortcutControls && toggle) {
+    if (shortcut && shortcutControls) {
       return toggle();
     }
   }, [shortcutControls]);
@@ -91,9 +91,9 @@ const Sheet = (props: ISheetProperties) => {
           <SheetWrapper
             role="dialog"
             tabIndex={-1}
-            id={String(id.containerId)}
-            aria-label={props["aria-label"] ?? `${id.containerId}-sheet`}
-            aria-labelledby={String(id.containerId)}
+            id={String(id)}
+            aria-label={props["aria-label"] ?? `${id}-sheet`}
+            aria-labelledby={String(id)}
             open={Boolean(states.open)}
             data-expanded={Boolean(states.open)}
             data-state={applyDataState(Boolean(states.open))}
@@ -106,13 +106,13 @@ const Sheet = (props: ISheetProperties) => {
           </SheetWrapper>
           {overlay && (
             <Overlay
-              onClick={() => toggle && toggle(!states.open)}
+              onClick={() => toggle()}
               visible={Boolean(states.open)}
               closeOnInteract={closeOnInteract}
               aria-label={
                 props["aria-label"]
                   ? `${props["aria-label"]}-overlay`
-                  : `${id.containerId}-sheet-overlay`
+                  : `${id}-sheet-overlay`
               }
             />
           )}
@@ -146,17 +146,17 @@ const SheetTrigger = (props: IButtonProperties) => {
     ...restProps
   } = props;
   const { id, methods, states } = useSheet();
-  const { toggle } = methods;
+  const { toggle, getSheetId } = methods;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     if (onClick) onClick(event);
-    if (toggle) toggle(!states.open);
+    toggle();
   };
 
   return (
     <Button
-      id={id.triggerId}
-      aria-controls={String(id.containerId)}
+      id={getSheetId("trigger")}
+      aria-controls={String(id)}
       data-state={applyDataState(Boolean(states.open))}
       variant={variant}
       sizing={sizing}

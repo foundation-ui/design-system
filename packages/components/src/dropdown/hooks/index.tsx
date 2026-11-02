@@ -1,66 +1,74 @@
 "use client";
 
-import React from "react";
-import { IReactChildren, IComponentAPI } from "../../../../../types";
+import React, { createContext, useContext, useState } from "react";
 
-const DEFAULT_API = {
-  id: "",
-  states: {},
-  methods: {},
-};
-const DEFAULT_POSITIONS = {
+import type {
+  IDropdownContext,
+  IDropdownMetrics,
+  IDropdownProviderProperties,
+} from "../types";
+
+const noop = (): void => {};
+const noopState = <T,>(_value: React.SetStateAction<T>): void => {};
+
+const DEFAULT_METRICS: IDropdownMetrics = {
   top: 0,
   right: 0,
   bottom: 0,
   left: 0,
-};
-const DEFAULT_DIMENSIONS = {
   width: 0,
   height: 0,
 };
 
-const DropdownMenuContext = React.createContext<IComponentAPI>(DEFAULT_API);
-export const useDropdownMenu = () => React.useContext(DropdownMenuContext);
+const defaultDropdownContext: IDropdownContext = {
+  id: "",
+  states: {
+    open: false,
+    contentProps: DEFAULT_METRICS,
+    triggerProps: DEFAULT_METRICS,
+  },
+  methods: {
+    toggleOpen: noop,
+    setContentProps: noopState,
+    setTriggerProps: noopState,
+  },
+};
+
+const DropdownMenuContext = createContext<IDropdownContext>(
+  defaultDropdownContext,
+);
+
+export const useDropdownMenu = (): IDropdownContext =>
+  useContext(DropdownMenuContext);
 
 export const DropdownMenuProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useDropdownMenuProvider();
+}: IDropdownProviderProperties): React.JSX.Element => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [contentProps, setContentProps] = useState(DEFAULT_METRICS);
+  const [triggerProps, setTriggerProps] = useState(DEFAULT_METRICS);
+
+  const triggerId = React.useId();
+  const dropdownId = React.useId();
+  const id = `${triggerId}|${dropdownId}`;
 
   return (
-    <DropdownMenuContext.Provider value={context}>
+    <DropdownMenuContext.Provider
+      value={{
+        id,
+        states: {
+          open,
+          contentProps,
+          triggerProps,
+        },
+        methods: {
+          toggleOpen: () => setOpen((current) => !current),
+          setContentProps,
+          setTriggerProps,
+        },
+      }}
+    >
       {children}
     </DropdownMenuContext.Provider>
   );
 };
-
-function useDropdownMenuProvider(): IComponentAPI {
-  const [open, setOpen] = React.useState<boolean>(false);
-
-  const [contentProps, setContentProps] = React.useState({
-    ...DEFAULT_POSITIONS,
-    ...DEFAULT_DIMENSIONS,
-  });
-  const [triggerProps, setTriggerProps] = React.useState({
-    ...DEFAULT_POSITIONS,
-    ...DEFAULT_DIMENSIONS,
-  });
-
-  const triggerId = React.useId();
-  const dropdownId = React.useId();
-  const composedId = `${triggerId}|${dropdownId}`;
-
-  return {
-    id: composedId,
-    states: {
-      open,
-      contentProps,
-      triggerProps,
-    },
-    methods: {
-      toggleOpen: (): boolean | void => setOpen(!open),
-      setContentProps,
-      setTriggerProps,
-    },
-  };
-}

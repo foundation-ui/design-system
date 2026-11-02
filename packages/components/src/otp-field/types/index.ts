@@ -1,21 +1,31 @@
 import {
-  IComponentSize,
   IComponentVariant,
   IComponentShape,
   IComponentStyling,
 } from "../../../../../types";
 
-export interface OTPFieldContextType {
+export interface IOTPFieldStates {
   otp: string[];
-  inputRefs: React.MutableRefObject<(HTMLInputElement | null)[]>;
-  length: number;
   activeIndex: number;
+  length: number;
+  inputRefs: React.MutableRefObject<(HTMLInputElement | null)[]>;
+}
+
+export interface IOTPFieldMethods {
   handleChange: (index: number, value: string) => void;
   handleKeyDown: (index: number, e: React.KeyboardEvent) => void;
   handleClick: (index: number) => void;
   handlePaste: (e: React.ClipboardEvent) => void;
   handleFocus: (index: number) => void;
 }
+
+export interface IOTPFieldContext {
+  id: string;
+  states: IOTPFieldStates;
+  methods: IOTPFieldMethods;
+}
+
+export interface IOTPFieldProviderProperties extends OTPFieldProps {}
 
 export interface OTPFieldProps {
   name?: string;

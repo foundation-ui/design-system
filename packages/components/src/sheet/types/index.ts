@@ -3,15 +3,26 @@ import type {
   IComponentControlProperties,
   IComponentSize,
   IComponentStyling,
+  IReactChildren,
 } from "../../../../../types";
 
-export type MethodsType = React.Dispatch<React.SetStateAction<boolean>> | any;
-
-export interface IContextProperties {
-  id: Record<string, string>;
-  states: Record<string, string | boolean>;
-  methods: Record<string, MethodsType>;
+export interface ISheetStates {
+  open: boolean;
 }
+
+export interface ISheetMethods {
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  toggle: () => void;
+  getSheetId: (type: "container" | "trigger") => string;
+}
+
+export interface ISheetContext {
+  id: string;
+  states: ISheetStates;
+  methods: ISheetMethods;
+}
+
+export interface ISheetProviderProperties extends IReactChildren {}
 
 export interface ISheetProperties
   extends

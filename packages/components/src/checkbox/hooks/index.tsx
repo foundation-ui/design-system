@@ -1,48 +1,52 @@
 "use client";
 
-import React, { useState, createContext, useContext } from "react";
-import {
-  IReactChildren,
-  IComponentAPI,
-  TComponentAPI,
-} from "../../../../../types";
+import React, { createContext, useContext, useState } from "react";
 
-const defaultComponentAPI = {
+import type { ICheckboxContext, ICheckboxProviderProperties } from "../types";
+
+const noop = (): void => {};
+
+const defaultCheckboxContext: ICheckboxContext = {
   id: "",
-  states: {},
-  methods: {},
+  states: {
+    checked: false,
+    indeterminate: false,
+  },
+  methods: {
+    toggleChecked: noop,
+    applyChecked: noop,
+    applyIndeterminate: noop,
+  },
 };
-const CheckboxContext = createContext<IComponentAPI>(defaultComponentAPI);
-export const useCheckbox = () => useContext(CheckboxContext);
+
+const CheckboxContext = createContext<ICheckboxContext>(defaultCheckboxContext);
+
+export const useCheckbox = (): ICheckboxContext => useContext(CheckboxContext);
 
 export const CheckboxProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useCheckboxProvider();
+}: ICheckboxProviderProperties): React.JSX.Element => {
+  const id = React.useId();
+  const [checked, setChecked] = useState<boolean>(false);
+  const [indeterminate, setIndeterminate] = useState<boolean>(false);
 
   return (
-    <CheckboxContext.Provider value={context}>
+    <CheckboxContext.Provider
+      value={{
+        id,
+        states: {
+          checked,
+          indeterminate,
+        },
+        methods: {
+          toggleChecked: () => setChecked((current) => !current),
+          applyChecked: (nextChecked) => setChecked(Boolean(nextChecked)),
+          applyIndeterminate: (nextIndeterminate) =>
+            setIndeterminate(Boolean(nextIndeterminate)),
+        },
+      }}
+    >
       {children}
     </CheckboxContext.Provider>
   );
 };
-
-function useCheckboxProvider(): IComponentAPI {
-  const [checked, setChecked] = useState<boolean>(false);
-  const [indeterminate, setIndeterminate] = useState<boolean>(false);
-  const checkboxId = React.useId();
-
-  return {
-    id: checkboxId,
-    states: {
-      checked,
-      indeterminate,
-    },
-    methods: {
-      toggleChecked: () => setChecked((prev) => !prev),
-      applyChecked: (state: TComponentAPI) => setChecked(Boolean(state)),
-      applyIndeterminate: (state: TComponentAPI) =>
-        setIndeterminate(Boolean(state)),
-    },
-  };
-}

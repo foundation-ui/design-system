@@ -1,71 +1,83 @@
 "use client";
 
-import React from "react";
-import { IReactChildren, IComponentAPI } from "../../../../../types";
+import React, { createContext, useContext, useState } from "react";
 
-const defaultComponentAPI: IComponentAPI = {
-  id: "",
-  states: {},
-  methods: {},
+import type {
+  ISelectContext,
+  ISelectMetrics,
+  ISelectProviderProperties,
+} from "../types";
+
+const noop = (): void => {};
+const noopState = <T,>(_value: React.SetStateAction<T>): void => {};
+
+const DEFAULT_METRICS: ISelectMetrics = {
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  width: 0,
+  height: 0,
 };
-const SelectContext = React.createContext<IComponentAPI>(defaultComponentAPI);
-export const useSelect = () => React.useContext(SelectContext);
+
+const defaultSelectContext: ISelectContext = {
+  id: "",
+  states: {
+    open: false,
+    value: null,
+    label: "",
+    contentProps: DEFAULT_METRICS,
+    triggerProps: DEFAULT_METRICS,
+  },
+  methods: {
+    toggleOpen: noop,
+    setOpen: noopState,
+    setValue: noopState,
+    setLabel: noopState,
+    setContentProps: noopState,
+    setTriggerProps: noopState,
+  },
+};
+
+const SelectContext = createContext<ISelectContext>(defaultSelectContext);
+
+export const useSelect = (): ISelectContext => useContext(SelectContext);
 
 export const SelectProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useSelectProvider();
-
-  return (
-    <SelectContext.Provider value={context}>{children}</SelectContext.Provider>
-  );
-};
-
-function useSelectProvider(): IComponentAPI {
-  const DEFAULT_POSITIONS = {
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-  };
-  const DEFAULT_DIMENSIONS = {
-    width: 0,
-    height: 0,
-  };
-
-  const [open, setOpen] = React.useState<boolean>(false);
-  const [value, setValue] = React.useState<string | null>(null);
-  const [label, setLabel] = React.useState<string>("");
-
-  const [contentProps, setContentProps] = React.useState({
-    ...DEFAULT_POSITIONS,
-    ...DEFAULT_DIMENSIONS,
-  });
-  const [triggerProps, setTriggerProps] = React.useState({
-    ...DEFAULT_POSITIONS,
-    ...DEFAULT_DIMENSIONS,
-  });
+}: ISelectProviderProperties): React.JSX.Element => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [value, setValue] = useState<string | null>(null);
+  const [label, setLabel] = useState<string>("");
+  const [contentProps, setContentProps] = useState(DEFAULT_METRICS);
+  const [triggerProps, setTriggerProps] = useState(DEFAULT_METRICS);
 
   const triggerId = React.useId();
   const listboxId = React.useId();
-  const composedId = `${triggerId}|${listboxId}`;
+  const id = `${triggerId}|${listboxId}`;
 
-  return {
-    id: composedId,
-    states: {
-      open,
-      value,
-      label,
-      contentProps,
-      triggerProps,
-    },
-    methods: {
-      toggleOpen: (): boolean | void => setOpen(!open),
-      setOpen,
-      setValue,
-      setLabel,
-      setContentProps,
-      setTriggerProps,
-    },
-  };
-}
+  return (
+    <SelectContext.Provider
+      value={{
+        id,
+        states: {
+          open,
+          value,
+          label,
+          contentProps,
+          triggerProps,
+        },
+        methods: {
+          toggleOpen: () => setOpen((current) => !current),
+          setOpen,
+          setValue,
+          setLabel,
+          setContentProps,
+          setTriggerProps,
+        },
+      }}
+    >
+      {children}
+    </SelectContext.Provider>
+  );
+};

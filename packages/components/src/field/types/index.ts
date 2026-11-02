@@ -4,6 +4,7 @@ import type {
   IComponentSize,
   IComponentStyling,
   IComponentVariant,
+  IReactChildren,
 } from "../../../../../types";
 
 export type TDateSegmentType =
@@ -169,3 +170,15 @@ export interface IFieldAddon extends IComponentVariant, IComponentShape {
   controls?: boolean;
   onStep?: (direction: "up" | "down") => void;
 }
+
+export type IFieldStates = Record<string, never>;
+
+export type IFieldMethods = Record<string, never>;
+
+export interface IFieldContext {
+  id: string;
+  states: IFieldStates;
+  methods: IFieldMethods;
+}
+
+export interface IFieldProviderProperties extends IReactChildren {}

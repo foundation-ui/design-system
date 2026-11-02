@@ -1,5 +1,9 @@
 import type * as React from "react";
-import type { IComponentSize, IComponentStyling } from "../../../../../types";
+import type {
+  IComponentSize,
+  IComponentStyling,
+  IReactChildren,
+} from "../../../../../types";
 import type { IButtonProperties } from "../../button/types";
 import type { IScrollAreaProperties } from "../../scrollarea/types";
 
@@ -34,3 +38,20 @@ export interface IMorphingBoxItemProperties
     | "bottom-left-top-center"
     | "left-right";
 }
+
+export interface IMorphingBoxStates {
+  open: boolean;
+}
+
+export interface IMorphingBoxMethods {
+  toggleMorphingBox: () => void;
+  getMorphingBoxId: (type: "trigger" | "content" | "inner-control") => string;
+}
+
+export interface IMorphingBoxContext {
+  id: string;
+  states: IMorphingBoxStates;
+  methods: IMorphingBoxMethods;
+}
+
+export interface IMorphingBoxProviderProperties extends IReactChildren {}

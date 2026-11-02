@@ -59,7 +59,8 @@ const Toolbar = (props: IToolbarBodyProperties) => {
     children,
     ...restProps
   } = props;
-  const { id, state, open, isMobile, openMobile } = useToolbar();
+  const { id, states, methods } = useToolbar();
+  const { state, open, isMobile, openMobile } = states;
 
   const orientation =
     side === "left" || side === "right" ? "vertical" : "horizontal";
@@ -125,7 +126,9 @@ const ToolbarTrigger = (props: IToolbarTriggerProperties) => {
     children,
     ...restProps
   } = props;
-  const { id, open, isMobile, openMobile, toggle } = useToolbar();
+  const { id, states, methods } = useToolbar();
+  const { open, isMobile, openMobile } = states;
+  const { toggle } = methods;
   const expanded = isMobile ? openMobile : open;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -168,7 +171,8 @@ ToolbarTrigger.displayName = "Toolbar.Trigger";
  */
 const ToolbarContent = (props: React.ComponentProps<"div">) => {
   const { children, ...restProps } = props;
-  const { id, open, isMobile, openMobile } = useToolbar();
+  const { id, states } = useToolbar();
+  const { open, isMobile, openMobile } = states;
   const expanded = isMobile ? openMobile : open;
 
   return (
@@ -195,7 +199,8 @@ ToolbarContent.displayName = "Toolbar.Content";
  */
 const ToolbarSection = (props: IToolbarSectionProperties) => {
   const { alwaysVisible, children, ...restProps } = props;
-  const { open, isMobile, openMobile } = useToolbar();
+  const { states } = useToolbar();
+  const { open, isMobile, openMobile } = states;
   const expanded = isMobile ? openMobile : open;
 
   return (
@@ -223,7 +228,9 @@ ToolbarSection.displayName = "Toolbar.Section";
 const ToolbarItem = (props: IToolbarItemProperties) => {
   const { showFirstChild, onClick, children, ...restProps } = props;
   const childArray = React.Children.toArray(children);
-  const { open, setOpen, isMobile, openMobile, setOpenMobile } = useToolbar();
+  const { states, methods } = useToolbar();
+  const { open, isMobile, openMobile } = states;
+  const { setOpen, setOpenMobile } = methods;
   const expanded = isMobile ? openMobile : open;
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {

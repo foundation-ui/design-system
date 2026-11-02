@@ -1,41 +1,51 @@
 "use client";
 
-import React, { useState, createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-import { IReactChildren, IComponentAPI } from "../../../../../types";
-import type { MessageBubbleSide } from "../types";
+import type {
+  IMessageBubbleContext,
+  IMessageBubbleProviderProperties,
+  MessageBubbleSide,
+} from "../types";
 
-const defaultComponentAPI = {
+const noop = (): void => {};
+
+const defaultMessageBubbleContext: IMessageBubbleContext = {
   id: "",
-  states: {},
-  methods: {},
+  states: {
+    side: null,
+  },
+  methods: {
+    applySide: noop,
+  },
 };
-const MessageBubbleContext = createContext<IComponentAPI>(defaultComponentAPI);
-export const useMessageBubble = () => useContext(MessageBubbleContext);
+
+const MessageBubbleContext = createContext<IMessageBubbleContext>(
+  defaultMessageBubbleContext,
+);
+
+export const useMessageBubble = (): IMessageBubbleContext =>
+  useContext(MessageBubbleContext);
 
 export const MessageBubbleProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useMessageBubbleProvider();
+}: IMessageBubbleProviderProperties): React.JSX.Element => {
+  const id = React.useId();
+  const [side, setSide] = useState<MessageBubbleSide | null>(null);
 
   return (
-    <MessageBubbleContext.Provider value={context}>
+    <MessageBubbleContext.Provider
+      value={{
+        id,
+        states: {
+          side,
+        },
+        methods: {
+          applySide: (nextSide) => setSide(nextSide),
+        },
+      }}
+    >
       {children}
     </MessageBubbleContext.Provider>
   );
 };
-
-function useMessageBubbleProvider(): IComponentAPI {
-  const [side, setSide] = useState<MessageBubbleSide | null>(null);
-  const MessageBubbleId = React.useId();
-
-  return {
-    id: MessageBubbleId,
-    states: {
-      side,
-    },
-    methods: {
-      applySide: (side: MessageBubbleSide): string | void => setSide(side),
-    },
-  };
-}

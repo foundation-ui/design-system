@@ -1,39 +1,47 @@
 "use client";
 
-import React, { useState, createContext, useContext } from "react";
-import { IReactChildren, IComponentAPI } from "../../../../../types";
+import React, { createContext, useContext, useState } from "react";
 
-const defaultComponentAPI = {
+import type { IDrawerContext, IDrawerProviderProperties } from "../types";
+
+const noop = (): void => {};
+const noopId = (): string => "";
+
+const defaultDrawerContext: IDrawerContext = {
   id: "",
-  states: {},
-  methods: {},
+  states: {
+    open: false,
+  },
+  methods: {
+    toggleDrawer: noop,
+    getDrawerId: noopId,
+  },
 };
-const DrawerContext = createContext<IComponentAPI>(defaultComponentAPI);
-export const useDrawer = () => useContext(DrawerContext);
+
+const DrawerContext = createContext<IDrawerContext>(defaultDrawerContext);
+
+export const useDrawer = (): IDrawerContext => useContext(DrawerContext);
 
 export const DrawerProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useDrawerProvider();
+}: IDrawerProviderProperties): React.JSX.Element => {
+  const id = React.useId();
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <DrawerContext.Provider value={context}>{children}</DrawerContext.Provider>
+    <DrawerContext.Provider
+      value={{
+        id,
+        states: {
+          open,
+        },
+        methods: {
+          toggleDrawer: () => setOpen((current) => !current),
+          getDrawerId: (type) => `${id}-${type}`,
+        },
+      }}
+    >
+      {children}
+    </DrawerContext.Provider>
   );
 };
-
-function useDrawerProvider(): IComponentAPI {
-  const [open, setOpen] = useState<boolean>(false);
-  const DrawerId = React.useId();
-
-  return {
-    id: DrawerId,
-    states: {
-      open: open,
-    },
-    methods: {
-      toggleDrawer: () => setOpen(!open),
-      getDrawerId: (type: "trigger" | "Drawer" | "inner-control"): string =>
-        `${DrawerId}-${type}`,
-    },
-  };
-}

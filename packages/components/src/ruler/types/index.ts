@@ -1,17 +1,31 @@
+import type * as React from "react";
+import type { IReactChildren } from "../../../../../types";
+
 export interface Guide {
   id: string;
   position: number;
   orientation: "horizontal" | "vertical";
 }
 
-export interface RulerContextType {
+export interface IRulerStates {
   guides: Guide[];
-  addGuide: (guide: Omit<Guide, "id">) => void;
-  updateGuide: (id: string, position: number) => void;
-  removeGuide: (id: string) => void;
   activeGuide: Guide | null;
-  setActiveGuide: (guide: Guide | null) => void;
   isDragging: boolean;
-  setIsDragging: (dragging: boolean) => void;
   canvasRef: React.RefObject<HTMLDivElement | null>;
 }
+
+export interface IRulerMethods {
+  addGuide: (guide: Omit<Guide, "id">) => Guide;
+  updateGuide: (id: string, position: number) => void;
+  removeGuide: (id: string) => void;
+  setActiveGuide: (guide: Guide | null) => void;
+  setIsDragging: (dragging: boolean) => void;
+}
+
+export interface IRulerContext {
+  id: string;
+  states: IRulerStates;
+  methods: IRulerMethods;
+}
+
+export interface IRulerProviderProperties extends IReactChildren {}

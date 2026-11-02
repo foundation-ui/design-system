@@ -6,6 +6,8 @@ import type {
   IContextMenuContext,
   IContextMenuOptions,
   IContextMenuPoint,
+  IContextMenuProviderProperties,
+  IContextMenuRefs,
 } from "../types";
 
 const noop = (): void => {};
@@ -38,9 +40,7 @@ export const useContextMenu = (): IContextMenuContext =>
 
 export const ContextMenuProvider = ({
   children,
-}: {
-  children: React.ReactNode;
-}): React.JSX.Element => {
+}: IContextMenuProviderProperties): React.JSX.Element => {
   const id = React.useId();
 
   const [open, setOpenState] = React.useState(false);
@@ -51,43 +51,37 @@ export const ContextMenuProvider = ({
   const contentRef = React.useRef<HTMLDivElement | null>(null);
   const optionsRef = React.useRef<IContextMenuOptions>({ controlled: false });
 
-  const configure = React.useCallback((options: IContextMenuOptions) => {
+  const configure = (options: IContextMenuOptions) => {
     optionsRef.current = options;
-  }, []);
+  };
 
-  const sync = React.useCallback((next: boolean) => setOpenState(next), []);
+  const sync = (next: boolean) => setOpenState(next);
 
-  const setOpen = React.useCallback((next: boolean) => {
+  const setOpen = (next: boolean) => {
     if (!optionsRef.current.controlled) setOpenState(next);
     optionsRef.current.onOpenChange?.(next);
-  }, []);
+  };
 
-  const openAt = React.useCallback(
-    (nextPoint: IContextMenuPoint) => {
-      setPoint(nextPoint);
-      setInvocation((current) => current + 1);
-      setOpen(true);
-    },
-    [setOpen],
-  );
+  const openAt = (nextPoint: IContextMenuPoint) => {
+    setPoint(nextPoint);
+    setInvocation((current) => current + 1);
+    setOpen(true);
+  };
 
-  const methods = React.useMemo(
-    () => ({ setOpen, openAt, sync, configure }),
-    [setOpen, openAt, sync, configure],
-  );
-
-  const value = React.useMemo<IContextMenuContext>(
-    () => ({
-      id,
-      states: { open, point, invocation },
-      methods,
-      refs: { area: areaRef, content: contentRef },
-    }),
-    [id, open, point, invocation, methods],
-  );
+  const refs: IContextMenuRefs = {
+    area: areaRef,
+    content: contentRef,
+  };
 
   return (
-    <ContextMenuContext.Provider value={value}>
+    <ContextMenuContext.Provider
+      value={{
+        id,
+        states: { open, point, invocation },
+        methods: { setOpen, openAt, sync, configure },
+        refs,
+      }}
+    >
       {children}
     </ContextMenuContext.Provider>
   );

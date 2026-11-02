@@ -1,42 +1,46 @@
 "use client";
 
-import React, { useState, createContext, useContext } from "react";
-import {
-  IReactChildren,
-  IComponentAPI,
-  TComponentAPI,
-} from "../../../../../types";
+import React, { createContext, useContext, useState } from "react";
 
-const defaultComponentAPI = {
+import type { ISwitchContext, ISwitchProviderProperties } from "../types";
+
+const noop = (): void => {};
+
+const defaultSwitchContext: ISwitchContext = {
   id: "",
-  states: {},
-  methods: {},
+  states: {
+    checked: false,
+  },
+  methods: {
+    toggleChecked: noop,
+    applyChecked: noop,
+  },
 };
-const SwitchContext = createContext<IComponentAPI>(defaultComponentAPI);
-export const useSwitch = () => useContext(SwitchContext);
+
+const SwitchContext = createContext<ISwitchContext>(defaultSwitchContext);
+
+export const useSwitch = (): ISwitchContext => useContext(SwitchContext);
 
 export const SwitchProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useSwitchProvider();
+}: ISwitchProviderProperties): React.JSX.Element => {
+  const id = React.useId();
+  const [checked, setChecked] = useState<boolean>(false);
 
   return (
-    <SwitchContext.Provider value={context}>{children}</SwitchContext.Provider>
+    <SwitchContext.Provider
+      value={{
+        id,
+        states: {
+          checked,
+        },
+        methods: {
+          toggleChecked: () => setChecked((current) => !current),
+          applyChecked: (nextChecked) => setChecked(Boolean(nextChecked)),
+        },
+      }}
+    >
+      {children}
+    </SwitchContext.Provider>
   );
 };
-
-function useSwitchProvider(): IComponentAPI {
-  const [checked, setChecked] = useState<boolean>(false);
-  const switchId = React.useId();
-
-  return {
-    id: switchId,
-    states: {
-      checked,
-    },
-    methods: {
-      toggleChecked: () => setChecked((prev) => !prev),
-      applyChecked: (state: TComponentAPI) => setChecked(Boolean(state)),
-    },
-  };
-}

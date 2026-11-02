@@ -1,41 +1,53 @@
 "use client";
 
-import React, { useState, createContext, useContext } from "react";
-import { IReactChildren, IComponentAPI } from "../../../../../types";
+import React, { createContext, useContext, useState } from "react";
 
-const defaultComponentAPI = {
+import type {
+  IMorphingBoxContext,
+  IMorphingBoxProviderProperties,
+} from "../types";
+
+const noop = (): void => {};
+const noopId = (): string => "";
+
+const defaultMorphingBoxContext: IMorphingBoxContext = {
   id: "",
-  states: {},
-  methods: {},
+  states: {
+    open: false,
+  },
+  methods: {
+    toggleMorphingBox: noop,
+    getMorphingBoxId: noopId,
+  },
 };
-const MorphingBoxContext = createContext<IComponentAPI>(defaultComponentAPI);
-export const useMorphingBox = () => useContext(MorphingBoxContext);
+
+const MorphingBoxContext = createContext<IMorphingBoxContext>(
+  defaultMorphingBoxContext,
+);
+
+export const useMorphingBox = (): IMorphingBoxContext =>
+  useContext(MorphingBoxContext);
 
 export const MorphingBoxProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useMorphingBoxProvider();
+}: IMorphingBoxProviderProperties): React.JSX.Element => {
+  const id = React.useId();
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <MorphingBoxContext.Provider value={context}>
+    <MorphingBoxContext.Provider
+      value={{
+        id,
+        states: {
+          open,
+        },
+        methods: {
+          toggleMorphingBox: () => setOpen((current) => !current),
+          getMorphingBoxId: (type) => `${id}-${type}`,
+        },
+      }}
+    >
       {children}
     </MorphingBoxContext.Provider>
   );
 };
-
-function useMorphingBoxProvider(): IComponentAPI {
-  const [open, setOpen] = useState<boolean>(false);
-  const MorphingBoxId = React.useId();
-
-  return {
-    id: MorphingBoxId,
-    states: {
-      open: open,
-    },
-    methods: {
-      toggleMorphingBox: () => setOpen(!open),
-      getMorphingBoxId: (type: "trigger" | "MorphingBox"): string =>
-        `${MorphingBoxId}-${type}`,
-    },
-  };
-}

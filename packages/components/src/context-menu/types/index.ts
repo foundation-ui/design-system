@@ -1,5 +1,9 @@
 import type * as React from "react";
-import type { IComponentShape, IComponentSize } from "../../../../../types";
+import type {
+  IComponentShape,
+  IComponentSize,
+  IReactChildren,
+} from "../../../../../types";
 
 export interface IContextMenuAreaProperties extends React.ComponentProps<"div"> {}
 
@@ -56,3 +60,5 @@ export interface IContextMenuContext {
   methods: IContextMenuMethods;
   refs: IContextMenuRefs;
 }
+
+export interface IContextMenuProviderProperties extends IReactChildren {}

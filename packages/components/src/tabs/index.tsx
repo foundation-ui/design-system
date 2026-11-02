@@ -1,12 +1,14 @@
 "use client";
 
 import React, { Children } from "react";
+
 import { TabsProvider, useTabs } from "./hooks";
+
 import { Button } from "../button";
 import { TabWrapper } from "./styles";
+
 import { IReactChildren, ComponentVariantEnum } from "../../../../types";
-import type { IButtonProperties } from "../button/types";
-import type { ITabsProperties } from "./types";
+import type { ITabsProperties, ITabsTriggerProperties } from "./types";
 
 export interface ITabsComposition {
   Root: typeof TabsRoot;
@@ -74,7 +76,7 @@ TabsRoot.displayName = "Tabs.Root";
  * @param {ReactNode} props.children - The content to be rendered inside the tabs trigger.
  * @returns {ReactElement} The Tabs.Trigger component.
  */
-const TabsTrigger = (props: IButtonProperties) => {
+const TabsTrigger = (props: ITabsTriggerProperties) => {
   const { value, onClick, children, ...restProps } = props;
   const { states, methods } = useTabs();
   const { applyValue, getTabsId } = methods;

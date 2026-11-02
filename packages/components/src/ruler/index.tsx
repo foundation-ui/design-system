@@ -46,7 +46,9 @@ const RulerRow = ({
 }: {
   orientation: "horizontal" | "vertical";
 }) => {
-  const { addGuide, setActiveGuide, setIsDragging, canvasRef } = useRuler();
+  const { states, methods } = useRuler();
+  const { canvasRef } = states;
+  const { addGuide, setActiveGuide, setIsDragging } = methods;
 
   const rulerRef = React.useRef<HTMLDivElement>(null);
   const [size, setSize] = React.useState(0);
@@ -78,7 +80,7 @@ const RulerRow = ({
     const guide = addGuide({
       position: 0,
       orientation: isH ? "horizontal" : "vertical",
-    }) as any;
+    });
     setActiveGuide(guide);
     setIsDragging(true);
   };
@@ -119,8 +121,9 @@ RulerCorner.displayName = "Ruler.Corner";
 
 const RulerLine = ({ guide }: { guide: Guide }) => {
   const [isHovered, setIsHovered] = React.useState(false);
-  const { activeGuide, removeGuide, setActiveGuide, setIsDragging } =
-    useRuler();
+  const { states, methods } = useRuler();
+  const { activeGuide } = states;
+  const { removeGuide, setActiveGuide, setIsDragging } = methods;
 
   const highlighted = activeGuide?.id === guide.id || isHovered;
 
@@ -152,16 +155,9 @@ const RulerLine = ({ guide }: { guide: Guide }) => {
 RulerLine.displayName = "Ruler.Line";
 
 const RulerLines = () => {
-  const {
-    guides,
-    activeGuide,
-    updateGuide,
-    removeGuide,
-    setActiveGuide,
-    isDragging,
-    setIsDragging,
-    canvasRef,
-  } = useRuler();
+  const { states, methods } = useRuler();
+  const { guides, activeGuide, isDragging, canvasRef } = states;
+  const { updateGuide, removeGuide, setActiveGuide, setIsDragging } = methods;
 
   React.useEffect(() => {
     if (!isDragging || !activeGuide) return;
@@ -220,7 +216,8 @@ const RulerLines = () => {
 RulerLines.displayName = "Ruler.Lines";
 
 const RulerCanvas = ({ children }: IReactChildren) => {
-  const { canvasRef, isDragging } = useRuler();
+  const { states } = useRuler();
+  const { canvasRef, isDragging } = states;
 
   return (
     <CanvasContent ref={canvasRef} $isDragging={isDragging}>

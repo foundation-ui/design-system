@@ -1,39 +1,47 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
-import { IReactChildren, IComponentAPI } from "../../../../../types";
 
-const defaultComponentAPI = {
+import type { ITabsContext, ITabsProviderProperties } from "../types";
+
+const noop = (): void => {};
+const noopId = (): string => "";
+
+const defaultTabsContext: ITabsContext = {
   id: "",
-  states: {},
-  methods: {},
+  states: {
+    value: null,
+  },
+  methods: {
+    applyValue: noop,
+    getTabsId: noopId,
+  },
 };
-const TabsContext = createContext<IComponentAPI>(defaultComponentAPI);
-export const useTabs = () => useContext(TabsContext);
+
+const TabsContext = createContext<ITabsContext>(defaultTabsContext);
+
+export const useTabs = (): ITabsContext => useContext(TabsContext);
 
 export const TabsProvider = ({
   children,
-}: IReactChildren): React.JSX.Element => {
-  const context = useTabsProvider();
+}: ITabsProviderProperties): React.JSX.Element => {
+  const id = React.useId();
+  const [value, setValue] = useState<string | null>(null);
 
   return (
-    <TabsContext.Provider value={context}>{children}</TabsContext.Provider>
+    <TabsContext.Provider
+      value={{
+        id,
+        states: {
+          value,
+        },
+        methods: {
+          applyValue: (nextValue) => setValue(nextValue),
+          getTabsId: ({ value, type }) => `${id}-${type}-${value}`,
+        },
+      }}
+    >
+      {children}
+    </TabsContext.Provider>
   );
 };
-
-function useTabsProvider(): IComponentAPI {
-  const [value, setValue] = useState<string | null>(null);
-  const tabsId = React.useId();
-
-  return {
-    id: tabsId,
-    states: {
-      value: value,
-    },
-    methods: {
-      applyValue: (value: string): string | void => setValue(value),
-      getTabsId: ({ value, type }: Record<string, string>): string =>
-        `${tabsId}-${type}-${value}`,
-    },
-  };
-}

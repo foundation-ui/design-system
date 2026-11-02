@@ -280,7 +280,7 @@ const SelectItem = (props: ISelectItemProperties) => {
   ) => {
     if (disabled) return;
 
-    if (methods.setValue) methods.setValue(value);
+    if (value !== undefined && methods.setValue) methods.setValue(value);
     if (methods.setOpen) methods.setOpen(false);
     if (onClick) onClick(event);
   };

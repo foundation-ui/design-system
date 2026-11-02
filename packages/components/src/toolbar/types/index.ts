@@ -8,15 +8,23 @@ import type {
 } from "../../../../../types";
 import type { IButtonProperties } from "../../button/types";
 
-export interface IToolbarContext {
-  id: string;
+export interface IToolbarStates {
   state: "expanded" | "collapsed";
   open: boolean;
-  setOpen: (open: boolean) => void;
-  toggle: () => void;
   isMobile: boolean;
   openMobile: boolean;
+}
+
+export interface IToolbarMethods {
+  setOpen: (open: boolean) => void;
+  toggle: () => void;
   setOpenMobile: (open: boolean) => void;
+}
+
+export interface IToolbarContext {
+  id: string;
+  states: IToolbarStates;
+  methods: IToolbarMethods;
 }
 
 export interface IToolbarProviderProps extends IReactChildren {

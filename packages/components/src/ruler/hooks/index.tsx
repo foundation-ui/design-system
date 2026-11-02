@@ -1,53 +1,78 @@
 "use client";
 
-import React from "react";
-import type { RulerContextType, Guide } from "../types";
+import React, { useCallback, createContext, useContext, useState } from "react";
 
-const RulerContext = React.createContext<RulerContextType | null>(null);
+import type { Guide, IRulerContext, IRulerProviderProperties } from "../types";
 
-export function useRuler() {
-  const context = React.useContext(RulerContext);
-  if (!context) throw new Error("useRuler must be used within RulerProvider");
-  return context;
-}
+const noop = (): void => {};
+const noopId = (): string => "";
 
-export function RulerProvider({ children }: { children: React.ReactNode }) {
-  const [guides, setGuides] = React.useState<Guide[]>([]);
-  const [activeGuide, setActiveGuide] = React.useState<Guide | null>(null);
-  const [isDragging, setIsDragging] = React.useState(false);
+const defaultRulerContext: IRulerContext = {
+  id: "",
+  states: {
+    guides: [],
+    activeGuide: null,
+    isDragging: false,
+    canvasRef: { current: null },
+  },
+  methods: {
+    addGuide: (guide) => ({ ...guide, id: "" }),
+    updateGuide: noop,
+    removeGuide: noop,
+    setActiveGuide: noop,
+    setIsDragging: noop,
+  },
+};
+
+const RulerContext = createContext<IRulerContext>(defaultRulerContext);
+
+export const useRuler = (): IRulerContext => useContext(RulerContext);
+
+export const RulerProvider = ({
+  children,
+}: IRulerProviderProperties): React.JSX.Element => {
+  const id = React.useId();
+  const [guides, setGuides] = useState<Guide[]>([]);
+  const [activeGuide, setActiveGuide] = useState<Guide | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
   const canvasRef = React.useRef<HTMLDivElement>(null);
 
-  const addGuide = React.useCallback((guide: Omit<Guide, "id">) => {
+  const addGuide = useCallback((guide: Omit<Guide, "id">) => {
     const newGuide = { ...guide, id: crypto.randomUUID() };
     setGuides((prev) => [...prev, newGuide]);
     return newGuide;
   }, []);
 
-  const updateGuide = React.useCallback((id: string, position: number) => {
+  const updateGuide = useCallback((guideId: string, position: number) => {
     setGuides((prev) =>
-      prev.map((g) => (g.id === id ? { ...g, position } : g)),
+      prev.map((g) => (g.id === guideId ? { ...g, position } : g)),
     );
   }, []);
 
-  const removeGuide = React.useCallback((id: string) => {
-    setGuides((prev) => prev.filter((g) => g.id !== id));
+  const removeGuide = useCallback((guideId: string) => {
+    setGuides((prev) => prev.filter((g) => g.id !== guideId));
   }, []);
 
   return (
     <RulerContext.Provider
       value={{
-        guides,
-        addGuide,
-        updateGuide,
-        removeGuide,
-        activeGuide,
-        setActiveGuide,
-        isDragging,
-        setIsDragging,
-        canvasRef,
+        id,
+        states: {
+          guides,
+          activeGuide,
+          isDragging,
+          canvasRef,
+        },
+        methods: {
+          addGuide,
+          updateGuide,
+          removeGuide,
+          setActiveGuide,
+          setIsDragging,
+        },
       }}
     >
       {children}
     </RulerContext.Provider>
   );
-}
+};
