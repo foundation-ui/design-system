@@ -1,0 +1,42 @@
+{
+  "name": "@usefui/registry",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@chambellan/contracts": "0.0.2",
+    "@usefui/analytics": "^1.1.0",
+    "@usefui/components": "^1.7.10",
+    "@usefui/core": "^1.4.0",
+    "@usefui/hooks": "^1.4.0",
+    "@usefui/icons": "^1.4.2",
+    "@usefui/styles": "^1.5.0",
+    "@usefui/tokens": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "typescript": "^5.9.2"
+  },
+  "scripts": {
+    "lint": "tsc",
+    "typecheck": "tsc --noEmit",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "prepublishOnly": "pnpm run build",
+    "pack:dry": "pnpm run build && npm pack --dry-run"
+  }
+}

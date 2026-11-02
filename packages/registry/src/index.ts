@@ -1,0 +1,15 @@
+export {
+  ComponentRegistry,
+  getComponent,
+  hasComponent,
+  StylingRegistry,
+  getStyling,
+  CoreGeneratorRegistry,
+  getGenerator,
+  HookRegistry,
+  getHook,
+  ProviderRegistry,
+  getProvider,
+  GuideRegistry,
+  getGuide,
+} from "./registry";
