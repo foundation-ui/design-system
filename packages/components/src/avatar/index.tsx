@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
+
 import { AvatarWrapper, BadgeWrapper, StatusWrapper } from "./styles";
+import { Pill } from "../pill";
 
 import { ComponentSizeEnum, ComponentShapeEnum } from "../types";
 import type {
@@ -85,19 +87,21 @@ const AvatarStatus = (props: {
 }): React.ReactElement => {
   const { status } = props;
 
+  const getStatusVariant = () => {
+    if (status === "online") return "success";
+    if (status === "away") return "warning";
+    if (status === "busy") return "danger";
+    if (status === "offline") return undefined;
+  };
+
   return (
     <StatusWrapper
       role="img"
       aria-label={`${status}-user-avatar-status`}
-      aria-labelledby="title desc"
-      data-status={status}
-      height="12"
-      width="12"
       {...props}
     >
       <title>{"Activity status"}</title>
-      <desc>{status}</desc>
-      <circle role="presentation" cx="6" cy="6" r="4" />
+      <Pill fixed status={getStatusVariant()} />
     </StatusWrapper>
   );
 };

@@ -43,27 +43,6 @@ const AvatarShapesStyles = css`
     }
   }
 `;
-const AvatarStatusesStyles = css`
-  &[data-status="online"] {
-    fill: var(--shade-green-10);
-    stroke: var(--shade-green-20);
-  }
-
-  &[data-status="away"] {
-    fill: var(--color-yellow);
-    stroke: var(--shade-yellow-10);
-  }
-
-  &[data-status="busy"] {
-    fill: var(--color-red);
-    stroke: var(--shade-red-10);
-  }
-
-  &[data-status="offline"] {
-    fill: var(--body-color);
-    stroke: var(--contrast-color);
-  }
-`;
 
 export const AvatarWrapper = styled.div`
   &[data-raw="false"] {
@@ -88,17 +67,13 @@ export const AvatarWrapper = styled.div`
     ${AvatarSizesStyles}
   }
 `;
-export const StatusWrapper = styled.svg`
-  --status-position: calc(
-    var(--measurement-small-60) - (var(--measurement-small-60) * 2)
-  );
+export const StatusWrapper = styled.div`
+  display: inline-block;
+  position: relative;
 
-  position: absolute;
-  stroke-width: var(--measurement-small-10);
-  bottom: var(--status-position);
-  left: var(--status-position);
-
-  ${AvatarStatusesStyles}
+  /** Reduced to 80% to make the Pill overflow the Avatar */
+  width: 80%;
+  height: 80%;
 `;
 export const BadgeWrapper = styled.div`
   ${InsetShadowCSSVariable}

@@ -36,22 +36,48 @@ export const Sizes: Story = {
 export const Shapes: Story = {
   render: ({ ...args }) => (
     <div className="flex g-medium-30">
-      <Avatar shape="square" status="online" {...args} />
-      <Avatar shape="smooth" status="online" {...args} />
-      <Avatar shape="round" status="online" {...args} />
+      <Avatar shape="square" {...args} />
+      <Avatar shape="smooth" {...args} />
+      <Avatar shape="round" {...args} />
     </div>
   ),
 };
 export const Status: Story = {
-  render: ({ ...args }) => (
-    <div className="flex g-medium-30">
-      <Avatar status="online" {...args} />
-      <Avatar status="away" {...args} />
-      <Avatar status="busy" {...args} />
-      <Avatar status="offline" {...args} />
-      <Avatar {...args} />
-    </div>
-  ),
+  render: ({ ...args }) => {
+    const online = useGradient({
+      layerCount: 3,
+      stopsPerLayer: 6,
+      types: ["linear", "radial"],
+      blendModes: ["hard-light", "soft-light", "difference", "exclusion"],
+    });
+    const away = useGradient({
+      layerCount: 3,
+      stopsPerLayer: 6,
+      types: ["linear", "radial"],
+      blendModes: ["darken", "lighten", "color-dodge", "color-burn"],
+    });
+    const busy = useGradient({
+      layerCount: 3,
+      stopsPerLayer: 6,
+      types: ["linear", "radial"],
+      blendModes: ["normal", "multiply", "screen", "overlay"],
+    });
+    const offline = useGradient({
+      layerCount: 3,
+      stopsPerLayer: 6,
+      types: ["linear", "radial"],
+      blendModes: ["hue", "saturation", "color", "luminosity"],
+    });
+
+    return (
+      <div className="flex g-medium-30">
+        <Avatar src={online.base64} status="online" {...args} />
+        <Avatar src={away.base64} status="away" {...args} />
+        <Avatar src={busy.base64} status="busy" {...args} />
+        <Avatar src={offline.base64} status="offline" {...args} />
+      </div>
+    );
+  },
 };
 export const Badges: Story = {
   render: ({ ...args }) => {
