@@ -1,5 +1,6 @@
 import React from "react";
-import { Page, Tooltip } from "@usefui/components";
+import { Button, Page, Tooltip } from "@usefui/components";
+import { Icon } from "@usefui/icons";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.
 
@@ -17,9 +18,11 @@ const meta = {
   tags: ["autodocs"],
   decorators: [
     (Story: any) => (
-      <div className="h-100 w-100 grid justify-center align-center">
-        <Story />
-      </div>
+      <Page className="p-medium-30">
+        <Page.Content className="flex align-center justify-center h-100 w-100 g-medium-30">
+          <Story />
+        </Page.Content>
+      </Page>
     ),
   ],
 };
@@ -61,5 +64,24 @@ export const Default = {
       </Tooltip>
       &nbsp;needs.
     </p>
+  ),
+};
+export const Positions = {
+  render: ({ ...args }) => (
+    <div className="w-100 h-100 flex flex-column justify-between">
+      {Array.from({ length: 3 }).map(() => (
+        <div className="flex align-center justify-between w-100">
+          {Array.from({ length: 3 }).map(() => (
+            <Tooltip variant="secondary" content="Tooltip">
+              <Button variant="ghost">
+                <Icon className="m-y-small-80">
+                  <Icon.InfoSquare />
+                </Icon>
+              </Button>
+            </Tooltip>
+          ))}
+        </div>
+      ))}
+    </div>
   ),
 };

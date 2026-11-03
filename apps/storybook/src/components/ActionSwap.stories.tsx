@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Page, ActionSwap } from "@usefui/components";
+import { Page, ActionSwap, Tooltip } from "@usefui/components";
+import { Icon } from "@usefui/icons";
 
 /**
  * CopyButton are used to copy stored values when clicked.
@@ -24,7 +25,14 @@ export const Default: Story = {
           animation="reflective"
           delay={1000}
           onClick={() => console.log("ActionSwap: onClick function")}
-          actions={["Click here", "Nice click"]}
+          actions={[
+            <Icon className="m-y-small-80">
+              <Icon.Heart />
+            </Icon>,
+            <Icon className="m-y-small-80">
+              <Icon.Check />
+            </Icon>,
+          ]}
         />
       </Page.Content>
     </Page>
@@ -37,14 +45,23 @@ export const CopyToClipboard: Story = {
   render: ({ ...args }) => (
     <Page className="p-medium-30">
       <Page.Content className="flex align-center justify-center h-100 w-100 g-medium-30">
-        <ActionSwap.Copy
-          variant="meta"
-          sizing="small"
-          shape="round"
-          animation="reflective"
-          value="ActionSwap.Copy: Copied value"
-          actions={["Copy", "Copied"]}
-        />
+        <Tooltip content="Copy">
+          <ActionSwap.Copy
+            variant="meta"
+            sizing="small"
+            shape="round"
+            animation="reflective"
+            value="ActionSwap.Copy: Copied value"
+            actions={[
+              <Icon className="m-y-small-80">
+                <Icon.Copy />
+              </Icon>,
+              <Icon className="m-y-small-80">
+                <Icon.Check />
+              </Icon>,
+            ]}
+          />
+        </Tooltip>
       </Page.Content>
     </Page>
   ),

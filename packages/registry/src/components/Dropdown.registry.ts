@@ -2,11 +2,11 @@ import { ComponentRegistryMetadata } from "@chambellan/contracts";
 
 export const DropdownMeta: ComponentRegistryMetadata = {
   name: "DropdownMenu",
+  title: "Dropdown",
   description:
-    "Expand and collapse a list of actions. Trigger is Button-based; content flips by viewport.",
+    "Expandable action list triggered by a Button. DropdownMenu.Root provides the open state, the DropdownMenu wrapper renders the click-outside boundary and locks page scroll while open, Trigger toggles the menu and records its rect, Content is a fixed-position menu placed by useFloatingPlacement, and Item performs an action and optionally keeps the menu open. Placement centers the menu over the trigger when it fits, otherwise aligns its left or right edge, and opens below the trigger unless it would overflow, in which case it opens above.",
   category: "navigation",
   variants: ["body", "contrast"],
-  title: "Dropdown",
   props: [
     {
       name: "children",
@@ -16,7 +16,8 @@ export const DropdownMeta: ComponentRegistryMetadata = {
   ],
   parts: {
     Root: {
-      description: "Contains the DropdownMenu component provider.",
+      description:
+        "Provides the dropdown context. It renders no DOM element and only accepts children.",
       props: [
         {
           name: "children",
@@ -27,7 +28,7 @@ export const DropdownMeta: ComponentRegistryMetadata = {
     },
     Trigger: {
       description:
-        "DropdownMenu.Trigger is used to triggers the expansion and collapse of the associated DropdownMenu.Content component.",
+        "Button that toggles the menu and records its own bounding rect for placement. Renders a Button, so Button styling and behavior props are forwarded.",
       props: [
         {
           name: "children",
@@ -36,13 +37,18 @@ export const DropdownMeta: ComponentRegistryMetadata = {
         },
         {
           name: "variant",
-          type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
+          type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost" | "danger" | "warning" | "success" | "meta" | "hint" | "link" | "accent"',
           defaultValue: "ghost",
         },
         {
           name: "sizing",
           type: '"small" | "medium" | "large"',
           defaultValue: "medium",
+        },
+        {
+          name: "shape",
+          type: '"square" | "smooth" | "round"',
+          defaultValue: "smooth",
         },
         {
           name: "disabled",
@@ -67,7 +73,7 @@ export const DropdownMeta: ComponentRegistryMetadata = {
     },
     Content: {
       description:
-        "DropdownMenu.Content is used to contains the content of the associated DropdownMenu.Trigger component.",
+        "Semantic `menu` element that holds the items. Mounts only while open, stays hidden until its placement is measured, and is positioned with `position: fixed` from useFloatingPlacement.",
       props: [
         {
           name: "children",
@@ -85,6 +91,16 @@ export const DropdownMeta: ComponentRegistryMetadata = {
           defaultValue: "medium",
         },
         {
+          name: "gap",
+          type: "number",
+          defaultValue: "4",
+        },
+        {
+          name: "margin",
+          type: "number",
+          defaultValue: "4",
+        },
+        {
           name: "defaultOpen",
           type: "boolean",
           defaultValue: "false",
@@ -98,7 +114,7 @@ export const DropdownMeta: ComponentRegistryMetadata = {
     },
     Item: {
       description:
-        "DropdownMenu.Item is used associated to DropdownMenu.Content component.",
+        "Action row inside DropdownMenu.Content. Renders a `menuitem` with `tabIndex={0}`; clicking or pressing Enter or Space runs `onClick` and closes the menu unless `radio` is set.",
       props: [
         {
           name: "children",
@@ -131,91 +147,129 @@ export const DropdownMeta: ComponentRegistryMetadata = {
       ],
     },
   },
-  usage: [
-    `import React from "react";
-import { Divider, DropdownMenu } from "@usefui/components";
-import { Icon } from "@usefui/icons";
-
-export function DropdownMenuComponent() {
-    return (
-        <div className="flex align-center justify-center w-100 h-100 p-t-large-30 p-x-medium-60">
-            <DropdownMenu.Root>
-                <DropdownMenu>
-                    <DropdownMenu.Trigger variant="secondary" sizing="large">
-                        @usefui
-                    </DropdownMenu.Trigger>
-
-                    <DropdownMenu.Content>
-                        <DropdownMenu.Item
-                        radio
-                        className="flex align-center justify-between"
-                        >
-                        Radio Item
-                        <Icon>
-                            <Icon.ArrowRight />
-                        </Icon>
-                        </DropdownMenu.Item>
-                        <Divider />
-                        <DropdownMenu.Item>Components</DropdownMenu.Item>
-                        <DropdownMenu.Item>Tokens</DropdownMenu.Item>
-                        <DropdownMenu.Item>Core</DropdownMenu.Item>
-                        <DropdownMenu.Item>Styles</DropdownMenu.Item>
-                        <DropdownMenu.Item>Hooks</DropdownMenu.Item>
-                        <DropdownMenu.Item>Icons</DropdownMenu.Item>
-                        <DropdownMenu.Item>Analytics</DropdownMenu.Item>
-                    </DropdownMenu.Content>
-                </DropdownMenu>
-            </DropdownMenu.Root>
-        </div>
-    );
-
-}`,
-  ],
-  anatomy: `import { DropdownMenu } from "@usefui/components";
-
-export function DropdownMenuComponent() {
-    return (
-        <DropdownMenu.Root>
-            <DropdownMenu.Trigger>Menu</DropdownMenu.Trigger>
-            <DropdownMenu>
-                <DropdownMenu.Content>
-                <DropdownMenu.Item>Action</DropdownMenu.Item>
-                </DropdownMenu.Content>
-            </DropdownMenu>
-        </DropdownMenu.Root>
-    );
-}`,
-
   examples: [
     {
-      kind: "note",
-      title: "DropdownMenu.Root > wrapper > Trigger + Content > Items",
+      kind: "executable",
+      title: "Basic action menu",
+      code: `import { DropdownMenu } from "@usefui/components";
+
+export function Component() {
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu>
+        <DropdownMenu.Trigger variant="secondary" sizing="medium">
+          Actions
+        </DropdownMenu.Trigger>
+
+        <DropdownMenu.Content>
+          <DropdownMenu.Item>Rename</DropdownMenu.Item>
+          <DropdownMenu.Item>Duplicate</DropdownMenu.Item>
+          <DropdownMenu.Item disabled>Archive</DropdownMenu.Item>
+        </DropdownMenu.Content>
+      </DropdownMenu>
+    </DropdownMenu.Root>
+  );
+}`,
+    },
+    {
+      kind: "executable",
+      title: "Radio item that keeps the menu open",
+      code: `import { DropdownMenu } from "@usefui/components";
+
+export function Component() {
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu>
+        <DropdownMenu.Trigger variant="ghost">Sort by</DropdownMenu.Trigger>
+
+        <DropdownMenu.Content variant="contrast" sizing="small">
+          <DropdownMenu.Item radio onClick={() => console.log("name")}>
+            Name
+          </DropdownMenu.Item>
+          <DropdownMenu.Item radio onClick={() => console.log("date")}>
+            Date
+          </DropdownMenu.Item>
+        </DropdownMenu.Content>
+      </DropdownMenu>
+    </DropdownMenu.Root>
+  );
+}`,
+    },
+    {
+      kind: "executable",
+      title: "Placement distance and viewport inset",
+      code: `import { DropdownMenu } from "@usefui/components";
+
+export function Component() {
+  return (
+    <DropdownMenu.Root>
+      <DropdownMenu>
+        <DropdownMenu.Trigger>Preferences</DropdownMenu.Trigger>
+
+        <DropdownMenu.Content gap={12} margin={24}>
+          <DropdownMenu.Item>Profile</DropdownMenu.Item>
+          <DropdownMenu.Item>Notifications</DropdownMenu.Item>
+        </DropdownMenu.Content>
+      </DropdownMenu>
+    </DropdownMenu.Root>
+  );
+}`,
     },
     {
       kind: "note",
-      title: "RadioItem story: radio prop keeps menu open on item click",
+      title: "Placement adapts to the viewport",
+      description:
+        "Content is measured with useFloatingPlacement. Horizontally it centers on the trigger when it fits, falls back to left-aligned, then to right-aligned. Vertically it opens below the trigger when it fits and above otherwise. `data-side` and `data-align` receive the chosen alignment (`center`, `left`, or `right`).",
     },
-    { kind: "note", title: "Variants story: content variant body vs contrast" },
-    { kind: "note", title: "Badge shortcut hints inside items" },
-    { kind: "note", title: "ghost trigger default" },
+    {
+      kind: "note",
+      title: "`gap` and `margin` are pixel values",
+      description:
+        "`gap` is the distance between the trigger and the menu (default 4). `margin` is the minimum distance kept from the viewport edges (default 4). Both feed the shared placement hook.",
+    },
+    {
+      kind: "note",
+      title: "Placement is not re-measured on resize",
+      description:
+        "The hook recomputes when the menu opens or when `gap`, `margin`, or the Content `children`, `sizing`, or `variant` change. There is no window resize or scroll listener, so resizing the viewport while the menu is open keeps the previous placement until it reopens.",
+    },
+    {
+      kind: "note",
+      title: "The menu locks page scroll while open",
+      description:
+        "The DropdownMenu wrapper calls useDisabledScroll(Boolean(open)), so the document cannot scroll while the menu is expanded. Keep menus short or render them inside a ScrollArea.",
+    },
+    {
+      kind: "note",
+      title: "Closing behavior",
+      description:
+        "Clicking outside closes the menu, and clicking an Item closes it unless `radio` is set. There is no Escape handler in the implementation, so add one if keyboard dismissal is required.",
+    },
   ],
   a11y: {
-    role: "menu / menuitem on trigger and items",
+    role: "menu on Content, menuitem on Item",
     keyboardNav:
-      "Enter and Space on items; Escape closes; click-outside dismiss",
-    ariaAttributes: ["aria-haspopup", "aria-labelledby", "aria-disabled"],
+      "Trigger is a Button and supports Enter and Space. Items are focusable and respond to Enter and Space. There is no arrow-key roving focus and no Escape handler.",
+    ariaAttributes: [
+      'aria-haspopup="menu" on Trigger',
+      "aria-labelledby on Content pointing at the Trigger id",
+      "aria-disabled on disabled Items",
+      "data-state on Trigger and Content",
+    ],
   },
-  relatedComponents: ["Button", "Badge", "Divider", "Page"],
+  relatedComponents: ["Button", "Badge", "Divider", "ContextMenu", "Select"],
   aiHints: {
     useCases: [
-      "row or context action menus",
+      "row or card action menus",
       "icon button menus with shortcuts",
-      "contrast panel on dark backgrounds",
+      "viewport-safe menus near screen edges",
+      "contrast panels on dark backgrounds",
     ],
     avoid: [
       "primary app navigation",
       "single-choice forms — use Select",
-      "long lists without grouping",
+      "long lists without grouping or a scroll container",
+      "relying on Escape to close without adding a handler",
     ],
     composesWith: [
       "DropdownMenu.Root",
@@ -224,6 +278,8 @@ export function DropdownMenuComponent() {
       "DropdownMenu.Item",
       "Button",
       "Badge",
+      "Divider",
+      "SharedLayout",
     ],
   },
 };

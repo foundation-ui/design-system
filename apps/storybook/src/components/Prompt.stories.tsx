@@ -13,8 +13,10 @@ import {
   Avatar,
   ProgressBar,
   Pill,
+  Tooltip,
 } from "@usefui/components";
 import { useGradient } from "@usefui/hooks";
+import { Icon } from "@usefui/icons";
 
 const meta = {
   title: "Components/Prompt",
@@ -48,13 +50,15 @@ export const Tools: Story = {
           <Prompt cleanup shortcut bindkey="ctrlKey" hotkey="Enter" />
           <Prompt.Tools className="flex justify-end align-center">
             <Button
-              variant="secondary"
+              variant="primary"
               sizing="small"
               shape="round"
               animation="reflective"
               sound="tick"
             >
-              <span className="p-y-medium-10 p-x-small-80">{"↑"}</span>
+              <Icon className="m-y-small-80" fill="var(--body-color)">
+                <Icon.ArrowUp />
+              </Icon>
             </Button>
           </Prompt.Tools>
         </Prompt.Root>
@@ -96,7 +100,7 @@ export const Auxiliary: Story = {
 export const Composed: Story = {
   args: {},
   render: ({ ...args }) => {
-    const MAX_CHARS = 400;
+    const MAX_CHARS = 2048;
 
     const [messages, setMessages] = React.useState<string[]>([]);
     const [value, setValue] = React.useState("");
@@ -107,7 +111,12 @@ export const Composed: Story = {
       types: ["linear", "radial"],
       blendModes: ["overlay", "soft-light", "screen"],
     });
-
+    const actionsAvatar = useGradient({
+      layerCount: 3,
+      stopsPerLayer: 6,
+      types: ["linear", "radial"],
+      blendModes: ["darken", "lighten", "color-dodge", "color-burn"],
+    });
     const consumption = value.length;
     const isOverLimit = consumption > MAX_CHARS;
     const canSubmit = value.trim().length > 0 && !isOverLimit;
@@ -153,14 +162,13 @@ export const Composed: Story = {
           <Prompt.Auxiliary
             height={40}
             direction="x"
-            className="flex g-medium-50 align-center w-100"
+            className="flex g-medium-30 align-center w-100"
           >
-            {Array.from({ length: 6 }).map((item) => {
+            {Array.from({ length: 25 }).map((item) => {
               return (
                 <div>
                   <Button
                     variant="ghost"
-                    sizing="small"
                     shape="round"
                     onClick={() =>
                       handleAnxiliaryAction(
@@ -168,11 +176,7 @@ export const Composed: Story = {
                       )
                     }
                   >
-                    <Avatar
-                      src="https://avatars.githubusercontent.com/u/242926543?s=200&v=4"
-                      sizing="small"
-                    />
-                    Lorem&nbsp;Ipsum
+                    <Avatar src={actionsAvatar.base64} sizing="medium" />
                   </Button>
                 </div>
               );
@@ -191,14 +195,14 @@ export const Composed: Story = {
           />
 
           <Prompt.Tools className="flex justify-between align-center">
-            <Badge variant="secondary">
+            <Badge variant="primary">
               <span className="fs-small-50">
                 {consumption}/{MAX_CHARS}
               </span>
             </Badge>
 
             <Button
-              variant="secondary"
+              variant="primary"
               sizing="small"
               shape="round"
               animation="reflective"
@@ -209,7 +213,9 @@ export const Composed: Story = {
                 setValue("");
               }}
             >
-              <span className="p-y-medium-10 p-x-small-80">{"↑"}</span>
+              <Icon className="m-y-small-80" fill="var(--body-color)">
+                <Icon.ArrowUp />
+              </Icon>
             </Button>
           </Prompt.Tools>
         </Prompt.Root>

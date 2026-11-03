@@ -21,10 +21,18 @@ export const ToolsWrapper = styled.div`
   bottom: 0;
 
   padding: var(--measurement-medium-30);
+
+  pointer-events: none;
+  user-select: none;
+
+  > * {
+    pointer-events: auto;
+    user-select: auto;
+  }
 `;
 export const AuxiliaryWrapper = styled.div<{ $height?: number }>`
   --height: ${({ $height }) =>
-    `${$height}px` || "var(--measurement-medium-90)"};
+    $height != null ? `${$height}px` : "var(--measurement-medium-90)"};
 
   position: absolute !important;
   display: flex;

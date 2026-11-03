@@ -39,6 +39,7 @@ import { UseMessageBubbleMeta } from "./hooks/UseMessageBubble.registry";
 import { UseSelectMeta } from "./hooks/UseSelect.registry";
 import { UseClickOutsideMeta } from "./hooks/UseClickOutside.registry";
 import { UseGradientMeta } from "./hooks/UseGradient.registry";
+import { UseFloatingPlacementMeta } from "./hooks/UseFloatingPlacement.registry";
 import { UseSoundMeta } from "./hooks/UseSound.registry";
 import { UseSpeechMeta } from "./hooks/UseSpeech.registry";
 import { UseEventListenerMeta } from "./hooks/UseEventListener.registry";
@@ -295,6 +296,7 @@ export const HookRegistry: HookRegistryMetadata[] = [
   UseSelectMeta,
   UseClickOutsideMeta,
   UseGradientMeta,
+  UseFloatingPlacementMeta,
   UseSoundMeta,
   UseSpeechMeta,
   UseEventListenerMeta,

@@ -1,8 +1,15 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Badge, Divider, DropdownMenu, Page } from "@usefui/components";
+import {
+  Badge,
+  Divider,
+  DropdownMenu,
+  Page,
+  Skeleton,
+} from "@usefui/components";
 import { ComponentVariantEnum, ComponentSizeEnum } from "@usefui/components";
+import { Icon } from "@usefui/icons";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.
 
@@ -135,5 +142,38 @@ export const RadioItem: Story = {
         </DropdownMenu.Content>
       </DropdownMenu>
     </DropdownMenu.Root>
+  ),
+};
+export const Positions: Story = {
+  render: ({ ...args }) => (
+    <div className="w-100 h-100 flex flex-column justify-between">
+      {Array.from({ length: 3 }).map(() => (
+        <div className="flex align-center justify-between w-100">
+          {Array.from({ length: 3 }).map(() => (
+            <DropdownMenu.Root>
+              <DropdownMenu>
+                <DropdownMenu.Trigger
+                  variant="secondary"
+                  sizing="small"
+                  shape="round"
+                >
+                  <Icon className="m-y-small-80">
+                    <Icon.Menu />
+                  </Icon>
+                </DropdownMenu.Trigger>
+
+                <DropdownMenu.Content sizing="small">
+                  <div className="flex flex-column g-medium-10 p-medium-10">
+                    <Skeleton sizing="small" />
+                    <Skeleton sizing="small" />
+                    <Skeleton sizing="small" />
+                  </div>
+                </DropdownMenu.Content>
+              </DropdownMenu>
+            </DropdownMenu.Root>
+          ))}
+        </div>
+      ))}
+    </div>
   ),
 };

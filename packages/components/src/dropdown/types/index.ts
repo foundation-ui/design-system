@@ -11,6 +11,8 @@ export interface IDropdownContentProperties
   extends IComponentStyling, IComponentSize, React.ComponentPropsWithRef<"ul"> {
   defaultOpen?: boolean;
   variant?: DropdownContentVariant;
+  gap?: number;
+  margin?: number;
 }
 
 export interface IDropdownItemProperties

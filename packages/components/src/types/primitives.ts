@@ -9,6 +9,7 @@ export enum ComponentSideEnum {
   Right = "right",
   Bottom = "bottom",
   Left = "left",
+  Center = "center",
 }
 export enum ComponentShapeEnum {
   Square = "square",

@@ -2,7 +2,11 @@
 
 import React from "react";
 
-import { useClickOutside, useDisabledScroll } from "@usefui/hooks";
+import {
+  useClickOutside,
+  useDisabledScroll,
+  useFloatingPlacement,
+} from "@usefui/hooks";
 import { DropdownMenuProvider, useDropdownMenu } from "./hooks";
 
 import { RootWrapper, ContentWrapper, ItemWrapper } from "./styles";
@@ -11,11 +15,7 @@ import { Button } from "../button";
 import { SharedLayout } from "../shared-layout";
 
 import { applyDataState } from "../utils";
-import {
-  IReactChildren,
-  ComponentSideEnum,
-  ComponentSizeEnum,
-} from "../types";
+import { IReactChildren, ComponentSideEnum, ComponentSizeEnum } from "../types";
 
 import type { IButtonProperties } from "../button/types";
 import type {
@@ -134,6 +134,8 @@ DropdownMenuTrigger.displayName = "DropdownMenu.Trigger";
  * @param {IDropdownContentProperties} props - The props for the DropdownMenu.Content component.
  * @param {boolean} props.raw - Define whether the component is styled or not.
  * @param {ComponentSizeEnum} props.sizing - The size of the component. Defaults to "medium".
+ * @param {number} props.gap - Distance (px) between the trigger and the DropdownMenu.Content.
+ * @param {number} props.margin - Minimum distance (px) kept between the DropdownMenu.Content and the viewport edges.
  * @param {DropdownContentVariant} props.variant - The variant of the component. Defaults to "body".
  * @param {boolean} props.defaultOpen - The initial open state of the dropdown menu. Defaults to false.
  * @param {ReactNode} props.children - The content to be rendered inside the dropdown menu.
@@ -148,69 +150,29 @@ const DropdownMenuContent = React.forwardRef<
     sizing = ComponentSizeEnum.Medium,
     variant = "body",
     defaultOpen,
+    gap = 4,
+    margin = 4,
     children,
     ...restProps
   } = props;
   const { id, states, methods } = useDropdownMenu();
-  const { toggleOpen, setContentProps } = methods;
+  const { toggleOpen } = methods;
 
-  const mounted = React.useRef(false);
-  const contentRef = React.useRef<HTMLDivElement>(null);
+  const contentRef = React.useRef<HTMLUListElement>(null);
 
-  const contentRect = () => contentRef?.current?.getBoundingClientRect();
-  const bodyRect = (): DOMRect | undefined => {
-    if (typeof document !== "undefined") {
-      return document?.body?.getBoundingClientRect();
-    }
-    return undefined;
-  };
-
-  const positions = {
-    btt: `calc((${states?.triggerProps?.top}px - ${states?.contentProps?.height}px) - (var(--measurement-medium-10) * 2))`,
-    ttb: `calc((${states?.triggerProps?.top}px + ${states?.triggerProps?.height}px) + var(--measurement-medium-10))`,
-    ltr: `${states?.triggerProps?.left}px`,
-    rtl: `calc(${states?.triggerProps?.left}px - (${states?.contentProps?.width}px - ${states?.triggerProps?.width}px))`,
-  };
-  const dimensions = {
-    body_width: bodyRect()?.width ?? 0,
-    body_height: bodyRect()?.height ?? 0,
-    content_width: states.contentProps.width,
-    content_height: states.contentProps.height,
-    content_left: states.contentProps.left,
-    content_bottom: states.contentProps.bottom,
-  };
-
-  const hasEnoughHorizontalSpace =
-    dimensions.body_width - dimensions.content_left >
-    dimensions.content_width * 1.1;
-
-  const hasEnoughVerticalSpace =
-    dimensions.body_height - dimensions.content_bottom >
-    dimensions.content_height - dimensions.content_height * 0.9;
+  const placement = useFloatingPlacement({
+    enabled: Boolean(states.open),
+    getTriggerRect: () => states.triggerProps,
+    floatingRef: contentRef,
+    gap,
+    margin,
+    deps: [children, sizing, variant],
+  });
 
   React.useEffect(() => {
     if (defaultOpen && toggleOpen) toggleOpen();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  React.useEffect(() => {
-    mounted.current = true;
-
-    setContentProps &&
-      setContentProps({
-        top: Number(contentRect()?.top),
-        right: Number(contentRect()?.right),
-        bottom: Number(contentRect()?.bottom),
-        left: Number(contentRect()?.left),
-        width: Number(contentRect()?.width),
-        height: Number(contentRect()?.height),
-      });
-
-    return () => {
-      mounted.current = false;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [states.open]);
 
   React.useEffect(() => {
     if (!states.open) return;
@@ -237,20 +199,14 @@ const DropdownMenuContent = React.forwardRef<
       data-state={applyDataState(Boolean(states.open))}
       data-sizing={sizing}
       data-variant={variant}
-      data-side={
-        hasEnoughHorizontalSpace
-          ? ComponentSideEnum.Left
-          : ComponentSideEnum.Right
-      }
-      data-align={
-        hasEnoughHorizontalSpace
-          ? ComponentSideEnum.Left
-          : ComponentSideEnum.Right
-      }
+      data-side={placement?.align ?? ComponentSideEnum.Left}
+      data-align={placement?.align ?? ComponentSideEnum.Left}
       data-raw={Boolean(raw)}
       style={{
-        top: hasEnoughVerticalSpace ? positions.ttb : positions.btt,
-        left: hasEnoughHorizontalSpace ? positions.ltr : positions.rtl,
+        position: "fixed",
+        top: placement?.top ?? 0,
+        left: placement?.left ?? 0,
+        visibility: placement ? "visible" : "hidden",
       }}
       {...restProps}
     >

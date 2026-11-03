@@ -6,3 +6,4 @@ export * from "./useIsMobile";
 export * from "./useSpeech";
 export * from "./useSound";
 export * from "./useGradient";
+export * from "./useFloatingPlacement";
