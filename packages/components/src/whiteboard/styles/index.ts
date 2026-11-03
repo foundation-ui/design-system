@@ -17,6 +17,7 @@ export const WhiteboardWrapper = styled.div<{
   ${(props) =>
     props.$allowDrag &&
     css`
+      -webkit-user-select: none;
       user-select: none;
     `}
 

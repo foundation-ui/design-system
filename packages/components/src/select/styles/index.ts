@@ -103,6 +103,7 @@ export const List = styled.li<any>`
   padding: var(--measurement-medium-30);
 
   margin: 0;
+  -webkit-user-select: none;
   user-select: none;
 
   &[aria-disabled="true"] {

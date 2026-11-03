@@ -92,6 +92,7 @@ export const ContentWrapper = styled.span<any>`
     box-shadow: var(--inset-shadow);
 
     border-radius: var(--measurement-medium-30);
+    -webkit-backdrop-filter: blur(var(--measurement-small-10));
     backdrop-filter: blur(var(--measurement-small-10));
 
     font-size: var(--fontsize-small-60);

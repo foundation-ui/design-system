@@ -61,6 +61,7 @@ export const ContextMenuContentWrapper = styled.div`
   box-shadow: var(--inset-shadow);
   color: var(--font-color);
 
+  -webkit-clip-path: var(--menu-clip);
   clip-path: var(--menu-clip);
   opacity: 0;
   transition:
@@ -79,6 +80,7 @@ export const ItemWrapper = styled.li<any>`
   list-style: none;
   padding: var(--measurement-medium-30);
   margin: 0;
+  -webkit-user-select: none;
   user-select: none;
 
   &[aria-disabled="true"] {

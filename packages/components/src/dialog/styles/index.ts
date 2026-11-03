@@ -5,6 +5,7 @@ const DialogDefaultStyles = css`
   ${InsetShadowCSSVariable}
 
   position: fixed;
+  top: 15vh;
   top: 15dvh;
   bottom: auto;
 
@@ -21,6 +22,7 @@ const DialogDefaultStyles = css`
 const DialogSizeStyles = css`
   --base-size: var(--measurement-medium-60);
   --computed-size: calc(100% - (var(--base-size) * 2));
+  --max-height: 75vh;
   --max-height: 75dvh;
 
   &[data-size="small"] {

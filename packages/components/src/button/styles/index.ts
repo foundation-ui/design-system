@@ -17,6 +17,7 @@ const ButtonDefaultStyles = css`
   );
 
   border: var(--measurement-small-10) solid transparent;
+  -webkit-backdrop-filter: blur(var(--measurement-small-10));
   backdrop-filter: blur(var(--measurement-small-10));
 
   width: fit-content;
@@ -100,6 +101,7 @@ const ButtonBeforeDefaultStyles = css`
   padding: 0;
 
   mask-composite: intersect;
+  -webkit-mask-composite: source-in;
 
   transition: all ease-in-out 0.2s;
 `;
@@ -500,6 +502,7 @@ export const ButtonMaskElement = styled.div<MaskProps>`
   inset: 0;
   background: transparent;
   border: var(--measurement-small-10) solid var(--font-color-alpha-20);
+  -webkit-clip-path: inset(0 round var(--measurement-medium-30));
   clip-path: inset(0 round var(--measurement-medium-30));
 
   mask-image: radial-gradient(

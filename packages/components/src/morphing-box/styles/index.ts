@@ -47,7 +47,9 @@ const MorphingBoxAnimationStyles = css`
   --morph-duration: 0.25s;
 
   /* Lets width/height animate to and from their intrinsic (auto) size */
-  interpolate-size: allow-keywords;
+  @supports (interpolate-size: allow-keywords) {
+    interpolate-size: allow-keywords;
+  }
   overflow: hidden;
 
   transition: all ease-in-out 0.2s;
@@ -149,15 +151,18 @@ const MorphingBoxSizeStyles = css`
 
   &[data-size="small"] {
     max-width: var(--max-width);
+    max-height: 25vh;
     max-height: 25dvh;
   }
   &[data-size="medium"] {
     max-width: var(--max-width);
+    max-height: 50vh;
     max-height: 50dvh;
   }
 
   &[data-size="large"] {
     max-width: var(--max-width);
+    height: 75vh;
     height: 75dvh;
   }
 `;

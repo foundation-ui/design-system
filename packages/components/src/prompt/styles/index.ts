@@ -23,6 +23,7 @@ export const ToolsWrapper = styled.div`
   padding: var(--measurement-medium-30);
 
   pointer-events: none;
+  -webkit-user-select: none;
   user-select: none;
 
   > * {

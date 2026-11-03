@@ -35,7 +35,14 @@ export const FieldDefaultStyles = css`
   &:hover,
   &:focus,
   &:active,
-  &:focus-within,
+  &:focus-within {
+    color: var(--font-color);
+    svg,
+    span,
+    img {
+      opacity: 1;
+    }
+  }
   &:has(:active) {
     color: var(--font-color);
     svg,
@@ -49,7 +56,10 @@ export const FieldDefaultStyles = css`
     color: var(--font-color-alpha-30);
   }
 
-  &:disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
   &:has(:disabled) {
     cursor: not-allowed;
     opacity: 0.6;
@@ -63,7 +73,10 @@ export const FieldErrorStyles = css`
     &:hover,
     &:focus,
     &:active,
-    &:focus-within,
+    &:focus-within {
+      background-color: var(--alpha-red-10);
+      box-shadow: 0 0 0 var(--measurement-small-30) var(--alpha-red-10);
+    }
     &:has(:hover),
     &:has(:active) {
       background-color: var(--alpha-red-10);
@@ -81,7 +94,9 @@ export const FieldVariantsStyles = css`
     &:hover,
     &:focus,
     &:active,
-    &:focus-within,
+    &:focus-within {
+      border-color: var(--font-color-alpha-10);
+    }
     &:has(:hover),
     &:has(:active) {
       border-color: var(--font-color-alpha-10);
@@ -96,7 +111,9 @@ export const FieldVariantsStyles = css`
     &:hover,
     &:focus,
     &:active,
-    &:focus-within,
+    &:focus-within {
+      border-color: var(--font-color-alpha-10);
+    }
     &:has(:hover),
     &:has(:active) {
       border-color: var(--font-color-alpha-10);
@@ -111,7 +128,9 @@ export const FieldVariantsStyles = css`
     &:hover,
     &:focus,
     &:active,
-    &:focus-within,
+    &:focus-within {
+      border-color: var(--font-color-alpha-20);
+    }
     &:has(:hover),
     &:has(:active) {
       border-color: var(--font-color-alpha-20);
@@ -130,7 +149,9 @@ export const FieldVariantsStyles = css`
     &:hover,
     &:focus,
     &:active,
-    &:focus-within,
+    &:focus-within {
+      color: var(--font-color);
+    }
     &:has(:hover),
     &:has(:active) {
       color: var(--font-color);
@@ -149,7 +170,9 @@ export const FieldVariantsStyles = css`
     &:hover,
     &:focus,
     &:active,
-    &:focus-within,
+    &:focus-within {
+      border-color: var(--alpha-blue-20) !important;
+    }
     &:has(:hover),
     &:has(:active) {
       border-color: var(--alpha-blue-20) !important;
@@ -165,7 +188,9 @@ export const FieldVariantsStyles = css`
     &:hover,
     &:focus,
     &:active,
-    &:focus-within,
+    &:focus-within {
+      border-color: var(--alpha-orange-20) !important;
+    }
     &:has(:hover),
     &:has(:active) {
       border-color: var(--alpha-orange-20) !important;
@@ -181,7 +206,9 @@ export const FieldVariantsStyles = css`
     &:hover,
     &:focus,
     &:active,
-    &:focus-within,
+    &:focus-within {
+      border-color: var(--alpha-red-20) !important;
+    }
     &:has(:hover),
     &:has(:active) {
       border-color: var(--alpha-red-20) !important;
@@ -197,7 +224,9 @@ export const FieldVariantsStyles = css`
     &:hover,
     &:focus,
     &:active,
-    &:focus-within,
+    &:focus-within {
+      border-color: var(--alpha-green-20) !important;
+    }
     &:has(:hover),
     &:has(:active) {
       border-color: var(--alpha-green-20) !important;

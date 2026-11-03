@@ -5,6 +5,7 @@ const CheckboxDefaultStyles = css`
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-backdrop-filter: blur(var(--measurement-small-10));
   backdrop-filter: blur(var(--measurement-small-10));
   transition: all ease-in-out 0.2s;
 `;
@@ -20,6 +21,7 @@ const CheckboxBeforeDefaultStyles = css`
   padding: 0;
 
   mask-composite: intersect;
+  -webkit-mask-composite: source-in;
 
   transition: all ease-in-out 0.2s;
 `;
@@ -338,6 +340,8 @@ export const CheckboxWrapper = styled.div`
 `;
 export const NativeInput = styled.input<any>`
   &[data-raw="false"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     background: none;
     border: none;

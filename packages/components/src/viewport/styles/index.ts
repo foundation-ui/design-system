@@ -29,6 +29,7 @@ export const ViewportRoot = styled.div<{
   ${(p) =>
     p.$dragging &&
     css`
+      -webkit-user-select: none;
       user-select: none;
       scroll-behavior: auto;
       scroll-snap-type: none; /* snapping fights programmatic scrolling */
@@ -44,10 +45,10 @@ export const ViewportRoot = styled.div<{
 
     const mask = layers.join(", ");
     return css`
-      -webkit-mask-image: ${mask};
       mask-image: ${mask};
-      -webkit-mask-composite: source-in;
       mask-composite: intersect;
+      -webkit-mask-image: ${mask};
+      -webkit-mask-composite: source-in;
     `;
   }}
 

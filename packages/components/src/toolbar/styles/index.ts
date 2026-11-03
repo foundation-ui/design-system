@@ -13,7 +13,9 @@ export const ToolbarDefaultStyles = css`
   overflow: hidden;
 
   /* Lets browsers that support it animate to/from intrinsic sizes */
-  interpolate-size: allow-keywords;
+  @supports (interpolate-size: allow-keywords) {
+    interpolate-size: allow-keywords;
+  }
   transition: width 0.25s ease-in-out;
 
   &[data-state="expanded"] {

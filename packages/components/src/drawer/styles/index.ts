@@ -3,10 +3,10 @@ import { InsetShadowCSSVariable } from "../../global";
 import { Button } from "../../button";
 
 const hidden = {
-  "bottom-top": "translateY(100dvh)",
-  "top-bottom": "translateY(-100dvh)",
-  "right-left": "translateX(100dvw)",
-  "left-right": "translateX(-100dvw)",
+  "bottom-top": "translateY(100vh)",
+  "top-bottom": "translateY(-100vh)",
+  "right-left": "translateX(100vw)",
+  "left-right": "translateX(-100vw)",
 } as const;
 
 const createSlide = (from: string, to: string) => keyframes`
@@ -119,6 +119,7 @@ const DrawerDirectionStyles = css`
 const DrawerSizeStyles = css`
   --base-size: var(--measurement-medium-60);
   --computed-size: calc(100% - (var(--base-size) * 2));
+  --max-height: 75vh;
   --max-height: 75dvh;
 
   &[data-size="small"] {

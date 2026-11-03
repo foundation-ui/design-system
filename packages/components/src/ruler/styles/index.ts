@@ -16,6 +16,7 @@ const inactiveGuideStyles = css`
 export const RulerBase: any = styled.div`
   position: absolute;
   background-color: transparent;
+  -webkit-user-select: none;
   user-select: none;
   overflow: hidden;
   z-index: var(--depth-default-100);
@@ -86,6 +87,7 @@ export const HTickLabel: any = styled.span`
   color: var(--font-color-alpha-30);
 
   font-family: monospace;
+  -webkit-user-select: none;
   user-select: none;
 `;
 
@@ -99,6 +101,7 @@ export const VTickLabel: any = styled.span`
   color: var(--font-color-alpha-30);
 
   font-family: monospace;
+  -webkit-user-select: none;
   user-select: none;
 
   writing-mode: vertical-rl;
@@ -144,7 +147,8 @@ export const CanvasContent: any = styled.div<{ $isDragging?: boolean }>`
     $isDragging &&
     css`
       pointer-events: none;
-      user-select: none;
+      -webkit-user-select: none;
+  user-select: none;
     `}
 `;
 

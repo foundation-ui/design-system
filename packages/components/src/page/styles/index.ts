@@ -3,6 +3,7 @@ import { HiddenScrollbar } from "../../scrollarea/styles";
 import { InsetShadowCSSVariable, FETurbulenceCSSVariable } from "../../global";
 
 export const PageRootWrapper = styled.div<any>`
+  height: 100vh;
   height: 100dvh;
   width: 100%;
 `;
@@ -52,6 +53,7 @@ export const PageBodyWrapper = styled.div<any>`
     var(--measurement-large-20) *
       ${({ $navigations }) => ($navigations ? Number($navigations) : 0)}
   );
+  --page-height: calc(100vh - (var(--menus-height) + var(--navs-height)));
   --page-height: calc(100dvh - (var(--menus-height) + var(--navs-height)));
 
   outline: none;

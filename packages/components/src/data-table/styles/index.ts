@@ -105,6 +105,7 @@ export const DataCell = styled(CellWrapper)`
   }
 `;
 export const StickyHeadCell = styled(HeadCellWrapper)`
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -156,6 +157,7 @@ export const HeadLabel = styled.span`
 
   &[data-sortable="true"] {
     cursor: pointer;
+    -webkit-user-select: none;
     user-select: none;
   }
 `;

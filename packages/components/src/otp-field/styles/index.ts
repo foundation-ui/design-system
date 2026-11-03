@@ -48,7 +48,14 @@ const OTPCellDefaultStyles = css`
   &:hover,
   &:focus,
   &:active,
-  &:focus-within,
+  &:focus-within {
+    color: var(--font-color);
+    svg,
+    span,
+    img {
+      opacity: 1;
+    }
+  }
   &:has(:active) {
     color: var(--font-color);
     svg,
@@ -62,7 +69,10 @@ const OTPCellDefaultStyles = css`
     color: var(--font-color-alpha-30);
   }
 
-  &:disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
   &:has(:disabled) {
     cursor: not-allowed;
     opacity: 0.6;
@@ -71,7 +81,9 @@ const OTPCellDefaultStyles = css`
   &:hover,
   &:focus,
   &:active,
-  &:focus-within,
+  &:focus-within {
+    background-color: var(--font-color-alpha-10);
+  }
   &:has(:hover),
   &:has(:active) {
     background-color: var(--font-color-alpha-10);
