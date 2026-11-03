@@ -27,7 +27,18 @@ const ContextMenuShapeStyles = css`
     border-radius: 0;
   }
 `;
+const ContentWrapperVariants = css`
+  &[data-variant="body"] {
+    background-color: var(--body-color);
+  }
 
+  &[data-variant="contrast"] {
+    background-color: var(--contrast-color);
+  }
+`;
+export const RootWrapper = styled.div`
+  position: relative;
+`;
 export const ContextMenuPortal = styled.div`
   position: fixed;
   z-index: 100;
@@ -47,7 +58,6 @@ export const ContextMenuContentWrapper = styled.div`
   overflow: hidden;
   outline: none;
 
-  background: var(--body-color);
   box-shadow: var(--inset-shadow);
   color: var(--font-color);
 
@@ -59,6 +69,7 @@ export const ContextMenuContentWrapper = styled.div`
 
   ${ContextMenuSizeStyles}
   ${ContextMenuShapeStyles}
+  ${ContentWrapperVariants}
 
   &[data-visible="true"] {
     opacity: 1;

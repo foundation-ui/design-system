@@ -6,9 +6,12 @@ import type {
 } from "../../types";
 
 export interface IContextMenuAreaProperties extends React.ComponentProps<"div"> {}
+export type ContextMenuContentVariant = "body" | "contrast";
 
 export interface IContextMenuContentProperties
-  extends IComponentSize, IComponentShape, React.ComponentProps<"div"> {}
+  extends IComponentSize, IComponentShape, React.ComponentProps<"div"> {
+  variant?: ContextMenuContentVariant;
+}
 
 export interface IContextMenuPoint {
   x: number;

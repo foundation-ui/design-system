@@ -43,7 +43,38 @@ export const Default: Story = {
             <ContextMenu.Item className="fs-medium-10">
               Duplicate
             </ContextMenu.Item>
-            <ContextMenu.Item className="fs-medium-10">Radio</ContextMenu.Item>
+            <ContextMenu.Item radio className="fs-medium-10 color-red">
+              Move to trash
+            </ContextMenu.Item>
+          </ContextMenu.Content>
+        </ContextMenu>
+      </ContextMenu.Root>
+    );
+  },
+};
+export const Variants: Story = {
+  args: {},
+  render: ({ ...args }) => {
+    return (
+      <ContextMenu.Root>
+        <ContextMenu onOpenChange={(open) => console.log(open)}>
+          <ContextMenu.Area className="w-100 h-100 flex align-center justify-center">
+            <p className="fs-small-50 opacity-default-10">
+              Right click anywhere to open the Contextual Menu.
+            </p>
+          </ContextMenu.Area>
+
+          <ContextMenu.Content
+            aria-label="Actions"
+            className="flex flex-column"
+            sizing="small"
+            variant="contrast"
+          >
+            <ContextMenu.Item className="fs-medium-10">Open</ContextMenu.Item>
+            <ContextMenu.Item className="fs-medium-10">Rename</ContextMenu.Item>
+            <ContextMenu.Item className="fs-medium-10">
+              Duplicate
+            </ContextMenu.Item>
             <ContextMenu.Item radio className="fs-medium-10 color-red">
               Move to trash
             </ContextMenu.Item>

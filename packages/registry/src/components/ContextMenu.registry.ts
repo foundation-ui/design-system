@@ -6,7 +6,7 @@ export const ContextMenuMeta: ComponentRegistryMetadata = {
   description:
     "Right-click menu anchored to the invocation point. The ContextMenu wrapper owns controlled or uncontrolled open state and dismisses on outside press, scroll, and resize. ContextMenu.Area opens on right-click, touch or pen long-press, and the ContextMenu key or Shift+F10; ContextMenu.Content is clamped to the viewport and morphs open from the click point.",
   category: "navigation",
-  variants: [],
+  variants: ["body", "contrast"],
   props: [
     {
       name: "children",
@@ -70,6 +70,11 @@ export const ContextMenuMeta: ComponentRegistryMetadata = {
           name: "sizing",
           type: '"small" | "medium" | "large"',
           defaultValue: "medium",
+        },
+        {
+          name: "variant",
+          type: '"body" | "contrast"',
+          defaultValue: "body",
         },
         {
           name: "shape",

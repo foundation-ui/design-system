@@ -158,6 +158,7 @@ ContextMenuArea.displayName = "ContextMenu.Area";
  * - Keep it mounted so the close transition can play.
  *
  * @param {IContextMenuContentProperties} props - The props for ContextMenu.Content.
+ * @param {DropdownContentVariant} props.variant - The variant of the component. Defaults to "body".
  * @param {ReactNode} props.children - The menu content.
  * @returns {ReactElement | null} The ContextMenu.Content component.
  */
@@ -166,6 +167,7 @@ const ContextMenuContent = (props: IContextMenuContentProperties) => {
     sizing = "medium",
     shape = "smooth",
     style,
+    variant = "body",
     onKeyDown,
     onContextMenu,
     children,
@@ -271,6 +273,7 @@ const ContextMenuContent = (props: IContextMenuContentProperties) => {
         aria-label="Context menu"
         data-size={sizing}
         data-shape={shape}
+        data-variant={variant}
         data-state={states.open ? "open" : "closed"}
         data-visible={visible}
         data-morph-ready={morphReady}
