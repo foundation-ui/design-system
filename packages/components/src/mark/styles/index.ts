@@ -33,10 +33,46 @@ const MarkVariantsStyles = css`
     background-color: var(--contrast-color);
     color: var(--font-color-alpha-80) !important;
   }
+  &[data-variant="mono"] {
+    box-shadow: var(--inset-shadow);
+
+    background-color: var(--body-color);
+    color: var(--font-color-alpha-80) !important;
+  }
   &[data-variant="border"] {
     background-color: transparent;
     border: var(--measurement-small-10) solid var(--font-color-alpha-10);
     color: var(--font-color-alpha-60) !important;
+  }
+  &[data-variant="danger"] {
+    box-shadow: var(--inset-shadow);
+
+    background-color: var(--color-red) !important;
+    color: var(--color-mono-white) !important;
+  }
+  &[data-variant="warning"] {
+    box-shadow: var(--inset-shadow);
+
+    background-color: var(--color-orange) !important;
+    color: var(--color-mono-dark) !important;
+  }
+  &[data-variant="success"] {
+    box-shadow: var(--inset-shadow);
+
+    background-color: var(--color-green) !important;
+    color: var(--color-mono-white) !important;
+  }
+  &[data-variant="meta"] {
+    box-shadow: var(--inset-shadow);
+
+    background-color: var(--color-blue) !important;
+    color: var(--color-mono-white) !important;
+  }
+  &[data-variant="hint"] {
+    box-shadow: var(--inset-shadow);
+
+    background-color: var(--color-purple) !important;
+    color: var(--color-mono-white) !important;
   }
 `;
 

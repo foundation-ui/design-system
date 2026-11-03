@@ -23,7 +23,7 @@ export const MarkMeta: ComponentRegistryMetadata = {
     },
     {
       name: "variant",
-      type: '"primary" | "secondary" | "tertiary" | "border"',
+      type: '"primary" | "secondary" | "tertiary" | "border" | "mono" | "ghost" | "success" | "warning" | "danger" | "hint" | "meta"',
       defaultValue: "primary",
     },
     {
