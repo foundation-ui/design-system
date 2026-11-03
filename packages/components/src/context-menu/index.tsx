@@ -28,6 +28,9 @@ export interface IContextMenuComposition {
   Item: typeof ContextMenuItem;
 }
 
+/** Ignore outside presses this soon after opening (touch long-press). */
+const OPEN_GUARD_MS = 100;
+
 /**
  * ContextMenu.Root provides the context shared by the ContextMenu compounds.
  * It does not render a DOM element and only accepts children.
@@ -44,13 +47,6 @@ ContextMenuRoot.displayName = "ContextMenu.Root";
  * ContextMenu.Menu owns the open/close behavior: the controlled or
  * uncontrolled open state, `onOpenChange`, and dismissal on outside press,
  * scroll and resize. It does not render a DOM element.
- *
- * **Best practices:**
- *
- * - Render it inside ContextMenu.Root, around ContextMenu.Area and
- *   ContextMenu.Content.
- * - Use the controlled props when the open state must be synchronized with an
- *   external store.
  *
  * @param {IContextMenuMenuProperties} props - The props for ContextMenu.Menu.
  * @param {boolean} props.open - Controlled open state.
@@ -71,6 +67,8 @@ const ContextMenu = (props: IContextMenuMenuProperties) => {
     methods.configure({ controlled, onOpenChange });
   });
 
+  // Runs on mount, and again only when the controlled value changes
+  // (`methods` is stable).
   React.useLayoutEffect(() => {
     methods.sync(open ?? initialOpen.current);
   }, [open, methods]);
@@ -78,20 +76,30 @@ const ContextMenu = (props: IContextMenuMenuProperties) => {
   React.useEffect(() => {
     if (!states.open) return;
 
+    const openedAt = performance.now();
+
     const onPointerDown = (event: PointerEvent) => {
+      if (performance.now() - openedAt < OPEN_GUARD_MS) return;
       if (!refs.content.current?.contains(event.target as Node)) {
         methods.setOpen(false);
       }
     };
-    const onWindowChange = () => methods.setOpen(false);
+    const onResize = () => methods.setOpen(false);
+    const onScroll = (event: Event) => {
+      // Ignore scrolling inside the menu itself.
+      const target = event.target as Node | null;
+      if (target && refs.content.current?.contains(target)) return;
+      methods.setOpen(false);
+    };
 
     window.addEventListener("pointerdown", onPointerDown);
-    window.addEventListener("resize", onWindowChange);
-    window.addEventListener("scroll", onWindowChange);
+    window.addEventListener("resize", onResize);
+    // Capture so scrolls of any ancestor container are caught too.
+    window.addEventListener("scroll", onScroll, { capture: true });
     return () => {
       window.removeEventListener("pointerdown", onPointerDown);
-      window.removeEventListener("resize", onWindowChange);
-      window.removeEventListener("scroll", onWindowChange);
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("scroll", onScroll, { capture: true });
     };
   }, [states.open, methods, refs.content]);
 
@@ -114,12 +122,13 @@ ContextMenu.displayName = "ContextMenu";
  */
 const ContextMenuArea = (props: IContextMenuAreaProperties) => {
   const { children, style, onContextMenu, ...restProps } = props;
-  const { id, states, methods } = useContextMenu();
+  const { id, states, methods, refs } = useContextMenu();
 
   return (
     <div
       tabIndex={0}
       {...restProps}
+      ref={refs.area as React.RefObject<HTMLDivElement | null>}
       aria-controls={states.open ? id : undefined}
       aria-haspopup="menu"
       aria-expanded={states.open}
@@ -259,6 +268,7 @@ const ContextMenuContent = (props: IContextMenuContentProperties) => {
         id={id}
         role="menu"
         tabIndex={-1}
+        aria-label="Context menu"
         data-size={sizing}
         data-shape={shape}
         data-state={states.open ? "open" : "closed"}
@@ -284,6 +294,9 @@ ContextMenuContent.displayName = "ContextMenu.Content";
 /**
  * ContextMenuItem component.
  *
+ * Activates on click, `Enter` or `Space`. Closes the menu afterwards unless
+ * `radio` is set.
+ *
  * @returns {ReactElement} The ContextMenuItem component.
  */
 const ContextMenuItem = (props: IContextMenuItem) => {
@@ -291,29 +304,23 @@ const ContextMenuItem = (props: IContextMenuItem) => {
   const { states, methods } = useContextMenu();
   const { setOpen } = methods;
 
-  const EventsHandler = {
-    toggle: () => {
-      if (!radio) setOpen(!states.open);
-    },
-    click: (
-      event:
-        | React.MouseEvent<HTMLLIElement>
-        | React.KeyboardEvent<HTMLLIElement>,
-    ) => {
-      if (onClick) onClick(event);
-    },
+  const activate = (
+    event: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>,
+  ) => {
+    if (disabled) return;
+    onClick?.(event);
+    if (!radio) setOpen(!states.open);
   };
 
   const handleClick = (event: React.MouseEvent<HTMLLIElement>) => {
-    if (!disabled) {
-      EventsHandler.click(event);
-      EventsHandler.toggle();
-    }
+    activate(event);
   };
-  const handleKeydown = (event: React.KeyboardEvent<HTMLLIElement>) => {
-    if (["Space", "Enter"].includes(event.code || event.key) && !disabled) {
-      EventsHandler.click(event);
-      EventsHandler.toggle();
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLLIElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      // Prevent page scroll on Space.
+      event.preventDefault();
+      activate(event);
     }
   };
 
@@ -323,7 +330,7 @@ const ContextMenuItem = (props: IContextMenuItem) => {
         role="menuitem"
         tabIndex={0}
         onClick={handleClick}
-        onKeyDown={handleKeydown}
+        onKeyDown={handleKeyDown}
         aria-disabled={disabled}
         data-orientation="vertical"
         {...restProps}

@@ -51,37 +51,49 @@ export const ContextMenuProvider = ({
   const contentRef = React.useRef<HTMLDivElement | null>(null);
   const optionsRef = React.useRef<IContextMenuOptions>({ controlled: false });
 
-  const configure = (options: IContextMenuOptions) => {
+  // All methods are stable so effects depending on them don't re-run on every render.
+  const configure = React.useCallback((options: IContextMenuOptions) => {
     optionsRef.current = options;
-  };
+  }, []);
 
-  const sync = (next: boolean) => setOpenState(next);
+  const sync = React.useCallback((next: boolean) => setOpenState(next), []);
 
-  const setOpen = (next: boolean) => {
+  const setOpen = React.useCallback((next: boolean) => {
     if (!optionsRef.current.controlled) setOpenState(next);
     optionsRef.current.onOpenChange?.(next);
-  };
+  }, []);
 
-  const openAt = (nextPoint: IContextMenuPoint) => {
-    setPoint(nextPoint);
-    setInvocation((current) => current + 1);
-    setOpen(true);
-  };
+  const openAt = React.useCallback(
+    (nextPoint: IContextMenuPoint) => {
+      setPoint(nextPoint);
+      setInvocation((current) => current + 1);
+      setOpen(true);
+    },
+    [setOpen],
+  );
 
-  const refs: IContextMenuRefs = {
-    area: areaRef,
-    content: contentRef,
-  };
+  const methods = React.useMemo(
+    () => ({ setOpen, openAt, sync, configure }),
+    [setOpen, openAt, sync, configure],
+  );
+
+  const refs: IContextMenuRefs = React.useMemo(
+    () => ({ area: areaRef, content: contentRef }),
+    [],
+  );
+
+  const value = React.useMemo(
+    () => ({
+      id,
+      states: { open, point, invocation },
+      methods,
+      refs,
+    }),
+    [id, open, point, invocation, methods, refs],
+  );
 
   return (
-    <ContextMenuContext.Provider
-      value={{
-        id,
-        states: { open, point, invocation },
-        methods: { setOpen, openAt, sync, configure },
-        refs,
-      }}
-    >
+    <ContextMenuContext.Provider value={value}>
       {children}
     </ContextMenuContext.Provider>
   );
