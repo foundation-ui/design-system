@@ -78,7 +78,7 @@ export function PortalComponent() {
     keyboardNav: "Not managed by Portal",
     ariaAttributes: [],
   },
-  relatedComponents: ["Tooltip", "Dropdown", "Dialog"],
+  relatedComponents: ["Tooltip", "DropdownMenu", "Dialog"],
   aiHints: {
     useCases: [
       "mount overlays at document root",

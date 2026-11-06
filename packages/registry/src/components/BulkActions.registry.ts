@@ -8,7 +8,7 @@ export const BulkActionsMeta: ComponentRegistryMetadata = {
   title: "BulkActions",
   description:
     "Floating action panel for operating on a selection. The panel renders only while open, anchors to a viewport side with a configurable gap, and can be toggled by a global keyboard shortcut. BulkActions.Handle adds pointer dragging and BulkActions.Item exposes activity statuses.",
-  category: "data",
+  category: "input",
   variants: [
     ComponentVariantEnum.Primary,
     ComponentVariantEnum.Secondary,

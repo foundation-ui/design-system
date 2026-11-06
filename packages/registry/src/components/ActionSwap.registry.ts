@@ -188,7 +188,7 @@ export function Component() {
       "Enter and Space activate the button; focus follows native button behavior.",
     ariaAttributes: ["aria-label", "aria-description", "aria-disabled"],
   },
-  relatedComponents: ["Button", "CopyButton", "Tooltip"],
+  relatedComponents: ["Button", "Tooltip"],
   aiHints: {
     useCases: [
       "copy-to-clipboard feedback",
@@ -200,6 +200,6 @@ export function Component() {
       "labels that need to remain visible longer than a moment",
       "replacing a full Button that already owns its own feedback",
     ],
-    composesWith: ["Button", "CopyButton", "Tooltip"],
+    composesWith: ["Button", "ActionSwap.Copy", "Tooltip"],
   },
 };

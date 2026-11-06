@@ -254,6 +254,61 @@ export const FieldMeta: ComponentRegistryMetadata = {
         },
       ],
     },
+    Tag: {
+      description:
+        "Field.Tag is a tag input that commits values on Enter and renders removable tag pills.",
+      props: [
+        {
+          name: "value",
+          type: "string[]",
+        },
+        {
+          name: "defaultValue",
+          type: "string[]",
+        },
+        {
+          name: "allowed",
+          type: "string[]",
+        },
+        {
+          name: "onChange",
+          type: "(tags: string[]) => void",
+        },
+        {
+          name: "error",
+          type: "string",
+        },
+        {
+          name: "disabled",
+          type: "boolean",
+        },
+        {
+          name: "placeholder",
+          type: "string",
+        },
+        {
+          name: "id",
+          type: "string",
+        },
+        {
+          name: "variant",
+          type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost" | "danger" | "warning" | "success" | "meta" | "hint"',
+        },
+        {
+          name: "sizing",
+          type: '"small" | "medium" | "large"',
+        },
+        {
+          name: "shape",
+          type: '"round" | "smooth" | "square"',
+        },
+        {
+          name: "raw",
+          type: "boolean",
+          defaultValue: "false",
+        },
+      ],
+    },
   },
   usage: [
     `import { Field } from "@usefui/components";
@@ -312,6 +367,10 @@ export function FieldComponent() {
     { kind: "note", title: "Field.File with custom trigger" },
     { kind: "note", title: "Field.Password and Field.Currency stories" },
     { kind: "note", title: "Field.Range slider with showValue and hint" },
+    {
+      kind: "note",
+      title: "Field.Tag for committed, removable tag values",
+    },
   ],
   a11y: {
     role: "input, group, spinbutton segments on Date, slider on Range",
@@ -353,6 +412,7 @@ export function FieldComponent() {
       "Field.Range",
       "Field.File",
       "Field.Password",
+      "Field.Tag",
     ],
   },
 };

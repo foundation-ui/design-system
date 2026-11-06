@@ -3,11 +3,15 @@ import { ComponentRegistryMetadata } from "@chambellan/contracts";
 export const CardMeta: ComponentRegistryMetadata = {
   name: "Card",
   description:
-    "Styled layout container for grouped sections with optional header, body, and grid layouts.",
+    "Styled layout container for grouped sections with optional header, body, image, and grid layouts.",
   category: "layout",
   variants: [],
   title: "Card",
   props: [
+    {
+      name: "sizing",
+      type: '"small" | "medium" | "large"',
+    },
     {
       name: "shape",
       type: '"round" | "smooth" | "square"',
@@ -59,6 +63,65 @@ export const CardMeta: ComponentRegistryMetadata = {
           name: "children",
           type: "ReactNode",
           required: true,
+        },
+      ],
+    },
+    Image: {
+      description:
+        "Card.Image renders the Image component with card-appropriate defaults. It forwards all Image props.",
+      props: [
+        {
+          name: "src",
+          type: "string",
+          required: true,
+        },
+        {
+          name: "alt",
+          type: "string",
+          required: true,
+        },
+        {
+          name: "sources",
+          type: "ISources[]",
+        },
+        {
+          name: "priority",
+          type: "boolean",
+          defaultValue: "false",
+        },
+        {
+          name: "fallbackSrc",
+          type: "string",
+        },
+        {
+          name: "width",
+          type: "number | string",
+        },
+        {
+          name: "height",
+          type: "number | string",
+        },
+        {
+          name: "fill",
+          type: "boolean",
+          defaultValue: "false",
+        },
+        {
+          name: "shape",
+          type: '"round" | "smooth" | "square"',
+          defaultValue: "smooth",
+        },
+        {
+          name: "srcSet",
+          type: "string",
+        },
+        {
+          name: "sizes",
+          type: "string",
+        },
+        {
+          name: "onError",
+          type: "ReactEventHandler<HTMLImageElement>",
         },
       ],
     },
@@ -115,6 +178,10 @@ export function CardComponent() {
       kind: "note",
       title: "Card.Grid for responsive card grids with sizing gaps",
     },
+    {
+      kind: "note",
+      title: "Card.Image for card media with Image src, alt, and fill",
+    },
     { kind: "note", title: "dashboard metric or summary blocks" },
     { kind: "note", title: "settings panel with primary CTA in body" },
   ],
@@ -135,6 +202,13 @@ export function CardComponent() {
       "entire page as one card without landmarks",
       "modal content — use Dialog",
     ],
-    composesWith: ["Card.Body", "Card.Meta", "Card.Grid", "Button", "Page"],
+    composesWith: [
+      "Card.Body",
+      "Card.Meta",
+      "Card.Grid",
+      "Card.Image",
+      "Button",
+      "Page",
+    ],
   },
 };

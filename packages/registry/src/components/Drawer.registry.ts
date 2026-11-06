@@ -4,7 +4,7 @@ export const DrawerMeta: ComponentRegistryMetadata = {
   name: "Drawer",
   title: "Drawer",
   description:
-    "Sliding dialog panel anchored to a viewport edge. Drawer.Root provides the open state, Drawer.Trigger is an edge handle that toggles the panel and can also be swiped, and Drawer.Control is an in-panel close button. The panel mounts on open, animates out before unmounting, locks page scroll while open, and can be toggled by a global keyboard shortcut.",
+    "Sliding dialog panel anchored to a viewport edge. Drawer.Root provides the open state, Drawer.Trigger is an edge handle that toggles the panel and can also be swiped, and Drawer.Control is an in-panel close button. The panel mounts on open, animates out before unmounting, and locks page scroll while open.",
   category: "layout",
   variants: [],
   props: [
@@ -34,22 +34,13 @@ export const DrawerMeta: ComponentRegistryMetadata = {
       defaultValue: "bottom-top",
     },
     {
-      name: "shortcut",
-      type: "boolean",
-    },
-    {
-      name: "hotkey",
-      type: "string",
-    },
-    {
-      name: "bindkey",
-      type: '"ctrlKey" | "metaKey" | "altKey" | "shiftKey"',
-      defaultValue: "ctrlKey",
-    },
-    {
       name: "raw",
       type: "boolean",
       defaultValue: "false",
+    },
+    {
+      name: "scrollbar",
+      type: "boolean",
     },
   ],
   parts: {
@@ -170,8 +161,36 @@ export const DrawerMeta: ComponentRegistryMetadata = {
           type: "boolean",
         },
         {
+          name: "canvas",
+          type: "boolean",
+        },
+        {
+          name: "particlesColor",
+          type: "string",
+        },
+        {
+          name: "shape",
+          type: '"circle" | "triangle" | "square" | "diamond"',
+          defaultValue: "square",
+        },
+        {
+          name: "background",
+          type: '"noise" | "blur"',
+          defaultValue: "noise",
+        },
+        {
+          name: "variant",
+          type: '"analysis" | "connect" | "think" | "intense" | "ripple" | "converge" | "sweep-x" | "sweep-y" | "diagonal" | "corner"',
+          defaultValue: "analysis",
+        },
+        {
           name: "onClick",
           type: "(event: MouseEvent<HTMLDivElement>) => void",
+        },
+        {
+          name: "raw",
+          type: "boolean",
+          defaultValue: "false",
         },
       ],
     },
@@ -202,7 +221,7 @@ export function Component() {
     },
     {
       kind: "executable",
-      title: "Backdrop dismissal and keyboard shortcut",
+      title: "Backdrop dismissal",
       code: `import { Drawer } from "@usefui/components";
 
 export function Component() {
@@ -210,14 +229,7 @@ export function Component() {
     <Drawer.Root>
       <Drawer.Trigger position="right" />
       <Drawer.Overlay closeOnInteract />
-      <Drawer
-        direction="right-left"
-        sizing="small"
-        shortcut
-        hotkey="d"
-        bindkey="shiftKey"
-        lock
-      >
+      <Drawer direction="right-left" sizing="small" lock>
         <Drawer.Menu>
           <Drawer.Control>Hide</Drawer.Control>
         </Drawer.Menu>
@@ -231,7 +243,7 @@ export function Component() {
       kind: "note",
       title: "`open` is a one-way native dialog trigger",
       description:
-        "The `open` prop is forwarded to the native dialog element and toggles the drawer when it becomes true. Setting it back to false does not close the drawer; use Drawer.Trigger, Drawer.Control, the shortcut, or a controlled state around the trigger instead.",
+        "The `open` prop is forwarded to the native dialog element and toggles the drawer when it becomes true. Setting it back to false does not close the drawer; use Drawer.Trigger, Drawer.Control, or a controlled state around the trigger instead.",
     },
     {
       kind: "note",
@@ -274,7 +286,6 @@ export function Component() {
       "treating `open` as a two-way controlled prop",
       "expecting Escape to close the drawer without adding a handler",
       "long forms without a ScrollArea inside the panel",
-      "multiple Drawers sharing the same hotkey",
     ],
     composesWith: [
       "Drawer.Root",

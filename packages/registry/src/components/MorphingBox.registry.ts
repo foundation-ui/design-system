@@ -4,7 +4,7 @@ export const MorphingBoxMeta: ComponentRegistryMetadata = {
   name: "MorphingBox",
   title: "MorphingBox",
   description:
-    "Dialog surface that morphs between a collapsed 0×0 state and its intrinsic content size, fading its children in after the expansion. It supports four edge anchors and four corner anchors, an in-box close control, an optional overlay, scroll locking, and a global keyboard shortcut.",
+    "Dialog surface that morphs between a collapsed 0×0 state and its intrinsic content size, fading its children in after the expansion. It supports four edge anchors and four corner anchors, an in-box close control, an optional overlay, and scroll locking.",
   category: "layout",
   variants: [],
   props: [
@@ -34,22 +34,13 @@ export const MorphingBoxMeta: ComponentRegistryMetadata = {
       defaultValue: "bottom-top",
     },
     {
-      name: "shortcut",
-      type: "boolean",
-    },
-    {
-      name: "hotkey",
-      type: "string",
-    },
-    {
-      name: "bindkey",
-      type: '"ctrlKey" | "metaKey" | "altKey" | "shiftKey"',
-      defaultValue: "ctrlKey",
-    },
-    {
       name: "raw",
       type: "boolean",
       defaultValue: "false",
+    },
+    {
+      name: "scrollbar",
+      type: "boolean",
     },
   ],
   parts: {
@@ -155,8 +146,36 @@ export const MorphingBoxMeta: ComponentRegistryMetadata = {
           type: "boolean",
         },
         {
+          name: "canvas",
+          type: "boolean",
+        },
+        {
+          name: "particlesColor",
+          type: "string",
+        },
+        {
+          name: "shape",
+          type: '"circle" | "triangle" | "square" | "diamond"',
+          defaultValue: "square",
+        },
+        {
+          name: "background",
+          type: '"noise" | "blur"',
+          defaultValue: "noise",
+        },
+        {
+          name: "variant",
+          type: '"analysis" | "connect" | "think" | "intense" | "ripple" | "converge" | "sweep-x" | "sweep-y" | "diagonal" | "corner"',
+          defaultValue: "analysis",
+        },
+        {
           name: "onClick",
           type: "(event: MouseEvent<HTMLDivElement>) => void",
+        },
+        {
+          name: "raw",
+          type: "boolean",
+          defaultValue: "false",
         },
       ],
     },
@@ -188,7 +207,7 @@ export function Component() {
     },
     {
       kind: "executable",
-      title: "Overlay dismissal and keyboard shortcut",
+      title: "Overlay dismissal",
       code: `import { MorphingBox } from "@usefui/components";
 
 export function Component() {
@@ -196,14 +215,8 @@ export function Component() {
     <MorphingBox.Root>
       <MorphingBox.Trigger position="top" />
       <MorphingBox.Overlay closeOnInteract />
-      <MorphingBox
-        direction="top-bottom"
-        sizing="medium"
-        shortcut
-        hotkey="m"
-        bindkey="shiftKey"
-      >
-        <p>Press Shift+M to toggle this box.</p>
+      <MorphingBox direction="top-bottom" sizing="medium">
+        <p>Morphing panel content.</p>
         <MorphingBox.Control>Hide</MorphingBox.Control>
       </MorphingBox>
     </MorphingBox.Root>
@@ -226,7 +239,7 @@ export function Component() {
       kind: "note",
       title: "`open` is a one-way native dialog trigger",
       description:
-        "Like Drawer, the `open` prop toggles the box when it becomes true but does not close it when it returns to false. Use the Trigger, Control, Overlay, shortcut, or an external handler instead.",
+        "Like Drawer, the `open` prop toggles the box when it becomes true but does not close it when it returns to false. Use the Trigger, Control, Overlay, or an external handler instead.",
     },
   ],
   a11y: {
@@ -240,7 +253,7 @@ export function Component() {
       "aria-expanded on Trigger and Control",
     ],
   },
-  relatedComponents: ["Drawer", "Dialog", "Popover", "Overlay", "Button"],
+  relatedComponents: ["Drawer", "Dialog", "Sheet", "Overlay", "Button"],
   aiHints: {
     useCases: [
       "compact contextual panels that expand from a corner",
@@ -251,7 +264,6 @@ export function Component() {
       "treating `open` as a two-way controlled prop",
       "large full-screen content — use a Drawer or Dialog",
       "forms with many fields inside a small box",
-      "multiple boxes sharing the same hotkey",
     ],
     composesWith: [
       "MorphingBox.Root",

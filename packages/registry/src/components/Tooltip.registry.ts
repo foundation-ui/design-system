@@ -133,7 +133,7 @@ export function Component() {
       "No aria-describedby link between the trigger and the popup — add one when the tooltip carries information",
     ],
   },
-  relatedComponents: ["Button", "Badge", "CopyButton", "DropdownMenu"],
+  relatedComponents: ["Button", "Badge", "ActionSwap", "DropdownMenu"],
   aiHints: {
     useCases: [
       "icon-only control supplementary labels",
@@ -147,6 +147,6 @@ export function Component() {
       "replacing aria-label on icon buttons",
       "keyboard-critical help that relies on this hover-only popup",
     ],
-    composesWith: ["Button", "Badge", "CopyButton", "Icon"],
+    composesWith: ["Button", "Badge", "ActionSwap", "Icon"],
   },
 };

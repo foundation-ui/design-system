@@ -3,7 +3,7 @@ import { ComponentRegistryMetadata } from "@chambellan/contracts";
 export const SheetMeta: ComponentRegistryMetadata = {
   name: "Sheet",
   description:
-    "Side panel overlay with optional backdrop, scroll lock, and keyboard shortcuts.",
+    "Side panel overlay with an optional Sheet.Overlay backdrop, scroll lock, and keyboard shortcuts.",
   category: "layout",
   variants: [],
   title: "Sheet",
@@ -30,11 +30,6 @@ export const SheetMeta: ComponentRegistryMetadata = {
     },
     {
       name: "lock",
-      type: "boolean",
-      defaultValue: "true",
-    },
-    {
-      name: "overlay",
       type: "boolean",
       defaultValue: "true",
     },
@@ -113,6 +108,54 @@ export const SheetMeta: ComponentRegistryMetadata = {
         },
       ],
     },
+    Overlay: {
+      description:
+        "Sheet.Overlay renders the backdrop behind the sheet. Set `closeOnInteract` to close the sheet when the backdrop is clicked.",
+      props: [
+        {
+          name: "visible",
+          type: "boolean",
+          defaultValue: "false",
+        },
+        {
+          name: "closeOnInteract",
+          type: "boolean",
+          defaultValue: "false",
+        },
+        {
+          name: "canvas",
+          type: "boolean",
+        },
+        {
+          name: "particlesColor",
+          type: "string",
+        },
+        {
+          name: "shape",
+          type: '"circle" | "triangle" | "square" | "diamond"',
+          defaultValue: "square",
+        },
+        {
+          name: "background",
+          type: '"noise" | "blur"',
+          defaultValue: "noise",
+        },
+        {
+          name: "variant",
+          type: '"analysis" | "connect" | "think" | "intense" | "ripple" | "converge" | "sweep-x" | "sweep-y" | "diagonal" | "corner"',
+          defaultValue: "analysis",
+        },
+        {
+          name: "onClick",
+          type: "(event: MouseEvent<HTMLDivElement>) => void",
+        },
+        {
+          name: "raw",
+          type: "boolean",
+          defaultValue: "false",
+        },
+      ],
+    },
   },
   usage: [
     `import { Sheet } from "@usefui/components";
@@ -169,7 +212,11 @@ export function SheetComponent() {
     { kind: "note", title: "Sheet.Root > Sheet.Trigger + Sheet panel" },
     { kind: "note", title: "side left or right; sizing small, medium, large" },
     { kind: "note", title: "DefaultOpen and Shortcut stories" },
-    { kind: "note", title: "open, lock, overlay, closeOnInteract props" },
+    { kind: "note", title: "open, lock, closeOnInteract props" },
+    {
+      kind: "note",
+      title: "Sheet.Overlay for optional backdrop dismissal",
+    },
   ],
   a11y: {
     role: "dialog on panel",
@@ -194,6 +241,6 @@ export function SheetComponent() {
       "nested sheets without focus plan",
       "long forms without labelled title",
     ],
-    composesWith: ["Sheet.Root", "Sheet.Trigger", "Overlay", "Button"],
+    composesWith: ["Sheet.Root", "Sheet.Trigger", "Sheet.Overlay", "Overlay", "Button"],
   },
 };

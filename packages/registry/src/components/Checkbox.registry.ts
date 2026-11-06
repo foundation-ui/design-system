@@ -43,6 +43,15 @@ export const CheckboxMeta: ComponentRegistryMetadata = {
       defaultValue: "false",
     },
     {
+      name: "indeterminate",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "onCheckedChange",
+      type: "(checked: boolean) => void",
+    },
+    {
       name: "disabled",
       type: "boolean",
       defaultValue: "false",
@@ -139,6 +148,10 @@ export function CheckboxComponent() {
     { kind: "note", title: "Checkbox.Root > Checkbox + Checkbox.Indicator" },
     { kind: "note", title: "labeled row with Field.Label and Field.Meta" },
     { kind: "note", title: "DefaultChecked story for initial state" },
+    {
+      kind: "note",
+      title: "indeterminate for mixed states; onCheckedChange for controlled state",
+    },
     { kind: "note", title: "Sizes and Variants stories" },
     { kind: "note", title: "terms acceptance with required" },
   ],
@@ -158,6 +171,7 @@ export function CheckboxComponent() {
       "multi-select filters or preferences",
       "labeled option lists with Field",
       "required terms checkbox",
+      "select-all controls with indeterminate",
     ],
     avoid: [
       "use without Checkbox.Root",

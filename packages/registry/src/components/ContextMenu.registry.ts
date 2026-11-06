@@ -200,7 +200,7 @@ export function Component() {
   },
   relatedComponents: [
     "SharedLayout",
-    "Dropdown",
+    "DropdownMenu",
     "Tooltip",
     "Button",
     "Divider",

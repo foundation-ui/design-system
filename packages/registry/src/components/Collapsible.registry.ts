@@ -16,6 +16,14 @@ export const CollapsibleMeta: ComponentRegistryMetadata = {
       type: "ReactNode",
       required: true,
     },
+    {
+      name: "defaultOpen",
+      type: "boolean",
+    },
+    {
+      name: "showFirstChild",
+      type: "boolean",
+    },
   ],
   parts: {
     Root: {

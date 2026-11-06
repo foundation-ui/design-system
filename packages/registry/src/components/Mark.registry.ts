@@ -76,6 +76,6 @@ export function MarkComponent() {
       "block-level containers — use Card or Banner",
       "replacing semantic <mark> search highlighting with unique meaning",
     ],
-    composesWith: ["Badge", "Typography"],
+    composesWith: ["Badge"],
   },
 };

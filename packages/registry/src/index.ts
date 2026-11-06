@@ -99,11 +99,11 @@ import { ButtonMeta } from "./components/Button.registry";
 import { CardMeta } from "./components/Card.registry";
 import { CheckboxMeta } from "./components/Checkbox.registry";
 import { CollapsibleMeta } from "./components/Collapsible.registry";
-import { CopyButtonMeta } from "./components/CopyButton.registry";
 import { DialogMeta } from "./components/Dialog.registry";
 import { DividerMeta } from "./components/Divider.registry";
 import { DropdownMeta } from "./components/Dropdown.registry";
 import { FieldMeta } from "./components/Field.registry";
+import { ImageMeta } from "./components/Image.registry";
 import { MarkMeta } from "./components/Mark.registry";
 import { MessageBubbleMeta } from "./components/MessageBubble.registry";
 import { OTPFieldMeta } from "./components/OTPField.registry";
@@ -118,8 +118,8 @@ import { SelectMeta } from "./components/Select.registry";
 import { SheetMeta } from "./components/Sheet.registry";
 import { ShimmerMeta } from "./components/Shimmer.registry";
 import { SkeletonMeta } from "./components/Skeleton.registry";
+import { StateCanvasMeta } from "./components/StateCanvas.registry";
 import { SwitchMeta } from "./components/Switch.registry";
-import { TableMeta } from "./components/Table.registry";
 import { TabsMeta } from "./components/Tabs.registry";
 import { TextareaMeta } from "./components/Textarea.registry";
 import { ToggleMeta } from "./components/Toggle.registry";
@@ -138,9 +138,11 @@ import { ResponseStreamMeta } from "./components/ResponseStream.registry";
 import { SharedLayoutMeta } from "./components/SharedLayout.registry";
 import { TextCarrouselMeta } from "./components/TextCarrousel.registry";
 import { TreeMeta } from "./components/Tree.registry";
+import { VideoMeta } from "./components/Video.registry";
 import { ViewportMeta } from "./components/Viewport.registry";
 import { VoiceControlMeta } from "./components/VoiceControl.registry";
 import { WhiteboardMeta } from "./components/Whiteboard.registry";
+import { WizardMeta } from "./components/Wizard.registry";
 import {
   IconMeta,
   WebIconMeta,
@@ -167,11 +169,11 @@ export const ComponentRegistry: ComponentRegistryMetadata[] = [
   CardMeta,
   CheckboxMeta,
   CollapsibleMeta,
-  CopyButtonMeta,
   DialogMeta,
   DividerMeta,
   DropdownMeta,
   FieldMeta,
+  ImageMeta,
   MarkMeta,
   MessageBubbleMeta,
   OTPFieldMeta,
@@ -186,6 +188,7 @@ export const ComponentRegistry: ComponentRegistryMetadata[] = [
   SheetMeta,
   ShimmerMeta,
   SkeletonMeta,
+  StateCanvasMeta,
   ActionSwapMeta,
   BulkActionsMeta,
   ContextMenuMeta,
@@ -199,11 +202,12 @@ export const ComponentRegistry: ComponentRegistryMetadata[] = [
   SharedLayoutMeta,
   TextCarrouselMeta,
   TreeMeta,
+  VideoMeta,
   ViewportMeta,
   VoiceControlMeta,
   WhiteboardMeta,
+  WizardMeta,
   SwitchMeta,
-  TableMeta,
   TabsMeta,
   TextareaMeta,
   ToggleMeta,

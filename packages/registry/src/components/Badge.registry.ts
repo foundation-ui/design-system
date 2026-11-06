@@ -113,7 +113,7 @@ export function BadgeComponent() {
     keyboardNav: "Not interactive",
     ariaAttributes: [],
   },
-  relatedComponents: ["Avatar", "Dialog", "Dropdown", "Field", "MessageBubble"],
+  relatedComponents: ["Avatar", "Dialog", "DropdownMenu", "Field", "MessageBubble"],
   aiHints: {
     useCases: [
       "metadata next to titles or table cells",
@@ -125,6 +125,6 @@ export function BadgeComponent() {
       "color-only status without text",
       "paragraph-length copy",
     ],
-    composesWith: ["Dialog", "Dropdown", "Field", "MessageBubble.Content"],
+    composesWith: ["Dialog", "DropdownMenu", "Field", "MessageBubble.Content"],
   },
 };

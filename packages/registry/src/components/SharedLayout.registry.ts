@@ -140,7 +140,7 @@ export function Component() {
       'semantic ul/li elements when as="ul"',
     ],
   },
-  relatedComponents: ["ContextMenu", "Dropdown", "Tabs", "Button", "Page"],
+  relatedComponents: ["ContextMenu", "DropdownMenu", "Tabs", "Button", "Page"],
   aiHints: {
     useCases: [
       "side navigation with a sliding active background",

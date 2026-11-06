@@ -10,7 +10,7 @@ export const IconMeta: ComponentRegistryMetadata = {
   description:
     "The base icon set exposed as compound components on the Icon root. Each part renders an inline SVG path inside the shared svg shell.",
   module: "@usefui/icons",
-  category: "feedback",
+  category: "data",
   variants: [],
   props: [{ name: "fillOpacity", type: "number" }],
   parts: Object.fromEntries(
@@ -57,7 +57,7 @@ export const WebIconMeta: ComponentRegistryMetadata = {
   description:
     "Web and product UI icons exposed on the WebIcon root, including browser and page-chrome metaphors.",
   module: "@usefui/icons",
-  category: "feedback",
+  category: "data",
   variants: [],
   props: [],
   parts: Object.fromEntries(
@@ -102,7 +102,7 @@ export const PixelIconMeta: ComponentRegistryMetadata = {
   description:
     "Pixel-styled icons exposed on the PixelIcon root for compact or pixel-art interfaces.",
   module: "@usefui/icons",
-  category: "feedback",
+  category: "data",
   variants: [],
   props: [],
   parts: Object.fromEntries(
@@ -147,7 +147,7 @@ export const SocialIconMeta: ComponentRegistryMetadata = {
   description:
     "Brand and social provider icons exposed on the SocialIcon root (Clerk, AWS, Discord, Slack, Notion, ...).",
   module: "@usefui/icons",
-  category: "feedback",
+  category: "data",
   variants: [],
   props: [],
   parts: Object.fromEntries(

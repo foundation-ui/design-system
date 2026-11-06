@@ -5,7 +5,7 @@ export const TextCarrouselMeta: ComponentRegistryMetadata = {
   title: "TextCarrousel",
   description:
     "Cycles through a list of short text messages, either automatically on an interval or manually on click. It renders a single centered inline span and is intended for compact rotating copy such as announcements or tips.",
-  category: "layout",
+  category: "data",
   variants: [],
   props: [
     {
@@ -84,7 +84,7 @@ export function Component() {
       "None rendered — add aria-live to an ancestor if updates must be announced",
     ],
   },
-  relatedComponents: ["Shimmer", "ResponseStream", "Text", "Badge"],
+  relatedComponents: ["Shimmer", "ResponseStream", "Badge"],
   aiHints: {
     useCases: [
       "rotating tips or announcements in a hero",
@@ -97,6 +97,6 @@ export function Component() {
       "using it as a carousel for images or cards",
       "depending on click navigation without a keyboard-accessible control",
     ],
-    composesWith: ["Text", "Shimmer", "ResponseStream"],
+    composesWith: ["Shimmer", "ResponseStream"],
   },
 };

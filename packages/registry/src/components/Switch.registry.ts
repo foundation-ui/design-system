@@ -23,9 +23,31 @@ export const SwitchMeta: ComponentRegistryMetadata = {
       defaultValue: "medium",
     },
     {
+      name: "shape",
+      type: '"round" | "smooth" | "square"',
+      defaultValue: "smooth",
+    },
+    {
       name: "defaultChecked",
       type: "boolean",
       defaultValue: "false",
+    },
+    {
+      name: "checked",
+      type: "boolean",
+    },
+    {
+      name: "name",
+      type: "string",
+    },
+    {
+      name: "required",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
+      name: "onCheckedChange",
+      type: "(checked: boolean) => void",
     },
     {
       name: "disabled",
@@ -71,17 +93,28 @@ export const SwitchMeta: ComponentRegistryMetadata = {
           type: '"small" | "medium" | "large"',
           defaultValue: "medium",
         },
+        {
+          name: "shape",
+          type: '"round" | "smooth" | "square"',
+          defaultValue: "smooth",
+        },
       ],
     },
   },
   usage: [
-    `import { Switch } from "@usefui/components";
+    `import { Field, Switch } from "@usefui/components";
 
 export function SwitchComponent() {
-    return (
-      <div className="grid g-medium-30 p-t-large-30 p-x-medium-60">
-      </div>
-    );
+  return (
+    <Switch.Root>
+      <Field.Label htmlFor="notifications" className="flex align-center g-medium-30">
+        <Switch id="notifications" name="notifications" defaultChecked>
+          <Switch.Thumb />
+        </Switch>
+        <Field.Meta variant="emphasis">Notifications</Field.Meta>
+      </Field.Label>
+    </Switch.Root>
+  );
 }`,
   ],
   anatomy: `import { Switch } from "@usefui/components";
@@ -98,9 +131,17 @@ export function SwitchComponent() {
 
   examples: [
     { kind: "note", title: "Switch.Root > Switch + Switch.Thumb" },
-    { kind: "note", title: "DefaultChecked, Sizes, Variants stories" },
+    { kind: "note", title: "DefaultChecked, Sizes, Shapes, Variants stories" },
     { kind: "note", title: "labeled with Field.Label and Field.Meta" },
-    { kind: "note", title: "defaultChecked and disabled props" },
+    {
+      kind: "note",
+      title:
+        "defaultChecked for uncontrolled state; checked + onCheckedChange for controlled state",
+    },
+    {
+      kind: "note",
+      title: "name and required integrate the switch with native forms",
+    },
   ],
   a11y: {
     role: "switch on trigger",

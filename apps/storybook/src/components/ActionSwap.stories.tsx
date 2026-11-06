@@ -4,7 +4,7 @@ import { Page, ActionSwap, Tooltip } from "@usefui/components";
 import { Icon } from "@usefui/icons";
 
 /**
- * CopyButton are used to copy stored values when clicked.
+ * ActionSwap.Copy is used to copy stored values when clicked.
  */
 const meta = {
   title: "Components/ActionSwap",

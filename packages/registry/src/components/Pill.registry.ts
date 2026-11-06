@@ -108,7 +108,7 @@ export function Component() {
       'role (add role="status" or a descriptive wrapper label when the state matters)',
     ],
   },
-  relatedComponents: ["Badge", "Avatar", "Status", "Tag"],
+  relatedComponents: ["Badge", "Avatar", "Banner"],
   aiHints: {
     useCases: [
       "online, away, and offline presence dots",

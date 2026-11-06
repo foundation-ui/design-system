@@ -33,6 +33,10 @@ export const DialogMeta: ComponentRegistryMetadata = {
       type: "boolean",
       defaultValue: "false",
     },
+    {
+      name: "scrollbar",
+      type: "boolean",
+    },
   ],
   parts: {
     Root: {
@@ -141,9 +145,37 @@ export const DialogMeta: ComponentRegistryMetadata = {
         "Dialog.Overlay is used to separate the Dialog layer from the rest of the page content.",
       props: [
         {
+          name: "visible",
+          type: "boolean",
+          defaultValue: "false",
+        },
+        {
           name: "closeOnInteract",
           type: "boolean",
           defaultValue: "false",
+        },
+        {
+          name: "canvas",
+          type: "boolean",
+        },
+        {
+          name: "particlesColor",
+          type: "string",
+        },
+        {
+          name: "shape",
+          type: '"circle" | "triangle" | "square" | "diamond"',
+          defaultValue: "square",
+        },
+        {
+          name: "background",
+          type: '"noise" | "blur"',
+          defaultValue: "noise",
+        },
+        {
+          name: "variant",
+          type: '"analysis" | "connect" | "think" | "intense" | "ripple" | "converge" | "sweep-x" | "sweep-y" | "diagonal" | "corner"',
+          defaultValue: "analysis",
         },
         {
           name: "onClick",
@@ -195,7 +227,7 @@ export function DialogComponent() {
       title: "Dialog.Menu for top chrome; Dialog.Control for in-dialog actions",
     },
     { kind: "note", title: "DefaultOpen, NoOverlay, Shortcut stories" },
-    { kind: "note", title: "command palette pattern with Field and Dropdown" },
+    { kind: "note", title: "command palette pattern with Field and DropdownMenu" },
     { kind: "note", title: "closeOnInteract on overlay" },
   ],
   a11y: {
@@ -214,7 +246,7 @@ export function DialogComponent() {
     "ScrollArea",
     "Button",
     "Field",
-    "Dropdown",
+    "DropdownMenu",
     "Badge",
     "Divider",
     "Page",

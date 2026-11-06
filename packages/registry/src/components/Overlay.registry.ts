@@ -3,7 +3,7 @@ import { ComponentRegistryMetadata } from "@chambellan/contracts";
 export const OverlayMeta: ComponentRegistryMetadata = {
   name: "Overlay",
   description:
-    "Backdrop scrim displayed on top of the current layer. Low-level primitive for modals.",
+    "Full-layer backdrop scrim with optional StateCanvas particle animation and noise or blur background treatments. Low-level primitive for modals.",
   category: "feedback",
   variants: [],
   title: "Overlay",
@@ -17,6 +17,29 @@ export const OverlayMeta: ComponentRegistryMetadata = {
       name: "closeOnInteract",
       type: "boolean",
       defaultValue: "false",
+    },
+    {
+      name: "canvas",
+      type: "boolean",
+    },
+    {
+      name: "particlesColor",
+      type: "string",
+    },
+    {
+      name: "shape",
+      type: '"circle" | "triangle" | "square" | "diamond"',
+      defaultValue: "square",
+    },
+    {
+      name: "background",
+      type: '"noise" | "blur"',
+      defaultValue: "noise",
+    },
+    {
+      name: "variant",
+      type: '"analysis" | "connect" | "think" | "intense" | "ripple" | "converge" | "sweep-x" | "sweep-y" | "diagonal" | "corner"',
+      defaultValue: "analysis",
     },
     {
       name: "onClick",
@@ -65,7 +88,16 @@ export function OverlayComponent() {
     { kind: "note", title: "closeOnInteract for click-to-dismiss" },
     {
       kind: "note",
-      title: "wrapped by Dialog.Overlay and Sheet overlay patterns",
+      title: "canvas enables the StateCanvas particle layer",
+    },
+    {
+      kind: "note",
+      title:
+        "shape, variant, and particlesColor configure the particle animation; background selects noise or blur",
+    },
+    {
+      kind: "note",
+      title: "wrapped by Dialog.Overlay and Sheet.Overlay patterns",
     },
     { kind: "note", title: "Button toggle in Overlay stories" },
   ],
@@ -74,17 +106,18 @@ export function OverlayComponent() {
     keyboardNav: "Not focusable (tabIndex -1, aria-hidden)",
     ariaAttributes: ["aria-hidden"],
   },
-  relatedComponents: ["Dialog", "Sheet", "Button"],
+  relatedComponents: ["Dialog", "Sheet", "StateCanvas", "Button"],
   aiHints: {
     useCases: [
       "modal dimmed backdrop via Dialog.Overlay",
       "click-outside dismiss when closeOnInteract",
+      "animated particle backdrop with canvas and variant",
     ],
     avoid: [
       "standalone accessible modal without Dialog/Sheet",
       "interactive content on the overlay itself",
       "keyboard dismiss without parent handling",
     ],
-    composesWith: ["Dialog.Overlay", "Sheet"],
+    composesWith: ["Dialog.Overlay", "Sheet.Overlay", "StateCanvas"],
   },
 };

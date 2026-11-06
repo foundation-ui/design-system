@@ -55,7 +55,7 @@ export function ScrollAreaComponent() {
     keyboardNav: "Native scroll on content",
     ariaAttributes: ["aria-hidden on wrapper"],
   },
-  relatedComponents: ["Table", "Page", "Select", "Accordion"],
+  relatedComponents: ["DataTable", "Page", "Select", "Accordion"],
   aiHints: {
     useCases: [
       "constrained-height panels",
@@ -66,6 +66,6 @@ export function ScrollAreaComponent() {
       "sole readable region without exposing children to AT",
       "whole-page scroll replacement",
     ],
-    composesWith: ["Table", "Page.Content", "Select.Content"],
+    composesWith: ["DataTable", "Page.Content", "Select.Content"],
   },
 };

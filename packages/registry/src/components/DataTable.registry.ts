@@ -237,7 +237,7 @@ export function Component({
       "aria-hidden on skeleton rows and virtualization spacers",
     ],
   },
-  relatedComponents: ["Table", "Checkbox", "Skeleton", "ScrollArea", "Badge"],
+  relatedComponents: ["Checkbox", "Skeleton", "ScrollArea", "Badge"],
   aiHints: {
     useCases: [
       "large datasets that need virtualization",
@@ -246,13 +246,12 @@ export function Component({
       "infinite-scroll lists with loading skeletons",
     ],
     avoid: [
-      "small static tables — use the compound Table",
+      "small static tables — use a plain semantic table element",
       "server-side filtering expectations — filtering is not implemented",
       "variable row heights — the virtualizer assumes a fixed rowHeight",
       "omitting getRowId when row order can change",
     ],
     composesWith: [
-      "Table",
       "Checkbox",
       "Skeleton",
       "ScrollArea",

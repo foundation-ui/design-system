@@ -47,7 +47,7 @@ export const ButtonMeta: ComponentRegistryMetadata = {
     },
     {
       name: "animation",
-      type: '"reflective" | "float" | "scale" | "bounce" | "shake" | "wiggle" | "shine"',
+      type: '"reflective" | "float" | "scale" | "bounce" | "shake" | "wiggle" | "lift"',
     },
     {
       name: "disabled",
@@ -67,6 +67,10 @@ export const ButtonMeta: ComponentRegistryMetadata = {
       name: "rawicon",
       type: "boolean",
       defaultValue: "false",
+    },
+    {
+      name: "sound",
+      type: "SoundName",
     },
   ],
   usage: [
@@ -185,7 +189,7 @@ export function ButtonComponent() {
     },
     {
       kind: "note",
-      title: "clipboard copy affordance (prefer CopyButton wrapper)",
+      title: "clipboard copy affordance (prefer ActionSwap.Copy)",
     },
   ],
   a11y: {
@@ -203,9 +207,9 @@ export function ButtonComponent() {
     ],
   },
   relatedComponents: [
-    "CopyButton",
+    "ActionSwap",
     "Toggle",
-    "Dropdown",
+    "DropdownMenu",
     "Tabs",
     "Accordion",
     "Collapsible",
@@ -226,7 +230,7 @@ export function ButtonComponent() {
       "status or contextual actions with success, warning, hint, or meta",
       "icon-leading or icon-only labels using SVG children",
       "marketing or hero CTAs with animation reflective (non-ghost variants)",
-      "compound *.Trigger APIs that extend Button props (Dialog, Sheet, Dropdown, Tabs, Accordion, Collapsible, Toolbar)",
+      "compound *.Trigger APIs that extend Button props (Dialog, Sheet, DropdownMenu, Tabs, Accordion, Collapsible, Toolbar)",
       "inline compact controls with sizing small and variant ghost or border",
     ],
     avoid: [
@@ -238,12 +242,12 @@ export function ButtonComponent() {
       "long or paragraph-length labels — keep copy short",
     ],
     composesWith: [
-      "Icon (SVG as children; rawicon to skip icon styling)",
-      "Loader (loading state inside the button)",
-      "Tooltip (e.g. CopyButton)",
-      "CopyButton",
+      "Icon",
+      "Loader",
+      "Tooltip",
+      "ActionSwap",
       "Toggle",
-      "Dropdown.Trigger",
+      "DropdownMenu.Trigger",
       "Tabs.Trigger",
       "Accordion.Trigger",
       "Collapsible.Trigger",

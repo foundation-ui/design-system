@@ -29,6 +29,16 @@ export const ToolbarMeta: ComponentRegistryMetadata = {
       defaultValue: "left",
     },
     {
+      name: "breakOnMobile",
+      type: "boolean",
+      defaultValue: "true",
+    },
+    {
+      name: "breakpoint",
+      type: "number",
+      defaultValue: "768",
+    },
+    {
       name: "raw",
       type: "boolean",
     },
@@ -55,6 +65,21 @@ export const ToolbarMeta: ComponentRegistryMetadata = {
         {
           name: "onOpenChange",
           type: "(open: boolean) => void",
+        },
+        {
+          name: "keyboardShortcut",
+          type: "boolean",
+          defaultValue: "true",
+        },
+        {
+          name: "breakOnMobile",
+          type: "boolean",
+          defaultValue: "true",
+        },
+        {
+          name: "breakpoint",
+          type: "number",
+          defaultValue: "768",
         },
       ],
     },
@@ -210,6 +235,11 @@ export function ToolbarComponent() {
     {
       kind: "note",
       title: "alwaysVisible on Section; showFirstChild on Item",
+    },
+    {
+      kind: "note",
+      title:
+        "breakOnMobile + breakpoint switch to mobile behavior; keyboardShortcut disables Ctrl/Cmd+B",
     },
     {
       kind: "note",

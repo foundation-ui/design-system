@@ -39,7 +39,7 @@ export function DividerComponent() {
 
   examples: [
     { kind: "note", title: "between Dialog.Menu and dialog body content" },
-    { kind: "note", title: "split sections in Dropdown menus" },
+    { kind: "note", title: "split sections in DropdownMenu menus" },
     { kind: "note", title: "visual break in dense stacked panels" },
   ],
   a11y: {
@@ -47,7 +47,7 @@ export function DividerComponent() {
     keyboardNav: "Not focusable",
     ariaAttributes: [],
   },
-  relatedComponents: ["Dialog", "Dropdown"],
+  relatedComponents: ["Dialog", "DropdownMenu"],
   aiHints: {
     useCases: [
       "separate menu groups",
@@ -59,6 +59,6 @@ export function DividerComponent() {
       "spacing-only gaps without semantic sections",
       "replacing headings for grouping",
     ],
-    composesWith: ["Dialog", "Dropdown"],
+    composesWith: ["Dialog", "DropdownMenu"],
   },
 };

@@ -7,7 +7,7 @@ export const MessageBubbleMeta: ComponentRegistryMetadata = {
   name: "MessageBubble",
   description:
     "Chat message layout with side alignment, styled content, and optional timestamp meta.",
-  category: "data",
+  category: "feedback",
   variants: [
     ComponentVariantEnum.Primary,
     ComponentVariantEnum.Secondary,

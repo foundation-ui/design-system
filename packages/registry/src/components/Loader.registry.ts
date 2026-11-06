@@ -183,7 +183,7 @@ export function Component() {
       "aria-label (recommended — the indicators contain no text alternative beyond the ASCII glyph)",
     ],
   },
-  relatedComponents: ["Skeleton", "Shimmer", "Progress", "Button"],
+  relatedComponents: ["Skeleton", "Shimmer", "ProgressBar", "Button"],
   aiHints: {
     useCases: [
       "indeterminate loading in buttons, panels, and inline status rows",
@@ -191,7 +191,7 @@ export function Component() {
       "compact dither activity indicators",
     ],
     avoid: [
-      "determinate progress — use Progress instead",
+      "determinate progress — use ProgressBar instead",
       "long-running states without a text label or aria-label",
       "relying on the base Loader export to render a visible indicator",
       "motion-sensitive contexts without a static fallback",

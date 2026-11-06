@@ -2,7 +2,7 @@ import { ComponentRegistryMetadata } from "@chambellan/contracts";
 
 export const DropdownMeta: ComponentRegistryMetadata = {
   name: "DropdownMenu",
-  title: "Dropdown",
+  title: "DropdownMenu",
   description:
     "Expandable action list triggered by a Button. DropdownMenu.Root provides the open state, the DropdownMenu wrapper renders the click-outside boundary and locks page scroll while open, Trigger toggles the menu and records its rect, Content is a fixed-position menu placed by useFloatingPlacement, and Item performs an action and optionally keeps the menu open. Placement centers the menu over the trigger when it fits, otherwise aligns its left or right edge, and opens below the trigger unless it would overflow, in which case it opens above.",
   category: "navigation",

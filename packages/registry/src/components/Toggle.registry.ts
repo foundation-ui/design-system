@@ -3,7 +3,7 @@ import { ComponentRegistryMetadata } from "@chambellan/contracts";
 export const ToggleMeta: ComponentRegistryMetadata = {
   name: "Toggle",
   description:
-    "Button that switches on or off with role switch. Wraps Button with internal checked state.",
+    "Button that toggles a pressed state with aria-pressed. Wraps Button with controllable checked state and optional hidden form input.",
   category: "input",
   variants: [],
   title: "Toggle",
@@ -15,8 +15,8 @@ export const ToggleMeta: ComponentRegistryMetadata = {
     },
     {
       name: "variant",
-      type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
-      defaultValue: "mono",
+      type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost" | "danger" | "warning" | "success" | "meta" | "hint" | "link" | "accent"',
+      defaultValue: "primary",
     },
     {
       name: "sizing",
@@ -24,14 +24,39 @@ export const ToggleMeta: ComponentRegistryMetadata = {
       defaultValue: "medium",
     },
     {
+      name: "shape",
+      type: '"round" | "smooth" | "square"',
+      defaultValue: "smooth",
+    },
+    {
+      name: "animation",
+      type: '"reflective" | "float" | "scale" | "bounce" | "shake" | "wiggle" | "lift"',
+    },
+    {
+      name: "sound",
+      type: "SoundName",
+    },
+    {
       name: "value",
       type: "string",
-      defaultValue: "false",
+      defaultValue: "on",
     },
     {
       name: "defaultChecked",
       type: "boolean",
       defaultValue: "false",
+    },
+    {
+      name: "checked",
+      type: "boolean",
+    },
+    {
+      name: "name",
+      type: "string",
+    },
+    {
+      name: "onCheckedChange",
+      type: "(checked: boolean) => void",
     },
     {
       name: "disabled",
@@ -99,14 +124,23 @@ export function ToggleComponent() {
 
   examples: [
     { kind: "note", title: "defaultChecked for initial pressed state" },
+    {
+      kind: "note",
+      title:
+        "checked + onCheckedChange for controlled state; defaultChecked for uncontrolled state",
+    },
     { kind: "note", title: "Group story: multiple independent toggles" },
     { kind: "note", title: "Sizes story via inherited Button sizing" },
+    {
+      kind: "note",
+      title: "name renders a hidden input that submits value when pressed",
+    },
     { kind: "note", title: "inherits full IButtonProperties" },
   ],
   a11y: {
-    role: "switch",
+    role: "button with aria-pressed (toggle button)",
     keyboardNav: "Enter and Space toggle",
-    ariaAttributes: ["aria-checked", "data-checked", "data-disabled"],
+    ariaAttributes: ["aria-pressed", "data-checked", "data-disabled"],
   },
   relatedComponents: ["Button", "Switch", "Page"],
   aiHints: {
