@@ -31,7 +31,7 @@ export function HookComponent() {
     },
     {
       name: "options",
-      type: "Record<string, string>",
+      type: "BlobPropertyBag",
       defaultValue: '{ type: "application/json" }',
     },
   ],

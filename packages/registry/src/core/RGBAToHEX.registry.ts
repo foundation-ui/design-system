@@ -19,7 +19,7 @@ RGBAToHEX("rgba(255, 255, 255, 0.1)", "000000");
     { name: "rgba", type: "string", required: true },
     { name: "backgroundHex", type: "string", required: true },
   ],
-  returnProperties: [{ name: "hex", type: "string" }],
+  returnProperties: [{ name: "hex", type: "string | undefined" }],
   types: `type THex = string;
 type TRgba = string;`,
 };

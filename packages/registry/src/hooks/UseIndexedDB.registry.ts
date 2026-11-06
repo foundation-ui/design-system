@@ -13,10 +13,7 @@ export const UseIndexedDBMeta: HookRegistryMetadata = {
 const config = { name: "app-db", stores: ["props"], version: 1 };
 
 export function HookComponent() {
-    const idb = useIndexedDB(config);
-
-    if (!idb) return null;
-    const { db, getDataFromIDB, setDataInIDB, flushDBStore } = idb;
+    const { db, getDataFromIDB, setDataInIDB, flushDBStore } = useIndexedDB(config);
 
     return ( {/** Your code here **/} );
 }`,
@@ -34,11 +31,11 @@ export function HookComponent() {
     },
     {
       name: "getDataFromIDB",
-      type: "(storeName: string, key: string) => Promise<any>",
+      type: "(storeName: string, key: string) => Promise<TIDBRecord<T> | undefined>",
     },
     {
       name: "setDataInIDB",
-      type: "(storeName: string, key: string, value: any) => Promise<void>",
+      type: "(storeName: string, key: string, value: unknown) => Promise<void>",
     },
     {
       name: "flushDBStore",

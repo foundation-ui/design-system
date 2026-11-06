@@ -23,7 +23,12 @@ const scale = generateModularScales({
     { name: "name", type: "string" },
     { name: "value", type: "RatioEnum" },
   ],
-  types: `enum RatioEnum {
+  types: `interface IMeasurementRatio {
+  name: string;
+  value: RatioEnum;
+}
+
+enum RatioEnum {
   MinorSecond = 16 / 15,
   MajorSecond = 9 / 8,
   MinorThird = 6 / 5,

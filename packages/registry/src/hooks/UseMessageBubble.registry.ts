@@ -32,7 +32,7 @@ export function HookComponent() {
     },
     {
       name: "applySide",
-      type: "(side: 'left' | 'right') => string | void",
+      type: "(side: MessageBubbleSide) => void",
     },
   ],
 };

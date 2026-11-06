@@ -19,9 +19,7 @@ function App() {
         <Dialog.Root>
             <Trigger />
             <Dialog>
-                <Dialog.Content>
-                    { /** Your content here **/ }
-                </Dialog.Content>
+                { /** Your content here **/ }
             </Dialog>
         </Dialog.Root>
     );

@@ -1,11 +1,13 @@
+
 import type { GeneratorRegistryMetadata } from "@chambellan/contracts";
+
 
 export const GenerateModularScalesMeta: GeneratorRegistryMetadata = {
   kind: "generator",
   name: "generateModularScales",
   title: "Generate Modular Scales",
   description:
-    "Generates a modular scale by multiplying a base value through one or more ratios. With convert, returns px/rem/pt objects and excludes the base value from the output.",
+    "Generates a modular scale by multiplying a base value through a single ratio. With convert, returns px/rem/pt objects and excludes the base value from the output.",
   module: "@usefui/core",
   code: `import { generateModularScales, MeasurementRatios } from "@usefui/core";
 

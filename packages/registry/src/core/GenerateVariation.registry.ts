@@ -1,4 +1,6 @@
+
 import type { GeneratorRegistryMetadata } from "@chambellan/contracts";
+
 
 export const GenerateVariationMeta: GeneratorRegistryMetadata = {
   kind: "generator",

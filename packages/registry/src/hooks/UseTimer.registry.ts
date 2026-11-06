@@ -5,7 +5,7 @@ export const UseTimerMeta: HookRegistryMetadata = {
   name: "useTimer",
   title: "useTimer",
   description:
-    "Runs a seconds counter based on performance.now, optionally starting immediately on load.",
+    "Runs a seconds counter based on performance.now. Requires a startOnLoad flag that controls whether counting begins immediately on load.",
   component: "Timer",
   module: "@usefui/hooks",
   code: `import { useTimer } from "@usefui/hooks";

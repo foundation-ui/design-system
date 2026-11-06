@@ -33,11 +33,11 @@ export function HookComponent() {
     },
     {
       name: "applyValue",
-      type: "(value: string): => string | void",
+      type: "(value: string | null) => void",
     },
     {
       name: "getAccordionId",
-      type: "({ value, type }: Record<string, string>) => string",
+      type: "({ value: string; type: \"trigger\" | \"content\" }) => string",
     },
   ],
 };

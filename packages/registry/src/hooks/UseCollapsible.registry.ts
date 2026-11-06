@@ -38,7 +38,7 @@ export function HookComponent() {
     },
     {
       name: "toggleCollapsible",
-      type: "(): => void",
+      type: "() => void",
     },
     {
       name: "applyDefaultOpen",

@@ -31,6 +31,10 @@ export function HookComponent() {
       type: "string[]",
       required: true,
     },
+    {
+      name: "captureSnapshot",
+      type: "boolean",
+    },
   ],
   returns: [
     {
@@ -49,12 +53,13 @@ export function HookComponent() {
   types: `type TUbaConfig = {
   silent?: boolean;
   flags: string[];
+  captureSnapshot?: boolean;
 };
 
 type TInteractionsData = {
   origin: string;
   frequency: number;
-  types: unknown[];
+  types: string[];
   events: IEventPayload[];
 };`,
 };

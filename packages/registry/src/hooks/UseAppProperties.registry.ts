@@ -44,7 +44,7 @@ export function HookComponent() {
   returns: [
     {
       name: "appProps",
-      type: "IAppProperties | null",
+      type: "IAppProperties | undefined",
     },
   ],
   types: `type TAppPropsSrc = {
@@ -69,7 +69,7 @@ interface IAppProperties {
 
 type TUIPropsConfig = {
   silent?: boolean;
-  config?: TIDBConfig;
+  config: TIDBConfig;
   source: TAppPropsSrc;
 };`,
 };

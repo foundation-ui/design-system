@@ -32,11 +32,11 @@ export function HookComponent() {
     },
     {
       name: "applyValue",
-      type: "(value: string): => string | void",
+      type: "(value: string | null) => void",
     },
     {
       name: "getTabsId",
-      type: "({ value, type }: Record<string, string>): => string",
+      type: "({ value: string | undefined; type: \"trigger\" | \"content\" }) => string",
     },
   ],
 };

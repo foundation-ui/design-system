@@ -5,8 +5,8 @@ export const StylesUsageMeta: DocsGuideRegistryMetadata = {
   name: "styles",
   title: "Styles",
   description:
-    "Global style components shipped by @usefui/components: ResetGlobalStyles (CSS reset) and TypographyRoot (base font and heading styles).",
-  module: "@usefui/styles",
+    "Global style components shipped by @usefui/components: ResetGlobalStyles (CSS reset) and TypographyGlobalStyles (base font and heading styles).",
+  module: "@usefui/components",
   code: `import { createGlobalStyle } from "styled-components";
 import { ColorModeProvider, js_design_tokens } from "@usefui/tokens";
 import { ResetGlobalStyles, TypographyGlobalStyles } from "@usefui/components";

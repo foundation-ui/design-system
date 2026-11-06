@@ -14,7 +14,7 @@ export function HookComponent() {
     const { id, states, methods } = switchHook;
 
     const { checked } = states;
-    const { toggleSwitch } = methods;
+    const { toggleChecked, applyChecked } = methods;
 
     return ( {/** Your code here **/} );
 }`,
@@ -31,8 +31,12 @@ export function HookComponent() {
       defaultValue: "false",
     },
     {
-      name: "toggleSwitch",
-      type: "(): => boolean | void",
+      name: "toggleChecked",
+      type: "() => void",
+    },
+    {
+      name: "applyChecked",
+      type: "(checked: boolean) => void",
     },
   ],
 };

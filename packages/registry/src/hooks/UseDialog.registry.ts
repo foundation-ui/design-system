@@ -32,11 +32,11 @@ export function HookComponent() {
     },
     {
       name: "toggleDialog",
-      type: "(): => void",
+      type: "() => void",
     },
     {
       name: "getDialogId",
-      type: "(type: 'trigger' | 'dialog' | 'inner-control') => string",
+      type: "(type: 'trigger' | 'content' | 'inner-control') => string",
     },
   ],
 };

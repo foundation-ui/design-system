@@ -13,8 +13,6 @@ export const UsePerformanceMetricsMeta: HookRegistryMetadata = {
 export function HookComponent() {
     const { metrics } = usePerformanceMetrics();
 
-    if (!metrics) return null;
-
     return (
         <div>
             <div>Memory: {metrics.memory_usage}</div>
@@ -26,10 +24,10 @@ export function HookComponent() {
   returns: [
     {
       name: "metrics",
-      type: "IPerfomanceMetricsProperties",
+      type: "IPerformanceMetricsProperties",
     },
   ],
-  types: `interface IPerfomanceMetricsProperties {
+  types: `interface IPerformanceMetricsProperties {
   memory_usage: string;
   network_latency: string;
 }`,

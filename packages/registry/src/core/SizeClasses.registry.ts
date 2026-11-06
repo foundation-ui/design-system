@@ -1,4 +1,6 @@
+
 import type { GeneratorRegistryMetadata } from "@chambellan/contracts";
+
 
 export const SizeClassesMeta: GeneratorRegistryMetadata = {
   kind: "generator",
@@ -25,7 +27,9 @@ const cssSizeClasses = generateSizeClasses(design_tokens.measurement);`,
       type: "string",
     },
   ],
-  types: `interface IScaleVariation {
+  types: `type TScaleVariant = "fontsize" | "measurement";
+
+interface IScaleVariation {
   px: number;
   rem: number;
   pt: number;

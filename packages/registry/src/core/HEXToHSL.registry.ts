@@ -20,5 +20,5 @@ HEXToHSL("cc0000", true); // → [0, 100, 40]`,
     { name: "raw", type: "boolean" },
   ],
   returnProperties: [{ name: "hsl", type: "string | number[]" }],
-  types: `type THsl = [number, number, number];`,
+  types: `type THsl = number[] | string;`,
 };

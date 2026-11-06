@@ -1,4 +1,6 @@
+
 import type { GeneratorRegistryMetadata } from "@chambellan/contracts";
+
 
 export const TokensLibraryMeta: GeneratorRegistryMetadata = {
   kind: "generator",
@@ -40,7 +42,7 @@ const tokenLibrary = generateTokensLibrary("demo-dt", [
     },
     {
       name: "template",
-      type: "{ type: string; values: ITemplateValues[]; }",
+      type: "ITemplatePayload[]",
       required: true,
     },
   ],

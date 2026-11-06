@@ -31,11 +31,16 @@ export function HookComponent() {
       defaultValue: "metaKey",
     },
   ],
-  returns: [],
-  types: `interface KeyBindingEnum {
-  Meta: "metaKey";
-  Ctrl: "ctrlKey";
-  Alt: "altKey";
-  Shift: "shiftKey";
+  returns: [
+    {
+      name: "keyPressed",
+      type: "boolean",
+    },
+  ],
+  types: `enum KeyBindingEnum {
+  Meta = "metaKey",
+  Ctrl = "ctrlKey",
+  Alt = "altKey",
+  Shift = "shiftKey",
 }`,
 };

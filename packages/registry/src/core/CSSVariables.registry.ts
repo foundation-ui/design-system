@@ -16,16 +16,25 @@ const cssVariables = generateCSSVariables({
 });`,
   properties: [
     {
+      name: "name",
+      type: "string",
+      required: true,
+    },
+    {
       name: "design_tokens",
-      type: "IDesignTokensLibrary",
+      type: "IDesignTokensSet",
       required: true,
     },
   ],
   returnProperties: [
-    {
-      name: "css",
-      type: "string",
-    },
+    { name: "color", type: "string[] | string[][]" },
+    { name: "alpha", type: "string[] | string[][]" },
+    { name: "tint", type: "string[] | string[][]" },
+    { name: "shade", type: "string[] | string[][]" },
+    { name: "fontsize", type: "string[] | string[][]" },
+    { name: "measurement", type: "string[] | string[][]" },
+    { name: "depth", type: "string[] | string[][]" },
+    { name: "opacity", type: "string[] | string[][]" },
   ],
   types: `interface IScaleVariation {
   px: number;
@@ -66,6 +75,8 @@ interface IDesignTokensSet {
   depth: IComposedLibraryItem[];
   opacity: IComposedLibraryItem[];
 }
+
+type TScaleVariant = "fontsize" | "measurement";
 
 interface IDesignTokensLibrary {
   name: string;

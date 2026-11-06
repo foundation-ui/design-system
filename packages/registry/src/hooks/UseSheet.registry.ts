@@ -13,28 +13,21 @@ export function HookComponent() {
     const sheet = useSheet();
     const { id, states, methods } = sheet;
 
-    const { containerId, triggerId, controlId } = id;
     const { open } = states;
-    const { toggle, setOpen } = methods;
+    const { toggle, setOpen, getSheetId } = methods;
 
     return ( {/** Your code here **/} );
 }`,
   arguments: [],
   returns: [
     {
-      name: "containerId",
+      name: "id",
       type: "string",
       defaultValue: "React.useId",
     },
     {
-      name: "triggerId",
-      type: "string",
-      defaultValue: "React.useId",
-    },
-    {
-      name: "controlId",
-      type: "string",
-      defaultValue: "React.useId",
+      name: "getSheetId",
+      type: "(type: 'trigger' | 'content' | 'inner-control') => string",
     },
     {
       name: "open",
@@ -43,11 +36,11 @@ export function HookComponent() {
     },
     {
       name: "toggle",
-      type: "(): => void",
+      type: "() => void",
     },
     {
       name: "setOpen",
-      type: "(state: boolean): => void",
+      type: "(state: boolean) => void",
     },
   ],
 };

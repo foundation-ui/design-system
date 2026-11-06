@@ -30,6 +30,10 @@ export function HookComponent() {
       type: "string[]",
       required: true,
     },
+    {
+      name: "options",
+      type: "{ silent?: boolean }",
+    },
   ],
   returns: [
     {
@@ -39,8 +43,8 @@ export function HookComponent() {
   ],
   types: `interface IEventPayload {
   type: string;
-  occured_at: string;
-  occured_at_epoch: number;
+  occurred_at: string;
+  occurred_at_epoch: number;
   dimension: { width: number; height: number };
   position: {
     x: number;

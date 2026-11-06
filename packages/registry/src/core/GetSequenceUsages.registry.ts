@@ -19,7 +19,7 @@ getSequenceUsages(null, { label: "median", score: 2 });
 getSequenceUsages("F"); // → ["backdrop", "transparent"]
 getSequenceUsages("AAA"); // → ["icons", "animations", "layout"]`,
   properties: [
-    { name: "contrastScore", type: "any | null" },
+    { name: "contrastScore", type: "any | null", required: true },
     { name: "stackOrder", type: "IStackOrder" },
   ],
   returnProperties: [{ name: "usages", type: "string[]" }],

@@ -21,5 +21,5 @@ RGBToHSL(0, 255, 0); // → [120, 100, 50]`,
     { name: "b", type: "number", required: true },
   ],
   returnProperties: [{ name: "hsl", type: "number[]" }],
-  types: `type THsl = [number, number, number];`,
+  types: `type THsl = number[];`,
 };

@@ -31,11 +31,20 @@ export function HookComponent() {
       defaultValue: "false",
     },
     {
+      name: "indeterminate",
+      type: "boolean",
+      defaultValue: "false",
+    },
+    {
       name: "toggleChecked",
-      type: "(): => void",
+      type: "() => void",
     },
     {
       name: "applyChecked",
+      type: "(state: boolean) => void",
+    },
+    {
+      name: "applyIndeterminate",
       type: "(state: boolean) => void",
     },
   ],

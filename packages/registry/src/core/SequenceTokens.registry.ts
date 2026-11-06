@@ -65,10 +65,14 @@ const sequenceTokens = generateSequenceTokens(name, base, units, steps, decimal)
     },
     {
       name: "values",
-      type: "ISequenceProperties[] | []",
+      type: "ISequenceVariation[] | []",
     },
   ],
-  types: `interface IStackOrder {
+  types: `interface IContrastScore {
+  light: string;
+  dark: string;
+}
+interface IStackOrder {
   label: string;
   score: number;
 }

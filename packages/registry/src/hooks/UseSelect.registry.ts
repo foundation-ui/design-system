@@ -50,7 +50,7 @@ export function HookComponent() {
     },
     {
       name: "toggleOpen",
-      type: "(): => boolean | void",
+      type: "() => void",
     },
     {
       name: "setOpen",

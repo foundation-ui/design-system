@@ -11,17 +11,30 @@ export const ApplyColorLuminanceMeta: GeneratorRegistryMetadata = {
   description:
     "Lightens or darkens a hex color by applying a luminance factor per RGB channel. Returns undefined for hex strings shorter than 6 characters.",
   module: "@usefui/core",
-  code: `import { applyColorLuminance } from "@usefui/core";
+  code: `import { applyColorLuminance, LuminanceFactorsEnum } from "@usefui/core";
 
 const brighter = applyColorLuminance("#6f2a2a", 0.5);
 // → "#a73f3f"
 
-const darker = applyColorLuminance("#6f2a2a", -0.5);`,
+const darker = applyColorLuminance("#6f2a2a", LuminanceFactorsEnum.Lum50);`,
   properties: [
     { name: "hex", type: "string", required: true },
-    { name: "luminance", type: "number | undefined", required: true },
+    { name: "luminance", type: "LuminanceFactorsEnum | undefined", required: true },
   ],
-  returnProperties: [{ name: "hex", type: "string" }],
-  types: `type THex = string;
+  returnProperties: [{ name: "hex", type: "string | undefined" }],
+  types: `enum LuminanceFactorsEnum {
+  Lum0 = 0,
+  Lum10 = 0.1,
+  Lum20 = 0.2,
+  Lum30 = 0.3,
+  Lum40 = 0.4,
+  Lum50 = 0.5,
+  Lum60 = 0.6,
+  Lum70 = 0.7,
+  Lum80 = 0.8,
+  Lum90 = 0.9,
+  Lum100 = 1,
+}
+type THex = string;
 type TLuminance = LuminanceFactorsEnum | undefined;`,
 };

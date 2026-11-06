@@ -6,12 +6,15 @@ export const TokensMeta: DocsGuideRegistryMetadata = {
   title: "Design Tokens",
   description: "Setup and use @usefui/tokens in your project.",
   module: "@usefui/tokens",
-  code: `import { js_design_tokens } from "@usefui/tokens";
+  code: `import React from "react";
+import { ColorModeProvider, js_design_tokens } from "@usefui/tokens";
 
 import {
   generateAlpha,
   generateCSSVariables,
 } from "@usefui/core";
+
+const { design_tokens } = js_design_tokens;
 
 const cssVariables = generateCSSVariables({
   name: js_design_tokens.name,

@@ -37,8 +37,8 @@ generateTokensFromTemplate({
     units?: number;
     steps?: number;
     decimal?: boolean;
-    variant?: "fontsize" | "measurement";
     variations?: { alpha?: boolean; shade?: boolean; tint?: boolean };
   }>;
+  data?: any[];
 }`,
 };

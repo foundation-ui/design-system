@@ -22,5 +22,5 @@ HEXToRGB("#cc0000", true); // → [204, 0, 0]`,
   returnProperties: [
     { name: "rgb", type: "string | [number, number, number]" },
   ],
-  types: `type TRgb = [number, number, number];`,
+  types: `type TRgb = number[];`,
 };

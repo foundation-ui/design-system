@@ -29,7 +29,7 @@ const colorToken = generateColorTokens(name, hex, variants);`,
       required: true,
     },
     {
-      name: "variants",
+      name: "variations",
       type: "{ alpha?: boolean; tint?: boolean; shade?: boolean; }",
       required: true,
     },

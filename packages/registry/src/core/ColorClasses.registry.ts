@@ -12,8 +12,8 @@ export const ColorClassesMeta: GeneratorRegistryMetadata = {
 const cssColorClasses = generateColorClasses(design_tokens.color);`,
   properties: [
     {
-      name: "colors",
-      type: "{ type: string; values: Color[]; }",
+      name: "color",
+      type: "Color[]",
       required: true,
     },
   ],

@@ -15,7 +15,12 @@ export function HookComponent() {
 
     return <div>Time before first interaction: {time_before_interact}s</div>;
 }`,
-  arguments: [],
+  arguments: [
+    {
+      name: "options",
+      type: "{ silent?: boolean }",
+    },
+  ],
   returns: [
     {
       name: "time_before_interact",

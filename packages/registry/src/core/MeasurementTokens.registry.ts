@@ -62,7 +62,7 @@ const msTokens = generateMeasurementTokens(name, base, units, ratio);`,
       type: "{ pt: number; px: number; rem: number; }[]",
     },
   ],
-  types: `type TScaleVariant = "fontsize" | "measurement";
+  types: `type TMeasureVariant = "fontsize" | "measurement";
 
 interface IScaleVariation {
   px: number;
@@ -72,7 +72,7 @@ interface IScaleVariation {
 interface IScaleProperties {
   units: number;
   ratio: number;
-  variant?: TScaleVariant;
+  variant?: TMeasureVariant;
   values: IScaleVariation[] | [];
 }`,
 };

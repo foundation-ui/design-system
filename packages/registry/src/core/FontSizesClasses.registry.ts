@@ -14,13 +14,8 @@ const { design_tokens } = js_design_tokens;
 const cssFSClasses = generateFontSizesClasses(design_tokens.fontsize);`,
   properties: [
     {
-      name: "name",
-      type: "string",
-      required: true,
-    },
-    {
-      name: "values",
-      type: "{ px: number; rem: number; pt: number; }[] | []",
+      name: "fs",
+      type: "Size[]",
       required: true,
     },
   ],
@@ -30,7 +25,19 @@ const cssFSClasses = generateFontSizesClasses(design_tokens.fontsize);`,
       type: "string",
     },
   ],
-  types: "",
+  types: `interface IScaleVariation {
+  px: number;
+  rem: number;
+  pt: number;
+}
+interface Size {
+  name: string;
+  values: IScaleVariation[];
+  units?: number;
+  ratio?: number;
+  variant?: TScaleVariant;
+}
+type TScaleVariant = "fontsize" | "measurement";`,
   css: `.fs-small-10 {
   font-size: 6.779999999999999px;
 }

@@ -18,6 +18,8 @@ import {
   generateSizeClasses,
 } from "@usefui/core";
 
+const { design_tokens } = js_design_tokens;
+
 const cssLayoutClasses = generateLayoutClasses();
 const cssWidthHeightClasses = generateDimensionClasses();
 const cssSizeClasses = generateSizeClasses(design_tokens.measurement);

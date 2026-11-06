@@ -25,7 +25,17 @@ const cssOpacityClasses = generateOpacityClasses(design_tokens.opacity);`,
       type: "string",
     },
   ],
-  types: `interface ISequenceVariation {
+  types: `interface IContrastScore {
+  light: string;
+  dark: string;
+}
+
+interface IStackOrder {
+  index: number;
+  order: number;
+}
+
+interface ISequenceVariation {
   value: number;
   usage: string[];
   contrast_score?: IContrastScore;

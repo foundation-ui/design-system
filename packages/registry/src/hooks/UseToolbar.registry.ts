@@ -12,7 +12,9 @@ export const UseToolbarMeta: HookRegistryMetadata = {
 
 export function HookComponent() {
     const toolbar = useToolbar();
-    const { id, state, open, toggle, isMobile } = toolbar;
+    const { id, states, methods } = toolbar;
+    const { state, open, isMobile, expanded } = states;
+    const { toggle, setOpen, setOpenMobile, setExpanded, configure } = methods;
 
     return ( {/** Your code here **/} );
 }`,
@@ -50,6 +52,18 @@ export function HookComponent() {
     {
       name: "setOpenMobile",
       type: "(open: boolean) => void",
+    },
+    {
+      name: "expanded",
+      type: "boolean",
+    },
+    {
+      name: "setExpanded",
+      type: "(open: boolean) => void",
+    },
+    {
+      name: "configure",
+      type: "(config: IToolbarMobileConfig) => void",
     },
   ],
 };

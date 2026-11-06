@@ -9,7 +9,7 @@ export const LuminanceAmountFormatterMeta: GeneratorRegistryMetadata = {
   name: "luminanceAmountFormatter",
   title: "Luminance Amount Formatter",
   description:
-    "Computes the next normalized luminance step (0.1 .. 1) from the length of an accumulating variations array, saturating at 1.",
+    "Computes the next normalized luminance step (0.1 .. 1) from the length of an accumulating variations array. Returns 1 only when the array length is exactly 9; longer arrays continue past 1.",
   module: "@usefui/core",
   code: `import { luminanceAmountFormatter } from "@usefui/core";
 
