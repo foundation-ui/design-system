@@ -7,8 +7,8 @@ export const UsePerformanceMetricsMeta: HookRegistryMetadata = {
   description:
     "Collects JS heap usage and first resource network latency from the browser performance APIs.",
   component: "PerformanceMetrics",
-  module: "@usefui/analytics",
-  code: `import { usePerformanceMetrics } from "@usefui/analytics";
+  module: "@usefui/hooks",
+  code: `import { usePerformanceMetrics } from "@usefui/hooks";
 
 export function HookComponent() {
     const { metrics } = usePerformanceMetrics();

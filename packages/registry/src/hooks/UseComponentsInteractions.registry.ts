@@ -7,8 +7,8 @@ export const UseComponentsInteractionsMeta: HookRegistryMetadata = {
   description:
     "Tracks user interactions (click, dblclick, mouseover, focusin, focusout, touchstart, touchend) on elements matching the given IDs.",
   component: "ComponentsInteractions",
-  module: "@usefui/analytics",
-  code: `import { useComponentsInteractions } from "@usefui/analytics";
+  module: "@usefui/hooks",
+  code: `import { useComponentsInteractions } from "@usefui/hooks";
 
 export function HookComponent() {
     const { interactions } = useComponentsInteractions(["btn-primary"]);

@@ -17,7 +17,7 @@ import {
 } from "@usefui/core";
 
 import { createGlobalStyle } from "styled-components";
-import { ResetStyles, TypographyRoot } from "@usefui/styles";
+import { ResetGlobalStyles, TypographyGlobalStyles } from "@usefui/components";
 
 const { design_tokens } = js_design_tokens;
 
@@ -67,8 +67,8 @@ export function ClientProvider({
 }>) {
   return (
     <ColorModeProvider>
-      <ResetStyles />
-      <TypographyRoot />
+      <ResetGlobalStyles />
+      <TypographyGlobalStyles />
       <CSSRoot />
 
       {children}
@@ -96,7 +96,7 @@ export const ClientProviderMeta: ProviderRegistryMetadata = {
       kind: "note",
       title: "How it works",
       description:
-        "ClientProvider wraps children in ColorModeProvider and injects ResetStyles, TypographyRoot, and a CSSRoot global style that emits the CSS variables and utility classes generated from the js_design_tokens library. CSSRoot must be defined in your app: @usefui/styles only exports ResetStyles and TypographyRoot.",
+        "ClientProvider wraps children in ColorModeProvider and injects ResetGlobalStyles, TypographyGlobalStyles, and a CSSRoot global style that emits the CSS variables and utility classes generated from the js_design_tokens library. CSSRoot must be defined in your app: @usefui/components only exports ResetGlobalStyles and TypographyGlobalStyles.",
     },
   ],
 };

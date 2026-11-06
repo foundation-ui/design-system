@@ -20,7 +20,6 @@
   ],
   "dependencies": {
     "@chambellan/contracts": "0.0.2",
-    "@usefui/analytics": "^1.1.0",
     "@usefui/components": "^1.7.10",
     "@usefui/core": "^1.4.0",
     "@usefui/hooks": "^1.4.0",

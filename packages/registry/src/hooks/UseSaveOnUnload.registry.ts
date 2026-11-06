@@ -7,8 +7,8 @@ export const UseSaveOnUnloadMeta: HookRegistryMetadata = {
   description:
     "Sends a payload to an endpoint when the page unloads, using navigator.sendBeacon with an XHR fallback.",
   component: "SaveOnUnload",
-  module: "@usefui/analytics",
-  code: `import { useSaveOnUnload } from "@usefui/analytics";
+  module: "@usefui/hooks",
+  code: `import { useSaveOnUnload } from "@usefui/hooks";
 
 export function HookComponent() {
     useSaveOnUnload({

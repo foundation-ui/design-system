@@ -7,8 +7,8 @@ export const UseTimeBeforeInteractionMeta: HookRegistryMetadata = {
   description:
     "Measures the seconds elapsed between page load and the first click, keydown, or touchstart interaction.",
   component: "TimeBeforeInteraction",
-  module: "@usefui/analytics",
-  code: `import { useTimeBeforeInteraction } from "@usefui/analytics";
+  module: "@usefui/hooks",
+  code: `import { useTimeBeforeInteraction } from "@usefui/hooks";
 
 export function HookComponent() {
     const { time_before_interact } = useTimeBeforeInteraction();

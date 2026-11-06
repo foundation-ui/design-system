@@ -7,8 +7,8 @@ export const UseAppPropertiesMeta: HookRegistryMetadata = {
   description:
     "Loads or seeds application properties (feature flags, translations, misc) from IndexedDB.",
   component: "AppProperties",
-  module: "@usefui/analytics",
-  code: `import { useAppProperties } from "@usefui/analytics";
+  module: "@usefui/hooks",
+  code: `import { useAppProperties } from "@usefui/hooks";
 
 export function HookComponent() {
     const props = useAppProperties({

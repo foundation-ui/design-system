@@ -7,8 +7,8 @@ export const UseBehaviorAnalyticsMeta: HookRegistryMetadata = {
   description:
     "Composes performance, time-to-interaction, and component interaction hooks into a single user behavior snapshot.",
   component: "BehaviorAnalytics",
-  module: "@usefui/analytics",
-  code: `import { useBehaviorAnalytics } from "@usefui/analytics";
+  module: "@usefui/hooks",
+  code: `import { useBehaviorAnalytics } from "@usefui/hooks";
 
 export function HookComponent() {
     const data = useBehaviorAnalytics({

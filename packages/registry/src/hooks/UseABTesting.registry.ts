@@ -7,8 +7,8 @@ export const UseABTestingMeta: HookRegistryMetadata = {
   description:
     "Picks a random A/B version at load and exposes the selected variation, with an option to force a version.",
   component: "ABTesting",
-  module: "@usefui/analytics",
-  code: `import { useABTesting } from "@usefui/analytics";
+  module: "@usefui/hooks",
+  code: `import { useABTesting } from "@usefui/hooks";
 
 const config = {
     silent: false,

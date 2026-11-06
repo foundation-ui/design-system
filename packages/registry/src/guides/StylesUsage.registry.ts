@@ -5,11 +5,11 @@ export const StylesUsageMeta: DocsGuideRegistryMetadata = {
   name: "styles",
   title: "Styles",
   description:
-    "Global style components shipped by @usefui/styles: ResetStyles (CSS reset) and TypographyRoot (base font and heading styles). CSSRoot is no longer shipped — build it in your app from @usefui/core generators to inject the design tokens as CSS variables and utility classes.",
+    "Global style components shipped by @usefui/components: ResetGlobalStyles (CSS reset) and TypographyRoot (base font and heading styles).",
   module: "@usefui/styles",
   code: `import { createGlobalStyle } from "styled-components";
 import { ColorModeProvider, js_design_tokens } from "@usefui/tokens";
-import { ResetStyles, TypographyRoot } from "@usefui/styles";
+import { ResetGlobalStyles, TypographyGlobalStyles } from "@usefui/components";
 import {
   generateCSSVariables,
   generateColorClasses,
@@ -50,8 +50,8 @@ const CSSRoot = createGlobalStyle\`
 function App() {
   return (
     <ColorModeProvider>
-      <ResetStyles />
-      <TypographyRoot />
+      <ResetGlobalStyles />
+      <TypographyGlobalStyles />
       <CSSRoot />
       { /** Your app here **/ }
     </ColorModeProvider>

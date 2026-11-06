@@ -7,8 +7,8 @@ export const UseIndexedDBMeta: HookRegistryMetadata = {
   description:
     "Opens an IndexedDB database and exposes get, set, and flush helpers for its object stores.",
   component: "IndexedDB",
-  module: "@usefui/analytics",
-  code: `import { useIndexedDB } from "@usefui/analytics";
+  module: "@usefui/hooks",
+  code: `import { useIndexedDB } from "@usefui/hooks";
 
 const config = { name: "app-db", stores: ["props"], version: 1 };
 

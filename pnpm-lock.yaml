@@ -93,9 +93,6 @@ importers:
 
   apps/storybook:
     dependencies:
-      '@usefui/analytics':
-        specifier: workspace:*
-        version: link:../../packages/analytics
       '@usefui/components':
         specifier: workspace:*
         version: link:../../packages/components
@@ -122,18 +119,6 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  packages/analytics:
-    devDependencies:
-      '@types/react':
-        specifier: ^19.2.14
-        version: 19.2.14
-      react:
-        specifier: ^19.2.4
-        version: 19.2.4
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
-
   packages/components:
     devDependencies:
       '@types/react':
@@ -145,9 +130,6 @@ importers:
       '@types/styled-components':
         specifier: ^5.1.36
         version: 5.1.36
-      '@usefui/analytics':
-        specifier: workspace:^
-        version: link:../analytics
       '@usefui/core':
         specifier: workspace:^
         version: link:../core
@@ -244,9 +226,6 @@ importers:
       '@chambellan/contracts':
         specifier: 0.0.2
         version: 0.0.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))
-      '@usefui/analytics':
-        specifier: ^1.1.0
-        version: 1.1.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@usefui/components':
         specifier: ^1.7.10
         version: 1.7.10(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))
@@ -271,27 +250,6 @@ importers:
         version: 24.19.0
       typescript:
         specifier: ^5.9.2
-        version: 5.9.3
-
-  packages/styles:
-    devDependencies:
-      '@types/styled-components':
-        specifier: ^5.1.36
-        version: 5.1.36
-      '@usefui/core':
-        specifier: workspace:^
-        version: link:../core
-      '@usefui/tokens':
-        specifier: workspace:^
-        version: link:../tokens
-      polished:
-        specifier: ^4.3.1
-        version: 4.3.1
-      styled-components:
-        specifier: ^5.3.11
-        version: 5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4)
-      typescript:
-        specifier: ^5.9.3
         version: 5.9.3
 
   packages/tokens:
@@ -1790,14 +1748,6 @@ packages:
   '@types/yargs@17.0.35':
     resolution: {integrity: sha512-qUHkeCyQFxMXg79wQfTtfndEC+N9ZZg76HJftDJp+qH2tV7Gj4OJi7l+PiWwJ+pWtW8GwSmqsDj/oymhrTWXjg==}
 
-  '@usefui/analytics@1.1.0':
-    resolution: {integrity: sha512-tOEIICOSOHHScnUd6Te8NSyV+VV81G4pYvW6iexrn5ZHTN5MMlO+FCrLvDjfh+3E2oEQxB1NGhiNT3EH3JA4Nw==}
-    peerDependencies:
-      '@types/react': '>=16.8'
-      '@types/react-dom': '>=16.8'
-      react: '>=16.8'
-      react-dom: '>=16.8'
-
   '@usefui/components@1.7.10':
     resolution: {integrity: sha512-L2k/qrAg9X7hcmdB0ivuEPmGP1IOVCbWFVoFVuekNA3ZFYPLshrl9yrIBNjoQH9dqANO+znmnfkap/7vlovSHQ==}
     peerDependencies:
@@ -3079,10 +3029,6 @@ packages:
 
   pkg-types@1.3.1:
     resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
-
-  polished@4.3.1:
-    resolution: {integrity: sha512-OBatVyC/N7SCW/FaDHrSd+vn0o5cS855TOmYi4OkdWUMSJCET/xip//ch8xGUvtr3i44X9LVyWwQlRMTN3pwSA==}
-    engines: {node: '>=10'}
 
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
@@ -5367,13 +5313,6 @@ snapshots:
     dependencies:
       '@types/yargs-parser': 21.0.3
 
-  '@usefui/analytics@1.1.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
-    dependencies:
-      '@types/react': 19.2.14
-      '@types/react-dom': 19.2.3(@types/react@19.2.14)
-      react: 19.2.4
-      react-dom: 19.2.4(react@19.2.4)
-
   '@usefui/components@1.7.10(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))':
     dependencies:
       '@types/react': 19.2.14
@@ -6763,10 +6702,6 @@ snapshots:
       confbox: 0.1.8
       mlly: 1.8.1
       pathe: 2.0.3
-
-  polished@4.3.1:
-    dependencies:
-      '@babel/runtime': 7.29.2
 
   possible-typed-array-names@1.1.0: {}
 
