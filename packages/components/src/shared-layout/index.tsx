@@ -140,6 +140,23 @@ const SharedLayoutItem = (
     );
   }
 
+  // Keep the pill in sync when the item resizes while it is the active one
+  // (accordion toggles, async content, font loading, window resize...).
+  React.useEffect(() => {
+    const element = ref.current;
+    if (!element || typeof ResizeObserver === "undefined") return;
+
+    const observer = new ResizeObserver(() => {
+      const isActive =
+        element.matches(":hover") || element.contains(document.activeElement);
+      if (isActive) methods.activate?.(element);
+    });
+
+    observer.observe(element);
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const handleMouseEnter = (event: React.MouseEvent<HTMLElement>) => {
     onMouseEnter?.(event);
     methods.setHovering?.(true);
@@ -147,8 +164,6 @@ const SharedLayoutItem = (
     if (ref.current) methods.activate?.(ref.current);
   };
 
-  // Focus bubbles in React, so any focusable element inside the item
-  // brings the highlight to it for keyboard users too.
   const handleFocus = (event: React.FocusEvent<HTMLElement>) => {
     onFocus?.(event);
     if (ref.current) methods.activate?.(ref.current);
