@@ -19,6 +19,11 @@ export const SharedLayoutMeta: ComponentRegistryMetadata = {
       defaultValue: "div",
     },
     {
+      name: "direction",
+      type: '"x" | "y"',
+      defaultValue: "y",
+    },
+    {
       name: "inset",
       type: "number",
       defaultValue: "16",

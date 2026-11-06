@@ -38,6 +38,7 @@ const SharedLayout = (props: ISharedLayoutProperties) => {
   const {
     raw,
     as = "div",
+    direction = "y",
     inset = 16,
     children,
     style,
@@ -48,12 +49,17 @@ const SharedLayout = (props: ISharedLayoutProperties) => {
   const { states, methods } = useSharedLayout();
 
   const { pill } = states;
-  const { applyAs } = methods;
+  const { applyAs, applyDirection } = methods;
 
   // Items read the container type from the provider to pick div or li.
   React.useLayoutEffect(() => {
     applyAs?.(as);
   }, [as, applyAs]);
+
+  // Keep the pill orientation in sync with the requested direction.
+  React.useLayoutEffect(() => {
+    applyDirection?.(direction);
+  }, [direction, applyDirection]);
 
   const handleMouseLeave = (event: React.MouseEvent<HTMLElement>) => {
     methods.setHovering?.(false);
@@ -78,6 +84,7 @@ const SharedLayout = (props: ISharedLayoutProperties) => {
       as={as}
       data-raw={Boolean(raw)}
       data-as={as}
+      data-direction={direction}
       style={
         {
           ...style,
@@ -90,12 +97,15 @@ const SharedLayout = (props: ISharedLayoutProperties) => {
     >
       <SharedLayoutPill
         aria-hidden="true"
+        data-direction={direction}
         data-visible={pill?.visible ?? false}
         data-moving={pill?.moving ?? false}
         style={
           {
             "--shared-layout-top": `${pill?.top ?? 0}px`,
             "--shared-layout-height": `${pill?.height ?? 0}px`,
+            "--shared-layout-left": `${pill?.left ?? 0}px`,
+            "--shared-layout-width": `${pill?.width ?? 0}px`,
           } as React.CSSProperties
         }
       />

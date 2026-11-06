@@ -65,3 +65,20 @@ export const CustomInset: Story = {
     </div>
   ),
 };
+export const Horizontal: Story = {
+  render: () => (
+    <SharedLayout.Root>
+      <SharedLayout
+        direction="x"
+        inset={6}
+        className="w-100 flex align-center justify-center flex-row"
+      >
+        {ITEMS.map((item) => (
+          <SharedLayout.Item key={item.title}>
+            <p className="fs-medium-20 p-x-medium-30">{item.title}</p>
+          </SharedLayout.Item>
+        ))}
+      </SharedLayout>
+    </SharedLayout.Root>
+  ),
+};
