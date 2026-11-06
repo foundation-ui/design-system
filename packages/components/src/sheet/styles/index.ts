@@ -1,30 +1,40 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+import { InsetShadowCSSVariable } from "../../";
+
+const SlideRight = keyframes`
+  0% {
+    transform: translateX(calc(var(--measurement-large-90) * 2));
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+const SlideLeft = keyframes`
+  0% {
+    transform: translateX(calc(var(--measurement-large-90) * -2));
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
 
 const SheetStyles = css`
   all: unset;
-  position: fixed;
-  background-color: var(--body-color);
-  border: var(--measurement-small-10) solid transparent;
-  padding: var(--measurement-medium-60);
-  height: 100%;
-  z-index: var(--depth-default-100);
 
-  @keyframes slide-right {
-    0% {
-      transform: translateX(calc(var(--measurement-large-90) * 2));
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  @keyframes slide-left {
-    0% {
-      transform: translateX(calc(var(--measurement-large-90) * -2));
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
+  ${InsetShadowCSSVariable}
+
+  position: fixed;
+
+  background-color: var(--contrast-color);
+  box-shadow: var(--inset-shadow);
+
+  padding: var(--measurement-medium-30);
+  margin: var(--measurement-medium-30);
+
+  height: calc(100% - (var(--measurement-medium-30) * 4));
+  border-radius: var(--measurement-medium-60);
+
+  z-index: var(--depth-default-100);
 
   animation-delay: 0.2s;
   animation-duration: 0.2s;
@@ -49,14 +59,12 @@ const SheetSideStyles = css`
 
   &[data-side="right"] {
     right: 0;
-    border-left-color: var(--font-color-alpha-10);
-    animation-name: slide-right;
+    animation-name: ${SlideRight};
   }
 
   &[data-side="left"] {
     left: 0;
-    border-right-color: var(--font-color-alpha-10);
-    animation-name: slide-left;
+    animation-name: ${SlideLeft};
   }
 `;
 

@@ -17,23 +17,16 @@ import {
   IReactChildren,
   KeyBindingEnum,
 } from "../types";
+
 import type { IButtonProperties } from "../button/types";
+import type { IOverlayProperties } from "../overlay/types";
 import type { ISheetProperties } from "./types";
 
 export interface ISheetComposition {
   Root: typeof SheetRoot;
   Trigger: typeof SheetTrigger;
+  Overlay: typeof SheetOverlay;
 }
-
-/**
- * SheetRoot component.
- *
- * @returns {ReactElement} The SheetRoot component.
- */
-const SheetRoot = ({ children }: IReactChildren) => {
-  return <SheetProvider>{children}</SheetProvider>;
-};
-SheetRoot.displayName = "Sheet.Root";
 
 /**
  * Sheets are component that provides additional information in a top layer.
@@ -54,7 +47,6 @@ SheetRoot.displayName = "Sheet.Root";
  * @param {ComponentSideEnum} props.side - The side of the sheet.
  * @param {boolean} props.open - Whether the sheet should be open by default.
  * @param {boolean} props.lock - Whether the sheet blocks the scroll once opened. True by default.
- * @param {boolean} props.overlay - Whether the sheet has an overlay between the page and the sheet itself.
  * @param {boolean} props.closeOnInteract - Whether the over should be closed if interacted with.
  * @param {ReactNode} props.children - The content to be rendered inside the sheet.
  * @returns {ReactElement} The Sheet component.
@@ -65,7 +57,6 @@ const Sheet = (props: ISheetProperties) => {
     sizing = ComponentSizeEnum.Medium,
     side = ComponentSideEnum.Right,
     lock = true,
-    overlay = true,
     closeOnInteract = true,
     open,
     shortcut,
@@ -92,41 +83,63 @@ const Sheet = (props: ISheetProperties) => {
   return (
     <React.Fragment>
       {states.open && (
-        <React.Fragment>
-          <SheetWrapper
-            role="dialog"
-            tabIndex={-1}
-            id={String(id)}
-            aria-label={props["aria-label"] ?? `${id}-sheet`}
-            aria-labelledby={String(id)}
-            open={Boolean(states.open)}
-            data-expanded={Boolean(states.open)}
-            data-state={applyDataState(Boolean(states.open))}
-            data-size={sizing}
-            data-side={side}
-            data-raw={Boolean(raw)}
-            {...restProps}
-          >
-            {children}
-          </SheetWrapper>
-          {overlay && (
-            <Overlay
-              onClick={() => toggle()}
-              visible={Boolean(states.open)}
-              closeOnInteract={closeOnInteract}
-              aria-label={
-                props["aria-label"]
-                  ? `${props["aria-label"]}-overlay`
-                  : `${id}-sheet-overlay`
-              }
-            />
-          )}
-        </React.Fragment>
+        <SheetWrapper
+          role="dialog"
+          tabIndex={-1}
+          id={String(id)}
+          aria-label={props["aria-label"] ?? `${id}-sheet`}
+          aria-labelledby={String(id)}
+          open={Boolean(states.open)}
+          data-expanded={Boolean(states.open)}
+          data-state={applyDataState(Boolean(states.open))}
+          data-size={sizing}
+          data-side={side}
+          data-raw={Boolean(raw)}
+          {...restProps}
+        >
+          {children}
+        </SheetWrapper>
       )}
     </React.Fragment>
   );
 };
 Sheet.displayName = "Sheet";
+
+/**
+ * SheetRoot component.
+ *
+ * @returns {ReactElement} The SheetRoot component.
+ */
+const SheetRoot = ({ children }: IReactChildren) => {
+  return <SheetProvider>{children}</SheetProvider>;
+};
+SheetRoot.displayName = "Sheet.Root";
+
+/**
+ * SheetOverlay component.
+ *
+ * @returns {ReactElement} The SheetOverlay component.
+ */
+const SheetOverlay = (props: IOverlayProperties) => {
+  const { closeOnInteract = false, onClick, ...restProps } = props;
+  const { states, methods } = useSheet();
+  const { toggle } = methods;
+
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (closeOnInteract && toggle) toggle();
+    if (onClick) onClick(event);
+  };
+
+  return (
+    <Overlay
+      visible={Boolean(states.open)}
+      closeOnInteract={closeOnInteract}
+      onClick={handleClick}
+      {...restProps}
+    />
+  );
+};
+SheetOverlay.displayName = "Sheet.Overlay";
 
 /**
  * Sheet.Trigger are used to triggers the expansion and collapse of the associated Sheet component.
@@ -177,5 +190,6 @@ SheetTrigger.displayName = "Sheet.Trigger";
 
 Sheet.Root = SheetRoot;
 Sheet.Trigger = SheetTrigger;
+Sheet.Overlay = SheetOverlay;
 
-export { Sheet, SheetRoot, SheetTrigger };
+export { Sheet, SheetRoot, SheetOverlay, SheetTrigger };

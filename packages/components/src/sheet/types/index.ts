@@ -32,7 +32,6 @@ export interface ISheetProperties
     React.ComponentProps<"dialog"> {
   side?: "left" | "right";
   lock?: boolean;
-  overlay?: boolean;
   closeOnInteract?: boolean;
   open?: boolean;
 }
