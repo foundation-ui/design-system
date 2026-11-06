@@ -11,6 +11,7 @@ import {
   ResponseStream,
   Shimmer,
   Skeleton,
+  Video,
   Viewport,
 } from "@usefui/components";
 
@@ -66,37 +67,36 @@ const MorphBoxContent = ({
         bindkey="shiftKey"
         direction={direction ?? "bottom-right-top-center"}
         sizing="medium"
-        className="flex flex-column justify-between h-100"
+        className="flex flex-column justify-between g-medium-60"
       >
-        <nav className="w-100 justify-between flex align-center g-medium-30">
-          <p className="fs-medium-10">Morphing Box Content</p>
+        <header className="flex flex-column h-100">
+          <nav className="w-100 justify-between flex align-center p-x-medium-30 g-medium-30">
+            <p className="fs-medium-20">Aspernatur modi</p>
 
-          <MorphingBox.Control
-            variant="mono"
-            sizing="small"
+            <MorphingBox.Control
+              variant="mono"
+              sizing="small"
+              shape="round"
+              sound="slide"
+            >
+              <span className=" m-y-medium-10 m-x-small-60">✕</span>
+            </MorphingBox.Control>
+          </nav>
+
+          <Video
+            src="https://d4db9723-ea43-4301-bf21-b7c323a1885d.mdnplay.dev/shared-assets/videos/flower.mp4"
+            label="Video priority"
+            priority
+            autoPlay
+            loop
             shape="round"
-            sound="slide"
-          >
-            <span className=" m-y-medium-10 m-x-small-60">✕</span>
-          </MorphingBox.Control>
-        </nav>
-        <div className="w-100 h-100 flex align-start justify-start">
-          <p className="fs-medium-10 p-y-medium-60 opacity-default-30">
-            <ResponseStream
-              autoScroll
-              charactersPerSecond={512}
-              content=" A streaming response arrives progressively, one character at a time, while the rest of the answer is still being generated. Once every character has been received, the response is marked as complete. A response has two distinct phases: content is still arriving, then the answer becomes available for action. The layout should remain stable across that boundary while rich content continues to render normally."
-            />
-          </p>
-        </div>
-        <nav className="w-100 justify-between flex align-center g-medium-30 p-medium-30">
-          <div className="flex align-center g-medium-30">
-            <Loader.Dither sizing="small" />
-            <Shimmer className="fs-medium-20">chambellan code:validate</Shimmer>
-          </div>
+          />
+        </header>
 
+        <footer className="w-100 justify-between flex align-center g-medium-30 p-x-medium-30">
+          <Shimmer className="fs-medium-20">Lorem Ipsum</Shimmer>
           <Pill sizing="small" shape="smooth" status="success" />
-        </nav>
+        </footer>
       </MorphingBox>
       <MorphingBox.Overlay closeOnInteract />
     </MorphingBox.Root>

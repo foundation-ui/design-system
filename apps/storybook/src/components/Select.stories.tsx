@@ -6,7 +6,15 @@ const meta = {
   title: "Components/Select",
   component: Select,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
+  decorators: [
+    (Story: any) => (
+      <Page className="p-medium-30">
+        <Page.Content className="flex align-center justify-center h-100 w-100 g-medium-30">
+          <Story />
+        </Page.Content>
+      </Page>
+    ),
+  ],
 } satisfies Meta<typeof Select>;
 export default meta;
 

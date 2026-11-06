@@ -42,21 +42,120 @@ export default meta;
 const go = (path: string) => () => console.log("navigate:", path);
 
 const TREE_LINKS: ITreeLink[] = [
-  { label: "Introduction", onClick: go("/docs/introduction") },
+  {
+    label: "Introduction",
+    onClick: go("/docs/introduction"),
+  },
   {
     label: "Getting Started",
+    icon: (
+      <Icon>
+        <Icon.ChevronDown />
+      </Icon>
+    ),
     links: [
-      { label: "Installation", onClick: go("/docs/start/installation") },
+      {
+        label: "Installation",
+        onClick: go("/docs/start/installation"),
+      },
       { label: "Theming", onClick: go("/docs/start/theming") },
     ],
   },
   {
     label: "Components",
+    icon: (
+      <Icon>
+        <Icon.ChevronDown />
+      </Icon>
+    ),
     links: [
       { label: "Button", onClick: go("/docs/components/button") },
       {
+        label: "Overlays",
+        icon: (
+          <Icon>
+            <Icon.ChevronDown />
+          </Icon>
+        ),
+        links: [
+          {
+            label: "Drawer",
+            icon: (
+              <Icon>
+                <Icon.ChevronDown />
+              </Icon>
+            ),
+            links: [
+              { label: "Overview", onClick: go("/docs/overlays/drawer") },
+              {
+                label: "API",
+                icon: (
+                  <Icon>
+                    <Icon.ChevronDown />
+                  </Icon>
+                ),
+                links: [
+                  {
+                    label: "Props",
+                    onClick: go("/docs/overlays/drawer/api/props"),
+                  },
+                  {
+                    label: "Events",
+                    onClick: go("/docs/overlays/drawer/api/events"),
+                  },
+                  {
+                    label: "Internals",
+                    defaultOpen: false,
+                    icon: (
+                      <Icon>
+                        <Icon.ChevronDown />
+                      </Icon>
+                    ),
+                    links: [
+                      {
+                        label: "Hooks",
+                        onClick: go("/docs/overlays/drawer/api/hooks"),
+                      },
+                      {
+                        label: "Animations",
+                        onClick: go("/docs/overlays/drawer/api/animations"),
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                label: "Recipes",
+                disabled: true,
+                onClick: go("/docs/overlays/drawer/recipes"),
+              },
+            ],
+          },
+          {
+            label: "MorphingBox",
+            icon: (
+              <Icon>
+                <Icon.ChevronDown />
+              </Icon>
+            ),
+            links: [
+              { label: "Overview", onClick: go("/docs/overlays/morphing-box") },
+              {
+                label: "Directions",
+                onClick: go("/docs/overlays/morphing-box/directions"),
+              },
+            ],
+          },
+        ],
+      },
+      {
         label: "Navigation",
         defaultOpen: false,
+        icon: (
+          <Icon>
+            <Icon.ChevronDown />
+          </Icon>
+        ),
         links: [
           { label: "Tree", onClick: go("/docs/navigation/tree") },
           { label: "Accordion", onClick: go("/docs/navigation/accordion") },
@@ -66,8 +165,6 @@ const TREE_LINKS: ITreeLink[] = [
   },
   { label: "Changelog", onClick: go("/docs/changelog"), disabled: true },
 ];
-
-const MENU = ["Playground", "Models", "Documentation"];
 
 type DemoProps = {
   root?: React.ComponentProps<typeof Toolbar.Root>;
@@ -112,40 +209,22 @@ const Demo = ({
           }`}
         >
           <Toolbar {...toolbar}>
-            {/* alwaysVisible: stays rendered while collapsed */}
-            <Toolbar.Section className="p-r-medium-30" alwaysVisible>
-              <Avatar sizing="small" src={gradient.base64} />
-            </Toolbar.Section>
-
             <Toolbar.Content>
               <Page.Wrapper $navigations={1.3}>
                 <ScrollArea scrollbar className="flex flex-column">
                   {children ?? (
                     <React.Fragment>
-                      <Toolbar.Section className="p-r-medium-30">
-                        <SharedLayout.Root>
-                          <SharedLayout inset={0}>
-                            {MENU.map((item) => (
-                              <SharedLayout.Item
-                                key={item}
-                                className="p-l-medium-10 p-y-medium-10"
-                              >
-                                <Toolbar.Item className="fs-medium-20">
-                                  {item}
-                                </Toolbar.Item>
-                              </SharedLayout.Item>
-                            ))}
-                          </SharedLayout>
-                        </SharedLayout.Root>
-                        <Divider />
-                      </Toolbar.Section>
-
                       {withTree && (
-                        <Toolbar.Section className="p-r-medium-30">
+                        <Toolbar.Section className="p-t-medium-30 p-r-medium-30">
                           <Tree
                             label="Tree"
                             sizing="medium"
                             links={TREE_LINKS}
+                            icon={
+                              <Icon opacity={0.1}>
+                                <Icon.GitMerge />
+                              </Icon>
+                            }
                           />
                         </Toolbar.Section>
                       )}
@@ -154,6 +233,16 @@ const Demo = ({
                 </ScrollArea>
               </Page.Wrapper>
             </Toolbar.Content>
+
+            {/* alwaysVisible: stays rendered while collapsed */}
+            <Toolbar.Section className="p-r-medium-30" alwaysVisible>
+              <Avatar
+                sizing="small"
+                shape="round"
+                src={gradient.base64}
+                status="online"
+              />
+            </Toolbar.Section>
           </Toolbar>
 
           <Page.Content className="h-100 w-100 p-medium-30 flex justify-between">
@@ -162,6 +251,7 @@ const Demo = ({
               variant="mono"
               sizing="small"
               shape="round"
+              animation="wiggle"
             >
               <Icon className="m-y-small-80">
                 <Icon.LayoutLeft />
@@ -197,7 +287,7 @@ export const Sizes = {
         root={{ defaultOpen: true }}
         toolbar={{ sizing }}
         aside={
-          <div className="flex flex-column g-medium-10">
+          <div className="flex w-100 align-center justify-center g-medium-10">
             {[
               ComponentSizeEnum.Small,
               ComponentSizeEnum.Medium,
@@ -205,7 +295,7 @@ export const Sizes = {
             ].map((s) => (
               <Button
                 key={s}
-                variant={s === sizing ? "mono" : "secondary"}
+                variant={s === sizing ? "primary" : "secondary"}
                 sizing="small"
                 onClick={() => setSizing(s)}
               >

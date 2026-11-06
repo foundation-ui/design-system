@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Overlay, Button } from "@usefui/components";
+import { Overlay, Button, Page } from "@usefui/components";
+import { useColorMode } from "@usefui/tokens";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.
 
@@ -19,10 +20,20 @@ const meta = {
   title: "Components/Overlay",
   component: Overlay,
   tags: ["autodocs"],
+  decorators: [
+    (Story: any) => (
+      <Page className="p-medium-30">
+        <Page.Content className="flex align-center justify-center h-100 w-100 g-medium-30">
+          <Story />
+        </Page.Content>
+      </Page>
+    ),
+  ],
 } satisfies Meta<typeof Overlay>;
 export default meta;
 
 type Story = StoryObj<typeof meta>;
+
 export const Default: Story = {
   args: {
     raw: false,
@@ -53,7 +64,31 @@ export const CloseOnInteraction: Story = {
     visible: true,
     closeOnInteract: true,
   },
-  render: ({ ...args }) => (
-    <Overlay visible={args.visible} closeOnInteract={args.closeOnInteract} />
-  ),
+  render: ({ ...args }) => {
+    return (
+      <Overlay visible={args.visible} closeOnInteract={args.closeOnInteract} />
+    );
+  },
+};
+export const WithCanvas: Story = {
+  render: ({ ...args }) => {
+    const [displayed, setDisplayed] = React.useState(args.visible);
+    const { colorMode } = useColorMode();
+
+    const particlesColor = colorMode === "light" ? "#00000010" : "#FFFFFF10";
+    return (
+      <React.Fragment>
+        <Button onClick={() => setDisplayed(true)}>Show</Button>
+        <Overlay
+          canvas
+          closeOnInteract
+          visible={displayed}
+          particlesColor={particlesColor}
+          background="noise"
+          variant="analysis"
+          onClick={() => setDisplayed(false)}
+        />
+      </React.Fragment>
+    );
+  },
 };
