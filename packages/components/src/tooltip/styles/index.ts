@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 const FadeIn = keyframes`
   0% {

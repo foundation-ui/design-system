@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 const OTPShapeStyles = css`
   &[data-shape="square"] {
     border-radius: 0;
   }
   &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-20);
+    border-radius: var(--measurement-medium-30);
   }
   &[data-shape="round"] {
     border-radius: var(--measurement-large-90);

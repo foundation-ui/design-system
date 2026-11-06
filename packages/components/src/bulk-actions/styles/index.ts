@@ -1,7 +1,7 @@
 "use client";
 
 import styled, { css, keyframes } from "styled-components";
-import { FETurbulenceCSSVariable, InsetShadowCSSVariable } from "../../global";
+import { FETurbulenceCSSVariable, InsetShadowCSSVariable } from "../../";
 
 const FadeIn = keyframes`
   0% {

@@ -1,7 +1,7 @@
 "use client";
 
 import styled, { css } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 const MarkVariantsStyles = css`
   &[data-variant="primary"] {

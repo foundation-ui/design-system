@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 const MorphIn = keyframes`
   from {
@@ -36,7 +36,7 @@ const MorphingBoxDefaultStyles = css`
   padding: var(--measurement-medium-30);
   width: 100%;
 
-  border-radius: var(--measurement-medium-30);
+  border-radius: var(--measurement-medium-60);
   background: var(--contrast-color);
   box-shadow: var(--inset-shadow);
 

@@ -6,7 +6,7 @@ import {
   FieldSizeStyles,
   FieldShapeStyles,
 } from "../../field/styles";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 export const Wrapper = styled.div`
   position: relative;

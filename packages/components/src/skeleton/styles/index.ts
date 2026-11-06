@@ -1,7 +1,7 @@
 "use client";
 
 import styled, { css, keyframes } from "styled-components";
-import { FETurbulenceCSSVariable } from "../../global";
+import { FETurbulenceCSSVariable } from "../../";
 
 const SkeletonBlink = keyframes`
     0% {
@@ -45,7 +45,7 @@ const SkeletonShapeStyles = css`
     border-radius: 0;
   }
   &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-20);
+    border-radius: var(--measurement-medium-30);
   }
   &[data-shape="round"] {
     border-radius: var(--measurement-large-90);

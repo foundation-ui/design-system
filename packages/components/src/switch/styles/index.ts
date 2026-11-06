@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 const SwitchDefaultStyles = css`
   all: unset;

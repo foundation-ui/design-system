@@ -1,18 +1,18 @@
 import styled, { css } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 const DialogDefaultStyles = css`
   ${InsetShadowCSSVariable}
 
   position: fixed;
-  top: 15vh;
-  top: 15dvh;
-  bottom: auto;
+  inset: 0;
+  margin: auto;
 
   padding: var(--measurement-medium-30);
   width: 100%;
+  height: fit-content;
 
-  border-radius: var(--measurement-medium-30);
+  border-radius: var(--measurement-medium-60);
   background: var(--contrast-color);
   box-shadow: var(--inset-shadow);
 
@@ -35,10 +35,8 @@ const DialogSizeStyles = css`
   }
 
   &[data-size="large"] {
-    top: var(--base-size);
     max-width: var(--computed-size);
     height: var(--computed-size);
-    padding: var(--measurement-medium-80);
   }
 `;
 

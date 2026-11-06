@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 export const FieldDefaultStyles = css`
   outline: none;
@@ -259,7 +259,7 @@ export const FieldShapeStyles = css`
     border-radius: 0;
   }
   &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-20);
+    border-radius: var(--measurement-medium-30);
   }
   &[data-shape="round"] {
     border-radius: var(--measurement-large-90);
@@ -392,7 +392,7 @@ export const InnerWrapper = styled.div<any>`
       border-radius: 0 var(--measurement-large-90) var(--measurement-large-90) 0;
     }
     &[data-shape="smooth"] {
-      border-radius: 0 var(--measurement-medium-20) var(--measurement-medium-20)
+      border-radius: 0 var(--measurement-medium-30) var(--measurement-medium-30)
         0;
     }
     &[data-shape="square"] {

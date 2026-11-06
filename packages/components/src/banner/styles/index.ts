@@ -14,7 +14,7 @@ const BannerShapeStyles = css`
     border-radius: 0;
   }
   &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-20);
+    border-radius: var(--measurement-medium-30);
   }
   &[data-shape="round"] {
     border-radius: var(--measurement-medium-90);

@@ -1,7 +1,7 @@
 "use client";
 
 import styled, { css } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 const EASE_OUT = "cubic-bezier(0.23, 1, 0.32, 1)";
 

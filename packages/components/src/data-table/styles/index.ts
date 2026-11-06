@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 const CellStyles = css`
   box-sizing: border-box;

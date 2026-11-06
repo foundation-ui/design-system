@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../css/GlobalCSSVariables";
 
 const AvatarSizesStyles = css`
   &[data-size="small"] {

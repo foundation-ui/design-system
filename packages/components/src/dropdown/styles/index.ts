@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { InsetShadowCSSVariable } from "../../global";
+import { InsetShadowCSSVariable } from "../../";
 
 const ContentWrapperSizes = css`
   --small: var(--measurement-large-60);
