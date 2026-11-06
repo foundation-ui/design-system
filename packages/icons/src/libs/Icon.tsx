@@ -11217,6 +11217,19 @@ export const Strikethrough = () => (
 );
 Strikethrough.displayName = "Icon.Strikethrough";
 
+export const Handle = () => (
+  <React.Fragment>
+    <circle cx="12" cy="9" r="1" />
+    <circle cx="19" cy="9" r="1" />
+    <circle cx="5" cy="9" r="1" />
+    <circle cx="12" cy="15" r="1" />
+    <circle cx="19" cy="15" r="1" />
+    <circle cx="5" cy="15" r="1" />
+  </React.Fragment>
+);
+Handle.displayName = "Icon.Handle";
+
+Icon.Handle = Handle;
 Icon.Strikethrough = Strikethrough;
 Icon.Underline = Underline;
 Icon.Italic = Italic;
