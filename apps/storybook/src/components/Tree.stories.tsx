@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Tree, Page } from "@usefui/components";
 import type { ITreeLink } from "@usefui/components";
+import { Icon } from "@usefui/icons";
 
 const meta = {
   title: "Components/Tree",
@@ -25,9 +26,17 @@ type Story = StoryObj<typeof meta>;
 const go = (path: string) => () => console.log("navigate:", path);
 
 const TREE_LINKS: ITreeLink[] = [
-  { label: "Introduction", onClick: go("/docs/introduction") },
+  {
+    label: "Introduction",
+    onClick: go("/docs/introduction"),
+  },
   {
     label: "Getting Started",
+    icon: (
+      <Icon>
+        <Icon.ChevronDown />
+      </Icon>
+    ),
     links: [
       {
         label: "Installation",
@@ -38,17 +47,37 @@ const TREE_LINKS: ITreeLink[] = [
   },
   {
     label: "Components",
+    icon: (
+      <Icon>
+        <Icon.ChevronDown />
+      </Icon>
+    ),
     links: [
       { label: "Button", onClick: go("/docs/components/button") },
       {
         label: "Overlays",
+        icon: (
+          <Icon>
+            <Icon.ChevronDown />
+          </Icon>
+        ),
         links: [
           {
             label: "Drawer",
+            icon: (
+              <Icon>
+                <Icon.ChevronDown />
+              </Icon>
+            ),
             links: [
               { label: "Overview", onClick: go("/docs/overlays/drawer") },
               {
                 label: "API",
+                icon: (
+                  <Icon>
+                    <Icon.ChevronDown />
+                  </Icon>
+                ),
                 links: [
                   {
                     label: "Props",
@@ -61,6 +90,11 @@ const TREE_LINKS: ITreeLink[] = [
                   {
                     label: "Internals",
                     defaultOpen: false,
+                    icon: (
+                      <Icon>
+                        <Icon.ChevronDown />
+                      </Icon>
+                    ),
                     links: [
                       {
                         label: "Hooks",
@@ -83,6 +117,11 @@ const TREE_LINKS: ITreeLink[] = [
           },
           {
             label: "MorphingBox",
+            icon: (
+              <Icon>
+                <Icon.ChevronDown />
+              </Icon>
+            ),
             links: [
               { label: "Overview", onClick: go("/docs/overlays/morphing-box") },
               {
@@ -96,7 +135,11 @@ const TREE_LINKS: ITreeLink[] = [
       {
         label: "Navigation",
         defaultOpen: false,
-
+        icon: (
+          <Icon>
+            <Icon.ChevronDown />
+          </Icon>
+        ),
         links: [
           { label: "Tree", onClick: go("/docs/navigation/tree") },
           { label: "Accordion", onClick: go("/docs/navigation/accordion") },
@@ -108,11 +151,44 @@ const TREE_LINKS: ITreeLink[] = [
 ];
 
 export const Small: Story = {
-  render: () => <Tree label="Tree" sizing="small" links={TREE_LINKS} />,
+  render: () => (
+    <Tree
+      label="Tree"
+      sizing="small"
+      links={TREE_LINKS}
+      icon={
+        <Icon>
+          <Icon.GitMerge />
+        </Icon>
+      }
+    />
+  ),
 };
 export const Medium: Story = {
-  render: () => <Tree label="Tree" sizing="medium" links={TREE_LINKS} />,
+  render: () => (
+    <Tree
+      label="Tree"
+      sizing="medium"
+      links={TREE_LINKS}
+      icon={
+        <Icon opacity={0.1}>
+          <Icon.GitMerge />
+        </Icon>
+      }
+    />
+  ),
 };
 export const Large: Story = {
-  render: () => <Tree label="Tree" sizing="large" links={TREE_LINKS} />,
+  render: () => (
+    <Tree
+      label="Tree"
+      sizing="large"
+      links={TREE_LINKS}
+      icon={
+        <Icon opacity={0.1}>
+          <Icon.GitMerge />
+        </Icon>
+      }
+    />
+  ),
 };

@@ -24,23 +24,6 @@ const TreeSizeStyles = css`
     gap: var(--measurement-medium-60);
   }
 `;
-const TreeLineSizeStyles = css`
-  &[data-size="small"] {
-    &::before {
-      height: calc(100% - (var(--measurement-medium-60) * -0.6));
-    }
-  }
-  &[data-size="medium"] {
-    &::before {
-      height: calc(100% - (var(--measurement-medium-60) * -1));
-    }
-  }
-  &[data-size="large"] {
-    &::before {
-      height: calc(100% - (var(--measurement-medium-60) * -1.5));
-    }
-  }
-`;
 
 export const TreeList = styled.ul<any>`
   &[data-raw="false"] {
@@ -48,22 +31,10 @@ export const TreeList = styled.ul<any>`
     ${TreeSizeStyles}
   }
 
-  &::before {
-    content: "";
-    top: 0;
-    left: calc(var(--measurement-small-10) * -1);
-    position: absolute;
-    height: calc(100% - (var(--measurement-medium-60) * 0.9));
-    width: var(--measurement-small-10);
-    background: var(--font-color-alpha-10);
-  }
-
   /* Nested levels are indented and don't repeat the outer padding */
   &[data-nested="true"] {
     margin-left: var(--measurement-medium-60);
     padding-bottom: 0;
-
-    ${TreeLineSizeStyles}
   }
 `;
 export const TreeItem = styled.li<any>`
@@ -90,16 +61,13 @@ export const TreeLine = styled.span<any>`
   &[data-raw="false"] {
     display: block;
     flex-shrink: 0;
-
-    width: var(--measurement-medium-80);
-    height: var(--measurement-small-10);
-
-    background-color: var(--font-color-alpha-10);
   }
 `;
 export const TreeLink = styled(Button)<any>`
   &[data-raw="false"] {
-    line-height: 1.1 !important;
+    line-height: 1 !important;
+    background-color: none !important;
+    backdrop-filter: unset !important;
   }
   &[data-nested="true"] {
     padding-left: var(--measurement-medium-30) !important;

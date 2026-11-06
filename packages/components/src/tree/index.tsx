@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { Accordion } from "..";
+import { Accordion, SharedLayout } from "..";
 import {
   TreeList,
   TreeItem,
@@ -59,38 +59,50 @@ const TreeBranch = (props: ITreeBranchProperties) => {
               // Branch: recurse with the children as a new subtree
               if (item.links?.length) {
                 return (
-                  <TreeItem key={key} data-raw={Boolean(raw)} data-branch>
-                    <TreeBranch
-                      raw={raw}
-                      sizing={sizing}
-                      label={item.label}
-                      links={item.links}
-                      icon={item.icon}
-                      defaultOpen={item.defaultOpen}
-                      nested
-                    />
-                  </TreeItem>
+                  <SharedLayout.Root key={key}>
+                    <SharedLayout inset={0}>
+                      <SharedLayout.Item className="p-medium-10">
+                        <TreeItem data-raw={Boolean(raw)} data-branch>
+                          <TreeBranch
+                            raw={raw}
+                            sizing={sizing}
+                            label={item.label}
+                            links={item.links}
+                            icon={item.icon}
+                            defaultOpen={item.defaultOpen}
+                            nested
+                          />
+                        </TreeItem>
+                      </SharedLayout.Item>
+                    </SharedLayout>
+                  </SharedLayout.Root>
                 );
               }
 
               return (
-                <TreeItem key={key} data-raw={Boolean(raw)}>
-                  <TreeLine data-raw={Boolean(raw)} aria-hidden="true" />
+                <SharedLayout.Root key={key}>
+                  <SharedLayout inset={0}>
+                    <SharedLayout.Item className="p-medium-10">
+                      <TreeItem data-raw={Boolean(raw)}>
+                        <TreeLine data-raw={Boolean(raw)} aria-hidden="true" />
 
-                  <TreeItemContent data-raw={Boolean(raw)}>
-                    <TreeLink
-                      variant="ghost"
-                      sizing={sizing}
-                      data-raw={Boolean(raw)}
-                      onClick={item.onClick}
-                      disabled={item.disabled}
-                      rawicon
-                    >
-                      {item.icon}
-                      {item.label}
-                    </TreeLink>
-                  </TreeItemContent>
-                </TreeItem>
+                        <TreeItemContent data-raw={Boolean(raw)}>
+                          <TreeLink
+                            variant="ghost"
+                            sizing={sizing}
+                            data-raw={Boolean(raw)}
+                            onClick={item.onClick}
+                            disabled={item.disabled}
+                            rawicon
+                          >
+                            {item.icon}
+                            {item.label}
+                          </TreeLink>
+                        </TreeItemContent>
+                      </TreeItem>
+                    </SharedLayout.Item>
+                  </SharedLayout>
+                </SharedLayout.Root>
               );
             })}
           </TreeList>
