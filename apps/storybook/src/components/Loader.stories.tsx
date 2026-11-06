@@ -31,6 +31,9 @@ export const Default = {
       <Loader.Dither sizing="small" {...args} />
       <Loader.Dither sizing="medium" {...args} />
       <Loader.Dither sizing="large" {...args} />
+      <Loader.Radar sizing="small" duration={2048} {...args} />
+      <Loader.Radar sizing="medium" {...args} />
+      <Loader.Radar sizing="large" duration={1024} {...args} />
       <Loader.ASCII sizing="small" duration={80} {...args} />
       <Loader.ASCII sizing="medium" duration={120} {...args} />
       <Loader.ASCII sizing="large" duration={160} {...args} />

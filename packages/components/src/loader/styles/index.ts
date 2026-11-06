@@ -10,7 +10,17 @@ const FadePulse = keyframes`
   0% { opacity: var(--opacity-default-10); }
   50% { opacity: var(--opacity-default-60); }
   100% { opacity: var(--opacity-default-10); }
-
+`;
+const RadarSweep = keyframes`
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0.15;
+  }
 `;
 
 const SpinnerSizeStyles = css`
@@ -98,6 +108,7 @@ export const AnimatedSpinner = styled.div`
 export const DitherContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
 
   ${DitherSizeStyles}
 `;
@@ -121,4 +132,8 @@ export const AsciiContainer = styled.span`
   line-height: 1;
 
   ${AsciiSizeStyles}
+`;
+export const RadarCell = styled(DitherCell)<any>`
+  animation: ${RadarSweep} ${({ $duration }) => $duration}ms linear infinite;
+  animation-delay: ${({ $delay }) => $delay}ms;
 `;

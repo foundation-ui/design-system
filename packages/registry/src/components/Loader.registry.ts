@@ -4,7 +4,7 @@ export const LoaderMeta: ComponentRegistryMetadata = {
   name: "Loader",
   title: "Loader",
   description:
-    'A family of indeterminate loading indicators. Loader itself is a pass-through composition wrapper; the exported compounds cover a rotating spinner, a Bayer-matrix dither grid, and five ASCII frame animations. Every compound renders with role="status" and sizes through the shared small | medium | large scale.',
+    'A family of indeterminate loading indicators. Loader itself is a pass-through composition wrapper; the exported compounds cover a rotating spinner, a Bayer-matrix dither grid, a radar sweep, and five ASCII frame animations. Every compound renders with role="status" and sizes through the shared small | medium | large scale.',
   category: "feedback",
   variants: [],
   props: [
@@ -122,6 +122,22 @@ export const LoaderMeta: ComponentRegistryMetadata = {
         },
       ],
     },
+    Radar: {
+      description:
+        "4x4 grid of cells that pulse in clockwise radar-sweep order inside a Dither container. `duration` sets the full sweep duration in milliseconds (default 1600).",
+      props: [
+        {
+          name: "sizing",
+          type: '"small" | "medium" | "large"',
+          defaultValue: "medium",
+        },
+        {
+          name: "duration",
+          type: "number",
+          defaultValue: "1600",
+        },
+      ],
+    },
   },
   examples: [
     {
@@ -204,6 +220,7 @@ export function Component() {
       "Loader.ASCIILine",
       "Loader.ASCIIBounce",
       "Loader.ASCIIBlocks",
+      "Loader.Radar",
     ],
   },
 };

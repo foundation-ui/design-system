@@ -7,6 +7,7 @@ import {
   DitherContainer,
   DitherCell,
   AsciiContainer,
+  RadarCell,
 } from "./styles";
 
 import type {
@@ -213,8 +214,59 @@ const LoaderASCIIBlocks = (props: LoaderBaseProperties) => {
 };
 LoaderASCIIBlocks.displayName = "Loader.ASCIIBlocks";
 
+/**
+ * LoaderRadar component.
+ *
+ * @returns {ReactElement} The LoaderRadar component.
+ */
+const LoaderRadar = (props: LoaderBaseProperties) => {
+  const { duration, sizing = "medium", ...restProps } = props;
+
+  const RADAR_GRID = 4;
+  const RADAR_DEFAULT_DURATION = 1600;
+
+  /**
+   * Computes the clockwise angle (0 to 1, starting at 12 o'clock) of a cell
+   * relative to the center of the grid.
+   */
+  const getRadarAngle = (index: number) => {
+    const row = Math.floor(index / RADAR_GRID);
+    const col = index % RADAR_GRID;
+    const center = (RADAR_GRID - 1) / 2;
+    const dx = col - center;
+    const dy = row - center;
+    const angle = Math.atan2(dx, -dy);
+    const normalized = angle < 0 ? angle + 2 * Math.PI : angle;
+    return normalized / (2 * Math.PI);
+  };
+
+  const RADAR_CELLS = Array.from(
+    { length: RADAR_GRID * RADAR_GRID },
+    (_, i) => ({
+      index: i,
+      angle: getRadarAngle(i),
+    }),
+  );
+
+  const rotation = duration ?? RADAR_DEFAULT_DURATION;
+
+  return (
+    <DitherContainer data-size={sizing} role="status" {...restProps}>
+      {RADAR_CELLS.map(({ index, angle }) => (
+        <RadarCell
+          key={index}
+          $delay={-angle * rotation}
+          $duration={rotation}
+        />
+      ))}
+    </DitherContainer>
+  );
+};
+LoaderRadar.displayName = "Loader.Radar";
+
 Loader.Spinner = LoaderSpinner;
 Loader.Dither = LoaderDither;
+Loader.Radar = LoaderRadar;
 Loader.ASCII = LoaderASCII;
 Loader.ASCIIBraille = LoaderASCIIBraille;
 Loader.ASCIILine = LoaderASCIILine;
@@ -225,6 +277,7 @@ export {
   Loader,
   LoaderSpinner,
   LoaderDither,
+  LoaderRadar,
   LoaderASCII,
   LoaderASCIIBraille,
   LoaderASCIILine,
