@@ -1,5 +1,6 @@
 import type * as React from "react";
 import type {
+  IComponentAnimation,
   IComponentShape,
   IComponentSize,
   IComponentStyling,
@@ -13,11 +14,11 @@ export interface IButtonProperties
     IComponentStyling,
     IComponentShape,
     IComponentSize,
+    IComponentAnimation,
     React.ComponentPropsWithRef<"button"> {
   rawicon?: boolean;
   variant?: TComponentVariant | TComponentVariantExtended | "link" | "accent";
   sound?: SoundName;
-  animation?: "reflective";
 }
 
 export interface OverlayProps {

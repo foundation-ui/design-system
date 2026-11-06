@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import type { MaskProps, OverlayProps } from "../types";
 
 const ButtonDefaultStyles = css`
@@ -83,7 +83,7 @@ const ButtonShapeStyles = css`
     border-radius: 0;
   }
   &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-20);
+    border-radius: var(--measurement-medium-30);
   }
   &[data-shape="round"] {
     border-radius: var(--measurement-large-90);
@@ -475,12 +475,113 @@ const ButtonVariantsStyles = css`
   }
 `;
 
+const float = keyframes`
+  from { translate: 0 calc(var(--measurement-small-60) * -1); }
+  to   { translate: 0 0; }
+`;
+const bounce = keyframes`
+  0%, 100% { translate: 0 0; animation-timing-function: ease-out; }
+  50%      { translate: 0 calc(var(--measurement-small-60) * -1);
+             animation-timing-function: ease-in; }
+`;
+const shake = keyframes`
+  0%, 100% { translate: 0 0; }
+  20%, 60% { translate: calc(var(--measurement-small-30) * -1) 0; }
+  40%, 80% { translate: var(--measurement-small-30) 0; }
+`;
+const wiggle = keyframes`
+  0%, 100% { rotate: 0deg; }
+  25%      { rotate: -6deg; }
+  75%      { rotate: 6deg; }
+`;
+
+export const ButtonAnimationsStyles = css`
+  --animation-duration: 0.2s;
+  --animation-easing: ease-in-out;
+
+  /* Individual transform properties (translate, rotate, scale) let
+     animations combine without overwriting each other's "transform". */
+  transition:
+    scale var(--animation-duration) var(--animation-easing),
+    translate var(--animation-duration) var(--animation-easing),
+    rotate var(--animation-duration) var(--animation-easing);
+
+  &[data-animation="float"] {
+    animation: ${float} 1s ease-in-out infinite alternate-reverse;
+
+    &:hover {
+      animation: none;
+      translate: 0 0;
+    }
+  }
+
+  &[data-animation="scale"] {
+    --scale: 1;
+
+    scale: var(--scale);
+
+    /* Counter-scale children so only the button's box scales */
+    & > * {
+      scale: calc(1 / var(--scale));
+      transition: scale var(--animation-duration) var(--animation-easing);
+    }
+
+    &:hover {
+      --scale: 1.1;
+    }
+
+    &:active {
+      --scale: 0.9;
+    }
+  }
+
+  &[data-animation="bounce"] {
+    animation: ${bounce} 1s infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &[data-animation="shake"]:hover {
+    animation: ${shake} 0.4s ease-in-out;
+  }
+
+  &[data-animation="wiggle"]:hover {
+    animation: ${wiggle} 0.4s ease-in-out;
+  }
+
+  &[data-animation="lift"] {
+    &:hover {
+      translate: 0 calc(var(--measurement-small-30) * -1);
+    }
+
+    &:active {
+      translate: 0 0;
+      box-shadow: none;
+    }
+  }
+
+  /* Disable motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    &[data-animation] {
+      animation: none;
+      transition: none;
+    }
+
+    &[data-animation]::after {
+      animation: none;
+    }
+  }
+`;
+
 export const ButtonWrapper = styled.button`
   &[data-raw="false"] {
     ${ButtonDefaultStyles}
     ${ButtonSizeStyles}
     ${ButtonShapeStyles}
     ${ButtonVariantsStyles}
+    ${ButtonAnimationsStyles}
 
     &[data-rawIcon="false"] {
       ${ButtonIconStyles}

@@ -47,7 +47,7 @@ export const ButtonMeta: ComponentRegistryMetadata = {
     },
     {
       name: "animation",
-      type: "reflective",
+      type: '"reflective" | "float" | "scale" | "bounce" | "shake" | "wiggle" | "shine"',
     },
     {
       name: "disabled",
