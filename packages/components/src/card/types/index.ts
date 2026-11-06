@@ -1,8 +1,12 @@
-import type * as React from "react";
+import React from "react";
+
 import type { IComponentShape, IComponentSize } from "../../types";
+import type { IImageProperties } from "../../image/types";
 
 export interface CardGridProps
   extends React.ComponentProps<"div">, IComponentSize {}
 
 export interface CardProps
-  extends IComponentShape, React.ComponentProps<"div"> {}
+  extends IComponentSize, IComponentShape, React.ComponentProps<"div"> {}
+
+export type CardImageProps = IImageProperties;

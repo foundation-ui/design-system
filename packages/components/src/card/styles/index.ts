@@ -1,7 +1,7 @@
 "use client";
 
 import styled, { css } from "styled-components";
-import { FETurbulenceCSSVariable, InsetShadowCSSVariable } from "../../global";
+import { FETurbulenceCSSVariable, InsetShadowCSSVariable } from "../../";
 
 const GridDefaultStyles = css`
   display: grid;
@@ -44,22 +44,22 @@ const CardShapeStyles = css`
     border-radius: var(--measurement-medium-60);
   }
 `;
-const CardDefaultStyles = css`
-  ${CardShapeStyles}
 
-  box-sizing: border-box;
+export const CardsGrid = styled.div`
+  ${GridDefaultStyles}
+  ${GridSizeStyles}
 `;
-
 export const CardContainer = styled.div`
   width: 100%;
   background-color: var(--font-color-alpha-10);
 
-  ${CardDefaultStyles}
+  ${CardShapeStyles}
 `;
 export const CardWrapper = styled.div`
   ${InsetShadowCSSVariable}
   ${FETurbulenceCSSVariable}
-  
+  ${CardShapeStyles}
+
   display: flex;
   flex-direction: column;
   gap: var(--measurement-large-10);
@@ -71,11 +71,4 @@ export const CardWrapper = styled.div`
   background-size: 128px 128px;
 
   box-shadow: var(--inset-shadow);
-
-  ${CardDefaultStyles}
-`;
-
-export const CardsGrid = styled.div`
-  ${GridDefaultStyles}
-  ${GridSizeStyles}
 `;
