@@ -91,3 +91,13 @@ export interface IComponentControlProperties {
 export interface IComponentSpacing {
   spacing?: TComponentSize;
 }
+export interface IComponentAnimation {
+  animation?:
+    | "reflective"
+    | "float"
+    | "scale"
+    | "bounce"
+    | "shake"
+    | "wiggle"
+    | "lift";
+}
