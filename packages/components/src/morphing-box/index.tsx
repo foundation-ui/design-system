@@ -13,7 +13,6 @@ import { ComponentSizeEnum, KeyBindingEnum } from "../types";
 
 import type { IButtonProperties } from "../button/types";
 import type { IOverlayProperties } from "../overlay/types";
-import type { IScrollAreaProperties } from "../scrollarea/types";
 import type {
   IMorphingBoxItemProperties,
   IMorphingBoxTriggerProperties,

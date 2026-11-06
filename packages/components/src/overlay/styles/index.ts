@@ -1,5 +1,28 @@
-import styled from "styled-components";
-import { FETurbulenceCSSVariable } from "../../global";
+import styled, { css } from "styled-components";
+import { FETurbulenceCSSVariable } from "../../";
+
+const OverlayBackgroundStyles = css`
+  &[data-background="blur"] {
+    backdrop-filter: blur(var(--measurement-medium-10));
+    -webkit-backdrop-filter: blur(var(--measurement-medium-10));
+  }
+  &[data-background="noise"] {
+    backdrop-filter: blur(var(--measurement-medium-10));
+    -webkit-backdrop-filter: blur(var(--measurement-medium-10));
+
+    /* feTurbulence filter */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      background-image: var(--fe-turbulence);
+      background-repeat: repeat;
+      background-size: 128px 128px;
+    }
+  }
+`;
 
 export const OverlayWrapper = styled.div<any>`
   ${FETurbulenceCSSVariable}
@@ -21,20 +44,8 @@ export const OverlayWrapper = styled.div<any>`
 
   &[data-raw="false"] {
     background-color: var(--alpha-mono-darkest-60);
-    backdrop-filter: blur(var(--measurement-medium-10));
-    -webkit-backdrop-filter: blur(var(--measurement-medium-10));
 
-    /* feTurbulence filter */
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-
-      background-image: var(--fe-turbulence);
-      background-repeat: repeat;
-      background-size: 128px 128px;
-    }
+    ${OverlayBackgroundStyles}
 
     animation-duration: 0.5s;
     animation-name: animate-fade;

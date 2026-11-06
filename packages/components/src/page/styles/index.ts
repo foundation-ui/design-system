@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { HiddenScrollbar } from "../../scrollarea/styles";
-import { InsetShadowCSSVariable, FETurbulenceCSSVariable } from "../../global";
+import { InsetShadowCSSVariable, FETurbulenceCSSVariable } from "../../";
 
 export const PageRootWrapper = styled.div<any>`
   height: 100vh;
@@ -34,14 +34,9 @@ export const PageSectionWrapper = styled.div<any>`
   width: 100%;
   height: 100%;
 
-  background:
-    /* radial-gradient(at 18% 18%, var(--body-color), transparent 70%),
-    radial-gradient(at 94% 57%, var(--contrast-color), transparent 70%),
-    radial-gradient(at 10% 70%, var(--body-color), transparent 70%), */ var(
-    --contrast-color
-  );
+  background: var(--contrast-color);
 
-  border-radius: var(--measurement-medium-50);
+  border-radius: var(--measurement-medium-60);
   box-shadow: var(--inset-shadow);
 `;
 export const PageBodyWrapper = styled.div<any>`
