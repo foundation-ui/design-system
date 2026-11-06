@@ -4,7 +4,12 @@ import React from "react";
 
 import { createGlobalStyle } from "styled-components";
 import { ColorModeProvider, js_design_tokens } from "../packages/tokens";
-import { ResetStyles, TypographyRoot } from "../packages/styles";
+
+import {
+  ResetGlobalStyles,
+  TypographyGlobalStyles,
+} from "../packages/components";
+
 import {
   generateColorClasses,
   generateCSSVariables,
@@ -63,8 +68,8 @@ export function ClientProvider({
 }>) {
   return (
     <ColorModeProvider>
-      <ResetStyles />
-      <TypographyRoot />
+      <ResetGlobalStyles />
+      <TypographyGlobalStyles />
       <CSSRoot />
 
       {children}

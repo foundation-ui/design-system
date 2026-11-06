@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const TypographyRoot = createGlobalStyle`
+export const TypographyGlobalStyles = createGlobalStyle`
     html {
         font-family:"Helvetica Neue", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji",  ui-sans-serif, system-ui, -apple-system, sans-serif;
     }

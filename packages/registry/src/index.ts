@@ -89,8 +89,6 @@ import { StylesInstallationMeta } from "./guides/StylesInstallation.registry";
 import { StylesUsageMeta } from "./guides/StylesUsage.registry";
 import { ComponentsInstallationMeta } from "./guides/ComponentsInstallation.registry";
 import { ComponentsUsageMeta } from "./guides/ComponentsUsage.registry";
-import { AnalyticsInstallationMeta } from "./guides/AnalyticsInstallation.registry";
-import { AnalyticsUsageMeta } from "./guides/AnalyticsUsage.registry";
 
 import { AccordionMeta } from "./components/Accordion.registry";
 import { AvatarMeta } from "./components/Avatar.registry";
@@ -344,8 +342,6 @@ export const GuideRegistry: DocsGuideRegistryMetadata[] = [
   StylesUsageMeta,
   ComponentsInstallationMeta,
   ComponentsUsageMeta,
-  AnalyticsInstallationMeta,
-  AnalyticsUsageMeta,
 ];
 
 export function getGuide(name: string): DocsGuideRegistryMetadata | undefined {
