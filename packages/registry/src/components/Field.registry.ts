@@ -292,7 +292,7 @@ export const FieldMeta: ComponentRegistryMetadata = {
         },
         {
           name: "variant",
-          type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost" | "danger" | "warning" | "success" | "meta" | "hint"',
+          type: '"primary" | "secondary" | "tertiary" | "mono" | "border" | "ghost"',
         },
         {
           name: "sizing",

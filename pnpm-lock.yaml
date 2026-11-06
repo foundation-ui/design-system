@@ -105,6 +105,9 @@ importers:
       '@usefui/icons':
         specifier: workspace:*
         version: link:../../packages/icons
+      '@usefui/registry':
+        specifier: workspace:*
+        version: link:../../packages/registry
       '@usefui/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -115,6 +118,9 @@ importers:
         specifier: ^19.2.4
         version: 19.2.4(react@19.2.4)
     devDependencies:
+      '@chambellan/adapters':
+        specifier: ^0.0.5
+        version: 0.0.5(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -849,11 +855,23 @@ packages:
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
 
+  '@chambellan/adapters@0.0.5':
+    resolution: {integrity: sha512-6Jw98096/+2fRwV9Gg7Sr3qW+p1aeOhA9OJIASpYP/UdGx8EqEiQwDqzz1T67HQYpE5h9fsjrsS4pdhiEYm0xQ==}
+
   '@chambellan/contracts@0.0.2':
     resolution: {integrity: sha512-Y9fJgkiUx2fnETiv+78X04l/7BBZDUGUnvcDHSRGk/igNHsQIcSyi+b/iTG//hR3ri5jGdb9tajKN9zvjnrmXA==}
 
+  '@chambellan/contracts@0.0.5':
+    resolution: {integrity: sha512-fO67lIrpT42MqcPwWM9sELPImYM4BZfYxfZqv/kMHZKsmscFjfFBjQw9WSNvsm4D1TuOmLRvtMU2S/tDR85TUg==}
+
+  '@chambellan/rules@0.0.3':
+    resolution: {integrity: sha512-J+u3MgvnQzjoVCebHMFeaMPSo/E4B56US1WssLjc8hl86Shc6mDv6nDvf17kD9v73dG8DUh/jhtzzLXAu1NEGg==}
+
   '@chambellan/schemas@0.0.1':
     resolution: {integrity: sha512-hpzRmE8JCEpqK5viRhx8c7NVdnVcWLQQD647GLEn8jtv0JK7BvJjALW2poGS+XS6FHLfvDHroL5qpU5kaw+uTw==}
+
+  '@chambellan/schemas@0.0.3':
+    resolution: {integrity: sha512-tX6xcRVoBJPlrutasO9NLKUgrFJl4PfSGxCqcJNIYp7Rofmhkzfzral00C7yw2XjvCL1FDBWGxAyZ+E3P3iAXg==}
 
   '@changesets/apply-release-plan@7.1.0':
     resolution: {integrity: sha512-yq8ML3YS7koKQ/9bk1PqO0HMzApIFNwjlwCnwFEXMzNe8NpzeeYYKCmnhWJGkN8g7E51MnWaSbqRcTcdIxUgnQ==}
@@ -1785,6 +1803,9 @@ packages:
       react: '>=16.8'
       react-dom: '>=16.8'
       styled-components: '>=5.1.34'
+
+  '@usefui/registry@0.0.1':
+    resolution: {integrity: sha512-4aoOepZaYFhSGCpPXUpnBtSQP3lyUwRKmG8gZaggRoelmz2gWp7Rv8WNx2k3/ko7zYQzFPUQlOY7HeNElW8DGQ==}
 
   '@usefui/styles@1.5.0':
     resolution: {integrity: sha512-3rnJcnF/4DB3tAkvrst9BMDIPHoQkQW7l8r6ldGsHEXyKDvhe/cQwPIl04BuGSLh3NnvoDpyx2cnzWAFxIIJ7A==}
@@ -4493,6 +4514,22 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
+  '@chambellan/adapters@0.0.5(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))':
+    dependencies:
+      '@chambellan/contracts': 0.0.5
+      '@chambellan/schemas': 0.0.3
+      '@usefui/registry': 0.0.1(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))
+      jiti: 2.7.0
+      typescript: 5.9.3
+      zod: 4.6.7
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
+      - '@types/styled-components'
+      - react
+      - react-dom
+      - styled-components
+
   '@chambellan/contracts@0.0.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))':
     dependencies:
       '@chambellan/schemas': 0.0.1
@@ -4513,7 +4550,23 @@ snapshots:
       - react-dom
       - styled-components
 
+  '@chambellan/contracts@0.0.5':
+    dependencies:
+      '@chambellan/rules': 0.0.3
+      '@chambellan/schemas': 0.0.3
+      fast-glob: 3.3.3
+      fs-extra: 11.3.4
+      zod: 4.6.7
+
+  '@chambellan/rules@0.0.3':
+    dependencies:
+      '@chambellan/schemas': 0.0.3
+
   '@chambellan/schemas@0.0.1':
+    dependencies:
+      zod: 4.6.7
+
+  '@chambellan/schemas@0.0.3':
     dependencies:
       zod: 4.6.7
 
@@ -5347,6 +5400,23 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
       styled-components: 5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4)
+
+  '@usefui/registry@0.0.1(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))':
+    dependencies:
+      '@chambellan/contracts': 0.0.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))
+      '@usefui/components': 1.7.10(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))
+      '@usefui/core': 1.4.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))
+      '@usefui/hooks': 1.4.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@usefui/icons': 1.4.2(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))
+      '@usefui/styles': 1.5.0(@types/styled-components@5.1.36)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))
+      '@usefui/tokens': 1.7.0(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(@types/styled-components@5.1.36)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))
+    transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
+      - '@types/styled-components'
+      - react
+      - react-dom
+      - styled-components
 
   '@usefui/styles@1.5.0(@types/styled-components@5.1.36)(styled-components@5.3.11(@babel/core@7.29.0)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4))':
     dependencies:
@@ -6354,8 +6424,7 @@ snapshots:
       graceful-fs: 4.2.11
       picomatch: 4.0.3
 
-  jiti@2.7.0:
-    optional: true
+  jiti@2.7.0: {}
 
   joycon@3.1.1: {}
 
