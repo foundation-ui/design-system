@@ -29,7 +29,8 @@ export const SelectBox = ({
       <Checkbox
         ref={ref}
         defaultChecked={checked}
-        variant="tertiary"
+        variant="secondary"
+        sizing="medium"
         checked={checked}
         onChange={onChange}
         aria-label={label}

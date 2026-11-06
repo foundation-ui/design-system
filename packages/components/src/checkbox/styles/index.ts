@@ -51,33 +51,26 @@ const CheckboxVariantsStyles = css`
     }
   }
   &[data-variant="primary"] {
-    background-color: var(--font-color);
-    background: linear-gradient(
-      180deg,
-      var(--font-color) 50%,
-      var(--font-color-alpha-60) 100%
-    );
-    background-size: 100% 200%;
-    background-position: 0% 50%;
+    background-color: var(--contrast-color);
 
     ::before {
       ${CheckboxBeforeDefaultStyles}
-      border-color: var(--body-color-alpha-20);
-      mask-image: linear-gradient(var(--body-color-alpha-90), transparent);
+      border-color: var(--font-color-alpha-60);
+      mask-image: linear-gradient(var(--font-color-alpha-60), transparent);
     }
 
     &:hover,
     &:focus,
     &:active,
     &[data-state="checked"] {
-      background-position: 0% 25%;
+      color: var(--font-color);
 
       ::before {
-        border-color: var(--body-color-alpha-10);
+        border-color: var(--font-color-alpha-80);
       }
 
       svg {
-        stroke: var(--body-color);
+        stroke: var(--font-color);
       }
     }
   }
@@ -306,17 +299,17 @@ const CheckboxSizeStyles = css`
   &[data-size="small"] {
     width: var(--measurement-medium-60);
     height: var(--measurement-medium-60);
-    border-radius: var(--measurement-small-80);
+    border-radius: var(--measurement-medium-20);
   }
   &[data-size="medium"] {
     width: var(--measurement-medium-70);
     height: var(--measurement-medium-70);
-    border-radius: var(--measurement-medium-10);
+    border-radius: var(--measurement-medium-30);
   }
   &[data-size="large"] {
-    width: var(--measurement-large-10);
-    height: var(--measurement-large-10);
-    border-radius: var(--measurement-medium-20);
+    width: var(--fontsize-medium-60);
+    height: var(--fontsize-medium-60);
+    border-radius: var(--measurement-medium-30);
   }
 `;
 
