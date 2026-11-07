@@ -111,6 +111,7 @@ import { OverlayMeta } from "./components/Overlay.registry";
 import { PageMeta } from "./components/Page.registry";
 import { PortalMeta } from "./components/Portal.registry";
 import { ProgressBarMeta } from "./components/ProgressBar.registry";
+import { RadioMeta } from "./components/Radio.registry";
 import { ResizableMeta } from "./components/Resizable.registry";
 import { RulerMeta } from "./components/Ruler.registry";
 import { ScrollAreaMeta } from "./components/ScrollArea.registry";
@@ -181,6 +182,7 @@ export const ComponentRegistry: ComponentRegistryMetadata[] = [
   PageMeta,
   PortalMeta,
   ProgressBarMeta,
+  RadioMeta,
   ResizableMeta,
   RulerMeta,
   ScrollAreaMeta,
