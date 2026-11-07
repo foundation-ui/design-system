@@ -6,11 +6,14 @@ import {
   BulkActions,
   Button,
   Image,
+  Overlay,
   Page,
+  StateCanvas,
   Tooltip,
   Whiteboard,
 } from "@usefui/components";
 import { Icon } from "@usefui/icons";
+import { useColorMode } from "@usefui/tokens";
 
 const meta = {
   title: "Components/Image",
@@ -20,7 +23,7 @@ const meta = {
     (Story: any) => (
       <Page className="p-medium-30">
         <Page.Content
-          className="p-medium-30 flex align-center justify-center w-100 h-100"
+          className="flex align-center justify-center w-100 h-100"
           scrollbar
         >
           <Story />
@@ -61,17 +64,31 @@ export const Fill = {
   render: () => {
     const thumbnail = useThumbnail();
 
+    return <Image src={thumbnail.base64} alt="gradient-cover-fill" fill />;
+  },
+};
+export const FillWithCanvas = {
+  render: () => {
+    const { colorMode } = useColorMode();
+    const thumbnail = useGradient({
+      width: 1920,
+      height: 1080,
+      layerCount: 2,
+      stopsPerLayer: 6,
+      types: ["linear", "radial"],
+      noise: false,
+      blendModes: ["overlay", "soft-light", "screen"],
+      colors: ["transparent", "#7928ca90", "#0070f390", "#00dfd890"],
+    });
+
+    const particlesColor = colorMode === "light" ? "#000000" : "#FFFFFF";
+
     return (
-      <div
-        style={{
-          position: "relative",
-          width: 400,
-          height: 250,
-          overflow: "hidden",
-        }}
-      >
-        <Image src={thumbnail.base64} alt="gradient-cover-fill" fill />
-      </div>
+      <StateCanvas>
+        <StateCanvas.Variant variant="analysis" color={particlesColor}>
+          <Image src={thumbnail.base64} alt="gradient-cover-fill" fill />
+        </StateCanvas.Variant>
+      </StateCanvas>
     );
   },
 };
@@ -169,6 +186,7 @@ export const OnError = {
     );
   },
 };
+
 export const Shapes = {
   render: () => {
     const [currentShape, setCurrentShape] = React.useState("round");
