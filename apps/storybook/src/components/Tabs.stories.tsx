@@ -1,10 +1,13 @@
 import React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
-
-import { Page, Tabs } from "@usefui/components";
-import { ComponentVariantEnum, ComponentSizeEnum } from "@usefui/components";
-
-// Duplicated doc: The JSDoc content isn't rendering on Storybook.
+import {
+  Avatar,
+  Badge,
+  Breadcrumb,
+  Page,
+  SharedLayout,
+  Tabs,
+} from "@usefui/components";
+import { useGradient } from "@usefui/hooks";
 
 /**
  * Tabs are components for a set of tab panels that allows the user to switch between them.
@@ -20,86 +23,77 @@ const meta = {
   title: "Components/Tabs",
   component: Tabs,
   tags: ["autodocs"],
-  decorators: [(Story) => <Story />],
-} satisfies Meta<typeof Tabs>;
+  decorators: [
+    (Story: any) => (
+      <Tabs.Root>
+        <Page className="flex flex-column">
+          <Page.Navigation className="flex align-center">
+            <Badge variant="secondary" sizing="large" shape="round">
+              <SharedLayout.Root>
+                <SharedLayout
+                  inset={4}
+                  direction="x"
+                  className="w-100 g-medium-10 flex align-center flex-row"
+                >
+                  <SharedLayout.Item>
+                    <Tabs.Trigger value="eng" variant="ghost">
+                      <span className="flex align-center p-medium-30">
+                        Engineering
+                      </span>
+                    </Tabs.Trigger>
+                  </SharedLayout.Item>
+
+                  <SharedLayout.Item>
+                    <Tabs.Trigger value="design" variant="ghost">
+                      <span className="flex align-center p-medium-30">
+                        Design
+                      </span>
+                    </Tabs.Trigger>
+                  </SharedLayout.Item>
+                </SharedLayout>
+              </SharedLayout.Root>
+            </Badge>
+          </Page.Navigation>
+
+          <Page.Wrapper $navigations={1} $menus={1} className="p-x-medium-30">
+            <Page.Content className="w-100 h-100 p-medium-30">
+              <Story />
+            </Page.Content>
+          </Page.Wrapper>
+          <Page.Menu />
+        </Page>
+      </Tabs.Root>
+    ),
+  ],
+};
 export default meta;
 
-type Story = StoryObj<typeof meta>;
-export const Default: Story = {
-  args: {
-    raw: false,
-    defaultOpen: "",
-    value: "",
-  },
-  argTypes: {
-    variant: {
-      options: [
-        ComponentVariantEnum.Primary,
-        ComponentVariantEnum.Secondary,
-        ComponentVariantEnum.Tertiary,
-        ComponentVariantEnum.Mono,
-        ComponentVariantEnum.Border,
-        ComponentVariantEnum.Ghost,
-      ],
-      control: { type: "radio" },
-    },
-    sizing: {
-      options: [
-        ComponentSizeEnum.Small,
-        ComponentSizeEnum.Medium,
-        ComponentSizeEnum.Large,
-      ],
-      control: { type: "radio" },
-    },
-  },
-  render: ({ ...args }) => (
-    <Tabs.Root>
-      <Tabs>
-        <div className="flex g-medium-30 p-b-medium-30">
-          <Tabs.Trigger value="eng" variant="link">
-            Engineering
-          </Tabs.Trigger>
-          <Tabs.Trigger value="design" variant="link">
-            Design
-          </Tabs.Trigger>
-        </div>
+export const Default = {
+  render: () => {
+    const randomMultiLayer = useGradient({
+      layerCount: 3,
+      stopsPerLayer: 6,
+      types: ["linear", "radial"],
+      blendModes: ["overlay", "soft-light", "screen"],
+    });
+    const randomMultiLayerNoNoise = useGradient({
+      noise: false,
+      layerCount: 6,
+      stopsPerLayer: 3,
+      types: ["linear", "radial"],
+      blendModes: ["overlay", "soft-light", "screen"],
+      colors: ["#ff0080", "#7928ca", "#0070f3", "#00dfd8"],
+    });
+
+    return (
+      <Tabs className="w-100 h-100 ">
         <Tabs.Content value="eng">
-          Iste nam quasi quam. Ullam numquam reiciendis ratione rem consequatur
-          vero suscipit ut dicta, ducimus magni doloribus est, accusantium
-          explicabo quae fuga.
+          <Avatar src={randomMultiLayerNoNoise.base64} />
         </Tabs.Content>
         <Tabs.Content value="design">
-          Fuga aut reiciendis porro! Aspernatur autem voluptatibus, quis
-          assumenda consectetur, qui ipsam placeat cum harum animi
-          necessitatibus! Error nisi dolore numquam neque.
+          <Avatar src={randomMultiLayer.base64} />
         </Tabs.Content>
       </Tabs>
-    </Tabs.Root>
-  ),
-};
-export const DefaultOpen: Story = {
-  render: ({ ...args }) => (
-    <Tabs.Root>
-      <Tabs defaultOpen="eng">
-        <div className="flex g-medium-30 p-b-medium-30">
-          <Tabs.Trigger value="eng" variant="link">
-            Engineering
-          </Tabs.Trigger>
-          <Tabs.Trigger value="design" variant="link">
-            Design
-          </Tabs.Trigger>
-        </div>
-        <Tabs.Content value="eng">
-          Iste nam quasi quam. Ullam numquam reiciendis ratione rem consequatur
-          vero suscipit ut dicta, ducimus magni doloribus est, accusantium
-          explicabo quae fuga.
-        </Tabs.Content>
-        <Tabs.Content value="design">
-          Fuga aut reiciendis porro! Aspernatur autem voluptatibus, quis
-          assumenda consectetur, qui ipsam placeat cum harum animi
-          necessitatibus! Error nisi dolore numquam neque.
-        </Tabs.Content>
-      </Tabs>
-    </Tabs.Root>
-  ),
+    );
+  },
 };

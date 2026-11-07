@@ -40,7 +40,7 @@ const meta = {
                     <StateCanvas.Variant
                       variant="ripple"
                       color={particlesColor}
-                      speed={0.25}
+                      speed={1}
                       shape="diamond"
                     >
                       <Page.Navigation className="flex align-center" />

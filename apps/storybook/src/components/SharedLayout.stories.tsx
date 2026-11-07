@@ -70,7 +70,7 @@ export const Horizontal: Story = {
     <SharedLayout.Root>
       <SharedLayout
         direction="x"
-        inset={6}
+        inset={4}
         className="w-100 flex align-center justify-center flex-row"
       >
         {ITEMS.map((item) => (
