@@ -5,10 +5,12 @@ export const ColorClassesMeta: GeneratorRegistryMetadata = {
   name: "generateColorClasses",
   title: "Generate Color Classes",
   description:
-    "Generate text and background-color CSS classes using your design tokens library.",
+    "Generate color utility classes for base tokens and their alpha/tint/shade steps across text, background, border, outline, fill, stroke, decoration, accent, and caret properties. Values reference the generated CSS variables.",
   module: "@usefui/core",
   code: `import { generateColorClasses } from "@usefui/core";
+import { js_design_tokens } from "@usefui/tokens";
 
+const design_tokens = js_design_tokens;
 const cssColorClasses = generateColorClasses(design_tokens.color);`,
   properties: [
     {
@@ -31,11 +33,19 @@ const cssColorClasses = generateColorClasses(design_tokens.color);`,
   [key: string]: any;
 }
 interface IDTCGGroup extends IDTCGToken {}`,
-  css: `.color-dark {
-   color: var(--color-dark) !important;
+  css: `.color-mono-dark {
+  color: var(--color-mono-dark) !important;
 }
-
-.bg-dark {
-   background-color: var(--color-dark) !important;
+.bg-mono-dark {
+  background-color: var(--color-mono-dark) !important;
+}
+.border-color-mono-dark {
+  border-color: var(--color-mono-dark) !important;
+}
+.color-alpha-red-10 {
+  color: var(--alpha-red-10) !important;
+}
+.bg-shade-red-20 {
+  background-color: var(--shade-red-20) !important;
 }`,
 };

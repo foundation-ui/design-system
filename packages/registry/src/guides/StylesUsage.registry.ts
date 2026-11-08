@@ -11,36 +11,19 @@ export const StylesUsageMeta: DocsGuideRegistryMetadata = {
 import { ColorModeProvider, js_design_tokens } from "@usefui/tokens";
 import { ResetGlobalStyles, TypographyGlobalStyles } from "@usefui/components";
 import {
+  generateCSSClasses,
   generateCSSVariables,
-  generateColorClasses,
-  generateDimensionClasses,
-  generateFontSizesClasses,
-  generateLayoutClasses,
-  generateOpacityClasses,
-  generateSizeClasses,
 } from "@usefui/core";
 
 const design_tokens = js_design_tokens;
 
 const cssVariables = generateCSSVariables(design_tokens);
+const cssClasses = generateCSSClasses(design_tokens);
 
 const CSSRoot = createGlobalStyle\`
   :root {
-    \${cssVariables.color}
-    \${cssVariables.alpha}
-    \${cssVariables.tint}
-    \${cssVariables.shade}
-    \${cssVariables.fontsize}
-    \${cssVariables.measurement}
-    \${cssVariables.depth}
-    \${cssVariables.opacity}
-
-    \${generateSizeClasses(design_tokens.measurement)}
-    \${generateFontSizesClasses(design_tokens.fontsize)}
-    \${generateOpacityClasses(design_tokens.opacity)}
-    \${generateColorClasses(design_tokens.color)}
-    \${generateLayoutClasses()}
-    \${generateDimensionClasses()}
+    \${Object.values(cssVariables).flat()}
+    \${cssClasses}
   }
 \`;
 

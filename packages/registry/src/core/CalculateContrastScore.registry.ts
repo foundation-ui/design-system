@@ -9,7 +9,7 @@ export const CalculateContrastScoreMeta: GeneratorRegistryMetadata = {
   name: "calculateContrastScore",
   title: "Calculate Contrast Score",
   description:
-    "Return the WCAG contrast score (AAA, AA, or F) for a text color against a background color.",
+    "Return the WCAG contrast score (AAA, AA, AA Large, or F) for a text color against a background color.",
   module: "@usefui/core",
   code: `import { calculateContrastScore } from "@usefui/core";
 
@@ -30,8 +30,8 @@ const failing = calculateContrastScore("cccccc", "ffffff"); // "F"`,
   returnProperties: [
     {
       name: "score",
-      type: '"AAA" | "AA" | "F"',
+      type: '"AAA" | "AA" | "AA Large" | "F"',
     },
   ],
-  types: `type TContrastScore = "AAA" | "AA" | "F";`,
+  types: `type TContrastScore = "AAA" | "AA" | "AA Large" | "F";`,
 };

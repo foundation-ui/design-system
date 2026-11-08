@@ -36,38 +36,28 @@ export const MeasurementRatios = [
     value: RatioEnum.GoldenRatio,
   },
 ];
-export const generateModularScales = (
-  options: TModularScalesOptions,
-): IScaleVariation[] | number[] => {
+
+export const generateModularScales = (options: TModularScalesOptions) => {
   const { base, ratio, units, convert } = options;
-  const scalesArray: number[] = [base];
-  const convertedScalesArray: Array<IScaleVariation> = [];
+  const scales: number[] = [base];
 
   for (let i = 0; i < units - 1; i++) {
-    const modulo = i % ratio.length;
-    const ratioValue = ratio[modulo];
-    const value = Number(scalesArray[scalesArray.length - 1]);
-
-    scalesArray.push(value * ratioValue);
-
-    if (convert)
-      convertedScalesArray.push({
-        px: value * ratioValue,
-        rem: PXToREM(value * ratioValue),
-        pt: PXToPT(value * ratioValue),
-      });
+    scales.push(scales[scales.length - 1] * ratio[i % ratio.length]);
   }
 
-  return convert ? convertedScalesArray : scalesArray;
+  return convert
+    ? scales.slice(1).map((px) => ({ px, rem: PXToREM(px), pt: PXToPT(px) }))
+    : scales;
 };
-export const generateSequences = (options: TSequencesOptions): number[] => {
-  const { base, units, steps, decimal } = options;
-  const sequences: number[] = [];
 
-  for (let i = 0; i < units; i++) {
-    if (decimal) sequences.push(((base + i) * steps) / 100);
-    else sequences.push(base + i * steps);
-  }
-
-  return sequences;
-};
+export const generateSequences = ({
+  base,
+  units,
+  steps,
+  decimal,
+}: TSequencesOptions): number[] =>
+  Array.from({ length: units }, (_, i) => {
+    const v = decimal ? (base + i) * steps : base + i * steps;
+    // decimal = opacity: 0–1, rounded to kill float noise
+    return decimal ? Math.min(1, Math.max(0, Math.round(v) / 100)) : v;
+  });

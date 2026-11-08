@@ -1,101 +1,82 @@
-import { HEXToRGB, HEXToHSL, RGBAToHEX } from "./formats";
+import {
+  HEXToRGB,
+  HEXToHSL,
+  RGBAToHEX,
+  RGBToHEX,
+  normalizeHex,
+} from "./formats";
 import { calculateContrastScore } from "./score";
-import { TMode, IColorVariation, THex, TTone, TLuminance } from "../types";
+import {
+  TMode,
+  IColorVariation,
+  THex,
+  TTone,
+  TLuminance,
+  TRGB,
+} from "../types";
 
-export function applyColorLuminance(hex: THex, luminance: TLuminance): string {
-  if (hex.length < 6) return;
-
-  const RGBA_PATTERN = /[^0-9a-f]/gi;
-  luminance = luminance ?? 0;
-  hex = String(hex).replace(RGBA_PATTERN, "");
-
-  let RGBHex = "#";
-  let RBGDec;
-  let RGBDecLen;
-  // Convert to RGB decimals, apply luminosity factor, return to hexadecimal format. \\
-  for (RGBDecLen = 0; RGBDecLen < 3; RGBDecLen++) {
-    RBGDec = parseInt(hex.substr(RGBDecLen * 2, 2), 16);
-    RBGDec = Math.round(
-      Math.min(Math.max(0, RBGDec + RBGDec * luminance), 255),
-    ).toString(16);
-    RGBHex += ("00" + RBGDec).slice(RBGDec.length);
+// luminance > 0 mixes toward white (tint), < 0 mixes toward black (shade)
+export function applyColorLuminance(hex: THex, luminance: TLuminance): string | undefined {
+  const t = Math.max(-1, Math.min(1, luminance ?? 0));
+  let clean: string;
+  try {
+    clean = normalizeHex(hex as string);
+  } catch {
+    return undefined;
   }
-
-  return RGBHex;
+  const rgb = HEXToRGB(clean, true) as TRGB;
+  return RGBToHEX(rgb.map((c) => (t >= 0 ? c + (255 - c) * t : c * (1 + t))));
 }
+
 export function setLuminanceTone(tone: TTone, mode?: TMode): number {
   if (tone && mode && mode === "darken") {
     return Math.abs(tone) * -1;
   } else return tone;
 }
-export const luminanceAmountFormatter = (array: string | unknown[]) => {
-  if (array.length === 9) return 1;
-  return Number(`0.${array.length + 1}`);
-};
-export const getRelativeLuminance = (rgb: [number, number, number]): number => {
-  const [r, g, b] = rgb.map((value) => {
-    const srgb = value / 255;
-    return srgb <= 0.03928 ? srgb / 12.92 : ((srgb + 0.055) / 1.055) ** 2.4;
+
+export const luminanceAmountFormatter = (array: unknown[] | string) =>
+  Math.min(1, (array.length + 1) / 10);
+
+export const generateAlpha = (hex: string, amount = 10): IColorVariation[] => {
+  const clean = normalizeHex(hex);
+  const [r, g, b] = HEXToRGB(clean, true) as TRGB;
+  const [h, s, l] = HEXToHSL(clean, true) as number[];
+
+  return Array.from({ length: amount }, (_, i) => {
+    const alpha = Math.min(1, Math.round(((i + 1) / 10) * 100) / 100);
+    const alphaHex = Math.round(alpha * 255)
+      .toString(16)
+      .padStart(2, "0");
+    const rgba = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+
+    return {
+      hex: alpha === 1 ? `#${clean}` : `#${clean}${alphaHex}`,
+      rgb: rgba,
+      hsl: `hsl(${h}deg ${s}% ${l}% / ${Math.round(alpha * 100)}%)`,
+      contrast_score: {
+        // contrast of the composited colour against the surface it sits on
+        light: calculateContrastScore(RGBAToHEX(rgba, "ffffff"), "ffffff"),
+        dark: calculateContrastScore(RGBAToHEX(rgba, "000000"), "000000"),
+      },
+    };
   });
-  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 };
-export const generateAlpha = (Hex: string, amount?: number) => {
-  const colorValuesArray: IColorVariation[] = [];
-  const parsedHEXtoRGB = HEXToRGB(Hex, true);
-  const parsedHEXtoHSL = HEXToHSL(Hex, true);
 
-  while (colorValuesArray.length < (amount ?? 10)) {
-    const hexAlphaIndex = (colorValuesArray.length + 1) * 10;
-    const parsedHex = `#${Hex}${hexAlphaIndex}`;
-    const parsedRGBA = `rgba(${parsedHEXtoRGB[0]}, ${parsedHEXtoRGB[1]}, ${
-      parsedHEXtoRGB[2]
-    }, ${luminanceAmountFormatter(colorValuesArray)})`;
-    const parsedHSL = `hsl(${parsedHEXtoHSL[0]}deg ${parsedHEXtoHSL[1]}% ${
-      parsedHEXtoHSL[2]
-    }% / ${luminanceAmountFormatter(colorValuesArray) * 100}%)`;
-
-    const colorFormats = {
-      hex: hexAlphaIndex !== 100 ? parsedHex : `#${Hex}`,
-      rgb: parsedRGBA,
-      hsl: parsedHSL,
-      contrast_score: {
-        light: calculateContrastScore(
-          RGBAToHEX(parsedRGBA, "ffffff"),
-          "ffffff",
-        ),
-        dark: calculateContrastScore(RGBAToHEX(parsedRGBA, "000000"), "000000"),
-      },
-    };
-
-    colorValuesArray.push(colorFormats);
-  }
-
-  return colorValuesArray;
-};
 export const generateVariation = (
-  Hex: string,
+  hex: string,
   mode: TMode,
-  amount?: number,
-) => {
-  const variationValuesArray: IColorVariation[] = [];
-
-  while (variationValuesArray.length < (amount ?? 10)) {
-    const variationHHEXValue = applyColorLuminance(
-      Hex,
-      setLuminanceTone(luminanceAmountFormatter(variationValuesArray), mode),
-    );
-    const variationFormats = {
-      hex: variationHHEXValue,
-      rgb: `${HEXToRGB(variationHHEXValue)}`,
-      hsl: `${HEXToHSL(variationHHEXValue)}`,
+  amount = 10,
+): IColorVariation[] =>
+  Array.from({ length: amount }, (_, i) => {
+    const step = (i + 1) / 10;
+    const value = applyColorLuminance(hex, setLuminanceTone(step, mode));
+    return {
+      hex: value,
+      rgb: HEXToRGB(value) as string,
+      hsl: HEXToHSL(value) as string,
       contrast_score: {
-        light: calculateContrastScore(variationHHEXValue, "ffffff"),
-        dark: calculateContrastScore(variationHHEXValue, "000000"),
+        light: calculateContrastScore(value, "ffffff"),
+        dark: calculateContrastScore(value, "000000"),
       },
     };
-
-    variationValuesArray.push(variationFormats);
-  }
-
-  return variationValuesArray;
-};
+  });

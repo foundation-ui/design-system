@@ -9,7 +9,7 @@ export const LayoutClassesMeta: GeneratorRegistryMetadata = {
   name: "generateLayoutClasses",
   title: "Generate Layout CSS Classes",
   description:
-    "Generate flex and grid display utilities with alignment, wrapping, and direction helpers.",
+    "Generate display, alignment, placement, flex/grid, positioning, overflow, text, cursor, and pointer-events utilities.",
   module: "@usefui/core",
   code: `import { generateLayoutClasses } from "@usefui/core";
 
@@ -23,27 +23,33 @@ const LayoutClasses = generateLayoutClasses();`,
   ],
   types: "",
   css: `.flex {
-    display: flex;
-}
-.justify-start {
-    justify-content: flex-start;
-}
-.justify-center {
-    justify-content: center;
-}
-.justify-between {
-    justify-content: space-between;
-}
-.align-start {
-    align-items: flex-start;
-}
-.align-center {
-    align-items: center;
-}
-.flex-wrap {
-    flex-wrap: wrap;
+  display: flex;
 }
 .grid {
-    display: grid;
+  display: grid;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+.place-center {
+  place-items: center;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-column {
+  flex-direction: column;
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.pointer-events-none {
+  pointer-events: none;
 }`,
 };

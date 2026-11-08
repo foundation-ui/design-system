@@ -9,12 +9,9 @@ import {
   generateVariation,
   generateModularScales,
   generateSequences,
+  normalizeHex,
 } from "..";
-import {
-  ColorModesEnum,
-  SequenceVariantEnum,
-  TokenTypesEnum,
-} from "../types";
+import { ColorModesEnum, SequenceVariantEnum, TokenTypesEnum } from "../types";
 import type {
   TMeasureVariant,
   ITemplatePayload,
@@ -24,7 +21,7 @@ import type {
 } from "../types";
 
 const normalizeName = (name: string) =>
-  name.trim().replace(" ", "-").toLowerCase();
+  name.trim().replace(/\s+/g, "-").toLowerCase();
 
 const hexToComponents = (hex: string): [number, number, number] => {
   const rgb = HEXToRGB(hex, true) as [number, number, number];
@@ -40,8 +37,12 @@ export const generateColorTokens = (
     shade?: boolean;
   },
 ) => {
-  const HEXRegExp = new RegExp("^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
-  if (!HEXRegExp.test(hex)) return;
+  // accepts #abc, abc, #aabbcc; returns 6 digits
+  try {
+    hex = normalizeHex(hex);
+  } catch {
+    return;
+  }
 
   const baseRgb = HEXToRGB(hex, true) as [number, number, number];
   const baseHslString = HEXToHSL(hex) as string;
@@ -196,23 +197,25 @@ export const generateSequenceVariation = ({
   sequence,
   index,
 }: any) => {
+  const isOpacity = contrast !== undefined;
   const stackOrder =
-    index && sequence
+    index !== undefined && sequence
       ? calculateStackOrder(index, sequence)
-      : { label: "low", score: 1 }; // Fallback
+      : { label: "low", score: 1 };
+
   const contrastScore = {
-    light:
-      contrast &&
-      calculateContrastScore(
-        RGBAToHEX(`rgba(0, 0, 0, ${contrast})`, "ffffff"),
-        "ffffff",
-      ),
-    dark:
-      contrast &&
-      calculateContrastScore(
-        RGBAToHEX(`rgba(255, 255, 255, ${contrast})`, "000000"),
-        "000000",
-      ),
+    light: isOpacity
+      ? calculateContrastScore(
+          RGBAToHEX(`rgba(0, 0, 0, ${contrast})`, "ffffff"),
+          "ffffff",
+        )
+      : undefined,
+    dark: isOpacity
+      ? calculateContrastScore(
+          RGBAToHEX(`rgba(255, 255, 255, ${contrast})`, "000000"),
+          "000000",
+        )
+      : undefined,
   };
 
   const variations = {
@@ -226,7 +229,7 @@ export const generateSequenceVariation = ({
     },
   };
 
-  return !contrast ? variations.depth : variations.opacity;
+  return isOpacity ? variations.opacity : variations.depth;
 };
 
 export const generateSequenceTokens = (
@@ -278,40 +281,42 @@ export const generateSequenceTokens = (
 };
 
 export const generateTokensFromTemplate = (payload: any) => {
-  return payload.values.map((value: any) => {
-    const isColorType = payload.type === TokenTypesEnum.Color;
+  return payload.values
+    .map((value: any) => {
+      const isColorType = payload.type === TokenTypesEnum.Color;
 
-    const isMeasurementType = ["measurement", "fontsize"].includes(
-      payload.type,
-    );
-
-    const isSequenceType = [
-      SequenceVariantEnum.Depth,
-      SequenceVariantEnum.Opacity,
-    ].includes(payload.type);
-
-    if (isColorType) {
-      return generateColorTokens(value.name, value.base, value.variations);
-    }
-    if (isMeasurementType) {
-      return generateMeasurementTokens(
-        value.name,
-        value.base,
-        value.units,
-        value.ratio,
-        value.variant,
+      const isMeasurementType = ["measurement", "fontsize"].includes(
+        payload.type,
       );
-    }
-    if (isSequenceType) {
-      return generateSequenceTokens(
-        value.name,
-        value.base,
-        value.units,
-        value.steps,
-        value.decimal,
-      );
-    }
-  }).filter(Boolean);
+
+      const isSequenceType = [
+        SequenceVariantEnum.Depth,
+        SequenceVariantEnum.Opacity,
+      ].includes(payload.type);
+
+      if (isColorType) {
+        return generateColorTokens(value.name, value.base, value.variations);
+      }
+      if (isMeasurementType) {
+        return generateMeasurementTokens(
+          value.name,
+          value.base,
+          value.units,
+          value.ratio,
+          value.variant,
+        );
+      }
+      if (isSequenceType) {
+        return generateSequenceTokens(
+          value.name,
+          value.base,
+          value.units,
+          value.steps,
+          value.decimal,
+        );
+      }
+    })
+    .filter(Boolean);
 };
 
 export const generateTokensLibrary = (

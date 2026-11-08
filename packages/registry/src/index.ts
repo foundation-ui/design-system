@@ -7,14 +7,18 @@ import {
   colorClassesMeta,
 } from "./styles/CSSClasses.registry";
 
+import { BoxClassesMeta } from "./core/BoxClasses.registry";
 import { ColorClassesMeta } from "./core/ColorClasses.registry";
+import { DepthClassesMeta } from "./core/DepthClasses.registry";
 import { DimensionClassesMeta } from "./core/DimensionClasses.registry";
 import { FontSizesClassesMeta } from "./core/FontSizesClasses.registry";
+import { GenerateCSSClassesMeta } from "./core/GenerateCSSClasses.registry";
 import { LayoutClassesMeta } from "./core/LayoutClasses.registry";
 import { OpacityClassesMeta } from "./core/OpacityClasses.registry";
 import { SizeClassesMeta } from "./core/SizeClasses.registry";
 import { ColorTokensMeta } from "./core/ColorTokens.registry";
 import { CSSVariablesMeta } from "./core/CSSVariables.registry";
+import { CSSVariablesStylesheetMeta } from "./core/CSSVariablesStylesheet.registry";
 import { MeasurementTokensMeta } from "./core/MeasurementTokens.registry";
 import { SequenceTokensMeta } from "./core/SequenceTokens.registry";
 import { TokensLibraryMeta } from "./core/TokensLibrary.registry";
@@ -245,14 +249,18 @@ export function getStyling(name: string): StylingRegistryMetadata | undefined {
 }
 
 export const CoreGeneratorRegistry: GeneratorRegistryMetadata[] = [
+  BoxClassesMeta,
   ColorClassesMeta,
+  DepthClassesMeta,
   DimensionClassesMeta,
   FontSizesClassesMeta,
+  GenerateCSSClassesMeta,
   LayoutClassesMeta,
   OpacityClassesMeta,
   SizeClassesMeta,
   ColorTokensMeta,
   CSSVariablesMeta,
+  CSSVariablesStylesheetMeta,
   MeasurementTokensMeta,
   SequenceTokensMeta,
   TokensLibraryMeta,

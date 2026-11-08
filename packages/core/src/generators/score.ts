@@ -1,77 +1,55 @@
 import { HEXToRGB } from "./formats";
-import { getRelativeLuminance } from "./colors";
+import { TRGB, TContrastScore } from "../types";
 
-export const getContrastRatio = (
-  textRgb: [number, number, number],
-  backgroundRgb: [number, number, number],
-): number => {
-  const textLuminance = getRelativeLuminance(textRgb);
-  const backgroundLuminance = getRelativeLuminance(backgroundRgb);
-  return (
-    (Math.max(textLuminance, backgroundLuminance) + 0.05) /
-    (Math.min(textLuminance, backgroundLuminance) + 0.05)
-  );
+export const getRelativeLuminance = (rgb: TRGB): number => {
+  const [r, g, b] = rgb.map((v) => {
+    const s = v / 255;
+    return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 };
+
+export const getContrastRatio = (a: TRGB, b: TRGB): number => {
+  const la = getRelativeLuminance(a);
+  const lb = getRelativeLuminance(b);
+  return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+};
+
+// WCAG 2.x: 7 = AAA text, 4.5 = AA text (AAA large), 3 = AA large text / UI
 export const calculateContrastScore = (
   textColor: string,
   backgroundColor: string,
-): string => {
-  const textRgb = HEXToRGB(textColor, true);
-  const backgroundRgb = HEXToRGB(backgroundColor, true);
-
-  // Calculate the contrast ratio using the relative luminance formula
-  const contrastRatio =
-    typeof textRgb !== "string" &&
-    typeof backgroundRgb !== "string" &&
-    getContrastRatio(textRgb, backgroundRgb);
-
-  if (Number(contrastRatio) >= 7) {
-    return "AAA";
-  } else if (Number(contrastRatio) >= 4.5) {
-    return "AA";
-  } else {
-    return "F";
-  }
+): TContrastScore => {
+  const ratio = getContrastRatio(
+    HEXToRGB(textColor, true) as TRGB,
+    HEXToRGB(backgroundColor, true) as TRGB,
+  );
+  if (ratio >= 7) return "AAA";
+  if (ratio >= 4.5) return "AA";
+  if (ratio >= 3) return "AA Large";
+  return "F";
 };
+
 export const calculateStackOrder = (index: number, sequence: number[]) => {
-  const midSequenceIndex = sequence.length / 2;
-
-  if (index < midSequenceIndex) return { label: "low", score: 1 };
-  if (index > midSequenceIndex) return { label: "high", score: 3 };
-
-  if (
-    index === midSequenceIndex ||
-    index === Math.floor(midSequenceIndex) ||
-    index === Math.ceil(midSequenceIndex)
-  ) {
-    return { label: "median", score: 2 };
-  }
+  const pos = sequence.length > 1 ? index / (sequence.length - 1) : 0;
+  if (pos < 1 / 3) return { label: "low", score: 1 };
+  if (pos > 2 / 3) return { label: "high", score: 3 };
+  return { label: "median", score: 2 };
 };
+
 export const getSequenceUsages = (
-  contrastScore: any | null,
-  stackOrder?: any,
+  contrastScore: any,
+  stackOrder?: { label: string; score?: number } | any,
 ) => {
-  const contrastScoreRef = JSON.stringify(Object.values(contrastScore ?? ""));
-  const scores = {
-    depth: {
-      low: stackOrder?.label === "low",
-      median: stackOrder?.label === "median",
-      high: stackOrder?.label === "high",
-    },
-    opacity: {
-      low: contrastScoreRef.includes("F"),
-      high: !contrastScoreRef.includes("F"),
-    },
-  };
-
   if (stackOrder) {
-    if (scores.depth.low) return ["base", "toolbar", "dropdown"];
-    if (scores.depth.median) return ["fixed", "off-canvas", "overlay"];
-    if (scores.depth.high) return ["notification", "above-content"];
-  } else {
-    if (scores.opacity.low) return ["backdrop", "transparent"];
-    if (scores.opacity.high) return ["icons", "animations", "layout"];
+    if (stackOrder.label === "low") return ["base", "toolbar", "dropdown"];
+    if (stackOrder.label === "median")
+      return ["fixed", "off-canvas", "overlay"];
+    if (stackOrder.label === "high") return ["notification", "above-content"];
+    return [];
   }
-
-  return [];
+  const failing = Object.values(contrastScore ?? {}).some((s) => s === "F");
+  return failing
+    ? ["backdrop", "transparent"]
+    : ["icons", "animations", "layout"];
 };

@@ -36,6 +36,9 @@ export type TMode = "darken" | "lighten";
 export type TLuminance = LuminanceFactorsEnum | undefined;
 export type TColorVariant = "alpha" | "tint" | "shade";
 export type TColorFormat = "hex" | "rgb" | "hsl";
+export type TRGB = [number, number, number];
+
+export type TContrastScore = "AAA" | "AA" | "AA Large" | "F";
 
 export interface IContrastScore {
   light: string;

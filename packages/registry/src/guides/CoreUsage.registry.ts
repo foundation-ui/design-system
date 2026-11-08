@@ -10,21 +10,9 @@ export const CoreUsageMeta: DocsGuideRegistryMetadata = {
 
 import {
   generateColorTokens,
+  generateCSSClasses,
   generateCSSVariables,
-  generateDimensionClasses,
-  generateFontSizesClasses,
-  generateLayoutClasses,
-  generateOpacityClasses,
-  generateSizeClasses,
 } from "@usefui/core";
-
-const design_tokens = js_design_tokens;
-
-const cssLayoutClasses = generateLayoutClasses();
-const cssWidthHeightClasses = generateDimensionClasses();
-const cssSizeClasses = generateSizeClasses(design_tokens.measurement);
-const cssFSClasses = generateFontSizesClasses(design_tokens.fontsize);
-const cssOpacityClasses = generateOpacityClasses(design_tokens.opacity);
 
 const emphasis = generateColorTokens("emphasis", "FF0000", {
   alpha: true,
@@ -32,11 +20,14 @@ const emphasis = generateColorTokens("emphasis", "FF0000", {
   shade: false,
 });
 
-const cssVariables = generateCSSVariables({
-  ...design_tokens,
+const design_tokens = {
+  ...js_design_tokens,
   color: {
-    ...design_tokens.color,
+    ...js_design_tokens.color,
     emphasis,
   },
-});`,
+};
+
+const cssVariables = generateCSSVariables(design_tokens);
+const cssClasses = generateCSSClasses(design_tokens);`,
 };

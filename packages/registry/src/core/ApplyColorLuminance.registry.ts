@@ -9,12 +9,12 @@ export const ApplyColorLuminanceMeta: GeneratorRegistryMetadata = {
   name: "applyColorLuminance",
   title: "Apply Color Luminance",
   description:
-    "Lightens or darkens a hex color by applying a luminance factor per RGB channel. Returns undefined for hex strings shorter than 6 characters.",
+    "Lightens or darkens a hex color by applying a luminance factor per RGB channel. Accepts 3- or 6-digit hex (with or without #). Returns undefined for invalid hex.",
   module: "@usefui/core",
   code: `import { applyColorLuminance, LuminanceFactorsEnum } from "@usefui/core";
 
 const brighter = applyColorLuminance("#6f2a2a", 0.5);
-// → "#a73f3f"
+// → "#b79595"
 
 const darker = applyColorLuminance("#6f2a2a", LuminanceFactorsEnum.Lum50);`,
   properties: [

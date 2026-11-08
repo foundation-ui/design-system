@@ -138,7 +138,7 @@ export default {
               "rgb": "rgba(38, 38, 38, 0.5)",
               "hsl": "hsl(0deg 0% 15% / 50%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "F"
               }
             }
@@ -161,7 +161,7 @@ export default {
               "rgb": "rgba(38, 38, 38, 0.6)",
               "hsl": "hsl(0deg 0% 15% / 60%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "F"
               }
             }
@@ -398,7 +398,7 @@ export default {
               "rgb": "rgba(23, 23, 23, 0.5)",
               "hsl": "hsl(0deg 0% 9% / 50%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "F"
               }
             }
@@ -658,7 +658,7 @@ export default {
               "rgb": "rgba(10, 10, 10, 0.5)",
               "hsl": "hsl(0deg 0% 4% / 50%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "F"
               }
             }
@@ -896,7 +896,7 @@ export default {
               "hsl": "hsl(0deg 0% 100% / 40%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -1156,7 +1156,7 @@ export default {
               "hsl": "hsl(60deg 9% 98% / 40%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -1416,7 +1416,7 @@ export default {
               "hsl": "hsl(60deg 5% 96% / 40%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -1582,7 +1582,7 @@ export default {
             "rgb": "rgb(113, 112, 255)",
             "hsl": "hsl(240deg 100% 72%)",
             "contrast_score": {
-              "light": "F",
+              "light": "AA Large",
               "dark": "AA"
             }
           }
@@ -1745,7 +1745,7 @@ export default {
               "hsl": "hsl(240deg 100% 72% / 70%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -1768,7 +1768,7 @@ export default {
               "hsl": "hsl(240deg 100% 72% / 80%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -1790,7 +1790,7 @@ export default {
               "rgb": "rgba(113, 112, 255, 0.9)",
               "hsl": "hsl(240deg 100% 72% / 90%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -1813,7 +1813,7 @@ export default {
               "rgb": "rgba(113, 112, 255, 1)",
               "hsl": "hsl(240deg 100% 72% / 100%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -1827,19 +1827,19 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.48627450980392156,
-              0.4823529411764706,
+              0.4980392156862745,
+              0.49411764705882355,
               1
             ],
             "alpha": 1,
-            "hex": "#7c7bff"
+            "hex": "#7f7eff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(124, 123, 255)",
-              "hsl": "hsl(240deg 100% 74%)",
+              "rgb": "rgb(127, 126, 255)",
+              "hsl": "hsl(240deg 100% 75%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -1850,20 +1850,20 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5333333333333333,
-              0.5254901960784314,
+              0.5529411764705883,
+              0.5529411764705883,
               1
             ],
             "alpha": 1,
-            "hex": "#8886ff"
+            "hex": "#8d8dff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(136, 134, 255)",
-              "hsl": "hsl(241deg 100% 76%)",
+              "rgb": "rgb(141, 141, 255)",
+              "hsl": "hsl(240deg 100% 78%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "AA"
+                "dark": "AAA"
               }
             }
           }
@@ -1873,17 +1873,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5764705882352941,
-              0.5725490196078431,
+              0.611764705882353,
+              0.6078431372549019,
               1
             ],
             "alpha": 1,
-            "hex": "#9392ff"
+            "hex": "#9c9bff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(147, 146, 255)",
-              "hsl": "hsl(241deg 100% 79%)",
+              "rgb": "rgb(156, 155, 255)",
+              "hsl": "hsl(241deg 100% 80%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -1896,17 +1896,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6196078431372549,
-              0.615686274509804,
+              0.6666666666666666,
+              0.6627450980392157,
               1
             ],
             "alpha": 1,
-            "hex": "#9e9dff"
+            "hex": "#aaa9ff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(158, 157, 255)",
-              "hsl": "hsl(241deg 100% 81%)",
+              "rgb": "rgb(170, 169, 255)",
+              "hsl": "hsl(241deg 100% 83%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -1919,17 +1919,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6666666666666666,
-              0.6588235294117647,
+              0.7215686274509804,
+              0.7215686274509804,
               1
             ],
             "alpha": 1,
-            "hex": "#aaa8ff"
+            "hex": "#b8b8ff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(170, 168, 255)",
-              "hsl": "hsl(241deg 100% 83%)",
+              "rgb": "rgb(184, 184, 255)",
+              "hsl": "hsl(240deg 100% 86%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -1942,17 +1942,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7098039215686275,
-              0.7019607843137254,
+              0.7764705882352941,
+              0.7764705882352941,
               1
             ],
             "alpha": 1,
-            "hex": "#b5b3ff"
+            "hex": "#c6c6ff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(181, 179, 255)",
-              "hsl": "hsl(242deg 100% 85%)",
+              "rgb": "rgb(198, 198, 255)",
+              "hsl": "hsl(240deg 100% 89%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -1965,17 +1965,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7529411764705882,
-              0.7450980392156863,
+              0.8313725490196079,
+              0.8313725490196079,
               1
             ],
             "alpha": 1,
-            "hex": "#c0beff"
+            "hex": "#d4d4ff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(192, 190, 255)",
-              "hsl": "hsl(242deg 100% 87%)",
+              "rgb": "rgb(212, 212, 255)",
+              "hsl": "hsl(240deg 100% 92%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -1988,17 +1988,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.796078431372549,
-              0.792156862745098,
+              0.8901960784313725,
+              0.8862745098039215,
               1
             ],
             "alpha": 1,
-            "hex": "#cbcaff"
+            "hex": "#e3e2ff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(203, 202, 255)",
-              "hsl": "hsl(241deg 100% 90%)",
+              "rgb": "rgb(227, 226, 255)",
+              "hsl": "hsl(242deg 100% 94%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -2011,17 +2011,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8431372549019608,
-              0.8352941176470589,
+              0.9450980392156862,
+              0.9450980392156862,
               1
             ],
             "alpha": 1,
-            "hex": "#d7d5ff"
+            "hex": "#f1f1ff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(215, 213, 255)",
-              "hsl": "hsl(243deg 100% 92%)",
+              "rgb": "rgb(241, 241, 255)",
+              "hsl": "hsl(240deg 100% 97%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -2034,17 +2034,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8862745098039215,
-              0.8784313725490196,
+              1,
+              1,
               1
             ],
             "alpha": 1,
-            "hex": "#e2e0ff"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(226, 224, 255)",
-              "hsl": "hsl(244deg 100% 94%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -2096,7 +2096,7 @@ export default {
               "hsl": "hsl(240deg 53% 58%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -2119,7 +2119,7 @@ export default {
               "hsl": "hsl(241deg 40% 50%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -2246,15 +2246,15 @@ export default {
             "components": [
               0.043137254901960784,
               0.043137254901960784,
-              0.10196078431372549
+              0.09803921568627451
             ],
             "alpha": 1,
-            "hex": "#0b0b1a"
+            "hex": "#0b0b19"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(11, 11, 26)",
-              "hsl": "hsl(240deg 41% 7%)",
+              "rgb": "rgb(11, 11, 25)",
+              "hsl": "hsl(240deg 39% 7%)",
               "contrast_score": {
                 "light": "AAA",
                 "dark": "F"
@@ -2308,7 +2308,7 @@ export default {
             "rgb": "rgb(239, 68, 68)",
             "hsl": "hsl(0deg 84% 60%)",
             "contrast_score": {
-              "light": "F",
+              "light": "AA Large",
               "dark": "AA"
             }
           }
@@ -2471,7 +2471,7 @@ export default {
               "hsl": "hsl(0deg 84% 60% / 70%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -2494,7 +2494,7 @@ export default {
               "hsl": "hsl(0deg 84% 60% / 80%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -2516,7 +2516,7 @@ export default {
               "rgb": "rgba(239, 68, 68, 0.9)",
               "hsl": "hsl(0deg 84% 60% / 90%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -2539,7 +2539,7 @@ export default {
               "rgb": "rgba(239, 68, 68, 1)",
               "hsl": "hsl(0deg 84% 60% / 100%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -2553,19 +2553,19 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.29411764705882354,
-              0.29411764705882354
+              0.9450980392156862,
+              0.3411764705882353,
+              0.3411764705882353
             ],
             "alpha": 1,
-            "hex": "#ff4b4b"
+            "hex": "#f15757"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 75, 75)",
-              "hsl": "hsl(0deg 100% 65%)",
+              "rgb": "rgb(241, 87, 87)",
+              "hsl": "hsl(0deg 85% 64%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -2576,20 +2576,20 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.3215686274509804,
-              0.3215686274509804
+              0.9490196078431372,
+              0.4117647058823529,
+              0.4117647058823529
             ],
             "alpha": 1,
-            "hex": "#ff5252"
+            "hex": "#f26969"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 82, 82)",
-              "hsl": "hsl(0deg 100% 66%)",
+              "rgb": "rgb(242, 105, 105)",
+              "hsl": "hsl(0deg 84% 68%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "AA"
+                "dark": "AAA"
               }
             }
           }
@@ -2599,20 +2599,20 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.34509803921568627,
-              0.34509803921568627
+              0.9568627450980393,
+              0.48627450980392156,
+              0.48627450980392156
             ],
             "alpha": 1,
-            "hex": "#ff5858"
+            "hex": "#f47c7c"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 88, 88)",
-              "hsl": "hsl(0deg 100% 67%)",
+              "rgb": "rgb(244, 124, 124)",
+              "hsl": "hsl(0deg 85% 72%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "AA"
+                "dark": "AAA"
               }
             }
           }
@@ -2622,17 +2622,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.37254901960784315,
-              0.37254901960784315
+              0.9607843137254902,
+              0.5607843137254902,
+              0.5607843137254902
             ],
             "alpha": 1,
-            "hex": "#ff5f5f"
+            "hex": "#f58f8f"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 95, 95)",
-              "hsl": "hsl(0deg 100% 69%)",
+              "rgb": "rgb(245, 143, 143)",
+              "hsl": "hsl(0deg 84% 76%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -2645,17 +2645,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.4,
-              0.4
+              0.9686274509803922,
+              0.6352941176470588,
+              0.6352941176470588
             ],
             "alpha": 1,
-            "hex": "#ff6666"
+            "hex": "#f7a2a2"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 102, 102)",
-              "hsl": "hsl(0deg 100% 70%)",
+              "rgb": "rgb(247, 162, 162)",
+              "hsl": "hsl(0deg 84% 80%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -2668,17 +2668,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.42745098039215684,
-              0.42745098039215684
+              0.9764705882352941,
+              0.7058823529411765,
+              0.7058823529411765
             ],
             "alpha": 1,
-            "hex": "#ff6d6d"
+            "hex": "#f9b4b4"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 109, 109)",
-              "hsl": "hsl(0deg 100% 71%)",
+              "rgb": "rgb(249, 180, 180)",
+              "hsl": "hsl(0deg 85% 84%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -2691,17 +2691,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.4549019607843137,
-              0.4549019607843137
+              0.9803921568627451,
+              0.7803921568627451,
+              0.7803921568627451
             ],
             "alpha": 1,
-            "hex": "#ff7474"
+            "hex": "#fac7c7"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 116, 116)",
-              "hsl": "hsl(0deg 100% 73%)",
+              "rgb": "rgb(250, 199, 199)",
+              "hsl": "hsl(0deg 84% 88%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -2714,17 +2714,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.47843137254901963,
-              0.47843137254901963
+              0.9882352941176471,
+              0.8549019607843137,
+              0.8549019607843137
             ],
             "alpha": 1,
-            "hex": "#ff7a7a"
+            "hex": "#fcdada"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 122, 122)",
-              "hsl": "hsl(0deg 100% 74%)",
+              "rgb": "rgb(252, 218, 218)",
+              "hsl": "hsl(0deg 85% 92%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -2737,17 +2737,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.5058823529411764,
-              0.5058823529411764
+              0.9921568627450981,
+              0.9254901960784314,
+              0.9254901960784314
             ],
             "alpha": 1,
-            "hex": "#ff8181"
+            "hex": "#fdecec"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 129, 129)",
-              "hsl": "hsl(0deg 100% 75%)",
+              "rgb": "rgb(253, 236, 236)",
+              "hsl": "hsl(0deg 81% 96%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -2761,16 +2761,16 @@ export default {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.5333333333333333,
-              0.5333333333333333
+              1,
+              1
             ],
             "alpha": 1,
-            "hex": "#ff8888"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 136, 136)",
-              "hsl": "hsl(0deg 100% 77%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -2822,7 +2822,7 @@ export default {
               "hsl": "hsl(0deg 56% 48%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -2845,7 +2845,7 @@ export default {
               "hsl": "hsl(0deg 55% 42%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -3174,7 +3174,7 @@ export default {
               "hsl": "hsl(25deg 95% 53% / 60%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -3197,7 +3197,7 @@ export default {
               "hsl": "hsl(25deg 95% 53% / 70%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -3279,17 +3279,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.4980392156862745,
-              0.09411764705882353
+              0.9803921568627451,
+              0.5058823529411764,
+              0.17647058823529413
             ],
             "alpha": 1,
-            "hex": "#ff7f18"
+            "hex": "#fa812d"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 127, 24)",
-              "hsl": "hsl(27deg 100% 55%)",
+              "rgb": "rgb(250, 129, 45)",
+              "hsl": "hsl(25deg 95% 58%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -3302,17 +3302,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.5411764705882353,
-              0.10196078431372549
+              0.9803921568627451,
+              0.5607843137254902,
+              0.27058823529411763
             ],
             "alpha": 1,
-            "hex": "#ff8a1a"
+            "hex": "#fa8f45"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 138, 26)",
-              "hsl": "hsl(29deg 100% 55%)",
+              "rgb": "rgb(250, 143, 69)",
+              "hsl": "hsl(25deg 95% 63%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -3325,17 +3325,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.5882352941176471,
-              0.11372549019607843
+              0.984313725490196,
+              0.615686274509804,
+              0.3607843137254902
             ],
             "alpha": 1,
-            "hex": "#ff961d"
+            "hex": "#fb9d5c"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 150, 29)",
-              "hsl": "hsl(32deg 100% 56%)",
+              "rgb": "rgb(251, 157, 92)",
+              "hsl": "hsl(25deg 95% 67%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -3348,17 +3348,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.6313725490196078,
-              0.12156862745098039
+              0.984313725490196,
+              0.6705882352941176,
+              0.45098039215686275
             ],
             "alpha": 1,
-            "hex": "#ffa11f"
+            "hex": "#fbab73"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 161, 31)",
-              "hsl": "hsl(35deg 100% 56%)",
+              "rgb": "rgb(251, 171, 115)",
+              "hsl": "hsl(25deg 94% 72%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -3371,17 +3371,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.6784313725490196,
-              0.12941176470588237
+              0.9882352941176471,
+              0.7254901960784313,
+              0.5450980392156862
             ],
             "alpha": 1,
-            "hex": "#ffad21"
+            "hex": "#fcb98b"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 173, 33)",
-              "hsl": "hsl(38deg 100% 56%)",
+              "rgb": "rgb(252, 185, 139)",
+              "hsl": "hsl(24deg 95% 77%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -3394,17 +3394,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.7215686274509804,
-              0.13725490196078433
+              0.9921568627450981,
+              0.7803921568627451,
+              0.6352941176470588
             ],
             "alpha": 1,
-            "hex": "#ffb823"
+            "hex": "#fdc7a2"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 184, 35)",
-              "hsl": "hsl(41deg 100% 57%)",
+              "rgb": "rgb(253, 199, 162)",
+              "hsl": "hsl(24deg 96% 81%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -3417,17 +3417,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.7686274509803922,
-              0.1450980392156863
+              0.9921568627450981,
+              0.8352941176470589,
+              0.7254901960784313
             ],
             "alpha": 1,
-            "hex": "#ffc425"
+            "hex": "#fdd5b9"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 196, 37)",
-              "hsl": "hsl(44deg 100% 57%)",
+              "rgb": "rgb(253, 213, 185)",
+              "hsl": "hsl(25deg 94% 86%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -3440,17 +3440,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.8117647058823529,
-              0.1568627450980392
+              0.996078431372549,
+              0.8901960784313725,
+              0.8156862745098039
             ],
             "alpha": 1,
-            "hex": "#ffcf28"
+            "hex": "#fee3d0"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 207, 40)",
-              "hsl": "hsl(47deg 100% 58%)",
+              "rgb": "rgb(254, 227, 208)",
+              "hsl": "hsl(25deg 96% 91%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -3463,17 +3463,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.8588235294117647,
-              0.16470588235294117
+              0.996078431372549,
+              0.9450980392156862,
+              0.9098039215686274
             ],
             "alpha": 1,
-            "hex": "#ffdb2a"
+            "hex": "#fef1e8"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 219, 42)",
-              "hsl": "hsl(50deg 100% 58%)",
+              "rgb": "rgb(254, 241, 232)",
+              "hsl": "hsl(25deg 92% 95%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -3487,16 +3487,16 @@ export default {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.9019607843137255,
-              0.17254901960784313
+              1,
+              1
             ],
             "alpha": 1,
-            "hex": "#ffe62c"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 230, 44)",
-              "hsl": "hsl(53deg 100% 59%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -3524,7 +3524,7 @@ export default {
               "rgb": "rgb(224, 104, 20)",
               "hsl": "hsl(25deg 84% 48%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -3547,7 +3547,7 @@ export default {
               "rgb": "rgb(199, 92, 18)",
               "hsl": "hsl(25deg 83% 43%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -3571,7 +3571,7 @@ export default {
               "hsl": "hsl(25deg 84% 37%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -3594,7 +3594,7 @@ export default {
               "hsl": "hsl(25deg 84% 32%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -3697,16 +3697,16 @@ export default {
             "colorSpace": "srgb",
             "components": [
               0.09803921568627451,
-              0.047058823529411764,
+              0.043137254901960784,
               0.00784313725490196
             ],
             "alpha": 1,
-            "hex": "#190c02"
+            "hex": "#190b02"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(25, 12, 2)",
-              "hsl": "hsl(26deg 85% 5%)",
+              "rgb": "rgb(25, 11, 2)",
+              "hsl": "hsl(23deg 85% 5%)",
               "contrast_score": {
                 "light": "AAA",
                 "dark": "F"
@@ -3900,7 +3900,7 @@ export default {
               "hsl": "hsl(38deg 92% 50% / 60%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -4005,17 +4005,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.6823529411764706,
-              0.047058823529411764
+              0.9647058823529412,
+              0.6588235294117647,
+              0.13725490196078433
             ],
             "alpha": 1,
-            "hex": "#ffae0c"
+            "hex": "#f6a823"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 174, 12)",
-              "hsl": "hsl(40deg 100% 52%)",
+              "rgb": "rgb(246, 168, 35)",
+              "hsl": "hsl(38deg 92% 55%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4028,17 +4028,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.7450980392156863,
-              0.050980392156862744
+              0.9686274509803922,
+              0.6941176470588235,
+              0.23529411764705882
             ],
             "alpha": 1,
-            "hex": "#ffbe0d"
+            "hex": "#f7b13c"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 190, 13)",
-              "hsl": "hsl(44deg 100% 53%)",
+              "rgb": "rgb(247, 177, 60)",
+              "hsl": "hsl(38deg 92% 60%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4051,17 +4051,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.803921568627451,
-              0.054901960784313725
+              0.9725490196078431,
+              0.7333333333333333,
+              0.32941176470588235
             ],
             "alpha": 1,
-            "hex": "#ffcd0e"
+            "hex": "#f8bb54"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 205, 14)",
-              "hsl": "hsl(48deg 100% 53%)",
+              "rgb": "rgb(248, 187, 84)",
+              "hsl": "hsl(38deg 92% 65%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4074,17 +4074,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.8666666666666667,
-              0.058823529411764705
+              0.9764705882352941,
+              0.7725490196078432,
+              0.42745098039215684
             ],
             "alpha": 1,
-            "hex": "#ffdd0f"
+            "hex": "#f9c56d"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 221, 15)",
-              "hsl": "hsl(52deg 100% 53%)",
+              "rgb": "rgb(249, 197, 109)",
+              "hsl": "hsl(38deg 92% 70%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4097,17 +4097,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.9294117647058824,
-              0.06666666666666667
+              0.9803921568627451,
+              0.8117647058823529,
+              0.5215686274509804
             ],
             "alpha": 1,
-            "hex": "#ffed11"
+            "hex": "#facf85"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 237, 17)",
-              "hsl": "hsl(55deg 100% 53%)",
+              "rgb": "rgb(250, 207, 133)",
+              "hsl": "hsl(38deg 92% 75%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4120,17 +4120,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.9921568627450981,
-              0.07058823529411765
+              0.984313725490196,
+              0.8470588235294118,
+              0.615686274509804
             ],
             "alpha": 1,
-            "hex": "#fffd12"
+            "hex": "#fbd89d"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 253, 18)",
-              "hsl": "hsl(59deg 100% 54%)",
+              "rgb": "rgb(251, 216, 157)",
+              "hsl": "hsl(38deg 92% 80%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4143,17 +4143,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              0.07450980392156863
+              0.9882352941176471,
+              0.8862745098039215,
+              0.7137254901960784
             ],
             "alpha": 1,
-            "hex": "#ffff13"
+            "hex": "#fce2b6"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 19)",
-              "hsl": "hsl(60deg 100% 54%)",
+              "rgb": "rgb(252, 226, 182)",
+              "hsl": "hsl(38deg 92% 85%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4166,17 +4166,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              0.0784313725490196
+              0.9921568627450981,
+              0.9254901960784314,
+              0.807843137254902
             ],
             "alpha": 1,
-            "hex": "#ffff14"
+            "hex": "#fdecce"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 20)",
-              "hsl": "hsl(60deg 100% 54%)",
+              "rgb": "rgb(253, 236, 206)",
+              "hsl": "hsl(38deg 92% 90%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4189,17 +4189,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              0.08235294117647059
+              0.996078431372549,
+              0.9607843137254902,
+              0.9058823529411765
             ],
             "alpha": 1,
-            "hex": "#ffff15"
+            "hex": "#fef5e7"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 21)",
-              "hsl": "hsl(60deg 100% 54%)",
+              "rgb": "rgb(254, 245, 231)",
+              "hsl": "hsl(37deg 92% 95%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4214,15 +4214,15 @@ export default {
             "components": [
               1,
               1,
-              0.08627450980392157
+              1
             ],
             "alpha": 1,
-            "hex": "#ffff16"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 22)",
-              "hsl": "hsl(60deg 100% 54%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4273,7 +4273,7 @@ export default {
               "rgb": "rgb(196, 126, 9)",
               "hsl": "hsl(38deg 91% 40%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -4296,7 +4296,7 @@ export default {
               "rgb": "rgb(172, 111, 8)",
               "hsl": "hsl(38deg 91% 35%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -4320,7 +4320,7 @@ export default {
               "hsl": "hsl(38deg 91% 30%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -4422,17 +4422,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.09803921568627451,
+              0.09411764705882353,
               0.06274509803921569,
               0.00392156862745098
             ],
             "alpha": 1,
-            "hex": "#191001"
+            "hex": "#181001"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(25, 16, 1)",
-              "hsl": "hsl(38deg 92% 5%)",
+              "rgb": "rgb(24, 16, 1)",
+              "hsl": "hsl(39deg 92% 5%)",
               "contrast_score": {
                 "light": "AAA",
                 "dark": "F"
@@ -4603,7 +4603,7 @@ export default {
               "hsl": "hsl(45deg 93% 47% / 50%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -4626,7 +4626,7 @@ export default {
               "hsl": "hsl(45deg 93% 47% / 60%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -4731,17 +4731,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.7725490196078432,
-              0.03529411764705882
+              0.9254901960784314,
+              0.7333333333333333,
+              0.12941176470588237
             ],
             "alpha": 1,
-            "hex": "#ffc509"
+            "hex": "#ecbb21"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 197, 9)",
-              "hsl": "hsl(46deg 100% 52%)",
+              "rgb": "rgb(236, 187, 33)",
+              "hsl": "hsl(46deg 84% 53%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4754,17 +4754,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.8431372549019608,
-              0.0392156862745098
+              0.9333333333333333,
+              0.7607843137254902,
+              0.2235294117647059
             ],
             "alpha": 1,
-            "hex": "#ffd70a"
+            "hex": "#eec239"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 215, 10)",
-              "hsl": "hsl(50deg 100% 52%)",
+              "rgb": "rgb(238, 194, 57)",
+              "hsl": "hsl(45deg 84% 58%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4777,17 +4777,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.9137254901960784,
-              0.0392156862745098
+              0.9411764705882353,
+              0.792156862745098,
+              0.3215686274509804
             ],
             "alpha": 1,
-            "hex": "#ffe90a"
+            "hex": "#f0ca52"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 233, 10)",
-              "hsl": "hsl(55deg 100% 52%)",
+              "rgb": "rgb(240, 202, 82)",
+              "hsl": "hsl(46deg 84% 63%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4800,17 +4800,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.984313725490196,
-              0.043137254901960784
+              0.9490196078431372,
+              0.8196078431372549,
+              0.4196078431372549
             ],
             "alpha": 1,
-            "hex": "#fffb0b"
+            "hex": "#f2d16b"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 251, 11)",
-              "hsl": "hsl(59deg 100% 52%)",
+              "rgb": "rgb(242, 209, 107)",
+              "hsl": "hsl(45deg 84% 68%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4823,17 +4823,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              0.047058823529411764
+              0.9607843137254902,
+              0.8509803921568627,
+              0.5176470588235295
             ],
             "alpha": 1,
-            "hex": "#ffff0c"
+            "hex": "#f5d984"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 12)",
-              "hsl": "hsl(60deg 100% 52%)",
+              "rgb": "rgb(245, 217, 132)",
+              "hsl": "hsl(45deg 85% 74%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4846,17 +4846,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              0.050980392156862744
+              0.9686274509803922,
+              0.8823529411764706,
+              0.611764705882353
             ],
             "alpha": 1,
-            "hex": "#ffff0d"
+            "hex": "#f7e19c"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 13)",
-              "hsl": "hsl(60deg 100% 53%)",
+              "rgb": "rgb(247, 225, 156)",
+              "hsl": "hsl(45deg 85% 79%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4869,17 +4869,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              0.054901960784313725
+              0.9764705882352941,
+              0.9098039215686274,
+              0.7098039215686275
             ],
             "alpha": 1,
-            "hex": "#ffff0e"
+            "hex": "#f9e8b5"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 14)",
-              "hsl": "hsl(60deg 100% 53%)",
+              "rgb": "rgb(249, 232, 181)",
+              "hsl": "hsl(45deg 85% 84%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4892,17 +4892,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              0.054901960784313725
+              0.984313725490196,
+              0.9411764705882353,
+              0.807843137254902
             ],
             "alpha": 1,
-            "hex": "#ffff0e"
+            "hex": "#fbf0ce"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 14)",
-              "hsl": "hsl(60deg 100% 53%)",
+              "rgb": "rgb(251, 240, 206)",
+              "hsl": "hsl(45deg 85% 90%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4915,17 +4915,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              0.058823529411764705
+              0.9921568627450981,
+              0.9686274509803922,
+              0.9019607843137255
             ],
             "alpha": 1,
-            "hex": "#ffff0f"
+            "hex": "#fdf7e6"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 15)",
-              "hsl": "hsl(60deg 100% 53%)",
+              "rgb": "rgb(253, 247, 230)",
+              "hsl": "hsl(44deg 85% 95%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -4940,15 +4940,15 @@ export default {
             "components": [
               1,
               1,
-              0.06274509803921569
+              1
             ],
             "alpha": 1,
-            "hex": "#ffff10"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 16)",
-              "hsl": "hsl(60deg 100% 53%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5022,7 +5022,7 @@ export default {
               "rgb": "rgb(164, 125, 6)",
               "hsl": "hsl(45deg 93% 33%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -5046,7 +5046,7 @@ export default {
               "hsl": "hsl(45deg 93% 28%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -5069,7 +5069,7 @@ export default {
               "hsl": "hsl(46deg 93% 24%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -5329,7 +5329,7 @@ export default {
               "hsl": "hsl(84deg 81% 44% / 50%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -5352,7 +5352,7 @@ export default {
               "hsl": "hsl(84deg 81% 44% / 60%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -5457,17 +5457,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5686274509803921,
-              0.8784313725490196,
-              0.09411764705882353
+              0.5647058823529412,
+              0.8196078431372549,
+              0.17647058823529413
             ],
             "alpha": 1,
-            "hex": "#91e018"
+            "hex": "#90d12d"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(145, 224, 24)",
-              "hsl": "hsl(84deg 81% 49%)",
+              "rgb": "rgb(144, 209, 45)",
+              "hsl": "hsl(84deg 65% 50%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5480,17 +5480,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6196078431372549,
-              0.9607843137254902,
-              0.10196078431372549
+              0.615686274509804,
+              0.8392156862745098,
+              0.27058823529411763
             ],
             "alpha": 1,
-            "hex": "#9ef51a"
+            "hex": "#9dd645"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(158, 245, 26)",
-              "hsl": "hsl(84deg 92% 53%)",
+              "rgb": "rgb(157, 214, 69)",
+              "hsl": "hsl(84deg 64% 55%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5503,17 +5503,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6745098039215687,
-              1,
-              0.11372549019607843
+              0.6627450980392157,
+              0.8588235294117647,
+              0.3607843137254902
             ],
             "alpha": 1,
-            "hex": "#acff1d"
+            "hex": "#a9db5c"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(172, 255, 29)",
-              "hsl": "hsl(82deg 100% 56%)",
+              "rgb": "rgb(169, 219, 92)",
+              "hsl": "hsl(84deg 64% 61%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5526,17 +5526,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7254901960784313,
-              1,
-              0.12156862745098039
+              0.7098039215686275,
+              0.8784313725490196,
+              0.45098039215686275
             ],
             "alpha": 1,
-            "hex": "#b9ff1f"
+            "hex": "#b5e073"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(185, 255, 31)",
-              "hsl": "hsl(79deg 100% 56%)",
+              "rgb": "rgb(181, 224, 115)",
+              "hsl": "hsl(84deg 64% 66%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5549,17 +5549,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7764705882352941,
-              1,
-              0.12941176470588237
+              0.7607843137254902,
+              0.9019607843137255,
+              0.5450980392156862
             ],
             "alpha": 1,
-            "hex": "#c6ff21"
+            "hex": "#c2e68b"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(198, 255, 33)",
-              "hsl": "hsl(75deg 100% 56%)",
+              "rgb": "rgb(194, 230, 139)",
+              "hsl": "hsl(84deg 65% 72%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5572,17 +5572,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8274509803921568,
-              1,
-              0.13725490196078433
+              0.807843137254902,
+              0.9215686274509803,
+              0.6352941176470588
             ],
             "alpha": 1,
-            "hex": "#d3ff23"
+            "hex": "#ceeba2"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(211, 255, 35)",
-              "hsl": "hsl(72deg 100% 57%)",
+              "rgb": "rgb(206, 235, 162)",
+              "hsl": "hsl(84deg 65% 78%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5595,17 +5595,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8784313725490196,
-              1,
-              0.1450980392156863
+              0.8549019607843137,
+              0.9411764705882353,
+              0.7254901960784313
             ],
             "alpha": 1,
-            "hex": "#e0ff25"
+            "hex": "#daf0b9"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(224, 255, 37)",
-              "hsl": "hsl(69deg 100% 57%)",
+              "rgb": "rgb(218, 240, 185)",
+              "hsl": "hsl(84deg 65% 83%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5618,17 +5618,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9333333333333333,
-              1,
-              0.1568627450980392
+              0.9019607843137255,
+              0.9607843137254902,
+              0.8156862745098039
             ],
             "alpha": 1,
-            "hex": "#eeff28"
+            "hex": "#e6f5d0"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(238, 255, 40)",
-              "hsl": "hsl(65deg 100% 58%)",
+              "rgb": "rgb(230, 245, 208)",
+              "hsl": "hsl(84deg 65% 89%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5641,17 +5641,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.984313725490196,
-              1,
-              0.16470588235294117
+              0.9529411764705882,
+              0.9803921568627451,
+              0.9098039215686274
             ],
             "alpha": 1,
-            "hex": "#fbff2a"
+            "hex": "#f3fae8"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(251, 255, 42)",
-              "hsl": "hsl(61deg 100% 58%)",
+              "rgb": "rgb(243, 250, 232)",
+              "hsl": "hsl(83deg 64% 95%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5666,15 +5666,15 @@ export default {
             "components": [
               1,
               1,
-              0.17254901960784313
+              1
             ],
             "alpha": 1,
-            "hex": "#ffff2c"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 255, 44)",
-              "hsl": "hsl(60deg 100% 59%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -5725,7 +5725,7 @@ export default {
               "rgb": "rgb(106, 163, 18)",
               "hsl": "hsl(84deg 80% 35%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -5748,7 +5748,7 @@ export default {
               "rgb": "rgb(92, 143, 15)",
               "hsl": "hsl(84deg 81% 31%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -5772,7 +5772,7 @@ export default {
               "hsl": "hsl(84deg 81% 26%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -5795,7 +5795,7 @@ export default {
               "hsl": "hsl(84deg 81% 22%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -6078,7 +6078,7 @@ export default {
               "hsl": "hsl(142deg 71% 45% / 60%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -6183,17 +6183,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.1450980392156863,
-              0.8509803921568627,
-              0.403921568627451
+              0.2196078431372549,
+              0.796078431372549,
+              0.43137254901960786
             ],
             "alpha": 1,
-            "hex": "#25d967"
+            "hex": "#38cb6e"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(37, 217, 103)",
-              "hsl": "hsl(142deg 71% 50%)",
+              "rgb": "rgb(56, 203, 110)",
+              "hsl": "hsl(142deg 59% 51%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6206,17 +6206,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.1607843137254902,
-              0.9254901960784314,
-              0.44313725490196076
+              0.3058823529411765,
+              0.8196078431372549,
+              0.49411764705882355
             ],
             "alpha": 1,
-            "hex": "#29ec71"
+            "hex": "#4ed17e"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(41, 236, 113)",
-              "hsl": "hsl(142deg 84% 54%)",
+              "rgb": "rgb(78, 209, 126)",
+              "hsl": "hsl(142deg 59% 56%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6229,17 +6229,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.17254901960784313,
-              1,
-              0.47843137254901963
+              0.39215686274509803,
+              0.8392156862745098,
+              0.5568627450980392
             ],
             "alpha": 1,
-            "hex": "#2cff7a"
+            "hex": "#64d68e"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(44, 255, 122)",
-              "hsl": "hsl(142deg 100% 59%)",
+              "rgb": "rgb(100, 214, 142)",
+              "hsl": "hsl(142deg 58% 62%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6252,17 +6252,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.18823529411764706,
-              1,
-              0.5176470588235295
+              0.47843137254901963,
+              0.8627450980392157,
+              0.6196078431372549
             ],
             "alpha": 1,
-            "hex": "#30ff84"
+            "hex": "#7adc9e"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(48, 255, 132)",
-              "hsl": "hsl(144deg 100% 59%)",
+              "rgb": "rgb(122, 220, 158)",
+              "hsl": "hsl(142deg 58% 67%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6275,17 +6275,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.2,
-              1,
-              0.5529411764705883
+              0.5686274509803921,
+              0.8862745098039215,
+              0.6862745098039216
             ],
             "alpha": 1,
-            "hex": "#33ff8d"
+            "hex": "#91e2af"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(51, 255, 141)",
-              "hsl": "hsl(146deg 100% 60%)",
+              "rgb": "rgb(145, 226, 175)",
+              "hsl": "hsl(142deg 58% 73%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6298,17 +6298,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.21176470588235294,
-              1,
-              0.5882352941176471
+              0.6549019607843137,
+              0.9098039215686274,
+              0.7490196078431373
             ],
             "alpha": 1,
-            "hex": "#36ff96"
+            "hex": "#a7e8bf"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(54, 255, 150)",
-              "hsl": "hsl(149deg 100% 61%)",
+              "rgb": "rgb(167, 232, 191)",
+              "hsl": "hsl(142deg 59% 78%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6321,17 +6321,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.22745098039215686,
-              1,
-              0.6274509803921569
+              0.7411764705882353,
+              0.9333333333333333,
+              0.8117647058823529
             ],
             "alpha": 1,
-            "hex": "#3affa0"
+            "hex": "#bdeecf"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(58, 255, 160)",
-              "hsl": "hsl(151deg 100% 61%)",
+              "rgb": "rgb(189, 238, 207)",
+              "hsl": "hsl(142deg 59% 84%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6344,17 +6344,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.23921568627450981,
-              1,
-              0.6627450980392157
+              0.8274509803921568,
+              0.9529411764705882,
+              0.8745098039215686
             ],
             "alpha": 1,
-            "hex": "#3dffa9"
+            "hex": "#d3f3df"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(61, 255, 169)",
-              "hsl": "hsl(153deg 100% 62%)",
+              "rgb": "rgb(211, 243, 223)",
+              "hsl": "hsl(143deg 57% 89%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6367,17 +6367,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.2549019607843137,
-              1,
-              0.7019607843137254
+              0.9137254901960784,
+              0.9764705882352941,
+              0.9372549019607843
             ],
             "alpha": 1,
-            "hex": "#41ffb3"
+            "hex": "#e9f9ef"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(65, 255, 179)",
-              "hsl": "hsl(156deg 100% 63%)",
+              "rgb": "rgb(233, 249, 239)",
+              "hsl": "hsl(143deg 57% 95%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6390,17 +6390,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.26666666666666666,
               1,
-              0.7372549019607844
+              1,
+              1
             ],
             "alpha": 1,
-            "hex": "#44ffbc"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(68, 255, 188)",
-              "hsl": "hsl(159deg 100% 63%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6451,7 +6451,7 @@ export default {
               "rgb": "rgb(27, 158, 75)",
               "hsl": "hsl(142deg 71% 36%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -6474,7 +6474,7 @@ export default {
               "rgb": "rgb(24, 138, 66)",
               "hsl": "hsl(142deg 70% 32%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -6498,7 +6498,7 @@ export default {
               "hsl": "hsl(142deg 71% 27%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -6804,7 +6804,7 @@ export default {
               "hsl": "hsl(173deg 80% 40% / 60%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -6827,7 +6827,7 @@ export default {
               "hsl": "hsl(173deg 80% 40% / 70%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -6909,17 +6909,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.08627450980392157,
-              0.792156862745098,
-              0.7176470588235294
+              0.17254901960784313,
+              0.7490196078431373,
+              0.6862745098039216
             ],
             "alpha": 1,
-            "hex": "#16cab7"
+            "hex": "#2cbfaf"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(22, 202, 183)",
-              "hsl": "hsl(174deg 80% 44%)",
+              "rgb": "rgb(44, 191, 175)",
+              "hsl": "hsl(173deg 63% 46%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6932,17 +6932,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.09411764705882353,
-              0.8666666666666667,
-              0.7803921568627451
+              0.2627450980392157,
+              0.7764705882352941,
+              0.7215686274509804
             ],
             "alpha": 1,
-            "hex": "#18ddc7"
+            "hex": "#43c6b8"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(24, 221, 199)",
-              "hsl": "hsl(173deg 80% 48%)",
+              "rgb": "rgb(67, 198, 184)",
+              "hsl": "hsl(174deg 53% 52%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6955,17 +6955,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.10196078431372549,
-              0.9372549019607843,
-              0.8470588235294118
+              0.3568627450980392,
+              0.803921568627451,
+              0.7568627450980392
             ],
             "alpha": 1,
-            "hex": "#1aefd8"
+            "hex": "#5bcdc1"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(26, 239, 216)",
-              "hsl": "hsl(174deg 87% 52%)",
+              "rgb": "rgb(91, 205, 193)",
+              "hsl": "hsl(174deg 53% 58%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -6978,17 +6978,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.10980392156862745,
-              1,
-              0.9098039215686274
+              0.4470588235294118,
+              0.8313725490196079,
+              0.792156862745098
             ],
             "alpha": 1,
-            "hex": "#1cffe8"
+            "hex": "#72d4ca"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(28, 255, 232)",
-              "hsl": "hsl(174deg 100% 55%)",
+              "rgb": "rgb(114, 212, 202)",
+              "hsl": "hsl(174deg 53% 64%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7001,17 +7001,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.11764705882352941,
-              1,
-              0.9764705882352941
+              0.5411764705882353,
+              0.8627450980392157,
+              0.8274509803921568
             ],
             "alpha": 1,
-            "hex": "#1efff9"
+            "hex": "#8adcd3"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(30, 255, 249)",
-              "hsl": "hsl(178deg 100% 56%)",
+              "rgb": "rgb(138, 220, 211)",
+              "hsl": "hsl(173deg 54% 70%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7024,17 +7024,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.12549019607843137,
-              1,
-              1
+              0.6313725490196078,
+              0.8901960784313725,
+              0.8588235294117647
             ],
             "alpha": 1,
-            "hex": "#20ffff"
+            "hex": "#a1e3db"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(32, 255, 255)",
-              "hsl": "hsl(180deg 100% 56%)",
+              "rgb": "rgb(161, 227, 219)",
+              "hsl": "hsl(173deg 54% 76%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7047,17 +7047,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.13333333333333333,
-              1,
-              1
+              0.7254901960784313,
+              0.9176470588235294,
+              0.8941176470588236
             ],
             "alpha": 1,
-            "hex": "#22ffff"
+            "hex": "#b9eae4"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(34, 255, 255)",
-              "hsl": "hsl(180deg 100% 57%)",
+              "rgb": "rgb(185, 234, 228)",
+              "hsl": "hsl(173deg 54% 82%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7070,17 +7070,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.1411764705882353,
-              1,
-              1
+              0.8156862745098039,
+              0.9450980392156862,
+              0.9294117647058824
             ],
             "alpha": 1,
-            "hex": "#24ffff"
+            "hex": "#d0f1ed"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(36, 255, 255)",
-              "hsl": "hsl(180deg 100% 57%)",
+              "rgb": "rgb(208, 241, 237)",
+              "hsl": "hsl(173deg 54% 88%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7093,17 +7093,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.14901960784313725,
-              1,
-              1
+              0.9098039215686274,
+              0.9725490196078431,
+              0.9647058823529412
             ],
             "alpha": 1,
-            "hex": "#26ffff"
+            "hex": "#e8f8f6"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(38, 255, 255)",
-              "hsl": "hsl(180deg 100% 57%)",
+              "rgb": "rgb(232, 248, 246)",
+              "hsl": "hsl(173deg 53% 94%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7116,17 +7116,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.1568627450980392,
+              1,
               1,
               1
             ],
             "alpha": 1,
-            "hex": "#28ffff"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(40, 255, 255)",
-              "hsl": "hsl(180deg 100% 58%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7154,7 +7154,7 @@ export default {
               "rgb": "rgb(18, 166, 149)",
               "hsl": "hsl(173deg 80% 36%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -7177,7 +7177,7 @@ export default {
               "rgb": "rgb(16, 147, 133)",
               "hsl": "hsl(174deg 80% 32%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -7201,7 +7201,7 @@ export default {
               "hsl": "hsl(173deg 80% 28%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -7224,7 +7224,7 @@ export default {
               "hsl": "hsl(174deg 80% 24%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -7530,7 +7530,7 @@ export default {
               "hsl": "hsl(189deg 94% 43% / 60%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -7553,7 +7553,7 @@ export default {
               "hsl": "hsl(189deg 94% 43% / 70%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -7635,17 +7635,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.027450980392156862,
-              0.7843137254901961,
-              0.9137254901960784
+              0.12156862745098039,
+              0.7411764705882353,
+              0.8470588235294118
             ],
             "alpha": 1,
-            "hex": "#07c8e9"
+            "hex": "#1fbdd8"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(7, 200, 233)",
-              "hsl": "hsl(189deg 94% 47%)",
+              "rgb": "rgb(31, 189, 216)",
+              "hsl": "hsl(189deg 75% 48%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7658,17 +7658,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.027450980392156862,
-              0.8549019607843137,
-              0.996078431372549
+              0.2196078431372549,
+              0.7725490196078432,
+              0.8666666666666667
             ],
             "alpha": 1,
-            "hex": "#07dafe"
+            "hex": "#38c5dd"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(7, 218, 254)",
-              "hsl": "hsl(189deg 99% 51%)",
+              "rgb": "rgb(56, 197, 221)",
+              "hsl": "hsl(189deg 71% 54%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7681,17 +7681,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.03137254901960784,
-              0.9294117647058824,
-              1
+              0.3176470588235294,
+              0.8,
+              0.8823529411764706
             ],
             "alpha": 1,
-            "hex": "#08edff"
+            "hex": "#51cce1"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(8, 237, 255)",
-              "hsl": "hsl(184deg 100% 52%)",
+              "rgb": "rgb(81, 204, 225)",
+              "hsl": "hsl(189deg 71% 60%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7704,17 +7704,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.03137254901960784,
-              1,
-              1
+              0.41568627450980394,
+              0.8274509803921568,
+              0.8980392156862745
             ],
             "alpha": 1,
-            "hex": "#08ffff"
+            "hex": "#6ad3e5"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(8, 255, 255)",
-              "hsl": "hsl(180deg 100% 52%)",
+              "rgb": "rgb(106, 211, 229)",
+              "hsl": "hsl(189deg 70% 66%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7727,17 +7727,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.03529411764705882,
-              1,
-              1
+              0.5137254901960784,
+              0.8588235294117647,
+              0.9176470588235294
             ],
             "alpha": 1,
-            "hex": "#09ffff"
+            "hex": "#83dbea"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(9, 255, 255)",
-              "hsl": "hsl(180deg 100% 52%)",
+              "rgb": "rgb(131, 219, 234)",
+              "hsl": "hsl(189deg 71% 72%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7750,17 +7750,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.0392156862745098,
-              1,
-              1
+              0.6078431372549019,
+              0.8862745098039215,
+              0.9333333333333333
             ],
             "alpha": 1,
-            "hex": "#0affff"
+            "hex": "#9be2ee"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(10, 255, 255)",
-              "hsl": "hsl(180deg 100% 52%)",
+              "rgb": "rgb(155, 226, 238)",
+              "hsl": "hsl(189deg 71% 77%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7773,17 +7773,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.0392156862745098,
-              1,
-              1
+              0.7058823529411765,
+              0.9137254901960784,
+              0.9490196078431372
             ],
             "alpha": 1,
-            "hex": "#0affff"
+            "hex": "#b4e9f2"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(10, 255, 255)",
-              "hsl": "hsl(180deg 100% 52%)",
+              "rgb": "rgb(180, 233, 242)",
+              "hsl": "hsl(189deg 70% 83%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7796,17 +7796,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.043137254901960784,
-              1,
-              1
+              0.803921568627451,
+              0.9411764705882353,
+              0.9647058823529412
             ],
             "alpha": 1,
-            "hex": "#0bffff"
+            "hex": "#cdf0f6"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(11, 255, 255)",
-              "hsl": "hsl(180deg 100% 52%)",
+              "rgb": "rgb(205, 240, 246)",
+              "hsl": "hsl(189deg 69% 88%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7819,17 +7819,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.043137254901960784,
-              1,
-              1
+              0.9019607843137255,
+              0.9725490196078431,
+              0.984313725490196
             ],
             "alpha": 1,
-            "hex": "#0bffff"
+            "hex": "#e6f8fb"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(11, 255, 255)",
-              "hsl": "hsl(180deg 100% 52%)",
+              "rgb": "rgb(230, 248, 251)",
+              "hsl": "hsl(189deg 72% 94%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7842,17 +7842,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.047058823529411764,
+              1,
               1,
               1
             ],
             "alpha": 1,
-            "hex": "#0cffff"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(12, 255, 255)",
-              "hsl": "hsl(180deg 100% 52%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -7903,7 +7903,7 @@ export default {
               "rgb": "rgb(5, 146, 170)",
               "hsl": "hsl(189deg 94% 34%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -7927,7 +7927,7 @@ export default {
               "hsl": "hsl(189deg 95% 30%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -7950,7 +7950,7 @@ export default {
               "hsl": "hsl(189deg 94% 26%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -8256,7 +8256,7 @@ export default {
               "hsl": "hsl(199deg 89% 48% / 60%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -8279,7 +8279,7 @@ export default {
               "hsl": "hsl(199deg 89% 48% / 70%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -8361,17 +8361,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.058823529411764705,
-              0.7137254901960784,
-              1
+              0.14901960784313725,
+              0.6823529411764706,
+              0.9215686274509803
             ],
             "alpha": 1,
-            "hex": "#0fb6ff"
+            "hex": "#26aeeb"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(15, 182, 255)",
-              "hsl": "hsl(198deg 100% 53%)",
+              "rgb": "rgb(38, 174, 235)",
+              "hsl": "hsl(199deg 83% 54%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -8384,17 +8384,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.06666666666666667,
-              0.7764705882352941,
-              1
+              0.24313725490196078,
+              0.7176470588235294,
+              0.9294117647058824
             ],
             "alpha": 1,
-            "hex": "#11c6ff"
+            "hex": "#3eb7ed"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(17, 198, 255)",
-              "hsl": "hsl(194deg 100% 53%)",
+              "rgb": "rgb(62, 183, 237)",
+              "hsl": "hsl(199deg 83% 59%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -8407,17 +8407,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.07058823529411765,
-              0.8431372549019608,
-              1
+              0.33725490196078434,
+              0.7529411764705882,
+              0.9411764705882353
             ],
             "alpha": 1,
-            "hex": "#12d7ff"
+            "hex": "#56c0f0"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(18, 215, 255)",
-              "hsl": "hsl(190deg 100% 54%)",
+              "rgb": "rgb(86, 192, 240)",
+              "hsl": "hsl(199deg 84% 64%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -8430,17 +8430,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.0784313725490196,
-              0.9058823529411765,
-              1
+              0.43137254901960786,
+              0.788235294117647,
+              0.9490196078431372
             ],
             "alpha": 1,
-            "hex": "#14e7ff"
+            "hex": "#6ec9f2"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(20, 231, 255)",
-              "hsl": "hsl(186deg 100% 54%)",
+              "rgb": "rgb(110, 201, 242)",
+              "hsl": "hsl(199deg 84% 69%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -8453,17 +8453,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.08235294117647059,
-              0.9725490196078431,
-              1
+              0.5294117647058824,
+              0.8235294117647058,
+              0.9568627450980393
             ],
             "alpha": 1,
-            "hex": "#15f8ff"
+            "hex": "#87d2f4"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(21, 248, 255)",
-              "hsl": "hsl(182deg 100% 54%)",
+              "rgb": "rgb(135, 210, 244)",
+              "hsl": "hsl(199deg 83% 74%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -8476,17 +8476,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.08627450980392157,
-              1,
-              1
+              0.6235294117647059,
+              0.8588235294117647,
+              0.9647058823529412
             ],
             "alpha": 1,
-            "hex": "#16ffff"
+            "hex": "#9fdbf6"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(22, 255, 255)",
-              "hsl": "hsl(180deg 100% 54%)",
+              "rgb": "rgb(159, 219, 246)",
+              "hsl": "hsl(199deg 83% 79%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -8499,17 +8499,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.09411764705882353,
-              1,
-              1
+              0.7176470588235294,
+              0.8941176470588236,
+              0.9725490196078431
             ],
             "alpha": 1,
-            "hex": "#18ffff"
+            "hex": "#b7e4f8"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(24, 255, 255)",
-              "hsl": "hsl(180deg 100% 55%)",
+              "rgb": "rgb(183, 228, 248)",
+              "hsl": "hsl(198deg 82% 85%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -8522,17 +8522,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.09803921568627451,
-              1,
-              1
+              0.8117647058823529,
+              0.9294117647058824,
+              0.984313725490196
             ],
             "alpha": 1,
-            "hex": "#19ffff"
+            "hex": "#cfedfb"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(25, 255, 255)",
-              "hsl": "hsl(180deg 100% 55%)",
+              "rgb": "rgb(207, 237, 251)",
+              "hsl": "hsl(199deg 85% 90%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -8545,17 +8545,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.10588235294117647,
-              1,
-              1
+              0.9058823529411765,
+              0.9647058823529412,
+              0.9921568627450981
             ],
             "alpha": 1,
-            "hex": "#1bffff"
+            "hex": "#e7f6fd"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(27, 255, 255)",
-              "hsl": "hsl(180deg 100% 55%)",
+              "rgb": "rgb(231, 246, 253)",
+              "hsl": "hsl(199deg 85% 95%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -8568,17 +8568,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.10980392156862745,
+              1,
               1,
               1
             ],
             "alpha": 1,
-            "hex": "#1cffff"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(28, 255, 255)",
-              "hsl": "hsl(180deg 100% 55%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -8606,7 +8606,7 @@ export default {
               "rgb": "rgb(13, 149, 210)",
               "hsl": "hsl(199deg 88% 44%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -8629,7 +8629,7 @@ export default {
               "rgb": "rgb(11, 132, 186)",
               "hsl": "hsl(199deg 89% 39%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -8641,19 +8641,19 @@ export default {
             "colorSpace": "srgb",
             "components": [
               0.0392156862745098,
-              0.4549019607843137,
+              0.45098039215686275,
               0.6392156862745098
             ],
             "alpha": 1,
-            "hex": "#0a74a3"
+            "hex": "#0a73a3"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(10, 116, 163)",
-              "hsl": "hsl(198deg 88% 34%)",
+              "rgb": "rgb(10, 115, 163)",
+              "hsl": "hsl(199deg 88% 34%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -8676,7 +8676,7 @@ export default {
               "hsl": "hsl(199deg 89% 29%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -8779,16 +8779,16 @@ export default {
             "colorSpace": "srgb",
             "components": [
               0.00392156862745098,
-              0.06666666666666667,
+              0.06274509803921569,
               0.09019607843137255
             ],
             "alpha": 1,
-            "hex": "#011117"
+            "hex": "#011017"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(1, 17, 23)",
-              "hsl": "hsl(196deg 92% 5%)",
+              "rgb": "rgb(1, 16, 23)",
+              "hsl": "hsl(199deg 92% 5%)",
               "contrast_score": {
                 "light": "AAA",
                 "dark": "F"
@@ -8842,7 +8842,7 @@ export default {
             "rgb": "rgb(59, 130, 246)",
             "hsl": "hsl(217deg 91% 60%)",
             "contrast_score": {
-              "light": "F",
+              "light": "AA Large",
               "dark": "AA"
             }
           }
@@ -9005,7 +9005,7 @@ export default {
               "hsl": "hsl(217deg 91% 60% / 70%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -9028,7 +9028,7 @@ export default {
               "hsl": "hsl(217deg 91% 60% / 80%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -9050,7 +9050,7 @@ export default {
               "rgb": "rgba(59, 130, 246, 0.9)",
               "hsl": "hsl(217deg 91% 60% / 90%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -9073,7 +9073,7 @@ export default {
               "rgb": "rgba(59, 130, 246, 1)",
               "hsl": "hsl(217deg 91% 60% / 100%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -9087,19 +9087,19 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.2549019607843137,
+              0.30980392156862746,
               0.5607843137254902,
-              1
+              0.9686274509803922
             ],
             "alpha": 1,
-            "hex": "#418fff"
+            "hex": "#4f8ff7"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(65, 143, 255)",
-              "hsl": "hsl(215deg 100% 63%)",
+              "rgb": "rgb(79, 143, 247)",
+              "hsl": "hsl(217deg 91% 64%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -9110,17 +9110,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.2784313725490196,
-              0.611764705882353,
-              1
+              0.3843137254901961,
+              0.6078431372549019,
+              0.9725490196078431
             ],
             "alpha": 1,
-            "hex": "#479cff"
+            "hex": "#629bf8"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(71, 156, 255)",
-              "hsl": "hsl(212deg 100% 64%)",
+              "rgb": "rgb(98, 155, 248)",
+              "hsl": "hsl(217deg 91% 68%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9133,17 +9133,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.30196078431372547,
-              0.6627450980392157,
-              1
+              0.4627450980392157,
+              0.6588235294117647,
+              0.9764705882352941
             ],
             "alpha": 1,
-            "hex": "#4da9ff"
+            "hex": "#76a8f9"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(77, 169, 255)",
-              "hsl": "hsl(209deg 100% 65%)",
+              "rgb": "rgb(118, 168, 249)",
+              "hsl": "hsl(217deg 92% 72%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9156,17 +9156,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.3254901960784314,
-              0.7137254901960784,
-              1
+              0.5372549019607843,
+              0.7058823529411765,
+              0.9803921568627451
             ],
             "alpha": 1,
-            "hex": "#53b6ff"
+            "hex": "#89b4fa"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(83, 182, 255)",
-              "hsl": "hsl(205deg 100% 66%)",
+              "rgb": "rgb(137, 180, 250)",
+              "hsl": "hsl(217deg 92% 76%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9179,17 +9179,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.34901960784313724,
-              0.7647058823529411,
-              1
+              0.615686274509804,
+              0.7568627450980392,
+              0.984313725490196
             ],
             "alpha": 1,
-            "hex": "#59c3ff"
+            "hex": "#9dc1fb"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(89, 195, 255)",
-              "hsl": "hsl(202deg 100% 67%)",
+              "rgb": "rgb(157, 193, 251)",
+              "hsl": "hsl(217deg 92% 80%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9202,17 +9202,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.3686274509803922,
-              0.8156862745098039,
-              1
+              0.6941176470588235,
+              0.803921568627451,
+              0.984313725490196
             ],
             "alpha": 1,
-            "hex": "#5ed0ff"
+            "hex": "#b1cdfb"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(94, 208, 255)",
-              "hsl": "hsl(198deg 100% 68%)",
+              "rgb": "rgb(177, 205, 251)",
+              "hsl": "hsl(217deg 90% 84%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9225,17 +9225,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.39215686274509803,
-              0.8666666666666667,
-              1
+              0.7686274509803922,
+              0.8549019607843137,
+              0.9882352941176471
             ],
             "alpha": 1,
-            "hex": "#64ddff"
+            "hex": "#c4dafc"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(100, 221, 255)",
-              "hsl": "hsl(193deg 100% 70%)",
+              "rgb": "rgb(196, 218, 252)",
+              "hsl": "hsl(216deg 90% 88%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9248,17 +9248,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.41568627450980394,
-              0.9176470588235294,
-              1
+              0.8470588235294118,
+              0.9019607843137255,
+              0.9921568627450981
             ],
             "alpha": 1,
-            "hex": "#6aeaff"
+            "hex": "#d8e6fd"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(106, 234, 255)",
-              "hsl": "hsl(188deg 100% 71%)",
+              "rgb": "rgb(216, 230, 253)",
+              "hsl": "hsl(217deg 90% 92%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9271,17 +9271,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.4392156862745098,
-              0.9686274509803922,
-              1
+              0.9215686274509803,
+              0.9529411764705882,
+              0.996078431372549
             ],
             "alpha": 1,
-            "hex": "#70f7ff"
+            "hex": "#ebf3fe"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(112, 247, 255)",
-              "hsl": "hsl(183deg 100% 72%)",
+              "rgb": "rgb(235, 243, 254)",
+              "hsl": "hsl(215deg 90% 96%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9294,17 +9294,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.4627450980392157,
+              1,
               1,
               1
             ],
             "alpha": 1,
-            "hex": "#76ffff"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(118, 255, 255)",
-              "hsl": "hsl(180deg 100% 73%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9332,7 +9332,7 @@ export default {
               "rgb": "rgb(53, 117, 221)",
               "hsl": "hsl(217deg 71% 54%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -9356,7 +9356,7 @@ export default {
               "hsl": "hsl(217deg 61% 48%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -9379,7 +9379,7 @@ export default {
               "hsl": "hsl(217deg 62% 42%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -9568,7 +9568,7 @@ export default {
             "rgb": "rgb(99, 102, 241)",
             "hsl": "hsl(239deg 84% 67%)",
             "contrast_score": {
-              "light": "F",
+              "light": "AA Large",
               "dark": "AA"
             }
           }
@@ -9753,8 +9753,8 @@ export default {
               "rgb": "rgba(99, 102, 241, 0.8)",
               "hsl": "hsl(239deg 84% 67% / 80%)",
               "contrast_score": {
-                "light": "F",
-                "dark": "F"
+                "light": "AA Large",
+                "dark": "AA Large"
               }
             }
           }
@@ -9776,8 +9776,8 @@ export default {
               "rgb": "rgba(99, 102, 241, 0.9)",
               "hsl": "hsl(239deg 84% 67% / 90%)",
               "contrast_score": {
-                "light": "F",
-                "dark": "F"
+                "light": "AA Large",
+                "dark": "AA Large"
               }
             }
           }
@@ -9799,7 +9799,7 @@ export default {
               "rgb": "rgba(99, 102, 241, 1)",
               "hsl": "hsl(239deg 84% 67% / 100%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -9813,19 +9813,19 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.42745098039215684,
-              0.4392156862745098,
-              1
+              0.45098039215686275,
+              0.4588235294117647,
+              0.9490196078431372
             ],
             "alpha": 1,
-            "hex": "#6d70ff"
+            "hex": "#7375f2"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(109, 112, 255)",
-              "hsl": "hsl(239deg 100% 71%)",
+              "rgb": "rgb(115, 117, 242)",
+              "hsl": "hsl(239deg 83% 70%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -9836,19 +9836,19 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.4666666666666667,
-              0.47843137254901963,
-              1
+              0.5098039215686274,
+              0.5215686274509804,
+              0.9568627450980393
             ],
             "alpha": 1,
-            "hex": "#777aff"
+            "hex": "#8285f4"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(119, 122, 255)",
-              "hsl": "hsl(239deg 100% 73%)",
+              "rgb": "rgb(130, 133, 244)",
+              "hsl": "hsl(238deg 84% 73%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -9859,20 +9859,20 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5058823529411764,
-              0.5215686274509804,
-              1
+              0.5725490196078431,
+              0.5803921568627451,
+              0.9607843137254902
             ],
             "alpha": 1,
-            "hex": "#8185ff"
+            "hex": "#9294f5"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(129, 133, 255)",
-              "hsl": "hsl(238deg 100% 75%)",
+              "rgb": "rgb(146, 148, 245)",
+              "hsl": "hsl(239deg 83% 77%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "AA"
+                "dark": "AAA"
               }
             }
           }
@@ -9882,17 +9882,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5450980392156862,
-              0.5607843137254902,
-              1
+              0.6313725490196078,
+              0.6392156862745098,
+              0.9686274509803922
             ],
             "alpha": 1,
-            "hex": "#8b8fff"
+            "hex": "#a1a3f7"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(139, 143, 255)",
-              "hsl": "hsl(238deg 100% 77%)",
+              "rgb": "rgb(161, 163, 247)",
+              "hsl": "hsl(239deg 84% 80%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9905,17 +9905,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.5843137254901961,
-              0.6,
-              1
+              0.6941176470588235,
+              0.7019607843137254,
+              0.9725490196078431
             ],
             "alpha": 1,
-            "hex": "#9599ff"
+            "hex": "#b1b3f8"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(149, 153, 255)",
-              "hsl": "hsl(238deg 100% 79%)",
+              "rgb": "rgb(177, 179, 248)",
+              "hsl": "hsl(238deg 84% 83%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9928,17 +9928,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6196078431372549,
-              0.6392156862745098,
-              1
+              0.7568627450980392,
+              0.7607843137254902,
+              0.9764705882352941
             ],
             "alpha": 1,
-            "hex": "#9ea3ff"
+            "hex": "#c1c2f9"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(158, 163, 255)",
-              "hsl": "hsl(237deg 100% 81%)",
+              "rgb": "rgb(193, 194, 249)",
+              "hsl": "hsl(239deg 82% 87%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9951,17 +9951,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6588235294117647,
-              0.6784313725490196,
-              1
+              0.8156862745098039,
+              0.8196078431372549,
+              0.984313725490196
             ],
             "alpha": 1,
-            "hex": "#a8adff"
+            "hex": "#d0d1fb"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(168, 173, 255)",
-              "hsl": "hsl(237deg 100% 83%)",
+              "rgb": "rgb(208, 209, 251)",
+              "hsl": "hsl(239deg 84% 90%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9974,17 +9974,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.6980392156862745,
-              0.7215686274509804,
-              1
+              0.8784313725490196,
+              0.8784313725490196,
+              0.9882352941176471
             ],
             "alpha": 1,
-            "hex": "#b2b8ff"
+            "hex": "#e0e0fc"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(178, 184, 255)",
-              "hsl": "hsl(235deg 100% 85%)",
+              "rgb": "rgb(224, 224, 252)",
+              "hsl": "hsl(240deg 82% 93%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -9997,17 +9997,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7372549019607844,
-              0.7607843137254902,
-              1
+              0.9372549019607843,
+              0.9411764705882353,
+              0.996078431372549
             ],
             "alpha": 1,
-            "hex": "#bcc2ff"
+            "hex": "#eff0fe"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(188, 194, 255)",
-              "hsl": "hsl(235deg 100% 87%)",
+              "rgb": "rgb(239, 240, 254)",
+              "hsl": "hsl(236deg 88% 97%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -10020,17 +10020,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7764705882352941,
-              0.8,
+              1,
+              1,
               1
             ],
             "alpha": 1,
-            "hex": "#c6ccff"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(198, 204, 255)",
-              "hsl": "hsl(234deg 100% 89%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -10059,7 +10059,7 @@ export default {
               "hsl": "hsl(239deg 63% 60%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -10082,7 +10082,7 @@ export default {
               "hsl": "hsl(238deg 48% 53%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -10294,7 +10294,7 @@ export default {
             "rgb": "rgb(168, 85, 247)",
             "hsl": "hsl(271deg 91% 65%)",
             "contrast_score": {
-              "light": "F",
+              "light": "AA Large",
               "dark": "AA"
             }
           }
@@ -10480,7 +10480,7 @@ export default {
               "hsl": "hsl(271deg 91% 65% / 80%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -10502,8 +10502,8 @@ export default {
               "rgb": "rgba(168, 85, 247, 0.9)",
               "hsl": "hsl(271deg 91% 65% / 90%)",
               "contrast_score": {
-                "light": "F",
-                "dark": "F"
+                "light": "AA Large",
+                "dark": "AA Large"
               }
             }
           }
@@ -10525,7 +10525,7 @@ export default {
               "rgb": "rgba(168, 85, 247, 1)",
               "hsl": "hsl(271deg 91% 65% / 100%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -10539,19 +10539,19 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.7254901960784313,
-              0.3686274509803922,
-              1
+              0.6941176470588235,
+              0.4,
+              0.9725490196078431
             ],
             "alpha": 1,
-            "hex": "#b95eff"
+            "hex": "#b166f8"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(185, 94, 255)",
-              "hsl": "hsl(274deg 100% 68%)",
+              "rgb": "rgb(177, 102, 248)",
+              "hsl": "hsl(271deg 91% 69%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -10562,20 +10562,20 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.792156862745098,
-              0.4,
-              1
+              0.7254901960784313,
+              0.4666666666666667,
+              0.9764705882352941
             ],
             "alpha": 1,
-            "hex": "#ca66ff"
+            "hex": "#b977f9"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(202, 102, 255)",
-              "hsl": "hsl(279deg 100% 70%)",
+              "rgb": "rgb(185, 119, 249)",
+              "hsl": "hsl(270deg 92% 72%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "AA"
+                "dark": "AAA"
               }
             }
           }
@@ -10585,17 +10585,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8549019607843137,
-              0.43529411764705883,
-              1
+              0.7607843137254902,
+              0.5333333333333333,
+              0.9764705882352941
             ],
             "alpha": 1,
-            "hex": "#da6fff"
+            "hex": "#c288f9"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(218, 111, 255)",
-              "hsl": "hsl(285deg 100% 72%)",
+              "rgb": "rgb(194, 136, 249)",
+              "hsl": "hsl(271deg 90% 75%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -10608,17 +10608,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9215686274509803,
-              0.4666666666666667,
-              1
+              0.796078431372549,
+              0.6,
+              0.9803921568627451
             ],
             "alpha": 1,
-            "hex": "#eb77ff"
+            "hex": "#cb99fa"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(235, 119, 255)",
-              "hsl": "hsl(291deg 100% 73%)",
+              "rgb": "rgb(203, 153, 250)",
+              "hsl": "hsl(271deg 91% 79%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -10631,17 +10631,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9882352941176471,
-              0.5019607843137255,
-              1
+              0.8313725490196079,
+              0.6666666666666666,
+              0.984313725490196
             ],
             "alpha": 1,
-            "hex": "#fc80ff"
+            "hex": "#d4aafb"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(252, 128, 255)",
-              "hsl": "hsl(299deg 100% 75%)",
+              "rgb": "rgb(212, 170, 251)",
+              "hsl": "hsl(271deg 91% 83%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -10654,17 +10654,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.5333333333333333,
-              1
+              0.8627450980392157,
+              0.7333333333333333,
+              0.9882352941176471
             ],
             "alpha": 1,
-            "hex": "#ff88ff"
+            "hex": "#dcbbfc"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 136, 255)",
-              "hsl": "hsl(300deg 100% 77%)",
+              "rgb": "rgb(220, 187, 252)",
+              "hsl": "hsl(270deg 92% 86%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -10677,17 +10677,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.5686274509803921,
-              1
+              0.8980392156862745,
+              0.8,
+              0.9921568627450981
             ],
             "alpha": 1,
-            "hex": "#ff91ff"
+            "hex": "#e5ccfd"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 145, 255)",
-              "hsl": "hsl(300deg 100% 78%)",
+              "rgb": "rgb(229, 204, 253)",
+              "hsl": "hsl(271deg 92% 90%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -10700,17 +10700,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.6,
-              1
+              0.9333333333333333,
+              0.8666666666666667,
+              0.9921568627450981
             ],
             "alpha": 1,
-            "hex": "#ff99ff"
+            "hex": "#eeddfd"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 153, 255)",
-              "hsl": "hsl(300deg 100% 80%)",
+              "rgb": "rgb(238, 221, 253)",
+              "hsl": "hsl(272deg 89% 93%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -10723,17 +10723,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.6352941176470588,
-              1
+              0.9647058823529412,
+              0.9333333333333333,
+              0.996078431372549
             ],
             "alpha": 1,
-            "hex": "#ffa2ff"
+            "hex": "#f6eefe"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 162, 255)",
-              "hsl": "hsl(300deg 100% 82%)",
+              "rgb": "rgb(246, 238, 254)",
+              "hsl": "hsl(270deg 89% 96%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -10747,16 +10747,16 @@ export default {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.6666666666666666,
+              1,
               1
             ],
             "alpha": 1,
-            "hex": "#ffaaff"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 170, 255)",
-              "hsl": "hsl(300deg 100% 83%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -10785,7 +10785,7 @@ export default {
               "hsl": "hsl(271deg 69% 59%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -10808,7 +10808,7 @@ export default {
               "hsl": "hsl(270deg 53% 52%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -10819,18 +10819,18 @@ export default {
             "colorSpace": "srgb",
             "components": [
               0.4627450980392157,
-              0.23529411764705882,
+              0.23137254901960785,
               0.6784313725490196
             ],
             "alpha": 1,
-            "hex": "#763cad"
+            "hex": "#763bad"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(118, 60, 173)",
-              "hsl": "hsl(271deg 48% 46%)",
+              "rgb": "rgb(118, 59, 173)",
+              "hsl": "hsl(271deg 49% 45%)",
               "contrast_score": {
-                "light": "AA",
+                "light": "AAA",
                 "dark": "F"
               }
             }
@@ -10957,16 +10957,16 @@ export default {
             "colorSpace": "srgb",
             "components": [
               0.06666666666666667,
-              0.03529411764705882,
+              0.03137254901960784,
               0.09803921568627451
             ],
             "alpha": 1,
-            "hex": "#110919"
+            "hex": "#110819"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(17, 9, 25)",
-              "hsl": "hsl(270deg 47% 7%)",
+              "rgb": "rgb(17, 8, 25)",
+              "hsl": "hsl(272deg 52% 6%)",
               "contrast_score": {
                 "light": "AAA",
                 "dark": "F"
@@ -11020,7 +11020,7 @@ export default {
             "rgb": "rgb(217, 70, 239)",
             "hsl": "hsl(292deg 84% 61%)",
             "contrast_score": {
-              "light": "F",
+              "light": "AA Large",
               "dark": "AA"
             }
           }
@@ -11183,7 +11183,7 @@ export default {
               "hsl": "hsl(292deg 84% 61% / 70%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -11206,7 +11206,7 @@ export default {
               "hsl": "hsl(292deg 84% 61% / 80%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -11228,7 +11228,7 @@ export default {
               "rgb": "rgba(217, 70, 239, 0.9)",
               "hsl": "hsl(292deg 84% 61% / 90%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -11251,7 +11251,7 @@ export default {
               "rgb": "rgba(217, 70, 239, 1)",
               "hsl": "hsl(292deg 84% 61% / 100%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -11265,20 +11265,20 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9372549019607843,
-              0.30196078431372547,
-              1
+              0.8666666666666667,
+              0.34901960784313724,
+              0.9450980392156862
             ],
             "alpha": 1,
-            "hex": "#ef4dff"
+            "hex": "#dd59f1"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(239, 77, 255)",
-              "hsl": "hsl(295deg 100% 65%)",
+              "rgb": "rgb(221, 89, 241)",
+              "hsl": "hsl(292deg 84% 65%)",
               "contrast_score": {
-                "light": "F",
-                "dark": "AAA"
+                "light": "AA Large",
+                "dark": "AA"
               }
             }
           }
@@ -11288,17 +11288,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.32941176470588235,
-              1
+              0.8823529411764706,
+              0.4196078431372549,
+              0.9490196078431372
             ],
             "alpha": 1,
-            "hex": "#ff54ff"
+            "hex": "#e16bf2"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 84, 255)",
-              "hsl": "hsl(300deg 100% 66%)",
+              "rgb": "rgb(225, 107, 242)",
+              "hsl": "hsl(292deg 84% 68%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -11311,17 +11311,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.3568627450980392,
-              1
+              0.8941176470588236,
+              0.49411764705882355,
+              0.9568627450980393
             ],
             "alpha": 1,
-            "hex": "#ff5bff"
+            "hex": "#e47ef4"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 91, 255)",
-              "hsl": "hsl(300deg 100% 68%)",
+              "rgb": "rgb(228, 126, 244)",
+              "hsl": "hsl(292deg 84% 73%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -11334,17 +11334,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.3843137254901961,
-              1
+              0.9098039215686274,
+              0.5647058823529412,
+              0.9607843137254902
             ],
             "alpha": 1,
-            "hex": "#ff62ff"
+            "hex": "#e890f5"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 98, 255)",
-              "hsl": "hsl(300deg 100% 69%)",
+              "rgb": "rgb(232, 144, 245)",
+              "hsl": "hsl(292deg 83% 76%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -11357,17 +11357,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.4117647058823529,
-              1
+              0.9254901960784314,
+              0.6392156862745098,
+              0.9686274509803922
             ],
             "alpha": 1,
-            "hex": "#ff69ff"
+            "hex": "#eca3f7"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 105, 255)",
-              "hsl": "hsl(300deg 100% 71%)",
+              "rgb": "rgb(236, 163, 247)",
+              "hsl": "hsl(292deg 84% 80%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -11380,17 +11380,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.4392156862745098,
-              1
+              0.9411764705882353,
+              0.7098039215686275,
+              0.9764705882352941
             ],
             "alpha": 1,
-            "hex": "#ff70ff"
+            "hex": "#f0b5f9"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 112, 255)",
-              "hsl": "hsl(300deg 100% 72%)",
+              "rgb": "rgb(240, 181, 249)",
+              "hsl": "hsl(292deg 85% 84%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -11403,17 +11403,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.4666666666666667,
-              1
+              0.9568627450980393,
+              0.7843137254901961,
+              0.9803921568627451
             ],
             "alpha": 1,
-            "hex": "#ff77ff"
+            "hex": "#f4c8fa"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 119, 255)",
-              "hsl": "hsl(300deg 100% 73%)",
+              "rgb": "rgb(244, 200, 250)",
+              "hsl": "hsl(293deg 83% 88%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -11426,17 +11426,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.49411764705882355,
-              1
+              0.9686274509803922,
+              0.8549019607843137,
+              0.9882352941176471
             ],
             "alpha": 1,
-            "hex": "#ff7eff"
+            "hex": "#f7dafc"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 126, 255)",
-              "hsl": "hsl(300deg 100% 75%)",
+              "rgb": "rgb(247, 218, 252)",
+              "hsl": "hsl(291deg 85% 92%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -11449,17 +11449,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.5215686274509804,
-              1
+              0.984313725490196,
+              0.9294117647058824,
+              0.9921568627450981
             ],
             "alpha": 1,
-            "hex": "#ff85ff"
+            "hex": "#fbedfd"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 133, 255)",
-              "hsl": "hsl(300deg 100% 76%)",
+              "rgb": "rgb(251, 237, 253)",
+              "hsl": "hsl(292deg 80% 96%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -11473,16 +11473,16 @@ export default {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.5490196078431373,
+              1,
               1
             ],
             "alpha": 1,
-            "hex": "#ff8cff"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 140, 255)",
-              "hsl": "hsl(300deg 100% 77%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -11510,7 +11510,7 @@ export default {
               "rgb": "rgb(195, 63, 215)",
               "hsl": "hsl(292deg 66% 55%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -11534,7 +11534,7 @@ export default {
               "hsl": "hsl(292deg 55% 48%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -11557,7 +11557,7 @@ export default {
               "hsl": "hsl(292deg 55% 42%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -11746,7 +11746,7 @@ export default {
             "rgb": "rgb(236, 72, 153)",
             "hsl": "hsl(330deg 81% 60%)",
             "contrast_score": {
-              "light": "F",
+              "light": "AA Large",
               "dark": "AA"
             }
           }
@@ -11909,7 +11909,7 @@ export default {
               "hsl": "hsl(330deg 81% 60% / 70%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -11932,7 +11932,7 @@ export default {
               "hsl": "hsl(330deg 81% 60% / 80%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -11954,7 +11954,7 @@ export default {
               "rgb": "rgba(236, 72, 153, 0.9)",
               "hsl": "hsl(330deg 81% 60% / 90%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -11977,7 +11977,7 @@ export default {
               "rgb": "rgba(236, 72, 153, 1)",
               "hsl": "hsl(330deg 81% 60% / 100%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -11991,19 +11991,19 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.30980392156862746,
-              0.6588235294117647
+              0.9333333333333333,
+              0.35294117647058826,
+              0.6392156862745098
             ],
             "alpha": 1,
-            "hex": "#ff4fa8"
+            "hex": "#ee5aa3"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 79, 168)",
-              "hsl": "hsl(330deg 100% 65%)",
+              "rgb": "rgb(238, 90, 163)",
+              "hsl": "hsl(330deg 81% 64%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -12014,17 +12014,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.33725490196078434,
-              0.7215686274509804
+              0.9411764705882353,
+              0.42745098039215684,
+              0.6784313725490196
             ],
             "alpha": 1,
-            "hex": "#ff56b8"
+            "hex": "#f06dad"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 86, 184)",
-              "hsl": "hsl(325deg 100% 67%)",
+              "rgb": "rgb(240, 109, 173)",
+              "hsl": "hsl(331deg 81% 68%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12037,17 +12037,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.3686274509803922,
-              0.7803921568627451
+              0.9490196078431372,
+              0.4980392156862745,
+              0.7215686274509804
             ],
             "alpha": 1,
-            "hex": "#ff5ec7"
+            "hex": "#f27fb8"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 94, 199)",
-              "hsl": "hsl(321deg 100% 68%)",
+              "rgb": "rgb(242, 127, 184)",
+              "hsl": "hsl(330deg 82% 72%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12060,17 +12060,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.396078431372549,
-              0.8392156862745098
+              0.9568627450980393,
+              0.5686274509803921,
+              0.7607843137254902
             ],
             "alpha": 1,
-            "hex": "#ff65d6"
+            "hex": "#f491c2"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 101, 214)",
-              "hsl": "hsl(316deg 100% 70%)",
+              "rgb": "rgb(244, 145, 194)",
+              "hsl": "hsl(330deg 82% 76%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12083,17 +12083,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.4235294117647059,
-              0.9019607843137255
+              0.9647058823529412,
+              0.6431372549019608,
+              0.8
             ],
             "alpha": 1,
-            "hex": "#ff6ce6"
+            "hex": "#f6a4cc"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 108, 230)",
-              "hsl": "hsl(310deg 100% 71%)",
+              "rgb": "rgb(246, 164, 204)",
+              "hsl": "hsl(331deg 82% 80%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12106,17 +12106,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.45098039215686275,
-              0.9607843137254902
+              0.9686274509803922,
+              0.7137254901960784,
+              0.8392156862745098
             ],
             "alpha": 1,
-            "hex": "#ff73f5"
+            "hex": "#f7b6d6"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 115, 245)",
-              "hsl": "hsl(304deg 100% 73%)",
+              "rgb": "rgb(247, 182, 214)",
+              "hsl": "hsl(330deg 80% 84%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12129,17 +12129,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.47843137254901963,
-              1
+              0.9764705882352941,
+              0.7843137254901961,
+              0.8784313725490196
             ],
             "alpha": 1,
-            "hex": "#ff7aff"
+            "hex": "#f9c8e0"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 122, 255)",
-              "hsl": "hsl(300deg 100% 74%)",
+              "rgb": "rgb(249, 200, 224)",
+              "hsl": "hsl(331deg 80% 88%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12152,17 +12152,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.5098039215686274,
-              1
+              0.984313725490196,
+              0.8549019607843137,
+              0.9215686274509803
             ],
             "alpha": 1,
-            "hex": "#ff82ff"
+            "hex": "#fbdaeb"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 130, 255)",
-              "hsl": "hsl(300deg 100% 75%)",
+              "rgb": "rgb(251, 218, 235)",
+              "hsl": "hsl(329deg 80% 92%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12175,17 +12175,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.5372549019607843,
-              1
+              0.9921568627450981,
+              0.9294117647058824,
+              0.9607843137254902
             ],
             "alpha": 1,
-            "hex": "#ff89ff"
+            "hex": "#fdedf5"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 137, 255)",
-              "hsl": "hsl(300deg 100% 77%)",
+              "rgb": "rgb(253, 237, 245)",
+              "hsl": "hsl(330deg 80% 96%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12199,16 +12199,16 @@ export default {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.5647058823529412,
+              1,
               1
             ],
             "alpha": 1,
-            "hex": "#ff90ff"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 144, 255)",
-              "hsl": "hsl(300deg 100% 78%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12236,7 +12236,7 @@ export default {
               "rgb": "rgb(212, 65, 138)",
               "hsl": "hsl(330deg 63% 54%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -12260,7 +12260,7 @@ export default {
               "hsl": "hsl(331deg 53% 48%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -12283,7 +12283,7 @@ export default {
               "hsl": "hsl(330deg 53% 42%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -12472,7 +12472,7 @@ export default {
             "rgb": "rgb(244, 63, 94)",
             "hsl": "hsl(350deg 89% 60%)",
             "contrast_score": {
-              "light": "F",
+              "light": "AA Large",
               "dark": "AA"
             }
           }
@@ -12635,7 +12635,7 @@ export default {
               "hsl": "hsl(350deg 89% 60% / 70%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -12658,7 +12658,7 @@ export default {
               "hsl": "hsl(350deg 89% 60% / 80%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -12680,7 +12680,7 @@ export default {
               "rgb": "rgba(244, 63, 94, 0.9)",
               "hsl": "hsl(350deg 89% 60% / 90%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -12703,7 +12703,7 @@ export default {
               "rgb": "rgba(244, 63, 94, 1)",
               "hsl": "hsl(350deg 89% 60% / 100%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -12717,19 +12717,19 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.27058823529411763,
-              0.403921568627451
+              0.9607843137254902,
+              0.3215686274509804,
+              0.43137254901960786
             ],
             "alpha": 1,
-            "hex": "#ff4567"
+            "hex": "#f5526e"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 69, 103)",
-              "hsl": "hsl(349deg 100% 64%)",
+              "rgb": "rgb(245, 82, 110)",
+              "hsl": "hsl(350deg 89% 64%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -12740,20 +12740,20 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.2980392156862745,
-              0.44313725490196076
+              0.9647058823529412,
+              0.396078431372549,
+              0.49411764705882355
             ],
             "alpha": 1,
-            "hex": "#ff4c71"
+            "hex": "#f6657e"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 76, 113)",
-              "hsl": "hsl(348deg 100% 65%)",
+              "rgb": "rgb(246, 101, 126)",
+              "hsl": "hsl(350deg 89% 68%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "AA"
+                "dark": "AAA"
               }
             }
           }
@@ -12763,20 +12763,20 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.3215686274509804,
-              0.47843137254901963
+              0.9686274509803922,
+              0.4745098039215686,
+              0.5568627450980392
             ],
             "alpha": 1,
-            "hex": "#ff527a"
+            "hex": "#f7798e"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 82, 122)",
-              "hsl": "hsl(346deg 100% 66%)",
+              "rgb": "rgb(247, 121, 142)",
+              "hsl": "hsl(350deg 89% 72%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "AA"
+                "dark": "AAA"
               }
             }
           }
@@ -12786,20 +12786,20 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.34509803921568627,
-              0.5176470588235295
+              0.9725490196078431,
+              0.5490196078431373,
+              0.6196078431372549
             ],
             "alpha": 1,
-            "hex": "#ff5884"
+            "hex": "#f88c9e"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 88, 132)",
-              "hsl": "hsl(344deg 100% 67%)",
+              "rgb": "rgb(248, 140, 158)",
+              "hsl": "hsl(350deg 89% 76%)",
               "contrast_score": {
                 "light": "F",
-                "dark": "AA"
+                "dark": "AAA"
               }
             }
           }
@@ -12809,17 +12809,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.37254901960784315,
-              0.5529411764705883
+              0.9803921568627451,
+              0.6235294117647059,
+              0.6862745098039216
             ],
             "alpha": 1,
-            "hex": "#ff5f8d"
+            "hex": "#fa9faf"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 95, 141)",
-              "hsl": "hsl(343deg 100% 69%)",
+              "rgb": "rgb(250, 159, 175)",
+              "hsl": "hsl(349deg 90% 80%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12832,17 +12832,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.396078431372549,
-              0.5882352941176471
+              0.984313725490196,
+              0.6980392156862745,
+              0.7490196078431373
             ],
             "alpha": 1,
-            "hex": "#ff6596"
+            "hex": "#fbb2bf"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 101, 150)",
-              "hsl": "hsl(341deg 100% 70%)",
+              "rgb": "rgb(251, 178, 191)",
+              "hsl": "hsl(349deg 90% 84%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12855,17 +12855,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.4196078431372549,
-              0.6274509803921569
+              0.9882352941176471,
+              0.7725490196078432,
+              0.8117647058823529
             ],
             "alpha": 1,
-            "hex": "#ff6ba0"
+            "hex": "#fcc5cf"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 107, 160)",
-              "hsl": "hsl(339deg 100% 71%)",
+              "rgb": "rgb(252, 197, 207)",
+              "hsl": "hsl(349deg 90% 88%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12878,17 +12878,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.44313725490196076,
-              0.6627450980392157
+              0.9921568627450981,
+              0.8509803921568627,
+              0.8745098039215686
             ],
             "alpha": 1,
-            "hex": "#ff71a9"
+            "hex": "#fdd9df"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 113, 169)",
-              "hsl": "hsl(336deg 100% 72%)",
+              "rgb": "rgb(253, 217, 223)",
+              "hsl": "hsl(350deg 90% 92%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12901,17 +12901,17 @@ export default {
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              0.47058823529411764,
-              0.7019607843137254
+              0.996078431372549,
+              0.9254901960784314,
+              0.9372549019607843
             ],
             "alpha": 1,
-            "hex": "#ff78b3"
+            "hex": "#feecef"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 120, 179)",
-              "hsl": "hsl(334deg 100% 74%)",
+              "rgb": "rgb(254, 236, 239)",
+              "hsl": "hsl(350deg 90% 96%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12925,16 +12925,16 @@ export default {
             "colorSpace": "srgb",
             "components": [
               1,
-              0.49411764705882355,
-              0.7372549019607844
+              1,
+              1
             ],
             "alpha": 1,
-            "hex": "#ff7ebc"
+            "hex": "#ffffff"
           },
           "$extensions": {
             "com.usefui": {
-              "rgb": "rgb(255, 126, 188)",
-              "hsl": "hsl(331deg 100% 75%)",
+              "rgb": "rgb(255, 255, 255)",
+              "hsl": "hsl(0deg 0% 100%)",
               "contrast_score": {
                 "light": "F",
                 "dark": "AAA"
@@ -12962,7 +12962,7 @@ export default {
               "rgb": "rgb(220, 57, 85)",
               "hsl": "hsl(350deg 70% 54%)",
               "contrast_score": {
-                "light": "F",
+                "light": "AA Large",
                 "dark": "AA"
               }
             }
@@ -12986,7 +12986,7 @@ export default {
               "hsl": "hsl(350deg 59% 48%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -13009,7 +13009,7 @@ export default {
               "hsl": "hsl(350deg 59% 42%)",
               "contrast_score": {
                 "light": "AA",
-                "dark": "F"
+                "dark": "AA Large"
               }
             }
           }
@@ -14027,7 +14027,7 @@ export default {
             ],
             "contrast_score": {
               "light": "F",
-              "dark": "F"
+              "dark": "AA Large"
             }
           }
         }
@@ -14038,11 +14038,12 @@ export default {
         "$extensions": {
           "com.usefui": {
             "usage": [
-              "backdrop",
-              "transparent"
+              "icons",
+              "animations",
+              "layout"
             ],
             "contrast_score": {
-              "light": "F",
+              "light": "AA Large",
               "dark": "AA"
             }
           }
@@ -14207,12 +14208,13 @@ export default {
         "$extensions": {
           "com.usefui": {
             "usage": [
-              "backdrop",
-              "transparent"
+              "icons",
+              "animations",
+              "layout"
             ],
             "contrast_score": {
-              "light": "F",
-              "dark": "F"
+              "light": "AA Large",
+              "dark": "AA Large"
             }
           }
         }
@@ -14366,13 +14368,13 @@ export default {
         "$extensions": {
           "com.usefui": {
             "usage": [
-              "base",
-              "toolbar",
-              "dropdown"
+              "fixed",
+              "off-canvas",
+              "overlay"
             ],
             "stack_order": {
-              "label": "low",
-              "score": 1
+              "label": "median",
+              "score": 2
             }
           }
         }
@@ -14383,13 +14385,13 @@ export default {
         "$extensions": {
           "com.usefui": {
             "usage": [
-              "base",
-              "toolbar",
-              "dropdown"
+              "fixed",
+              "off-canvas",
+              "overlay"
             ],
             "stack_order": {
-              "label": "low",
-              "score": 1
+              "label": "median",
+              "score": 2
             }
           }
         }
@@ -14417,12 +14419,13 @@ export default {
         "$extensions": {
           "com.usefui": {
             "usage": [
-              "notification",
-              "above-content"
+              "fixed",
+              "off-canvas",
+              "overlay"
             ],
             "stack_order": {
-              "label": "high",
-              "score": 3
+              "label": "median",
+              "score": 2
             }
           }
         }
@@ -14536,13 +14539,13 @@ export default {
         "$extensions": {
           "com.usefui": {
             "usage": [
-              "base",
-              "toolbar",
-              "dropdown"
+              "fixed",
+              "off-canvas",
+              "overlay"
             ],
             "stack_order": {
-              "label": "low",
-              "score": 1
+              "label": "median",
+              "score": 2
             }
           }
         }
@@ -14553,13 +14556,13 @@ export default {
         "$extensions": {
           "com.usefui": {
             "usage": [
-              "base",
-              "toolbar",
-              "dropdown"
+              "fixed",
+              "off-canvas",
+              "overlay"
             ],
             "stack_order": {
-              "label": "low",
-              "score": 1
+              "label": "median",
+              "score": 2
             }
           }
         }
@@ -14587,12 +14590,13 @@ export default {
         "$extensions": {
           "com.usefui": {
             "usage": [
-              "notification",
-              "above-content"
+              "fixed",
+              "off-canvas",
+              "overlay"
             ],
             "stack_order": {
-              "label": "high",
-              "score": 3
+              "label": "median",
+              "score": 2
             }
           }
         }

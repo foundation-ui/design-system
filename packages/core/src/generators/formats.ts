@@ -1,61 +1,51 @@
-import { THex } from "../types";
+import { THex, TRGB } from "../types";
 
-export const PXToREM = (value: number): number => Number(0.0625 * value);
-export const PXToPT = (value: number): number => Number(0.75 * value);
-
-export const HEXToRGB = (
-  Hex: THex,
-  raw?: boolean,
-): [number, number, number] | string => {
-  const filteredHex = Hex && Hex.includes("#") ? Hex.replace("#", "") : Hex;
-
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const RGBToHexArray = filteredHex.match(/.{1,2}/g)!;
-  const RGBArray: [number, number, number] = [
-    parseInt(RGBToHexArray[0], 16),
-    parseInt(RGBToHexArray[1], 16),
-    parseInt(RGBToHexArray[2], 16),
-  ];
-
-  if (raw) {
-    return RGBArray;
+export const normalizeHex = (hex: string): string => {
+  let h = String(hex ?? "")
+    .trim()
+    .replace(/^#/, "");
+  if (/^[0-9a-f]{3}$/i.test(h)) {
+    h = h
+      .split("")
+      .map((c) => c + c)
+      .join("");
   }
-
-  return `rgb(${RGBArray[0]}, ${RGBArray[1]}, ${RGBArray[2]})`;
+  if (!/^[0-9a-f]{6}$/i.test(h)) {
+    throw new Error(`Invalid HEX color: "${hex}"`);
+  }
+  return h;
 };
-export const RGBAToHEX = (rgba: string, backgroundHex: string): string => {
-  // Check if the input string is in the correct format (e.g., "rgba(255, 0, 0, 0.5)")
-  const rgbaRegex = /^rgba\((\d+),\s*(\d+),\s*(\d+),\s*([0-1](\.\d+)?)\)$/;
-  const match = rgba.match(rgbaRegex);
 
-  if (!match) return;
-
-  // Extract the RGBA components from the matched groups
-  const [, r, g, b, a] = match.map(Number);
-
-  // Convert the RGBA values to their hexadecimal equivalents
-  const redHex = r.toString(16).padStart(2, "0");
-  const greenHex = g.toString(16).padStart(2, "0");
-  const blueHex = b.toString(16).padStart(2, "0");
-
-  // Calculate the resulting color by blending the foreground and background colors
-  const foregroundColor = `${redHex}${greenHex}${blueHex}`;
-  const backgroundColor = backgroundHex.replace("#", "");
-  const alpha = Math.max(0, Math.min(1, a)); // Ensure alpha is within the valid range [0, 1]
-  const resultColor = foregroundColor
-    .match(/.{1,2}/g)!
-    .map((channel, index) =>
-      Math.round(
-        parseInt(channel, 16) * alpha +
-          parseInt(backgroundColor.slice(index * 2, index * 2 + 2), 16) *
-            (1 - alpha),
-      )
+export const RGBToHEX = (rgb: number[]): string => {
+  return `#${rgb
+    .map((c) =>
+      Math.round(Math.min(255, Math.max(0, c)))
         .toString(16)
         .padStart(2, "0"),
     )
-    .join("");
+    .join("")}`;
+};
+export const HEXToRGB = (Hex: THex, raw?: boolean): TRGB | string => {
+  const h = normalizeHex(Hex);
+  const rgb: TRGB = [
+    parseInt(h.slice(0, 2), 16),
+    parseInt(h.slice(2, 4), 16),
+    parseInt(h.slice(4, 6), 16),
+  ];
+  return raw ? rgb : `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+};
+export const RGBAToHEX = (rgba: string, backgroundHex: string): string => {
+  const match = rgba.match(
+    /^rgba\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d*\.?\d+)\s*\)$/,
+  );
+  if (!match) throw new Error(`Invalid rgba string: "${rgba}"`);
 
-  return `#${resultColor.toUpperCase()}`; // Convert to uppercase for consistency (optional)
+  const fg = match.slice(1, 4).map(Number);
+  const a = Math.max(0, Math.min(1, Number(match[4])));
+  const bg = HEXToRGB(backgroundHex, true) as TRGB;
+
+  // Composite over the background (same maths browsers use, in sRGB)
+  return RGBToHEX(fg.map((c, i) => c * a + bg[i] * (1 - a)));
 };
 export const RGBToHSL = (r: number, g: number, b: number): number[] => {
   const normalizedR = r / 255;
@@ -105,3 +95,7 @@ export const HEXToHSL = (hex: string, raw?: boolean): number[] | string => {
   if (raw) return rawHSL;
   return `hsl(${rawHSL[0]}deg ${rawHSL[1]}% ${rawHSL[2]}%)`;
 };
+
+export const PXToREM = (value: number): number => Number(0.0625 * value);
+
+export const PXToPT = (value: number): number => Number(0.75 * value);

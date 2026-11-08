@@ -3,75 +3,201 @@
     "type": "color",
     "values": [
       {
-        "name": "dark",
-        "base": "353531",
+        "name": "mono-dark",
+        "base": "262626",
         "variations": {
           "alpha": true,
-          "shade": false,
-          "tint": false
+          "tint": false,
+          "shade": false
         }
       },
       {
-        "name": "darker",
-        "base": "1b1b1b",
+        "name": "mono-darker",
+        "base": "171717",
         "variations": {
           "alpha": true,
-          "shade": false,
-          "tint": false
+          "tint": false,
+          "shade": false
         }
       },
       {
-        "name": "darkest",
-        "base": "0E0E0E",
+        "name": "mono-darkest",
+        "base": "0A0A0A",
         "variations": {
           "alpha": true,
-          "shade": false,
-          "tint": false
+          "tint": false,
+          "shade": false
         }
       },
       {
-        "name": "light",
-        "base": "EBEBEB",
+        "name": "mono-white",
+        "base": "FFFFFF",
         "variations": {
           "alpha": true,
-          "shade": false,
-          "tint": false
+          "tint": false,
+          "shade": false
+        }
+      },
+      {
+        "name": "mono-light",
+        "base": "FAFAF9",
+        "variations": {
+          "alpha": true,
+          "tint": false,
+          "shade": false
+        }
+      },
+      {
+        "name": "mono-lightest",
+        "base": "F5F5F4",
+        "variations": {
+          "alpha": true,
+          "tint": false,
+          "shade": false
+        }
+      },
+      {
+        "name": "accent",
+        "base": "7170ff",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
         }
       },
       {
         "name": "red",
-        "base": "EC4E20",
+        "base": "EF4444",
         "variations": {
           "alpha": true,
-          "shade": true,
-          "tint": true
+          "tint": true,
+          "shade": true
         }
       },
       {
         "name": "orange",
-        "base": "FF7F11",
+        "base": "F97316",
         "variations": {
           "alpha": true,
-          "shade": true,
-          "tint": true
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "amber",
+        "base": "F59E0B",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "yellow",
+        "base": "EAB308",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "lime",
+        "base": "84CC16",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
         }
       },
       {
         "name": "green",
-        "base": "69DC9E",
+        "base": "22C55E",
         "variations": {
           "alpha": true,
-          "shade": true,
-          "tint": true
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "teal",
+        "base": "14B8A6",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "cyan",
+        "base": "06B6D4",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "sky",
+        "base": "0EA5E9",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "blue",
+        "base": "3B82F6",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "indigo",
+        "base": "6366F1",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
         }
       },
       {
         "name": "purple",
-        "base": "944BBB",
+        "base": "A855F7",
         "variations": {
           "alpha": true,
-          "shade": true,
-          "tint": true
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "fuchsia",
+        "base": "D946EF",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "magenta",
+        "base": "EC4899",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
+        }
+      },
+      {
+        "name": "rose",
+        "base": "F43F5E",
+        "variations": {
+          "alpha": true,
+          "tint": true,
+          "shade": true
         }
       }
     ]
@@ -81,21 +207,21 @@
     "values": [
       {
         "name": "small",
-        "base": 3,
-        "ratio": 1.62,
-        "units": 10
+        "base": 1,
+        "units": 10,
+        "ratio": 1.13
       },
       {
         "name": "medium",
         "base": 3,
-        "ratio": 1.62,
-        "units": 10
+        "units": 10,
+        "ratio": 1.33
       },
       {
         "name": "large",
-        "base": 3,
-        "ratio": 1.62,
-        "units": 10
+        "base": 24,
+        "units": 10,
+        "ratio": 1.33
       }
     ]
   },
@@ -104,21 +230,21 @@
     "values": [
       {
         "name": "small",
-        "base": 16,
-        "ratio": 1.13,
-        "units": 10
+        "base": 6,
+        "units": 10,
+        "ratio": 1.13
       },
       {
         "name": "medium",
-        "base": 16,
-        "ratio": 1.13,
-        "units": 10
+        "base": 12,
+        "units": 10,
+        "ratio": 1.13
       },
       {
         "name": "large",
-        "base": 16,
-        "ratio": 1.13,
-        "units": 10
+        "base": 24,
+        "units": 10,
+        "ratio": 1.13
       }
     ]
   },
@@ -126,16 +252,16 @@
     "type": "depth",
     "values": [
       {
-        "name": "layout",
-        "base": 1,
+        "name": "default",
+        "base": 10,
         "units": 10,
         "steps": 10
       },
       {
-        "name": "notifications",
-        "base": 10,
-        "units": 2,
-        "steps": 1
+        "name": "extended",
+        "base": 10.1,
+        "units": 10,
+        "steps": 10
       }
     ]
   },
@@ -143,15 +269,15 @@
     "type": "opacity",
     "values": [
       {
-        "name": "base",
+        "name": "default",
         "base": 1,
         "units": 10,
         "steps": 10,
         "decimal": true
       },
       {
-        "name": "action",
-        "base": 1,
+        "name": "extended",
+        "base": 0.5,
         "units": 10,
         "steps": 10,
         "decimal": true
