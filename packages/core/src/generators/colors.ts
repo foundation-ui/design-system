@@ -40,7 +40,7 @@ export const getRelativeLuminance = (rgb: [number, number, number]): number => {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 };
 export const generateAlpha = (Hex: string, amount?: number) => {
-  const colorValuesArray: { hex: string; rgb: string; hsl: string }[] = [];
+  const colorValuesArray: IColorVariation[] = [];
   const parsedHEXtoRGB = HEXToRGB(Hex, true);
   const parsedHEXtoHSL = HEXToHSL(Hex, true);
 

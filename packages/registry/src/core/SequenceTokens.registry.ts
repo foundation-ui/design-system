@@ -48,24 +48,12 @@ const sequenceTokens = generateSequenceTokens(name, base, units, steps, decimal)
   ],
   returnProperties: [
     {
-      name: "name",
+      name: "$description",
       type: "string",
     },
     {
-      name: "base",
-      type: "number",
-    },
-    {
-      name: "steps",
-      type: "number",
-    },
-    {
-      name: "units",
-      type: "number",
-    },
-    {
-      name: "values",
-      type: "ISequenceVariation[] | []",
+      name: "[step]",
+      type: "{ $value: number; $extensions: IDTCGExtensions }",
     },
   ],
   types: `interface IContrastScore {
@@ -76,17 +64,20 @@ interface IStackOrder {
   label: string;
   score: number;
 }
-interface ISequenceVariation {
-  value: number;
-  usage: string[];
-  contrast_score?: IContrastScore;
-  stack_order?: IStackOrder;
+interface IDTCGExtensions {
+  "com.usefui"?: {
+    usage?: string[];
+    contrast_score?: IContrastScore;
+    stack_order?: IStackOrder;
+  };
 }
-interface ISequenceProperties {
-  base: number;
-  units: number;
-  steps: number;
-  name: string;
-  values: ISequenceVariation[];
-}`,
+interface IDTCGToken {
+  $type?: string;
+  $value?: any;
+  $description?: string;
+  $extensions?: IDTCGExtensions;
+  [key: string]: any;
+}
+interface IDTCGGroup extends IDTCGToken {}
+interface IDTCGSequenceGroup extends IDTCGGroup {}`,
 };

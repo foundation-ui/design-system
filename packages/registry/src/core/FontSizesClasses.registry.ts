@@ -10,12 +10,12 @@ export const FontSizesClassesMeta: GeneratorRegistryMetadata = {
   code: `import { generateFontSizesClasses } from "@usefui/core";
 import { js_design_tokens } from "@usefui/tokens";
 
-const { design_tokens } = js_design_tokens;
+const design_tokens = js_design_tokens;
 const cssFSClasses = generateFontSizesClasses(design_tokens.fontsize);`,
   properties: [
     {
       name: "fs",
-      type: "Size[]",
+      type: "IDTCGGroup",
       required: true,
     },
   ],
@@ -25,19 +25,18 @@ const cssFSClasses = generateFontSizesClasses(design_tokens.fontsize);`,
       type: "string",
     },
   ],
-  types: `interface IScaleVariation {
-  px: number;
-  rem: number;
-  pt: number;
+  types: `interface IDTCGDimensionValue {
+  value: number;
+  unit: "px" | "rem" | "pt";
 }
-interface Size {
-  name: string;
-  values: IScaleVariation[];
-  units?: number;
-  ratio?: number;
-  variant?: TScaleVariant;
+interface IDTCGToken {
+  $type?: string;
+  $value?: any;
+  $description?: string;
+  $extensions?: { "com.usefui"?: { px?: number; rem?: number; pt?: number } };
+  [key: string]: any;
 }
-type TScaleVariant = "fontsize" | "measurement";`,
+interface IDTCGGroup extends IDTCGToken {}`,
   css: `.fs-small-10 {
   font-size: 6.779999999999999px;
 }

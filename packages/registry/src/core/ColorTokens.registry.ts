@@ -36,44 +36,51 @@ const colorToken = generateColorTokens(name, hex, variants);`,
   ],
   returnProperties: [
     {
-      name: "name",
+      name: "$description",
       type: "string",
     },
     {
-      name: "base",
-      type: "IColorVariation",
+      name: "$root",
+      type: "IDTCGToken",
     },
     {
       name: "alpha",
-      type: "IColorVariation[] | []",
+      type: "IDTCGGroup",
     },
     {
       name: "tint",
-      type: "IColorVariation[] | []",
+      type: "IDTCGGroup",
     },
     {
       name: "shade",
-      type: "IColorVariation[] | []",
+      type: "IDTCGGroup",
     },
   ],
-  types: `type TColorVariant = "alpha" | "tint" | "shade";
-type TColorFormat = "hex" | "rgb" | "hsl";
-
-interface IContrastScore {
-  light: string;
-  dark: string;
+  types: `interface IDTCGColorValue {
+  colorSpace: "srgb";
+  components: [number, number, number];
+  alpha: number;
+  hex: string;
 }
 
-interface IColorVariation {
-  hex?: string;
-  rgb?: string;
-  hsl?: string;
-  contrast_score?: IContrastScore;
+interface IDTCGExtensions {
+  "com.usefui"?: {
+    rgb?: string;
+    hsl?: string;
+    contrast_score?: { light: string; dark: string };
+  };
 }
 
-interface IColorProperties {
-  alpha?: IColorVariation[] | [];
-  tint?: IColorVariation[] | [];
-  shade?: IColorVariation[] | [];
-}`,
+interface IDTCGToken {
+  $type?: string;
+  $value?: any;
+  $description?: string;
+  $root?: IDTCGToken;
+  $extensions?: IDTCGExtensions;
+  [key: string]: any;
+}
+
+interface IDTCGGroup extends IDTCGToken {}
+
+interface IDTCGColorGroup extends IDTCGGroup {}`,
 };

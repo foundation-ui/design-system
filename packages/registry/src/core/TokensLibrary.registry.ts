@@ -48,12 +48,28 @@ const tokenLibrary = generateTokensLibrary("demo-dt", [
   ],
   returnProperties: [
     {
-      name: "name",
+      name: "$description",
       type: "string",
     },
     {
-      name: "design_tokens",
-      type: "Record<'color' | 'measurement' | 'fontsize' | 'opacity' | 'depth', IComposedLibraryItem[]>",
+      name: "color",
+      type: "IDTCGGroup",
+    },
+    {
+      name: "measurement",
+      type: "IDTCGGroup",
+    },
+    {
+      name: "fontsize",
+      type: "IDTCGGroup",
+    },
+    {
+      name: "depth",
+      type: "IDTCGGroup",
+    },
+    {
+      name: "opacity",
+      type: "IDTCGGroup",
     },
   ],
   types: `interface ITemplateValues {
@@ -70,28 +86,23 @@ const tokenLibrary = generateTokensLibrary("demo-dt", [
   };
 }
 
-interface IComposedLibraryItem {
-  name?: string;
-  base?: number | IColorVariation;
-  alpha?: any[] | [];
-  tint?: any[] | [];
-  shade?: any[] | [];
-  units?: number;
-  ratio?: number;
-  variant?: TScaleVariant;
-  values?: ISequenceVariation[] | IScaleVariation[] | [];
+interface IDTCGToken {
+  $type?: string;
+  $value?: any;
+  $description?: string;
+  $root?: IDTCGToken;
+  $extensions?: { "com.usefui"?: Record<string, any> };
+  [key: string]: any;
 }
 
-interface IDesignTokensSet {
-  color: IComposedLibraryItem[];
-  measurement: IComposedLibraryItem[];
-  fontsize: IComposedLibraryItem[];
-  depth: IComposedLibraryItem[];
-  opacity: IComposedLibraryItem[];
-}
+interface IDTCGGroup extends IDTCGToken {}
 
-interface IDesignTokensLibrary {
-  name: string;
-  design_tokens: IDesignTokensSet;
+interface IDTCGDesignTokensSet extends IDTCGToken {
+  $description?: string;
+  color?: IDTCGGroup;
+  measurement?: IDTCGGroup;
+  fontsize?: IDTCGGroup;
+  depth?: IDTCGGroup;
+  opacity?: IDTCGGroup;
 }`,
 };

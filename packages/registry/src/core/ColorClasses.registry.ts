@@ -13,7 +13,7 @@ const cssColorClasses = generateColorClasses(design_tokens.color);`,
   properties: [
     {
       name: "color",
-      type: "Color[]",
+      type: "IDTCGGroup",
       required: true,
     },
   ],
@@ -23,24 +23,14 @@ const cssColorClasses = generateColorClasses(design_tokens.color);`,
       type: "string",
     },
   ],
-  types: `interface IContrastScore {
-  light: string;
-  dark: string;
+  types: `interface IDTCGToken {
+  $type?: string;
+  $value?: any;
+  $description?: string;
+  $root?: IDTCGToken;
+  [key: string]: any;
 }
-interface IColorVariation {
-  hex?: string;
-  rgb?: string;
-  hsl?: string;
-  contrast_score?: IContrastScore;
-}
-interface IColorProperties {
-  alpha?: IColorVariation[] | [];
-  tint?: IColorVariation[] | [];
-  shade?: IColorVariation[] | [];
-}
-interface Color extends IColorProperties {
-  name: string;
-}`,
+interface IDTCGGroup extends IDTCGToken {}`,
   css: `.color-dark {
    color: var(--color-dark) !important;
 }

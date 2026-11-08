@@ -9,7 +9,7 @@ export const CoreUsageMeta: DocsGuideRegistryMetadata = {
   code: `import { js_design_tokens } from "@usefui/tokens";
 
 import {
-  generateAlpha,
+  generateColorTokens,
   generateCSSVariables,
   generateDimensionClasses,
   generateFontSizesClasses,
@@ -18,7 +18,7 @@ import {
   generateSizeClasses,
 } from "@usefui/core";
 
-const { design_tokens } = js_design_tokens;
+const design_tokens = js_design_tokens;
 
 const cssLayoutClasses = generateLayoutClasses();
 const cssWidthHeightClasses = generateDimensionClasses();
@@ -26,23 +26,17 @@ const cssSizeClasses = generateSizeClasses(design_tokens.measurement);
 const cssFSClasses = generateFontSizesClasses(design_tokens.fontsize);
 const cssOpacityClasses = generateOpacityClasses(design_tokens.opacity);
 
+const emphasis = generateColorTokens("emphasis", "FF0000", {
+  alpha: true,
+  tint: false,
+  shade: false,
+});
+
 const cssVariables = generateCSSVariables({
-  name: js_design_tokens.name,
-  design_tokens: {
-    color: [
-      ...design_tokens.color,
-      {
-        name: "emphasis",
-        base: { hex: "#FF0000" },
-        alpha: generateAlpha("#FF0000"),
-        tint: [],
-        shade: [],
-      },
-    ],
-    measurement: [...design_tokens.measurement],
-    fontsize: [...design_tokens.fontsize],
-    opacity: [...design_tokens.opacity],
-    depth: [...design_tokens.depth],
+  ...design_tokens,
+  color: {
+    ...design_tokens.color,
+    emphasis,
   },
 });`,
 };

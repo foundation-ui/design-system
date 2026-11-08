@@ -19,7 +19,7 @@ import {
 import { createGlobalStyle } from "styled-components";
 import { ResetGlobalStyles, TypographyGlobalStyles } from "@usefui/components";
 
-const { design_tokens } = js_design_tokens;
+const design_tokens = js_design_tokens;
 
 const cssLayoutClasses = generateLayoutClasses();
 const cssWidthHeightClasses = generateDimensionClasses();
@@ -28,10 +28,7 @@ const cssFSClasses = generateFontSizesClasses(design_tokens.fontsize);
 const cssOpacityClasses = generateOpacityClasses(design_tokens.opacity);
 const cssColorClasses = generateColorClasses(design_tokens.color);
 
-const cssVariables = generateCSSVariables({
-  name: js_design_tokens.name,
-  design_tokens: design_tokens,
-});
+const cssVariables = generateCSSVariables(design_tokens);
 
 const CSSRoot = createGlobalStyle\`
 	:root {

@@ -10,77 +10,42 @@ export const CSSVariablesMeta: GeneratorRegistryMetadata = {
   code: `import { generateCSSVariables } from "@usefui/core";
 import { js_design_tokens } from "@usefui/tokens";
 
-const cssVariables = generateCSSVariables({
-  name: js_design_tokens.name,
-  design_tokens: js_design_tokens.design_tokens,
-});`,
+const cssVariables = generateCSSVariables(js_design_tokens);`,
   properties: [
     {
-      name: "name",
-      type: "string",
-      required: true,
-    },
-    {
       name: "design_tokens",
-      type: "IDesignTokensSet",
+      type: "IDTCGDesignTokensSet",
       required: true,
     },
   ],
   returnProperties: [
-    { name: "color", type: "string[] | string[][]" },
-    { name: "alpha", type: "string[] | string[][]" },
-    { name: "tint", type: "string[] | string[][]" },
-    { name: "shade", type: "string[] | string[][]" },
-    { name: "fontsize", type: "string[] | string[][]" },
-    { name: "measurement", type: "string[] | string[][]" },
-    { name: "depth", type: "string[] | string[][]" },
-    { name: "opacity", type: "string[] | string[][]" },
+    { name: "color", type: "string[]" },
+    { name: "alpha", type: "string[]" },
+    { name: "tint", type: "string[]" },
+    { name: "shade", type: "string[]" },
+    { name: "fontsize", type: "string[]" },
+    { name: "measurement", type: "string[]" },
+    { name: "depth", type: "string[]" },
+    { name: "opacity", type: "string[]" },
   ],
-  types: `interface IScaleVariation {
-  px: number;
-  rem: number;
-  pt: number;
+  types: `interface IDTCGToken {
+  $type?: string;
+  $value?: any;
+  $description?: string;
+  $root?: IDTCGToken;
+  $extensions?: { "com.usefui"?: Record<string, any> };
+  [key: string]: any;
 }
 
-interface IColorVariation {
-  hex?: string;
-  rgb?: string;
-  hsl?: string;
-  contrast_score?: IContrastScore;
-}
+interface IDTCGGroup extends IDTCGToken {}
 
-interface ISequenceVariation {
-  value: number;
-  usage: string[];
-  contrast_score?: IContrastScore;
-  stack_order?: IStackOrder;
-}
-
-interface IComposedLibraryItem {
-  name?: string;
-  base?: number | IColorVariation;
-  alpha?: any[] | [];
-  tint?: any[] | [];
-  shade?: any[] | [];
-  units?: number;
-  ratio?: number;
-  variant?: TScaleVariant;
-  values?: ISequenceVariation[] | IScaleVariation[] | [];
-}
-
-interface IDesignTokensSet {
-  color: IComposedLibraryItem[];
-  measurement: IComposedLibraryItem[];
-  fontsize: IComposedLibraryItem[];
-  depth: IComposedLibraryItem[];
-  opacity: IComposedLibraryItem[];
-}
-
-type TScaleVariant = "fontsize" | "measurement";
-
-interface IDesignTokensLibrary {
-  name: string;
-  design_tokens: IDesignTokensSet;
+interface IDTCGDesignTokensSet extends IDTCGToken {
+  $description?: string;
+  color?: IDTCGGroup;
+  measurement?: IDTCGGroup;
+  fontsize?: IDTCGGroup;
+  depth?: IDTCGGroup;
+  opacity?: IDTCGGroup;
 }`,
   css: `:root {
   --color-dark: #353531;

@@ -1,11 +1,5 @@
-import {
-  TColorFormat,
-  TScaleVariant,
-  IColorVariation,
-  IScaleVariation,
-  ISequenceVariation,
-  TScaleFormat,
-} from "./";
+import { TColorFormat, TScaleVariant, TScaleFormat } from "./";
+import type { IDTCGDesignTokensSet } from "./dtcg";
 
 export enum TokenTypesEnum {
   Measurement = "measurement",
@@ -16,30 +10,8 @@ export enum TokenTypesEnum {
 export type TDesignTokensVariant = "color" | TScaleVariant;
 
 export interface IQueryProperties {
-  source: IDesignTokensLibrary;
+  source: IDTCGDesignTokensSet;
   token_category: "color" | "measurement" | "fontsize" | "depth" | "opacity";
   query: string;
   unit?: TColorFormat | TScaleFormat;
-}
-export interface IComposedLibraryItem {
-  name?: string;
-  base?: number | IColorVariation;
-  alpha?: any[] | [];
-  tint?: any[] | [];
-  shade?: any[] | [];
-  units?: number;
-  ratio?: number;
-  variant?: TScaleVariant;
-  values?: ISequenceVariation[] | IScaleVariation[] | [];
-}
-export interface IDesignTokensSet {
-  color: IComposedLibraryItem[];
-  measurement: IComposedLibraryItem[];
-  fontsize: IComposedLibraryItem[];
-  depth: IComposedLibraryItem[];
-  opacity: IComposedLibraryItem[];
-}
-export interface IDesignTokensLibrary {
-  name: string;
-  design_tokens: IDesignTokensSet;
 }

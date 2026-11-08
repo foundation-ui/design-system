@@ -1,31 +1,35 @@
-import {
-  TokenTypesEnum,
-  IComposedLibraryItem,
-  IQueryProperties,
-} from "@usefui/core";
+import type { IQueryProperties, IDTCGToken } from "@usefui/core";
 
 export const GetTokenFromSource = (
   props: IQueryProperties,
-): IComposedLibraryItem | void => {
+): IDTCGToken | void => {
   const { source, token_category, query } = props;
 
-  const filterSource = source.design_tokens[token_category].find(
-    (token: IComposedLibraryItem) => token.name === query,
-  );
+  const categoryGroup = (source as any)?.[token_category];
+  if (!categoryGroup) return;
 
-  if (filterSource) return filterSource;
+  const token = categoryGroup[query];
+  if (token) return token;
 };
 
 export const GetColorTokenBase = (props: IQueryProperties) => {
   const values = GetTokenFromSource(props);
-  const defaultFallback =
-    values && values.base && Object.values(values.base)[0]; // Hex
+  if (!values) return;
 
-  if (values && !props.unit) return defaultFallback;
-  if (values && values.base && props.unit) {
-    const unitIndex = Object.keys(values.base).indexOf(props.unit);
+  const root = values?.$root ?? values;
+  const value = root?.$value;
+  const ext = root?.$extensions?.["com.usefui"];
 
-    if (props.token_category === TokenTypesEnum.Color)
-      return Object.values(values.base)[unitIndex];
+  if (values && !props.unit) {
+    if (value?.hex) return value.hex;
+    if (ext?.hex) return ext.hex;
+    if (ext?.rgb) return ext.rgb;
+    return value;
+  }
+  if (values && props.unit) {
+    const unit = props.unit as string;
+    if (unit === "hex") return value?.hex;
+    if (ext && ext[unit] !== undefined) return ext[unit];
+    if (value && value[unit] !== undefined) return value[unit];
   }
 };

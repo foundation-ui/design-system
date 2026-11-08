@@ -11,13 +11,25 @@ import {
   generateSequences,
 } from "..";
 import {
-  IDesignTokensLibrary,
   ColorModesEnum,
-  TMeasureVariant,
   SequenceVariantEnum,
   TokenTypesEnum,
-  ITemplatePayload,
 } from "../types";
+import type {
+  TMeasureVariant,
+  ITemplatePayload,
+  IDTCGDesignTokensSet,
+  IDTCGGroup,
+  IDTCGColorValue,
+} from "../types";
+
+const normalizeName = (name: string) =>
+  name.trim().replace(" ", "-").toLowerCase();
+
+const hexToComponents = (hex: string): [number, number, number] => {
+  const rgb = HEXToRGB(hex, true) as [number, number, number];
+  return [rgb[0] / 255, rgb[1] / 255, rgb[2] / 255];
+};
 
 export const generateColorTokens = (
   name: string,
@@ -30,24 +42,122 @@ export const generateColorTokens = (
 ) => {
   const HEXRegExp = new RegExp("^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
   if (!HEXRegExp.test(hex)) return;
-  return {
-    name: name,
-    base: {
+
+  const baseRgb = HEXToRGB(hex, true) as [number, number, number];
+  const baseHslString = HEXToHSL(hex) as string;
+  const baseRgbString = HEXToRGB(hex) as string;
+
+  const base: IDTCGGroup = {
+    $type: "color",
+    $value: {
+      colorSpace: "srgb",
+      components: [baseRgb[0] / 255, baseRgb[1] / 255, baseRgb[2] / 255],
+      alpha: 1,
       hex: `#${hex}`,
-      rgb: HEXToRGB(hex),
-      hsl: HEXToHSL(hex),
-      contrast_score: {
-        light: calculateContrastScore(hex, "ffffff"),
-        dark: calculateContrastScore(hex, "000000"),
+    } as IDTCGColorValue,
+    $extensions: {
+      "com.usefui": {
+        rgb: baseRgbString,
+        hsl: baseHslString,
+        contrast_score: {
+          light: calculateContrastScore(hex, "ffffff"),
+          dark: calculateContrastScore(hex, "000000"),
+        },
       },
     },
-    alpha: variations.alpha ? generateAlpha(hex) : [],
-    tint: variations.tint ? generateVariation(hex, ColorModesEnum.Lighten) : [],
-    shade: variations.shade
-      ? generateVariation(hex, ColorModesEnum.Darken)
-      : [],
   };
+
+  const result: IDTCGGroup = {
+    $type: "color",
+    $description: name,
+    $root: base,
+  };
+
+  if (variations.alpha) {
+    const alphaEntries: Record<string, IDTCGGroup> = {};
+    generateAlpha(hex).forEach((item, index) => {
+      const step = (index + 1) * 10;
+      const alphaValue = index === 9 ? 1 : Number(`0.${index + 1}`);
+      alphaEntries[String(step)] = {
+        $type: "color",
+        $value: {
+          colorSpace: "srgb",
+          components: [baseRgb[0] / 255, baseRgb[1] / 255, baseRgb[2] / 255],
+          alpha: alphaValue,
+          hex: `#${hex}`,
+        } as IDTCGColorValue,
+        $extensions: {
+          "com.usefui": {
+            rgb: item.rgb,
+            hsl: item.hsl,
+            contrast_score: item.contrast_score,
+          },
+        },
+      };
+    });
+    result.alpha = {
+      $type: "color",
+      ...alphaEntries,
+    };
+  }
+
+  if (variations.tint) {
+    const tintEntries: Record<string, IDTCGGroup> = {};
+    generateVariation(hex, ColorModesEnum.Lighten).forEach((item, index) => {
+      const step = (index + 1) * 10;
+      tintEntries[String(step)] = {
+        $type: "color",
+        $value: {
+          colorSpace: "srgb",
+          components: hexToComponents(item.hex),
+          alpha: 1,
+          hex: item.hex,
+        } as IDTCGColorValue,
+        $extensions: {
+          "com.usefui": {
+            rgb: item.rgb,
+            hsl: item.hsl,
+            contrast_score: item.contrast_score,
+          },
+        },
+      };
+    });
+    result.tint = {
+      $type: "color",
+      ...tintEntries,
+    };
+  }
+
+  if (variations.shade) {
+    const shadeEntries: Record<string, IDTCGGroup> = {};
+    generateVariation(hex, ColorModesEnum.Darken).forEach((item, index) => {
+      const step = (index + 1) * 10;
+      shadeEntries[String(step)] = {
+        $type: "color",
+        $value: {
+          colorSpace: "srgb",
+          components: hexToComponents(item.hex),
+          alpha: 1,
+          hex: item.hex,
+        } as IDTCGColorValue,
+        $extensions: {
+          "com.usefui": {
+            rgb: item.rgb,
+            hsl: item.hsl,
+            contrast_score: item.contrast_score,
+          },
+        },
+      };
+    });
+    result.shade = {
+      $type: "color",
+      ...shadeEntries,
+    };
+  }
+
+  return result;
 };
+
 export const generateMeasurementTokens = (
   name: string,
   base: number,
@@ -55,19 +165,32 @@ export const generateMeasurementTokens = (
   ratio: number,
   _variant?: TMeasureVariant,
 ) => {
-  return {
-    name: name,
+  const scales = generateModularScales({
     base: base,
+    ratio: [ratio],
     units: units,
-    ratio: ratio,
-    values: generateModularScales({
-      base: base,
-      ratio: [ratio],
-      units: units,
-      convert: true,
-    }),
-  };
+    convert: true,
+  }) as { px: number; rem: number; pt: number }[];
+
+  const entries: Record<string, IDTCGGroup> = {};
+  scales.forEach((value, index) => {
+    const step = (index + 1) * 10;
+    entries[String(step)] = {
+      $type: "dimension",
+      $value: { value: value.px, unit: "px" },
+      $extensions: {
+        "com.usefui": { px: value.px, rem: value.rem, pt: value.pt },
+      },
+    };
+  });
+
+  return {
+    $type: "dimension",
+    $description: name,
+    ...entries,
+  } as IDTCGGroup;
 };
+
 export const generateSequenceVariation = ({
   contrast,
   sequence,
@@ -105,6 +228,7 @@ export const generateSequenceVariation = ({
 
   return !contrast ? variations.depth : variations.opacity;
 };
+
 export const generateSequenceTokens = (
   name: string,
   base: number,
@@ -133,16 +257,28 @@ export const generateSequenceTokens = (
     };
   });
 
+  const entries: Record<string, IDTCGGroup> = {};
+  sequencePayload.forEach((item, index) => {
+    const step = (index + 1) * 10;
+    const { value, ...rest } = item;
+    entries[String(step)] = {
+      $type: "number",
+      $value: value,
+      $extensions: {
+        "com.usefui": rest,
+      },
+    };
+  });
+
   return {
-    name: name,
-    base: base,
-    units: units,
-    steps: steps,
-    values: sequencePayload,
-  };
+    $type: "number",
+    $description: name,
+    ...entries,
+  } as IDTCGGroup;
 };
-export const generateTokensFromTemplate = (payload) => {
-  return payload.values.map((value) => {
+
+export const generateTokensFromTemplate = (payload: any) => {
+  return payload.values.map((value: any) => {
     const isColorType = payload.type === TokenTypesEnum.Color;
 
     const isMeasurementType = ["measurement", "fontsize"].includes(
@@ -175,30 +311,52 @@ export const generateTokensFromTemplate = (payload) => {
         value.decimal,
       );
     }
-  });
+  }).filter(Boolean);
 };
+
 export const generateTokensLibrary = (
   name: string,
   template: ITemplatePayload[],
-): IDesignTokensLibrary => {
-  let design_tokens = {
-    color: [],
-    measurement: [],
-    fontsize: [],
-    opacity: [],
-    depth: [],
+): IDTCGDesignTokensSet => {
+  const categories: Record<string, Record<string, IDTCGGroup>> = {
+    color: {},
+    measurement: {},
+    fontsize: {},
+    opacity: {},
+    depth: {},
+  };
+
+  const categoryType: Record<string, string> = {
+    color: "color",
+    measurement: "dimension",
+    fontsize: "dimension",
+    opacity: "number",
+    depth: "number",
   };
 
   template.forEach((token) => {
-    if (!token.type) return;
-    if (token.type && token.values)
-      return design_tokens[token.type].push(
-        ...generateTokensFromTemplate(token),
-      );
+    if (!token.type || !token.values) return;
+    const generated = generateTokensFromTemplate(token) as IDTCGGroup[];
+    const bucket = categories[token.type];
+    if (!bucket) return;
+    generated.forEach((group) => {
+      const key = group.$description ?? "token";
+      bucket[key] = group;
+    });
   });
 
-  return {
-    name: name.trim().replace(" ", "-").toLowerCase(),
-    design_tokens: design_tokens,
+  const design_tokens: IDTCGDesignTokensSet = {
+    $description: normalizeName(name),
   };
+
+  Object.keys(categories).forEach((category) => {
+    const bucket = categories[category];
+    if (Object.keys(bucket).length === 0) return;
+    design_tokens[category] = {
+      $type: categoryType[category],
+      ...bucket,
+    } as IDTCGGroup;
+  });
+
+  return design_tokens;
 };

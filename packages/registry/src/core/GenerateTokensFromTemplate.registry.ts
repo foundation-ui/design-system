@@ -27,7 +27,7 @@ generateTokensFromTemplate({
   properties: [
     { name: "payload", type: "ITemplatePayload", required: true },
   ],
-  returnProperties: [{ name: "tokens", type: "any[]" }],
+  returnProperties: [{ name: "tokens", type: "IDTCGGroup[]" }],
   types: `interface ITemplatePayload {
   type: "color" | "measurement" | "fontsize" | "depth" | "opacity";
   values: Array<{
@@ -40,5 +40,16 @@ generateTokensFromTemplate({
     variations?: { alpha?: boolean; shade?: boolean; tint?: boolean };
   }>;
   data?: any[];
-}`,
+}
+
+interface IDTCGToken {
+  $type?: string;
+  $value?: any;
+  $description?: string;
+  $root?: IDTCGToken;
+  $extensions?: { "com.usefui"?: Record<string, any> };
+  [key: string]: any;
+}
+
+interface IDTCGGroup extends IDTCGToken {}`,
 };

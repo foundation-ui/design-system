@@ -10,29 +10,23 @@ export const TokensMeta: DocsGuideRegistryMetadata = {
 import { ColorModeProvider, js_design_tokens } from "@usefui/tokens";
 
 import {
-  generateAlpha,
+  generateColorTokens,
   generateCSSVariables,
 } from "@usefui/core";
 
-const { design_tokens } = js_design_tokens;
+const design_tokens = js_design_tokens;
+
+const emphasis = generateColorTokens("emphasis", "FF0000", {
+  alpha: true,
+  tint: false,
+  shade: false,
+});
 
 const cssVariables = generateCSSVariables({
-  name: js_design_tokens.name,
-  design_tokens: {
-    color: [
-      ...design_tokens.color,
-      {
-        name: "emphasis",
-        base: { hex: "#FF0000" },
-        alpha: generateAlpha("#FF0000"),
-        tint: [],
-        shade: [],
-      },
-    ],
-    measurement: [...design_tokens.measurement],
-    fontsize: [...design_tokens.fontsize],
-    opacity: [...design_tokens.opacity],
-    depth: [...design_tokens.depth],
+  ...design_tokens,
+  color: {
+    ...design_tokens.color,
+    emphasis,
   },
 });
 

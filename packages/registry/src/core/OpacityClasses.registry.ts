@@ -10,12 +10,12 @@ export const OpacityClassesMeta: GeneratorRegistryMetadata = {
   code: `import { generateOpacityClasses } from "@usefui/core";
 import { js_design_tokens } from "@usefui/tokens";
 
-const { design_tokens } = js_design_tokens;
+const design_tokens = js_design_tokens;
 const cssOpacityClasses = generateOpacityClasses(design_tokens.opacity);`,
   properties: [
     {
       name: "opacity",
-      type: "ISequenceProperties[]",
+      type: "IDTCGGroup",
       required: true,
     },
   ],
@@ -25,29 +25,14 @@ const cssOpacityClasses = generateOpacityClasses(design_tokens.opacity);`,
       type: "string",
     },
   ],
-  types: `interface IContrastScore {
-  light: string;
-  dark: string;
+  types: `interface IDTCGToken {
+  $type?: string;
+  $value?: any;
+  $description?: string;
+  $extensions?: { "com.usefui"?: Record<string, any> };
+  [key: string]: any;
 }
-
-interface IStackOrder {
-  index: number;
-  order: number;
-}
-
-interface ISequenceVariation {
-  value: number;
-  usage: string[];
-  contrast_score?: IContrastScore;
-  stack_order?: IStackOrder;
-}
-interface ISequenceProperties {
-  base: number;
-  units: number;
-  steps: number;
-  name: string;
-  values: ISequenceVariation[];
-}`,
+interface IDTCGGroup extends IDTCGToken {}`,
   css: `.opacity-default-10 {
   opacity: 0.1;
 }

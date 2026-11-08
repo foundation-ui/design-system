@@ -1,97 +1,77 @@
 import {
-  IDesignTokensLibrary,
-  TColorVariant,
-  TScaleVariant,
-  IComposedLibraryItem,
   ColorVariantEnum,
   MeasureVariantEnum,
   SequenceVariantEnum,
 } from "../types";
+import type {
+  IDTCGDesignTokensSet,
+  TColorVariant,
+  TScaleVariant,
+} from "../types";
 
-const DEFAULT_COLOR_TOKENS_VARIANT = "color";
-const COLOR_TOKENS_VARIANT: TColorVariant[] = [
-  ColorVariantEnum.Alpha,
-  ColorVariantEnum.Tint,
-  ColorVariantEnum.Shade,
-];
-const SCALE_TOKENS_VARIANT: TScaleVariant[] = [
-  MeasureVariantEnum.FontSize,
-  MeasureVariantEnum.Measurement,
-];
-const SEQUENCE_TOKENS_VARIANT: SequenceVariantEnum[] = [
-  SequenceVariantEnum.Depth,
-  SequenceVariantEnum.Opacity,
-];
+const isGroupKey = (key: string) => !key.startsWith("$");
 
-export const generateCSSVariables = (payload: IDesignTokensLibrary) => {
-  const variantName = (variant: string, name: string) =>
-    `--${variant}-${name}-`;
-  const variantIndex = (key: number) => (key + 1) * 10;
-  const variableName = (variant: string, name: string, key: number) =>
-    `${variantName(variant, name)}${variantIndex(key)}`;
+const stepKeysOf = (group: any) =>
+  Object.keys(group ?? {})
+    .filter(isGroupKey)
+    .sort((a, b) => Number(a) - Number(b));
 
-  const variationsTransformers = {
-    color: (library: IComposedLibraryItem[], variant?: TColorVariant) => {
+export const generateCSSVariables = (payload: IDTCGDesignTokensSet) => {
+  const colorVariables = (variant?: TColorVariant) => {
+    const group = payload.color;
+    if (!group) return [];
+
+    return stepKeysOf(group).flatMap((name) => {
+      const token = group[name];
+
       if (!variant) {
-        return library.map(
-          (token) => `
-            ${`--${DEFAULT_COLOR_TOKENS_VARIANT}-${token.name}: ${token.base["hex"]};`}
-          `,
-        );
+        const root = token?.$root ?? token;
+        const hex = root?.$value?.hex ?? root?.hex;
+        return `--color-${name}: ${hex};`;
       }
 
-      return library.map((token) => {
-        return token[variant].map(
-          (item, key) => `
-            ${`${variableName(variant, token.name, key)}: ${item.rgb};`}
-          `,
-        );
+      const nested = token?.[variant];
+      return stepKeysOf(nested).map((step) => {
+        const rgb =
+          nested[step]?.$extensions?.["com.usefui"]?.rgb ?? nested[step]?.rgb;
+        return `--${variant}-${name}-${step}: ${rgb};`;
       });
-    },
-    scale: (library: IComposedLibraryItem[], variant: TScaleVariant) => {
-      return library.map((token) =>
-        token.values.map(
-          (value, key) => `
-            ${`${variableName(variant, token.name, key)}: ${value.rem}rem;`}
-          `,
-        ),
-      );
-    },
-    sequence: (
-      library: IComposedLibraryItem[],
-      variant: SequenceVariantEnum,
-    ) => {
-      return library.map((token) =>
-        token.values.map(
-          (value, key) => `
-            ${`${variableName(variant, token.name, key)}: ${value.value};`}
-          `,
-        ),
-      );
-    },
+    });
   };
 
-  const [color, alpha, tint, shade, fontsize, measurement, depth, opacity] = [
-    variationsTransformers.color(payload.design_tokens.color),
-    ...COLOR_TOKENS_VARIANT.map((variant) =>
-      variationsTransformers.color(payload.design_tokens.color, variant),
-    ),
-    ...SCALE_TOKENS_VARIANT.map((variant) =>
-      variationsTransformers.scale(payload.design_tokens[variant], variant),
-    ),
-    ...SEQUENCE_TOKENS_VARIANT.map((variant) =>
-      variationsTransformers.sequence(payload.design_tokens[variant], variant),
-    ),
-  ];
+  const scaleVariables = (variant: TScaleVariant) => {
+    const group = payload[variant];
+    if (!group) return [];
+
+    return stepKeysOf(group).flatMap((name) => {
+      const token = group[name];
+      return stepKeysOf(token).map((step) => {
+        const rem = token[step]?.$extensions?.["com.usefui"]?.rem;
+        return `--${variant}-${name}-${step}: ${rem}rem;`;
+      });
+    });
+  };
+
+  const sequenceVariables = (variant: SequenceVariantEnum) => {
+    const group = payload[variant];
+    if (!group) return [];
+
+    return stepKeysOf(group).flatMap((name) => {
+      const token = group[name];
+      return stepKeysOf(token).map(
+        (step) => `--${variant}-${name}-${step}: ${token[step]?.$value};`,
+      );
+    });
+  };
 
   return {
-    color,
-    alpha,
-    tint,
-    shade,
-    fontsize,
-    measurement,
-    depth,
-    opacity,
+    color: colorVariables(),
+    alpha: colorVariables(ColorVariantEnum.Alpha),
+    tint: colorVariables(ColorVariantEnum.Tint),
+    shade: colorVariables(ColorVariantEnum.Shade),
+    fontsize: scaleVariables(MeasureVariantEnum.FontSize),
+    measurement: scaleVariables(MeasureVariantEnum.Measurement),
+    depth: sequenceVariables(SequenceVariantEnum.Depth),
+    opacity: sequenceVariables(SequenceVariantEnum.Opacity),
   };
 };

@@ -42,37 +42,38 @@ const msTokens = generateMeasurementTokens(name, base, units, ratio);`,
   ],
   returnProperties: [
     {
-      name: "name",
+      name: "$description",
       type: "string",
     },
     {
-      name: "base",
-      type: "number",
-    },
-    {
-      name: "units",
-      type: "number",
-    },
-    {
-      name: "ratio",
-      type: "number",
-    },
-    {
-      name: "values",
-      type: "{ pt: number; px: number; rem: number; }[]",
+      name: "[step]",
+      type: "{ $value: IDTCGDimensionValue; $extensions: IDTCGExtensions }",
     },
   ],
   types: `type TMeasureVariant = "fontsize" | "measurement";
 
-interface IScaleVariation {
-  px: number;
-  rem: number;
-  pt: number;
+interface IDTCGDimensionValue {
+  value: number;
+  unit: "px" | "rem" | "pt";
 }
-interface IScaleProperties {
-  units: number;
-  ratio: number;
-  variant?: TMeasureVariant;
-  values: IScaleVariation[] | [];
-}`,
+
+interface IDTCGExtensions {
+  "com.usefui"?: {
+    px?: number;
+    rem?: number;
+    pt?: number;
+  };
+}
+
+interface IDTCGToken {
+  $type?: string;
+  $value?: any;
+  $description?: string;
+  $extensions?: IDTCGExtensions;
+  [key: string]: any;
+}
+
+interface IDTCGGroup extends IDTCGToken {}
+
+interface IDTCGScaleGroup extends IDTCGGroup {}`,
 };

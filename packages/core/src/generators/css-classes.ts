@@ -11,8 +11,31 @@ interface Color extends IColorProperties {
   name: string;
 }
 
-export const generateSizeClasses = (sizes: Size[]) => {
-  const cssClasses = sizes.flatMap(({ name, values }) => {
+const toSizeList = (group: any): Size[] => {
+  if (!group) return [];
+  return Object.keys(group)
+    .filter((k) => !k.startsWith("$"))
+    .sort((a, b) => Number(a) - Number(b))
+    .map((name) => {
+      const token = group[name];
+      const stepKeys = Object.keys(token ?? {})
+        .filter((k) => !k.startsWith("$"))
+        .sort((a, b) => Number(a) - Number(b));
+      const values = stepKeys.map((stepKey) => {
+        const item = token[stepKey];
+        const px =
+          typeof item?.$value === "object"
+            ? item.$value.value
+            : item?.px ?? item?.$value;
+        return { px } as IScaleProperties["values"][number];
+      });
+      return { name, values } as Size;
+    });
+};
+
+export const generateSizeClasses = (sizes: any) => {
+  const resolved = Array.isArray(sizes) ? sizes : toSizeList(sizes);
+  const cssClasses = resolved.flatMap(({ name, values }) => {
     return values.flatMap((value, index) => {
       const cssValue = `${value.px}px`;
       const directions = ["", "x", "y", "t", "r", "b", "l"];
@@ -88,8 +111,9 @@ export const generateSizeClasses = (sizes: Size[]) => {
   `;
 };
 
-export const generateFontSizesClasses = (fs: Size[]) => {
-  const cssClasses = fs.flatMap(({ name, values }) => {
+export const generateFontSizesClasses = (fs: any) => {
+  const resolved = Array.isArray(fs) ? fs : toSizeList(fs);
+  const cssClasses = resolved.flatMap(({ name, values }) => {
     return values.flatMap((value, index) => {
       const cssValue = `${value.px}px`;
       let classStrings: string[] = [];
@@ -111,8 +135,22 @@ export const generateFontSizesClasses = (fs: Size[]) => {
   `;
 };
 
-export const generateOpacityClasses = (opacity: ISequenceProperties[]) => {
-  const cssClasses = opacity.flatMap(({ name, values }) => {
+export const generateOpacityClasses = (opacity: any) => {
+  const resolved = Array.isArray(opacity)
+    ? opacity
+    : Object.keys(opacity ?? {})
+        .filter((k) => !k.startsWith("$"))
+        .map((name) => {
+          const token = opacity[name];
+          const stepKeys = Object.keys(token ?? {})
+            .filter((k) => !k.startsWith("$"))
+            .sort((a, b) => Number(a) - Number(b));
+          const values = stepKeys.map((stepKey) => ({
+            value: token[stepKey]?.$value ?? token[stepKey]?.value,
+          }));
+          return { name, values };
+        });
+  const cssClasses = resolved.flatMap(({ name, values }) => {
     return values.flatMap((value, index) => {
       let classStrings: string[] = [];
 
@@ -133,7 +171,12 @@ export const generateOpacityClasses = (opacity: ISequenceProperties[]) => {
   `;
 };
 
-export const generateColorClasses = (color: Color[]) => {
+export const generateColorClasses = (color: any) => {
+  const resolved: Color[] = Array.isArray(color)
+    ? color
+    : Object.keys(color ?? {})
+        .filter((k) => !k.startsWith("$"))
+        .map((name) => ({ name } as Color));
   const generateClasses = (
     items: Color[],
     mode: "background" | "color",
@@ -156,8 +199,8 @@ export const generateColorClasses = (color: Color[]) => {
     return cssColorClasses;
   };
 
-  const cssColorClasses = generateClasses(color, "color");
-  const cssBgClasses = generateClasses(color, "background");
+  const cssColorClasses = generateClasses(resolved, "color");
+  const cssBgClasses = generateClasses(resolved, "background");
 
   return `
     ${cssColorClasses.join("")}

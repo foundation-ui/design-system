@@ -12,12 +12,12 @@ export const SizeClassesMeta: GeneratorRegistryMetadata = {
   code: `import { generateSizeClasses } from "@usefui/core";
 import { js_design_tokens } from "@usefui/tokens";
 
-const { design_tokens } = js_design_tokens;
+const design_tokens = js_design_tokens;
 const cssSizeClasses = generateSizeClasses(design_tokens.measurement);`,
   properties: [
     {
       name: "sizes",
-      type: "Size[] | []",
+      type: "IDTCGGroup",
       required: true,
     },
   ],
@@ -27,22 +27,18 @@ const cssSizeClasses = generateSizeClasses(design_tokens.measurement);`,
       type: "string",
     },
   ],
-  types: `type TScaleVariant = "fontsize" | "measurement";
-
-interface IScaleVariation {
-  px: number;
-  rem: number;
-  pt: number;
+  types: `interface IDTCGDimensionValue {
+  value: number;
+  unit: "px" | "rem" | "pt";
 }
-interface IScaleProperties {
-  units: number;
-  ratio: number;
-  variant?: TScaleVariant;
-  values: IScaleVariation[] | [];
+interface IDTCGToken {
+  $type?: string;
+  $value?: any;
+  $description?: string;
+  $extensions?: { "com.usefui"?: { px?: number; rem?: number; pt?: number } };
+  [key: string]: any;
 }
-interface Size extends IScaleProperties {
-  name: string;
-}`,
+interface IDTCGGroup extends IDTCGToken {}`,
   css: `.p-small-10 {
   padding: 1.13px;
 }

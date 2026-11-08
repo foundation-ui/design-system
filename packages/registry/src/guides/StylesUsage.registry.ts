@@ -20,12 +20,9 @@ import {
   generateSizeClasses,
 } from "@usefui/core";
 
-const { design_tokens } = js_design_tokens;
+const design_tokens = js_design_tokens;
 
-const cssVariables = generateCSSVariables({
-  name: js_design_tokens.name,
-  design_tokens,
-});
+const cssVariables = generateCSSVariables(design_tokens);
 
 const CSSRoot = createGlobalStyle\`
   :root {
