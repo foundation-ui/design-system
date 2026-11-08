@@ -11,7 +11,7 @@ import {
   Field,
   Viewport,
 } from "@usefui/components";
-import { useColorMode } from "@usefui/tokens";
+import { useColorMode } from "@usefui/components";
 import { Icon } from "@usefui/icons";
 
 const meta = {

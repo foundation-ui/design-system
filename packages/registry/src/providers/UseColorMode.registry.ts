@@ -5,8 +5,8 @@ export const UseColorModeMeta: ProviderRegistryMetadata = {
   name: "useColorMode",
   title: "useColorMode",
   description: "Switch between color modes.",
-  module: "@usefui/tokens",
-  code: `import { useColorMode } from "@usefui/tokens";
+  module: "@usefui/components",
+  code: `import { useColorMode } from "@usefui/components";
 
 export function HookComponent() {
     const { colorMode, setColorMode } = useColorMode();

@@ -4,7 +4,8 @@ const clientProviderSource = `"use client";
 
 import React from "react";
 
-import { ColorModeProvider, js_design_tokens } from "@usefui/tokens";
+import { ColorModeProvider, ResetGlobalStyles, TypographyGlobalStyles } from "@usefui/components";
+import { js_design_tokens } from "@usefui/tokens";
 
 import {
   generateCSSClasses,
@@ -12,7 +13,6 @@ import {
 } from "@usefui/core";
 
 import { createGlobalStyle } from "styled-components";
-import { ResetGlobalStyles, TypographyGlobalStyles } from "@usefui/components";
 
 const design_tokens = js_design_tokens;
 

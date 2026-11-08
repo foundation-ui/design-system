@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Overlay, Button, Page } from "@usefui/components";
-import { useColorMode } from "@usefui/tokens";
+import { useColorMode } from "@usefui/components";
 
 // Duplicated doc: The JSDoc content isn't rendering on Storybook.
 

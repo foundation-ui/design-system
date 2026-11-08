@@ -7,7 +7,8 @@ export const TokensMeta: DocsGuideRegistryMetadata = {
   description: "Setup and use @usefui/tokens in your project.",
   module: "@usefui/tokens",
   code: `import React from "react";
-import { ColorModeProvider, js_design_tokens } from "@usefui/tokens";
+import { ColorModeProvider } from "@usefui/components";
+import { js_design_tokens } from "@usefui/tokens";
 
 import {
   generateColorTokens,

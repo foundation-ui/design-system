@@ -10,7 +10,7 @@ import {
   Skeleton,
   Viewport,
 } from "@usefui/components";
-import { useColorMode } from "@usefui/tokens";
+import { useColorMode } from "@usefui/components";
 
 const meta = {
   title: "Components/Dialog",

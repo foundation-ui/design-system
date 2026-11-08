@@ -1,5 +1,5 @@
 import React from "react";
-import { useColorMode } from "@usefui/tokens";
+import { useColorMode } from "@usefui/components";
 
 import {
   Button,

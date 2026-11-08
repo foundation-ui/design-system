@@ -9,7 +9,7 @@ import {
   Toggle,
 } from "@usefui/components";
 import { Icon } from "@usefui/icons";
-import { useColorMode } from "@usefui/tokens";
+import { useColorMode } from "@usefui/components";
 
 const meta = {
   title: "Components/Toggle",

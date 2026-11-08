@@ -3,17 +3,15 @@
 import React from "react";
 
 import { createGlobalStyle } from "styled-components";
-import { ColorModeProvider, js_design_tokens } from "../packages/tokens";
+import { js_design_tokens } from "../packages/tokens";
 
 import {
   ResetGlobalStyles,
   TypographyGlobalStyles,
+  ColorModeProvider,
 } from "../packages/components";
 
-import {
-  generateCSSClasses,
-  generateCSSVariables,
-} from "../packages/core";
+import { generateCSSClasses, generateCSSVariables } from "../packages/core";
 
 const design_tokens = js_design_tokens;
 

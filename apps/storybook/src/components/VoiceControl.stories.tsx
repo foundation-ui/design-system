@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useGradient } from "@usefui/hooks";
-import { useColorMode } from "@usefui/tokens";
+import { useColorMode } from "@usefui/components";
 import { useDrawer, useSheet, useVoiceControl } from "@usefui/components";
 
 import {
