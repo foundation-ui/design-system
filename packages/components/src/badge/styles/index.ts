@@ -55,7 +55,7 @@ export const BadgeVariantStyles = css`
   &[data-variant="danger"] {
     background-color: var(--alpha-red-30);
     border-color: var(--alpha-red-10);
-    color: var(--tint-red-60);
+    color: var(--shade-red-20);
 
     * {
       color: currentColor !important;

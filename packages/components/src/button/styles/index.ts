@@ -501,10 +501,7 @@ export const ButtonAnimationsStyles = css`
 
   /* Individual transform properties (translate, rotate, scale) let
      animations combine without overwriting each other's "transform". */
-  transition:
-    scale var(--animation-duration) var(--animation-easing),
-    translate var(--animation-duration) var(--animation-easing),
-    rotate var(--animation-duration) var(--animation-easing);
+  transition: all var(--animation-duration) var(--animation-easing);
 
   &[data-animation="float"] {
     animation: ${float} 1s ease-in-out infinite alternate-reverse;
