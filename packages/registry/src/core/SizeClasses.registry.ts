@@ -45,7 +45,7 @@ interface IDTCGToken {
   $type?: string;
   $value?: any;
   $description?: string;
-  $extensions?: { "com.usefui"?: { px?: number; rem?: number; pt?: number } };
+  $extensions?: { "dev.usefui"?: { px?: number; rem?: number; pt?: number } };
   [key: string]: any;
 }
 interface IDTCGGroup extends IDTCGToken {}`,

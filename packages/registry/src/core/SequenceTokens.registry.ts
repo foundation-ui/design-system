@@ -65,7 +65,7 @@ interface IStackOrder {
   score: number;
 }
 interface IDTCGExtensions {
-  "com.usefui"?: {
+  "dev.usefui"?: {
     usage?: string[];
     contrast_score?: IContrastScore;
     stack_order?: IStackOrder;

@@ -37,7 +37,7 @@ const stylesheet = \`:root {
   $value?: any;
   $description?: string;
   $root?: IDTCGToken;
-  $extensions?: { "com.usefui"?: Record<string, any> };
+  $extensions?: { "dev.usefui"?: Record<string, any> };
   [key: string]: any;
 }
 

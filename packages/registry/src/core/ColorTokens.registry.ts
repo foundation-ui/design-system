@@ -64,7 +64,7 @@ const colorToken = generateColorTokens(name, hex, variants);`,
 }
 
 interface IDTCGExtensions {
-  "com.usefui"?: {
+  "dev.usefui"?: {
     rgb?: string;
     hsl?: string;
     contrast_score?: { light: string; dark: string };

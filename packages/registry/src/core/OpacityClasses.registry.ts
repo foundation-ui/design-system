@@ -40,7 +40,7 @@ const cssLiteralOpacityClasses = generateOpacityClasses(
   $type?: string;
   $value?: any;
   $description?: string;
-  $extensions?: { "com.usefui"?: Record<string, any> };
+  $extensions?: { "dev.usefui"?: Record<string, any> };
   [key: string]: any;
 }
 interface IDTCGGroup extends IDTCGToken {}`,

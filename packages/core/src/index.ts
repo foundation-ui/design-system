@@ -8,4 +8,5 @@ export * from "./generators/formats";
 
 export * from "./speech/web-speech";
 
+export * from "./constants";
 export * from "./types";

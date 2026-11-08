@@ -1,3 +1,5 @@
+import { DTCG_NAMESPACE } from "../constants";
+
 import {
   ColorVariantEnum,
   MeasureVariantEnum,
@@ -9,7 +11,6 @@ import type {
   TScaleVariant,
 } from "../types";
 
-const UF = "com.usefui";
 const round = (n: number) => Math.round(n * 10000) / 10000;
 
 export const isTokenKey = (key: string) => !key.startsWith("$");
@@ -19,7 +20,7 @@ export const stepKeysOf = (group: any): string[] =>
     .filter(isTokenKey)
     .sort((a, b) => Number(a) - Number(b));
 
-export const ext = (token: any) => token?.$extensions?.[UF] ?? {};
+export const ext = (token: any) => token?.$extensions?.[DTCG_NAMESPACE] ?? {};
 
 export const varName = (...parts: (string | number | undefined)[]) =>
   `--${parts.filter((p) => p !== undefined).join("-")}`;

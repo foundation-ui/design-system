@@ -1,3 +1,5 @@
+import { DTCG_NAMESPACE } from "../constants";
+
 export interface IDTCGUseFuiExtensions {
   // color
   rgb?: string;
@@ -15,7 +17,7 @@ export interface IDTCGUseFuiExtensions {
 }
 
 export interface IDTCGExtensions {
-  "com.usefui"?: IDTCGUseFuiExtensions;
+  [DTCG_NAMESPACE]?: IDTCGUseFuiExtensions;
   [key: string]: any;
 }
 

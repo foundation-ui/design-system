@@ -1,3 +1,5 @@
+import { DTCG_NAMESPACE } from "../constants";
+
 import {
   HEXToRGB,
   HEXToHSL,
@@ -11,6 +13,7 @@ import {
   generateSequences,
   normalizeHex,
 } from "..";
+
 import { ColorModesEnum, SequenceVariantEnum, TokenTypesEnum } from "../types";
 import type {
   TMeasureVariant,
@@ -57,7 +60,7 @@ export const generateColorTokens = (
       hex: `#${hex}`,
     } as IDTCGColorValue,
     $extensions: {
-      "com.usefui": {
+      [DTCG_NAMESPACE]: {
         rgb: baseRgbString,
         hsl: baseHslString,
         contrast_score: {
@@ -88,7 +91,7 @@ export const generateColorTokens = (
           hex: `#${hex}`,
         } as IDTCGColorValue,
         $extensions: {
-          "com.usefui": {
+          [DTCG_NAMESPACE]: {
             rgb: item.rgb,
             hsl: item.hsl,
             contrast_score: item.contrast_score,
@@ -115,7 +118,7 @@ export const generateColorTokens = (
           hex: item.hex,
         } as IDTCGColorValue,
         $extensions: {
-          "com.usefui": {
+          [DTCG_NAMESPACE]: {
             rgb: item.rgb,
             hsl: item.hsl,
             contrast_score: item.contrast_score,
@@ -142,7 +145,7 @@ export const generateColorTokens = (
           hex: item.hex,
         } as IDTCGColorValue,
         $extensions: {
-          "com.usefui": {
+          [DTCG_NAMESPACE]: {
             rgb: item.rgb,
             hsl: item.hsl,
             contrast_score: item.contrast_score,
@@ -180,7 +183,7 @@ export const generateMeasurementTokens = (
       $type: "dimension",
       $value: { value: value.px, unit: "px" },
       $extensions: {
-        "com.usefui": { px: value.px, rem: value.rem, pt: value.pt },
+        [DTCG_NAMESPACE]: { px: value.px, rem: value.rem, pt: value.pt },
       },
     };
   });
@@ -268,7 +271,7 @@ export const generateSequenceTokens = (
       $type: "number",
       $value: value,
       $extensions: {
-        "com.usefui": rest,
+        [DTCG_NAMESPACE]: rest,
       },
     };
   });

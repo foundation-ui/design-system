@@ -58,7 +58,7 @@ interface IDTCGDimensionValue {
 }
 
 interface IDTCGExtensions {
-  "com.usefui"?: {
+  "dev.usefui"?: {
     px?: number;
     rem?: number;
     pt?: number;
