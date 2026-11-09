@@ -1,19 +1,21 @@
 import React from "react";
+
+import { useGradient } from "@usefui/hooks";
+
 import {
   Card,
   Button,
   Page,
-  Shimmer,
-  Loader,
   Pill,
   Switch,
   Checkbox,
   StateCanvas,
+  Image,
+  useColorMode,
 } from "@usefui/components";
-
-import type { Meta } from "@storybook/react";
-import { useGradient } from "@usefui/hooks";
 import { Icon } from "@usefui/icons";
+
+import { GetDesignToken } from "@usefui/tokens";
 
 /**
  *
@@ -25,16 +27,13 @@ const meta = {
   decorators: [
     (Story: any) => (
       <Page className="p-medium-30">
-        <Page.Content
-          className="p-medium-30 flex align-center justify-center w-100 h-100"
-          scrollbar
-        >
+        <Page.Content className="p-medium-30 w-100 h-100" scrollbar>
           <Story />
         </Page.Content>
       </Page>
     ),
   ],
-} satisfies Meta<typeof Card>;
+};
 export default meta;
 
 export const Default = {
@@ -61,13 +60,14 @@ export const Default = {
             </Checkbox.Root>
           </Card.Meta>
 
-          <Card.Image
-            src={thumbnail.base64}
-            alt="card-gradient-cover"
-            shape="round"
-            // width={800}
-            // height={450}
-          />
+          <div className="w-100 h-large-90" style={{ position: "relative" }}>
+            <Card.Image
+              src={thumbnail.base64}
+              alt="card-gradient-cover"
+              shape="round"
+              fill
+            />
+          </div>
 
           <Card.Body shape="round">
             <hgroup>
@@ -114,7 +114,16 @@ export const Grid = {
   render: () => {
     return (
       <Card.Grid sizing="medium">
-        {["analysis", "connect", "think", "intense"].map((v) => (
+        {[
+          "analysis",
+          "connect",
+          "sweep-y",
+          "sweep-x",
+          "think",
+          "intense",
+          "ripple",
+          "converge",
+        ].map((v) => (
           <Card.Body shape="round">
             <hgroup>
               <p className="fs-medium-30">Lorem ipsum</p>
@@ -161,7 +170,16 @@ export const GridWithImage = {
 
     return (
       <Card.Grid sizing="medium">
-        {["analysis", "connect", "think", "intense"].map((v) => (
+        {[
+          "analysis",
+          "connect",
+          "sweep-y",
+          "sweep-x",
+          "think",
+          "intense",
+          "ripple",
+          "converge",
+        ].map((v) => (
           <Card shape="round">
             <Card.Meta className="flex align-center justify-between g-medium-30 p-medium-30">
               <p className="fs-medium-10 opacity-default-60">
@@ -174,14 +192,14 @@ export const GridWithImage = {
                 </Checkbox>
               </Checkbox.Root>
             </Card.Meta>
-            <Card.Image
-              src={thumbnail.base64}
-              alt="card-gradient-cover"
-              shape="round"
-              // width={800}
-              // height={450}
-            />
-
+            <div className="w-100 h-large-90" style={{ position: "relative" }}>
+              <Card.Image
+                src={thumbnail.base64}
+                alt="card-gradient-cover"
+                shape="round"
+                fill
+              />
+            </div>
             <Card.Body shape="round">
               <hgroup>
                 <p className="fs-medium-30">Lorem ipsum</p>
@@ -203,8 +221,11 @@ export const GridWithImage = {
                   </Switch.Root>
                 </div>
 
-                <Button sizing="small" variant="secondary" shape="round">
-                  Secondary
+                <Button sizing="small" variant="primary" shape="round">
+                  Primary
+                  <Icon>
+                    <Icon.ChevronRight />
+                  </Icon>
                 </Button>
               </footer>
             </Card.Body>
@@ -223,9 +244,40 @@ export const GridWithImage = {
 };
 export const GridWithCanvas = {
   render: () => {
+    const { colorMode } = useColorMode();
+    const thumbnail = useGradient({
+      width: 1920,
+      height: 1080,
+      layerCount: 3,
+      stopsPerLayer: 6,
+
+      types: ["linear", "radial"],
+      blendModes: ["overlay", "soft-light", "screen"],
+      colors: [
+        "transparent",
+        GetDesignToken("alpha-red-60"),
+        GetDesignToken("alpha-orange-60"),
+        GetDesignToken("alpha-yellow-60"),
+      ],
+    });
+
+    const particlesColor =
+      colorMode === "light"
+        ? GetDesignToken("color-mono-dark")
+        : GetDesignToken("color-mono-light");
+
     return (
       <Card.Grid sizing="medium">
-        {["analysis", "connect", "think", "intense"].map((v) => (
+        {[
+          "analysis",
+          "connect",
+          "sweep-y",
+          "sweep-x",
+          "think",
+          "intense",
+          "ripple",
+          "converge",
+        ].map((v) => (
           <Card shape="round">
             <Card.Meta className="flex align-center justify-between g-medium-30 p-medium-30">
               <p className="fs-medium-10 opacity-default-60">
@@ -239,20 +291,19 @@ export const GridWithCanvas = {
               </Checkbox.Root>
             </Card.Meta>
 
-            <div
-              className="w-100"
-              style={{ position: "relative", height: 256 }}
-            >
+            <div className="w-100 h-large-90" style={{ position: "relative" }}>
               <StateCanvas>
-                <StateCanvas.Variant variant={v as any} shape="triangle">
-                  <div className="w-100 h-100 flex align-center justify-center">
-                    <Button sizing="small" variant="primary" shape="round">
-                      Primary
-                      <Icon>
-                        <Icon.ChevronRight />
-                      </Icon>
-                    </Button>
-                  </div>
+                <StateCanvas.Variant
+                  variant={v as any}
+                  shape="square"
+                  color={particlesColor}
+                  speed={0.25}
+                >
+                  <Image
+                    src={thumbnail.base64}
+                    alt="gradient-cover-fill"
+                    fill
+                  />
                 </StateCanvas.Variant>
               </StateCanvas>
             </div>
@@ -278,8 +329,11 @@ export const GridWithCanvas = {
                   </Switch.Root>
                 </div>
 
-                <Button sizing="small" variant="secondary" shape="round">
-                  Secondary
+                <Button sizing="small" variant="primary" shape="round">
+                  Primary
+                  <Icon>
+                    <Icon.ChevronRight />
+                  </Icon>
                 </Button>
               </footer>
             </Card.Body>

@@ -1,46 +1,15 @@
 import styled, { css } from "styled-components";
 import { InsetShadowCSSVariable } from "../../";
+import {
+  ScrollbarVisualStyles,
+} from "../../css/ScrollbarStyles";
+import type { ScrollbarStylesProps } from "../../css/ScrollbarStyles";
 
 const CellStyles = css`
   box-sizing: border-box;
   border: none;
   line-height: 1;
   padding: var(--measurement-medium-40) var(--measurement-medium-30);
-`;
-const Scrollbar = css<any>`
-  height: ${({ $height }) => $height || "100%"};
-  width: ${({ $width }) => $width || "100%"};
-
-  &::-webkit-scrollbar {
-    cursor: pointer;
-
-    width: var(--measurement-medium-10);
-  }
-
-  &::-webkit-scrollbar-track {
-    background: ${({ $trackColor }) => $trackColor || "transparent"};
-    border-radius: var(--measurement-medium-30);
-    border: none;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: ${({ $thumbColor }) =>
-      $thumbColor || "var(--font-color-alpha-10)"};
-    border-radius: var(--measurement-medium-30);
-    transition: background-color 0.2s ease;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: ${({ $thumbHoverColor, $thumbColor }) =>
-      $thumbHoverColor || $thumbColor || "var(--font-color-alpha-20)"};
-  }
-
-  // Firefox
-  scrollbar-width: thin;
-  scrollbar-color: ${({ $thumbColor, $trackColor }) =>
-    `${$thumbColor || "var(--font-color-alpha-10)"} ${
-      $trackColor || "transparent"
-    }`};
 `;
 
 export const TableLayer = styled.div`
@@ -77,11 +46,11 @@ export const HeadCellWrapper = styled.th<any>`
 export const CellWrapper = styled.td<any>`
   ${CellStyles}
 `;
-export const TableScroller = styled.div`
+export const TableScroller = styled.div<ScrollbarStylesProps>`
   overflow: auto;
   /* The layer owns the radius; keep the scrollbar inside it. */
   border-radius: inherit;
-  ${Scrollbar}
+  ${ScrollbarVisualStyles}
 `;
 export const DataTableWrapper = styled(TableWrapper)`
   table-layout: fixed;
@@ -105,7 +74,6 @@ export const DataCell = styled(CellWrapper)`
   }
 `;
 export const StickyHeadCell = styled(HeadCellWrapper)`
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1;

@@ -9,8 +9,6 @@ export const TextCarrouselWrapper = styled.span`
   text-align: center;
 
   &[data-auto="true"] {
-    -webkit-user-select: none;
-  user-select: none;
     pointer-events: none;
   }
 `;

@@ -1,6 +1,8 @@
 "use client";
 
 import styled, { css } from "styled-components";
+import { createShapeStyles } from "../../css/ShapeStyles";
+import { PulseKeyframes } from "../../css/AnimationStyles";
 
 const PillSizesStyles = css`
   aspect-ratio: 1;
@@ -20,17 +22,10 @@ const PillSizesStyles = css`
     height: var(--measurement-medium-60);
   }
 `;
-const PillShapesStyles = css`
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-  &[data-shape="smooth"] {
-    border-radius: var(--measurement-small-30);
-  }
-  &[data-shape="round"] {
-    border-radius: var(--measurement-large-90);
-  }
-`;
+const PillShapesStyles = createShapeStyles({
+  smooth: "border-radius: var(--measurement-small-30);",
+  round: "border-radius: var(--measurement-large-90);",
+});
 
 export const PillBody: any = styled.div<{
   $color?: string;
@@ -41,24 +36,15 @@ export const PillBody: any = styled.div<{
     $color ? $color : `var(--font-color-alpha-30)`};
   --shadow: 0 0 0 0 var(--pill-color);
 
-  @keyframes pulse-animation {
-    0% {
-      box-shadow: var(--shadow);
-    }
-    100% {
-      box-shadow: 0 0 0 var(--measurement-medium-10) transparent;
-    }
-  }
-
   display: inline-block;
   position: relative;
   background-color: var(--pill-color);
 
   ${({ $pulse }) =>
     $pulse &&
-    `
-    animation: pulse-animation 1s infinite;
-  `}
+    css`
+      animation: ${PulseKeyframes} 1s infinite;
+    `}
   ${({ $fixed }) =>
     $fixed &&
     `

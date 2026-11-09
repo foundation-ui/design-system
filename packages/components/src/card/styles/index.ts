@@ -2,10 +2,11 @@
 
 import styled, { css } from "styled-components";
 import { FETurbulenceCSSVariable, InsetShadowCSSVariable } from "../../";
+import { createShapeStyles } from "../../css/ShapeStyles";
 
 const GridDefaultStyles = css`
   display: grid;
-  grid-gap: var(--measurement-medium-30) var(--measurement-medium-30);
+  gap: var(--measurement-medium-30) var(--measurement-medium-30);
   box-sizing: border-box;
 
   @media (max-width: 768px) {
@@ -33,17 +34,10 @@ const GridSizeStyles = css`
     );
   }
 `;
-const CardShapeStyles = css`
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-  &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-30);
-  }
-  &[data-shape="round"] {
-    border-radius: var(--measurement-medium-60);
-  }
-`;
+const CardShapeStyles = createShapeStyles({
+  smooth: "border-radius: var(--measurement-medium-30);",
+  round: "border-radius: var(--measurement-medium-60);",
+});
 
 export const CardsGrid = styled.div`
   ${GridDefaultStyles}

@@ -2,6 +2,12 @@
 
 import styled, { css } from "styled-components";
 import { InsetShadowCSSVariable } from "../../";
+import {
+  MenuRootStyles,
+  MenuSurfaceVariants,
+  MenuItemStyles,
+} from "../../css/MenuStyles";
+import { createShapeStyles } from "../../css/ShapeStyles";
 
 const EASE_OUT = "cubic-bezier(0.23, 1, 0.32, 1)";
 
@@ -16,28 +22,13 @@ const ContextMenuSizeStyles = css`
     width: var(--measurement-large-90);
   }
 `;
-const ContextMenuShapeStyles = css`
-  &[data-shape="round"] {
-    border-radius: var(--measurement-medium-60);
-  }
-  &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-30);
-  }
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-`;
-const ContentWrapperVariants = css`
-  &[data-variant="body"] {
-    background-color: var(--body-color);
-  }
-
-  &[data-variant="contrast"] {
-    background-color: var(--contrast-color);
-  }
-`;
+const ContextMenuShapeStyles = createShapeStyles({
+  smooth: "border-radius: var(--measurement-medium-30);",
+  round: "border-radius: var(--measurement-medium-60);",
+});
+const ContentWrapperVariants = MenuSurfaceVariants;
 export const RootWrapper = styled.div`
-  position: relative;
+  ${MenuRootStyles}
 `;
 export const ContextMenuPortal = styled.div`
   position: fixed;
@@ -77,14 +68,5 @@ export const ContextMenuContentWrapper = styled.div`
   }
 `;
 export const ItemWrapper = styled.li<any>`
-  list-style: none;
-  padding: var(--measurement-medium-30);
-  margin: 0;
-  -webkit-user-select: none;
-  user-select: none;
-
-  &[aria-disabled="true"] {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
+  ${MenuItemStyles}
 `;

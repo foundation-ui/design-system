@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HiddenScrollbar } from "../../scrollarea/styles";
+import { HiddenScrollbar } from "../../css/ScrollbarStyles";
 import { InsetShadowCSSVariable, FETurbulenceCSSVariable } from "../../";
 
 export const PageRootWrapper = styled.div<any>`
@@ -19,13 +19,6 @@ export const PageMenuWrapper = styled.menu<any>`
   max-height: var(--measurement-large-30);
   margin: 0;
   padding: var(--measurement-medium-60) var(--measurement-medium-30);
-`;
-export const PagePanelWrapper = styled.aside<any>`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  overflow: scroll;
-  ${HiddenScrollbar}
 `;
 export const PageSectionWrapper = styled.div<any>`
   ${InsetShadowCSSVariable}
@@ -58,6 +51,6 @@ export const PageBodyWrapper = styled.div<any>`
   max-height: var(--page-height);
 
   width: 100%;
-  overflow: scroll;
+  overflow: auto;
   ${HiddenScrollbar}
 `;

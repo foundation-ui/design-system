@@ -27,7 +27,6 @@ export const HorizontalRuler: any = styled(RulerBase)`
   left: ${RULER_SIZE}px;
   right: 0;
   height: var(--measurement-medium-70);
-  /* border-bottom: var(--measurement-small-30) solid var(--font-color-alpha-10); */
   cursor: s-resize;
 `;
 
@@ -36,7 +35,6 @@ export const VerticalRuler: any = styled(RulerBase)`
   left: 0;
   bottom: 0;
   width: ${RULER_SIZE}px;
-  /* border-right: var(--measurement-small-30) solid var(--font-color-alpha-10); */
   cursor: e-resize;
 `;
 
@@ -134,8 +132,6 @@ export const HorizontalGuideLine: any = styled.div<{
   z-index: var(--depth-default-90);
   top: ${({ $y }) => $y}px;
   ${({ $active }) => ($active ? activeGuideStyles : inactiveGuideStyles)}
-
-  transition: bakground ease-in-out 0.2s;
 `;
 
 export const CanvasContent: any = styled.div<{ $isDragging?: boolean }>`

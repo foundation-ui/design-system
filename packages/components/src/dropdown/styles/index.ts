@@ -1,5 +1,13 @@
 import styled, { css } from "styled-components";
 import { InsetShadowCSSVariable } from "../../";
+import {
+  MenuRootStyles,
+  MenuSurfaceVariants,
+  MenuItemStyles,
+} from "../../css/MenuStyles";
+import { createSlideInY } from "../../css/AnimationStyles";
+
+const SlideIn = createSlideInY("calc(var(--measurement-small-30) * -1)");
 
 const ContentWrapperSizes = css`
   --small: var(--measurement-large-60);
@@ -23,17 +31,9 @@ const ContentWrapperSizes = css`
     max-width: var(--large);
   }
 `;
-const ContentWrapperVariants = css`
-  &[data-variant="body"] {
-    background-color: var(--body-color);
-  }
-
-  &[data-variant="contrast"] {
-    background-color: var(--contrast-color);
-  }
-`;
+const ContentWrapperVariants = MenuSurfaceVariants;
 export const RootWrapper = styled.div`
-  position: relative;
+  ${MenuRootStyles}
 `;
 export const ContentWrapper = styled.ul<any>`
   --small: var(--measurement-large-60);
@@ -41,17 +41,6 @@ export const ContentWrapper = styled.ul<any>`
   --large: var(--measurement-large-90);
 
   ${InsetShadowCSSVariable}
-
-  @keyframes slide-in {
-    0% {
-      opacity: 0;
-      transform: translateY(calc(var(--measurement-small-30) * -1));
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
   &[data-raw="false"] {
     position: fixed;
@@ -68,21 +57,11 @@ export const ContentWrapper = styled.ul<any>`
     ${ContentWrapperVariants}
 
     animation-duration: 0.2s;
-    animation-name: slide-in;
+    animation-name: ${SlideIn};
     animation-fill-mode: backwards;
   }
 `;
 
 export const ItemWrapper = styled.li<any>`
-  list-style: none;
-  padding: var(--measurement-medium-30);
-
-  margin: 0;
-  -webkit-user-select: none;
-  user-select: none;
-
-  &[aria-disabled="true"] {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
+  ${MenuItemStyles}
 `;

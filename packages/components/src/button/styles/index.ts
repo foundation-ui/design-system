@@ -1,5 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
 import type { MaskProps, OverlayProps } from "../types";
+import { MaskedBorderStyles } from "../../css/MaskedBorderStyles";
+import { createShapeStyles } from "../../css/ShapeStyles";
 
 const ButtonDefaultStyles = css`
   cursor: pointer;
@@ -78,33 +80,11 @@ const ButtonSizeStyles = css`
     min-height: var(--measurement-medium-90);
   }
 `;
-const ButtonShapeStyles = css`
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-  &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-30);
-  }
-  &[data-shape="round"] {
-    border-radius: var(--measurement-large-90);
-  }
-`;
-const ButtonBeforeDefaultStyles = css`
-  content: "";
-  inset: 0;
-
-  border-radius: inherit;
-  border: var(--measurement-small-10) solid transparent;
-  position: absolute;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-
-  mask-composite: intersect;
-  -webkit-mask-composite: source-in;
-
-  transition: all ease-in-out 0.2s;
-`;
+const ButtonShapeStyles = createShapeStyles({
+  smooth: "border-radius: var(--measurement-medium-30);",
+  round: "border-radius: var(--measurement-large-90);",
+});
+const ButtonBeforeDefaultStyles = MaskedBorderStyles;
 const ButtonVariantsStyles = css`
   &[data-variant="primary"] {
     background-color: var(--font-color);
@@ -595,13 +575,23 @@ export const ButtonOverlay = styled.div<OverlayProps>`
 
   ${ButtonShapeStyles}
 `;
+const ButtonMaskShapeStyles = css`
+  &[data-shape="square"] {
+    clip-path: inset(0 round 0);
+  }
+  &[data-shape="smooth"] {
+    clip-path: inset(0 round var(--measurement-medium-30));
+  }
+  &[data-shape="round"] {
+    clip-path: inset(0 round var(--measurement-large-90));
+  }
+`;
+
 export const ButtonMaskElement = styled.div<MaskProps>`
   position: absolute;
   inset: 0;
   background: transparent;
   border: var(--measurement-small-10) solid var(--font-color-alpha-20);
-  -webkit-clip-path: inset(0 round var(--measurement-medium-30));
-  clip-path: inset(0 round var(--measurement-medium-30));
 
   mask-image: radial-gradient(
     circle at ${(props) => props.$mouseX}% ${(props) => props.$mouseY}%,
@@ -615,4 +605,5 @@ export const ButtonMaskElement = styled.div<MaskProps>`
   );
 
   ${ButtonShapeStyles}
+  ${ButtonMaskShapeStyles}
 `;

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { InsetShadowCSSVariable } from "../../";
+import { createShapeStyles } from "../../css/ShapeStyles";
 
 const SwitchDefaultStyles = css`
   all: unset;
@@ -88,11 +89,8 @@ const SwitchSizeStyles = css`
     }
   }
 `;
-const SwitchShapeStyles = css`
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-  &[data-shape="smooth"] {
+const SwitchShapeStyles = createShapeStyles({
+  smooth: css`
     &[data-size="small"] {
       border-radius: var(--measurement-small-60);
     }
@@ -101,11 +99,9 @@ const SwitchShapeStyles = css`
     &[data-size="large"] {
       border-radius: var(--measurement-medium-10);
     }
-  }
-  &[data-shape="round"] {
-    border-radius: var(--measurement-large-90);
-  }
-`;
+  `,
+  round: "border-radius: var(--measurement-large-90);",
+});
 
 export const TriggerWrapper = styled.button<any>`
   &[data-raw="false"] {

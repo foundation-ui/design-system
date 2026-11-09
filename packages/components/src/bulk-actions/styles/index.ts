@@ -2,15 +2,9 @@
 
 import styled, { css, keyframes } from "styled-components";
 import { FETurbulenceCSSVariable, InsetShadowCSSVariable } from "../../";
+import { createShapeStyles } from "../../css/ShapeStyles";
+import { FadeInKeyframes } from "../../css/AnimationStyles";
 
-const FadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
 const Blink = keyframes`
   0% {
     opacity: 0.5;
@@ -41,7 +35,7 @@ const BulkActionsBaseStyles = css`
   display: block;
   z-index: var(--depth-default-90);
 
-  animation: ${FadeIn} ease-in-out alternate 0.2s;
+  animation: ${FadeInKeyframes} ease-in-out alternate 0.2s;
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
@@ -68,17 +62,10 @@ const BulkActionsVariantStyles = css`
     border-color: var(--font-color-alpha-10);
   }
 `;
-const BulkActionsShapeStyles = css`
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-  &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-30);
-  }
-  &[data-shape="round"] {
-    border-radius: var(--measurement-medium-90);
-  }
-`;
+const BulkActionsShapeStyles = createShapeStyles({
+  smooth: "border-radius: var(--measurement-medium-30);",
+  round: "border-radius: var(--measurement-medium-90);",
+});
 const BulkActionsSizeStyles = css`
   height: fit-content;
   width: max-content;

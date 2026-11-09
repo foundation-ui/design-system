@@ -1,18 +1,11 @@
 import styled, { css } from "styled-components";
 import { InsetShadowCSSVariable } from "../../";
+import { createShapeStyles } from "../../css/ShapeStyles";
 
-const OTPShapeStyles = css`
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-  &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-30);
-  }
-  &[data-shape="round"] {
-    border-radius: var(--measurement-large-90);
-    padding-left: var(--measurement-medium-50) !important;
-  }
-`;
+const OTPShapeStyles = createShapeStyles({
+  smooth: "border-radius: var(--measurement-medium-30);",
+  round: "border-radius: var(--measurement-large-90); padding-left: var(--measurement-medium-50) !important;",
+});
 
 const OTPCellDefaultStyles = css`
   ${InsetShadowCSSVariable}

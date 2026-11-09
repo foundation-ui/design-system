@@ -28,7 +28,7 @@ const ToolbarDefault = (args: {
   showoncollapse?: boolean;
   defaultOpen?: boolean;
   shortcut?: boolean;
-  side?: ComponentSideEnum;
+  side?: any;
   sizing?: ComponentSizeEnum;
   hotkey?: string;
 }) => {
@@ -37,11 +37,8 @@ const ToolbarDefault = (args: {
       <Toolbar
         side={args.side}
         sizing={args.sizing as TComponentSize}
-        defaultOpen={args.defaultOpen}
-        shortcut={args.shortcut}
-        hotkey={args.hotkey}
       >
-        <Toolbar.Section showoncollapse={args.showoncollapse}>
+        <Toolbar.Section alwaysVisible={args.showoncollapse}>
           <Toolbar.Item aria-label="test-item">item</Toolbar.Item>
           <Toolbar.Item aria-label="test-item-2">item2</Toolbar.Item>
         </Toolbar.Section>

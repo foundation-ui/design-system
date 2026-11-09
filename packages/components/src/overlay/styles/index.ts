@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { FETurbulenceCSSVariable } from "../../";
+import { FadeInKeyframes } from "../../css/AnimationStyles";
 
 const OverlayBackgroundStyles = css`
   &[data-background="blur"] {
@@ -26,14 +27,6 @@ const OverlayBackgroundStyles = css`
 
 export const OverlayWrapper = styled.div<any>`
   ${FETurbulenceCSSVariable}
-  @keyframes animate-fade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 
   position: fixed;
   top: 0;
@@ -48,7 +41,7 @@ export const OverlayWrapper = styled.div<any>`
     ${OverlayBackgroundStyles}
 
     animation-duration: 0.5s;
-    animation-name: animate-fade;
+    animation-name: ${FadeInKeyframes};
     animation-fill-mode: backwards;
   }
 `;

@@ -1,18 +1,12 @@
 "use client";
 
 import styled, { css } from "styled-components";
+import { createShapeStyles } from "../../css/ShapeStyles";
 
-const ImageShapeStyles = css`
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-  &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-30);
-  }
-  &[data-shape="round"] {
-    border-radius: var(--measurement-medium-60);
-  }
-`;
+const ImageShapeStyles = createShapeStyles({
+  smooth: "border-radius: var(--measurement-medium-30);",
+  round: "border-radius: var(--measurement-medium-60);",
+});
 
 export const Img = styled.img<{ $fill: boolean }>`
   display: block;

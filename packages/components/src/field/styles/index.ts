@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { InsetShadowCSSVariable } from "../../";
+import { createShapeStyles } from "../../css/ShapeStyles";
 
 export const FieldDefaultStyles = css`
   outline: none;
@@ -18,6 +19,7 @@ export const FieldDefaultStyles = css`
 
   border: var(--measurement-small-10) solid transparent;
 
+  -webkit-backdrop-filter: blur(var(--measurement-small-10));
   backdrop-filter: blur(var(--measurement-small-10));
   color: var(--font-color-alpha-60);
 
@@ -254,18 +256,10 @@ export const FieldSizeStyles = css`
     min-height: var(--measurement-medium-90);
   }
 `;
-export const FieldShapeStyles = css`
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-  &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-30);
-  }
-  &[data-shape="round"] {
-    border-radius: var(--measurement-large-90);
-    padding-left: var(--measurement-medium-50) !important;
-  }
-`;
+export const FieldShapeStyles = createShapeStyles({
+  smooth: "border-radius: var(--measurement-medium-30);",
+  round: "border-radius: var(--measurement-large-90); padding-left: var(--measurement-medium-50) !important;",
+});
 
 export const Fieldset = styled.fieldset<any>`
   all: unset;
@@ -610,13 +604,6 @@ export const RangeInput = styled.input<any>`
     &:hover:not(:disabled)::-moz-range-thumb {
       transform: scaleY(0.6);
     }
-
-    /* &:focus-visible::-webkit-slider-thumb {
-      box-shadow: 0 0 0 var(--measurement-small-30) var(--font-color-alpha-20);
-    }
-    &:focus-visible::-moz-range-thumb {
-      box-shadow: 0 0 0 var(--measurement-small-30) var(--font-color-alpha-20);
-    } */
 
     &[data-error="true"]::-webkit-slider-thumb {
       border-color: var(--color-red);

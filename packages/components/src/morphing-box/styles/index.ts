@@ -1,5 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
 import { InsetShadowCSSVariable } from "../../";
+import { PanelDefaultStyles } from "../../css/PanelStyles";
+import { FadeInKeyframes } from "../../css/AnimationStyles";
 
 const MorphIn = keyframes`
   from {
@@ -18,30 +20,12 @@ const MorphOut = keyframes`
     z-index: 0;
   }
 `;
-const FadeIn = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
 const FadeOut = keyframes`
   from { opacity: 1; }
   to { opacity: 0; }
 `;
 
-const MorphingBoxDefaultStyles = css`
-  ${InsetShadowCSSVariable}
-
-  position: fixed;
-  bottom: calc(var(--measurement-medium-60) * -1);
-
-  padding: var(--measurement-medium-30);
-  width: 100%;
-
-  border-radius: var(--measurement-medium-60);
-  background: var(--contrast-color);
-  box-shadow: var(--inset-shadow);
-
-  z-index: var(--depth-default-100);
-`;
+const MorphingBoxDefaultStyles = PanelDefaultStyles;
 
 const MorphingBoxAnimationStyles = css`
   --morph-duration: 0.25s;
@@ -69,7 +53,7 @@ const MorphingBoxAnimationStyles = css`
     animation-name: ${MorphIn};
 
     & > * {
-      animation-name: ${FadeIn};
+      animation-name: ${FadeInKeyframes};
       animation-delay: calc(var(--morph-duration) * 0.5);
     }
   }

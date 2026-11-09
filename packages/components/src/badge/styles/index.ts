@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { InsetShadowCSSVariable } from "../../";
+import { createShapeStyles } from "../../css/ShapeStyles";
 
 export const BadgeBaseStyles = css`
   display: flex;
@@ -116,17 +117,10 @@ export const BadgeEmphasisVariantStyles = css`
     color: var(--color-mono-white) !important;
   }
 `;
-export const BadgeShapeStyles = css`
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-  &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-30);
-  }
-  &[data-shape="round"] {
-    border-radius: var(--measurement-medium-60);
-  }
-`;
+export const BadgeShapeStyles = createShapeStyles({
+  smooth: "border-radius: var(--measurement-medium-30);",
+  round: "border-radius: var(--measurement-medium-60);",
+});
 export const BadgeSizeStyles = css`
   &[data-size="small"] {
     padding: 0 var(--measurement-medium-30);

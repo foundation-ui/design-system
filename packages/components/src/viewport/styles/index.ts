@@ -1,7 +1,7 @@
 "use client";
 
 import styled, { css } from "styled-components";
-import { HiddenScrollbar } from "../../scrollarea/styles";
+import { HiddenScrollbar } from "../../css/ScrollbarStyles";
 
 const FADE = "12px";
 

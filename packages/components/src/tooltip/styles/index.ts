@@ -1,14 +1,7 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css } from "styled-components";
 import { InsetShadowCSSVariable } from "../../";
+import { FadeInKeyframes } from "../../css/AnimationStyles";
 
-const FadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
 const TooltipVariantsStyles = css`
   &[data-variant="primary"] {
     background-color: var(--font-color);
@@ -88,7 +81,6 @@ export const ContentWrapper = styled.span<any>`
     width: fit-content;
     padding: var(--measurement-medium-10) var(--measurement-medium-30);
 
-    /* border: var(--measurement-small-10) solid var(--font-color-alpha-10); */
     box-shadow: var(--inset-shadow);
 
     border-radius: var(--measurement-medium-30);
@@ -101,7 +93,7 @@ export const ContentWrapper = styled.span<any>`
     z-index: var(--depth-default-100);
 
     animation-duration: 0.2s;
-    animation-name: ${FadeIn};
+    animation-name: ${FadeInKeyframes};
     animation-fill-mode: backwards;
 
     ${TooltipSizesStyles}

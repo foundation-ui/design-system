@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { InsetShadowCSSVariable } from "../../css/GlobalCSSVariables";
+import { createShapeStyles } from "../../css/ShapeStyles";
 
 const AvatarSizesStyles = css`
   &[data-size="small"] {
@@ -23,26 +24,26 @@ const AvatarSizesStyles = css`
     min-height: var(--measurement-large-20);
   }
 `;
-const AvatarShapesStyles = css`
-  &[data-shape="square"] {
+const AvatarShapesStyles = createShapeStyles({
+  square: css`
     border-radius: 0;
     img {
       border-radius: 0;
     }
-  }
-  &[data-shape="smooth"] {
+  `,
+  smooth: css`
     border-radius: var(--measurement-medium-30);
     img {
       border-radius: var(--measurement-medium-30);
     }
-  }
-  &[data-shape="round"] {
+  `,
+  round: css`
     border-radius: 100%;
     img {
       border-radius: 100%;
     }
-  }
-`;
+  `,
+});
 
 export const AvatarWrapper = styled.div`
   &[data-raw="false"] {
@@ -79,9 +80,7 @@ export const StatusWrapper = styled.div`
 export const BadgeWrapper = styled.div`
   ${InsetShadowCSSVariable}
 
-  --status-position: calc(
-    var(--measurement-medium-10) - (var(--measurement-medium-10) * 2)
-  );
+  --status-position: calc(var(--measurement-medium-10) * -1);
 
   position: absolute;
 

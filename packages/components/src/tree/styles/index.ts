@@ -66,7 +66,8 @@ export const TreeLine = styled.span<any>`
 export const TreeLink = styled(Button)<any>`
   &[data-raw="false"] {
     line-height: 1 !important;
-    background-color: none !important;
+    background-color: transparent !important;
+    -webkit-backdrop-filter: unset !important;
     backdrop-filter: unset !important;
   }
   &[data-nested="true"] {

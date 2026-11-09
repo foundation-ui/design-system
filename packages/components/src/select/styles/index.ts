@@ -1,5 +1,6 @@
 // select/styles.ts
 import styled from "styled-components";
+import { MenuItemStyles } from "../../css/MenuStyles";
 import {
   FieldDefaultStyles,
   FieldVariantsStyles,
@@ -7,6 +8,10 @@ import {
   FieldShapeStyles,
 } from "../../field/styles";
 import { InsetShadowCSSVariable } from "../../";
+import { createSlideInY } from "../../css/AnimationStyles";
+
+const SlideInDown = createSlideInY("calc(var(--measurement-small-60) * -1)");
+const SlideInUp = createSlideInY("var(--measurement-small-60)");
 
 export const Wrapper = styled.div`
   position: relative;
@@ -42,28 +47,6 @@ export const Label = styled.span<any>`
 `;
 
 export const Content = styled.ul<any>`
-  @keyframes select-slide-in-down {
-    0% {
-      opacity: 0;
-      transform: translateY(calc(var(--measurement-small-60) * -1));
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes select-slide-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(var(--measurement-small-60));
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   ${InsetShadowCSSVariable}
 
   &[data-raw="false"] {
@@ -89,27 +72,17 @@ export const Content = styled.ul<any>`
     animation-fill-mode: backwards;
 
     &[data-side="bottom"] {
-      animation-name: select-slide-in-down;
+      animation-name: ${SlideInDown};
     }
 
     &[data-side="top"] {
-      animation-name: select-slide-in-up;
+      animation-name: ${SlideInUp};
     }
   }
 `;
 
 export const List = styled.li<any>`
-  list-style: none;
-  padding: var(--measurement-medium-30);
-
-  margin: 0;
-  -webkit-user-select: none;
-  user-select: none;
-
-  &[aria-disabled="true"] {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
+  ${MenuItemStyles}
 `;
 
 export const Item = styled.span`

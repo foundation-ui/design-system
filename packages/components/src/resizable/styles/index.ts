@@ -19,9 +19,6 @@ export const Divider = styled.div<{ $dragging: boolean }>`
   border-radius: var(--measurement-medium-60);
   background-color: transparent;
 
-  /* background-color: ${(props) =>
-    props.$dragging ? "var(--font-color-alpha-10)" : "transparent"}; */
-
   cursor: col-resize;
   transition: background-color 0.2s;
   position: relative;
@@ -49,7 +46,6 @@ export const DragHandle = styled.div`
 export const DragIndicator = styled.div`
   position: fixed;
   width: var(--measurement-medium-10);
-  /* height: var(--measurement-medium-60); */
   background-color: var(--font-color-alpha-60);
   border-radius: var(--measurement-large-10);
 

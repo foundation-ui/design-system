@@ -251,8 +251,9 @@ export function useColumnReorder<T>({
       if (!dragKey) return;
       let index = orderedColumns.length;
       for (let i = 0; i < orderedColumns.length; i++) {
-        const rect =
-          thRefs.current[orderedColumns[i].key]?.getBoundingClientRect();
+        const col = orderedColumns[i];
+        if (!col) continue;
+        const rect = thRefs.current[col.key]?.getBoundingClientRect();
         if (rect && e.clientX < rect.left + rect.width / 2) {
           index = i;
           break;
@@ -274,7 +275,8 @@ export function useColumnReorder<T>({
       if (from >= 0 && target !== null) {
         const to = target > from ? target - 1 : target;
         if (to !== from) {
-          keys.splice(to, 0, keys.splice(from, 1)[0]);
+          const moved = keys.splice(from, 1)[0];
+          if (moved !== undefined) keys.splice(to, 0, moved);
           setOrder(keys);
           onColumnOrderChange?.(keys);
         }

@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { MaskedBorderStyles } from "../../css/MaskedBorderStyles";
 
 const RadioDefaultStyles = css`
   position: relative;
@@ -11,22 +12,7 @@ const RadioDefaultStyles = css`
   transition: all ease-in-out 0.2s;
 `;
 
-const RadioBeforeDefaultStyles = css`
-  content: "";
-  inset: 0;
-
-  border-radius: inherit;
-  border: var(--measurement-small-10) solid transparent;
-  position: absolute;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-
-  mask-composite: intersect;
-  -webkit-mask-composite: source-in;
-
-  transition: all ease-in-out 0.2s;
-`;
+const RadioBeforeDefaultStyles = MaskedBorderStyles;
 
 const createColorVariant = (variant: string, color: string) => css`
   &[data-variant="${variant}"] {
@@ -208,7 +194,6 @@ export const RadioWrapper = styled.div`
 export const NativeInput = styled.input<any>`
   &[data-raw="false"] {
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     background: none;
     border: none;

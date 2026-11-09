@@ -2,6 +2,7 @@
 
 import styled, { css, keyframes } from "styled-components";
 import { FETurbulenceCSSVariable } from "../../";
+import { createShapeStyles } from "../../css/ShapeStyles";
 
 const SkeletonBlink = keyframes`
     0% {
@@ -40,17 +41,10 @@ const SkeletonSizeStyles = css`
     min-height: var(--measurement-medium-90);
   }
 `;
-const SkeletonShapeStyles = css`
-  &[data-shape="square"] {
-    border-radius: 0;
-  }
-  &[data-shape="smooth"] {
-    border-radius: var(--measurement-medium-30);
-  }
-  &[data-shape="round"] {
-    border-radius: var(--measurement-large-90);
-  }
-`;
+const SkeletonShapeStyles = createShapeStyles({
+  smooth: "border-radius: var(--measurement-medium-30);",
+  round: "border-radius: var(--measurement-large-90);",
+});
 
 export const SkeletonLoader = styled.div`
   ${SkeletonBaseStyles}
